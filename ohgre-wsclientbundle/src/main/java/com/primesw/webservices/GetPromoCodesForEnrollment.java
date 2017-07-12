@@ -1,0 +1,65 @@
+
+package com.primesw.webservices;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import org.tempuri.quoteservice.GetPromoCodesForEnrollmentRequest;
+
+
+/**
+ * <p>Java class for anonymous complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element ref="{http://tempuri.org/QuoteService.xsd}GetPromoCodesForEnrollmentRequest" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "getPromoCodesForEnrollmentRequest"
+})
+@XmlRootElement(name = "GetPromoCodesForEnrollment")
+public class GetPromoCodesForEnrollment {
+
+    @XmlElement(name = "GetPromoCodesForEnrollmentRequest", namespace = "http://tempuri.org/QuoteService.xsd")
+    protected GetPromoCodesForEnrollmentRequest getPromoCodesForEnrollmentRequest;
+
+    /**
+     * Gets the value of the getPromoCodesForEnrollmentRequest property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GetPromoCodesForEnrollmentRequest }
+     *     
+     */
+    public GetPromoCodesForEnrollmentRequest getGetPromoCodesForEnrollmentRequest() {
+        return getPromoCodesForEnrollmentRequest;
+    }
+
+    /**
+     * Sets the value of the getPromoCodesForEnrollmentRequest property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GetPromoCodesForEnrollmentRequest }
+     *     
+     */
+    public void setGetPromoCodesForEnrollmentRequest(GetPromoCodesForEnrollmentRequest value) {
+        this.getPromoCodesForEnrollmentRequest = value;
+    }
+
+}

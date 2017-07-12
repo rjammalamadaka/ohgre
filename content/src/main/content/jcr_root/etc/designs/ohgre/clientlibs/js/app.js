@@ -1,0 +1,1 @@
+var ohgrePortal = angular.module("ohgre-portal", []);

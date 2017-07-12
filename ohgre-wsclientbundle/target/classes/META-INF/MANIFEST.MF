@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1499888065939
+Build-Jdk: 1.8.0_131
+Built-By: avinash.dhannuri
+Bundle-Description: Maven Multimodule project for ohgre.
+Bundle-ManifestVersion: 2
+Bundle-Name: ohgre WSclient Bundle
+Bundle-SymbolicName: com.macquarium.ong.ohgre-wsclientbundle
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.tempuri.quoteservice;uses:="javax.xml.bind.annotatio
+ n";version="1.0.0.SNAPSHOT",com.primesw.webservices;uses:="javax.xml.bi
+ nd.annotation,org.tempuri.quoteservice,javax.xml.namespace,javax.xml.ws
+ ,javax.jws.soap,javax.jws";version="1.0.0.SNAPSHOT"
+Import-Package: javax.jws,javax.jws.soap,javax.xml.bind.annotation,javax
+ .xml.namespace,javax.xml.ws
+Tool: Bnd-1.50.0
