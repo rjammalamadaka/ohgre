@@ -15,6 +15,11 @@ var ohio_ng = {
 			$('.expanded-dropdown.opened').removeClass('opened');
 			obj.parent().parent().parent().parent().find('.dropdown-trigger .value').html(val);
 		});
+		$('.accord-trigger').on('click',function(event){
+			event.preventDefault();
+			var obj = $(this);
+			obj.toggleClass('accord-expanded');
+		});
 	}
 }
 $(document).ready(function(){

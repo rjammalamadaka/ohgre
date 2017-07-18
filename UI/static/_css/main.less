@@ -428,6 +428,19 @@ footer{
 		}
 	}
 }
+.hero{
+	.slide-title{
+		font-size: 2.8rem;
+		line-height: 3.6rem;
+	}
+	p{
+		font-size: 1.4rem;
+		line-height: 2rem;
+	}
+	.inner-slide-content{
+		padding: 3rem 2rem;
+	}
+}
 /* CARDS */
 .cards-wrapper{
 	display: flex;
@@ -621,7 +634,6 @@ footer{
 }
 /* GENERIC FULL WIDTH BANNER CALL OUT */
 .full-banner-callout{
-
 	@media (@screen-md-min){
 		margin-top	: 2.5rem;
 
@@ -680,5 +692,228 @@ footer{
 		p{
 			width	: 70%;
 		}
+	}
+}
+.full-banner-light{
+	width				: 100%;
+	padding				: 1rem 2rem;
+	background-color	: #9eb7c6;
+	color				: #fff;
+	font-family			: @secondary_font;
+	
+	img{
+		max-width	: 100%;
+	}
+	
+	.icon,.content{
+		float: left;
+	}
+	
+	.icon{
+		width			: 20%;
+		padding-left	: 3rem;
+
+		@media (@screen-md-min){
+			width: 12%;
+		}
+	}
+	.content{
+		width	: 80%;
+		padding	: 0 2rem;
+
+		@media (@screen-md-min){
+			width	: 88%;
+			padding	: 0;
+
+			span{
+				display		: block;
+				line-height	: 5rem;
+		    	font-size	: 1.6rem;
+			}
+		}
+	}
+}
+.utility-form{
+	button{
+		display	: block;
+		width	: 100%;
+		margin	: 3rem 0;
+
+		@media (@screen-md-min){
+			margin	: 0;
+		}
+	}
+	.foot-notes{
+		padding		: 2.5rem;
+		margin-left	: -1.7%;
+		
+		p{
+			font-size		: 1.2rem;
+			margin-bottom	: 2rem;
+			color			: #9c9c9c;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+
+		@media (@screen-md-min){
+			background	: #fff;
+
+			p{
+				margin-bottom: .5rem;
+			}
+		}
+	}
+}
+/* PLANS DETAILS STYLES */
+.plan-detail{
+	margin	: 0;
+	padding	: 0;
+
+	li{
+		margin-bottom	: 1.5rem;
+		width			: 100%;
+		list-style		: none;
+		display			: flex;
+		font-family		: @primary_font;
+
+		&:last-child{
+			margin-bottom	: 0;
+		}
+		.plan-price{
+			padding				: 8% 2rem;
+			width				: 40%;
+			font-size			: 4.5rem;
+			color				: #fff;
+			background-color	: @primary_color;
+			margin				: 0;
+			text-align			: center;
+			font-weight			: 300;
+			min-height			: 15rem;
+
+			span{
+				display		: block;
+				font-size	: 1.1rem;
+			}
+		}
+		.plan-info-wrapper{
+			width	: 60%;
+		    padding	: 2rem 5rem 2rem 2rem;
+			border	: 1px solid @border_color;
+			background-color	: #fff;
+			position: relative;
+
+			&:after{
+				position	: absolute;
+				right		: 1rem;
+				top			: 50%;
+				margin-top	: -3rem;
+				font-family	: "fontAwesome";
+				content		: "\f107";
+				font-size	: 3rem;
+			}
+		}
+		.plan-info{
+			h4{
+				font-size	: 2.8rem;
+				font-weight	: 300;
+				margin		: 0 0 1rem 0;
+			}
+			p{
+				font-family		: @secondary_font;
+			}
+			p,a{
+				display	: none;
+			}
+		}
+		.plan-button{
+			display: none;
+		}
+		&.gbp{
+			.plan-price{
+				padding	: 3% 2rem;
+
+				img{
+					width: 80%;
+				}
+			}
+			.plan-button{
+				padding: 5% 2% 8% 0;
+
+				span{
+					line-height: 2.7rem;
+				}
+			}
+		}
+		&.accord-expanded{
+			.plan-info-wrapper{
+				&:after{
+					content: "\f106";
+				}
+			}
+			.plan-info{
+				p{
+					display: block;
+				}
+			}
+		}
+		@media (@screen-md-min){
+			.plan-price{
+				width				: 20%;
+				padding				: 6% 2rem;
+				font-size			: 4.5rem;
+				min-height			: 10rem;
+
+				span{
+					display		: block;
+					font-size	: 1.1rem;
+				}
+			}
+			.plan-info-wrapper{
+				width	: 80%;
+				padding	: 2rem;
+
+				&:after{
+					content: "";
+				}
+			}
+			.plan-info{
+				width			: 80%;
+				display			: block;
+				float			: left;
+				padding-right	: 4rem;
+
+				h4{
+					font-weight: normal;
+				}
+				p,a{
+					display: block;
+				}
+				a{
+					color: @primary_color;
+				}
+			}
+			&.accord-expanded{
+				.plan-info-wrapper{
+					&:after{
+						content: "";
+					}
+				}
+			}
+			.plan-button{
+				display: block;
+				float	: left;
+				width	: 20%;
+    			padding	: 8% 2% 8% 0;
+				text-align: center;
+
+				.primary-button{
+					display	: block;
+					padding	: 0 1rem;
+				}
+			}
+		}
+		
 	}
 }

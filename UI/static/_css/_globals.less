@@ -41,6 +41,9 @@ body{
 	 	background-position	: -8vw 6vw;
 	 }
 }
+img{
+	max-width: 100%;
+}
 @media (min-width: 768px){
 	.container {
 		width: 100%;
@@ -56,27 +59,107 @@ body{
 		max-width: 1170px;
 	}
 }
+.ff-roboto{
+	font-family: @secondary_font;
+}
+.ff-robotoSlab{
+	font-family: @primary_font;
+}
 p{
 	color: @font_color;
+	margin-top: 0;
 }
 small{
-	font-size: 1.1rem;
-	display: block;
+	font-size	: 1.1rem;
+	display		: block;
 }
 section{
-	margin-bottom: 1rem;
+	margin-bottom	: 1rem;
 
 	 @media (@screen-md-min){
-	 	margin-bottom: 3rem;
+	 	margin-bottom	: 3rem;
 	 }
 }
 input{
-	border: none;
-	padding: 0 2rem;
-	height: 4.5rem;
-	color: @font_color;
-	font-size: 1.4rem;
-	width: 100%;
+	border		: none;
+	padding		: 0 2rem;
+	height		: 4.5rem;
+	color		: @font_color;
+	font-size	: 1.4rem;
+	width		: 100%;
+}
+.form-section{
+	margin	: 0;
+
+	input:not([type="radio"]){
+		display		: block;
+		width		: 100%;
+		margin-top	: 2rem;
+
+		@media (@screen-md-min){
+			display	: inline-block;
+			width	: auto;
+		}
+	}
+	@media (@screen-md-min){
+		margin	: 0 0 3rem 0;
+	}
+}
+.form-wrapper{
+	margin-bottom: 4rem;
+
+	p{
+		font-size: 1.3rem;
+	}
+}
+.radio-container{
+	position	: relative;
+	height		: 2rem;
+	width		: 2rem;
+	display		: inline-block;
+
+	+ label{
+		display		: inline-block;
+		margin		: 0 4rem 0 0;
+		line-height	: 2rem;
+		font-family	: @secondary_font;
+		font-size	: 1.2rem;
+		font-weight	: 300;
+	}
+}
+input[type=radio]{
+	display				: inline-block;
+	background			: none;
+	border				: none;
+	position			: absolute;
+	z-index				: 3;
+	top					: .4rem;
+    left				: 0;
+    margin				: 0;
+    height				: 2rem;
+    border				: none;
+    appearance			: none;
+    -webkit-appearance	: none;
+
+	&:before{
+		content				: "";
+		background-image	: url(../_img/global/radio-button-off.svg);
+		background-repeat	: no-repeat;
+		background-size		: cover;
+		height				: 100%;
+		width				: 100%;
+		display				: inline-block;
+		position			: absolute;
+		top					: 0;
+		left				: 0;
+		z-index				: 1;
+	}
+
+	&:checked{
+		&:before{
+			background-image	: url(../_img/global/radio-button-on.svg);
+		}
+	}
 }
 .primary-button	{
 	text-transform		: uppercase;
@@ -146,6 +229,8 @@ input{
     padding		: 0 3rem;
     text-align	: left;
     border		: 1px solid @border_color;
+    width		: 100%;
+    display		: block;
 
 	.carret{
 		position	: absolute;
@@ -169,4 +254,18 @@ input{
 }
 .all-caps{
 	text-transform: uppercase;
+}
+.headline{
+	font-size	: 2.8rem;
+	font-weight	: 300;
+	color		: @primary_color;
+	font-family	: @primary_font;
+}
+.no-padding-left{
+	padding-left: 0 !important;
+}
+@media (@screen-md-min){
+	.desktop-no-padding-left{
+		padding-left: 0 !important;
+	}
 }
