@@ -2,7 +2,7 @@
 @primary_color			: #0074bf; /* blue */ 
 @secondary_color		: #7e94a2; /* blue gray (footer) */
 @accent_color 			: #ff6008; /* orange */
-@font_color				: #4a4a4a; /* dark gray */
+@font_color				: #757575; /* dark gray */
 @border_color			: #bfbfbf; /* light gray */
 /* FONTS */
 @primary_font	: 'Roboto Slab', serif;
@@ -35,6 +35,7 @@ body{
 	background-position	: 0 0;
 	background-size		: cover;
 	background-repeat	: no-repeat;
+	color: #757575;
 
 	 @media (@screen-md-min){
 	 	overflow: visible;
@@ -45,18 +46,37 @@ img{
 	max-width: 100%;
 }
 @media (min-width: 768px){
-	.container {
+	.container,.parsys-column {
 		width: 100%;
 	}
 }
 @media (min-width: 992px){
-	.container {
+	.container,.parsys-column {
 		max-width: 970px;
 	}
 }
 @media (min-width: 1200px){
-	.container {
+	.container,.parsys-column {
 		max-width: 1170px;
+	}
+}
+/* 
+MODULES WILL BE IN CLASS cq-colctrl-*
+*/
+.bg-primary-blue{
+	background: @primary_color !important;
+	color: #fff;
+	
+	p{
+		color: #fff;
+	}
+}
+.bg-secondary-blue{
+	background: #00558e !important;
+	color: #fff;
+	
+	p{
+		color: #fff;
 	}
 }
 .ff-roboto{
@@ -64,6 +84,9 @@ img{
 }
 .ff-robotoSlab{
 	font-family: @primary_font;
+}
+.fs-16{
+	font-size: 1.6rem;
 }
 p{
 	color: @font_color;
@@ -184,7 +207,8 @@ input[type=radio]{
 	background-color: #002c6e;
 }
 .dropdown-container{
-	position: relative;
+	position	: relative;
+	color		: @font_color;
 
 	.expanded-dropdown{
 		position	: absolute;
@@ -252,14 +276,19 @@ input[type=radio]{
     	padding-right: 15px;
 	}
 }
+.flex-container{
+	display: flex !important;
+}
 .all-caps{
 	text-transform: uppercase;
 }
 .headline{
-	font-size	: 2.8rem;
-	font-weight	: 300;
-	color		: @primary_color;
-	font-family	: @primary_font;
+	font-size		: 2.8rem;
+	font-weight		: 300;
+	color			: @primary_color;
+	font-family		: @primary_font;
+	display			: block;
+	margin-bottom	: 2rem;
 }
 .no-padding-left{
 	padding-left: 0 !important;

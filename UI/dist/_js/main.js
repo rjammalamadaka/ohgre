@@ -20,6 +20,11 @@ var ohio_ng = {
 			var obj = $(this);
 			obj.toggleClass('accord-expanded');
 		});
+		$('#mobile-menu').on('click',function(event){
+			event.preventDefault();
+			$(this).toggleClass('menu-open');
+			$('#primary-navigation').toggleClass('expaned-menu');
+		});
 	}
 }
 $(document).ready(function(){
