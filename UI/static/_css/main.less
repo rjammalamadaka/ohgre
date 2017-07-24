@@ -271,7 +271,21 @@ footer{
 /* ====================
 	COMPONENT STYLES 
 ====================== */
+@media (@screen-md-min){
+	.parsys-column.cq-colctrl-lt0{
+		display: flex;
+	}
+}
+.parsys-column.cq-colctrl-lt0{
+	section{
+		margin-bottom: 0;
+		height: 100%;
+	}
+	.promocode,.container,.full-banner{
+		height: 100%;
+	}
 
+}
 /* SLIDERS */
 .cycle-slideshow{
 	overflow		: visible !important;
@@ -318,6 +332,17 @@ footer{
 	}
 	.slide-content{
 		min-height	: 29rem;
+		height: 100%;
+	}
+	@media (@screen-md-min){
+		.slide{
+			height: 100%;
+			overflow: hidden;
+
+			.inner-slide-content{
+				height: 100%;
+			}
+		}
 	}
 }
 .slide{
@@ -438,18 +463,21 @@ footer{
 		width: 100%;
 	}
 	@media (@screen-md-min){
-		input{
-			width			: 35%;
-			margin-right	: 2rem;
-			margin-bottom	: 0;
-			display			: inline-block;
+		input,.dropdown-container{
+			width: 100%;
+			max-width: 30rem;
+			margin-right: 2rem;
+			margin-bottom: 1rem;
+			display: inline-block;
 		}
+
 		button{
 			display	: inline-block;
 			width	: auto;
 		}
 		p{
-			width	: 60%;
+			width		: 100%;
+			max-width	: 55rem;
 		}
 	}
 }
@@ -586,20 +614,35 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+@media (@screen-md-min){
+	.cq-colctrl-lt1 {
+	    display: flex;
 
+	    .parsys_column {
+		    display: flex;
+		    flex-direction: column;
+		}
+	}
+}
+.cardpromo.parbase{
+	height: 100%;
+}
 .card{
-	display: flex;
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 	background: #fff;
 	position: relative;
 	height: 100%;
-	overflow: hidden;
-	border: 1px solid #bfbfbf;
-
+	display: flex !important;
+	  
+	@media (@screen-md-min){
+		margin-bottom: 0;
+		border: 1px solid #bfbfbf;
+    	flex-direction: column;
+	}
 	.card-hero{
 		display: block;
 		width: 33%;
-		min-height: 10rem;
+		height: auto;
 
 		img{
 			width	: 100%;
@@ -804,6 +847,15 @@ div[class^="cq-colctrl-lt1-"]{
 		    	width	: 100%;
     			height	: auto;
 		    }
+		}
+		&.flush{
+			.slide-image{
+				height: 100%;
+
+				img{
+					min-height: 100%;
+				}
+			}
 		}
 		.inner-slide-content {
 			width	: 60%;
@@ -1125,9 +1177,27 @@ div[class^="cq-colctrl-lt1-"]{
 	input[type=radio]{
 		&:before {
 		    background-image: url(../_img/global/radio-button-off-wht.svg);
+		    background-repeat	: no-repeat;
+			background-size		: cover;
+			height				: 100%;
+			width				: 100%;
+			display				: inline-block;
+			position			: absolute;
+			top					: 0;
+			left				: 0;
+			z-index				: 1;
 		}
 		&:checked{
 			background-image: url(../_img/global/radio-button-on.svg);
+			background-repeat	: no-repeat;
+			background-size		: cover;
+			height				: 100%;
+			width				: 100%;
+			display				: inline-block;
+			position			: absolute;
+			top					: 0;
+			left				: 0;
+			z-index				: 1;
 		}
 	}
 }
@@ -1191,6 +1261,7 @@ div[class^="cq-colctrl-lt1-"]{
 		width: auto;
 		border: 1px solid @border_color;
 		margin-bottom: 0;
+		height: 100%;
 	}
 
 	button{
@@ -1231,25 +1302,25 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 	@media (@screen-md-min){
 		display: flex;
-		
+		height: 100%;
+
 		> div{
-			flex: 1;
 			float: none !important;
 			padding: 0 1.5rem 0 0;
-
+			display: flex;
+    		flex-direction: column;
+			
+			div {
+			    align-items: stretch;
+			}
 			&:first-child{
 				.box-with-border{
-					height: ~"calc( 100% - 20rem)";
-					display: table;
 
 					.box-inner{
 						display: table-cell;
 	    				vertical-align: middle;
 					}
 				}
-			}
-			&:nth-child(2){
-				padding-left: 1.5rem;
 			}
 		}
 	}
