@@ -2,12 +2,21 @@
 @import url(_globals.less);
 /* HOME PAGE TEMPLATE STYLES */
 #primary-header{
-	position	: fixed;
-	width		: 100%;
-	background-color: #fff;
-	top: 0;
-	z-index: 999999;
+	position	: relative;
+	width: 100%;
 	
+	&.sticky{
+		position: fixed;
+		top: 0;
+		z-index: 99999;
+		background-color: #fff;
+
+		@media (@screen-md-min){
+			position: relative;
+			top: 0;
+			background: none;
+		}
+	}
 	#contact-us-container{
 		font-family		: @secondary_font;
 		text-transform	: uppercase;
@@ -119,8 +128,6 @@
 		}
 	}
 	@media (@screen-md-min){
-		background	: none;
-		position	: relative;
 		padding		: 2rem 0 0 0;
 
 		#primary-navigation{
