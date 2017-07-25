@@ -30,3 +30,14 @@ var ohio_ng = {
 $(document).ready(function(){
 	ohio_ng.init();
 });
+$(window).scroll(function(){
+	var sTop = $(window).scrollTop();
+	var menu_bar = $('#primary-header');
+
+		if(sTop >= 20){
+			menu_bar.addClass('sticky');
+		}else{
+			menu_bar.removeClass('sticky');
+		}
+	
+});

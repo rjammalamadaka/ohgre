@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OH-GRE.iml" filepath="$PROJECT_DIR$/.idea/OH-GRE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bundle/ohgre-bundle.iml" filepath="$PROJECT_DIR$/bundle/ohgre-bundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/content/ohgre-content.iml" filepath="$PROJECT_DIR$/content/ohgre-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ohgre-wsclientbundle/ohgre-wsclientbundle.iml" filepath="$PROJECT_DIR$/ohgre-wsclientbundle/ohgre-wsclientbundle.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ohgre-bundle" />
+        <module name="ohgre-content" />
+        <module name="ohgre-wsclientbundle" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="OH-GRE" target="1.5" />
+      <module name="ohgre-bundle" target="1.5" />
+      <module name="ohgre-content" target="1.5" />
+      <module name="ohgre-wsclientbundle" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
