@@ -2,21 +2,21 @@
 @import url(_globals.less);
 /* HOME PAGE TEMPLATE STYLES */
 #primary-header{
-	position	: relative;
-	width: 100%;
-	
-	&.sticky{
-		position: fixed;
-		top: 0;
-		z-index: 99999;
-		background-color: #fff;
+	position			: fixed;
+	width				: 100%;
+	background-color	: #fff;
+	z-index				: 99999;
+	top					: 0;
 
-		@media (@screen-md-min){
-			position: relative;
-			top: 0;
-			background: none;
-		}
+	+ div, + section {
+	    margin-top: 10rem;
+
+	    @media (@screen-md-min){
+	    	margin-top: 0;
+	    }
 	}
+
+	
 	#contact-us-container{
 		font-family		: @secondary_font;
 		text-transform	: uppercase;
@@ -27,21 +27,32 @@
 			text-decoration	: none;
 		}
 	}
+	.contact-us-container{
+		background-color	: #e9eef2;
+		position			: relative;
+		text-align			: right;
+		padding				: 1rem;
+
+		a{
+			color		: @font_color;
+			font-size	: 1.1rem;
+		}
+	}
 	#primary-logo{
-		display	: block;
-		width: 20%;
-		height: 6rem;
-    	padding: 1rem 0;
-		float: left;
-		margin-left: 1.5rem;
+		display		: block;
+		width		: 20%;
+		height		: 6rem;
+    	padding		: 1rem 0;
+		float		: left;
+		margin-left	: 1.5rem;
 
 		img{
-			max-height: 100%;
+			max-height	: 100%;
 		}
 	}
 	#mobile-menu{
 		position	: absolute;
-		top			: 1rem;
+		top			: 5rem;
 		right		: 2rem;
 		width		: 5rem;
 		display		: block;
@@ -97,7 +108,7 @@
 	    display		: none;
 	    padding		: 1rem 0;
 	    width		: 100%;
-	    position	: fixed;
+	    position	: absolute;
 	    top			: 6rem;
 	    right		: 0;
 	    z-index 	: 999999;
@@ -129,6 +140,9 @@
 	}
 	@media (@screen-md-min){
 		padding		: 2rem 0 0 0;
+		position	: relative;
+		top			: 0;
+		background	: none;
 
 		#primary-navigation{
 			display		: block;
@@ -467,17 +481,27 @@ div[class^="col-"]{
 	@media (@screen-md-min){
 		.slide{
 			height: 100%;
-			overflow: hidden;
 
 			.inner-slide-content{
 				height: 100%;
 			}
+			.slide-image{
+				img{
+					height: 97%;
+					min-width: 100%;
+				}
+			}
+			.primary-button{
+		    	position: absolute;
+		    	bottom: -1rem;
+		    }
 		}
 	}
 }
 .slide{
 	width		: 100%;
 	position	: relative;
+	overflow	: hidden;
 }
 .slide-content{
 	background-color: #003a8f;
@@ -652,6 +676,16 @@ div[class^="col-"]{
 .cards-wrapper{
 	display: flex;
 	flex-wrap: wrap;
+
+	div[class^="col-"]{
+		padding-left: 0;
+		padding-right: 0;
+
+		@media (@screen-md-min){
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+	}
 }
 div[class^="cq-colctrl-lt1-"]{
 	.card{
@@ -771,7 +805,7 @@ div[class^="cq-colctrl-lt1-"]{
 @media (@screen-md-min){
 	.cq-colctrl-lt1 {
 	    display: flex;
-	    margin-bottom: 2rem !important;
+	    margin-bottom: 3rem !important;
 
 	    .parsys_column {
 		    display: flex;
@@ -780,11 +814,22 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
-.cardpromo.parbase{
-	height: 100%;
+.cardpromo,.cardpromo-plans{
+	&.parbase{
+		height: 100%;
 
-	@media (@screen-md-min){
-		padding: 0 1.5rem;
+		@media (@screen-md-min){
+			padding: 0 1.5rem;
+
+			&:first-child{
+				padding: 0 1.5rem 0 0;
+			}
+		}
+	}
+}
+.parsys_column.cq-colctrl-lt1-c0{
+	.cardpromo.parbase{
+		padding-left: 0;
 	}
 }
 .card{
@@ -792,12 +837,14 @@ div[class^="cq-colctrl-lt1-"]{
 	background: #fff;
 	position: relative;
 	height: 100%;
-	display: flex !important;
-	  
+	display: flex;
+
 	@media (@screen-md-min){
+		display: flex !important;
 		margin-bottom: 0;
 		border: 1px solid #bfbfbf;
     	flex-direction: column;
+    	overflow: hidden;
 	}
 	.card-hero{
 		display: block;
@@ -986,6 +1033,7 @@ div[class^="cq-colctrl-lt1-"]{
 			width		: 100%;
 		    position	: relative;
 		    display		: flex;
+		    overflow	: hidden;
 		}
 		.slide-content{
 			top					: 0;
@@ -1005,6 +1053,7 @@ div[class^="cq-colctrl-lt1-"]{
 
 		    img{
 		    	width	: 100%;
+		    	min-height: 100%;
     			height	: auto;
 		    }
 		}
@@ -1231,6 +1280,9 @@ div[class^="cq-colctrl-lt1-"]{
 					display: block;
 				}
 			}
+			.mobile-content{
+				display: block;
+			}
 		}
 		.accord-container{
 			&.mobile-content{
@@ -1276,7 +1328,7 @@ div[class^="cq-colctrl-lt1-"]{
 					font-size: 2.8rem;
 				}
 				p,a{
-					display: block;
+					display: block !important;
 				}
 				a{
 					color: @primary_color;
@@ -1375,7 +1427,7 @@ div[class^="cq-colctrl-lt1-"]{
 			width				: 100%;
 			display				: inline-block;
 			position			: absolute;
-			top					: 0;
+			top					: .4rem;
 			left				: 0;
 			z-index				: 1;
 		}
@@ -1499,7 +1551,7 @@ div[class^="cq-colctrl-lt1-"]{
 	@media (@screen-md-min){
 		display: flex;
 		height: 100%;
-
+		
 		> div{
 			float: none !important;
 			padding: 0 1.5rem 0 0;
@@ -1517,6 +1569,13 @@ div[class^="cq-colctrl-lt1-"]{
 	    				vertical-align: middle;
 					}
 				}
+			}
+		}
+		&.flex-wrap{
+			flex-wrap: wrap;
+
+			> div{
+				margin-bottom: 2rem;
 			}
 		}
 	}
