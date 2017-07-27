@@ -99,9 +99,16 @@ small{
 }
 section{
 	margin-bottom	: 1rem;
-
+		
+	&:last-child{
+		margin-bottom: 0;
+	}
 	 @media (@screen-md-min){
 	 	margin-bottom	: 3rem;
+
+	 	&:last-child{
+			margin-bottom: 3rem;
+		}
 	 }
 }
 input{
@@ -111,6 +118,17 @@ input{
 	color		: @font_color;
 	font-size	: 1.4rem;
 	width		: 100%;
+}
+.foot-notes{
+	font-size			: 1rem;
+	padding				: 2rem;
+	background-color	: #fff;
+	line-height			: 2rem;
+
+	p{
+		font-size: 1rem;
+		line-height: 2rem;
+	}
 }
 .form-section{
 	margin	: 0;
@@ -291,6 +309,9 @@ input[type=radio]{
 	font-family		: @primary_font;
 	display			: block;
 	margin-bottom	: 2rem;
+}
+.no-margin{
+	margin: 0;
 }
 .no-padding-left{
 	padding-left: 0 !important;
