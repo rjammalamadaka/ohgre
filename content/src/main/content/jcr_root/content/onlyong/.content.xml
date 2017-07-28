@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:designPath="/etc/designs/ohgre"
+        cq:lastModified="{Date}2017-07-26T09:29:31.571+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/homepage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Ohio Natural Gas"
+        sling:resourceType="/apps/ohgre/components/structure/page"
+        companyinfolinks="[/content/onlyong,/content/onlyong]"
+        days="Monday - Friday"
+        footernavigationlinks="[/content/onlyong,/content/onlyong]"
+        mobilenumber="1.888.211.8312"
+        portalname="oh"
+        time="8AM - 5PM EST">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herocarousel
+                jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-20T08:32:09.578+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herocarousel"
+                iItems="[{&quot;title&quot;:&quot;Sign up today &amp; get 2\,500 Delta Skymiles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;&quot;},{&quot;title&quot;:&quot;slide2&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;&quot;}]"/>
+            <promocode
+                jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-25T12:19:12.470-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promocode"
+                backGroundColor="rgba(0,116,191,1.00)"
+                description="Did you receive a flyer in the mail from use? Please enter the promo code from the flyer below to view your special offer rates."
+                heading="I received an offer in the mail"/>
+            <colctrl
+                jcr:created="{Date}2017-07-25T13:10:48.147-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-25T13:10:57.823-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                layout="2;cq-colctrl-lt0"/>
+            <cardpromo
+                jcr:created="{Date}2017-07-25T13:47:22.475-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-26T09:27:09.868+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttontitle="Refer"
+                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."
+                displaybackground="true"
+                displayButton="true"
+                heading="Refer a Friend"
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"/>
+            <col_break15010026578280
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_166786028
+                jcr:created="{Date}2017-07-25T13:11:09.000-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-26T09:27:24.191+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttontitle="sign up"
+                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."
+                displaybackground="true"
+                displayButton="true"
+                heading="Moving? Lorem ipsum dolor sit amet"
+                imagepath="/content/dam/ohgre/home/card_moving.jpg"/>
+            <col_end15010026481490
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="end"/>
+            <colctrl_545067701
+                jcr:created="{Date}2017-07-25T13:13:15.145-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-25T13:13:22.618-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                layout="3;cq-colctrl-lt1"/>
+            <cardpromo_1519299391
+                jcr:created="{Date}2017-07-25T13:13:27.257-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-26T09:27:39.943+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttontitle="Learn More"
+                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."
+                displayLink="true"
+                heading="Moving? Lorem ipsum dolor sit amet"
+                imagepath="/content/dam/ohgre/home/card_moving.jpg"/>
+            <col_break15010028026200
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_578718825
+                jcr:created="{Date}2017-07-25T13:13:29.748-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-25T13:23:05.590-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttontitle="learn more"
+                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."
+                displayLink="true"
+                heading="Refer a Friend"
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"/>
+            <col_break15010028026211
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_plans
+                jcr:created="{Date}2017-07-25T13:13:33.058-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-25T13:20:22.837-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo-plans"
+                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."/>
+            <col_end15010027951470
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="end"/>
+            <signup
+                jcr:created="{Date}2017-07-25T14:49:20.067-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-25T14:51:15.552-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup"
+                description="Sign up to receive new promocodes from us"/>
+            <herocard
+                jcr:created="{Date}2017-07-26T09:28:47.652+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-26T09:29:31.563+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herocard"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Title-or-Headline"/>
+        </content>
+    </jcr:content>
+    <rate-plans/>
+    <plans-detail/>
+    <promolandingpage/>
+    <promolandingpagewithplans/>
+    <refer-a-friend/>
+    <moving/>
+    <what-is-choice/>
+    <why-choose-us/>
+    <how-it-works/>
+    <contact-us/>
+    <terms-of-use/>
+    <privacy-policy/>
+    <ong-faq-page/>
+    <promo_landing/>
+    <raf-promotion/>
+    <promo-landing-apples/>
+</jcr:root>

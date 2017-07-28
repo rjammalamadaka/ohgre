@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="dd9f5f2e-57c4-489e-833d-b96de0bf85b0">
+    <jcr:content
+        cq:name="delta-image.jpg"
+        cq:parentPath="/content/dam/ohgre/home"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/home/delta-image.jpg"
+        jcr:lastModified="{Date}2017-07-28T12:19:19.323-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2017-07-28T12:19:18.029-04:00"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="0f68a937ba197bf9561719b80ec8b1b23c45ef1a"
+            dam:size="{Long}513082"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2017-07-21T12:05:36.995-05:00"
+            exif:ColorSpace="{Long}1"
+            exif:PixelXDimension="{Long}1383"
+            exif:PixelYDimension="{Long}549"
+            jcr:lastModified="{Date}2017-07-26T07:49:52.193+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}549"
+            tiff:ImageWidth="{Long}1383"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

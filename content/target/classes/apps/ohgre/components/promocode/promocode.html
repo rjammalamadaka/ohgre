@@ -1,20 +1,24 @@
-<div  ng-controller="PromoCodeController">
-
+<!--<div  ng-controller="PromoCodeController">
 <form method="get">
-
 <div id="red-circle">
-
 Enter your promo code: <input type="text" size="12" ng-model="promotionCode" name="pc" value="Enter Code">
 <input type="submit" name="Submit" value="Go" ng-click="promoCodeSubmit()">
 </div>
-
 </form>
-
-
 <div ng-repeat="product in products" >
 {{product.QuoteDescription}}   :  {{product.ProductDescription}}   : <a href="#" ng-click="signup(product)">Sign Up </a>
-
-
 </div>
+    </div> -->
 
-    </div>
+<section ng-controller="PromoCodeController">
+	<div class="container">
+		<div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
+			<h2>${properties.heading}</h2>
+			<p>${properties.description}</p>
+			<form>
+				<input type="text" name="promo-code" value="" placeholder="Enter Promo Code">
+				<button class="primary-button" ng-click="promoCodeSubmit()">Submit</button>
+			</form>
+		</div>
+	</div>
+</section>

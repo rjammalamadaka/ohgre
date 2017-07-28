@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-28T07:50:40.240+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/homepage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Rate Plans"
+        sling:resourceType="/apps/ohgre/components/structure/page">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herocarousel
+                jcr:created="{Date}2017-07-19T17:11:38.198+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-19T17:11:38.198+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herocarousel"/>
+            <herobaner
+                jcr:created="{Date}2017-07-19T17:12:37.470+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-21T11:51:02.913+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herobaner"
+                description="Our rates and plans are designed to serve your needs."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="View Ohio Natural Gas Rate Plans"/>
+            <plansdisplay_266813004
+                jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-23T09:27:39.746+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/plansdisplay"
+                text="&lt;p>Choosing&amp;nbsp;the price plan that&amp;#39;s best for you doesn&amp;#39;t have to be difficult. Ohio Natural Gas℠ (ONG) offers competitive fixed rate, variable rate and Guaranteed Bill℠ plans -all backed by straight forward&amp;nbsp;TERMS AND CONDITIONS&amp;nbsp;and designed to meet customers&amp;#39; individual needs.&lt;br>&#xa;&lt;/p>&#xa;"
+                textIsRich="true"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-07-28T07:50:40.237+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

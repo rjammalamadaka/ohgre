@@ -1,5 +1,8 @@
 #base=js
+jquery-2.2.4.min.js
+jquery.cycle2.min.js
 angular.min.js
+main.js
+ohgrestore.js
 app.js
 init.js
-ohgrestore.js
