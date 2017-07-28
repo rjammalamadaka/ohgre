@@ -74,18 +74,18 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 */
 .bg-primary-blue{
 	background: @primary_color !important;
-	color: #fff;
+	color: #fff !important;
 	
-	p{
-		color: #fff;
+	p,h1,h2,h3,h4,h5,h6{
+		color: #fff !important;
 	}
 }
 .bg-secondary-blue{
 	background: #00558e !important;
 	color: #fff;
 	
-	p{
-		color: #fff;
+	p,h1,h2,h3,h4,h5,h6{
+		color: #fff !important;
 	}
 }
 .ff-roboto{
@@ -323,6 +323,31 @@ input[type=radio]{
 }
 .no-padding-left{
 	padding-left: 0 !important;
+}
+div[class^="col-"]{
+	padding-left: 0;
+	padding-right: 0;
+
+	@media (@screen-md-min){
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+}
+.error{
+	display: none;
+	
+	&.show-error{
+		display: block;
+	}
+	.promo-headline{
+		width: 100%;
+	}
+}
+.with-error{
+	color: #d0011b !important;
+}
+.center{
+	text-align: center;
 }
 @media (@screen-md-min){
 	.desktop-no-padding-left{
