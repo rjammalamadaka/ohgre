@@ -1,201 +1,228 @@
-<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://primesw.com/webservices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://tempuri.org/QuoteService.xsd" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://primesw.com/webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://primesw.com/webservices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://tempuri.org/QuoteService.xsd" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://primesw.com/webservices">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://primesw.com/webservices">
-      <s:import namespace="http://tempuri.org/QuoteService.xsd" />
+      <s:import namespace="http://tempuri.org/QuoteService.xsd"/>
       <s:element name="GetNESBillDetailData">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:NESBillDetailRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:NESBillDetailRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetNESBillDetailDataResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetNESBillDetailDataResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetNESBillDetailDataResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AddPreenrollment">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:PreenrollmentRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:PreenrollmentRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AddPreenrollmentResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:AddPreenrollmentResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:AddPreenrollmentResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SearchCustomers">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:SearchCustomersRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:SearchCustomersRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SearchCustomersResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:SearchCustomersResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:SearchCustomersResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetQuotes">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:QuoteRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:QuoteRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetQuotesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetQuotesResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetQuotesResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="EnrollCustomer">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:EnrollRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:EnrollRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="EnrollCustomerResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:EnrollCustomerResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:EnrollCustomerResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetListOfValues">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetListOfValuesRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetListOfValuesRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetListOfValuesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetListOfValuesResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetListOfValuesResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetCustomerInfo">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetCustomerInfoRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetCustomerInfoRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetCustomerInfoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetCustomerInfoResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetCustomerInfoResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLDCInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetLDCInfoRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLDCInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetLDCInfoResult"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromoCodeInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetPromoCodeInfoRequest"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromoCodeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetPromoCodeInfoResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckUserSecurity">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckUserSecurityRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckUserSecurityRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckUserSecurityResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckUserSecurityResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckUserSecurityResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetPromoCodesForEnrollment">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetPromoCodesForEnrollmentRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetPromoCodesForEnrollmentRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetPromoCodesForEnrollmentResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetPromoCodesForEnrollmentResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:GetPromoCodesForEnrollmentResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckRAFEligibility">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckRAFEligibilityRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckRAFEligibilityRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckRAFEligibilityResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckRAFEligibilityResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:CheckRAFEligibilityResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SendRealTimeEmail">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:SendRealTimeEmailRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:SendRealTimeEmailRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SendRealTimeEmailResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:SendRealTimeEmailResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:SendRealTimeEmailResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="UpdateCustomerInfo">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:UpdateCustomerInfoRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:UpdateCustomerInfoRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="UpdateCustomerInfoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:UpdateCustomerInfoResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:UpdateCustomerInfoResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AuthenticateCustomer">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:AuthenticateCustomerRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:AuthenticateCustomerRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AuthenticateCustomerResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:AuthenticateCustomerResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:AuthenticateCustomerResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="TPVDispositionNotification">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:TPVDispositionNotificationRequest" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:TPVDispositionNotificationRequest"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="TPVDispositionNotificationResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" ref="s1:TPVDispositionNotificationResult" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:TPVDispositionNotificationResult"/>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -204,59 +231,59 @@
       <s:element name="NESBillDetailRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CustId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustId" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetNESBillDetailDataResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="Customer">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode4" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode4" type="s:string"/>
                 </s:sequence>
               </s:complexType>
             </s:element>
             <s:element minOccurs="0" maxOccurs="unbounded" name="ProductCategory">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="ProductCategoryCode" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ProductCategoryCode" type="s:string"/>
                   <s:element minOccurs="0" maxOccurs="1" name="Total">
                     <s:complexType>
                       <s:sequence>
-                        <s:element minOccurs="0" maxOccurs="1" name="PaymentTotal" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ChargeTotal" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="AdjustmentTotal" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="LandlordCustId" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="PaymentTotal" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ChargeTotal" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="AdjustmentTotal" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="LandlordCustId" type="s:string"/>
                       </s:sequence>
                     </s:complexType>
                   </s:element>
                   <s:element minOccurs="0" maxOccurs="unbounded" name="Transaction">
                     <s:complexType>
                       <s:sequence>
-                        <s:element minOccurs="0" maxOccurs="1" name="TransactionTypeCode" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="SentToUtilityDate" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ConfirmedByUtilityDate" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="TransactionStatusCode" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="TransactionStatusDescription" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="RejectReasonDescription" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="FACSTransactionId" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="FACSPONumber" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="FACSTransactionDescription" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="BillDueDate" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="TransactionTypeCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="TransactionAmount" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="SentToUtilityDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ConfirmedByUtilityDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="TransactionStatusCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="TransactionStatusDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="RejectReasonDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="FACSTransactionId" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="FACSPONumber" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="FACSTransactionDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="BillDueDate" type="s:string"/>
                       </s:sequence>
                     </s:complexType>
                   </s:element>
@@ -269,71 +296,71 @@
       <s:element name="PreenrollmentRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="channel_id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pre_enroll_prvdr_sold_date" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="vend_trans_id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="enroll_user_id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ldc_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="auth_acct_id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="auth_last_4_ssn" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="auth_area_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="auth_phone_nbr" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="expctd_move_in_date" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="estimated_first_flow_date" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="rate_class" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="first_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="last_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="bus_name" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_addr_1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_addr_2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_city" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_st_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_zip_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_zip_cd_4" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_addr_1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_addr_2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_st_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_city" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_zip_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_zip_cd_4" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="alt_area_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="alt_phone_nbr" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="e_mail_addr" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="language_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ignite_ldc_premise_id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="enrolled_product_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ctrct_price" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="fix_price_per_therm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="var_price_basis_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="var_price_add_on_per_therm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="combo_fix_price_pct" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="var_cap_limit" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mnthly_cap_cost_chrg" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="var_cap_cost_per_therm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mnthly_cust_chrg" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="disc_chrg_per_bill" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="combo_product_alloc_type_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="srvc_addr_validation_ind" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mail_addr_validation_ind" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="credit_validation_ind" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="promo_cd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="note_text" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="add_with_error_ind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="channel_id" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="pre_enroll_prvdr_sold_date" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="vend_trans_id" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="enroll_user_id" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ldc_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="auth_acct_id" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="auth_last_4_ssn" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="auth_area_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="auth_phone_nbr" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="expctd_move_in_date" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="estimated_first_flow_date" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="rate_class" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="first_name" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="last_name" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="bus_name" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_addr_1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_addr_2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_city" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_st_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_zip_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_zip_cd_4" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_addr_1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_addr_2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_st_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_city" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_zip_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_zip_cd_4" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="alt_area_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="alt_phone_nbr" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="e_mail_addr" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="language_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ignite_ldc_premise_id" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="enrolled_product_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ctrct_price" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="fix_price_per_therm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="var_price_basis_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="var_price_add_on_per_therm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="combo_fix_price_pct" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="var_cap_limit" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mnthly_cap_cost_chrg" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="var_cap_cost_per_therm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mnthly_cust_chrg" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="disc_chrg_per_bill" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="combo_product_alloc_type_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="srvc_addr_validation_ind" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="mail_addr_validation_ind" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="credit_validation_ind" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="promo_cd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="note_text" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="add_with_error_ind" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AddPreenrollmentResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pre_enroll_id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pre_enroll_stat_cd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="pre_enroll_id" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="pre_enroll_stat_cd" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="pre_enroll_edit_errors">
               <s:complexType>
                 <s:simpleContent>
                   <s:extension base="s:string">
-                    <s:attribute name="pre_enroll_edit_error_msg" type="s:string" />
+                    <s:attribute name="pre_enroll_edit_error_msg" type="s:string"/>
                   </s:extension>
                 </s:simpleContent>
               </s:complexType>
@@ -344,34 +371,34 @@
       <s:element name="SearchCustomersRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SSN" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DataSourceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SSN" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DataSourceCode" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SearchCustomersResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustomerNodeCnt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ComtiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerNodeCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ComtiKey" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="Customer">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string"/>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -381,135 +408,136 @@
       <s:element name="QuoteRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SSN" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PrimaryProduct" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceState" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MeterReadDayCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MuniTaxAuthCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PremiseId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EstimatedMoveInDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EnrolledByUserId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationLevel" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CreditCheckRequestedInd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SSN" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PrimaryProduct" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceState" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterReadDayCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MuniTaxAuthCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PremiseId" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EstimatedMoveInDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrolledByUserId" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationLevel" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CreditCheckRequestedInd" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetQuotesResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustomerNodeCnt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ComtiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerNodeCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ComtiKey" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="Customer">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="CustomerSelectInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ExistingCustomerInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ActiveContractInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="LDCDesc" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="CreditCheckRequiredInd" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="CreditCheckStatCd" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="CustomerSelectInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ExistingCustomerInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ActiveContractInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCDesc" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ExpressConsentInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="CreditCheckRequiredInd" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="CreditCheckStatCd" type="s:string"/>
                   <s:element minOccurs="0" maxOccurs="unbounded" name="Message">
                     <s:complexType>
                       <s:simpleContent>
                         <s:extension base="s:string">
-                          <s:attribute name="MsgLevel" type="s:string" />
+                          <s:attribute name="MsgLevel" type="s:string"/>
                         </s:extension>
                       </s:simpleContent>
                     </s:complexType>
                   </s:element>
-                  <s:element minOccurs="0" maxOccurs="1" name="ProductNodeCnt" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ProductNodeCnt" type="s:string"/>
                   <s:element minOccurs="0" maxOccurs="unbounded" name="Product">
                     <s:complexType>
                       <s:sequence>
-                        <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="QuoteDescription" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="EstimatedFirstFlowDate" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="CanQuoteInd" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ContractPrice" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="FixedPricePerThermCd" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="FixedPricePerTherm" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisCd" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisAmt" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceAddOnPerTherm" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceTotal" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ComboFixedPricePct" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="VarCapLimit" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="MonthlyCapCostChrg" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="VarCapCostPerTherm" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="MonthlyCustChrg" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="DiscChrgPerBill" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="SFBWinterCnt" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="SFBWinterAmt" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="SFBSummerCnt" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="SFBSummerAmt" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ComboProductAllocTypeCd" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="CtrctDurationMonths" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="CtrctTermDate" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="PriceChangeFrequency" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="PPCEarlyTermChargeAmt" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="EarlyTermChargeAmt" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="QuoteDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="EstimatedFirstFlowDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="CanQuoteInd" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ContractPrice" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="FixedPricePerThermCd" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="FixedPricePerTherm" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisCd" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisAmt" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceAddOnPerTherm" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="VarPriceTotal" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ComboFixedPricePct" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="VarCapLimit" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="MonthlyCapCostChrg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="VarCapCostPerTherm" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="MonthlyCustChrg" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="DiscChrgPerBill" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="SFBWinterCnt" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="SFBWinterAmt" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="SFBSummerCnt" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="SFBSummerAmt" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ComboProductAllocTypeCd" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="CtrctDurationMonths" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="CtrctTermDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PriceChangeFrequency" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PPCEarlyTermChargeAmt" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="EarlyTermChargeAmt" type="s:string"/>
                         <s:element minOccurs="0" maxOccurs="unbounded" name="Message">
                           <s:complexType>
                             <s:simpleContent>
                               <s:extension base="s:string">
-                                <s:attribute name="MsgLevel" type="s:string" />
+                                <s:attribute name="MsgLevel" type="s:string"/>
                               </s:extension>
                             </s:simpleContent>
                           </s:complexType>
@@ -526,89 +554,89 @@
       <s:element name="EnrollRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddressVerified" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddressVerified" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PromoCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RAFCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EnrolledByUserId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationLevel" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustLeadSourceCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EnrollConfirmationNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ActionIfContractExists" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PreventCancelFeeifContractExists" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BypassCreditCheckInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BypassCIRInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ExpectedQuoteAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="TPVRequiredInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailTypeCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AlternateEmailAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EditOnlyInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DelaySendToUtilDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalFixPricePerThermCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalFixPricePerTherm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceAddOnPerTherm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalCtrctDurationMonths" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalCtrctTermDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SourceSystemReferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddressVerified" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddressVerified" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RAFCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrolledByUserId" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationLevel" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustLeadSourceCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrollConfirmationNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ActionIfContractExists" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PreventCancelFeeifContractExists" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BypassCreditCheckInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BypassCIRInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpectedQuoteAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TPVRequiredInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailTypeCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AlternateEmailAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EditOnlyInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpressConsentInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DelaySendToUtilDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalFixPricePerThermCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalFixPricePerTherm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceAddOnPerTherm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalCtrctDurationMonths" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalCtrctTermDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SourceSystemReferenceID" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="EnrollCustomerResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="TPVCaseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TPVCaseID" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="Message">
               <s:complexType>
                 <s:simpleContent>
                   <s:extension base="s:string">
-                    <s:attribute name="MsgLevel" type="s:string" />
+                    <s:attribute name="MsgLevel" type="s:string"/>
                   </s:extension>
                 </s:simpleContent>
               </s:complexType>
@@ -619,24 +647,24 @@
       <s:element name="GetListOfValuesRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CodeType" />
-            <s:element minOccurs="0" maxOccurs="1" name="TableID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TableID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetListOfValuesResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="CodeValuePair">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="DSMEligible" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="RAFEligible" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="DSMEligible" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="RAFEligible" type="s:string"/>
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -646,215 +674,291 @@
       <s:element name="GetCustomerInfoRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetCustomerInfoResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustomerSelectInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ExistingCustomerInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ActiveContractInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDCDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RateClassDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductDescFriendly" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductFinePrintText" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductPlanDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ProductCategory" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PromoCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PromoDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustLeadSourceCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustLeadSourceDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContractStartDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContractTermDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="UtilityActivationDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="UtilityDeactivationDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="UOM" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ContractPrice" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PricePerUnitCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PricePerUnit" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="VarPriceAddOnPerTherm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="VarPriceTotal" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ComboFixPricePct" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="VarCapLimit" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MonthlyCapCostCharge" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="VarCapCostPerTherm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MonthlyCustCharge" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DiscChargePerBill" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SFBWinterCnt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SFBWinterAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SFBSummerCnt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SFBSummerAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PricingDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LastRateChangeDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EarlyTermChargeAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FixVarProductCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractExistsInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductDescFriendly" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductFinePrintText" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductPlanDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductCategory" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractPrice" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalPricePerUnitCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalPricePerUnit" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceBasisCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceBasisAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceAddOnPerTherm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceTotal" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalComboFixPricePct" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarCapLimit" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalMonthlyCapCostCharge" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarCapCostPerTherm" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalMonthlyCustCharge" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalDiscChargePerBill" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBWinterCnt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBWinterAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBSummerCnt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBSummerAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalPricingDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalPromoCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalPromoDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalCustLeadSourceCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalCustLeadSourceDesc" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractStartDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractTermDate" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalFixVarProductCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RenewalBrokerID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="InvalidEmailAddrInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="InvalidEmailAddrValue" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SupplierBudgetPlanAmt" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DSMParticipantPlanInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="GiftCardNodeCnt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RateClass" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerSelectInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ExistingCustomerInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveContractInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDCDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpressConsentInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RateClassDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductDescFriendly" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductFinePrintText" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductPlanDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductType" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCategory" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PromoCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PromoDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustLeadSourceCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustLeadSourceDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BrokerID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ContractStartDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ContractTermDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="UtilityActivationDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="UtilityDeactivationDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="UOM" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ContractPrice" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PricePerUnitCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PricePerUnit" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="VarPriceBasisAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="VarPriceAddOnPerTherm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="VarPriceTotal" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ComboFixPricePct" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="VarCapLimit" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MonthlyCapCostCharge" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="VarCapCostPerTherm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MonthlyCustCharge" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DiscChargePerBill" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SFBWinterCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SFBWinterAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SFBSummerCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SFBSummerAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PricingDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LastRateChangeDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EarlyTermChargeAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="FixVarProductCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractExistsInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductDescFriendly" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductFinePrintText" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductPlanDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductType" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalProductCategory" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractPrice" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalPricePerUnitCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalPricePerUnit" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceBasisCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceBasisAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceAddOnPerTherm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarPriceTotal" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalComboFixPricePct" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarCapLimit" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalMonthlyCapCostCharge" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalVarCapCostPerTherm" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalMonthlyCustCharge" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalDiscChargePerBill" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBWinterCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBWinterAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBSummerCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalSFBSummerAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalPricingDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalPromoCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalPromoDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalCustLeadSourceCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalCustLeadSourceDesc" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractStartDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalContractTermDate" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalFixVarProductCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RenewalBrokerID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="InvalidEmailAddrInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="InvalidEmailAddrValue" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierBudgetPlanAmt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DSMParticipantPlanInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="GiftCardNodeCnt" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="GiftCard">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardSummaryDescription" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ContractStartDate" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardCreateDate" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardDescription" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardTypeCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardStatusCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardStatusDescription" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardAmount" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardWaitPeriodDays" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="SentToProviderDate" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ConfirmedByProviderDate" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="CancelDate" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="RAFCustId" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="RejectReasonCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="NoteText" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardSummaryDescription" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ContractStartDate" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="SoldDate" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardCreateDate" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardDescription" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardTypeCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardStatusCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardStatusDescription" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardAmount" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="GiftCardWaitPeriodDays" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="SentToProviderDate" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ConfirmedByProviderDate" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="CancelDate" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="RAFCustId" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="RejectReasonCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="NoteText" type="s:string"/>
                 </s:sequence>
               </s:complexType>
             </s:element>
-            <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedDate" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLDCInfoRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLDCInfoResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierCustomerServicePhone" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="LDC">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCDesc" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCEmergencyPhone" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCCustomerServicePhone" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromoCodeInfoRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="IncludeExpiredWithActiveBackUpInd" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromoCodeInfoResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDCNodeCnt" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="LDC">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="LDCDesc" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="PromoNodeCnt" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Promotion">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PromotionDesc" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PromotionExpired" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="PromotionExpiratonDate" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="BackupPromotionCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="DSMEligible" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="DSMAwardType" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="DSMAwardMiles" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="GiftCardEligible" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="GiftCardValue" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="RAFEligible" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="RAFAdvertising" type="s:string"/>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckUserSecurityRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="SecurityType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityType" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckUserSecurityResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DaysUntilPwdExpires" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DepartmentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DaysUntilPwdExpires" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DepartmentId" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetPromoCodesForEnrollmentRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EnrolledByUserId" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LDCCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrolledByUserId" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizationLevel" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="GetPromoCodesForEnrollmentResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="Promotion">
               <s:complexType>
                 <s:sequence>
-                  <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="PromotionDesc" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="DSMEligible" type="s:string" />
-                  <s:element minOccurs="0" maxOccurs="1" name="RAFEligible" type="s:string" />
+                  <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="PromotionDesc" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="DSMEligible" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="RAFEligible" type="s:string"/>
                   <s:element minOccurs="0" maxOccurs="unbounded" name="Product">
                     <s:complexType>
                       <s:sequence>
-                        <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
-                        <s:element minOccurs="0" maxOccurs="1" name="ProductCategoryDesc" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductCategoryDesc" type="s:string"/>
                       </s:sequence>
                     </s:complexType>
                   </s:element>
@@ -867,539 +971,595 @@
       <s:element name="CheckRAFEligibilityRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="RAFCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RAFCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="CheckRAFEligibilityResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RAFAwardEligible" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RAFAwardIneligibleReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RAFAwardEligible" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RAFAwardIneligibleReason" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SendRealTimeEmailRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailType" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="UpdateCustEmailAddressInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ListID" />
-            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CampaignName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RealmID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OverrideEmailAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="OverrideCustID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailType" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCustEmailAddressInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ListID"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RealmID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="OverrideEmailAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="OverrideCustID" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SendRealTimeEmailResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="UpdateCustomerInfoRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedInd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddress1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailAddress2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailCounty" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailStateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MailZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress1" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceAddress2" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCity" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCounty" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceStateCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipPlusFour" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNotCallInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNotMailInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefTransactionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefSSEPromotionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefAffiliatePromotionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPref3rdPartyCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedInd" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="UpdateCustomerInfoResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AuthenticateCustomerRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDC" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Premise" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceZipCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="AuthenticateCustomerResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="TPVDispositionNotificationRequest">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="TPVCaseID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ConfirmedIndicator" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="RejectionMessage" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="CallDurationSeconds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TPVCaseID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmedIndicator" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="RejectionMessage" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="CallDurationSeconds" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="TPVDispositionNotificationResult">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseMessage" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetNESBillDetailDataSoapIn">
-    <wsdl:part name="parameters" element="tns:GetNESBillDetailData" />
+    <wsdl:part name="parameters" element="tns:GetNESBillDetailData"/>
   </wsdl:message>
   <wsdl:message name="GetNESBillDetailDataSoapOut">
-    <wsdl:part name="parameters" element="tns:GetNESBillDetailDataResponse" />
+    <wsdl:part name="parameters" element="tns:GetNESBillDetailDataResponse"/>
   </wsdl:message>
   <wsdl:message name="AddPreenrollmentSoapIn">
-    <wsdl:part name="parameters" element="tns:AddPreenrollment" />
+    <wsdl:part name="parameters" element="tns:AddPreenrollment"/>
   </wsdl:message>
   <wsdl:message name="AddPreenrollmentSoapOut">
-    <wsdl:part name="parameters" element="tns:AddPreenrollmentResponse" />
+    <wsdl:part name="parameters" element="tns:AddPreenrollmentResponse"/>
   </wsdl:message>
   <wsdl:message name="SearchCustomersSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchCustomers" />
+    <wsdl:part name="parameters" element="tns:SearchCustomers"/>
   </wsdl:message>
   <wsdl:message name="SearchCustomersSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchCustomersResponse" />
+    <wsdl:part name="parameters" element="tns:SearchCustomersResponse"/>
   </wsdl:message>
   <wsdl:message name="GetQuotesSoapIn">
-    <wsdl:part name="parameters" element="tns:GetQuotes" />
+    <wsdl:part name="parameters" element="tns:GetQuotes"/>
   </wsdl:message>
   <wsdl:message name="GetQuotesSoapOut">
-    <wsdl:part name="parameters" element="tns:GetQuotesResponse" />
+    <wsdl:part name="parameters" element="tns:GetQuotesResponse"/>
   </wsdl:message>
   <wsdl:message name="EnrollCustomerSoapIn">
-    <wsdl:part name="parameters" element="tns:EnrollCustomer" />
+    <wsdl:part name="parameters" element="tns:EnrollCustomer"/>
   </wsdl:message>
   <wsdl:message name="EnrollCustomerSoapOut">
-    <wsdl:part name="parameters" element="tns:EnrollCustomerResponse" />
+    <wsdl:part name="parameters" element="tns:EnrollCustomerResponse"/>
   </wsdl:message>
   <wsdl:message name="GetListOfValuesSoapIn">
-    <wsdl:part name="parameters" element="tns:GetListOfValues" />
+    <wsdl:part name="parameters" element="tns:GetListOfValues"/>
   </wsdl:message>
   <wsdl:message name="GetListOfValuesSoapOut">
-    <wsdl:part name="parameters" element="tns:GetListOfValuesResponse" />
+    <wsdl:part name="parameters" element="tns:GetListOfValuesResponse"/>
   </wsdl:message>
   <wsdl:message name="GetCustomerInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetCustomerInfo" />
+    <wsdl:part name="parameters" element="tns:GetCustomerInfo"/>
   </wsdl:message>
   <wsdl:message name="GetCustomerInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetCustomerInfoResponse" />
+    <wsdl:part name="parameters" element="tns:GetCustomerInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetLDCInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLDCInfo"/>
+  </wsdl:message>
+  <wsdl:message name="GetLDCInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLDCInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPromoCodeInfo"/>
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPromoCodeInfoResponse"/>
   </wsdl:message>
   <wsdl:message name="CheckUserSecuritySoapIn">
-    <wsdl:part name="parameters" element="tns:CheckUserSecurity" />
+    <wsdl:part name="parameters" element="tns:CheckUserSecurity"/>
   </wsdl:message>
   <wsdl:message name="CheckUserSecuritySoapOut">
-    <wsdl:part name="parameters" element="tns:CheckUserSecurityResponse" />
+    <wsdl:part name="parameters" element="tns:CheckUserSecurityResponse"/>
   </wsdl:message>
   <wsdl:message name="GetPromoCodesForEnrollmentSoapIn">
-    <wsdl:part name="parameters" element="tns:GetPromoCodesForEnrollment" />
+    <wsdl:part name="parameters" element="tns:GetPromoCodesForEnrollment"/>
   </wsdl:message>
   <wsdl:message name="GetPromoCodesForEnrollmentSoapOut">
-    <wsdl:part name="parameters" element="tns:GetPromoCodesForEnrollmentResponse" />
+    <wsdl:part name="parameters" element="tns:GetPromoCodesForEnrollmentResponse"/>
   </wsdl:message>
   <wsdl:message name="CheckRAFEligibilitySoapIn">
-    <wsdl:part name="parameters" element="tns:CheckRAFEligibility" />
+    <wsdl:part name="parameters" element="tns:CheckRAFEligibility"/>
   </wsdl:message>
   <wsdl:message name="CheckRAFEligibilitySoapOut">
-    <wsdl:part name="parameters" element="tns:CheckRAFEligibilityResponse" />
+    <wsdl:part name="parameters" element="tns:CheckRAFEligibilityResponse"/>
   </wsdl:message>
   <wsdl:message name="SendRealTimeEmailSoapIn">
-    <wsdl:part name="parameters" element="tns:SendRealTimeEmail" />
+    <wsdl:part name="parameters" element="tns:SendRealTimeEmail"/>
   </wsdl:message>
   <wsdl:message name="SendRealTimeEmailSoapOut">
-    <wsdl:part name="parameters" element="tns:SendRealTimeEmailResponse" />
+    <wsdl:part name="parameters" element="tns:SendRealTimeEmailResponse"/>
   </wsdl:message>
   <wsdl:message name="UpdateCustomerInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:UpdateCustomerInfo" />
+    <wsdl:part name="parameters" element="tns:UpdateCustomerInfo"/>
   </wsdl:message>
   <wsdl:message name="UpdateCustomerInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:UpdateCustomerInfoResponse" />
+    <wsdl:part name="parameters" element="tns:UpdateCustomerInfoResponse"/>
   </wsdl:message>
   <wsdl:message name="AuthenticateCustomerSoapIn">
-    <wsdl:part name="parameters" element="tns:AuthenticateCustomer" />
+    <wsdl:part name="parameters" element="tns:AuthenticateCustomer"/>
   </wsdl:message>
   <wsdl:message name="AuthenticateCustomerSoapOut">
-    <wsdl:part name="parameters" element="tns:AuthenticateCustomerResponse" />
+    <wsdl:part name="parameters" element="tns:AuthenticateCustomerResponse"/>
   </wsdl:message>
   <wsdl:message name="TPVDispositionNotificationSoapIn">
-    <wsdl:part name="parameters" element="tns:TPVDispositionNotification" />
+    <wsdl:part name="parameters" element="tns:TPVDispositionNotification"/>
   </wsdl:message>
   <wsdl:message name="TPVDispositionNotificationSoapOut">
-    <wsdl:part name="parameters" element="tns:TPVDispositionNotificationResponse" />
+    <wsdl:part name="parameters" element="tns:TPVDispositionNotificationResponse"/>
   </wsdl:message>
   <wsdl:portType name="QuoteServiceSoap">
     <wsdl:operation name="GetNESBillDetailData">
-      <wsdl:input message="tns:GetNESBillDetailDataSoapIn" />
-      <wsdl:output message="tns:GetNESBillDetailDataSoapOut" />
+      <wsdl:input message="tns:GetNESBillDetailDataSoapIn"/>
+      <wsdl:output message="tns:GetNESBillDetailDataSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="AddPreenrollment">
-      <wsdl:input message="tns:AddPreenrollmentSoapIn" />
-      <wsdl:output message="tns:AddPreenrollmentSoapOut" />
+      <wsdl:input message="tns:AddPreenrollmentSoapIn"/>
+      <wsdl:output message="tns:AddPreenrollmentSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="SearchCustomers">
-      <wsdl:input message="tns:SearchCustomersSoapIn" />
-      <wsdl:output message="tns:SearchCustomersSoapOut" />
+      <wsdl:input message="tns:SearchCustomersSoapIn"/>
+      <wsdl:output message="tns:SearchCustomersSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="GetQuotes">
-      <wsdl:input message="tns:GetQuotesSoapIn" />
-      <wsdl:output message="tns:GetQuotesSoapOut" />
+      <wsdl:input message="tns:GetQuotesSoapIn"/>
+      <wsdl:output message="tns:GetQuotesSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="EnrollCustomer">
-      <wsdl:input message="tns:EnrollCustomerSoapIn" />
-      <wsdl:output message="tns:EnrollCustomerSoapOut" />
+      <wsdl:input message="tns:EnrollCustomerSoapIn"/>
+      <wsdl:output message="tns:EnrollCustomerSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="GetListOfValues">
-      <wsdl:input message="tns:GetListOfValuesSoapIn" />
-      <wsdl:output message="tns:GetListOfValuesSoapOut" />
+      <wsdl:input message="tns:GetListOfValuesSoapIn"/>
+      <wsdl:output message="tns:GetListOfValuesSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerInfo">
-      <wsdl:input message="tns:GetCustomerInfoSoapIn" />
-      <wsdl:output message="tns:GetCustomerInfoSoapOut" />
+      <wsdl:input message="tns:GetCustomerInfoSoapIn"/>
+      <wsdl:output message="tns:GetCustomerInfoSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetLDCInfo">
+      <wsdl:input message="tns:GetLDCInfoSoapIn"/>
+      <wsdl:output message="tns:GetLDCInfoSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodeInfo">
+      <wsdl:input message="tns:GetPromoCodeInfoSoapIn"/>
+      <wsdl:output message="tns:GetPromoCodeInfoSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="CheckUserSecurity">
-      <wsdl:input message="tns:CheckUserSecuritySoapIn" />
-      <wsdl:output message="tns:CheckUserSecuritySoapOut" />
+      <wsdl:input message="tns:CheckUserSecuritySoapIn"/>
+      <wsdl:output message="tns:CheckUserSecuritySoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="GetPromoCodesForEnrollment">
-      <wsdl:input message="tns:GetPromoCodesForEnrollmentSoapIn" />
-      <wsdl:output message="tns:GetPromoCodesForEnrollmentSoapOut" />
+      <wsdl:input message="tns:GetPromoCodesForEnrollmentSoapIn"/>
+      <wsdl:output message="tns:GetPromoCodesForEnrollmentSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="CheckRAFEligibility">
-      <wsdl:input message="tns:CheckRAFEligibilitySoapIn" />
-      <wsdl:output message="tns:CheckRAFEligibilitySoapOut" />
+      <wsdl:input message="tns:CheckRAFEligibilitySoapIn"/>
+      <wsdl:output message="tns:CheckRAFEligibilitySoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="SendRealTimeEmail">
-      <wsdl:input message="tns:SendRealTimeEmailSoapIn" />
-      <wsdl:output message="tns:SendRealTimeEmailSoapOut" />
+      <wsdl:input message="tns:SendRealTimeEmailSoapIn"/>
+      <wsdl:output message="tns:SendRealTimeEmailSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="UpdateCustomerInfo">
-      <wsdl:input message="tns:UpdateCustomerInfoSoapIn" />
-      <wsdl:output message="tns:UpdateCustomerInfoSoapOut" />
+      <wsdl:input message="tns:UpdateCustomerInfoSoapIn"/>
+      <wsdl:output message="tns:UpdateCustomerInfoSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="AuthenticateCustomer">
-      <wsdl:input message="tns:AuthenticateCustomerSoapIn" />
-      <wsdl:output message="tns:AuthenticateCustomerSoapOut" />
+      <wsdl:input message="tns:AuthenticateCustomerSoapIn"/>
+      <wsdl:output message="tns:AuthenticateCustomerSoapOut"/>
     </wsdl:operation>
     <wsdl:operation name="TPVDispositionNotification">
-      <wsdl:input message="tns:TPVDispositionNotificationSoapIn" />
-      <wsdl:output message="tns:TPVDispositionNotificationSoapOut" />
+      <wsdl:input message="tns:TPVDispositionNotificationSoapIn"/>
+      <wsdl:output message="tns:TPVDispositionNotificationSoapOut"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="QuoteServiceSoap" type="tns:QuoteServiceSoap">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="GetNESBillDetailData">
-      <soap:operation soapAction="http://primesw.com/webservices/GetNESBillDetailData" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/GetNESBillDetailData" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddPreenrollment">
-      <soap:operation soapAction="http://primesw.com/webservices/AddPreenrollment" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/AddPreenrollment" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SearchCustomers">
-      <soap:operation soapAction="http://primesw.com/webservices/SearchCustomers" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/SearchCustomers" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetQuotes">
-      <soap:operation soapAction="http://primesw.com/webservices/GetQuotes" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/GetQuotes" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EnrollCustomer">
-      <soap:operation soapAction="http://primesw.com/webservices/EnrollCustomer" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/EnrollCustomer" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetListOfValues">
-      <soap:operation soapAction="http://primesw.com/webservices/GetListOfValues" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/GetListOfValues" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerInfo">
-      <soap:operation soapAction="http://primesw.com/webservices/GetCustomerInfo" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/GetCustomerInfo" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLDCInfo">
+      <soap:operation soapAction="http://primesw.com/webservices/GetLDCInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodeInfo">
+      <soap:operation soapAction="http://primesw.com/webservices/GetPromoCodeInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CheckUserSecurity">
-      <soap:operation soapAction="http://primesw.com/webservices/CheckUserSecurity" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/CheckUserSecurity" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetPromoCodesForEnrollment">
-      <soap:operation soapAction="http://primesw.com/webservices/GetPromoCodesForEnrollment" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/GetPromoCodesForEnrollment" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CheckRAFEligibility">
-      <soap:operation soapAction="http://primesw.com/webservices/CheckRAFEligibility" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/CheckRAFEligibility" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendRealTimeEmail">
-      <soap:operation soapAction="http://primesw.com/webservices/SendRealTimeEmail" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/SendRealTimeEmail" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCustomerInfo">
-      <soap:operation soapAction="http://primesw.com/webservices/UpdateCustomerInfo" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/UpdateCustomerInfo" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AuthenticateCustomer">
-      <soap:operation soapAction="http://primesw.com/webservices/AuthenticateCustomer" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/AuthenticateCustomer" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="TPVDispositionNotification">
-      <soap:operation soapAction="http://primesw.com/webservices/TPVDispositionNotification" style="document" />
+      <soap:operation soapAction="http://primesw.com/webservices/TPVDispositionNotification" style="document"/>
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="QuoteServiceSoap12" type="tns:QuoteServiceSoap">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="GetNESBillDetailData">
-      <soap12:operation soapAction="http://primesw.com/webservices/GetNESBillDetailData" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/GetNESBillDetailData" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddPreenrollment">
-      <soap12:operation soapAction="http://primesw.com/webservices/AddPreenrollment" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/AddPreenrollment" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SearchCustomers">
-      <soap12:operation soapAction="http://primesw.com/webservices/SearchCustomers" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/SearchCustomers" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetQuotes">
-      <soap12:operation soapAction="http://primesw.com/webservices/GetQuotes" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/GetQuotes" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EnrollCustomer">
-      <soap12:operation soapAction="http://primesw.com/webservices/EnrollCustomer" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/EnrollCustomer" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetListOfValues">
-      <soap12:operation soapAction="http://primesw.com/webservices/GetListOfValues" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/GetListOfValues" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerInfo">
-      <soap12:operation soapAction="http://primesw.com/webservices/GetCustomerInfo" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/GetCustomerInfo" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLDCInfo">
+      <soap12:operation soapAction="http://primesw.com/webservices/GetLDCInfo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodeInfo">
+      <soap12:operation soapAction="http://primesw.com/webservices/GetPromoCodeInfo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CheckUserSecurity">
-      <soap12:operation soapAction="http://primesw.com/webservices/CheckUserSecurity" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/CheckUserSecurity" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetPromoCodesForEnrollment">
-      <soap12:operation soapAction="http://primesw.com/webservices/GetPromoCodesForEnrollment" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/GetPromoCodesForEnrollment" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CheckRAFEligibility">
-      <soap12:operation soapAction="http://primesw.com/webservices/CheckRAFEligibility" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/CheckRAFEligibility" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendRealTimeEmail">
-      <soap12:operation soapAction="http://primesw.com/webservices/SendRealTimeEmail" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/SendRealTimeEmail" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateCustomerInfo">
-      <soap12:operation soapAction="http://primesw.com/webservices/UpdateCustomerInfo" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/UpdateCustomerInfo" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AuthenticateCustomer">
-      <soap12:operation soapAction="http://primesw.com/webservices/AuthenticateCustomer" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/AuthenticateCustomer" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="TPVDispositionNotification">
-      <soap12:operation soapAction="http://primesw.com/webservices/TPVDispositionNotification" style="document" />
+      <soap12:operation soapAction="http://primesw.com/webservices/TPVDispositionNotification" style="document"/>
       <wsdl:input>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
-        <soap12:body use="literal" />
+        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="QuoteService">
     <wsdl:port name="QuoteServiceSoap" binding="tns:QuoteServiceSoap">
-      <soap:address location="https://test.prime.southstarenergy.com/Prime1/webservices/quoteservice.asmx" />
+      <soap:address location="http://localhost/nicorsol/webservices/quoteservice.asmx"/>
     </wsdl:port>
     <wsdl:port name="QuoteServiceSoap12" binding="tns:QuoteServiceSoap12">
-      <soap12:address location="https://test.prime.southstarenergy.com/Prime1/webservices/quoteservice.asmx" />
+      <soap12:address location="http://localhost/nicorsol/webservices/quoteservice.asmx"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

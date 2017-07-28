@@ -61,6 +61,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AccountStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="LDCDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="B2BCustomerInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ExpressConsentInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="CustomerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RateClassDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -224,6 +225,7 @@ import javax.xml.bind.annotation.XmlType;
     "accountStatus",
     "ldcDesc",
     "b2BCustomerInd",
+    "expressConsentInd",
     "customerName",
     "rateClassDesc",
     "productCode",
@@ -393,6 +395,8 @@ public class GetCustomerInfoResult {
     protected String ldcDesc;
     @XmlElement(name = "B2BCustomerInd")
     protected String b2BCustomerInd;
+    @XmlElement(name = "ExpressConsentInd")
+    protected String expressConsentInd;
     @XmlElement(name = "CustomerName")
     protected String customerName;
     @XmlElement(name = "RateClassDesc")
@@ -1542,6 +1546,30 @@ public class GetCustomerInfoResult {
      */
     public void setB2BCustomerInd(String value) {
         this.b2BCustomerInd = value;
+    }
+
+    /**
+     * Gets the value of the expressConsentInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getExpressConsentInd() {
+        return expressConsentInd;
+    }
+
+    /**
+     * Sets the value of the expressConsentInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setExpressConsentInd(String value) {
+        this.expressConsentInd = value;
     }
 
     /**

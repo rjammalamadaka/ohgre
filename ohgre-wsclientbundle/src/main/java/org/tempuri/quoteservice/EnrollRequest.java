@@ -52,7 +52,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="MailAddressVerified" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ServiceAddressVerified" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="PromoCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RAFCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="EnrolledByUserId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="AuthorizationCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -74,6 +73,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AlternateEmailAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="EditOnlyInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="B2BCustomerInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ExpressConsentInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="BrokerID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="DelaySendToUtilDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RenewalProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -127,7 +127,6 @@ import javax.xml.bind.annotation.XmlType;
     "mailAddressVerified",
     "serviceAddressVerified",
     "productCode",
-    "promoCode",
     "rafCode",
     "enrolledByUserId",
     "authorizationCode",
@@ -149,6 +148,7 @@ import javax.xml.bind.annotation.XmlType;
     "alternateEmailAddress",
     "editOnlyInd",
     "b2BCustomerInd",
+    "expressConsentInd",
     "brokerID",
     "delaySendToUtilDate",
     "renewalProductCode",
@@ -230,8 +230,6 @@ public class EnrollRequest {
     protected String serviceAddressVerified;
     @XmlElement(name = "ProductCode")
     protected String productCode;
-    @XmlElement(name = "PromoCode")
-    protected String promoCode;
     @XmlElement(name = "RAFCode")
     protected String rafCode;
     @XmlElement(name = "EnrolledByUserId")
@@ -274,6 +272,8 @@ public class EnrollRequest {
     protected String editOnlyInd;
     @XmlElement(name = "B2BCustomerInd")
     protected String b2BCustomerInd;
+    @XmlElement(name = "ExpressConsentInd")
+    protected String expressConsentInd;
     @XmlElement(name = "BrokerID")
     protected String brokerID;
     @XmlElement(name = "DelaySendToUtilDate")
@@ -1110,30 +1110,6 @@ public class EnrollRequest {
     }
 
     /**
-     * Gets the value of the promoCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPromoCode() {
-        return promoCode;
-    }
-
-    /**
-     * Sets the value of the promoCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPromoCode(String value) {
-        this.promoCode = value;
-    }
-
-    /**
      * Gets the value of the rafCode property.
      * 
      * @return
@@ -1635,6 +1611,30 @@ public class EnrollRequest {
      */
     public void setB2BCustomerInd(String value) {
         this.b2BCustomerInd = value;
+    }
+
+    /**
+     * Gets the value of the expressConsentInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getExpressConsentInd() {
+        return expressConsentInd;
+    }
+
+    /**
+     * Sets the value of the expressConsentInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setExpressConsentInd(String value) {
+        this.expressConsentInd = value;
     }
 
     /**

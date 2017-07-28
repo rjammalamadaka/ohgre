@@ -70,6 +70,7 @@ import javax.xml.bind.annotation.XmlValue;
  *                   &lt;element name="AccountStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="LDCDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="B2BCustomerInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                   &lt;element name="ExpressConsentInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="PromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="CampaignID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="WebSiteID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -343,6 +344,7 @@ public class GetQuotesResult {
      *         &lt;element name="AccountStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="LDCDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="B2BCustomerInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *         &lt;element name="ExpressConsentInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="PromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="CampaignID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="WebSiteID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -455,6 +457,7 @@ public class GetQuotesResult {
         "accountStatus",
         "ldcDesc",
         "b2BCustomerInd",
+        "expressConsentInd",
         "promotionCode",
         "campaignID",
         "webSiteID",
@@ -545,6 +548,8 @@ public class GetQuotesResult {
         protected String ldcDesc;
         @XmlElement(name = "B2BCustomerInd")
         protected String b2BCustomerInd;
+        @XmlElement(name = "ExpressConsentInd")
+        protected String expressConsentInd;
         @XmlElement(name = "PromotionCode")
         protected String promotionCode;
         @XmlElement(name = "CampaignID")
@@ -1498,6 +1503,30 @@ public class GetQuotesResult {
          */
         public void setB2BCustomerInd(String value) {
             this.b2BCustomerInd = value;
+        }
+
+        /**
+         * Gets the value of the expressConsentInd property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getExpressConsentInd() {
+            return expressConsentInd;
+        }
+
+        /**
+         * Sets the value of the expressConsentInd property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setExpressConsentInd(String value) {
+            this.expressConsentInd = value;
         }
 
         /**
