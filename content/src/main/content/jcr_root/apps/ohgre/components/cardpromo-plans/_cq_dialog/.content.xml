@@ -10,9 +10,9 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <promocode
+            <signup
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Promotion Component Configuration"
+                jcr:title="Fixed Plans Component Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -32,15 +32,21 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textarea"
                                 fieldLabel="Description"
                                 name="./description"/>
-                            <backGroundColor
+                            <buttontitle
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="/apps/ohgre/components/colorpicker"
-                                fieldLabel="Color Picker"
-                                name="./backGroundColor"/>
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="ButtonTitle"
+                                name="./buttontitle"/>
+                            <imagepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Image Path"
+                                name="./imagepath"
+                                rootPath="/content/dam/ohgre"/>
                         </items>
                     </column>
                 </items>
-            </promocode>
+            </signup>
         </items>
     </content>
 </jcr:root>

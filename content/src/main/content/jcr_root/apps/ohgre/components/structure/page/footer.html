@@ -1,0 +1,37 @@
+<template data-sly-template.footer="${ @ page}">
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 footer-logo"><img src="/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png"></div>
+			<div id="contact-info" class="col-md-6">
+				<div class="info">
+					<h2>Contact us</h2>
+					<span>${inheritedPageProperties.mobilenumber}</span>
+					<span>${inheritedPageProperties.time}</span>
+					<span>${inheritedPageProperties.days}</span>
+				</div>
+				<div class="info">
+					<h2>Company Info</h2>
+					<a href="#">About Us</a>
+					<a href="#">FAQs</a>
+				</div>
+			</div>
+			<div class="bbb-info">
+				<img src="/etc/designs/ohgre/clientlibs/_img/global/bbb.png">
+			</div>
+		</div>
+		<div class="row" id="sub-links">
+			<span>&copy; 2017 Ohio Natural Gas</span>
+			<a href="#">Terms of Use</a>
+			<a href="#">Privacy Policy</a>
+			<a href="#">Sitemap</a>
+		</div>
+	</div>
+</footer>
+
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-test.clientlibCategories="${page.clientLibCategories}"
+         data-sly-call="${clientLib.js @ categories=clientlibCategories}"></sly>
+    <sly data-sly-include="customfooterlibs.html"></sly>
+    <sly data-sly-resource="${'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"></sly>
+</template>
