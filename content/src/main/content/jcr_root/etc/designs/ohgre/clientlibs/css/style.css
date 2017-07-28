@@ -1,0 +1,103 @@
+/*
+ *  Copyright 2015 Adobe Systems Incorporated
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+/* Column Control component */
+.cq-colctrl-lt0-c0,.cq-colctrl-lt0-c1,.cq-colctrl-lt1-c0,.cq-colctrl-lt1-c1,.cq-colctrl-lt1-c2,.cq-colctrl-lt2-c0,.cq-colctrl-lt2-c1,.cq-colctrl-lt2-c2,.cq-colctrl-lt2-c3{
+        width: 100%;
+    }
+@media (min-width: 960px) {
+    .parsys_column {
+        margin: 0 auto;
+    }
+
+
+    /* start 2 column control */
+
+    .cq-colctrl-lt0{
+        position:relative;
+        margin:auto;
+        width: 100%;
+        max-width: 1170px;
+	}
+    .cq-colctrl-lt0-c0,
+    .cq-colctrl-lt0-c1 {
+        float: left;
+        width: 50%;
+    }
+    .cq-colctrl-lt0-c0 {
+        padding-left: 1.5rem;
+    }
+    .cq-colctrl-lt0-c1 {
+        padding-left: 1.5rem;
+    }
+
+ /* end 2 column control */
+
+
+
+ /* start 3 column control */
+
+    .cq-colctrl-lt1{
+        position:relative;
+        margin:auto;
+    }
+
+
+	.cq-colctrl-lt1-c0,
+    .cq-colctrl-lt1-c1,
+    .cq-colctrl-lt1-c2{
+        float: left;
+        width: 31%;
+    }
+    .cq-colctrl-lt1-c0 {
+        padding-left: 1.5rem
+    }
+    .cq-colctrl-lt1-c1 {
+        padding-left: 1.5rem;
+    }
+    .cq-colctrl-lt1-c2 {
+        padding-left: 1.5rem;
+    }
+
+ /* end 3 column control */
+
+
+ /* start 4 column control */
+   .cq-colctrl-lt2-c0,
+    .cq-colctrl-lt2-c1,
+    .cq-colctrl-lt2-c2,
+    .cq-colctrl-lt2-c3{
+        float: left;
+        width: 23%;
+    }
+
+    .cq-colctrl-lt2-c0 {
+        padding-right: 1.5rem;
+    	padding-left: 1.5rem;
+    }
+   .cq-colctrl-lt2-c1 {
+        padding-right: 1.5rem;
+    }
+    .cq-colctrl-lt2-c2 {
+        padding-right: 1.5rem;
+    }
+    .cq-colctrl-lt2-c3 {
+        padding-right: 1.5rem;
+    }
+
+ /* end 4 column control */
+
+}

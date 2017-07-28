@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content jcr:primaryType="nt:unstructured"/>
+    <ohgrestore.js/>
+    <app.js/>
+    <angular.min.js/>
+    <main.js/>
+    <jquery.cycle2.min.js/>
+    <jquery-2.2.4.min.js/>
+    <init.js/>
+</jcr:root>
