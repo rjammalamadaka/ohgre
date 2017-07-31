@@ -301,8 +301,9 @@ footer{
 .parsys-column.cq-colctrl-lt0{
 	margin-bottom: 2rem;
 	padding: 0 1.5rem;
-	display: flex;
-	
+	@media (@screen-md-min){
+		display: flex;
+	}
 	>div:first-child{
 		padding-right: 1.5rem;
 		padding-left: 0;
