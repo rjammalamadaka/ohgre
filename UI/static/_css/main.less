@@ -109,7 +109,7 @@
 	    padding		: 1rem 0;
 	    width		: 100%;
 	    position	: absolute;
-	    top			: 6rem;
+	    top			: 10rem;
 	    right		: 0;
 	    z-index 	: 999999;
 	    background	: #fff;
@@ -331,6 +331,11 @@ footer{
 			&:last-child{
 
 			}
+		}
+	}
+	div[class^="col-"]{
+		> .email_signup{
+			margin-left: -1.5rem;
 		}
 	}
 }
@@ -1008,9 +1013,6 @@ div[class^="cq-colctrl-lt1-"]{
 	@media (@screen-md-min){
 		padding	: 3rem 4rem;
 
-		h5{
-			font-size	: 1.8rem;
-		}
 		form {
 			div{
 				padding-left	: 15px;
@@ -1085,6 +1087,26 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		.primary-button{
 			margin-top	: 0;
+		}
+		&.one-third{
+			.slide{
+				.slide-content{
+					width: 55%;
+				}
+				.inner-slide-content {
+					padding: 2rem;
+					width: 65%;
+
+					.slide-title{
+						width: 75%;
+						font-size: 3.2rem;
+						line-height: 4rem;
+					}
+				}
+				p{
+					width: 100%;
+				}
+			}
 		}
 	}
 	@media (@screen-lg-min){
@@ -1174,6 +1196,37 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+/* GENERIC TABS STYLES */
+.accord-container{
+	display: none;
+}
+.accord-trigger{
+	cursor: pointer;
+}
+.tabs-list{
+	list-style: none;
+	margin-left: -4rem !important;
+}
+.toggle-buttons{
+	position: absolute;
+	top: 2rem;
+	right: 1rem;
+
+	a{
+		display: inline-block !important;
+		padding: 0 1.5rem;
+		border-right: 1px solid #ccc;
+		color: #919196;
+
+		&.active-link{
+			color: @primary_color;
+		}
+
+		&:last-child{
+			border-right: none;
+		}
+	}
+}
 /* PLANS DETAILS STYLES */
 .plan-detail{
 	margin	: 0;
@@ -1186,9 +1239,6 @@ div[class^="cq-colctrl-lt1-"]{
 		display: none !important;
 	}
 	
-	.accord-container{
-		display: none;
-	}
 	li{
 		margin-bottom	: 1.5rem;
 		width			: 100%;
@@ -1547,12 +1597,30 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 .box-with-border{
-	padding: 2.5rem;
+	padding: 0 2.5rem;
 	background-color: #fff;
 	font-family: @secondary_font;
 	width: 100%;
 	margin-bottom: 1rem;
 
+	&.has-image{
+		padding: 0;
+
+		.box-inner{
+			padding: 2rem;
+
+			h3{
+				font-weight: 300;
+				text-align: center;
+				padding: 0 4%;
+				margin-top: 0;
+			}
+		}
+		button{
+			width: 100%;
+		}
+	}
+	
 	@media (@screen-md-min){
 		width: auto;
 		border: 1px solid @border_color;
@@ -1703,6 +1771,150 @@ div[class^="cq-colctrl-lt1-"]{
 					max-width: 13rem;
 				}
 			}
+		}
+	}
+}
+/* FAQ PAGE STYLES */
+.faq-landing{
+	margin-bottom: 0;
+	@media (@screen-md-min){
+		margin-bottom: 3rem;
+	}
+}
+.faq{
+	.box-with-border{
+		padding: 2rem 0 0 0;
+	}
+	.toggle-buttons{
+		position: relative;
+		top: auto;
+		right: auto;
+		padding-left: 1.5rem;
+
+		@media (@screen-md-min){
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+		}
+	}
+	h3{
+		padding: 0 3rem;
+		font-size: 1.6rem;
+		border-top: .2rem solid #e9eef1;
+		border-bottom: .2rem solid #e9eef1;
+		line-height: 4.5rem;
+		margin-bottom: -1.5rem;
+
+
+		@media (@screen-md-min){
+			padding: 0;
+			font-size: 2.6rem;
+			border: none;
+			margin-bottom: 1rem;
+		}
+	}
+	&.full-banner-callout .slide .inner-slide-content {
+		> img:first-child{
+			max-width: 70%;
+		}
+	}
+	@media (@screen-md-min){
+		&.full-banner-callout .slide .inner-slide-content {
+			padding: 8rem 2rem;
+
+			> img:first-child{
+				position: relative;
+				top: auto;
+				max-width: 60%;
+			}
+		}
+		.box-with-border{
+			padding: 0 2.5rem;
+		}
+	}
+	.box-inner{
+		border-bottom: .3rem solid #e9eef1;
+		padding: 2rem 3rem 0 3rem;
+		margin-top: 1rem;
+		
+		+ #faq-list{
+			margin-top: 0;
+		}
+		@media (@screen-md-min){
+			border: none;
+			margin-top: auto;
+			padding: 0;
+		}
+	}
+}
+#faq-list{
+	background: #fff;
+
+	@media (@screen-md-min){
+		background: none;
+	}
+	.accord-trigger{
+		color: @font_color;
+		position: relative;
+
+		@media (@screen-md-min){
+			color: @primary_color;
+		}
+		&:after{
+			font-family	: "fontAwesome";
+			content		: "\f107";
+			position: absolute;
+			top: 50%;
+			margin-top: -1.4rem;
+			right: 1rem;
+			font-size: 1.8rem;
+
+			@media (@screen-md-min){
+				display: none;
+			}
+		}
+	}
+	a{
+		text-decoration: none;
+		padding: 2rem 4rem 2rem 2rem;
+		border-left: .3rem solid @primary_color;
+		display: block;
+		font-weight: bold;
+
+		@media (@screen-md-min){
+			background: none;
+			padding: 0;
+			border: none;
+			font-weight: normal;
+		}
+	}
+	li{
+		border-top: .3rem solid #e9eef1;
+		margin-bottom: 0;
+
+		&:first-child{
+			border-top: none;
+		}
+		@media (@screen-md-min){
+			margin-bottom: 1rem;
+			padding: 0;
+			border: none;
+		}
+	}
+
+	.accord-container{
+		background-color: #e9eef1;
+		color: #8e8e93;
+		padding: 2rem 3rem .5rem 3rem;
+
+		@media (@screen-md-min){
+			background: none;
+			padding: 0;
+		}
+	}
+	.accord-expanded {
+		+ .accord-container{
+			display: block;
 		}
 	}
 }
