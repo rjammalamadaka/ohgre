@@ -78,6 +78,10 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	
 	p,h1,h2,h3,h4,h5,h6{
 		color: #fff !important;
+
+		&.headline{
+			color: #fff !important;
+		}
 	}
 }
 .bg-secondary-blue{
@@ -88,14 +92,85 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 		color: #fff !important;
 	}
 }
+.color-white{
+	color: #fff !important;
+}
+.color-primary{
+	color: @primary_color;
+}
+.fw-normal{
+	font-weight: normal !important;
+}
+.fw-thin{
+	font-weight: 300 !important;
+}
+.fw-bold{
+	font-weight: bold !important;
+}
 .ff-roboto{
 	font-family: @secondary_font;
 }
 .ff-robotoSlab{
 	font-family: @primary_font;
 }
+.fs-11{
+	font-size: 1.1rem !important;
+}
+.fs-12{
+	font-size: 1.2rem !important;
+}
+.fs-14{
+	font-size: 1.4rem !important;
+}
 .fs-16{
-	font-size: 1.6rem;
+	font-size: 1.6rem !important;
+}
+.fs-20{
+	font-size: 2rem !important;
+}
+.mt-1{
+	margin-top: 1rem !important;
+}
+.inline{
+	a,button{
+		display: inline-block !important;
+	}
+}
+ol{
+	&.styled-numbers{
+		margin-left: -2.5rem;
+		color: @primary_color;
+		counter-reset: item;
+    	list-style-type: none;
+
+		li{
+			padding-left: 1rem;
+			position: relative;
+
+			&:before { 
+			    content: counter(item) "  "; 
+			    counter-increment: item ;
+			    position: absolute;
+			    top: 0.3rem;
+    			left: -1.5rem;
+			    z-index: 1;
+			}
+			&:after{
+				content: "";
+			    position: absolute;
+			    height: 2.5rem;
+			    width: 2.5rem;
+			    background-color: #fff;
+			    left: -2.3rem;
+			    top: -0.2rem;
+			    z-index: 0;
+			    border-radius: 50%;
+			}
+			p{
+				color: #fff;
+			}
+		}
+	}
 }
 p{
 	color: @font_color;
@@ -312,6 +387,9 @@ input[type=radio]{
 }
 .flex-container{
 	display: flex !important;
+}
+.no-flex{
+	display: block !important;
 }
 .all-caps{
 	text-transform: uppercase;
