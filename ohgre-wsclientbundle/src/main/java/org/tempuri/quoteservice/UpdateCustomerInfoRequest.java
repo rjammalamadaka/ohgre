@@ -50,6 +50,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="EmailPrefNonTransactionalCd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="LanguageCd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RAFTermsCondAcknowledgedInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ExpressConsentInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -91,7 +92,8 @@ import javax.xml.bind.annotation.XmlType;
     "emailPref3RdPartyCd",
     "emailPrefNonTransactionalCd",
     "languageCd",
-    "rafTermsCondAcknowledgedInd"
+    "rafTermsCondAcknowledgedInd",
+    "expressConsentInd"
 })
 @XmlRootElement(name = "UpdateCustomerInfoRequest")
 public class UpdateCustomerInfoRequest {
@@ -160,6 +162,8 @@ public class UpdateCustomerInfoRequest {
     protected String languageCd;
     @XmlElement(name = "RAFTermsCondAcknowledgedInd")
     protected String rafTermsCondAcknowledgedInd;
+    @XmlElement(name = "ExpressConsentInd")
+    protected String expressConsentInd;
 
     /**
      * Gets the value of the custID property.
@@ -927,6 +931,30 @@ public class UpdateCustomerInfoRequest {
      */
     public void setRAFTermsCondAcknowledgedInd(String value) {
         this.rafTermsCondAcknowledgedInd = value;
+    }
+
+    /**
+     * Gets the value of the expressConsentInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getExpressConsentInd() {
+        return expressConsentInd;
+    }
+
+    /**
+     * Sets the value of the expressConsentInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setExpressConsentInd(String value) {
+        this.expressConsentInd = value;
     }
 
 }

@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="SupplierName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="StateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="SupplierCustomerServicePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="LDCNodeCnt" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="LDC" maxOccurs="unbounded" minOccurs="0">
  *           &lt;complexType>
  *             &lt;complexContent>
@@ -54,6 +55,7 @@ import javax.xml.bind.annotation.XmlType;
     "supplierName",
     "stateCode",
     "supplierCustomerServicePhone",
+    "ldcNodeCnt",
     "ldc"
 })
 @XmlRootElement(name = "GetLDCInfoResult")
@@ -69,6 +71,8 @@ public class GetLDCInfoResult {
     protected String stateCode;
     @XmlElement(name = "SupplierCustomerServicePhone")
     protected String supplierCustomerServicePhone;
+    @XmlElement(name = "LDCNodeCnt")
+    protected String ldcNodeCnt;
     @XmlElement(name = "LDC")
     protected List<GetLDCInfoResult.LDC> ldc;
 
@@ -190,6 +194,30 @@ public class GetLDCInfoResult {
      */
     public void setSupplierCustomerServicePhone(String value) {
         this.supplierCustomerServicePhone = value;
+    }
+
+    /**
+     * Gets the value of the ldcNodeCnt property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLDCNodeCnt() {
+        return ldcNodeCnt;
+    }
+
+    /**
+     * Sets the value of the ldcNodeCnt property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLDCNodeCnt(String value) {
+        this.ldcNodeCnt = value;
     }
 
     /**

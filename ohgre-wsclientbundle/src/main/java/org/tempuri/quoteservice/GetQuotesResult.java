@@ -94,6 +94,9 @@ import javax.xml.bind.annotation.XmlValue;
  *                           &lt;sequence>
  *                             &lt;element name="ProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="ProductDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="ProductDescFriendly" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="ProductFinePrintText" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="ProductPlanDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="QuoteDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="EstimatedFirstFlowDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="CanQuoteInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -368,6 +371,9 @@ public class GetQuotesResult {
      *                 &lt;sequence>
      *                   &lt;element name="ProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="ProductDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="ProductDescFriendly" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="ProductFinePrintText" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="ProductPlanDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="QuoteDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="EstimatedFirstFlowDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="CanQuoteInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -1847,6 +1853,9 @@ public class GetQuotesResult {
          *       &lt;sequence>
          *         &lt;element name="ProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="ProductDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="ProductDescFriendly" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="ProductFinePrintText" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="ProductPlanDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="QuoteDescription" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="EstimatedFirstFlowDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="CanQuoteInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -1894,6 +1903,9 @@ public class GetQuotesResult {
         @XmlType(name = "", propOrder = {
             "productCode",
             "productDescription",
+            "productDescFriendly",
+            "productFinePrintText",
+            "productPlanDesc",
             "quoteDescription",
             "estimatedFirstFlowDate",
             "canQuoteInd",
@@ -1928,6 +1940,12 @@ public class GetQuotesResult {
             protected String productCode;
             @XmlElement(name = "ProductDescription")
             protected String productDescription;
+            @XmlElement(name = "ProductDescFriendly")
+            protected String productDescFriendly;
+            @XmlElement(name = "ProductFinePrintText")
+            protected String productFinePrintText;
+            @XmlElement(name = "ProductPlanDesc")
+            protected String productPlanDesc;
             @XmlElement(name = "QuoteDescription")
             protected String quoteDescription;
             @XmlElement(name = "EstimatedFirstFlowDate")
@@ -2029,6 +2047,78 @@ public class GetQuotesResult {
              */
             public void setProductDescription(String value) {
                 this.productDescription = value;
+            }
+
+            /**
+             * Gets the value of the productDescFriendly property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getProductDescFriendly() {
+                return productDescFriendly;
+            }
+
+            /**
+             * Sets the value of the productDescFriendly property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setProductDescFriendly(String value) {
+                this.productDescFriendly = value;
+            }
+
+            /**
+             * Gets the value of the productFinePrintText property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getProductFinePrintText() {
+                return productFinePrintText;
+            }
+
+            /**
+             * Sets the value of the productFinePrintText property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setProductFinePrintText(String value) {
+                this.productFinePrintText = value;
+            }
+
+            /**
+             * Gets the value of the productPlanDesc property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getProductPlanDesc() {
+                return productPlanDesc;
+            }
+
+            /**
+             * Sets the value of the productPlanDesc property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setProductPlanDesc(String value) {
+                this.productPlanDesc = value;
             }
 
             /**

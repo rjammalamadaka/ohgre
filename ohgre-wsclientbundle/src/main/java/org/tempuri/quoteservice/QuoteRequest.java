@@ -43,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="WebSiteID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ChannelID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="CreditCheckRequestedInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="AllowedToSellWebInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -77,7 +78,8 @@ import javax.xml.bind.annotation.XmlType;
     "campaignID",
     "webSiteID",
     "channelID",
-    "creditCheckRequestedInd"
+    "creditCheckRequestedInd",
+    "allowedToSellWebInd"
 })
 @XmlRootElement(name = "QuoteRequest")
 public class QuoteRequest {
@@ -132,6 +134,8 @@ public class QuoteRequest {
     protected String channelID;
     @XmlElement(name = "CreditCheckRequestedInd")
     protected String creditCheckRequestedInd;
+    @XmlElement(name = "AllowedToSellWebInd")
+    protected String allowedToSellWebInd;
 
     /**
      * Gets the value of the ldc property.
@@ -731,6 +735,30 @@ public class QuoteRequest {
      */
     public void setCreditCheckRequestedInd(String value) {
         this.creditCheckRequestedInd = value;
+    }
+
+    /**
+     * Gets the value of the allowedToSellWebInd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAllowedToSellWebInd() {
+        return allowedToSellWebInd;
+    }
+
+    /**
+     * Sets the value of the allowedToSellWebInd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAllowedToSellWebInd(String value) {
+        this.allowedToSellWebInd = value;
     }
 
 }

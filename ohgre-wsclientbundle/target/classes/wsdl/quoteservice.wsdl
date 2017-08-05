@@ -433,6 +433,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="WebSiteID" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="ChannelID" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="CreditCheckRequestedInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="AllowedToSellWebInd" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -507,6 +508,9 @@
                       <s:sequence>
                         <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string"/>
                         <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductDescFriendly" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductFinePrintText" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="ProductPlanDesc" type="s:string"/>
                         <s:element minOccurs="0" maxOccurs="1" name="QuoteDescription" type="s:string"/>
                         <s:element minOccurs="0" maxOccurs="1" name="EstimatedFirstFlowDate" type="s:string"/>
                         <s:element minOccurs="0" maxOccurs="1" name="CanQuoteInd" type="s:string"/>
@@ -853,6 +857,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="SupplierName" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="SupplierCustomerServicePhone" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="LDCNodeCnt" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="unbounded" name="LDC">
               <s:complexType>
                 <s:sequence>
@@ -1046,6 +1051,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="EmailPrefNonTransactionalCd" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="LanguageCd" type="s:string"/>
             <s:element minOccurs="0" maxOccurs="1" name="RAFTermsCondAcknowledgedInd" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpressConsentInd" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1556,10 +1562,10 @@
   </wsdl:binding>
   <wsdl:service name="QuoteService">
     <wsdl:port name="QuoteServiceSoap" binding="tns:QuoteServiceSoap">
-      <soap:address location="http://localhost/nicorsol/webservices/quoteservice.asmx"/>
+      <soap:address location="https://test.prime.southstarenergy.com/Prime1/webservices/quoteservice.asmx"/>
     </wsdl:port>
     <wsdl:port name="QuoteServiceSoap12" binding="tns:QuoteServiceSoap12">
-      <soap12:address location="http://localhost/nicorsol/webservices/quoteservice.asmx"/>
+      <soap12:address location="https://test.prime.southstarenergy.com/Prime1/webservices/quoteservice.asmx"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
