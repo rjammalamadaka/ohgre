@@ -1,9 +1,9 @@
 /* COLORS */
-@primary_color			: #0074bf; /* blue */ 
+@primary_color			: #0074bf; /* blue */
 @secondary_color		: #7e94a2; /* blue gray (footer) */
 @accent_color 			: #ff6008; /* orange */
 @font_color				: #757575; /* dark gray */
-@border_color			: #bfbfbf; /* light gray */
+@border_color			: #e9eef1; /* light gray */
 /* FONTS */
 @primary_font	: 'Roboto Slab', serif;
 @secondary_font	: 'Roboto', sans-serif;
@@ -30,7 +30,7 @@ html{
 body{
 	background-color	: #fff;
 	font-family			: @primary_font;
-	overflow-x			: hidden; 
+	overflow-x			: hidden;
 	background-image	: url(../_img/global/background_angle_body.svg);
 	background-position	: 0 0;
 	background-size		: cover;
@@ -69,13 +69,13 @@ img{
 		max-width: 1170px;
 	}
 }
-/* 
+/*
 MODULES WILL BE IN CLASS cq-colctrl-*
 */
 .bg-primary-blue{
 	background: @primary_color !important;
 	color: #fff !important;
-	
+
 	p,h1,h2,h3,h4,h5,h6{
 		color: #fff !important;
 
@@ -87,7 +87,7 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 .bg-secondary-blue{
 	background: #00558e !important;
 	color: #fff;
-	
+
 	p,h1,h2,h3,h4,h5,h6{
 		color: #fff !important;
 	}
@@ -128,8 +128,22 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 .fs-20{
 	font-size: 2rem !important;
 }
-.mt-1{
+.mb-mt-1{
 	margin-top: 1rem !important;
+
+	@media(@screen-md-min){
+		margin-top: 0 !important;
+	}
+}
+.mt-1{
+	@media(@screen-md-min){
+		margin-top: 1rem !important;
+	}
+}
+.padding-5{
+   @media(@screen-md-min){
+      padding: 5rem;
+   }
 }
 .inline{
 	a,button{
@@ -147,8 +161,8 @@ ol{
 			padding-left: 1rem;
 			position: relative;
 
-			&:before { 
-			    content: counter(item) "  "; 
+			&:before {
+			    content: counter(item) "  ";
 			    counter-increment: item ;
 			    position: absolute;
 			    top: 0.3rem;
@@ -182,7 +196,7 @@ small{
 }
 section{
 	margin-bottom	: 1rem;
-		
+
 	&:last-child{
 		margin-bottom: 0;
 	}
@@ -309,6 +323,25 @@ input[type=radio]{
 	.primary-button;
 	background-color: #002c6e;
 }
+.padding-top-bottom-1{
+   padding: 1rem 0;
+}
+.border-top{
+   border-top: .1rem solid @border_color;
+}
+.border-bottom{
+   border-bottom: .1rem solid @border_color;
+}
+@media (@screen-md-min){
+	.desktop-flex-container{
+		display: flex !important;
+	}
+}
+.light-headings{
+   h1,h2,h3,h4,h5,h6{
+      font-weight: normal;
+   }
+}
 .dropdown-container{
 	position	: relative;
 	color		: @font_color;
@@ -417,10 +450,20 @@ div[class^="col-"]{
 		padding-left: 1.5rem;
 	}
 }
-
+.row{
+	div[class^="col-"]{
+		.row{
+			div[class^="col-"]{
+				&:first-child{
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
 .error{
 	display: none;
-	
+
 	&.show-error{
 		display: block;
 	}

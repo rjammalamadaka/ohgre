@@ -38,7 +38,24 @@ var ohio_ng = {
 				$('.accord-trigger').removeClass('accord-expanded');
 			}
 		});
-	}
+		$('.next-button').on('click',function(event){
+			event.preventDefault();
+			var obj = $(this);
+			var next_section = obj.data('next');
+			$('.active-form').removeClass('active-form');
+			$('.active-step').removeClass('active-step');
+			$('#step-through >div:nth-child('+next_section+')').addClass('active-form');
+			$('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
+		});
+	},
+	transform: function(obj) {
+    var val = obj.value.replace( /\D/g, '' );
+    if ( /^(\d{3})(\d{3})(\d{4})$/.test( val ) ) {
+      obj.value = '('+RegExp.$1 + ')-' + RegExp.$2 + '-' + RegExp.$3;
+    } else {
+      //alert( 'Invalid input: ' + obj.value );
+    }
+  }
 }
 $(document).ready(function(){
 	ohio_ng.init();
@@ -52,5 +69,5 @@ $(window).scroll(function(){
 		}else{
 			menu_bar.removeClass('sticky');
 		}
-	
+
 });

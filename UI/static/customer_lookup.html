@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- build:include:dist ../includes/_doc_head.html -->
+		This will be replaced by the content of _doc_head.html
+	<!-- /build -->
+<body>
+	<!-- build:include:dist ../includes/header_no_nav.html -->
+		This will be replaced by the content of header_no_nav.html
+	<!-- /build -->
+<section>
+	<div class="container">
+		<div class="box-with-border customer-lookup">
+			<div class="selected-plan flex-container">
+				<div class="selected-price">
+					<span class="price">$4.970</span>
+					<small>per MCF</small>
+				</div>
+				<div class="selected-info">
+					<span class="selected-plan-tag">Selected Plan</span>
+					<h5>6 Month Fixed Plan</h5>
+					<span class="utility-name">Columbia Gas of Ohio</span>
+				</div>
+			</div>
+			<div class="steps-container">
+				<hr />
+				<div id="your-information" class="step first-step active-step">
+					<span>Your Information</span>
+				</div>
+				<div id="accept-terms" class="step">
+					<span>Accept Terms</span>
+				</div>
+				<div id="review" class="step">
+					<span>Review</span>
+				</div>
+				<div id="thank-you" class="step">
+					<span>Thank You!</span>
+				</div>
+			</div>
+			<div id="step-through">
+				<div class="form-wrapper active-form">
+					<div class="account-number-container">
+						<div class="form-area">
+							<label for="accountnumber[]">Gas Utility Account Number</label>
+							<div class="input-group-wrapper">
+								<input type="text" name="accountnumber[]" maxlength="5">
+								<input type="text" name="accountnumber[]" maxlength="3">
+								<input type="text" name="accountnumber[]" maxlength="3">
+								<input type="text" name="accountnumber[]" maxlength="2">
+							</div>
+						</div>
+					</div>
+					<div class="lastname-container">
+						<div class="form-area">
+							<label for="lastname">Last Name on Gas Utility Account</label>
+							<input type="text" name="lastname" />
+						</div>
+					</div>
+					<div class="zipcode-container">
+						<div class="form-area">
+							<label for="zipcode">Your Zip Code</label>
+							<input type="text" name="zipcode" />
+						</div>
+					</div>
+					<button class="primary-button next-button" data-next=2>Next</button>
+				</div>
+				<!-- new area -->
+				<div class="form-wrapper">
+					<div class="desktop-flex-container">
+						<div class="form-element">
+							<div class="new-customer-container">
+								<div class="form-area">
+									<h4>New Customer Information</h4>
+									<h5>Gas Utility Account Number</h5>
+									<span class="account-number">9-5000-3674-0840</span>
+									<div class="row input-group-wrapper">
+										<div class="col-md-6">
+											<label for="first-name">First Name</label>
+											<input type="text" name="first-name">
+										</div>
+										<div class="col-md-6">
+											<label for="last-name">Last Name</label>
+											<input type="text" name="last-name">
+										</div>
+									</div>
+									<div class="input-group-wrapper">
+										<label for="email-address">Email</label>
+										<input type="text" name="email-address">
+									</div>
+									<div class="input-group-wrapper">
+										<label for="phone-number">Phone Number</label>
+										<input type="tel" name="phone-number"  onkeyup="ohio_ng.transform(this)" placeholder="(_ _ _) - _ _ _ - _ _ _ _">
+									</div>
+									<div class="input-group-wrapper">
+										<label for="source">How Did You Hear About Us?</label>
+										<select name="source">
+											<option value="source 1">
+												source 1
+											</option>
+											<option value="source 2">
+												source 2
+											</option>
+											<option value="source 3">
+												source 3
+											</option>
+										</select>
+									</div>
+									<div class="input-group-wrapper">
+										<input type="checkbox" name="subscribe-email" value="yes" checked />
+										<span class="after-checkbox">Yes, Ohio Natural Gas may send me information about special oﬀers from Ohio Natural Gas and its marketing partners.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- new element -->
+						<div class="form-element">
+							<div class="new-customer-container">
+								<div class="form-area">
+									<h4>Service Address</h4>
+									<div class="input-group-wrapper">
+											<label for="address-one">Street Address</label>
+											<input type="text" name="address-one" placeholder="Street Address">
+									</div>
+									<div class="input-group-wrapper">
+											<input type="text" name="address-two" placeholder="Street Address 2">
+									</div>
+									<div class="row address-fields">
+										<div class="col-md-6 col-sm-6">
+											<div class="input-group-wrapper">
+													<label for="address-city">City</label>
+													<input type="text" name="address-city">
+											</div>
+										</div>
+										<div class="col-md-2 col-sm-2">
+											<div class="input-group-wrapper">
+													<label for="address-city">State</label>
+													<span>OH</span>
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<div class="input-group-wrapper">
+													<label for="address-zip">Zip</label>
+													<input type="text" name="address-zip" maxlength="5">
+											</div>
+										</div>
+									</div>
+									<div class="input-group-wrapper">
+										<h4>Billing Address</h4>
+										<div class="input-group-wrapper">
+											<input type="checkbox" name="same-billing" value="yes" checked />
+											<span class="after-checkbox">Same as Service Address</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- new element -->
+						<div class="form-element-small">
+							<div class="new-customer-container">
+								<div class="form-area">
+									<div class="input-group-wrapper">
+											<label for="ref-code">Friend's Referral Code</label>
+											<input type="text" name="ref-code" placeholder="">
+									</div>
+									<div class="input-group-wrapper padding-top-bottom-1 border-top border-bottom">
+											<div class="row no-margin">
+												<input type="checkbox" name="account-holder">
+												<span class="after-checkbox">I am the utility account holder or a person that has legal authorization to make decisions for this account.</span>
+											</div>
+									</div>
+									<div class="input-group-wrapper">
+											<p>
+												By selecting “yes” you provide your electronic signature expressly consenting to contact from _______ or its subsidiaries, aﬃliates, or agents at the number you provided regarding products or services via live, automated or prerecorded telephone call, or text message.  You understand you are not required to enter into this agreement as a condition of purchasing property, good, or services.
+											</p>
+											<p>
+												Do you provide your signature?
+											</p>
+									</div>
+									<div class="input-group-wrapper">
+										<div class="row no-margin">
+											<div class="col-md-6">
+												<input type="radio" name="signature[]" /><span class="align-radio">Yes</span>
+											</div>
+											<div class="col-md-6">
+												<input type="radio" name="signature[]" /><span class="align-radio">No</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="primary-button next-button" data-next=3>Next</button>
+				</div>
+			</div>
+			<!-- end box-with-border -->
+		</div>
+		<!-- end container -->
+	</div>
+</section>
+	<!-- build:include:dist ../includes/footer.html -->
+			This will be replaced by the content of footer.html
+	<!-- /build -->
+</body>
+</html>
