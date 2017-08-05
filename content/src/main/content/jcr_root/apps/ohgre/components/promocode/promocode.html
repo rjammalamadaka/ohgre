@@ -14,9 +14,9 @@ Enter your promo code: <input type="text" size="12" ng-model="promotionCode" nam
 	<div class="container">
 		<div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
 			<h2>${properties.heading}</h2>
-			<p>${properties.description}</p>
+			<p>${properties.description @ context='html'}</p>
 			<form>
-				<input type="text" name="promo-code" value="" placeholder="Enter Promo Code">
+				<input type="text" name="promo-code" value="" placeholder="Enter Promo Code" ng-model="promotionCode">
 				<button class="primary-button" ng-click="promoCodeSubmit()">Submit</button>
 			</form>
 		</div>

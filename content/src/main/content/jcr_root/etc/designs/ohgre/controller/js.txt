@@ -4,3 +4,8 @@ FixedPlansController.js
 PlansDisplayController.js
 SelectGasUtilityController.js
 PromotionContentController.js
+OfferPromoController.js
+WhatIsChoiceController.js
+ContactUsController.js
+TermsLandingController.js
+AboutUsController.js

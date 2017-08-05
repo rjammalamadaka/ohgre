@@ -1,19 +1,21 @@
-ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http','$window',function ($scope, $rootScope,$http,$window) {
 
 
- var config = {
+ 		var config = {
 		        responsetype : 'json',
         		headers : {
             		'Content-Type' :'application/json'
         		}
    		 }
+        $scope.displayPlans = true;
 
  	var portalname=$("#primary-header").data("portalname");
 
     $("input[name=location_type][value='residential']").prop("checked",true);
 
     var getQuotes = function(ldcCode){
-        var locationType=$("input[name='location_type']:checked"). val();    
+        var locationType=$("input[name='location_type']:checked"). val();   
+        $window.sessionStorage.setItem('lcType', locationType);
 
         var promotionCode=$scope.promotionCode;
         var url="/bin/getQuotes?portalName="+portalname;
@@ -27,11 +29,13 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 			url=url+"&locationType="+locationType;
         }
          $http.get(url).success(function(data, status, headers, config){
-			goToByScroll();	
+			//goToByScroll();	
              $scope.Quotes=data;
              if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
 					$scope.Customer=$scope.Quotes.Customer;
                    $scope.products=$scope.Customer[0].Product;
+                 $window.sessionStorage.setItem('products', angular.toJson($scope.products));
+                 $scope.displayPlans = true;
              }
              console.log(data);
 
@@ -43,20 +47,32 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     }
 
 
-    if($rootScope.hashParams && $rootScope.hashParams.ldc){
-        $scope.ldc=$rootScope.hashParams.ldc;
-		$('#fixed-plans-button').val($scope.ldc);
 
-    }
-    if($rootScope.hashParams && $rootScope.hashParams.lctype){
-        $scope.lctype=$rootScope.hashParams.lctype;
-        if($scope.lctype =="commercial"){
-			 $("input[name=location_type][value='commercial']").prop("checked",true);
+        if($rootScope.hashParams.ldc){
+       		 $scope.ldc=$rootScope.hashParams.ldc;
+			$('#fixed-plans-button').val($scope.ldc);
+		///$window.sessionStorage.setItem('ldcType', $scope.ldc);
         }
-    }
-    if($scope.ldc){
-    	getQuotes($scope.ldc);
-    }
+
+        if($rootScope.hashParams.lctype){
+			$scope.lctype=$rootScope.hashParams.lctype;
+        	if($scope.lctype =="commercial"){
+			 	$("input[name=location_type][value='commercial']").prop("checked",true);
+        	}
+        	//$window.sessionStorage.setItem('lcType', $scope.lctype);
+        }
+        else{
+			$scope.lctype= "residential";
+
+			 	$("input[name=location_type][value='residential']").prop("checked",true);
+        	//$window.sessionStorage.setItem('lcType', $scope.lctype);
+        }
+
+
+
+        if($scope.ldc){
+            getQuotes($scope.ldc);
+        }
 
     for (i = 0; i < $rootScope.ldcList.length; i++) { 
 		var test=$rootScope.ldcList[i];
@@ -81,9 +97,23 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
     $scope.getPlans =function(){
 
- 	var ldcCode=$('#fixed-plans-button').val();
+		$scope.displayPlans = false;
+ 		var ldcCode=$('#fixed-plans-button').val();
 
+        //$window.sessionStorage.setItem('ldcType', ldcCode);
         if(ldcCode){
+
+			var currentHash=location.hash;
+            var currentLdc=$rootScope.hashParams.ldc;
+            var locationType=$("input[name='location_type']:checked"). val(); 
+            var currentLocationType=$rootScope.hashParams.lctype;
+            currentHash= currentHash.replace(currentLdc,ldcCode);
+			currentHash= currentHash.replace(currentLocationType,locationType);
+$rootScope.hashParams.lctype=locationType;
+$rootScope.hashParams.ldc=ldcCode;
+            console.log(currentHash);
+			location.hash=currentHash;
+
             getQuotes(ldcCode);
         }
     }
@@ -121,8 +151,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
                                'slow');
     	}
 
+
 }]);
-
-
 
 

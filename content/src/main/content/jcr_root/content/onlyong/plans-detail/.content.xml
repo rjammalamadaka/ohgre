@@ -2,7 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-07-23T20:40:12.692-04:00"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2017-08-03T11:17:26.596-04:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-07-21T16:21:24.057-05:00"
         cq:lastReplicatedBy="admin"
@@ -11,9 +13,10 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Plans Detail"
+        jcr:title="VIEW RATE PLANS"
         jcr:uuid="3ab03bf6-c319-4101-872e-6ce7e5602d7f"
-        sling:resourceType="/apps/ohgre/components/structure/page">
+        sling:resourceType="/apps/ohgre/components/structure/page"
+        portalname="oh">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
@@ -55,15 +58,17 @@
             <cardpromo
                 jcr:created="{Date}2017-07-21T07:46:20.203+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-21T12:04:22.481+05:30"
+                jcr:lastModified="{Date}2017-08-03T11:17:26.590-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
                 buttonpath="/content/onlyong"
                 buttontitle="SEE OFFER"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
+                displayLink="true"
                 heading="Refer-a-Friend"
-                imagepath="/content/dam/ohgre/home/card_raf.jpg"/>
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
             <col_break15006033724370
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
@@ -71,14 +76,16 @@
             <cardpromo_1485208887
                 jcr:created="{Date}2017-07-21T12:02:58.304+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-21T12:03:56.196+05:30"
+                jcr:lastModified="{Date}2017-08-03T11:17:11.656-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
                 buttontitle="Learn More"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
+                displayLink="true"
                 heading="Moving? Lorem ipsum dolor sit amet"
-                imagepath="/content/dam/ohgre/home/card_moving.jpg"/>
+                imagepath="/content/dam/ohgre/home/card_moving.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
             <col_end15006033663930
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
@@ -92,5 +99,10 @@
                 sling:resourceType="ohgre/components/signup"
                 description="Sign up to stay informed of promos &amp; offers."/>
         </content>
+        <image
+            jcr:lastModified="{Date}2017-08-01T19:14:45.453+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
     </jcr:content>
 </jcr:root>

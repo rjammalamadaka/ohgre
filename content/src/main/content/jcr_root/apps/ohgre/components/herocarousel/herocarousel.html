@@ -1,29 +1,24 @@
 <section data-sly-use.heroCarousel="com.macquarium.ong.components.HeroCarousel">
-		<div class="container">
-
-<div data-sly-test="${wcmmode.edit || wcmmode.design}">
-    <div data-sly-test="${heroCarousel.slidesList.size < 1}">
-		Configure Hero Carousel Slides 
-	</div>
-
- </div>
-
-<div class="cycle-slideshow" data-cycle-speed="600" data-cycle-fx="fade" data-cycle-pager="#slide-pager" data-cycle-slides="> .slide" data-cycle-timeout=0>
-        <ul data-sly-list.slide="${heroCarousel.slidesList}" data-sly-unwrap>
+   <div class="container">
+      <div data-sly-test="${wcmmode.edit || wcmmode.design}">
+         <div data-sly-test="${heroCarousel.slidesList.size < 1}">
+            Configure Hero Carousel Slides 
+         </div>
+      </div>
+      <div class="cycle-slideshow" data-cycle-speed="600" data-cycle-fx="fade" data-cycle-pager="#slide-pager" data-cycle-slides="> .slide" data-cycle-timeout=${properties.timeout}>
+         <ul data-sly-list.slide="${heroCarousel.slidesList}" data-sly-unwrap>
             <div class="slide">
-                <div class="slide-image"><img src="${slide.imagePath}"></div>
-                <div class="slide-content">
-                    <div class="inner-slide-content">
-                        <span class="slide-title">${slide.title}</span>
-                        <p>${slide.description}<small>*Terms and conditions apply</small></p>
-                        <a href="${slide.buttonPath}" class="primary-button">${slide.buttonTitle}</a>
-                    </div>
-                </div>
+               <div class="slide-image"><img src="${slide.imagePath}"></div>
+               <div class="slide-content">
+                  <div class="inner-slide-content">
+                     <span class="slide-title">${slide.title}</span>
+                     <p>${slide.description}<small>*Terms and conditions apply</small></p>
+                     <a href="${slide.buttonPath}" class="primary-button">${slide.buttonTitle}</a>
+                  </div>
+               </div>
             </div>
-        
-        </ul>
-
-	<div id="slide-pager"></div>
-</div>
-		</div>
-	</section>
+         </ul>
+         <div id="slide-pager"></div>
+      </div>
+   </div>
+</section>

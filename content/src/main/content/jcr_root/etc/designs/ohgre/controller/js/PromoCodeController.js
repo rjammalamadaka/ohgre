@@ -8,32 +8,45 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
         		}
    		 }
 
+ var portalname=$("#primary-header").data("portalname");
+
+    var portalRootUrl=null;
+    if(portalname =="oh"){
+		portalRootUrl ="/content/onlyong/";
+    }else if(portalname =="gre"){
+		portalRootUrl ="/content/gre/";
+    }
+
     $scope.promoCodeSubmit = function(){
 
 
         var promotionCode=$scope.promotionCode;
         var url=null;
         if(promotionCode){
-			 url='/bin/getQuotes?promotionCode='+promotionCode;
-        }else{
-			 url='/bin/getQuotes';
-        }
+			 url="/bin/getPromoCodeInfo?portalname="+portalname+"&promotionCode="+promotionCode;
+             $http.get(url).success(function(data, status, headers, config){
 
-         $http.get(url).success(function(data, status, headers, config){
+                 if(data.promotype =="APPLE"){
+                    window.location=portalRootUrl+"promo-landing-apples.html";
 
-             $scope.Quotes=data;
-             if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
-					$scope.Customer=$scope.Quotes.Customer;
-                   $scope.products=$scope.Customer[0].Product;
+                 }else if(data.promotype =="RAF"){
+
+                      window.location=portalRootUrl+"raf-promotion.html";
+
+                 }else if(data.promotype =="DELTA"){
+
+                      window.location=portalRootUrl+"promo_landing.html";
+
+                 }else if(data.promotype =="INVALID"){
+
+
+                 }
+             }).error(function (data,status, headers, config){
+
+                 console.log("error");
+             });
+
              }
-
-
-             console.log(data);
-
-         }).error(function (data,status, headers, config){
-
-             console.log("error");
-         })
 
     }
 

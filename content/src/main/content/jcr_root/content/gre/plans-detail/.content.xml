@@ -2,15 +2,21 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-07-26T09:25:24.937+05:30"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2017-08-01T15:30:05.061-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Plans Detail"
+        jcr:title="VIEW RATE PLANS"
         jcr:uuid="d91f69e8-d828-4b29-a7d6-0a949facc739"
-        sling:resourceType="/apps/ohgre/components/structure/page">
+        sling:resourceType="/apps/ohgre/components/structure/page"
+        days="Monday - Friday"
+        mobilenumber="1.888.211.8312"
+        portalname="gre"
+        time="8AM - 5PM EST">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">

@@ -7,12 +7,21 @@
         <a href="#" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/etc/designs/gre/clientlibs/_img/gre_logo_main.png" alt="Ohio Natural Gas Logo"></a>
 	
 		<nav id="primary-navigation">
-			<ul role="menu">
+			<!--<ul role="menu">
 				<li><a href="#" title="View Rate Plans" ng-click="navigationclick('plans-detail.html')">View Rate Plans</a></li>
 				<li><a href="#" title="What Is Choice?">What Is Choice?</a></li>
 				<li><a href="#" title="Why Choose Us?">Why Choose Us?</a></li>
 				<li><a href="#" title="How It Works">How It Works</a></li>
-			</ul>
+			</ul> -->
+
+
+                <ul  role="menu" data-sly-use.topnav="navigation.js" data-sly-list="${topnav.items}">
+    <li class="${item.selected && 'topnav__item--selected'}">
+        <a href="${item.page.path}.html">${item.page.title}</a> 
+    </li>
+</ul>
+
+
 			<div id="contact-us-container"><span><a href="#">Contact Us</a> ${inheritedPageProperties.mobilenumber}</span></div>
 		</nav>
 		<a href="#" id="mobile-menu" class="visible-xs visible-sm"><span>menu</span></a>

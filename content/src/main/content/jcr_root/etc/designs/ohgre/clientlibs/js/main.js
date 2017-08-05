@@ -32,6 +32,19 @@ var ohio_ng = {
 			$(this).toggleClass('menu-open');
 			$('#primary-navigation').toggleClass('expaned-menu');
 		});
+        $('.toggle-button').on('click',function(event){
+			event.preventDefault();
+			var obj = $(this);
+			var toggleDirection = obj.data('toggle');
+			console.log(toggleDirection);
+			$('.active-link').removeClass('active-link');
+			obj.addClass('active-link');
+			if(toggleDirection == 'show-all'){
+				$('.accord-trigger').addClass('accord-expanded');
+			}else{
+				$('.accord-trigger').removeClass('accord-expanded');
+			}
+		});
 	}
 }
 $(document).ready(function(){

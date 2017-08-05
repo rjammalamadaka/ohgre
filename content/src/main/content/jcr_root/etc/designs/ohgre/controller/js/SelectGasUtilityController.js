@@ -10,11 +10,11 @@ var portalname=$("#primary-header").data("portalname");
          var locationType=$("input[name='location_type']:checked"). val();    
 
         if(ldcCode){
-		
+		   var hashParam=encodeURIComponent("ldc="+ldcCode+'&lctype='+locationType);
             if(portalname =="oh"){
-         	location.href="/content/onlyong/rate-plans.html#ldc="+ldcCode+'&lctype='+locationType;
+         	location.href="/content/onlyong/rate-plans.html#"+hashParam;
             }else{
-                location.href="/content/gre/rate-plans.html#ldc="+ldcCode+'&lctype='+locationType;
+                location.href="/content/gre/rate-plans.html#"+hashParam;
             }
         }
     }

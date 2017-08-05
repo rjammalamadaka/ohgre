@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-08-04T14:45:17.171-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/promolandingpage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Refer A Friend Promotion"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingpage"
+        hideInNav="true">
+        <image
+            jcr:lastModified="{Date}2017-08-04T11:07:05.696-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-08-03T20:56:38.175-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-04T14:45:17.168-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                imagepath="/content/dam/ohgre/raf/hero.jpg"/>
+            <offerpromotionconten
+                jcr:created="{Date}2017-08-03T20:59:52.234-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-04T14:43:47.731-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/offerpromotioncontent"
+                description="&lt;p>Receive a $25 VISA Reward Card instead?&lt;/p>&#xd;&#xa;"
+                heading="Your friend is an Ohio Natural Gas customer and thinks you should be too!"
+                imagepath="/content/dam/ohgre/global/raf-logo.png"
+                promoheadingline1="Select your gas utility company to view your options."
+                text="&lt;h4>Switching to Ohio Natural Gas® is easy! One call to us and we handle all the details.&lt;/h4>&#xd;&#xa;&lt;p>Why ONG? ONG offers flexible plan options, exceptional customer service and outstanding perks. And when you enroll with ONG with your promotion code and your friend's Referral Code, you both could receive a $50 Visa® Reward Card!&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://localhost:63342/OH-GRE/UI/dist/raf_landing.html?_ijt=1lr1ge0lg01b4lqfpit3unbikc#&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://localhost:63342/OH-GRE/UI/dist/raf_landing.html?_ijt=1lr1ge0lg01b4lqfpit3unbikc#&quot;>Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,39 @@
+<section data-sly-use.termsAndConditionData= "com.macquarium.ong.components.TermsAndConditions" ng-controller="TermsLandingController">
+		<div class="container">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row faq">
+	<div class="box-with-border">
+		<div class="toggle-buttons">
+			<a href="#" class="toggle-button" data-toggle="show-all">Show All</a>
+			<a href="#" class="toggle-button" data-toggle="hide-all">Hide All</a>
+		</div>
+		<h3>Overview</h3>
+		<div class="box-inner">
+			<p>Updated: June 1, 2017</p>
+			<p>
+	These terms and conditions ("terms") apply to the Georgia Natural Gas ("GNG") Refer-a-Friend program ("RAF Program" or "Program"). Referrers must click "Agree" to the RAF Program terms to participate in the RAF Program. Referees agree to the RAF Program terms by using an RAF Program Referral Code when enrolling with GNG.
+			</p>
+		</div>
+		<ul id="faq-list" class="tabs-list">
+            <li data-sly-repeat="${termsAndConditionData.termsAndConditionsDataList}">
+                <a hef="#" class="accord-trigger">${item.termsTitle}</a>
+				<div class="accord-container">
+                    <p>${item.termsDescription}</p>
+				</div>
+			</li>	
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+	</section>
+
+    <section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<a href="#" class="primary-button">Go Back</a>
+				</div>
+			</div>
+		</div>
+	</section>

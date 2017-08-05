@@ -2,10 +2,16 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-07-25T17:42:37.064-04:00"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2017-08-01T15:33:00.557-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingpage"
         jcr:primaryType="cq:PageContent"
-        jcr:title="How It Works"
-        sling:resourceType="/apps/ohgre/components/structure/page"/>
+        jcr:title="HOW IT WORKS"
+        sling:resourceType="/apps/ohgre/components/structure/page"
+        days="Monday - Friday"
+        mobilenumber="1.888.211.8312"
+        portalname="gre"
+        time="8AM - 5PM EST"/>
 </jcr:root>
