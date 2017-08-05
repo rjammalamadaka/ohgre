@@ -13,7 +13,7 @@ public class HeroCarousel extends WCMUsePojo {
 	public List<CarouselSlide> slidesList;
 	@Override
 	public void activate() throws Exception {
-		System.out.println("start the avtive ");	
+		System.out.println("start the active ");
 		String[] navItems = getProperties().get("iItems", String[].class);
 		slidesList=new ArrayList<CarouselSlide>();
 		if(null !=navItems)
