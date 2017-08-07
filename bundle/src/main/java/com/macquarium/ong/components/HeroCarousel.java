@@ -26,6 +26,7 @@ public class HeroCarousel extends WCMUsePojo {
 			     carouselSlide.setImagePath((String)json.get("imagepath"));
 			     carouselSlide.setButtonTitle((String)json.get("buttontitle"));
 			     carouselSlide.setButtonPath((String)json.get("buttonpath"));
+			     carouselSlide.setSmallDescription((String)json.get("smalldescription"));
 			     slidesList.add(carouselSlide);  
 		}		
 	}

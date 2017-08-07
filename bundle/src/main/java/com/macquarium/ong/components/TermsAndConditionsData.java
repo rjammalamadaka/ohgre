@@ -2,8 +2,8 @@ package com.macquarium.ong.components;
 
 public class TermsAndConditionsData {
 
-    String termsTitle;
-    String termsDescription;
+    private String termsTitle;
+    private String termsDescription;
 
     public String getTermsTitle() {
         return termsTitle;

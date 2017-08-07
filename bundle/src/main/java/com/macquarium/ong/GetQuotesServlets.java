@@ -1,11 +1,9 @@
 package com.macquarium.ong;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.rmi.ServerException;
-import java.util.List;
-
+import com.primesw.webservices.GetQuotes;
+import com.primesw.webservices.GetQuotesResponse;
+import com.primesw.webservices.QuoteService;
+import com.primesw.webservices.QuoteServiceSoap;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -18,10 +16,11 @@ import org.tempuri.quoteservice.GetQuotesResult.Customer;
 import org.tempuri.quoteservice.GetQuotesResult.Customer.Product;
 import org.tempuri.quoteservice.QuoteRequest;
 
-import com.primesw.webservices.GetQuotes;
-import com.primesw.webservices.GetQuotesResponse;
-import com.primesw.webservices.QuoteService;
-import com.primesw.webservices.QuoteServiceSoap;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.rmi.ServerException;
+import java.util.List;
 
 
 @SlingServlet(paths="/bin/getQuotes", methods = "GET", metatype=true)
@@ -69,7 +68,10 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
+
 			GetQuotes parameters=new GetQuotes();
+
+
 			QuoteRequest quoteRequest=new QuoteRequest();
 			if(ldcCode !=null)
 				quoteRequest.setLDC(ldcCode);
@@ -95,6 +97,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			}
 			parameters.setQuoteRequest(quoteRequest);
 			System.out.println(quoteRequest);
+
 			GetQuotesResponse getQuotesResponse =quoteServiceSoap.getQuotes(parameters);
 			System.out.println("Got Response");
 			GetQuotesResult getQuotesResult=getQuotesResponse.getGetQuotesResult();
@@ -107,6 +110,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			System.out.println("responseStatus :"+responseStatus);
 			System.out.println("responsemessage :"+responsemessage);
 			List<Customer> customerList=getQuotesResult.getCustomer();
+
 
 			System.out.println("retrive customerList");
 			JSONArray customerArray=new JSONArray();
@@ -121,6 +125,8 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 				for(Product product:productList){
 					JSONObject productObj=new JSONObject();
 					String productDesc=product.getProductCode();
+
+
 
 					productObj.put("ComboFixedPricePct",product.getComboFixedPricePct());
 					productObj.put("ContractPrice",product.getContractPrice());
@@ -160,6 +166,8 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 		String jsonData = obj.toString();
 		response.getWriter().write(jsonData);
 	}
+
+
 
 
 }

@@ -6,6 +6,7 @@ String description;
 String imagePath;
 String buttonTitle;
 String buttonPath;
+String smallDescription;
 public String getTitle() {
 	return title;
 }
@@ -18,6 +19,7 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
+
 public String getImagePath() {
 	return imagePath;
 }
@@ -37,4 +39,11 @@ public void setButtonPath(String buttonPath) {
 	this.buttonPath = buttonPath;
 }
 
+	public String getSmallDescription() {
+		return smallDescription;
+	}
+
+	public void setSmallDescription(String smallDescription) {
+		this.smallDescription = smallDescription;
+	}
 }
