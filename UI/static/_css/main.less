@@ -129,7 +129,8 @@
 			}
 
 			a{
-				color		: @font_color;
+				color		: #4a4a4a;
+				font-size: 1.6rem;
 				font-family	: @secondary_font;
 				font-weight	: bold;
 			}
@@ -482,7 +483,7 @@ div[class^="col-"]{
 	    	width		: auto;
 	    	left		: 25rem;
 	    	top			: auto;
-		    bottom		: 2.5rem;
+		    bottom		: 4rem;
 		    display		: flex;
 
 		    span{
@@ -500,7 +501,7 @@ div[class^="col-"]{
 
 			.inner-slide-content{
 				height: 100%;
-				padding: 2rem 2rem 3rem 2rem;
+				padding: 2rem 2rem 8rem 2.5rem;
 			}
 			.slide-image{
 				img{
@@ -510,7 +511,7 @@ div[class^="col-"]{
 			}
 			.primary-button{
 		    	position: absolute;
-		    	bottom: -1rem;
+		    	bottom: .5rem;
 		    }
 		}
 	}
@@ -643,11 +644,13 @@ div[class^="col-"]{
 	h2{
 		font-weight: 300;
 		margin-top: 0;
+		font-size: 2.4rem;
 	}
 	p{
 		color		: #fff;
 		display		: block;
     	margin		: 2rem auto;
+		font-size: 1.6rem;
     	font-family	: @secondary_font;
 	}
 	input{
@@ -704,6 +707,15 @@ div[class^="col-"]{
 		}
 	}
 }
+@media (@screen-md-min){
+	.inner-content-wrapper{
+		.row{
+			.primary-button{
+				margin-left: 1.5rem;
+			}
+		}
+	}
+}
 div[class^="cq-colctrl-lt1-"]{
 	.card{
 		width: 100%;
@@ -748,7 +760,7 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 		.inner-card-content{
-			padding: 2rem 2rem;
+			padding: 2rem;
 			border: none;
 			position: relative;
 			z-index: 2;
@@ -765,6 +777,7 @@ div[class^="cq-colctrl-lt1-"]{
 			a{
 				display: block;
 				width: 100%;
+				letter-spacing: .1rem;
 			}
 			@media (@screen-md-min){
 				width: 60%;
@@ -896,7 +909,7 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 	.inner-card-content{
 		width		: 100%;
-		padding		: 2rem;
+		padding		: 2.5rem;
 		display		: table;
 
 		.card-title{
@@ -967,6 +980,8 @@ div[class^="cq-colctrl-lt1-"]{
 			p{
 				font-size	: 1.5rem;
 				line-height	: 2.1rem;
+				font-family: @secondary_font;
+				font-weight: normal;
 			}
 		}
 		a{
@@ -1011,7 +1026,7 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	h5{
-		font-size	: 1.6rem;
+		font-size	: 2.4rem;
 		line-height	: 4.5rem;
 		color		: #fff;
 		margin		: 0;
@@ -1062,7 +1077,6 @@ div[class^="cq-colctrl-lt1-"]{
 		    height		: ~"calc( 100% - 2.5rem)";
 		    overflow	: hidden;
 		    padding-left: 0;
-
 
 		    img{
 		    	width	: 100%;
@@ -1533,7 +1547,6 @@ div[class^="cq-colctrl-lt1-"]{
 				}
 				img{
 					display: block;
-					max-width: 25%;
 					margin-top: 2rem;
 				}
 			}
@@ -1557,7 +1570,7 @@ div[class^="cq-colctrl-lt1-"]{
 	&.raf{
 		.inner-slide-content{
 			padding: 0 8rem 2rem;
-			width: 70%;
+			width: 60%;
 
 			p{
 				width: 100%;
@@ -2052,6 +2065,9 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 .customer-lookup{
+	.account-lookup{
+		width: 90%;
+	}
 	.form-wrapper{
 		padding: 0 2rem;
 		display: none;
@@ -2191,43 +2207,64 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 @media (@screen-md-min){
-	.account-number-container{
-		width: 30%;
-		min-width: 29rem;
-	}
-	.lastname-container{
-		width: 25%;
+	.form-area-wrapper{
 		margin-right: 2rem;
 	}
+	.multiple-input{
+		display: flex;
+		justify-content: flex-start;
+	}
+	.account-number-container{
+		// width: 30%;
+		// min-width: 29rem;
+	}
+	.lastname-container{
+		// width: auto;
+		// margin-right: 2rem;
+	}
 	.zipcode-container{
-		width: 10%;
+		// width: auto;
 	}
 }
-.input-group-wrapper{
-	input{
-		margin-right: .2rem;
-		display: inline-block;
+.input-container{
+	display: inline-block;
+	margin-right: .2rem;
 
-		&[maxlength="5"]{
-				width: 20%;
-				min-width: 9rem;
-		}
-		&[maxlength="4"]{
-				width: 18%;
-				min-width: 7rem;
-		}
-		&[maxlength="3"]{
-				width: 15%;
-				min-width: 6rem;
-		}
-		&[maxlength="2"]{
-				width: 13%;
-				min-width: 5rem;
-		}
-		&[maxlength="1"]{
-				width: 8%;
-				min-width: 3rem;
-		}
+	&:last-child{
+		margin-right: 0;
+	}
+	&[data-size="10"]{
+			width: 13rem;
+	}
+	&[data-size="9"]{
+		width: 12rem;
+	}
+	&[data-size="8"]{
+		width: 11rem;
+	}
+	&[data-size="7"]{
+		width: 10rem;
+	}
+	&[data-size="6"]{
+		width: 9rem;
+	}
+	&[data-size="5"]{
+			width: 9rem;
+	}
+	&[data-size="4"]{
+			width: 7.5rem;
+	}
+	&[data-size="3"]{
+			width: 7rem;
+	}
+	&[data-size="2"]{
+			width: 6rem;
+	}
+	&[data-size="1"]{
+			width: 5rem;
+	}
+	input{
+		width: 100%;
 	}
 }
 .steps-container{
