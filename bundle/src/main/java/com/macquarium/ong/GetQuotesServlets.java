@@ -91,6 +91,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 				}
 			}
 			quoteRequest.setAuthorizationCode("internal");
+			quoteRequest.setAllowedToSellWebInd("Y");
 			quoteRequest.setAuthorizationLevel("3");
 			if(null !=promotionCode){
 				quoteRequest.setPromotionCode(promotionCode);
