@@ -20,7 +20,7 @@
 	#contact-us-container{
 		font-family		: @secondary_font;
 		text-transform	: uppercase;
-		padding			: 0 2rem;
+		padding			: 1rem 2rem;
 
 		a{
 			color			: @font_color;
@@ -109,13 +109,14 @@
 	    padding		: 1rem 0;
 	    width		: 100%;
 	    position	: absolute;
-	    top			: 10rem;
+	    top			: 12rem;
 	    right		: 0;
 	    z-index 	: 999999;
 	    background	: #fff;
 
 		ul{
 			padding: 0;
+			margin: 0;
 		}
 		li{
 			list-style	: none;
@@ -330,12 +331,17 @@ footer{
 	COMPONENT STYLES
 ====================== */
 .promocode{
-	+ div[class^="cq-colctrl-"].parsys-column{
+	+ div[class^=cq-colctrl-].parsys-column, + .parsys-column.cq-colctrl-lt0{
 		padding: 0;
 		margin-top: 0.5rem;
 
 		>div:first-child{
 			padding-right: 0;
+		}
+	}
+	@media (@screen-md-min){
+		+ .parsys-column.cq-colctrl-lt0{
+			padding: 0 1.5rem;
 		}
 	}
 }
@@ -2417,4 +2423,13 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 	}
+}
+/* STATIC PAGE STYLES */
+.termsofuse{
+	h2{
+		font-family: @primary_font;
+	}
+}
+.static-page{
+
 }
