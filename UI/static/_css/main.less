@@ -330,7 +330,7 @@ footer{
 	COMPONENT STYLES
 ====================== */
 .promocode{
-	+ .parsys-column.cq-colctrl-lt0{
+	+ div[class^="cq-colctrl-"].parsys-column{
 		padding: 0;
 		margin-top: 0.5rem;
 
@@ -541,12 +541,16 @@ div[class^="col-"]{
 	.slide-content{
 		height: 100%;
 		background-color: @primary_color;
+
+		@media (@screen-md-min){
+			background: none;
+		}
 	}
 	.slide{
 		width		: 100%;
 		height	: 100%;
 		position	: relative;
-		overflow	: hidden;
+		overflow: hidden;
 	}
 	.inner-slide-content{
 		padding	: 2rem;
