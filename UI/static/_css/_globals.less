@@ -146,6 +146,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 		margin-top: 1rem !important;
 	}
 }
+.mt-2{
+   margin-top: 2rem !important;
+}
 .mb-1{
    margin-bottom: 1rem;
 }
@@ -350,6 +353,11 @@ input[type=radio]{
     &:hover{
     	color	: #fff;
     }
+    &.inverted{
+      background-color	: #fff;
+      border: 1px solid @accent_color;
+      color: @accent_color;
+   }
 }
 .accent-button{
 	.primary-button;
@@ -470,7 +478,7 @@ input[type=radio]{
 	margin-bottom	: 2rem;
 }
 .no-margin{
-	margin: 0;
+	margin: 0 !important;
 }
 .no-padding-left{
 	padding-left: 0 !important;
@@ -510,6 +518,26 @@ div[class^="col-"]{
 }
 .center{
 	text-align: center;
+}
+.right{
+   text-align: right;
+}
+.align-center{
+   margin: auto;
+}
+.width-half{
+   width: 50%;
+}
+.dt-width-half{
+   @media (@screen-md-min){
+      width: 50%;
+   }
+}
+.with-border{
+   border: 1px solid @border_color;
+}
+.float-right{
+   float: right;
 }
 @media (@screen-md-min){
 	.desktop-no-padding-left{

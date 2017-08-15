@@ -43,9 +43,12 @@ var ohio_ng = {
 			var obj = $(this);
 			var next_section = obj.data('next');
 			$('.active-form').removeClass('active-form');
-			$('.active-step').removeClass('active-step');
 			$('#step-through >div:nth-child('+next_section+')').addClass('active-form');
-			$('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
+			if(next_section > 3){
+				next_section = next_section - 1;
+				$('.active-step').removeClass('active-step');
+				$('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
+			}
 		});
 	},
 	transform: function(obj) {
