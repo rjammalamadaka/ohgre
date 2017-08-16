@@ -1,81 +1,44 @@
-<!--<section ng-controller="PromotionContentController">
+<section ng-controller="WhatIsChoiceController">
    <div class="container">
-      <span class="promo-headline">${properties.heading}</span>
-      <div class="col-md-10 col-md-offset-1">
-         <div class="row promo-wrapper">
-            <div class="col-md-5">
-               <div class="box-w-arrow">
-                  <img src="${properties.imagepath}">
-                  <span>${properties.promoheadingline1}</span>
-                  <span>${properties.promoheadingline2}</span>
-               </div>
-               <div class="box-with-border">
-                  <div class="box-inner">
-                     ${properties.description @ context='html'}
-                     <form id="promo-form">
-                        <div class="dropdown-container">
-                           <button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-                           <div class="expanded-dropdown">
-                              <ul class="dropdown-menu" role="menu">
-                                 <li role="menuitem" ng-repeat="x in ldcList">
-                                    <a href="#" class="select-option">
-                                    <span class='{{x.name}}'>{{x.value}}</span>
-                                    </a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                        <button class="primary-button">view plans</button>
-                     </form>
+      <div class="row">
+         <div class="col-md-10 col-md-offset-1">
+            <div class="row promo-wrapper">
+               <div class="col-md-7">
+                  <div class="box-with-border">
+                     <h4>${properties.leftboxheading}</h4>
+                     ${properties.leftboxdescription @ context='html'}
                   </div>
                </div>
-            </div>
-            <div class="col-md-7">
-               <div class="box-with-border">
-                  ${properties.text @ context='html'}
+               <div class="col-md-5">
+                  <div class="card no-flex">
+                     <div class="inner-content-wrapper highlighted-bg">
+                        <div class="inner-card-content color-white">
+                           <h4 class="fs-20 no-margin-top fw-normal">${properties.righttopheading}</h4>
+                           <ol class="styled-numbers fs-12 ff-roboto">
+                              <li>
+                                 <p class="fs-14">${properties.rightsidepoint1}</p>
+                              </li>
+                              <li>
+                                 <p class="fs-14">${properties.rightsidepoint2}</p>
+                              </li>
+                              <li>
+                                 <p class="fs-14">${properties.rightsidepoint3}</p>
+                                 <p class="fs-11"><em>${properties.note}</em></p>
+                              </li>
+                           </ol>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="box-with-border inline mt-1">
+					<div class="wrapper">
+                  <p>
+                     ${properties.rightbottomboxtext @ context='html'}
+				  </p>
+                  <div>
+                  </div>
                </div>
             </div>
          </div>
       </div>
    </div>
-</section>-->
-
-<section ng-controller="WhatIsChoiceController">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="row promo-wrapper">
-	<div class="col-md-7">
-		<div class="box-with-border">
-			<h4>${properties.leftboxheading}</h4>
-                ${properties.leftboxdescription @ context='html'}
-            </div>
-	</div>
-	<div class="col-md-5">
-		<div class="card no-flex">
-			<div class="inner-content-wrapper highlighted-bg">
-				<div class="inner-card-content color-white">
-					<h4 class="fs-20 no-margin fw-normal">${properties.righttopheading}</h4>
-					<ol class="styled-numbers fs-12 ff-roboto">
-						<li>
-							<p class="fs-14">${properties.rightsidepoint1}</p> 
-						</li>
-						<li>
-							<p class="fs-14">${properties.rightsidepoint2}</p></li>
-						<li>
-							<p class="fs-14">${properties.rightsidepoint3}</p>
-							<p class="fs-11"><em>${properties.note}</em></p>
-						</li>
-					</ol>
-				</div>
-			</div>
-		</div>
-		<div class="box-with-border inline mt-1">
-			${properties.rightbottomboxtext @ context='html'}
-		</div>
-	</div>
-</div>
-				</div>
-			</div>
-		</div>
-	</section>
+</section>

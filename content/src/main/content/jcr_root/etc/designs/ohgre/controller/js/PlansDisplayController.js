@@ -33,7 +33,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
              $scope.Quotes=data;
              if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
 					$scope.Customer=$scope.Quotes.Customer;
-                   $scope.products=$scope.Customer[0].Product;
+                    $scope.products=$scope.Customer[0].Product;
                  $window.sessionStorage.setItem('products', angular.toJson($scope.products));
                  $scope.displayPlans = true;
              }
@@ -45,6 +45,45 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
          })
 
     }
+
+
+    var bindClickEvent =function(){
+      $('.select-option').on('click',function(event){
+			event.preventDefault();
+			var obj = $(this);
+			var val = obj.html();
+            console.log(val);
+			$('.expanded-dropdown.opened').removeClass('opened');
+            var dropdownButton=obj.parent().parent().parent().parent();
+            var mainValue=$(this).find('span').attr('class');
+            //console.log(mainValue);
+            // $(this).attr("value",mainValue);
+
+			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
+             $('#fixed-plans-button').val(mainValue);
+
+		});
+
+    }
+
+
+    var url="/bin/getLDCInfoServlet?portalName="+portalname;
+     $http.get(url).success(function(data, status, headers, config){
+         if(data && data.responseStatus =="0"){
+               console.log(data.LDCList);
+             $scope.ldcinfo=data.LDCList;
+
+
+             setTimeout(function(){ bindClickEvent(); }, 10);
+
+
+         }
+
+
+         }).error(function (data,status, headers, config){
+
+             console.log("error");
+         });
 
 
 
@@ -74,14 +113,14 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
             getQuotes($scope.ldc);
         }
 
-    for (i = 0; i < $rootScope.ldcList.length; i++) { 
+  /*  for (i = 0; i < $rootScope.ldcList.length; i++) { 
 		var test=$rootScope.ldcList[i];
         if(test.name == $scope.ldc){
             var ldctext="<span>"+test.value+"</span>";
 			$('#fixed-plans-button .value').html(ldctext);
             break;
         }
-    }
+    }*/
 
 
     $scope.getNumber =function(QuoteDescription){

@@ -23,30 +23,84 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
         var promotionCode=$scope.promotionCode;
         var url=null;
         if(promotionCode){
-			 url="/bin/getPromoCodeInfo?portalname="+portalname+"&promotionCode="+promotionCode;
+            getPromoGroups(promotionCode);
+			 url="/bin/getPromoCodeInfo?portalName="+portalname+"&promotionCode="+promotionCode;
              $http.get(url).success(function(data, status, headers, config){
 
-                 if(data.promotype =="APPLE"){
-                    window.location=portalRootUrl+"promo-landing-apples.html";
 
-                 }else if(data.promotype =="RAF"){
+                 console.log($scope.promoInfo);
+				var redirectUrl="";
 
-                      window.location=portalRootUrl+"raf-promotion.html";
+                 if($scope.promoInfo && $scope.promoInfo.url){
+					redirectUrl=$scope.promoInfo.url;
+                 }else{
+					redirectUrl="/content/onlyong/generic-promo.html";
+                 }
 
-                 }else if(data.promotype =="DELTA"){
+                 if(data && data.responseStatus =="0"){
 
-                      window.location=portalRootUrl+"promo_landing.html";
+                     if(data.LDCList && data.LDCList.length >0){
+                        var ldclist= data.LDCList[0];
+                         var promotion=ldclist.promotion[0];
+                         ohgre.store("promoCodeInfo",data);
+                         if(promotion.PromotionExpired =="Y"){
 
-                 }else if(data.promotype =="INVALID"){
+                             	location.href="/content/onlyong/backuppromo.html";
+
+                         }else if(data.LDCList && (data.LDCList.length ==1) && redirectUrl){
+							location.href=redirectUrl+".html";
+
+                     	}else if(data.LDCList.length ==4 && redirectUrl){
+							location.href=redirectUrl+".html";
+                        }else{
+							location.href="/content/onlyong/promo-general.html";
+                        }
+
+                     }
+
+                 }else if(data && data.responseStatus =="1"){
+                        ohgre.store("promoCodeInfo",null);
+                    location.href="/content/onlyong/promotion-error.html";
 
 
                  }
-             }).error(function (data,status, headers, config){
 
+             }).error(function (data,status, headers, config){
+                  ohgre.store("promoCodeInfo",data);
                  console.log("error");
              });
 
              }
+
+    }
+    var getPromoGroups= function(promotionCode){
+			var url='/content/onlyong/promotions.infinity.json';
+
+        $http.get(url).success(function(data, status, headers, config){
+            for (var property in data) {
+    			if (data.hasOwnProperty(property) && property != "jcr:primaryType") {
+                    var childNode=data[property];
+                    for(var childproperty in childNode){
+                        if(childNode.hasOwnProperty(childproperty) && childproperty != "jcr:primaryType"){
+                            var url=childNode[childproperty];
+
+                            if(childproperty == promotionCode){
+							var promoinfo={};
+							promoinfo.code=childproperty;
+                            promoinfo.url=url;
+                            $scope.promoInfo=promoinfo;
+                                break;
+                            }
+                        }
+                    }
+    			}
+			}
+
+        }).error(function (data,status, headers, config){
+
+                 console.log("error");
+         });
+
 
     }
 
@@ -76,6 +130,11 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
              console.log("error");
          });
 
+
+    }
+
+    $scope.toupper =function(promocode){
+		$scope.promotionCode = promocode.toUpperCase();
 
     }
 

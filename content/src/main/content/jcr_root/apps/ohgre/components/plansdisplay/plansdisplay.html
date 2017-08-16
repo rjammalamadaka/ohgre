@@ -3,7 +3,7 @@
 		<div class="utility-form ff-roboto">
 	<div class="col-md-10 col-md-offset-1">
 		<div class="row">
-			<span class="headline">Select Gas Utility</span>
+			<span class="headline no-margin">Select Gas Utility</span>
 			<p>Choose from one of our popular plans to get started right away!</p>
 		</div>
 		<div class="row form-wrapper">
@@ -22,15 +22,15 @@
 					</div>
 					<div class="form-section">
 						<div class="row">
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<div class="dropdown-container">
 									<button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
 									<div class="expanded-dropdown">
 								        <ul class="dropdown-menu" role="menu">
 
-										 <li role="menuitem" ng-repeat="x in ldcList">
+										 <li role="menuitem" ng-repeat="x in ldcinfo">
 			              						<a href="#" class="select-option">
-			                						<span class='{{x.name}}'>{{x.value}}</span>
+			                						<span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
 			             			 			</a>
 			           					 </li>
 
@@ -40,6 +40,7 @@
 							</div>
 							<div class="col-md-3">
 								<button class="primary-button" ng-click="getPlans()">submit</button>
+                        
 							</div>
 						</div>
 					</div>
@@ -60,7 +61,7 @@
 							<div class="plan-info">
 								<div class="inner-content">
 									<h4> {{product.ProductDescription}}</h4>
-									<p class="desktop-content"> {{product.FullDescription}}</p>
+									<p class="desktop-content"> {{product.ProductPlanDesc}}</p>
 								</div>
 								<div class="plan-button">
 									<a href="#" class="primary-button">sign up</a>

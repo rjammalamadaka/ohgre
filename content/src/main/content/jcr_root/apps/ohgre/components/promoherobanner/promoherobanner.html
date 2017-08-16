@@ -1,18 +1,20 @@
+<section class="promo-landing" ng-controller="PromoHeroBannerController">
+   <div class="container">
+      <div class="full-banner-callout"  ng-class="getBannerclass()">
+         <div class="slide">
+            <div class="slide-image"><img src="${properties.imagepath}"></div>
+            <div class="slide-content">
+               <div class="inner-slide-content clearfix">
 
-	<section class="promo-landing">
-		<div class="container">
-			<div class="full-banner-callout flush">
-	<div class="slide">
-		<div class="slide-image"><img src="${properties.imagepath}"></div>
-		<div class="slide-content">
-			<div class="inner-slide-content clearfix">
+                      <img ng-hide="displayPromotionLogo()" data-sly-test="${inheritedPageProperties.portalname == 'oh'}" src="/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png">
 
-				<img data-sly-test="${inheritedPageProperties.portalname == 'oh'}" src="/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png">
-				<span class="slide-title">${properties.title}</span>
-				<p><span>Promo Code: ${properties.promocode}</span><span>Hurry! Offer ends June 4, 2017</span></p>
-			</div>
-		</div>
-	</div>
-</div>
-		</div>
-	</section>
+                                    <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
+                      <span class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
+                                    <p><span>${properties.description}</span></p>
+                  <p ng-show="promotion.PromotionCode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>Hurry! Offer ends {{expdate}}</span></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

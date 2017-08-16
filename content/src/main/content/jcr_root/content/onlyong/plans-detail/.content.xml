@@ -9,13 +9,13 @@
         cq:lastReplicated="{Date}2017-07-21T16:21:24.057-05:00"
         cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
-        cq:template="/apps/ohgre/templates/homepage"
+        cq:template="/apps/ohgre/templates/mainpage"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="VIEW RATE PLANS"
         jcr:uuid="3ab03bf6-c319-4101-872e-6ce7e5602d7f"
-        sling:resourceType="/apps/ohgre/components/structure/page"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
         portalname="oh">
         <content
             jcr:primaryType="nt:unstructured"

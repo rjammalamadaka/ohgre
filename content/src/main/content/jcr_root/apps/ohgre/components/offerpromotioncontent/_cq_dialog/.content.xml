@@ -63,6 +63,9 @@
                                             hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
                                             hiddenHeaderEditingCSS="coral-RichText-hiddenHeader--editing"/>
                                     </table>
+                                    <misctools
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
                                 </rtePlugins>
                                 <uiSettings jcr:primaryType="nt:unstructured">
                                     <cui jcr:primaryType="nt:unstructured">

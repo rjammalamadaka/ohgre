@@ -1,6 +1,11 @@
-ohgrePortal.controller('TermsLandingController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
-    alert("Inside Controller");
+ohgrePortal.controller('TermsLandingController', ['$scope', '$rootScope', '$http', '$window',function ($scope, $rootScope,$http,$window) {
 
+
+    $scope.goBack = function(){
+
+        $window.history.back();
+    }
+   
 
 }]);
 

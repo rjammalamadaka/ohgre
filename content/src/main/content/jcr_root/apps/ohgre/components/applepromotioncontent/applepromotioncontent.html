@@ -1,22 +1,24 @@
-<section>
+<section ng-controller="ApplePromotionContentController">
 		<div class="container">
 			<span class="promo-headline">${properties.heading}</span>
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row promo-wrapper flex-wrap">
-	<div class="col-md-6">
+
+
+	<div class="col-md-6" ng-repeat="product in productList">
 		<div class="box-w-arrow accord-trigger trigger-arrow">
-			<span class="price-ccf">$0.279<small>per Ccf</small></span>
-			<span class="rate-plan">6-month Fixed Plan</span>
+            <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}} <small>per {{getNumber(product.QuoteDescription)}}</small></span>
+                <span class="rate-plan">{{product.ProductDescription}}</span>
 		</div>
-        
+
 		<div class="box-with-border">
 			<div class="box-inner">
 			<p>
-				If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months of your contract.
+                {{product.ProductPlanDesc}}
 			</p>
 			<ul>
-				<li>This plan requires a 6–month commitment.</li>
-				<li>Early termination charges apply for fixed price plans ($75).</li>
+                <li ng-hide="product.CtrctDurationMonths ==0">This plan requires a {{product.CtrctDurationMonths}} -month commitment.</li>
+				<li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
 			</ul>
 				<form id="6-month-fixed-form">
 					<button class="primary-button">Select Plan</button>
@@ -24,51 +26,8 @@
 			</div>
 		</div>
 	</div>
-     <div class="col-md-6">
-		<div class="box-w-arrow accord-trigger trigger-arrow">
-			<span class="price-ccf">$0.279<small>per Ccf</small></span>
-			<span class="rate-plan">6-month Fixed Plan</span>
-		</div>
-        
-		<div class="box-with-border">
-			<div class="box-inner">
-			<p>
-				If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months of your contract.
-			</p>
-			<ul>
-				<li>This plan requires a 6–month commitment.</li>
-				<li>Early termination charges apply for fixed price plans ($75).</li>
-			</ul>
-				<form id="6-month-fixed-form">
-					<button class="primary-button">Select Plan</button>
-				</form>
-			</div>
-		</div>
-	</div> 
-    <div class="col-md-6">
-		<div class="box-w-arrow accord-trigger trigger-arrow">
-			<span class="price-ccf">$0.279<small>per Ccf</small></span>
-			<span class="rate-plan">6-month Fixed Plan</span>
-		</div>
-        
-		<div class="box-with-border">
-			<div class="box-inner">
-			<p>
-				If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months of your contract.
-			</p>
-			<ul>
-				<li>This plan requires a 6–month commitment.</li>
-				<li>Early termination charges apply for fixed price plans ($75).</li>
-			</ul>
-				<form id="6-month-fixed-form">
-					<button class="primary-button">Select Plan</button>
-				</form>
-			</div>
-		</div>
-	</div> 
 
-
-
+ 
 
 </div>
 					<div class="foot-notes">

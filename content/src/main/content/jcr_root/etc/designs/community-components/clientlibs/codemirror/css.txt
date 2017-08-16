@@ -1,3 +1,0 @@
-#base=.
-lib/codemirror.css
-addon/lint/lint.css

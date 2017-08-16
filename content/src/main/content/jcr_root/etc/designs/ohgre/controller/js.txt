@@ -9,3 +9,5 @@ WhatIsChoiceController.js
 ContactUsController.js
 TermsLandingController.js
 AboutUsController.js
+PromoHeroBannerController.js
+ApplePromotionContentController.js

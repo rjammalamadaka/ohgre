@@ -19,4 +19,5 @@ var portalname=$("#primary-header").data("portalname");
         }
     }
 
+
 }]);

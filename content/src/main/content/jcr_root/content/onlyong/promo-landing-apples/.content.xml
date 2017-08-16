@@ -2,12 +2,12 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-01T19:13:18.922+05:30"
+        cq:lastModified="{Date}2017-08-15T08:46:47.155+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/ohgre/templates/promolandingpage"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Promo Landing Apples"
-        sling:resourceType="/apps/ohgre/components/structure/promolandingpage"
+        jcr:title="Apple Promotion"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
             jcr:primaryType="nt:unstructured"
@@ -15,12 +15,11 @@
             <promoherobanner
                 jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-28T21:42:42.155+05:30"
+                jcr:lastModified="{Date}2017-08-13T23:47:49.048-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
-                promocode="Appale3"
                 title="When you compare apples to apples, Ohio Natural Gas is the CLEAR CHOICE"/>
             <applepromotionconten
                 jcr:created="{Date}2017-07-28T21:26:17.785+05:30"
@@ -33,7 +32,7 @@
                 heading="Choose from one of our popular plans to get started right away!"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-08-01T19:13:18.921+05:30"
+            jcr:lastModified="{Date}2017-08-15T08:46:47.143+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>

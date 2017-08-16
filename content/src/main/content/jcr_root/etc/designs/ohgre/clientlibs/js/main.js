@@ -21,6 +21,7 @@ var ohio_ng = {
 
 			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
              $('#fixed-plans-button').val(mainValue);
+
 		});
 		$('.accord-trigger').on('click',function(event){
 			event.preventDefault();
@@ -60,5 +61,32 @@ $(window).scroll(function(){
 		}else{
 			menu_bar.removeClass('sticky');
 		}
-	
+
 });
+
+//custmore lookup
+/*
+
+       $('.next-button').on('click',function(event){
+         event.preventDefault();
+         var obj = $(this);
+         var next_section = obj.data('next');
+         $('.active-form').removeClass('active-form');
+         $('#step-through >div:nth-child('+next_section+')').addClass('active-form');
+         if(next_section > 3){
+            next_section = next_section - 1;
+            $('.active-step').removeClass('active-step');
+            $('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
+         }
+      });
+   },
+   transform: function(obj) {
+    var val = obj.value.replace( /\D/g, '' );
+    if ( /^(\d{3})(\d{3})(\d{4})$/.test( val ) ) {
+      obj.value = '('+RegExp.$1 + ')-' + RegExp.$2 + '-' + RegExp.$3;
+    } else {
+      //alert( 'Invalid input: ' + obj.value );
+    }
+  }
+}
+*/

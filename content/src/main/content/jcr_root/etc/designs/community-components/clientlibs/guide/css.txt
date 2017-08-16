@@ -1,3 +1,0 @@
-#base=css
-guide.css
-dashboard.css

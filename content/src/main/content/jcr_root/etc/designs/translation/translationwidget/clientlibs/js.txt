@@ -1,3 +1,0 @@
-#base=js
-
-translation-widget.js

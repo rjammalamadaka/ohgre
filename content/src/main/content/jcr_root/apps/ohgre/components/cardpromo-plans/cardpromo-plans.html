@@ -1,31 +1,25 @@
-<div class="card" ng-controller="FixedPlansController">
-	<div class="card-hero">
-		<img src="/content/dam/ohgre/home/card_plans_mobile.jpg" alt="" class="visible-xs visible-sm">
-		<img src="/content/dam/ohgre/home/card_plans.jpg" alt="" class="visible-md visible-lg">
-	</div>
-	<div class="inner-content-wrapper highlighted-bg">
-		<div class="inner-card-content">
-			<h2 class="card-title">${properties.heading || 'Fixed Rate Plans'}</h2>
-			<p class="visible-md visible-lg">${properties.description}</p>
-			<div class="dropdown-container visible-md visible-lg">
-				<button class="dropdown-trigger" ng-model="fixedplanbutton" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-				<div class="expanded-dropdown">
-			        <ul class="dropdown-menu" role="menu">
-
-
-  						 <li role="menuitem" ng-repeat="x in ldcList">
-			              <a href="#" class="select-option">
-			                <span class='{{x.name}}'>{{x.value}}</span>
-			              </a>
-			            </li>
-
-			        </ul>
-			    </div>
-			</div>
-
-
-
-			<button class="primary-button visible-md visible-lg" ng-click="viewplans()">${properties.buttontitle ? 'properties.buttontitle' : 'view plans'}</button>
-		</div>
-	</div>
+<div class="card higher-index" ng-controller="FixedPlansController">
+      <div class="card-hero">
+         <img src="/content/dam/ohgre/home/card_plans_mobile.jpg" alt="" class="visible-xs visible-sm">
+         <img src="/content/dam/ohgre/home/card_plans.jpg" alt="" class="visible-md visible-lg">
+      </div>
+      <div class="inner-content-wrapper highlighted-bg">
+         <div class="inner-card-content">
+            <h2 class="card-title">${properties.heading || 'Fixed Rate Plans'}</h2>
+            <p class="visible-md visible-lg">${properties.description}</p>
+            <div class="dropdown-container visible-md visible-lg">
+               <button class="dropdown-trigger" ng-model="fixedplanbutton" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+               <div class="expanded-dropdown">
+                  <ul class="dropdown-menu" role="menu">
+                     <li role="menuitem" ng-repeat="x in ldcinfo">
+                        <a href="#" class="select-option">
+                        <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <button class="primary-button visible-md visible-lg" ng-click="viewplans()">${properties.buttontitle ? 'properties.buttontitle' : 'view plans'}</button>
+         </div>
+      </div>
 </div>

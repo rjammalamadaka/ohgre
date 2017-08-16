@@ -43,11 +43,11 @@
                                         sling:resourceType="granite/ui/components/foundation/form/textarea"
                                         fieldLabel="Description"
                                         name="./description"/>
-                                    <logoincontent
+                                    <logopath
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                        fieldLabel="Logo Image Path"
-                                        name="./logoimagepath"
+                                        fieldLabel="Logo Path"
+                                        name="./logopath"
                                         rootPath="/content/dam/ohgre"/>
                                 </items>
                             </column>
