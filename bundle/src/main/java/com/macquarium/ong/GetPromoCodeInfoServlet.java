@@ -69,7 +69,7 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			}else if(portalName.equals("gre")){
 				getPromoCodeInfoRequest.setStateCode("MI");
 			}
-
+			getPromoCodeInfoRequest.setIncludeExpiredWithActiveBackUpInd("Y");
 			getPromoCodeInfo.setGetPromoCodeInfoRequest(getPromoCodeInfoRequest);
 			GetPromoCodeInfoResponse getPromoCodeInfoResponse=quoteServiceSoap.getPromoCodeInfo(getPromoCodeInfo);
 
@@ -102,6 +102,7 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 					promotionObj.put("PromotionExpired", promotion.getPromotionExpired());
 					promotionObj.put("RAFAdvertising", promotion.getRAFAdvertising());
 					promotionObj.put("RAFEligible", promotion.getRAFEligible());
+					promotionObj.put("BackupPromotionCode",promotion.getBackupPromotionCode());
 					promotionListAray.put(promotionObj);
 				}
 				ldcObj.put("promotion",promotionListAray);

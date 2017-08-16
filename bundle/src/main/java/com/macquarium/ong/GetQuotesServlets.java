@@ -90,8 +90,8 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 					quoteRequest.setRateClass("01");
 				}
 			}
-			quoteRequest.setAuthorizationCode("internal");
 			quoteRequest.setAllowedToSellWebInd("Y");
+			quoteRequest.setAuthorizationCode("internal");
 			quoteRequest.setAuthorizationLevel("3");
 			if(null !=promotionCode){
 				quoteRequest.setPromotionCode(promotionCode);
@@ -129,7 +129,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 
 
 
-					productObj.put("ComboFixedPricePct",product.getComboFixedPricePct());
+					/*productObj.put("ComboFixedPricePct",product.getComboFixedPricePct());
 					productObj.put("ContractPrice",product.getContractPrice());
 					productObj.put("CtrctTermDate",product.getCtrctTermDate());
 					productObj.put("FixedPricePerTherm",product.getFixedPricePerTherm());
@@ -138,9 +138,46 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 					productObj.put("QuoteDescription",product.getQuoteDescription());
 					productObj.put("VarPriceTotal",product.getVarPriceTotal());
 					productObj.put("ProductCode",product.getProductCode());
-					productObj.put("SmallDescription", product.getProductDescription().concat("– discounted for the first 2 months"));
-					productObj.put("FullDescription", product.getProductDescription().concat("– for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service"));
-					productObj.put("AditionalDescription", product.getProductDescription().concat("– discounted for the first 2 months"));
+					productObj.put("ProductPlanDesc",product.getProductPlanDesc());	*/
+					productObj.put("CanQuoteInd",product.getCanQuoteInd());
+					productObj.put("ComboFixedPricePct",product.getComboFixedPricePct());
+					productObj.put("ComboProductAllocTypeCd",product.getComboProductAllocTypeCd());
+					productObj.put("ContractPrice",product.getContractPrice());
+					productObj.put("CtrctDurationMonths",product.getCtrctDurationMonths());
+					productObj.put("CtrctTermDate",product.getCtrctTermDate());
+					productObj.put("DiscChrgPerBill",product.getDiscChrgPerBill());
+					productObj.put("EarlyTermChargeAmt",product.getEarlyTermChargeAmt());
+					productObj.put("EstimatedFirstFlowDate",product.getEstimatedFirstFlowDate());
+					productObj.put("FixedPricePerTherm",product.getFixedPricePerTherm());
+					productObj.put("FixedPricePerThermCd",product.getFixedPricePerThermCd());
+					//product.getMessage();
+					productObj.put("MonthlyCapCostChrg",product.getMonthlyCapCostChrg());
+
+					productObj.put("MonthlyCustChrg",product.getMonthlyCustChrg());
+					productObj.put("PPCEarlyTermChargeAmt",product.getPPCEarlyTermChargeAmt());
+					productObj.put("PriceChangeFrequency",product.getPriceChangeFrequency());
+					productObj.put("ProductCode",product.getProductCode());
+					productObj.put("ProductDescFriendly",product.getProductDescFriendly());
+					productObj.put("ProductDescription",product.getProductDescription());
+					productObj.put("ProductFinePrintText",product.getProductFinePrintText());
+					productObj.put("ProductPlanDesc",product.getProductPlanDesc());
+					productObj.put("QuoteDescription",product.getQuoteDescription());
+					productObj.put("SFBSummerAmt",product.getSFBSummerAmt());
+					productObj.put("SFBSummerCnt",product.getSFBSummerCnt());
+					productObj.put("SFBWinterAmt",product.getSFBWinterAmt());
+					productObj.put("SFBWinterCnt",product.getSFBWinterCnt());
+					productObj.put("VarCapCostPerTherm",product.getVarCapCostPerTherm());
+					productObj.put("VarCapLimit",product.getVarCapLimit());
+					productObj.put("VarPriceAddOnPerTherm",product.getVarPriceAddOnPerTherm());
+					productObj.put("VarPriceBasisAmt",product.getVarPriceBasisAmt());
+					productObj.put("VarPriceBasisCd",product.getVarPriceBasisCd());
+					productObj.put("VarPriceTotal",product.getVarPriceTotal());
+
+
+					//productObj.put("FullDescription", product.getProductDescription().concat("– for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service"));
+					//productObj.put("AditionalDescription", product.getProductDescription().concat("– discounted for the first 2 months"));
+
+
 					/***
 					 Need to make it as Dynamic
 					 **/
