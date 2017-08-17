@@ -1,16 +1,15 @@
 package com.macquarium.ong;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.rmi.ServerException;
-
-import javax.servlet.http.HttpSession;
-
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+
+import javax.servlet.http.HttpSession;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.rmi.ServerException;
 
 
 @SlingServlet(paths="/bin/setProductData", methods = "POST", metatype=true)
@@ -36,17 +35,24 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String productDesc = jObj.getString("ProductDescription");
 			String quoteDes = jObj.getString("QuoteDescription");
 			String productCode=jObj.getString("ProductCode");
+			String fixedPricePerTherm=jObj.getString("FixedPricePerTherm");
 			String LDC=jObj.getString("LDC");
+			String ldcDesc=jObj.getString("LdcDesc");
+
 			System.out.println("productDesc:" +productDesc);
 			session.setAttribute("ProductDescription", productDesc);
 			session.setAttribute("QuoteDescription", quoteDes);
 			session.setAttribute("ProductCode", productCode);
 			session.setAttribute("LDC",LDC);
+			session.setAttribute("FixedPricePerTherm",fixedPricePerTherm);
+			session.setAttribute("LdcDesc",ldcDesc);
 			JSONObject sessionData=new JSONObject();
 			sessionData.put("prodcutDescription",productDesc);
 			sessionData.put("productcode",productCode);
 			sessionData.put("quoteDesc",quoteDes);
 			sessionData.put("LDC",LDC);
+			sessionData.put("fixedPricePerTherm",fixedPricePerTherm);
+			sessionData.put("ldcDesc",ldcDesc);
 			obj.put("sessionData",sessionData);
 			obj.put("resultCode", "0");
 			obj.put("resultMessage", "success");
