@@ -141,6 +141,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 		margin-top: 0 !important;
 	}
 }
+.no-mt{
+   margin-top: 0 !important;
+}
 .mt-1{
 	@media(@screen-md-min){
 		margin-top: 1rem !important;
@@ -174,6 +177,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 }
 .higher-index{
    z-index: 40;
+}
+.no-border{
+   border: none !important;
 }
 .inline{
 	a,button{
@@ -249,6 +255,7 @@ input{
 	color		: @font_color;
 	font-size	: 1.4rem;
 	width		: 100%;
+   font-family: @secondary_font;
 }
 .foot-notes{
 	font-size			: 1rem;
@@ -287,8 +294,8 @@ input{
 }
 .radio-container{
 	position	: relative;
-	height		: 2rem;
-	width		: 2rem;
+	height		: 3rem;
+	width		: 3rem;
 	display		: inline-block;
 
 	+ label{
@@ -296,7 +303,7 @@ input{
 		margin		: 0 4rem 0 0;
 		line-height	: 2rem;
 		font-family	: @secondary_font;
-		font-size	: 1.2rem;
+		font-size	: 1.5rem;
 		font-weight	: 300;
 	}
 }
@@ -309,10 +316,11 @@ input[type=radio]{
 	top					: .4rem;
     left				: 0;
     margin				: 0;
-    height				: 2rem;
+    height				: 3rem;
     border				: none;
     appearance			: none;
     -webkit-appearance	: none;
+    outline: none;
 
 	&:before{
 		content				: "";
@@ -323,7 +331,7 @@ input[type=radio]{
 		width				: 100%;
 		display				: inline-block;
 		position			: absolute;
-		top					: 0;
+		top					: .4rem;
 		left				: 0;
 		z-index				: 1;
 	}
@@ -394,6 +402,7 @@ input[type=radio]{
 		width		: 100%;
 		max-height	: 20rem;
 		display		: none;
+      font-family: @secondary_font;
 
 		&.opened{
 			display	: block;

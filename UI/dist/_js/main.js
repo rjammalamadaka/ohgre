@@ -42,14 +42,18 @@ var ohio_ng = {
 			event.preventDefault();
 			var obj = $(this);
 			var next_section = obj.data('next');
-			$('.active-form').removeClass('active-form');
-			$('#step-through >div:nth-child('+next_section+')').addClass('active-form');
-			if(next_section > 3){
-				next_section = next_section - 1;
-				$('.active-step').removeClass('active-step');
-				$('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
-			}
+			//$('.active-form').removeClass('active-form');
+			var formId = obj.parent().find('.form');
+			console.log(formId);
 		});
+	},
+	showNextContent : function(next_section){
+		$('#step-through >div:nth-child('+next_section+')').addClass('active-form');
+		if(next_section > 3){
+			next_section = next_section - 1;
+			$('.active-step').removeClass('active-step');
+			$('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
+		}
 	},
 	transform: function(obj) {
     var val = obj.value.replace( /\D/g, '' );

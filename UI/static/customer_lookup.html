@@ -38,36 +38,39 @@
 			</div>
 			<div id="step-through">
 				<div class="form-wrapper active-form account-lookup">
+					<form id="someshit" class="form">
+
+					</form>
 					<div class="desktop-flex-container">
-						<div class="form-area-wrapper">
-							<label for="lastname">Gas Utility Account Number</label>
-							<div class="form-area multiple-input">
-									<div class="input-container" data-size="10">
-										<input type="text" name="accountnumber[]" maxlength="10">
-									</div>
-									<div class="input-container" data-size="5">
-										<input type="text" name="accountnumber[]" maxlength="3">
-									</div>
-									<div class="input-container" data-size="3">
-										<input type="text" name="accountnumber[]" maxlength="3">
-									</div>
-									<div class="input-container" data-size="4">
-										<input type="text" name="accountnumber[]" maxlength="4" value="0000" disabled="disabled">
-									</div>
+							<div class="form-area-wrapper">
+								<label for="lastname">Gas Utility Account Number</label>
+								<div class="form-area multiple-input">
+										<div class="input-container" data-size="10">
+											<input type="text" name="accountnumber[]" maxlength="10" data-required="true">
+										</div>
+										<div class="input-container" data-size="5">
+											<input type="text" name="accountnumber[]" maxlength="3" data-required="true">
+										</div>
+										<div class="input-container" data-size="3">
+											<input type="text" name="accountnumber[]" maxlength="3" data-required="true">
+										</div>
+										<div class="input-container" data-size="4">
+											<input type="text" name="accountnumber[]" maxlength="4" value="0000" disabled="disabled">
+										</div>
+								</div>
 							</div>
-						</div>
-						<div class="lastname-container form-area-wrapper">
-							<div class="form-area">
-								<label for="lastname">Last Name on Gas Utility Account</label>
-								<input type="text" name="lastname" />
+							<div class="lastname-container form-area-wrapper">
+								<div class="form-area">
+									<label for="lastname">Last Name on Gas Utility Account</label>
+									<input type="text" name="lastname" data-required="true" />
+								</div>
 							</div>
-						</div>
-						<div class="zipcode-container form-area-wrapper">
-							<div class="form-area">
-								<label for="zipcode">Your Zip Code</label>
-								<input type="text" name="zipcode" />
+							<div class="zipcode-container form-area-wrapper">
+								<div class="form-area">
+									<label for="zipcode">Your Zip Code</label>
+									<input type="text" name="zipcode" data-required="true"/>
+								</div>
 							</div>
-						</div>
 					</div>
 					<button class="primary-button next-button" data-next=2>Next</button>
 				</div>
