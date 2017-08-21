@@ -20,4 +20,23 @@ var portalname=$("#primary-header").data("portalname");
     }
 
 
+var url="/bin/getLDCInfoServlet?portalName="+portalname;
+     $http.get(url).success(function(data, status, headers, config){
+         if(data && data.responseStatus =="0"){
+               console.log(data.LDCList);
+             $scope.ldcinfo=data.LDCList;
+
+
+             setTimeout(function(){ $rootScope.bindClickEvent(); }, 10);
+
+
+         }
+
+
+         }).error(function (data,status, headers, config){
+
+             console.log("error");
+         });
+
+
 }]);

@@ -11,3 +11,5 @@ TermsLandingController.js
 AboutUsController.js
 PromoHeroBannerController.js
 ApplePromotionContentController.js
+EnrollCustomerController.js
+HeroCarouselController.js

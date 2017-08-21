@@ -50,7 +50,7 @@
                             <li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
                         </ul>
                             <form id="12-month-fixed-form">
-                                <button class="primary-button">Select Plan</button>
+                                <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
                             </form>
                         </div>
                     </div>

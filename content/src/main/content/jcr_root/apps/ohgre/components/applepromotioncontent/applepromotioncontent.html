@@ -1,6 +1,8 @@
 <section ng-controller="ApplePromotionContentController">
 		<div class="container">
+
 			<span class="promo-headline">${properties.heading}</span>
+            
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row promo-wrapper flex-wrap">
 
@@ -21,7 +23,7 @@
 				<li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
 			</ul>
 				<form id="6-month-fixed-form">
-					<button class="primary-button">Select Plan</button>
+					<button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
 				</form>
 			</div>
 		</div>

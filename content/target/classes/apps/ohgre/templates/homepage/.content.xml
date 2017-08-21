@@ -7,5 +7,5 @@
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="/apps/ohgre/components/structure/page"/>
+        sling:resourceType="/apps/ohgre/components/structure/helppage"/>
 </jcr:root>

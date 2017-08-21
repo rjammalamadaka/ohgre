@@ -70,11 +70,28 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     var url="/bin/getLDCInfoServlet?portalName="+portalname;
      $http.get(url).success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
-               console.log(data.LDCList);
-             $scope.ldcinfo=data.LDCList;
+               //console.log(data.LDCList);
+               $scope.ldcinfo=data.LDCList;
+             if($rootScope.hashParams && $rootScope.hashParams.ldc){
+                    var currentLdc=$rootScope.hashParams.ldc;
+                 data.LDCList.forEach(function(entry) {
+                     //console.log(entry.LDCCode);
+                     if(currentLdc ==entry.LDCCode){
+						$rootScope.ldcInfo=entry;
+                     }
+
+                 });
+
+             }
 
 
-             setTimeout(function(){ bindClickEvent(); }, 10);
+
+             setTimeout(function(){ 
+
+                 bindClickEvent();
+                       $("#fixed-plans-button").html($scope.ldcInfo.LDCDesc);
+
+                                  }, 10);
 
 
          }

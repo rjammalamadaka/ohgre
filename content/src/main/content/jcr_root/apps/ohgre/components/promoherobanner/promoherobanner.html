@@ -5,8 +5,7 @@
             <div class="slide-image"><img src="${properties.imagepath}"></div>
             <div class="slide-content">
                <div class="inner-slide-content clearfix">
-
-                      <img ng-hide="displayPromotionLogo()" data-sly-test="${inheritedPageProperties.portalname == 'oh'}" src="/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png">
+    <img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}">
 
                                     <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
                       <span class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>

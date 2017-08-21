@@ -53,7 +53,7 @@
                             <li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
                         </ul>
                             <form id="12-month-fixed-form">
-                                <button class="primary-button">Select Plan</button>
+                                <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
                             </form>
                         </div>
                     </div>
@@ -61,10 +61,7 @@
 
             </div>
 
-			<!--<div class="foot-notes">
-						<p>* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans 
-						(12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer.</p>
-			</div> -->
+
 
       </div>
    </div>

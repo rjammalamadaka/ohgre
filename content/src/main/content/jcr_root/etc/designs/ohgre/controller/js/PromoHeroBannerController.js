@@ -2,50 +2,35 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 
  var portalname=$("#primary-header").data("portalname");
 
-
-
      if($rootScope.hashParams.promocode){
+         var url="/bin/getPromoCodeInfo?portalName="+portalname+"&promotionCode="+$rootScope.hashParams.promocode;
+         $http.get(url).success(function(data, status, headers, config){
+             var promoInfo=ohgre.store("promoCodeInfo",data);
+             $rootScope.promotionInfo=true;
+             if(promoInfo && promoInfo.LDCList.length>0){
+                 var ldc=promoInfo.LDCList[0];
+                 $scope.promotion=ldc.promotion[0];
+                 var date = new Date($scope.promotion.PromotionExpiratonDate),
+                     locale = "en-us",
+                     month = date.toLocaleString(locale, { month: "long" });
+                 $scope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
+                 
+             }
 
-
- 			var url="/bin/getPromoCodeInfo?portalName="+portalname+"&promotionCode="+$rootScope.hashParams.promocode;
-             $http.get(url).success(function(data, status, headers, config){
- 				var promoInfo=ohgre.store("promoCodeInfo",data);
-				$rootScope.promotionInfo=true;
-                 console.log(promoInfo);
-
-                  if(promoInfo && promoInfo.LDCList.length>0){
-                var ldc=promoInfo.LDCList[0];
-                //console.log(ldc.promotion[0]);
-                $scope.promotion=ldc.promotion[0];
-                 //var expdate=$scope.promotion.PromotionExpiratonDate;
-        
-                var date = new Date($scope.promotion.PromotionExpiratonDate),
-               locale = "en-us",
-               month = date.toLocaleString(locale, { month: "long" });
-                $scope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
-        
-            }
-
-
-              }).error(function (data,status, headers, config){
-
-                 console.log("error");
-             });
+         }).error(function (data,status, headers, config){
+             
+             console.log("error");
+         });
 
      }else{
-
          var promoInfo=ohgre.store("promoCodeInfo");
-         $rootScope.promotionInfo=true;
-            console.log(promoInfo);
-            if(promoInfo && promoInfo.LDCList.length>0){
+            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
                 var ldc=promoInfo.LDCList[0];
-                //console.log(ldc.promotion[0]);
                 $scope.promotion=ldc.promotion[0];
-                 //var expdate=$scope.promotion.PromotionExpiratonDate;
-        
+                $rootScope.promotionInfo=true;        
                 var date = new Date($scope.promotion.PromotionExpiratonDate),
-               locale = "en-us",
-               month = date.toLocaleString(locale, { month: "long" });
+                locale = "en-us",
+                month = date.toLocaleString(locale, { month: "long" });
                 $scope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
         
             }
@@ -54,7 +39,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 
     $scope.displayPromotionLogo =function(){
 
-        if(location.pathname.indexOf("switch")>0){
+        if(location.pathname.indexOf("switch")>0 || location.pathname.indexOf("special_offer")>0){
 			return true;
         }else{
 			return false;
@@ -62,7 +47,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 
    }
     $scope.getBannerclass =function(){
-        if(location.pathname.indexOf("switch")>0){
+        if(location.pathname.indexOf("switch")>0 || location.pathname.indexOf("special_offer")>0){
             return "one-third";
         }else{
             return "flush";

@@ -4,13 +4,6 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', function ($rootScope, $compi
      var portalname=$('#primary-header').data('portalname');
     $rootScope.portalname=portalname;
 
-  if(portalname && (portalname =='oh')){
-    	$rootScope.ldcList=[{name:'COH',value:'Columbia Ohio'},{name:'DUK',value:'Duke Energy Ohio'},{name:'DEO',value:'Dominion East Ohio'},{name:'VED',value:'Vectren Energy Delivery of Ohio'}];
-
-    }else{
-		$rootScope.ldcList=[{name:'MCG',value:'DTE Gas Company'},{name:'MIC',value:'Consumers Energy'}]
-    }
-
      $rootScope.hashParams = {};
 
     var hashUrl=window.location.hash;
@@ -31,6 +24,36 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', function ($rootScope, $compi
         }else{
 			location.href="/content/gre/"+url;
         }
+    }
+
+     $rootScope.getNumber =function(QuoteDescription){
+
+        if(QuoteDescription.indexOf("CCF")>0){
+			return("Ccf**");
+        }else if(QuoteDescription.indexOf("MCF")>0){
+			return("Mcf**");
+        }
+
+    } 
+
+
+     $rootScope.bindClickEvent =function(){
+      $('.select-option').on('click',function(event){
+			event.preventDefault();
+			var obj = $(this);
+			var val = obj.html();
+            console.log(val);
+			$('.expanded-dropdown.opened').removeClass('opened');
+            var dropdownButton=obj.parent().parent().parent().parent();
+            var mainValue=$(this).find('span').attr('class');
+            //console.log(mainValue);
+            // $(this).attr("value",mainValue);
+
+			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
+             $('#fixed-plans-button').val(mainValue);
+
+		});
+
     }
 
 }]); 

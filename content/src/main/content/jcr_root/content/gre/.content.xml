@@ -4,24 +4,29 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-07-26T09:25:24.937+05:30"
+        cq:designPath="/etc/designs/gre"
+        cq:lastModified="{Date}2017-08-21T12:50:52.685-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy"
         sling:resourceType="/apps/ohgre/components/structure/page"
-        portalname="gre">
+        days="Monday - Friday"
+        mobilenumber="1.888.211.8312"
+        portalname="gre"
+        time="8AM - 5PM EST">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
             <herocarousel
-                jcr:created="{Date}2017-07-23T18:28:26.989+05:30"
+                jcr:created="{Date}2017-08-21T00:30:49.455-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-23T18:41:29.052+05:30"
+                jcr:lastModified="{Date}2017-08-21T00:33:28.156-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today &amp; get 2\,500 Delta Skymiles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SEE OFFER&quot;\,&quot;buttonpath&quot;:&quot;&quot;},{&quot;title&quot;:&quot;slide2&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SEE OFFER&quot;\,&quot;buttonpath&quot;:&quot;&quot;}]"/>
+                iItems="[{&quot;title&quot;:&quot;Sign up today &amp; get 2\,500 Delta Skymiles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;#&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;View Ohio Natural Gas Rate Plans&quot;\,&quot;description&quot;:&quot;Our rates and plans are designed to serve your needs.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                timeout="5000"/>
             <promocode
                 jcr:created="{Date}2017-07-23T18:42:01.956+05:30"
                 jcr:createdBy="admin"
@@ -34,23 +39,42 @@
             <colctrl
                 jcr:created="{Date}2017-07-23T18:42:46.076+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-23T18:42:58.324+05:30"
+                jcr:lastModified="{Date}2017-08-21T00:27:51.275-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
-                layout="2;cq-colctrl-lt0"/>
+                layout="3;cq-colctrl-lt1"/>
             <cardpromo
                 jcr:created="{Date}2017-07-23T18:43:08.192+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-23T18:44:04.896+05:30"
+                jcr:lastModified="{Date}2017-08-21T00:30:32.550-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
                 buttontitle="SEE OFFER"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
+                displayLink="true"
                 heading="Refer a Friend"
-                imagepath="/content/dam/ohgre/home/card_raf.jpg"/>
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
             <col_break15008155783250
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_1267368033
+                jcr:created="{Date}2017-08-21T00:28:08.643-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-21T00:30:27.129-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttontitle="Learn More"
+                description="lorem ipsum dolor sit, lorem ipsum dolor sit, lorem ipsum dolor sit, lorem ipsum dolor sit, lorem ipsum dolor sit, "
+                displayLink="true"
+                heading="Moving? Take Grand Rapids Energy with You. "
+                imagepath="/content/dam/ohgre/home/card_moving.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
+            <col_break15032896712800
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
@@ -76,21 +100,31 @@
                 sling:resourceType="ohgre/components/signup"
                 description="Sign up to stay informed of promos &amp; offers"/>
         </content>
+        <image jcr:primaryType="nt:unstructured">
+            <file.sftmp/>
+        </image>
     </jcr:content>
-    <rate-plans/>
     <plans-detail/>
-    <promolandingpage/>
-    <promolandingpagewithplans/>
-    <refer-a-friend/>
-    <moving/>
-    <what-is-choice/>
-    <why-choose-us/>
-    <how-it-works/>
-    <contact-us/>
+    <what_is_choice/>
+    <why_choose_us/>
+    <about_us/>
+    <termsandconditions/>
     <terms-of-use/>
     <privacy-policy/>
-    <gre-faq-page/>
     <promo_landing/>
     <promo-landing-apples/>
-    <raf-promotion/>
+    <raf-faqs/>
+    <promo-raf/>
+    <backuppromo/>
+    <promo-general/>
+    <save2017/>
+    <visa_offer/>
+    <generic-promo/>
+    <promotion-error/>
+    <switch-back/>
+    <customer_lookup/>
+    <contact-us/>
+    <rate-plans/>
+    <special_offer/>
+    <faq/>
 </jcr:root>

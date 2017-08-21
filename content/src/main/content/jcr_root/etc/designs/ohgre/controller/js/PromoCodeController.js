@@ -29,12 +29,15 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
 
 
                  console.log($scope.promoInfo);
-				var redirectUrl="";
+				var redirectUrl=null;
 
                  if($scope.promoInfo && $scope.promoInfo.url){
-					redirectUrl=$scope.promoInfo.url;
+					 redirectUrl=$scope.promoInfo.url;
+                     if($rootScope.portalname =="gre"){
+						redirectUrl=redirectUrl.replace("onlyong","gre");
+                     }
                  }else{
-					redirectUrl="/content/onlyong/generic-promo.html";
+					redirectUrl=$rootScope.homeUrl+"/generic-promo";
                  }
 
                  if(data && data.responseStatus =="0"){
@@ -44,23 +47,37 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
                          var promotion=ldclist.promotion[0];
                          ohgre.store("promoCodeInfo",data);
                          if(promotion.PromotionExpired =="Y"){
+                             	location.href=$rootScope.homeUrl+"/backuppromo.html";
 
-                             	location.href="/content/onlyong/backuppromo.html";
+                         }else if(data.LDCList && redirectUrl){
+								location.href=redirectUrl+".html"; //Configured page in content node
 
-                         }else if(data.LDCList && (data.LDCList.length ==1) && redirectUrl){
-							location.href=redirectUrl+".html";
+                            /* if(data.LDCList.length ==1){}*/
 
-                     	}else if(data.LDCList.length ==4 && redirectUrl){
-							location.href=redirectUrl+".html";
+
+                     	}else if(data.LDCList && data.LDCList.length!=0 && !redirectUrl){
+
+
+							if(data.LDCList.length ==1){
+                                location.href=$rootScope.homeUrl+"/promo-general.html";
+
+                            }else{
+								location.href=$rootScope.homeUrl+"/generic-promo.html";
+
+                            }
+                           /* if(redirectUrl){
+								location.href=redirectUrl+".html";
+                            }else{location.href=$rootScope.homeUrl+"/generic-promo.html";}*/
+
                         }else{
-							location.href="/content/onlyong/promo-general.html";
+							location.href=$rootScope.homeUrl+"/promo-general.html";
                         }
 
                      }
 
                  }else if(data && data.responseStatus =="1"){
                         ohgre.store("promoCodeInfo",null);
-                    location.href="/content/onlyong/promotion-error.html";
+                    location.href=$rootScope.homeUrl+"/promotion-error.html";
 
 
                  }
@@ -120,7 +137,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
 
 
         		var ldc=$scope.Customer[0].LDC;
-				location.href="/content/ohgre/customerenroll.html#pcode="+product.ProductCode+"&ldc="+ldc;
+				location.href=$rootScope.homeUrl+"/customerenroll.html#pcode="+product.ProductCode+"&ldc="+ldc;
 
 
              console.log("success");

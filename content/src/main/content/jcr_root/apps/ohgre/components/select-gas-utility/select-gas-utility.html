@@ -22,9 +22,9 @@
 						<button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
 						<div class="expanded-dropdown">
 					        <ul class="dropdown-menu" role="menu">
- 								<li role="menuitem" ng-repeat="x in ldcList">
+								<li role="menuitem" ng-repeat="x in ldcinfo">
                                       <a href="#" class="select-option">
-                                        <span class='{{x.name}}'>{{x.value}}</span>
+                                       <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
                                       </a>
 			            		</li>
 					        </ul>

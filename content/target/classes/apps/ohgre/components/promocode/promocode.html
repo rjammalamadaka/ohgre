@@ -11,16 +11,15 @@ Enter your promo code: <input type="text" size="12" ng-model="promotionCode" nam
     </div> -->
 
 <section ng-controller="PromoCodeController">
-	<div class="container">
-		<div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
-			<h2>${properties.heading}</h2>
-			<p>${properties.description @ context='html'}</p>
-			<form>
-				<input type="text" name="promo-code" value="" placeholder="Enter Promo Code" ng-model="promotionCode">
-				<button class="primary-button" ng-click="promoCodeSubmit()">Submit</button>
-
-                {{serverError}}
-			</form>
-		</div>
-	</div>
+   <div class="container">
+      <div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
+         <h2>${properties.heading}</h2>
+         <p>${properties.description @ context='html'}</p>
+         <form ng-submit="promoCodeSubmit()">
+            <input type="text" name="promo-code" value="" placeholder="Enter Promo Code" ng-model="promotionCode" ng-change="toupper(promotionCode)">
+            <button class="primary-button" type="submit">Submit</button>
+            {{serverError}}
+         </form>
+      </div>
+   </div>
 </section>

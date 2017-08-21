@@ -4,7 +4,6 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
      var portalname=$("#primary-header").data("portalname");
 	 $scope.displayPlans =false;
 
-	//var promoInfo=ohgre.store("promoCodeInfo");
 
     var processPromotionInfo=function(promoInfo){
 
@@ -12,6 +11,12 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
         var ldc=promoInfo.LDCList[0];
         $scope.promotion=ldc.promotion[0];
         $scope.giftCardValue=$scope.promotion.GiftCardValue;
+        $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
+         var date = new Date($scope.promotion.PromotionExpiratonDate),
+                     locale = "en-us",
+                     month = date.toLocaleString(locale, { month: "long" });
+         $scope.EXPIRATIONDATE=  month+" "+date.getDate()+" ,"+date.getFullYear();
+
 
     }
 
@@ -43,8 +48,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
     }
 
      $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
-        // console.log(newValue);
-        if(newValue){
+          if(newValue){
 
 			var promoInfo=ohgre.store("promoCodeInfo");
      		processPromotionInfo(promoInfo);
@@ -60,17 +64,15 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
              $http.get(url).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
-                      $scope.displayPlans = true;
+                     $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
                      $scope.products=$scope.Customer[0].Product;
 
                  }else{
 
-
                  }
 
              }).error(function (data,status, headers, config){
-
                  console.log("error");
              });
         }
@@ -80,15 +82,9 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
      var url="/bin/getLDCInfoServlet?portalName="+portalname;
      $http.get(url).success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
-               console.log(data.LDCList);
              $scope.ldcinfo=data.LDCList;
-
-
              setTimeout(function(){ $rootScope.bindClickEvent(); }, 10);
-
-
          }
-
 
          }).error(function (data,status, headers, config){
 

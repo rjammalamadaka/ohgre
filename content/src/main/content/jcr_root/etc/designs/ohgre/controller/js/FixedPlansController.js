@@ -3,7 +3,6 @@ ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',
 var portalname=$("#primary-header").data("portalname");
 
     $scope.viewplans = function(){
-
         var ldcCode=$('#fixed-plans-button').val();
         if(ldcCode){
 		console.log(ldcCode);
@@ -24,9 +23,6 @@ var portalname=$("#primary-header").data("portalname");
 			$('.expanded-dropdown.opened').removeClass('opened');
             var dropdownButton=obj.parent().parent().parent().parent();
             var mainValue=$(this).find('span').attr('class');
-            //console.log(mainValue);
-            // $(this).attr("value",mainValue);
-
 			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
              $('#fixed-plans-button').val(mainValue);
 
@@ -42,13 +38,8 @@ var url="/bin/getLDCInfoServlet?portalName="+portalname;
          if(data && data.responseStatus =="0"){
                console.log(data.LDCList);
              $scope.ldcinfo=data.LDCList;
-
-
              setTimeout(function(){ bindClickEvent(); }, 10);
-
-
          }
-
 
          }).error(function (data,status, headers, config){
 
