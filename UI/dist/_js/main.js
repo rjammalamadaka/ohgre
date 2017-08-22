@@ -46,6 +46,13 @@ var ohio_ng = {
 			var formId = formel.attr('id');
 			$('#'+formId).submit();
 		});
+		// DROP DOWN VALIDATION
+		$('.someclick-handler').on('click',function(){
+			var dropdownVal = $('.dropdown-trigger .value').html();
+			if(dropdownVal == 'Select Your Gas Utility' || dropdownVal == ''){
+				$('.dropdown-container').addClass('has-error');
+			}
+		});
 		$('input').on('blur',function(){
 			var obj = $(this);
 			if(obj.parent().filter('data-size')){
@@ -73,6 +80,15 @@ var ohio_ng = {
 				}
 			} */
 		});
+		$('#promo-code-enter').on('submit',function(event){
+			event.preventDefault();
+			if($('#promo-code-value').val() == ''){
+				$(this).addClass('has-error');
+			}else{
+				$(this).removeClass('has-error');
+			}
+		});
+		/*
 		$('form').on('submit',function(event){
 			event.preventDefault();
 			var errors = false;
@@ -81,7 +97,7 @@ var ohio_ng = {
 			$.each(requiredElement,function(index,value){
 				if($(this).val() == ''){
 					errors = true;
-					$(this).addClass('has-error');
+					$(this).parent().addClass('has-error');
 				}
 			});
 			if(!errors){
@@ -91,7 +107,7 @@ var ohio_ng = {
 			}else{
 				console.log('found errors');
 			}
-		});
+		});*/
 	},
 	showNextContent : function(next_section){
 		$('.active-form').removeClass('active-form');

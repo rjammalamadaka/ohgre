@@ -1665,9 +1665,10 @@ div[class^="cq-colctrl-lt1-"]{
     				line-height: 2.5rem;
 				}
 			}
-			img.logo-image{
+			.logo-image{
 				max-width: 12rem;
 	    		margin: 2rem 0;
+				float: none;
 			}
 			@media (@screen-md-min){
 				padding	: 0rem 2rem 2rem 2rem;
@@ -2371,8 +2372,19 @@ div[class^="cq-colctrl-lt1-"]{
 		// width: auto;
 	}
 }
+.error-message{
+	display: none;
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
+	color: @red;
+}
 .has-error{
-	border: 1px solid #e83838 !important;
+	.error-message,&.error-message{
+		display: block;
+	}
+	+ input, input, .dropdown-trigger{
+		border: 1px solid #e83838 !important;
+	}
 }
 .input-container{
 	display: inline-block;
