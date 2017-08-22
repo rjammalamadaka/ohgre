@@ -1,9 +1,11 @@
 /* COLORS */
 @primary_color			: #0074bf; /* blue */
+@highlight_color     : #0075c2; /* another blue */
 @secondary_color		: #7e94a2; /* blue gray (footer) */
 @accent_color 			: #ff6008; /* orange */
 @font_color				: #757575; /* dark gray */
 @border_color			: #e9eef1; /* light gray */
+@red                 : #d0011b;
 /* FONTS */
 @primary_font	: 'Roboto Slab', serif;
 @secondary_font	: 'Roboto', sans-serif;
@@ -13,6 +15,10 @@
 @screen-md-min : ~"min-width: 992px";
 @screen-lg-min : ~"min-width: 1200px";
 /* GLOBAL STYLES */
+.error-text{
+	font-size: 1.2rem;
+	color: @red;
+}
 *,
 *::before,
 *::after {
@@ -122,6 +128,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 .fs-14{
 	font-size: 1.4rem !important;
 }
+.fs-15{
+	font-size: 1.5rem !important;
+}
 .fs-16{
 	font-size: 1.6rem !important;
 }
@@ -185,6 +194,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	a,button{
 		display: inline-block !important;
 	}
+}
+.align-left{
+   text-align: left !important;
 }
 .block{
    display: block;

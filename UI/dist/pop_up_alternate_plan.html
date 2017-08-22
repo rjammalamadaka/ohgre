@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-	<!-- build:include:dist ../includes/_doc_head.html -->
-		This will be replaced by the content of _doc_head.html
-	<!-- /build -->
+	<head>
+	<meta charset="UTF-8">
+	<title>Ohio Natural Gas</title>
+	<link rel="icon" type="image/png" href="_img/favicon.png">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,700|Roboto+Condensed:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="_css/bootstrap.min.css">
+	<link rel="stylesheet" href="_css/main.css" media="screen">
+	<link rel="stylesheet" href="_css/print.css" media="print">
+</head>
 <body>
 	<div class="popup-wrapper">
 		<div class="window-wrapper with-border">
 	      <a href="#" id="close-window">X</a>
-			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.</h6>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -31,38 +39,23 @@
 				<ul class="plan-detail">
 					<li>
 						<div class="flex-container">
-							<div class="plan-price gray">
-								$4.970<span>per MCF</span>
-							</div>
-							<div class="plan-info-wrapper">
-								<div class="plan-info">
-									<div class="inner-content">
-										<h4>Current Plan</h4>
-										<span class="plan-selected">12 Month Fixed Plan</span>
-										<small>Columbia Gas of Ohio<br />07/01/2016 - 07/01/2017</small>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="flex-container">
-							<div class="plan-price">
+							<div class="plan-price gray gray-text">
 								$2.970<span>per MCF</span>
 							</div>
 							<div class="plan-info-wrapper">
-								<div class="plan-info">
+								<div class="plan-info gray-text">
 									<div class="inner-content">
-										<h4>Selected New Plan</h4>
+										<h4>Current Plan</h4>
 										<span class="plan-selected">6 Month Fixed Plan</span>
 										<small>Columbia Gas of Ohio</small>
 									</div>
 									<div class="plan-button">
-										<a href="#" class="primary-button">select, &amp; continue</a>
+										<span class="error bold">Not eligible for this plan.</span>
 									</div>
 								</div>
 							</div>
 						</div>
+						<a href="#" class="primary-button">Shop for plans</a>
 					</li>
 				</ul>
 				<!-- end inner content -->

@@ -42,12 +42,59 @@ var ohio_ng = {
 			event.preventDefault();
 			var obj = $(this);
 			var next_section = obj.data('next');
-			//$('.active-form').removeClass('active-form');
-			var formId = obj.parent().find('.form');
-			console.log(formId);
+			var formel = obj.parent().find('.form');
+			var formId = formel.attr('id');
+			$('#'+formId).submit();
+		});
+		$('input').on('blur',function(){
+			var obj = $(this);
+			if(obj.parent().filter('data-size')){
+				if($(this).val() != ''){
+					$(this).removeClass('has-error');
+				}
+			}
+		});
+		$('input').on('keyup',function(){
+		/*	var obj = $(this);
+			if(obj.parent().filter('data-size')){
+				var lengthval = obj.parent().data('size');
+				var inputlength = obj.val().length;
+
+				if(lengthval == inputlength){
+					console.log('next input');
+					var currentIndex = $(this).parent().index();
+					console.log(currentIndex);
+					if(currentIndex == 0){
+						currentIndex = 1;
+					}
+					var nextElement = currentIndex + 1;
+					console.log(nextElement);
+					$('.form-area.multiple-input .input-container:nth-child('+nextElement+') input').focus();
+				}
+			} */
+		});
+		$('form').on('submit',function(event){
+			event.preventDefault();
+			var errors = false;
+			console.log('submit called');
+			var requiredElement = $(this).find('[data-required="true"]');
+			$.each(requiredElement,function(index,value){
+				if($(this).val() == ''){
+					errors = true;
+					$(this).addClass('has-error');
+				}
+			});
+			if(!errors){
+				console.log('no errors');
+				var nextBtn = $('.next-button').data('next');
+				ohio_ng.showNextContent(nextBtn);
+			}else{
+				console.log('found errors');
+			}
 		});
 	},
 	showNextContent : function(next_section){
+		$('.active-form').removeClass('active-form');
 		$('#step-through >div:nth-child('+next_section+')').addClass('active-form');
 		if(next_section > 3){
 			next_section = next_section - 1;

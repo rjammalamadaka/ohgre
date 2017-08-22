@@ -12,51 +12,70 @@
 	<link rel="stylesheet" href="_css/print.css" media="print">
 </head>
 <body>
-   <div class="window-wrapper with-border">
-      <a href="#" id="close-window">X</a>
-      <span class="window-title">To Change Your Plan, you will have to pay a fee</span>
-		<div class="inner-window-content with-border">
-			<p>
-				Your current contract is about to expire.  The plan you selected can begin when your current contract ends.  If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.
-			</p>
-			<h4>Your Information</h4>
-			<div class="div-wrapper">
-				<div>
-					<table class="table-wrapper">
-			         <tr>
-			            <td>Name on Gas Utility Account:</td>
-			            <td>John Doe</td>
-			         </tr>
-			         <tr>
-			            <td>Gas Utility:</td>
-			            <td>Columbia Gas of Ohio</td>
-			         </tr>
-			         <tr>
-			            <td>Service Address:</td>
-			            <td>303 Broadview Ave<br />Barberton, OH 44203</td>
-			         </tr>
-			      </table>
+	<div class="popup-wrapper">
+		<div class="window-wrapper with-border">
+	      <a href="#" id="close-window">X</a>
+			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.</h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>John Doe</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				            <td>9-5000-3674-0840</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>303 Broadview Ave<br />Barberton, OH 44203</td>
+				         </tr>
+				      </table>
+					</div>
 				</div>
-				<div class="plan-box bg-primary-blue">
-					<span class="block fs-14 all-caps">Current Plan</span>
-					<span class="block fs-14">Columbia Gas of Ohio</span>
-					<h4>$4.970<small> / MCF</small></h4>
-					<strong class="block fs-12">12 Month Fixed Plan</strong>
-					<span class="block fs-12">12/31/2016 - 12/31/2017</span>
-				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray">
+								$4.970<span>per MCF</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Current Plan</h4>
+										<span class="plan-selected">12 Month Fixed Plan</span>
+										<small>Columbia Gas of Ohio<br />07/01/2016 - 07/01/2017</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex-container">
+							<div class="plan-price">
+								$2.970<span>per MCF</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Selected New Plan</h4>
+										<span class="plan-selected">6 Month Fixed Plan</span>
+										<small>Columbia Gas of Ohio</small>
+									</div>
+									<div class="plan-button">
+										<a href="#" class="primary-button">select, &amp; continue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- end inner content -->
 			</div>
-			<p class="mt-2 center">
-				This plan will start when your current plan expires
-			</p>
-			<div class="plan-box align-center dt-width-half mt-2 with-border">
-				<span class="block fs-14 all-caps">SELECTED NEW PLAN</span>
-				<span class="block fs-14">Columbia Gas of Ohio</span>
-				<h4>$2.970<small> / MCF</small></h4>
-				<strong class="block fs-12">6 Month Fixed Plan</strong>
-				<a href="#" class="primary-button mt-1 fs-12">SELECT, And Continue</a>
-			</div>
-				<a href="#" class="primary-button inverted close-button">Cancel</a>
-		</div>
-   </div>
+	   </div>
+	</div>
 </body>
 </html>
