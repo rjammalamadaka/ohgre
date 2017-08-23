@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-19T09:12:41.770+05:30"
+        cq:lastModified="{Date}2017-08-23T14:23:29.644-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/mainpage"
         jcr:primaryType="cq:PageContent"
@@ -25,13 +25,13 @@
             <plansdisplay_266813004
                 jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-28T15:38:40.166-04:00"
+                jcr:lastModified="{Date}2017-08-23T14:23:29.640-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/plansdisplay"
                 displayGuranteedPlan="true"
                 guranteedBillDesc=" Call us for a Guranteed and protected bill plan"
-                text="&lt;p>Choosing&amp;nbsp;the price plan that&amp;#39;s best for you doesn&amp;#39;t have to be difficult. Ohio Natural Gas℠ (ONG) offers competitive fixed rate, variable rate and Guaranteed Bill℠ plans -all backed by straight forward&amp;nbsp;&lt;a title=&quot;Terms and Conditions&quot; href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>TERMS AND CONDITIONS&lt;/a>&amp;nbsp;and designed to meet customers&amp;#39; individual needs.&lt;br>&#xa;&lt;/p>&#xa;"
+                text="&lt;p>Choosing&amp;nbsp;the price plan that&amp;#39;s best for you doesn&amp;#39;t have to be difficult. Ohio Natural Gas℠ (ONG) offers competitive fixed rate, variable rate and Guaranteed Bill℠ plans -all backed by straight forward&amp;nbsp;&lt;a title=&quot;Terms and Conditions&quot; href=&quot;/content/gre/terms-of-use.html&quot; target=&quot;_blank&quot;>TERMS AND CONDITIONS&lt;/a>&amp;nbsp;and designed to meet customers&amp;#39; individual needs.&lt;br>&#xa;&lt;/p>&#xa;"
                 textIsRich="true"/>
         </content>
         <image
