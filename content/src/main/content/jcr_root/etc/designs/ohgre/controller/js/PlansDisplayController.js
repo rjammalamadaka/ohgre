@@ -47,7 +47,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     }
 
 
-    var bindClickEvent =function(){
+ /*   var bindClickEvent =function(){
       $('.select-option').on('click',function(event){
 			event.preventDefault();
 			var obj = $(this);
@@ -64,7 +64,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
 		});
 
-    }
+    }*/
 
 
     var url="/bin/getLDCInfoServlet?portalName="+portalname;
@@ -88,7 +88,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
              setTimeout(function(){ 
 
-                 bindClickEvent();
+                $rootScope.bindClickEvent();
                        $("#fixed-plans-button").html($scope.ldcInfo.LDCDesc);
 
                                   }, 10);

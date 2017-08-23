@@ -7,14 +7,18 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         		}
    		 }
     $http.get("/bin/getProductData.json").success(function(data, status, headers, config){
-        
-        $scope.product=data;
 
+        $scope.product=data;
+$scope.an1r=false;
+$scope.an3r=false;
+$scope.an4r=false;        
         if(data.LDC == "COH"){
 			$scope.an1minl="8";
 		    $scope.an2minl="3";
             $scope.an3minl="3";
             $scope.an4minl="1";
+            $scope.an3="000";
+            $scope.an3r=true;
 
         }else if(data.LDC == "DUK"){
 			$scope.an1minl="1";
@@ -33,14 +37,18 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 		    $scope.an2minl="9";
             $scope.an3minl="7";
             $scope.an4minl="1";
+            $scope.an1="03";
+            $scope.an4="0";
+            $scope.an1r=true;
+            $scope.an4r=true;
 
-        }else if(data.LDC == "MIC"){
+        }else if(data.LDC == "MCG"){
 			$scope.an1minl="4";
 		    $scope.an2minl="3";
             $scope.an3minl="4";
             $scope.an4minl="1";
 
-        }else if(data.LDC == "MCG"){
+        }else if(data.LDC == "MIC"){
 
 			$scope.an1minl="0";
             $scope.an2minl="0";
@@ -50,7 +58,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }
 
     }).error(function (data,status, headers, config){
-        
+
         console.log("error");
     });
 

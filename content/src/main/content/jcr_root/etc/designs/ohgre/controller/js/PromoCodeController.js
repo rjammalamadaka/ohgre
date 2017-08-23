@@ -19,8 +19,10 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
 
     $scope.promoCodeSubmit = function(){
 
+		$scope.promoform.submited = true;
+        if($scope.promoform.$valid){
 
-        var promotionCode=$scope.promotionCode;
+        var promotionCode=$scope.promotioncode;
         var url=null;
         if(promotionCode){
             getPromoGroups(promotionCode);
@@ -89,6 +91,11 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
 
              }
 
+        }else{
+			return;
+
+        }
+
     }
     var getPromoGroups= function(promotionCode){
 			var url='/content/onlyong/promotions.infinity.json';
@@ -150,10 +157,20 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
 
     }
 
-    $scope.toupper =function(promocode){
+  /*  $scope.toupper =function(promocode){
+        if(promocode)
 		$scope.promotionCode = promocode.toUpperCase();
 
-    }
+    }*/
+
+   $scope.$watch('promotioncode', function (newValue, oldValue, scope) {
+    		console.log(newValue);
+       if(newValue){
+		$scope.promotioncode = newValue.toUpperCase();
+       }
+
+	}, true);
+
 
 }]);
 
