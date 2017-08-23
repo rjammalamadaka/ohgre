@@ -34,8 +34,8 @@
 
 						<div class="form-area-wrapper">
 
-							<label for="lastname" ng-if="product.LDC !='MCG'">Gas Utility Account Number</label>
-                                <label for="lastname" ng-if="product.LDC =='MCG'">Gas Service Pod ID</label>
+							<label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+                                <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
                                 <span style="color:red" ng-show="(formone.an1.$dirty && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)"> 
                                 <span ng-show="formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required">Account Number is required.</span>
                                 <span ng-show="(!(formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required) && (formone.an1.$error.maxlength || formone.an1.$error.minlength || formone.an2.$error.maxlength || formone.an2.$error.minlength || formone.an3.$error.maxlength || formone.an3.$error.minlength || formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
@@ -43,17 +43,17 @@
 
 							<div class="form-area multiple-input">
 
-									<div class="input-container" ng-if="product.LDC !='MCG'">
-										<input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" required>
+									<div class="input-container" data-size={{an1minl}} ng-if="product.LDC !='MIC'">
+                               			<input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
 									</div>
-									<div class="input-container" ng-if="product.LDC !='MCG'">
-										<input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" required>
+									<div class="input-container" data-size={{an2minl}} ng-if="product.LDC !='MIC'">
+										<input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required>
 									</div>
-									<div class="input-container" ng-if="product.LDC !='MCG'">
-										<input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" required>
+									<div class="input-container" data-size={{an3minl}} ng-if="product.LDC !='MIC'">
+										<input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" required>
 									</div>
-									<div class="input-container" data-size="13">
-										<input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" required>
+									<div class="input-container" data-size={{an4minl}}>
+										<input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" required>
 									</div>
 
 
