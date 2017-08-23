@@ -38,8 +38,16 @@ import javax.xml.bind.annotation.XmlType;
  *                           &lt;sequence>
  *                             &lt;element name="PromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="PromotionDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="EffectiveStartDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="EffectiveEndDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="PromotionExpired" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="PromotionExpiratonDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="RateClassCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="RateClassDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="CustomerTypeCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="CustomerTypeDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="SourceOfSaleCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="SourceOfSaleDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="BackupPromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="DSMEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                             &lt;element name="DSMAwardType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -207,8 +215,16 @@ public class GetPromoCodeInfoResult {
      *                 &lt;sequence>
      *                   &lt;element name="PromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="PromotionDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="EffectiveStartDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="EffectiveEndDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="PromotionExpired" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="PromotionExpiratonDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="RateClassCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="RateClassDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="CustomerTypeCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="CustomerTypeDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="SourceOfSaleCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="SourceOfSaleDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="BackupPromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="DSMEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                   &lt;element name="DSMAwardType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -362,8 +378,16 @@ public class GetPromoCodeInfoResult {
          *       &lt;sequence>
          *         &lt;element name="PromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="PromotionDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="EffectiveStartDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="EffectiveEndDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="PromotionExpired" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="PromotionExpiratonDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="RateClassCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="RateClassDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="CustomerTypeCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="CustomerTypeDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="SourceOfSaleCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="SourceOfSaleDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="BackupPromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="DSMEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *         &lt;element name="DSMAwardType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -384,8 +408,16 @@ public class GetPromoCodeInfoResult {
         @XmlType(name = "", propOrder = {
             "promotionCode",
             "promotionDesc",
+            "effectiveStartDate",
+            "effectiveEndDate",
             "promotionExpired",
             "promotionExpiratonDate",
+            "rateClassCode",
+            "rateClassDesc",
+            "customerTypeCode",
+            "customerTypeDesc",
+            "sourceOfSaleCode",
+            "sourceOfSaleDesc",
             "backupPromotionCode",
             "dsmEligible",
             "dsmAwardType",
@@ -401,10 +433,26 @@ public class GetPromoCodeInfoResult {
             protected String promotionCode;
             @XmlElement(name = "PromotionDesc")
             protected String promotionDesc;
+            @XmlElement(name = "EffectiveStartDate")
+            protected String effectiveStartDate;
+            @XmlElement(name = "EffectiveEndDate")
+            protected String effectiveEndDate;
             @XmlElement(name = "PromotionExpired")
             protected String promotionExpired;
             @XmlElement(name = "PromotionExpiratonDate")
             protected String promotionExpiratonDate;
+            @XmlElement(name = "RateClassCode")
+            protected String rateClassCode;
+            @XmlElement(name = "RateClassDesc")
+            protected String rateClassDesc;
+            @XmlElement(name = "CustomerTypeCode")
+            protected String customerTypeCode;
+            @XmlElement(name = "CustomerTypeDesc")
+            protected String customerTypeDesc;
+            @XmlElement(name = "SourceOfSaleCode")
+            protected String sourceOfSaleCode;
+            @XmlElement(name = "SourceOfSaleDesc")
+            protected String sourceOfSaleDesc;
             @XmlElement(name = "BackupPromotionCode")
             protected String backupPromotionCode;
             @XmlElement(name = "DSMEligible")
@@ -471,6 +519,54 @@ public class GetPromoCodeInfoResult {
             }
 
             /**
+             * Gets the value of the effectiveStartDate property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getEffectiveStartDate() {
+                return effectiveStartDate;
+            }
+
+            /**
+             * Sets the value of the effectiveStartDate property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setEffectiveStartDate(String value) {
+                this.effectiveStartDate = value;
+            }
+
+            /**
+             * Gets the value of the effectiveEndDate property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getEffectiveEndDate() {
+                return effectiveEndDate;
+            }
+
+            /**
+             * Sets the value of the effectiveEndDate property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setEffectiveEndDate(String value) {
+                this.effectiveEndDate = value;
+            }
+
+            /**
              * Gets the value of the promotionExpired property.
              * 
              * @return
@@ -516,6 +612,150 @@ public class GetPromoCodeInfoResult {
              */
             public void setPromotionExpiratonDate(String value) {
                 this.promotionExpiratonDate = value;
+            }
+
+            /**
+             * Gets the value of the rateClassCode property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getRateClassCode() {
+                return rateClassCode;
+            }
+
+            /**
+             * Sets the value of the rateClassCode property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setRateClassCode(String value) {
+                this.rateClassCode = value;
+            }
+
+            /**
+             * Gets the value of the rateClassDesc property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getRateClassDesc() {
+                return rateClassDesc;
+            }
+
+            /**
+             * Sets the value of the rateClassDesc property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setRateClassDesc(String value) {
+                this.rateClassDesc = value;
+            }
+
+            /**
+             * Gets the value of the customerTypeCode property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getCustomerTypeCode() {
+                return customerTypeCode;
+            }
+
+            /**
+             * Sets the value of the customerTypeCode property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setCustomerTypeCode(String value) {
+                this.customerTypeCode = value;
+            }
+
+            /**
+             * Gets the value of the customerTypeDesc property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getCustomerTypeDesc() {
+                return customerTypeDesc;
+            }
+
+            /**
+             * Sets the value of the customerTypeDesc property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setCustomerTypeDesc(String value) {
+                this.customerTypeDesc = value;
+            }
+
+            /**
+             * Gets the value of the sourceOfSaleCode property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getSourceOfSaleCode() {
+                return sourceOfSaleCode;
+            }
+
+            /**
+             * Sets the value of the sourceOfSaleCode property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setSourceOfSaleCode(String value) {
+                this.sourceOfSaleCode = value;
+            }
+
+            /**
+             * Gets the value of the sourceOfSaleDesc property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
+             */
+            public String getSourceOfSaleDesc() {
+                return sourceOfSaleDesc;
+            }
+
+            /**
+             * Sets the value of the sourceOfSaleDesc property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
+             */
+            public void setSourceOfSaleDesc(String value) {
+                this.sourceOfSaleDesc = value;
             }
 
             /**

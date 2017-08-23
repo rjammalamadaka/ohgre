@@ -52,6 +52,11 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="MailAddressVerified" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ServiceAddressVerified" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ProductCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="OverrideFixPricePerThermCd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="OverrideFixPricePerTherm" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="OverrideVarPriceAddOnPerTherm" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="OverrideCtrctDurationMonths" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="OverrideCtrctTermDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RAFCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="EnrolledByUserId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="AuthorizationCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -127,6 +132,11 @@ import javax.xml.bind.annotation.XmlType;
     "mailAddressVerified",
     "serviceAddressVerified",
     "productCode",
+    "overrideFixPricePerThermCd",
+    "overrideFixPricePerTherm",
+    "overrideVarPriceAddOnPerTherm",
+    "overrideCtrctDurationMonths",
+    "overrideCtrctTermDate",
     "rafCode",
     "enrolledByUserId",
     "authorizationCode",
@@ -230,6 +240,16 @@ public class EnrollRequest {
     protected String serviceAddressVerified;
     @XmlElement(name = "ProductCode")
     protected String productCode;
+    @XmlElement(name = "OverrideFixPricePerThermCd")
+    protected String overrideFixPricePerThermCd;
+    @XmlElement(name = "OverrideFixPricePerTherm")
+    protected String overrideFixPricePerTherm;
+    @XmlElement(name = "OverrideVarPriceAddOnPerTherm")
+    protected String overrideVarPriceAddOnPerTherm;
+    @XmlElement(name = "OverrideCtrctDurationMonths")
+    protected String overrideCtrctDurationMonths;
+    @XmlElement(name = "OverrideCtrctTermDate")
+    protected String overrideCtrctTermDate;
     @XmlElement(name = "RAFCode")
     protected String rafCode;
     @XmlElement(name = "EnrolledByUserId")
@@ -1107,6 +1127,126 @@ public class EnrollRequest {
      */
     public void setProductCode(String value) {
         this.productCode = value;
+    }
+
+    /**
+     * Gets the value of the overrideFixPricePerThermCd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOverrideFixPricePerThermCd() {
+        return overrideFixPricePerThermCd;
+    }
+
+    /**
+     * Sets the value of the overrideFixPricePerThermCd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOverrideFixPricePerThermCd(String value) {
+        this.overrideFixPricePerThermCd = value;
+    }
+
+    /**
+     * Gets the value of the overrideFixPricePerTherm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOverrideFixPricePerTherm() {
+        return overrideFixPricePerTherm;
+    }
+
+    /**
+     * Sets the value of the overrideFixPricePerTherm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOverrideFixPricePerTherm(String value) {
+        this.overrideFixPricePerTherm = value;
+    }
+
+    /**
+     * Gets the value of the overrideVarPriceAddOnPerTherm property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOverrideVarPriceAddOnPerTherm() {
+        return overrideVarPriceAddOnPerTherm;
+    }
+
+    /**
+     * Sets the value of the overrideVarPriceAddOnPerTherm property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOverrideVarPriceAddOnPerTherm(String value) {
+        this.overrideVarPriceAddOnPerTherm = value;
+    }
+
+    /**
+     * Gets the value of the overrideCtrctDurationMonths property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOverrideCtrctDurationMonths() {
+        return overrideCtrctDurationMonths;
+    }
+
+    /**
+     * Sets the value of the overrideCtrctDurationMonths property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOverrideCtrctDurationMonths(String value) {
+        this.overrideCtrctDurationMonths = value;
+    }
+
+    /**
+     * Gets the value of the overrideCtrctTermDate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOverrideCtrctTermDate() {
+        return overrideCtrctTermDate;
+    }
+
+    /**
+     * Sets the value of the overrideCtrctTermDate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOverrideCtrctTermDate(String value) {
+        this.overrideCtrctTermDate = value;
     }
 
     /**

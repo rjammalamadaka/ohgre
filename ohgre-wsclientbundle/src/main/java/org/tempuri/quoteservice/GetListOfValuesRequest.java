@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="CodeType" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
  *         &lt;element name="TableID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="LDCCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,8 +31,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "codeType",
-    "tableID",
-    "ldcCode"
+    "tableID"
 })
 @XmlRootElement(name = "GetListOfValuesRequest")
 public class GetListOfValuesRequest {
@@ -42,8 +40,6 @@ public class GetListOfValuesRequest {
     protected Object codeType;
     @XmlElement(name = "TableID")
     protected String tableID;
-    @XmlElement(name = "LDCCode")
-    protected String ldcCode;
 
     /**
      * Gets the value of the codeType property.
@@ -91,30 +87,6 @@ public class GetListOfValuesRequest {
      */
     public void setTableID(String value) {
         this.tableID = value;
-    }
-
-    /**
-     * Gets the value of the ldcCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLDCCode() {
-        return ldcCode;
-    }
-
-    /**
-     * Sets the value of the ldcCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLDCCode(String value) {
-        this.ldcCode = value;
     }
 
 }

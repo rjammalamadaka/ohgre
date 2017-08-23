@@ -22,6 +22,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="LDCCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="PromotionCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="IncludeExpiredWithActiveBackUpInd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="RateClass" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="CustomerTypeCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SourceOfSale" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +38,10 @@ import javax.xml.bind.annotation.XmlType;
     "stateCode",
     "ldcCode",
     "promotionCode",
-    "includeExpiredWithActiveBackUpInd"
+    "includeExpiredWithActiveBackUpInd",
+    "rateClass",
+    "customerTypeCode",
+    "sourceOfSale"
 })
 @XmlRootElement(name = "GetPromoCodeInfoRequest")
 public class GetPromoCodeInfoRequest {
@@ -48,6 +54,12 @@ public class GetPromoCodeInfoRequest {
     protected String promotionCode;
     @XmlElement(name = "IncludeExpiredWithActiveBackUpInd")
     protected String includeExpiredWithActiveBackUpInd;
+    @XmlElement(name = "RateClass")
+    protected String rateClass;
+    @XmlElement(name = "CustomerTypeCode")
+    protected String customerTypeCode;
+    @XmlElement(name = "SourceOfSale")
+    protected String sourceOfSale;
 
     /**
      * Gets the value of the stateCode property.
@@ -143,6 +155,78 @@ public class GetPromoCodeInfoRequest {
      */
     public void setIncludeExpiredWithActiveBackUpInd(String value) {
         this.includeExpiredWithActiveBackUpInd = value;
+    }
+
+    /**
+     * Gets the value of the rateClass property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRateClass() {
+        return rateClass;
+    }
+
+    /**
+     * Sets the value of the rateClass property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRateClass(String value) {
+        this.rateClass = value;
+    }
+
+    /**
+     * Gets the value of the customerTypeCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCustomerTypeCode() {
+        return customerTypeCode;
+    }
+
+    /**
+     * Sets the value of the customerTypeCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCustomerTypeCode(String value) {
+        this.customerTypeCode = value;
+    }
+
+    /**
+     * Gets the value of the sourceOfSale property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSourceOfSale() {
+        return sourceOfSale;
+    }
+
+    /**
+     * Sets the value of the sourceOfSale property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSourceOfSale(String value) {
+        this.sourceOfSale = value;
     }
 
 }

@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  *                   &lt;element name="LDCDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="LDCEmergencyPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="LDCCustomerServicePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                   &lt;element name="UOMDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -264,6 +265,7 @@ public class GetLDCInfoResult {
      *         &lt;element name="LDCDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="LDCEmergencyPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="LDCCustomerServicePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *         &lt;element name="UOMDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -277,7 +279,8 @@ public class GetLDCInfoResult {
         "ldcCode",
         "ldcDesc",
         "ldcEmergencyPhone",
-        "ldcCustomerServicePhone"
+        "ldcCustomerServicePhone",
+        "uomDesc"
     })
     public static class LDC {
 
@@ -289,6 +292,8 @@ public class GetLDCInfoResult {
         protected String ldcEmergencyPhone;
         @XmlElement(name = "LDCCustomerServicePhone")
         protected String ldcCustomerServicePhone;
+        @XmlElement(name = "UOMDesc")
+        protected String uomDesc;
 
         /**
          * Gets the value of the ldcCode property.
@@ -384,6 +389,30 @@ public class GetLDCInfoResult {
          */
         public void setLDCCustomerServicePhone(String value) {
             this.ldcCustomerServicePhone = value;
+        }
+
+        /**
+         * Gets the value of the uomDesc property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getUOMDesc() {
+            return uomDesc;
+        }
+
+        /**
+         * Sets the value of the uomDesc property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setUOMDesc(String value) {
+            this.uomDesc = value;
         }
 
     }

@@ -29,8 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *                 &lt;sequence>
  *                   &lt;element name="Code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                   &lt;element name="Value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="DSMEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="RAFEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -150,8 +148,6 @@ public class GetListOfValuesResult {
      *       &lt;sequence>
      *         &lt;element name="Code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *         &lt;element name="Value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="DSMEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
-     *         &lt;element name="RAFEligible" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -163,9 +159,7 @@ public class GetListOfValuesResult {
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "code",
-        "value",
-        "dsmEligible",
-        "rafEligible"
+        "value"
     })
     public static class CodeValuePair {
 
@@ -173,10 +167,6 @@ public class GetListOfValuesResult {
         protected String code;
         @XmlElement(name = "Value")
         protected String value;
-        @XmlElement(name = "DSMEligible")
-        protected String dsmEligible;
-        @XmlElement(name = "RAFEligible")
-        protected String rafEligible;
 
         /**
          * Gets the value of the code property.
@@ -224,54 +214,6 @@ public class GetListOfValuesResult {
          */
         public void setValue(String value) {
             this.value = value;
-        }
-
-        /**
-         * Gets the value of the dsmEligible property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDSMEligible() {
-            return dsmEligible;
-        }
-
-        /**
-         * Sets the value of the dsmEligible property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDSMEligible(String value) {
-            this.dsmEligible = value;
-        }
-
-        /**
-         * Gets the value of the rafEligible property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getRAFEligible() {
-            return rafEligible;
-        }
-
-        /**
-         * Sets the value of the rafEligible property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setRAFEligible(String value) {
-            this.rafEligible = value;
         }
 
     }
