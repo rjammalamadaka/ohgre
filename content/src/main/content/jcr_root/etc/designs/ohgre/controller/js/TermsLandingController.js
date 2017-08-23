@@ -3,7 +3,9 @@ ohgrePortal.controller('TermsLandingController', ['$scope', '$rootScope', '$http
 
     $scope.goBack = function(){
 
-        $window.history.back();
+        //$window.history.back();
+
+        if(document.referrer) {window.open(document.referrer,'_self');} else {history.go(-1);} return false;
     }
    
 
