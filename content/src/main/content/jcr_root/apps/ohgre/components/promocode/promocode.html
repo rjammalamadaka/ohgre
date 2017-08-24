@@ -18,7 +18,7 @@ Enter your promo code: <input type="text" size="12" ng-model="promotionCode" nam
          <form name="promoform" id="promoform"  novalidate>
 
 
-            <input type="text" name="promotioncode" placeholder="Enter Promo Code" ng-model="promotioncode"  ng-minlength="2" ng-maxlength="20" maxlength=20 ng-pattern="/^[a-zA-Z0-9]+$/" required>
+            <input type="text" name="promotioncode" placeholder="Enter Promo Code" ng-model="promotioncode"  ng-minlength="2" ng-maxlength="20" maxlength=20 ng-pattern="/^[a-zA-Z0-9- ]+$/" required>
 
 
             <button class="primary-button" type="submit" ng-click="promoCodeSubmit()">Submit</button>
