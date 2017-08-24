@@ -1,4 +1,4 @@
-ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http','$window',function ($scope, $rootScope,$http,$window) {
 
 	$scope.displayPlans =false;
      var processPromotionInfo=function(promoInfo){
@@ -39,17 +39,26 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
 
     }
 
-	var url="/bin/getLDCInfoServlet?portalName="+$rootScope.portalname;
-     $http.get(url).success(function(data, status, headers, config){
-             if(data && data.responseStatus =="0"){
-                 $scope.ldcinfo=data.LDCList;
-                 setTimeout(function(){  $rootScope.bindClickEvent(); }, 10);
-             }
+    var promoLDC = angular.fromJson($window.sessionStorage.getItem('promoLDC'));
 
-         }).error(function (data,status, headers, config){
+    if(promoLDC !== undefined && promoLDC !== ""){
+		$scope.ldcinfo=promoLDC;
+        setTimeout(function(){  $rootScope.bindClickEvent(); }, 10);
+    }
+    else{
 
-             console.log("error");
-         });
+        var url="/bin/getLDCInfoServlet?portalName="+$rootScope.portalname;
+         $http.get(url).success(function(data, status, headers, config){
+                 if(data && data.responseStatus =="0"){
+                     $scope.ldcinfo=data.LDCList;
+                     setTimeout(function(){  $rootScope.bindClickEvent(); }, 10);
+                 }
+    
+             }).error(function (data,status, headers, config){
+    
+                 console.log("error");
+             });
+    }
 
 
 }]);
