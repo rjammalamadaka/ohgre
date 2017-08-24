@@ -1,4 +1,4 @@
-ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','$window',function ($scope, $rootScope,$http,$window) {
 
 
  var config = {
@@ -8,7 +8,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
         		}
    		 }
 
- var portalname=$("#primary-header").data("portalname");
+   var portalname=$("#primary-header").data("portalname");
 
     var portalRootUrl=null;
     if(portalname =="oh"){
@@ -38,13 +38,12 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
                      if($rootScope.portalname =="gre"){
 						redirectUrl=redirectUrl.replace("onlyong","gre");
                      }
-                 }else{
-					redirectUrl=$rootScope.homeUrl+"/generic-promo";
                  }
 
                  if(data && data.responseStatus =="0"){
 
                      if(data.LDCList && data.LDCList.length >0){
+                         $window.sessionStorage.setItem('promoLDC',angular.toJson(data.LDCList));
                         var ldclist= data.LDCList[0];
                          var promotion=ldclist.promotion[0];
                          ohgre.store("promoCodeInfo",data);
@@ -98,7 +97,16 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http',f
 
     }
     var getPromoGroups= function(promotionCode){
-			var url='/content/onlyong/promotions.infinity.json';
+
+        var url='';
+
+        if(portalname =="oh"){
+			url='/content/onlyong/promotions/oh.infinity.json';
+    	}else if(portalname =="gre"){
+			url='/content/onlyong/promotions/gre.infinity.json';
+    	}
+
+
 
         $http.get(url).success(function(data, status, headers, config){
             for (var property in data) {
