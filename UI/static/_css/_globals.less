@@ -55,7 +55,7 @@ img{
 	margin-left: 0;
 	margin-right: 0;
 }
-@media (min-width: 768px){
+@media (@screen-md-min){
 	.container,.parsys-column {
 		width: 100%;
 		margin: auto;
@@ -401,7 +401,20 @@ input[type=radio]{
    h1,h2,h3,h4,h5,h6{
       font-weight: normal;
    }
-}
+}/*
+.dropdown-showing{
+	&.dropdown-container{
+		&:before {
+			content: "";
+			position: fixed;
+			background: rgba(0,0,0,0.3);
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+		}
+	}
+}*/
 .dropdown-container{
 	position	: relative;
 	color		: @font_color;

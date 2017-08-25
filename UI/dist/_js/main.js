@@ -3,16 +3,22 @@ var ohio_ng = {
 		this.listeners();
 	},
 	listeners : function(){
+
 		$('.dropdown-trigger').on('click',function(event){
 			event.preventDefault();
 			var obj = $(this);
-			obj.parent().find('.expanded-dropdown').toggleClass('opened');
+			obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
 		});
+
+		/*$(document).on('click','.dropdown-showing.dropdown-container',function(event){
+			$('.dropdown-showing').removeClass('dropdown-showing');
+		});*/
 		$('.select-option').on('click',function(event){
 			event.preventDefault();
 			var obj = $(this);
 			var val = obj.html();
 			$('.expanded-dropdown.opened').removeClass('opened');
+			$('body').removeClass('dropdown-showing');
 			obj.parent().parent().parent().parent().find('.dropdown-trigger .value').html(val);
 		});
 		$('.accord-trigger').on('click',function(event){
@@ -46,6 +52,11 @@ var ohio_ng = {
 			var formId = formel.attr('id');
 			$('#'+formId).submit();
 		});
+		$('.redirect-click').on('click',function(event){
+			var obj = $(this);
+			var redirect = obj.data('path');
+			window.location = redirect;
+		});
 		// DROP DOWN VALIDATION
 		$('.someclick-handler').on('click',function(){
 			var dropdownVal = $('.dropdown-trigger .value').html();
@@ -61,6 +72,7 @@ var ohio_ng = {
 				}
 			}
 		});
+
 		$('input').on('keyup',function(){
 		/*	var obj = $(this);
 			if(obj.parent().filter('data-size')){
@@ -108,6 +120,13 @@ var ohio_ng = {
 				console.log('found errors');
 			}
 		});*/
+	},
+	mobileOnly : function(){
+		$('.card[data-path]').on('click',function(event){
+			var obj = $(this);
+			var redirect = obj.data('path');
+			window.location = redirect;
+		});
 	},
 	showNextContent : function(next_section){
 		$('.active-form').removeClass('active-form');
