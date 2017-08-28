@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-08-24T23:43:48.407-04:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-08-25T15:10:54.851-05:00"
+        cq:lastModifiedBy="rebecka.wilson"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Ohio Natural Gas"
@@ -23,11 +23,11 @@
             <herocarousel
                 jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-20T09:54:04.345+05:30"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-25T13:48:16.940-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today &amp; get 2\,500 Delta Skymiles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;DELTANOMILES&quot;},{&quot;title&quot;:&quot;View Ohio Natural Gas Rate Plans&quot;\,&quot;description&quot;:&quot;Our rates and plans are designed to serve your needs.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;For every friend that enrolls with Ohio Natural Gas® you’ll each receive a $50 Visa® Reward Card!* Think of it as a natural gas rebate!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;View More&quot;\,&quot;buttonpath&quot;:&quot;#&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Ohio Natural Gas® bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTANOMILES&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;learn more&quot;\,&quot;buttonpath&quot;:&quot;#&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We’ve proudly served Ohio residents for more than 10 years and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
                 timeout="5000"/>
             <promocode
                 jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
@@ -48,36 +48,36 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 layout="3;cq-colctrl-lt1"/>
-            <cardpromo_1519299391
-                jcr:created="{Date}2017-07-25T13:13:27.257-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-10T09:43:50.473-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/cardpromo"
-                buttontitle="Learn More"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
-                displayLink="true"
-                heading="Moving? Lorem ipsum dolor sit amet"
-                imagepath="/content/dam/ohgre/home/card_moving.jpg"
-                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
-            <col_break15010028026200
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/colctrl"
-                controlType="break"/>
             <cardpromo_578718825
                 jcr:created="{Date}2017-07-25T13:13:29.748-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-10T09:43:14.200-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-25T13:34:45.698-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
-                buttontitle="learn more"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
+                buttontitle="start referring"
+                description="Invite friends to sign up with Ohio Natural Gas® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!"
                 displayLink="true"
                 heading="Refer a Friend"
                 imagepath="/content/dam/ohgre/home/card_raf.jpg"
                 mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
+            <col_break15010028026200
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_1519299391
+                jcr:created="{Date}2017-07-25T13:13:27.257-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-25T13:35:19.014-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttontitle="Let's Get Moving"
+                description="Start, stop or transfer your existing natural gas service."
+                displayLink="true"
+                heading="Moving? Take ONG with You."
+                imagepath="/content/dam/ohgre/home/card_moving.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
             <col_break15010028026211
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
@@ -85,36 +85,24 @@
             <cardpromo_plans
                 jcr:created="{Date}2017-07-25T13:13:33.058-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-24T23:43:48.396-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-25T13:35:45.363-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo-plans"
                 buttonpath="/content/onlyong/plans-detail"
-                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."/>
+                description="Lock in a great 6 or 12-month fixed rate to avoid price spikes and market fluctuations!"/>
             <col_end15010027951470
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="end"/>
-            <herocard
-                jcr:created="{Date}2017-07-28T22:55:54.232-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-09T13:21:26.517-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/herocard"
-                buttonpath="/content/onlyong/plans-detail"
-                buttontitle="Learn More"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
-                imagepath="/content/dam/ohgre/home/hero-image.jpg"
-                title="Fixed Plans"/>
             <signup
                 jcr:created="{Date}2017-08-07T11:06:14.359-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-07T11:07:18.791-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-25T15:10:54.845-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/signup"
-                description="Sign up to receive new promocodes from us"/>
+                description="Sign up to receive new promo codes from us."/>
         </content>
     </jcr:content>
     <plans-detail/>
