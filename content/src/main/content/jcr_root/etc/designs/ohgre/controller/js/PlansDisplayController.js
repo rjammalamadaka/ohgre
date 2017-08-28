@@ -9,7 +9,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
    		 }
         $scope.displayPlans = true;
 
- 	var portalname=$("#primary-header").data("portalname");
+ 	 var portalname=$rootScope.portalname;
 
     $("input[name=location_type][value='residential']").prop("checked",true);
 
@@ -34,8 +34,10 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
              if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
 					$scope.Customer=$scope.Quotes.Customer;
                     $scope.products=$scope.Customer[0].Product;
+                 updateProductFinePrint();
                  $window.sessionStorage.setItem('products', angular.toJson($scope.products));
                  $scope.displayPlans = true;
+                 setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
              }
              console.log(data);
 
@@ -46,26 +48,17 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
     }
 
+    var updateProductFinePrint = function(){
 
- /*   var bindClickEvent =function(){
-      $('.select-option').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var val = obj.html();
-            console.log(val);
-			$('.expanded-dropdown.opened').removeClass('opened');
-            var dropdownButton=obj.parent().parent().parent().parent();
-            var mainValue=$(this).find('span').attr('class');
-            //console.log(mainValue);
-            // $(this).attr("value",mainValue);
+        angular.forEach($scope.products, function(value, key){
 
-			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
-             $('#fixed-plans-button').val(mainValue);
+            var ProductFinePrintText = value.ProductFinePrintText.split(".");
 
-		});
+			$scope.products[key].ProductFinePrintText = ProductFinePrintText;
 
-    }*/
+        });
 
+    }
 
     var url="/bin/getLDCInfoServlet?portalName="+portalname;
      $http.get(url).success(function(data, status, headers, config){
@@ -86,12 +79,15 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
 
 
-             setTimeout(function(){ 
+             setTimeout(function(){
+
 
                 $rootScope.bindClickEvent();
-                       $("#fixed-plans-button").html($scope.ldcInfo.LDCDesc);
+                   //   $("#fixed-plans-button").html($scope.ldcInfo.LDCDesc);
+                 if($scope.ldcInfo && $scope.ldcInfo.LDCDesc)
+                 $('.dropdown-trigger .value').html($scope.ldcInfo.LDCDesc);
 
-                                  }, 10);
+               }, 10);
 
 
          }
@@ -107,6 +103,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
         if($rootScope.hashParams.ldc){
        		 $scope.ldc=$rootScope.hashParams.ldc;
 			$('#fixed-plans-button').val($scope.ldc);
+           // $('.dropdown-trigger .value').html($scope.ldc)
 		///$window.sessionStorage.setItem('ldcType', $scope.ldc);
         }
 
@@ -200,6 +197,25 @@ $rootScope.hashParams.ldc=ldcCode;
 
     }
 
+    $scope.showMobileAccord = function(product){
+
+
+		if(product != undefined){
+
+        if(product.displayMobAccord == undefined)
+        {
+			product.displayMobAccord = true;
+        }
+        else if(product.displayMobAccord){
+			product.displayMobAccord = false;
+        }
+        else if(!product.displayMobAccord){
+			product.displayMobAccord = true;
+        }
+      }
+
+    }
+
     var goToByScroll =function(){
 
         $('html,body').animate({
@@ -207,6 +223,36 @@ $rootScope.hashParams.ldc=ldcCode;
                                'slow');
     	}
 
+
+    var getProductInfo=function(){
+		var url="/content/onlyong/product-configuration/jcr:content/content/productcontentconfig.json";
+        $http.get(url).success(function(data, status, headers, config){
+            if(data && data.iItems){
+				console.log(data.iItems);
+                $scope.productsInfo=data.iItems;
+            }
+         }).error(function (data,status, headers, config){
+
+             console.log("error");
+         });
+
+    }
+	getProductInfo();
+
+    $scope.getProductDescription=function(productCode){
+        var smallDesc=null;
+        if($scope.productsInfo && $scope.productsInfo.length>0){
+            for(var i=0;i<$scope.productsInfo.length; i++){
+                var product=JSON.parse($scope.productsInfo[i]);
+                if(product.productcode == productCode){
+					smallDesc=product.description;
+				break;
+                }
+            }
+
+        }
+        return smallDesc;
+    }
 
 }]);
 
