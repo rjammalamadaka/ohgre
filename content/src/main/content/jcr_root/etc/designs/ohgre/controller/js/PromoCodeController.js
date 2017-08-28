@@ -8,7 +8,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
         		}
    		 }
 
-   var portalname=$("#primary-header").data("portalname");
+    var portalname=$rootScope.portalname;
 
     var portalRootUrl=null;
     if(portalname =="oh"){
@@ -172,7 +172,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
     }*/
 
    $scope.$watch('promotioncode', function (newValue, oldValue, scope) {
-    		console.log(newValue);
+    		//console.log(newValue);
        if(newValue){
 		$scope.promotioncode = newValue.toUpperCase();
        }
