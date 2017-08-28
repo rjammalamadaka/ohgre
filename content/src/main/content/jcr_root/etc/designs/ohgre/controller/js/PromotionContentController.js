@@ -1,7 +1,7 @@
 ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
 
 
-     var portalname=$("#primary-header").data("portalname");
+      var portalname=$rootScope.portalname;
 	 $scope.displayPlans =false;
 
 
@@ -31,6 +31,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                           $scope.displayPlans = true;
                          $scope.Customer=$scope.Quotes.Customer;
                          $scope.products=$scope.Customer[0].Product;
+                         setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                      }else{
 

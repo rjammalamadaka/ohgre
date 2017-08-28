@@ -1,6 +1,7 @@
 ohgrePortal.controller('SelectGasUtilityController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
 
-var portalname=$("#primary-header").data("portalname");
+ var portalname=$rootScope.portalname;
+
  $("input[name=location_type][value='residential']").prop("checked",true);
 
 

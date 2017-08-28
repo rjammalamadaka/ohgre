@@ -1,6 +1,6 @@
 ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
 
- var portalname=$("#primary-header").data("portalname");
+ var portalname=$rootScope.portalname;
 
      if($rootScope.hashParams.promocode){
          var url="/bin/getPromoCodeInfo?portalName="+portalname+"&promotionCode="+$rootScope.hashParams.promocode;
