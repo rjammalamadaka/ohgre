@@ -7,6 +7,8 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
              $scope.promotion=ldc.promotion[0];
              $scope.giftCardValue=$scope.promotion.GiftCardValue; 
              $scope.GIFTCARDVALUE=Number($scope.giftCardValue);
+
+          
          }
      }
 
@@ -29,8 +31,11 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
                       $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
                      $scope.products=$scope.Customer[0].Product;
+					 setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
-                 }else{         }
+
+                 }else{
+                 }
 
              }).error(function (data,status, headers, config){    
                  console.log("error");
@@ -53,9 +58,9 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
                      $scope.ldcinfo=data.LDCList;
                      setTimeout(function(){  $rootScope.bindClickEvent(); }, 10);
                  }
-    
+
              }).error(function (data,status, headers, config){
-    
+
                  console.log("error");
              });
     }
