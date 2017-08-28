@@ -37,6 +37,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String productCode=jObj.getString("ProductCode");
 			String fixedPricePerTherm=jObj.getString("FixedPricePerTherm");
 			String LDC=jObj.getString("LDC");
+			//String ldcCode=jObj.getString("LdcCode");
 			String ldcDesc=jObj.getString("LdcDesc");
 
 			System.out.println("productDesc:" +productDesc);
@@ -44,6 +45,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			session.setAttribute("QuoteDescription", quoteDes);
 			session.setAttribute("ProductCode", productCode);
 			session.setAttribute("LDC",LDC);
+			//session.setAttribute("LdcCode",ldcCode);
 			session.setAttribute("FixedPricePerTherm",fixedPricePerTherm);
 			session.setAttribute("LdcDesc",ldcDesc);
 			JSONObject sessionData=new JSONObject();
@@ -51,6 +53,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			sessionData.put("productcode",productCode);
 			sessionData.put("quoteDesc",quoteDes);
 			sessionData.put("LDC",LDC);
+			//sessionData.put("ldcCode", ldcCode);
 			sessionData.put("fixedPricePerTherm",fixedPricePerTherm);
 			sessionData.put("ldcDesc",ldcDesc);
 			obj.put("sessionData",sessionData);

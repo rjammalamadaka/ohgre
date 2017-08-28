@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/metatype">
     <OCD id="OHGRE Common Configuration" name="OHGRE Common Configuration Service" description="%OHGRE Common Configuration.description">
-        <AD id="prime.endpoint.url" type="String" default="https://prime.southstarenergy.com/webservices/quoteservice.asmx?wsdl" name="Prime End Point Url" description="Prime End point url to communicate with prime"/>
+        <AD id="prime.endpoint.url" type="String" default="" name="Prime End Point Url" description="Prime End point url to communicate with prime"/>
     </OCD>
     <OCD id="com.macquarium.ong.EnrollCustomerServlets" name="%com.macquarium.ong.EnrollCustomerServlets.name" description="%com.macquarium.ong.EnrollCustomerServlets.description">
         <AD id="sling.servlet.paths" type="String" default="/bin/enrollCustomer" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
         <AD id="sling.servlet.methods" type="String" default="POST" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
     </OCD>
+    <OCD id="com.macquarium.ong.GetLDCInfoServlet" name="%com.macquarium.ong.GetLDCInfoServlet.name" description="%com.macquarium.ong.GetLDCInfoServlet.description">
+        <AD id="sling.servlet.paths" type="String" default="/bin/getLDCInfoServlet" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
+        <AD id="sling.servlet.methods" type="String" default="GET" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
+    </OCD>
     <OCD id="com.macquarium.ong.GetProductDataServlet" name="%com.macquarium.ong.GetProductDataServlet.name" description="%com.macquarium.ong.GetProductDataServlet.description">
         <AD id="sling.servlet.paths" type="String" default="/bin/getProductData" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
+        <AD id="sling.servlet.methods" type="String" default="GET" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
+    </OCD>
+    <OCD id="com.macquarium.ong.GetPromoCodeInfoServlet" name="%com.macquarium.ong.GetPromoCodeInfoServlet.name" description="%com.macquarium.ong.GetPromoCodeInfoServlet.description">
+        <AD id="sling.servlet.paths" type="String" default="/bin/getPromoCodeInfo" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
         <AD id="sling.servlet.methods" type="String" default="GET" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
     </OCD>
     <OCD id="com.macquarium.ong.GetQuotesServlets" name="%com.macquarium.ong.GetQuotesServlets.name" description="%com.macquarium.ong.GetQuotesServlets.description">
@@ -24,8 +32,14 @@
     <Designate pid="com.macquarium.ong.EnrollCustomerServlets">
         <Object ocdref="com.macquarium.ong.EnrollCustomerServlets"/>
     </Designate>
+    <Designate pid="com.macquarium.ong.GetLDCInfoServlet">
+        <Object ocdref="com.macquarium.ong.GetLDCInfoServlet"/>
+    </Designate>
     <Designate pid="com.macquarium.ong.GetProductDataServlet">
         <Object ocdref="com.macquarium.ong.GetProductDataServlet"/>
+    </Designate>
+    <Designate pid="com.macquarium.ong.GetPromoCodeInfoServlet">
+        <Object ocdref="com.macquarium.ong.GetPromoCodeInfoServlet"/>
     </Designate>
     <Designate pid="com.macquarium.ong.GetQuotesServlets">
         <Object ocdref="com.macquarium.ong.GetQuotesServlets"/>

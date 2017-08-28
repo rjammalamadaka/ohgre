@@ -1,12 +1,16 @@
-com/macquarium/ong/impl/HelloServiceImpl.class
+com/macquarium/ong/components/TermsAndConditionsData.class
 com/macquarium/ong/impl/CommonConfigServiceImpl.class
+com/macquarium/ong/GetLDCInfoServlet.class
+com/macquarium/ong/components/ProductContent.class
+com/macquarium/ong/components/WhyChooseUs.class
 com/macquarium/ong/impl/filters/LoggingFilter.class
 com/macquarium/ong/EnrollCustomerServlets.class
 com/macquarium/ong/package-info.class
 com/macquarium/ong/HeaderHandlerResolver.class
-com/macquarium/ong/WsdlTest.class
+com/macquarium/ong/GetPromoCodeInfoServlet.class
 com/macquarium/ong/SetProductDataServlet.class
-com/macquarium/ong/HelloService.class
+com/macquarium/ong/components/TermsAndConditions.class
+com/macquarium/ong/components/ProductContentConfiguration.class
 com/macquarium/ong/GetProductDataServlet.class
 com/macquarium/ong/HeaderHandler.class
 com/macquarium/ong/GetQuotesServlets.class
@@ -14,3 +18,4 @@ com/macquarium/ong/WsSecurityHandler.class
 com/macquarium/ong/CommonConfigService.class
 com/macquarium/ong/components/HeroCarousel.class
 com/macquarium/ong/components/CarouselSlide.class
+com/macquarium/ong/components/WhyChooseUsData.class
