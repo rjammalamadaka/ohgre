@@ -1,5 +1,5 @@
 ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
-var portalname=$("#primary-header").data("portalname");
+ var portalname=$rootScope.portalname;
 
     var promocode=$("#promocode").data("promocode");
 

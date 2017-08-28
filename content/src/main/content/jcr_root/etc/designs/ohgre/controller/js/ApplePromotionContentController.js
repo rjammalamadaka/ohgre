@@ -1,9 +1,12 @@
 ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
 
     //   
-    var portalname=$("#primary-header").data("portalname");
+    var portalname=$rootScope.portalname;
 
   var processPromotionInfo=function(promoInfo){
+
+
+      console.log("calling processPromotionInfo");
 
               if(promoInfo && promoInfo.LDCList.length>0){
                   var ldc=promoInfo.LDCList[0];
@@ -28,14 +31,15 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                           var customer=data.Customer[0];
                           $scope.productList= customer.Product;
                           //  console.log(product);
-                          
+                          setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
+
                       }
                       
                   }).error(function (data,status, headers, config){
-                      
+
                       console.log("error");
                   });
-                  
+
               }
 
     }
@@ -52,8 +56,8 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
  if(!$rootScope.hashParams.promocode){
 
-	var promoInfo=ohgre.store("promoCodeInfo");
-     processPromotionInfo(promoInfo);
+	//var promoInfo=ohgre.store("promoCodeInfo");
+   //  processPromotionInfo(promoInfo);
 
 
  }
