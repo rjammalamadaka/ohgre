@@ -54,6 +54,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', function ($rootScope, $compi
 
 		});
 
+       
+
     }
 
      $rootScope.maintext="from angular";
@@ -117,5 +119,18 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', function ($rootScope, $compi
         }
     }
 
+    $rootScope.bindAccordian =function(){
+
+        $('.accord-trigger').on('click',function(event){
+            event.preventDefault();
+            var obj = $(this);
+            obj.toggleClass('accord-expanded');
+        });
+    }
+
+
+$rootScope.currentYear=new Date().getFullYear();
+
+    $rootScope.giftcardvalue="ddd";
 
 }]); 

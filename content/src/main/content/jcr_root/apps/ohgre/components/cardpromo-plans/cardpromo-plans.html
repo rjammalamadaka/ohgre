@@ -1,3 +1,13 @@
+<style>
+
+    @media (min-width: 992px){
+		.mobile-view{
+    		display : none !important;
+		}
+    }
+
+    </style>
+
 <div class="card higher-index" ng-controller="FixedPlansController">
       <div class="card-hero">
          <img src="/content/dam/ohgre/home/card_plans_mobile.jpg" alt="" class="visible-xs visible-sm">
@@ -5,7 +15,8 @@
       </div>
       <div class="inner-content-wrapper highlighted-bg">
          <div class="inner-card-content">
-            <h2 class="card-title">${properties.heading || 'Fixed Rate Plans'}</h2>
+            <h2 class="card-title visible-md visible-lg">${properties.heading || 'Fixed Rate Plans'}</h2>
+            <a class="mobile-view" href="${properties.buttonpath || '#'}.html" ><h2 class="card-title">${properties.heading || 'Fixed Rate Plans'}</h2></a>
             <p class="visible-md visible-lg">${properties.description}</p>
             <div class="dropdown-container visible-md visible-lg">
                <button class="dropdown-trigger" ng-model="fixedplanbutton" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>

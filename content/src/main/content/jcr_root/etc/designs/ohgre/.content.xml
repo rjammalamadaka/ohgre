@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-19T18:10:30.505-04:00"
+        cq:lastModified="{Date}2017-08-27T21:35:56.932+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/wcm/core/templates/designpage"
         jcr:primaryType="cq:PageContent"
@@ -51,11 +51,11 @@
         </promolandingwithnav>
         <helppage jcr:primaryType="nt:unstructured">
             <content
-                jcr:lastModified="{Date}2017-08-17T07:36:40.338+05:30"
+                jcr:lastModified="{Date}2017-08-27T21:35:56.927+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/parsys"
-                components="/libs/foundation/components/text">
+                components="[/libs/foundation/components/text,group:OhGre]">
                 <section jcr:primaryType="nt:unstructured"/>
                 <text
                     jcr:lastModified="{Date}2017-08-17T07:39:49.241+05:30"

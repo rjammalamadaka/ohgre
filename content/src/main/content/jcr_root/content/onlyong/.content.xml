@@ -5,7 +5,7 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-08-21T13:13:35.523-04:00"
+        cq:lastModified="{Date}2017-08-24T23:43:48.407-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
@@ -85,10 +85,11 @@
             <cardpromo_plans
                 jcr:created="{Date}2017-07-25T13:13:33.058-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-10T09:43:28.935-04:00"
+                jcr:lastModified="{Date}2017-08-24T23:43:48.396-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo-plans"
+                buttonpath="/content/onlyong/plans-detail"
                 description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."/>
             <col_end15010027951470
                 jcr:primaryType="nt:unstructured"
@@ -195,6 +196,70 @@
         <UTILITY
             jcr:primaryType="nt:unstructured"
             UTILITYCHOICE="/content/gre/special_offer"/>
+        <oh jcr:primaryType="nt:unstructured">
+            <APPLES
+                jcr:primaryType="nt:unstructured"
+                APPLECOH="/content/onlyong/promo-landing-apples"
+                APPLEDEO="/content/onlyong/promo-landing-apples"
+                APPLEDUKE="/content/onlyong/promo-landing-apples"
+                APPLEVEDO="/content/onlyong/promo-landing-apples"
+                APPLEWGL="/content/onlyong/promo-landing-apples"
+                BUSINESSMVR="/content/onlyong/promo-landing-apples"
+                CHOICE12C="/content/onlyong/promo-landing-apples"
+                MVRSPECIAL="/content/onlyong/promo-landing-apples"/>
+            <RAF
+                jcr:primaryType="nt:unstructured"
+                RAF25="/content/onlyong/promo-raf"
+                RAF50="/content/onlyong/promo-raf"/>
+            <BACKUP
+                jcr:primaryType="nt:unstructured"
+                BACKCOH="/content/onlyong/backuppromo"
+                BACKCOHV="/content/onlyong/backuppromo"
+                BACKCON="/content/onlyong/backuppromo"
+                BACKCONV="/content/onlyong/backuppromo"
+                BACKDEO="/content/onlyong/backuppromo"
+                BACKDEOV="/content/onlyong/backuppromo"
+                BACKDTE="/content/onlyong/backuppromo"
+                BACKDTEV="/content/onlyong/backuppromo"
+                BACKVEDO="/content/onlyong/backuppromo"
+                BACKVEDOV="/content/onlyong/backuppromo"/>
+            <SAVE
+                jcr:primaryType="nt:unstructured"
+                SAVEBIZ2017="/content/onlyong/save2017"/>
+            <SPECIALOFFER
+                jcr:primaryType="nt:unstructured"
+                CSEA="/content/onlyong/special_offer"
+                DSEA="/content/onlyong/special_offer"
+                MISEA="/content/onlyong/special_offer"
+                VSEA="/content/onlyong/special_offer"/>
+            <MVR jcr:primaryType="nt:unstructured"/>
+            <SWITCH
+                jcr:primaryType="nt:unstructured"
+                SWITCH="/content/onlyong/switch-back"/>
+            <UTILITY
+                jcr:primaryType="nt:unstructured"
+                UTILITYCHOICE="/content/onlyong/special_offer"/>
+            <VISA
+                jcr:primaryType="nt:unstructured"
+                OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
+            <DELTA
+                jcr:primaryType="nt:unstructured"
+                DELTA5K="/content/onlyong/promo_landing"
+                DELTANOMILES="/content/onlyong/promo_landing"/>
+        </oh>
+        <gre jcr:primaryType="nt:unstructured">
+            <BACK
+                jcr:primaryType="nt:unstructured"
+                BACKCONV="/content/gre/promo-landing-apples"
+                BACKDTEV="/content/gre/promo-landing-apples"/>
+            <LOYAL
+                jcr:primaryType="nt:unstructured"
+                LOYAL2017VISA="/content/gre/visa_offer"/>
+            <UTILITY
+                jcr:primaryType="nt:unstructured"
+                UTILITYCHOICE="/content/gre/special_offer"/>
+        </gre>
     </promotions>
     <faq/>
+    <product-configuration/>
 </jcr:root>

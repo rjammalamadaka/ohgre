@@ -1,0 +1,13 @@
+<section data-sly-use.productContent="com.macquarium.ong.components.ProductContentConfiguration">
+    <div class="container">
+    <p> Product Content Configuration </p>
+    <ul data-sly-list.productContent="${productContent.productContentList}" data-sly-unwrap>
+
+    <li>
+			${productContent.productCode}  :  ${productContent.productDescription} 
+   </li>
+
+    </ul>
+
+    </div>
+</section>

@@ -43,6 +43,12 @@
                                 fieldLabel="Image Path"
                                 name="./imagepath"
                                 rootPath="/content/dam/ohgre"/>
+                            <buttonpath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Mobile Button or Link Path"
+                                name="./buttonpath"
+                                rootPath="/content"/>
                         </items>
                     </column>
                 </items>

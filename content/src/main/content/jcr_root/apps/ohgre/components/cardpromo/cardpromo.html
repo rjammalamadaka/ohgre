@@ -1,3 +1,12 @@
+<style>
+
+    @media (min-width: 992px){
+		.mobile-view{
+    		display : none !important;
+		}
+    }
+
+    </style>
 <div class="card">
     <div class="card-hero">
 
@@ -6,7 +15,8 @@
     </div>
     <div class="inner-content-wrapper ${properties.displaybackground ? 'highlighted-bg' : ''} " >
         <div class="inner-card-content">
-            <h2 class="card-title">${properties.heading || 'Heading'}</h2>
+            <h2 class="card-title visible-md visible-lg">${properties.heading || 'Heading'}</h2>
+            <a class="mobile-view" href="${properties.buttonpath || '#'}.html" ><h2 class="card-title">${properties.heading || 'Heading'}</h2></a>
             <p class="visible-md visible-lg">${properties.description || 'Promo default Description'}</p>
 			<a data-sly-test="${properties.displayLink}" href="${properties.buttonpath || '#'}.html" class="visible-md visible-lg">${properties.buttontitle || 'See Offer'} </a>
             <div class="row" data-sly-test="${properties.displayButton}">

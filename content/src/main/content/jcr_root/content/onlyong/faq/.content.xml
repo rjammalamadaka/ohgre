@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-22T16:33:21.990-04:00"
+        cq:lastModified="{Date}2017-08-24T00:38:44.588-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/helppage"
         jcr:primaryType="cq:PageContent"
@@ -30,7 +30,7 @@
             <terms_landing
                 jcr:created="{Date}2017-08-16T10:56:16.395-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-16T10:59:06.443-04:00"
+                jcr:lastModified="{Date}2017-08-24T00:38:44.579-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/terms-landing"

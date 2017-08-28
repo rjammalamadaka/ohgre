@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-08-28T08:29:04.498+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Product Content Configurtion"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true">
+        <image
+            jcr:lastModified="{Date}2017-08-27T21:36:22.349+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <productcontentconfig
+                jcr:created="{Date}2017-08-27T21:36:37.981+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-28T08:29:04.495+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/productcontentconfig"
+                iItems="[{&quot;productcode&quot;:&quot;CO1&quot;\,&quot;description&quot;:&quot;discounted for the first 2 months&quot;},{&quot;productcode&quot;:&quot;PO1&quot;\,&quot;description&quot;:&quot;discounted for the first 2 monthsdgdfg&quot;},{&quot;productcode&quot;:&quot;DO1&quot;\,&quot;description&quot;:&quot;discounted for the first 2 months d01&quot;}]"/>
+        </content>
+    </jcr:content>
+</jcr:root>
