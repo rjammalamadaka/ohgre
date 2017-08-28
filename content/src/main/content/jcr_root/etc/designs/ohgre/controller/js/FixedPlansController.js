@@ -1,6 +1,6 @@
 ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
 
-var portalname=$("#primary-header").data("portalname");
+ var portalname=$rootScope.portalname;
 
     $scope.viewplans = function(){
         var ldcCode=$('#fixed-plans-button').val();
