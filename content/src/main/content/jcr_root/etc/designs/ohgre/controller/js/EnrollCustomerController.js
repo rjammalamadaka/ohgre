@@ -21,16 +21,16 @@ $scope.an4r=false;
             $scope.an3r=true;
 
         }else if(data.LDC == "DUK"){
-			$scope.an1minl="1";
-		    $scope.an2minl="4";
-            $scope.an3minl="4";
-            $scope.an4minl="4";
-
-        }else if(data.LDC == "DEO"){
 			$scope.an1minl="4";
 		    $scope.an2minl="4";
             $scope.an3minl="2";
             $scope.an4minl="1";
+
+        }else if(data.LDC == "DEO"){
+			$scope.an1minl="1";
+		    $scope.an2minl="4";
+            $scope.an3minl="4";
+            $scope.an4minl="4";
 
         }else if(data.LDC == "VED"){
 			$scope.an1minl="2";
