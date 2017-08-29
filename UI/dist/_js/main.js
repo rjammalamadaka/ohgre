@@ -3,13 +3,39 @@ var ohio_ng = {
 		this.listeners();
 	},
 	listeners : function(){
+      $('.trigger-popup').on('click',function(event){
+			event.preventDefault();
+         $('.popup-wrapper').addClass('show-popup');
+      });
+
+      $('.popup-wrapper,#close-window').on('click',function(event){
+			event.preventDefault();
+         $('.popup-wrapper').removeClass('show-popup');
+      });
 
 		$('.dropdown-trigger').on('click',function(event){
 			event.preventDefault();
 			var obj = $(this);
 			obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
 		});
+		$('#same-billing').on('change',function(event){
+			var service_address = ['address-one','address-two','address-city','address-state','address-zip'];
 
+			if ($(this).is(':checked')) {
+            for(let m in service_address){
+					var item = service_address[m];
+					var inputVal = $('#'+item).val();
+					$('#billing-'+item).val(inputVal);
+				}
+				$('.billing-address').addClass('show-less');
+        }else{
+			  for(let m in service_address){
+				  var item = service_address[m];
+				  $('#billing-'+item).val('');
+			  }
+			  $('.billing-address').removeClass('show-less');
+		  }
+		});
 		/*$(document).on('click','.dropdown-showing.dropdown-container',function(event){
 			$('.dropdown-showing').removeClass('dropdown-showing');
 		});*/
