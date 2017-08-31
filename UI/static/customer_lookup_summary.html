@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 5.1.5,  -->
 <html lang="en">
 	<!-- build:include:dist ../includes/_doc_head.html -->
 		This will be replaced by the content of _doc_head.html
@@ -10,16 +11,22 @@
 <section>
 	<div class="container">
 		<div class="box-with-border customer-lookup">
-			<div class="selected-plan flex-container">
-				<div class="selected-price">
-					<span class="price">$4.970</span>
-					<small>per MCF</small>
+			<div class="desktop-flex-container">
+				<div class="selected-plan flex-container">
+					<div class="selected-price">
+						<span class="price">$2.970</span>
+						<small>per MCF</small>
+					</div>
+					<div class="selected-info">
+						<span class="selected-plan-tag">New Plan - Today</span>
+						<h5>6 Month Fixed Plan</h5>
+						<span class="utility-name">DTE Gas Company</span>
+						<span class="error-text block">Early termination fee of $150.00.</span>
+					</div>
 				</div>
-				<div class="selected-info">
-					<span class="selected-plan-tag">Selected Plan</span>
-					<h5>6 Month Fixed Plan</h5>
-					<span class="utility-name">Columbia Gas of Ohio</span>
-				</div>
+			</div>
+			<div class="mobile-padding">
+				<h4 class="subhead-color italic">Congratulations, your one step closer to earning your $50 VISA reward!</h4>
 			</div>
 			<div class="steps-container">
 				<hr />
@@ -37,14 +44,8 @@
 				</div>
 			</div>
 			<div id="step-through">
-				<!-- build:include:dist ../includes/customer_lookup_step1.html -->
-					This will be replaced by the content of customer_lookup_step1.html
-				<!-- /build -->
-				<!-- build:include:dist ../includes/customer_lookup_step2.html -->
-					This will be replaced by the content of customer_lookup_step2.html
-				<!-- /build -->
-				<!-- build:include:dist ../includes/customer_lookup_step3.html -->
-					This will be replaced by the content of customer_lookup_step3.html
+				<!-- build:include:dist ../includes/customer_lookup_summary.html -->
+					This will be replaced by the content of customer_lookup_summary.html
 				<!-- /build -->
 				<!-- step-through -->
 			</div>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 5.1.2D -->
 <html lang="en">
 	<head>
 	<meta charset="UTF-8">
@@ -51,42 +52,6 @@
 				</div>
 			</div>
 			<div id="step-through">
-				<div class="form-wrapper active-form account-lookup">
-   <form id="gas-utility" class="form">
-      <div class="desktop-flex-container">
-            <div class="form-area-wrapper">
-               <label for="lastname">Gas Utility Account Number</label>
-               <div class="form-area multiple-input">
-                     <div class="input-container" data-size="10">
-                        <input type="text" name="accountnumber[]" maxlength="10" data-required="true">
-                     </div>
-                     <div class="input-container" data-size="5">
-                        <input type="text" name="accountnumber[]" maxlength="5" data-required="true">
-                     </div>
-                     <div class="input-container" data-size="3">
-                        <input type="text" name="accountnumber[]" maxlength="3" data-required="true">
-                     </div>
-                     <div class="input-container" data-size="4">
-                        <input type="text" name="accountnumber[]" maxlength="4" value="0000" disabled="disabled">
-                     </div>
-               </div>
-            </div>
-            <div class="lastname-container form-area-wrapper">
-               <div class="form-area">
-                  <label for="lastname">Last Name on Gas Utility Account</label>
-                  <input type="text" name="lastname" data-required="true" />
-               </div>
-            </div>
-            <div class="zipcode-container form-area-wrapper">
-               <div class="form-area">
-                  <label for="zipcode">Your Zip Code</label>
-                  <input type="text" name="zipcode" data-required="true"/>
-               </div>
-            </div>
-      </div>
-   </form>
-      <button class="primary-button next-button" data-next=2>Next</button>
-</div>
 				<div class="form-wrapper active-form">
    <div class="intro-wrapper">
       <h4>Welcome to Ohio Natural Gas!</h4>
@@ -94,7 +59,7 @@
          If you are an existing Ohio Natural Gas customer, please check the account number you entered below. If it is incorrect, please go back and re-enter.
       </p>
    </div>
-   <form id="new-customer-info" class="form mt-2">
+   <form id="new-customer-info" class="form mt-2 desktop-only">
       <div class="desktop-flex-container">
          <div class="form-element">
             <div class="new-customer-container">
@@ -102,14 +67,10 @@
                   <h4>New Customer Information</h4>
                   <span class="error-message block no-margin">Required<sup class="required">*</sup></span>
                   <label>Gas Utility Account Number</label>
-                  <span class="account-number">9-5000-3674-0840</span>
+                  <strong class="account-number">9-5000-3674-0840</strong>
                   <div class="input-group-wrapper">
-                        <label for="first-name">First Name<sup class="required">*</sup></label>
-                        <input type="text" name="first-name">
-                  </div>
-                  <div class="input-group-wrapper">
-                     <label for="last-name">Last Name<sup class="required">*</sup></label>
-                     <input type="text" name="last-name">
+                     <label>Name on Gas Utility Account</label>
+                     <strong class="account-number">John Doe</strong>
                   </div>
                   <div class="input-group-wrapper">
                      <label for="email-address">Email<sup class="required">*</sup></label>
@@ -152,33 +113,9 @@
             <div class="new-customer-container">
                <div class="form-area">
                   <h4>Service Address</h4>
-                  <span class="error-message block no-margin">Required<sup class="required">*</sup></span>
                   <div class="input-group-wrapper">
                         <label for="address-one">Street Address</label>
-                        <input type="text" name="address-one" id="address-one">
-                  </div>
-                  <div class="input-group-wrapper">
-                        <input type="text" name="address-two" id="address-two">
-                  </div>
-                  <div class="row address-fields">
-                     <div class="col-md-6 col-sm-6">
-                        <div class="input-group-wrapper">
-                              <label for="address-city">City<sup class="required">*</sup></label>
-                              <input type="text" name="address-city" id="address-city">
-                        </div>
-                     </div>
-                     <div class="col-md-2 col-sm-2">
-                        <div class="input-group-wrapper">
-                              <label for="address-state">State<sup class="required">*</sup></label>
-                              <input type="text" name="address-state" id="address-state" value="OH" />
-                        </div>
-                     </div>
-                     <div class="col-md-4 col-sm-4">
-                        <div class="input-group-wrapper">
-                              <label for="address-zip">Zip<sup class="required">*</sup></label>
-                              <input type="text" name="address-zip" id="address-zip" maxlength="5">
-                        </div>
-                     </div>
+                        <strong>303 Broadview Ave<br />Barberton, OH 44203</strong>
                   </div>
                   <div class="input-group-wrapper">
                      <h4>Billing Address</h4>
@@ -258,38 +195,6 @@
       <button class="primary-button next-button inactive" data-next=3>Next</button>
       <button class="primary-button prev-button" data-next=2>Previous</button>
    </div>
-</div>
-				<div class="terms-wrapper">
-   <div class="scroll-container">
-      <h4>Terms and Conditions</h4>
-      <p>
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      </p>
-      <h5>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h5>
-      <p>
-         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-      </p>
-      <h5>Lorem ipsum dolor sit ame</h5>
-      <p>
-         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?""Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-      </p>
-   </div>
-</div>
-<div class="desktop-flex-container after-scrollbox">
-   <div class="input-group-wrapper full-width">
-      <label class="checkbox">
-         <input type="checkbox" name="agree-terms" id="agree-terms" value="yes" />
-      </label>
-      <span class="after-checkbox">I hereby agree to these <a href="#" class="color-primary display-inline">terms and conditions</a>.</span>
-   </div>
-   <div class="print-wrapper">
-      <a href="#">Print</a>
-      <a href="#">Download</a>
-   </div>
-</div>
-<div class="button-container">
-   <button class="primary-button next-button" data-next=4>Next</button>
-   <button class="primary-button prev-button" data-next=3>Previous</button>
 </div>
 				<!-- step-through -->
 			</div>

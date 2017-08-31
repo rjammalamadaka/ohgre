@@ -6,6 +6,7 @@
 @font_color				: #757575; /* dark gray */
 @border_color			: #e9eef1; /* light gray */
 @red                 : #d0011b;
+@background_color 	: #f7f7f7;
 /* FONTS */
 @primary_font	: 'Roboto Slab', serif;
 @secondary_font	: 'Roboto', sans-serif;
@@ -15,6 +16,9 @@
 @screen-md-min : ~"min-width: 992px";
 @screen-lg-min : ~"min-width: 1200px";
 /* GLOBAL STYLES */
+.subhead-color{
+	color: #133f98 !important;
+}
 .error-text{
 	font-size: 1.2rem;
 	color: @red;
@@ -119,6 +123,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 .ff-robotoSlab{
 	font-family: @primary_font;
 }
+.italic{
+	font-style: italic;
+}
 .fs-11{
 	font-size: 1.1rem !important;
 }
@@ -143,6 +150,16 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 .fs-24{
 	font-size: 2.4rem !important;
 }
+.full-width{
+	width: 100% !important;
+}
+.mobile-padding{
+	padding: 1rem 2rem;
+
+	@media(@screen-md-min){
+		padding: 0;
+	}
+}
 .mb-mt-1{
 	margin-top: 1rem !important;
 
@@ -159,17 +176,72 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	}
 }
 .mt-2{
-   margin-top: 2rem !important;
+	margin-top: 2rem !important;
+
+	&.desktop-only{
+		margin-top: 0 !important;
+
+		@media(@screen-md-min){
+			margin-top: 2rem !important;
+		}
+	}
+}
+.mt-3{
+	margin-top: 3rem !important;
+
+	&.desktop-only{
+		margin-top: 0 !important;
+
+		@media(@screen-md-min){
+			margin-top: 3rem !important;
+		}
+	}
 }
 .mb-1{
-   margin-bottom: 1rem;
+   margin-bottom: 1rem !important;
+
+	&.desktop-only{
+		margin-bottom: 0 !important;
+
+		@media(@screen-md-min){
+			margin-bottom: 1rem !important;
+		}
+	}
 }
 .mb-2{
-   margin-bottom: 2rem;
+   margin-bottom: 2rem !important;
+
+	&.desktop-only{
+		margin-bottom: 0 !important;
+
+		@media(@screen-md-min){
+			margin-bottom: 2rem !important;
+		}
+	}
+}
+.mb-3{
+   margin-bottom: 3rem !important;
+
+	&.desktop-only{
+		margin-bottom: 0 !important;
+
+		@media(@screen-md-min){
+			margin-bottom: 3rem !important;
+		}
+	}
+}
+.no-padding{
+	padding: 0 !important;
 }
 .padding-5{
    @media(@screen-md-min){
       padding: 5rem;
+   }
+}
+.mb-padding-25{
+	padding: 2.5rem;
+	@media(@screen-md-min){
+      padding: 0;
    }
 }
 .no-margin-btm{
@@ -199,7 +271,13 @@ MODULES WILL BE IN CLASS cq-colctrl-*
    text-align: left !important;
 }
 .block{
-   display: block;
+   display: block !important;
+}
+.display-table{
+	display: table !important;
+}
+.display-inline{
+	display: inline-block !important;
 }
 ol{
 	&.styled-numbers{
@@ -245,6 +323,11 @@ small{
 	font-size	: 1.1rem;
 	display		: block;
 }
+sup{
+	top: 0;
+	color: @red;
+	font-size: 1.5rem;
+}
 section{
 	margin-bottom	: 1rem;
 
@@ -262,7 +345,7 @@ section{
 sup{font-family: @accent_font;}
 input{
 	border		: none;
-	padding		: 0 2rem;
+	padding		: 0 1.5rem;
 	height		: 4.5rem;
 	color		: @font_color;
 	font-size	: 1.4rem;
@@ -355,6 +438,56 @@ input[type=radio]{
 		}
 	}
 }
+.inverted-checkbox{
+	.checkbox{
+		input[type=checkbox]{
+				&:before{
+					background-image: url(../_img/global/check_inverted.png);
+				}
+		}
+	}
+}
+.checkbox{
+	height: 21px;
+	width: 21px;
+	position: relative;
+	display: inline-block !important;
+	vertical-align: top;
+	margin-top: 0 !important;
+	margin-right: 5px !important;
+	overflow: hidden;
+
+	input[type=checkbox]{
+		width: 20px;
+		float: none;
+		margin: 0;
+		padding: 0 5rem !important;
+
+		&:before{
+			position: absolute;
+			top: .1rem;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-image: url(../_img/global/check.png);
+			background-repeat: no-repeat;
+			background-position: 0px -20px;
+			background-size: 20px;
+			content: "";
+		}
+		&:checked{
+			&:before{
+				background-position: 0 0;
+			}
+		}
+	}
+	+ span{
+		display: inline-block;
+		width: ~"calc(100% - 45px) !important";
+		float: none !important;
+	}
+}
+
 .primary-button	{
 	text-transform		: uppercase;
 	color				: #fff;
@@ -372,6 +505,7 @@ input[type=radio]{
 
     &:hover{
     	color	: #fff;
+		text-decoration: none;
     }
     &.inverted{
       background-color	: #fff;
