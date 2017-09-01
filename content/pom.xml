@@ -57,6 +57,12 @@
                     <embeddeds>
                         <embedded>
                             <groupId>${project.groupId}</groupId>
+                            <artifactId>ohgre-wsclientbundle</artifactId>
+                            <target>/apps/ohgre/install</target>
+                        </embedded>
+
+                        <embedded>
+                            <groupId>${project.groupId}</groupId>
                             <artifactId>ohgre-bundle</artifactId>
                             <target>/apps/ohgre/install</target>
                         </embedded>
