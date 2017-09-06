@@ -154,7 +154,7 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	width: 100% !important;
 }
 .mobile-padding{
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
 
 	@media(@screen-md-min){
 		padding: 0;
@@ -227,6 +227,28 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 
 		@media(@screen-md-min){
 			margin-bottom: 3rem !important;
+		}
+	}
+}
+.mb-pdtop-0{
+	padding-top: 0 !important;
+		@media(@screen-md-min){
+			padding-top: auto !important;
+		}
+}
+.pt-0{
+	padding-top: 0 !important;
+
+	&.mobile-only{
+		@media(@screen-md-min){
+			padding-top: auto !important;
+		}
+	}
+	&.desktop-only{
+		padding-top: auto !important;
+
+		@media(@screen-md-min){
+			padding-top: 0 !important;
 		}
 	}
 }
@@ -447,8 +469,23 @@ input[type=radio]{
 		}
 	}
 }
+.small-radio{
+	input[type=radio]{
+		height: 2.5rem;
+
+		&:before{
+			background-size: contain;
+		}
+	}
+	.radio-container{
+		+ label{
+			top: -0.3rem;
+			position: relative;
+		}
+	}
+}
 .checkbox{
-	height: 21px;
+	height: 22px;
 	width: 21px;
 	position: relative;
 	display: inline-block !important;
@@ -457,6 +494,9 @@ input[type=radio]{
 	margin-right: 5px !important;
 	overflow: hidden;
 
+	@media (@screen-md-min){
+		height: 21px;
+	}
 	input[type=checkbox]{
 		width: 20px;
 		float: none;
@@ -512,6 +552,9 @@ input[type=radio]{
       border: 1px solid @accent_color;
       color: @accent_color;
    }
+	&.inactive{
+		background-color: #9bb2c1;
+	}
 }
 .accent-button{
 	.primary-button;
