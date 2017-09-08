@@ -1,3 +1,4 @@
+var buttonClick = false;
 var ohio_ng = {
 	init : function(){
 		this.listeners();
@@ -17,6 +18,9 @@ var ohio_ng = {
 			event.preventDefault();
 			var obj = $(this);
 			obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
+			setTimeout(function(){
+				buttonClick = buttonClick ? false : true;
+			},500);
 		});
 		$('#same-billing').on('change',function(event){
 			var service_address = ['address-one','address-two','address-city','address-state','address-zip'];
@@ -98,7 +102,15 @@ var ohio_ng = {
 				}
 			}
 		});
-
+		$('body').on('click',function(event){
+			if(buttonClick){
+				if($('.dropdown-container').hasClass('dropdown-showing')){
+					buttonClick = false;
+					$('.expanded-dropdown').removeClass('opened');
+					$('.dropdown-container').removeClass('dropdown-showing');
+				}
+			}
+		});
 		$('input').on('keyup',function(){
 		/*	var obj = $(this);
 			if(obj.parent().filter('data-size')){

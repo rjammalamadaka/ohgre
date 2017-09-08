@@ -102,6 +102,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 		color: #fff !important;
 	}
 }
+.bg-white{
+	background-color: #fff !important;
+}
 .color-white{
 	color: #fff !important;
 }
@@ -227,6 +230,17 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 
 		@media(@screen-md-min){
 			margin-bottom: 3rem !important;
+		}
+	}
+}
+.mr-2{
+	margin-right: 2rem;
+
+	&.desktop-only{
+		margin-right: 0 !important;
+
+		@media(@screen-md-min){
+			margin-right: 2rem !important;
 		}
 	}
 }
