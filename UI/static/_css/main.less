@@ -1856,6 +1856,10 @@ div[class^="cq-colctrl-lt1-"]{
 	width: 100%;
 	margin-bottom: 1rem;
 
+	&.box-alt1 {
+		padding: 2.5rem;
+	}
+
 	&.has-image{
 		padding: 0;
 
@@ -1956,7 +1960,6 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 			&:first-child{
 				.box-with-border{
-					padding: 2.5rem;
 
 					.box-inner{
 						display: table-cell;
@@ -2187,6 +2190,19 @@ div[class^="cq-colctrl-lt1-"]{
 	&.box-with-border{
 		margin-bottom: 0;
 	}
+	@media (@screen-sm-min){
+		a[href^="tel"]:link,
+		a[href^="tel"]:visited,
+		a[href^="tel"]:hover {
+		    text-decoration: none;
+		    color: #000;
+
+		    pointer-events: none;
+		    cursor: default;
+		}
+	}
+
+
 	.accord-trigger{
 		padding: 1rem 2rem;
 		text-decoration: none;
@@ -2218,6 +2234,18 @@ div[class^="cq-colctrl-lt1-"]{
 	.accord-container{
 		padding: 1rem 2rem;
 		background-color: #e9eef1;
+
+		p {
+			color: #8e8e93;
+
+			b {
+				color: #000;
+			}
+
+			i {
+				font-size: 1.2rem;
+			}
+		}
 	}
 	@media (@screen-md-min){
 		padding: 1rem 2.5rem;
