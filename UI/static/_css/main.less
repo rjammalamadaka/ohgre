@@ -689,6 +689,11 @@ div[class^="col-"]{
 		p,span{
 			color: #fff;
 		}
+		p {
+			small {
+				margin: .3rem 0 0;
+			}
+		}
 	}
 	.slide-image {
 	    position	: absolute;
@@ -726,7 +731,7 @@ div[class^="col-"]{
 		width	: 53%;
 	}
 	.slide-image {
-		padding-left	: 12%;
+		padding-left	: 14%;
 		width			: 80%;
 		height			: ~"calc(100% - 2rem)";
 	}
@@ -755,6 +760,10 @@ div[class^="col-"]{
     	margin		: 2rem auto;
 		font-size: 1.6rem;
     	font-family	: @secondary_font;
+
+			&:empty {
+				//margin: 0;
+			}
 
 		@media (@screen-md-min){
 			margin-bottom: 4rem;
@@ -1043,6 +1052,24 @@ div[class^="cq-colctrl-lt1-"]{
 		.mobile-view{
 			text-transform: none;
 		}
+		.fs-11 {
+
+			a {
+				color: #fff;
+				font-size: inherit;
+				font-style: italic;
+				font-weight: normal;
+				letter-spacing: normal;
+				text-transform: none;
+				text-decoration: none;
+			}
+
+		}
+		.normal-link {
+			font-weight: normal;
+			letter-spacing: normal;
+			text-transform: none;
+		}
 	}
 	@media (@screen-md-min){
 		display				: block;
@@ -1090,7 +1117,7 @@ div[class^="cq-colctrl-lt1-"]{
 
 		.inner-card-content{
 			display	: block;
-			height	: auto;
+			height	: 100%;
 			border-top	:  none;
 			position	: relative;
 			z-index		: 1;
@@ -1104,9 +1131,13 @@ div[class^="cq-colctrl-lt1-"]{
 				display			: block;
 				margin-bottom	: 2rem;
 			}
+			a.promo-link {
+				position: absolute;
+				bottom: 2.5rem;
+			}
 			p{
-				font-size	: 1.5rem;
-				line-height	: 2.1rem;
+				font-size	: 1.6rem;
+				line-height	: 2.4rem;
 				font-family: @secondary_font;
 				font-weight: normal;
 				margin-bottom: 2rem;
@@ -1120,11 +1151,14 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		a{
 			&:not(.select-option), &:not(.redirect-click){
-				font-family		: @accent_font;
 				font-weight		: bold;
-				text-decoration	: underline;
 				font-size		: 1.5rem;
 				letter-spacing	: .1rem;
+			}
+
+			&:not(.select-option) {
+				font-family		: @accent_font;
+				text-decoration	: underline;
 			}
 
 		}
@@ -1172,6 +1206,7 @@ div[class^="cq-colctrl-lt1-"]{
 		color		: #fff;
 		margin		: 0 0 1.5rem 0;
 		font-weight	: 300;
+		letter-spacing: 1px;
 
 		@media (@screen-md-min){
 			font-size: 2rem;
@@ -1179,7 +1214,7 @@ div[class^="cq-colctrl-lt1-"]{
 			margin		: 0;
 		}
 		@media (@screen-lg-min){
-			font-size: 2.2rem;
+			font-size: 2rem;
 		}
 	}
 
@@ -1704,6 +1739,7 @@ div[class^="cq-colctrl-lt1-"]{
 					font-size: 1.6rem;
     				line-height: 2.5rem;
 				}
+
 			}
 			.logo-image{
 				max-width: 12rem;
@@ -1899,6 +1935,7 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 			&:first-child{
 				.box-with-border{
+					padding: 2.5rem;
 
 					.box-inner{
 						display: table-cell;
