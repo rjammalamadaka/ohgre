@@ -7574,6 +7574,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   width: 100%;
   margin-bottom: 1rem;
 }
+.box-with-border.box-alt1 {
+  padding: 2.5rem;
+}
 .box-with-border.has-image {
   padding: 0;
 }
@@ -7667,9 +7670,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
   .promo-wrapper > div div {
     align-items: stretch;
-  }
-  .promo-wrapper > div:first-child .box-with-border {
-    padding: 2.5rem;
   }
   .promo-wrapper > div:first-child .box-with-border .box-inner {
     display: table-cell;
@@ -7889,6 +7889,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .contact-page.box-with-border {
   margin-bottom: 0;
 }
+@media (min-width: 768px) {
+  .contact-page a[href^="tel"]:link,
+  .contact-page a[href^="tel"]:visited,
+  .contact-page a[href^="tel"]:hover {
+    text-decoration: none;
+    color: #000;
+    pointer-events: none;
+    cursor: default;
+  }
+}
 .contact-page .accord-trigger {
   padding: 1rem 2rem;
   text-decoration: none;
@@ -7919,6 +7929,15 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .contact-page .accord-container {
   padding: 1rem 2rem;
   background-color: #e9eef1;
+}
+.contact-page .accord-container p {
+  color: #8e8e93;
+}
+.contact-page .accord-container p b {
+  color: #000;
+}
+.contact-page .accord-container p i {
+  font-size: 1.2rem;
 }
 @media (min-width: 992px) {
   .contact-page {
