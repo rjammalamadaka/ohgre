@@ -1,0 +1,172 @@
+<div class="form-wrapper active-form">
+   <div class="intro-wrapper">
+      <h4>Welcome to Ohio Natural Gas!</h4>
+      <p>
+         If you are an existing Ohio Natural Gas customer, please check the account number you entered below. If it is incorrect, please go back and re-enter.
+      </p>
+   </div>
+   <form id="new-customer-info" class="form mt-2">
+      <div class="desktop-flex-container">
+         <div class="form-element">
+            <div class="new-customer-container">
+               <div class="form-area">
+                  <h4>New Customer Information</h4>
+                  <span class="error-message block no-margin">Required<sup class="required">*</sup></span>
+                  <label>Gas Utility Account Number</label>
+                  <span class="account-number">9-5000-3674-0840</span>
+                  <div class="input-group-wrapper">
+                        <label for="first-name">First Name<sup class="required">*</sup></label>
+                        <input type="text" name="first-name">
+                  </div>
+                  <div class="input-group-wrapper">
+                     <label for="last-name">Last Name<sup class="required">*</sup></label>
+                     <input type="text" name="last-name">
+                  </div>
+                  <div class="input-group-wrapper">
+                     <label for="email-address">Email<sup class="required">*</sup></label>
+                     <input type="text" name="email-address">
+                  </div>
+                  <div class="input-group-wrapper">
+                     <label for="phone-number">Phone Number</label>
+                     <input type="tel" name="phone-number"  onkeyup="ohio_ng.transform(this)" placeholder="(_ _ _) - _ _ _ - _ _ _ _">
+                  </div>
+                  <div class="input-group-wrapper">
+                     <label for="source">How Did You Hear About Us?</label>
+                     <div class="dropdown-container visible-md visible-lg">
+            				<button class="dropdown-trigger"><span class="value">&nbsp;</span> <span class="fa fa-angle-down carret"></span></button>
+            				<div class="expanded-dropdown">
+            			        <ul class="dropdown-menu" role="menu">
+            			            <li role="menuitem">
+            			              <a href="#" class="select-option">
+            			                <span class="">company 1 name</span>
+            			              </a>
+            			            </li>
+            			            <li role="menuitem">
+            			              <a href="#" class="select-option">
+            			                <span class="">company 2 name</span>
+            			              </a>
+            			            </li>
+            			            <li role="menuitem">
+            			              <a href="#" class="select-option">
+            			                <span class="">company 3 name</span>
+            			              </a>
+            			            </li>
+            			        </ul>
+            			    </div>
+            			</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- new element -->
+         <div class="form-element">
+            <div class="new-customer-container">
+               <div class="form-area">
+                  <h4>Service Address</h4>
+                  <span class="error-message block no-margin">Required<sup class="required">*</sup></span>
+                  <div class="input-group-wrapper">
+                        <label for="address-one">Street Address</label>
+                        <input type="text" name="address-one" id="address-one">
+                  </div>
+                  <div class="input-group-wrapper">
+                        <input type="text" name="address-two" id="address-two">
+                  </div>
+                  <div class="row address-fields">
+                     <div class="col-md-6 col-sm-6">
+                        <div class="input-group-wrapper">
+                              <label for="address-city">City<sup class="required">*</sup></label>
+                              <input type="text" name="address-city" id="address-city">
+                        </div>
+                     </div>
+                     <div class="col-md-2 col-sm-2">
+                        <div class="input-group-wrapper">
+                              <label for="address-state">State<sup class="required">*</sup></label>
+                              <input type="text" name="address-state" id="address-state" value="OH" />
+                        </div>
+                     </div>
+                     <div class="col-md-4 col-sm-4">
+                        <div class="input-group-wrapper">
+                              <label for="address-zip">Zip<sup class="required">*</sup></label>
+                              <input type="text" name="address-zip" id="address-zip" maxlength="5">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="input-group-wrapper">
+                     <h4>Billing Address</h4>
+                     <div class="input-group-wrapper">
+                        <label class="checkbox">
+                           <input type="checkbox" name="same-billing" id="same-billing" value="yes" />
+                        </label>
+                        <span class="after-checkbox">Same as Service Address</span>
+                     </div>
+                  </div>
+                  <div class="billing-address">
+                     <div class="input-group-wrapper">
+                           <label for="billing-address-one">Street Address</label>
+                           <input type="text" name="billing-address-one" id="billing-address-one">
+                     </div>
+                     <div class="input-group-wrapper">
+                           <input type="text" name="billing-address-two" id="billing-address-two">
+                     </div>
+                     <div class="row address-fields">
+                        <div class="col-md-6 col-sm-6">
+                           <div class="input-group-wrapper">
+                                 <label for="billing-address-city">City<sup class="required">*</sup></label>
+                                 <input type="text" name="billing-address-city" id="billing-address-city">
+                           </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                           <div class="input-group-wrapper">
+                                 <label for="billing-address-state">State<sup class="required">*</sup></label>
+                                 <input type="text" name="billing-address-state" value="OH" id="billing-address-state" />
+                           </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                           <div class="input-group-wrapper">
+                                 <label for="billing-address-zip">Zip<sup class="required">*</sup></label>
+                                 <input type="text" name="billing-address-zip" id="billing-address-zip" maxlength="5">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- new element -->
+         <div class="form-element-nbd">
+            <div class="new-customer-container">
+               <div class="form-area no-border">
+                  <div class="input-group-wrapper box-with-border gray-box">
+                        <h5>Special Offer Sign Up</h5>
+                        <div class="row no-margin">
+                           <label class="checkbox">
+                              <input type="checkbox" name="special-offer">
+                           </label>
+                           <span class="special-offer">Yes, Ohio Natural Gas may send me information about special offers from Ohio Natural Gas and its marketing partners.</span>
+                        </div>
+                  </div>
+                  <div class="input-group-wrapper box-with-border gray-box">
+                     <div class="row no-margin">
+                        <h5>Friends Referral Code</h5>
+                        <p>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem
+                        </p>
+                        <input type="text" name="promo-code" placeholder="Please enter your friends referral code"/>
+                     </div>
+                  </div>
+                  <div class="input-group-wrapper mb-padding-25 mt-2 desktop-only">
+                     <label class="checkbox">
+                        <input type="checkbox" name="special-offer">
+                     </label>
+                     <span class="special-offer">I am the utility account holder or a person that has legal authorization to make decisions for this account.</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </form>
+   <div class="button-container row">
+      <button class="primary-button next-button inactive" data-next=3>Next</button>
+      <button class="primary-button prev-button" data-next=2>Previous</button>
+   </div>
+</div>
