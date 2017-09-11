@@ -2,21 +2,16 @@
    <div class="container">
       <div class="full-banner-callout"  ng-class="getBannerclass()">
          <div class="slide">
-            <div class="slide-image"><img src="${properties.imagepath}"></div>
-            <div class="slide-content">
+            <div class="slide-image" ng-class="{hT : heightConstant}"><img src="${properties.imagepath}"></div>
+            <div class="slide-content" ng-class="{hT : heightConstant}" >
                <div class="inner-slide-content clearfix">
-    <!-- <a href="/content/onlyong.html" class="logo-image"> <img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>-->
-
-
-<a href="/content/onlyong.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
-<a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
-
-
-
-                                    <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
-                      <span class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
-                                    <p><span>${properties.description}</span></p>
-                  <p ng-show="promotion.PromotionCode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>Hurry! Offer ends {{expdate}}</span></p>
+                  <!-- <a href="/content/onlyong.html" class="logo-image"> <img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>-->
+                  <a href="/content/onlyong.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
+                  <a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
+                  <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
+                  <span class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
+                  <p><span>${properties.description}</span></p>
+                  <p ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>Hurry! Offer ends {{expdate}}</span></p>
                </div>
             </div>
          </div>
