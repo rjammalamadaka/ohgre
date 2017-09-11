@@ -1,12 +1,36 @@
+var buttonClick = false;
 var ohio_ng = {
 	init : function(){
 		this.listeners();
 	},
 	listeners : function(){
-		$('.dropdown-trigger').on('click',function(event){
+
+        $('.trigger-popup').on('click',function(event){
 			event.preventDefault();
+         $('.popup-wrapper').addClass('show-popup');
+      });
+
+      $('.popup-wrapper,#close-window').on('click',function(event){
+			event.preventDefault();
+         $('.popup-wrapper').removeClass('show-popup');
+      });
+
+        
+		$('.dropdown-trigger').on('click',function(event){
+			/*event.preventDefault();
 			var obj = $(this);
 			obj.parent().find('.expanded-dropdown').toggleClass('opened');
+
+*/
+
+            event.preventDefault();
+			var obj = $(this);
+			obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
+			setTimeout(function(){
+				buttonClick = buttonClick ? false : true;
+			},500);
+
+
 		});
 		$('.select-option').on('click',function(event){
 			event.preventDefault();
@@ -46,6 +70,18 @@ var ohio_ng = {
 				$('.accord-trigger').removeClass('accord-expanded');
 			}
 		});
+
+        $('body').on('click',function(event){
+			if(buttonClick){
+				if($('.dropdown-container').hasClass('dropdown-showing')){
+					buttonClick = false;
+					$('.expanded-dropdown').removeClass('opened');
+					$('.dropdown-container').removeClass('dropdown-showing');
+				}
+			}
+		});
+
+
 	}
 }
 $(document).ready(function(){
@@ -63,6 +99,7 @@ $(window).scroll(function(){
 		}
 
 });
+
 
 //custmore lookup
 /*
