@@ -1,0 +1,263 @@
+<div class="popup-wrapper" id="popupconfirm">
+   <div class="window-wrapper">
+      <a href="#" id="close-window">X</a>
+      <span class="window-title">Please Confirm Your Account</span>
+      <table class="table-wrapper">
+         <tr>
+            <td>Name on Gas Utility Account:</td>
+            <td>{{customerInfo.customerName}}</td>
+         </tr>
+         <tr>
+            <td>Gas Utility:</td>
+            <td>{{customerInfo.ldcdesc}} </td>
+         </tr>
+         <tr>
+            <td>Account Type:</td>
+            <td>{{customerInfo.rateClassDesc}}</td>
+         </tr>
+         <tr>
+            <td>Gas Utility Account Number:</td>
+            <td>{{customerInfo.account}}</td>
+         </tr>
+         <tr>
+            <td>Service Address:</td>
+            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+         </tr>
+         <tr>
+            <td>Ohio Natural Gas Account Status:</td>
+            <td>{{customerInfo.accountStatus}}</td>
+         </tr>
+      </table>
+      <div class="button-container">
+         <a href="#" class="primary-button" ng-click="enrollconfirm()">Confirm</a>
+         <a href="#" class="primary-button inverted" ng-click="enrolltryagain()">Try Again</a>
+      </div>
+   </div>
+</div>
+
+
+
+	<div class="popup-wrapper" id="popupetc">
+		<div class="window-wrapper with-border">
+	      <a href="#" id="close-window">X</a>
+          <h6>Your contract is not close to ending. If you would like to start your selected new plan today,you will need to pay a {{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination fee.</h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				            <td>{{customerInfo.account}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray">
+                                {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Current Plan</h4>
+										<span class="plan-selected">{{customerInfo.productDesc}}</span>
+                                        <small>{{customerInfo.ldcdesc}}<br /> {{customerInfo.contractStartDate}} - {{customerInfo.contractTermDate}}</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex-container">
+							<div class="plan-price">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Selected New Plan</h4>
+										<span class="plan-selected">{{product.productDesc}}</span>
+										<small>{{product.ldcDesc}}</small>
+									</div>
+									<div class="plan-button">
+										<a href="#" class="primary-button" ng-click="enrollselectandcontinue()">YES, PAY TERMINATION FEE</a>
+									</div>
+
+
+
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+					</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
+
+
+<div class="popup-wrapper" id="popupalternate">
+		<div class="window-wrapper with-border">
+	      <a href="#" id="close-window">X</a>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				            <td>{{customerInfo.account}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray gray-text">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info gray-text">
+									<div class="inner-content">
+										<h4>Selected Plan</h4>
+										<span class="plan-selected">{{product.productDesc}}</span>
+										 <small>{{product.ldcDesc}}
+									</div>
+									<div class="plan-button">
+										<span class="error-text bold">Not eligible for this plan.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="primary-button" ng-click="enrollselectalternateplans()">Shop for plans</a>
+					</li>
+				</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
+
+
+	<div class="popup-wrapper" id="popupwithrenewal">
+		<div class="window-wrapper with-border">
+	      <a href="#" id="close-window">X</a>
+			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.</h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				            <td>{{customerInfo.account}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray">
+								$4.970<span>per MCF</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Current Plan</h4>
+										<span class="plan-selected">{{customerInfo.productDesc}}</span>
+										<small>{{customerInfo.ldcdesc}}<br /> {{customerInfo.contractStartDate}} - {{customerInfo.contractTermDate}}</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex-container">
+							<div class="plan-price">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Selected New Plan</h4>
+										<span class="plan-selected">{{product.productDesc}}</span>
+										<small>{{product.ldcDesc}}</small>
+									</div>
+									<div class="plan-button">
+										<a href="#" class="primary-button" ng-click="popuprenewalcontinue()">select, &amp; continue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
+
+
+<div class="popup-wrapper" id="popupalternatenoteligible">
+		<div class="window-wrapper with-border">
+	      <a href="#" id="close-window">X</a>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				            <td>{{customerInfo.account}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<a href="#" class="primary-button" ng-click="enrollselectalternateplans1()">Shop for plans</a>
+					</li>
+				</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
