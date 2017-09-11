@@ -1,29 +1,29 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1503928466840
+Bnd-LastModified: 1505099857430
 Build-Jdk: 1.8.0_131
 Built-By: avinash.dhannuri
 Bundle-Description: Maven Multimodule project for ohgre.
 Bundle-ManifestVersion: 2
 Bundle-Name: ohgre Bundle
 Bundle-SymbolicName: com.macquarium.ong.ohgre-bundle
-Bundle-Version: 1.0.0.SNAPSHOT
+Bundle-Version: 1.6.3.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Export-Package: com.macquarium.ong;uses:="javax.xml.ws.handler,javax.ser
  vlet.http,com.primesw.webservices,org.tempuri.quoteservice,org.apache.s
  ling.api,org.apache.sling.api.request,org.apache.sling.api.servlets,org
- .apache.sling.commons.json,javax.xml.soap,javax.xml.namespace,javax.xml
- .ws.handler.soap";version="1.0.0",com.macquarium.ong.components;uses:="
- org.apache.sling.commons.json,com.adobe.cq.sightly,org.apache.sling.api
- .resource";version="1.0.0.SNAPSHOT"
-Import-Package: com.adobe.cq.sightly;version="[3.1,4)",com.macquarium.on
- g;version="[1.0,2)",com.primesw.webservices;version="[1.0,2)",javax.ser
- vlet;version="[2.5,3)",javax.servlet.http;version="[2.5,3)",javax.xml.n
- amespace,javax.xml.soap,javax.xml.ws.handler,javax.xml.ws.handler.soap,
- org.apache.sling.api;version="[2.1,3)",org.apache.sling.api.request;ver
- sion="[2.1,3)",org.apache.sling.api.resource;version="[2.1,3)",org.apac
- he.sling.api.servlets;version="[2.1,3)",org.apache.sling.commons.json;v
- ersion="[2.0,3)",org.apache.sling.commons.osgi;version="[2.2,3)",org.os
- gi.service.component;version="[1.1,2)",org.slf4j;version="[1.5,2)",org.
- tempuri.quoteservice;version="[1.0,2)"
+ .apache.sling.commons.json,com.fasterxml.jackson.databind,javax.xml.soa
+ p,javax.xml.namespace,javax.xml.ws.handler.soap";version="1.0.0",com.ma
+ cquarium.ong.components;uses:="org.apache.sling.commons.json,com.adobe.
+ cq.sightly,org.apache.sling.api.resource";version="1.6.3.SNAPSHOT"
+Import-Package: com.adobe.cq.sightly;version="[3.1,4)",com.fasterxml.jac
+ kson.databind,com.macquarium.ong;version="[1.0,2)",com.primesw.webservi
+ ces;version="[1.6,2)",javax.servlet;version="[2.5,3)",javax.servlet.htt
+ p;version="[2.5,3)",javax.xml.namespace,javax.xml.soap,javax.xml.ws.han
+ dler,javax.xml.ws.handler.soap,org.apache.sling.api;version="[2.1,3)",o
+ rg.apache.sling.api.request;version="[2.1,3)",org.apache.sling.api.reso
+ urce;version="[2.1,3)",org.apache.sling.api.servlets;version="[2.1,3)",
+ org.apache.sling.commons.json;version="[2.0,3)",org.apache.sling.common
+ s.osgi;version="[2.2,3)",org.osgi.service.component;version="[1.1,2)",o
+ rg.slf4j;version="[1.5,2)",org.tempuri.quoteservice;version="[1.6,2)"
 Service-Component: OSGI-INF/serviceComponents.xml
 Tool: Bnd-1.50.0

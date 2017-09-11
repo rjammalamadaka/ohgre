@@ -28,6 +28,16 @@
         <property name="service.pid" value="com.macquarium.ong.EnrollCustomerServlets"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
     </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.GetCustomerInfoServlets">
+        <implementation class="com.macquarium.ong.GetCustomerInfoServlets"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/getCustomerInfo"/>
+        <property name="sling.servlet.methods" value="POST"/>
+        <property name="service.pid" value="com.macquarium.ong.GetCustomerInfoServlets"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.GetLDCInfoServlet">
         <implementation class="com.macquarium.ong.GetLDCInfoServlet"/>
         <service servicefactory="false">

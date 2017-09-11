@@ -1,24 +1,21 @@
-<!--<div  ng-controller="PromoCodeController">
-<form method="get">
-<div id="red-circle">
-Enter your promo code: <input type="text" size="12" ng-model="promotionCode" name="pc" value="Enter Code">
-<input type="submit" name="Submit" value="Go" ng-click="promoCodeSubmit()">
-</div>
-</form>
-<div ng-repeat="product in products" >
-{{product.QuoteDescription}}   :  {{product.ProductDescription}}   : <a href="#" ng-click="signup(product)">Sign Up </a>
-</div>
-    </div> -->
-
 <section ng-controller="PromoCodeController">
    <div class="container">
       <div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
          <h2>${properties.heading}</h2>
          <p>${properties.description @ context='html'}</p>
-         <form ng-submit="promoCodeSubmit()">
-            <input type="text" name="promo-code" value="" placeholder="Enter Promo Code" ng-model="promotionCode" ng-change="toupper(promotionCode)">
-            <button class="primary-button" type="submit">Submit</button>
-            {{serverError}}
+         <form name="promoform" id="promoform"  novalidate ng-class="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused)|| promoform.submited) ? 'has-error' : '' " >
+
+                     <span class="error-message" ng-show="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused) || promoform.submited)"> 
+                   		 <span class="error-message" ng-show="promoform.promotioncode.$error.required">Promotion Code is required.</span> 
+                         <span class="error-message"  ng-show="!promoform.promotioncode.$error.required && promoform.promotioncode.$invalid">Please enter valid promotion code.</span> 
+
+                   </span>
+            <input type="text" name="promotioncode" placeholder="Enter Promo Code" ng-model="promotioncode"  ng-minlength="2" ng-maxlength="20" maxlength=20 ng-pattern="/^[a-zA-Z0-9- ]+$/" ng-focus="" required>
+
+
+            <button class="primary-button" type="submit" ng-click="promoCodeSubmit()">Submit</button>
+
+
          </form>
       </div>
    </div>

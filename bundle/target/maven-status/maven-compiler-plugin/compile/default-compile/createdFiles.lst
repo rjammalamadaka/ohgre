@@ -11,6 +11,7 @@ com/macquarium/ong/GetPromoCodeInfoServlet.class
 com/macquarium/ong/SetProductDataServlet.class
 com/macquarium/ong/components/TermsAndConditions.class
 com/macquarium/ong/components/ProductContentConfiguration.class
+com/macquarium/ong/GetCustomerInfoServlets.class
 com/macquarium/ong/GetProductDataServlet.class
 com/macquarium/ong/HeaderHandler.class
 com/macquarium/ong/GetQuotesServlets.class
