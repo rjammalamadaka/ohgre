@@ -1,4 +1,4 @@
-ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
 
       var portalname=$rootScope.portalname;
@@ -61,13 +61,13 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
 		var ldcCode=$('#fixed-plans-button').val();
         if(ldcCode){
-            var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+ldcCode+"&promotionCode="+$scope.promotion.PromotionCode;
-             $http.get(url).success(function(data, status, headers, config){
+			PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                      $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
                      $scope.products=$scope.Customer[0].Product;
+                     setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                  }else{
 
@@ -80,8 +80,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
     }
 
-     var url="/bin/getLDCInfoServlet?portalName="+portalname;
-     $http.get(url).success(function(data, status, headers, config){
+     PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
              $scope.ldcinfo=data.LDCList;
              setTimeout(function(){ $rootScope.bindClickEvent(); }, 10);
