@@ -45,10 +45,11 @@
 
 <section ng-controller="ApplePromotionContentController">
    <div class="container">
-      <div class="col-md-10 col-md-offset-1">
-         <div class="error show-error">
+   <div class="error show-error">
             <span class="promo-headline with-error">${properties.heading}</span>
          </div>
+      <div class="col-md-10 col-md-offset-1">
+
          <div class="row promo-wrapper flex-wrap">
             <div class="col-md-6" ng-repeat="product in productList">
                <div class="box-w-arrow accord-trigger trigger-arrow">
