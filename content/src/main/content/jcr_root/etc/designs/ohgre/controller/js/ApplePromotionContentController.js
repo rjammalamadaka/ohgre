@@ -1,6 +1,6 @@
-ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
-    //   
+
     var portalname=$rootScope.portalname;
 
   var processPromotionInfo=function(promoInfo){
@@ -12,29 +12,25 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                   var ldc=promoInfo.LDCList[0];
                   var ldcCode=ldc.LDCCode;
                   var promotion=ldc.promotion[0];
-                  var url="/bin/getQuotes?portalName="+portalname;
-                  if(ldcCode){
-                      url=url+"&ldcCode="+ldcCode;
-                  }
+
+                  promotionCode=null;
                   if(promotion && promotion.PromotionCode){
                       if(promotion.PromotionExpired =="Y"){
-                          url=url+"&promotionCode="+promotion.BackupPromotionCode;
+                          promotionCode= promotion.BackupPromotionCode; 
                       }else{
-                          url=url+"&promotionCode="+promotion.PromotionCode;
-                          
+                          promotionCode=promotion.PromotionCode; 
+
                       }
                   }
-                  
-                  $http.get(url).success(function(data, status, headers, config){
+
+                  PrimeService.getQuotes(ldcCode,promotionCode).success(function(data, status, headers, config){
                       console.log(data);
                       if(data && data.responseStatus =="0"){
                           var customer=data.Customer[0];
                           $scope.productList= customer.Product;
-                          //  console.log(product);
                           setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
-
                       }
-                      
+
                   }).error(function (data,status, headers, config){
 
                       console.log("error");
@@ -74,7 +70,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
     } 
 
-    
+
 
 }]);
 
