@@ -1,5 +1,6 @@
 package com.macquarium.ong;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.primesw.webservices.GetPromoCodeInfo;
 import com.primesw.webservices.GetPromoCodeInfoResponse;
 import com.primesw.webservices.QuoteService;
@@ -46,6 +47,7 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 		JSONObject obj=new JSONObject();
 		URL url=null;
 		long startTime = System.currentTimeMillis();
+		ObjectMapper mapper = new ObjectMapper();
 		try {
 
 			String promotionCode=request.getParameter("promotionCode");
@@ -64,13 +66,17 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			GetPromoCodeInfoRequest getPromoCodeInfoRequest=new GetPromoCodeInfoRequest();
 			getPromoCodeInfoRequest.setPromotionCode(promotionCode);
 
+			getPromoCodeInfoRequest.setIncludeExpiredWithActiveBackUpInd("Y");
 			if(portalName.equals("oh")){
 				getPromoCodeInfoRequest.setStateCode("OH");
 			}else if(portalName.equals("gre")){
 				getPromoCodeInfoRequest.setStateCode("MI");
 			}
-			getPromoCodeInfoRequest.setIncludeExpiredWithActiveBackUpInd("Y");
+			getPromoCodeInfoRequest.setRateClass("");
+			getPromoCodeInfoRequest.setSourceOfSale("");
+			getPromoCodeInfoRequest.setCustomerTypeCode("");
 			getPromoCodeInfo.setGetPromoCodeInfoRequest(getPromoCodeInfoRequest);
+
 			GetPromoCodeInfoResponse getPromoCodeInfoResponse=quoteServiceSoap.getPromoCodeInfo(getPromoCodeInfo);
 
 			GetPromoCodeInfoResult getPromoCodeInfoResult=  getPromoCodeInfoResponse.getGetPromoCodeInfoResult();
@@ -103,6 +109,9 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 					promotionObj.put("RAFAdvertising", promotion.getRAFAdvertising());
 					promotionObj.put("RAFEligible", promotion.getRAFEligible());
 					promotionObj.put("BackupPromotionCode",promotion.getBackupPromotionCode());
+					promotionObj.put("RateClassCode",promotion.getRateClassCode());
+					promotionObj.put("CustomerTypeCode",promotion.getCustomerTypeCode());
+					promotionObj.put("SourceOfSaleCode",promotion.getSourceOfSaleCode());
 					promotionListAray.put(promotionObj);
 				}
 				ldcObj.put("promotion",promotionListAray);
