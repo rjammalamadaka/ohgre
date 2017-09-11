@@ -1,4 +1,4 @@
-ohgrePortal.controller('HeroCarouselController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('HeroCarouselController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
     ohgre.store("promoCodeInfo",null);
 
@@ -7,9 +7,8 @@ ohgrePortal.controller('HeroCarouselController', ['$scope', '$rootScope', '$http
         var promocode = $(e.target).data('promocode');
         var promoPath = $(e.target).data('promopath');
         if(promocode){
-        	var  url="/bin/getPromoCodeInfo?portalName="+$rootScope.portalname+"&promotionCode="+promocode;
-            $http.get(url).success(function(data, status, headers, config){
 
+            PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
                 if(data && data.responseStatus =="0"){                    
                     if(data.LDCList && data.LDCList.length >0){
                         var ldclist= data.LDCList[0];
