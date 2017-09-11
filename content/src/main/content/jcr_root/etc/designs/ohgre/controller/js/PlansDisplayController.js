@@ -1,4 +1,4 @@
-ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http','$window',function ($scope, $rootScope,$http,$window) {
+ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http','$window','PrimeService',function ($scope, $rootScope,$http,$window,PrimeService) {
 
 
  		var config = {
@@ -9,13 +9,15 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
    		 }
         $scope.displayPlans = true;
 
+    $scope.guaranteeProductDisplay=false;
+
  	 var portalname=$rootScope.portalname;
 
     $("input[name=location_type][value='residential']").prop("checked",true);
 
     var getQuotes = function(ldcCode){
         var locationType=$("input[name='location_type']:checked"). val();   
-        $window.sessionStorage.setItem('lcType', locationType);
+        //$window.sessionStorage.setItem('lcType', locationType);
 
         var promotionCode=$scope.promotionCode;
         var url="/bin/getQuotes?portalName="+portalname;
@@ -35,7 +37,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 					$scope.Customer=$scope.Quotes.Customer;
                     $scope.products=$scope.Customer[0].Product;
                  updateProductFinePrint();
-                 $window.sessionStorage.setItem('products', angular.toJson($scope.products));
+                 //$window.sessionStorage.setItem('products', angular.toJson($scope.products));
                  $scope.displayPlans = true;
                  setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
              }
@@ -52,8 +54,20 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
         angular.forEach($scope.products, function(value, key){
 
-            var ProductFinePrintText = value.ProductFinePrintText.split(".");
 
+            if($scope.products[key].ProductCode =="COJ"  || $scope.products[key].ProductCode =="COK"){
+
+                $scope.guaranteeProduct=$scope.products[key];
+
+                console.log("$scope.guaranteeProduct");
+                console.log($scope.guaranteeProduct);
+
+            }
+
+            var ProductFinePrintText = value.ProductFinePrintText.split(".");
+            var lastword=ProductFinePrintText[ProductFinePrintText.length-1];
+            if(!(lastword.length>1))
+            ProductFinePrintText.pop();
 			$scope.products[key].ProductFinePrintText = ProductFinePrintText;
 
         });
@@ -124,6 +138,13 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
 
         if($scope.ldc){
+
+            if($scope.ldc =="COH"){
+
+                $scope.guaranteeProductDisplay=true;
+
+
+            }
             getQuotes($scope.ldc);
         }
 
@@ -152,6 +173,12 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
 		$scope.displayPlans = false;
  		var ldcCode=$('#fixed-plans-button').val();
+
+        if(ldcCode =="COH"){
+			$scope.guaranteeProductDisplay=true;
+        }else{
+            $scope.guaranteeProductDisplay=false;
+        }
 
         //$window.sessionStorage.setItem('ldcType', ldcCode);
         if(ldcCode){
@@ -198,7 +225,7 @@ $rootScope.hashParams.ldc=ldcCode;
     }
 
     $scope.showMobileAccord = function(product){
-
+		console.log("showMobileAccord");
 
 		if(product != undefined){
 
@@ -213,6 +240,30 @@ $rootScope.hashParams.ldc=ldcCode;
 			product.displayMobAccord = true;
         }
       }
+
+    }
+
+    $scope.showMobileAccordGuarantee =function(){
+
+
+        if($scope.displayGuranteedAccord){
+            $scope.displayGuranteedAccord=false;
+        }else{
+			$scope.displayGuranteedAccord=true;
+        }
+        console.log("showMobileAccordGuarantee");
+
+    }
+
+        $scope.showDeskAccordGuarantee =function(){
+
+
+        if($scope.displayGuranteedAccord){
+            $scope.displayGuranteedAccord=false;
+        }else{
+			$scope.displayGuranteedAccord=true;
+        }
+        console.log("showMobileAccordGuarantee");
 
     }
 
