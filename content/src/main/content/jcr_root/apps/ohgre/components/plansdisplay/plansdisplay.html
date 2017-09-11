@@ -55,6 +55,7 @@
 		</div>
 		<div class="row">
 			<ul class="plan-detail" ng-show="displayPlans">
+
 				<li  class="accord-trigger" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0" ng-click="showMobileAccord(product)">
 					<div class="flex-container">
 						<div class="plan-price">
@@ -64,7 +65,7 @@
 							<div class="plan-info">
 								<div class="inner-content">
 									<h4> {{product.ProductDescription}}</h4>
-                                     <small>{{getProductDescription(product.ProductCode)}} </small>
+                                     <b><small>{{getProductDescription(product.ProductCode)}} </small></b>
 									<p class="desktop-content"> {{product.ProductPlanDesc}}</p>
 								</div>
 								<div class="plan-button">
@@ -81,23 +82,23 @@
 							</div>
 						</div>
 					</div>
-					<div class="mobile-content" ng-show="product.displayMobAccord">
-					<!-- this is a duplicate of the info, for layout -->
+					<div class="accord-container mobile-content" ng-show="product.displayMobAccord">
 						<p>{{product.ProductPlanDesc}}</p>
-						<div class="plan-button">
-									<a href="#" class="primary-button" ng-click="planSelect(product)">sign up</a>
-						</div>
 						<ul>
-							<ul>
-										<li ng-repeat="finePrintText in product.ProductFinePrintText">{{finePrintText}}
-										</li>
-
-									</ul>
+                            <ul>
+                                <li ng-repeat="finePrintText in product.ProductFinePrintText">{{finePrintText}}
+                                </li>                                
+                            </ul>
 						</ul>
+                        <div class="">
+									<a href="#" class="primary-button" ng-click="planSelect(product)">sign up</a>
+								</div>
 					</div>
 				</li>
 
-				<li data-sly-test="${properties.displayGuranteedPlan}"class="accord-trigger gbp">
+
+
+				<li data-sly-test="${properties.displayGuranteedPlan}"class="accord-trigger gbp" ng-show="guaranteeProductDisplay" ng-click="showMobileAccordGuarantee()" >
 					<div class="flex-container">
 						<div class="plan-price">
 							<img src="/content/dam/ohgre/Rates/gbp-seal.png">
@@ -105,15 +106,15 @@
 						<div class="plan-info-wrapper">
 							<div class="plan-info">
 								<div class="inner-content">
-									<h4>Guaranteed Bill<sup>sm</sup> Plan</h4>
-									<p class="desktop-content">${properties.guranteedBillDesc}</p>
+									<h4>{{guaranteeProduct.ProductDescription}}</h4>
+									<p class="desktop-content">{{guaranteeProduct.QuoteDescription}}</p>
 								</div>
 								<div class="plan-button">
-									<span><strong>CALL US FOR A CUSTOM QUOTE 1.888.466.4427</strong></span>
+									<span><strong>CALL US FOR A CUSTOM QUOTE ${inheritedPageProperties.mobilenumber}</strong></span>
 								</div>
-								<a href="" ng-click="displayAddlInfo()" class="accord-trigger"><span ng-hide="displayGuranteedAccord">+</span><span ng-show="displayGuranteedAccord">-</span>Additional Information</a>
+								<a href="" ng-click="showDeskAccordGuarantee()" class="accord-trigger"><span ng-hide="displayGuranteedAccord">+</span><span ng-show="displayGuranteedAccord">-</span>Additional Information</a>
                                 	<div ng-show="displayGuranteedAccord" class="">
-										<p>For a 12-month term, pay the same amount each month for your natural gas commodity charges, regardless of changes in weather or natural gas prices. Prorated service periods, sales tax, utility charges and one-time charges such as late fees not included.</p>
+										<p>{{guaranteeProduct.ProductDescFriendly}}</p>
 									</div>
 							</div>
 						</div>
@@ -122,11 +123,7 @@
 				</li>
 			</ul>
 		</div>
-		<!--<div class="foot-notes">
-			<p>* Published price is the Variable Plan current standard rate . Variable rate may change or remain the same each month based on market conditions.</p>
-			<p>** Published price is the Variable Plan discounted rate for Jun 2017. Variable rate may change or remain the same each month based on market conditions.</p>
-			<p>**Price comparison claim based on PUCO Apples-to Apples website published 6-Month Fixed prices as of 11/01/2016 and ONG’s online6-Month Fixed price offer</p>
-		</div>-->
+
 	</div>
 </div>
 		</div>
