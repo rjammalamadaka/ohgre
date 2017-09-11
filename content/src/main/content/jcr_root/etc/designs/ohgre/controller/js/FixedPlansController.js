@@ -1,4 +1,4 @@
-ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',function ($scope, $rootScope,$http) {
+ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
  var portalname=$rootScope.portalname;
 
@@ -30,11 +30,7 @@ ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',
 
     }
 
-
-
-
-var url="/bin/getLDCInfoServlet?portalName="+portalname;
-     $http.get(url).success(function(data, status, headers, config){
+    PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
                console.log(data.LDCList);
              $scope.ldcinfo=data.LDCList;
