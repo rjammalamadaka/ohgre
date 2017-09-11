@@ -9,4 +9,6 @@
     <jquery.cycle2.min.js/>
     <jquery-2.2.4.min.js/>
     <init.js/>
+    <directives.js/>
+    <angular.js/>
 </jcr:root>
