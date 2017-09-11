@@ -30,26 +30,27 @@
 			<div id="step-through">
                 <form name="formone" id="formone" novalidate>
 				<div class="form-wrapper active-form account-lookup">
+
+                     <span class="error-message" id="lastnamezipcodeerror"> We found an account that matches the account number but not the ZIP code or last name. For further inquiries, please call 1-888-466-4427. </span>
+
 					<div class="desktop-flex-container">
 
-						<div class="form-area-wrapper">
 
-							<label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+						<div class="form-area-wrapper"  ng-class="product.LDC =='MIC' ? 'mic-account-container' : ''">
+
+							    <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
                                 <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
-                                <span style="color:red" ng-show="(formone.an1.$dirty && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)"> 
-                                <span ng-show="formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required">Account Number is required.</span>
-                                <span ng-show="(!(formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required) && (formone.an1.$error.maxlength || formone.an1.$error.minlength || formone.an2.$error.maxlength || formone.an2.$error.minlength || formone.an3.$error.maxlength || formone.an3.$error.minlength || formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
-                                </span>
+
 
 							<div class="form-area multiple-input">
 
-									<div class="input-container" data-size={{an1minl}} ng-if="product.LDC !='MIC'">
+									<div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
                                			<input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
 									</div>
-									<div class="input-container" data-size={{an2minl}} ng-if="product.LDC !='MIC'">
+									<div class="input-container" data-size={{an2minl}} ng-show="product.LDC !='MIC'">
 										<input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required>
 									</div>
-									<div class="input-container" data-size={{an3minl}} ng-if="product.LDC !='MIC'">
+									<div class="input-container" data-size={{an3minl}} ng-show="product.LDC !='MIC'">
 										<input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" required>
 									</div>
 									<div class="input-container" data-size={{an4minl}}>
@@ -59,27 +60,54 @@
 
 
 							</div>
+
+
+                              <span style="color:red" ng-show="(formone.an1.$dirty && product.LDC !='MIC' && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)"> 
+                                <span ng-show="product.LDC !='MIC' && (formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required)">Account Number is required.</span>
+                                <span ng-show="(!(formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required) && (formone.an1.$error.maxlength || formone.an1.$error.minlength || formone.an2.$error.maxlength || formone.an2.$error.minlength || formone.an3.$error.maxlength || formone.an3.$error.minlength || formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
+                                </span>
+
+                                <span style="color:red" ng-show="(formone.an1.$dirty && product.LDC =='MIC' && formone.an4.$invalid || (formone.submited))"> 
+                                <span ng-show="product.LDC =='MIC' && ( formone.an4.$error.required)">Account Number is required.</span>
+                                <span ng-show="(!(formone.an4.$error.required) && (formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
+                                </span>
+
+
 						</div>
 						<div class="lastname-container form-area-wrapper">
 							<div class="form-area">
-								<label for="lastname">Last Name on Gas Utility Account</label>
-								<span style="color:red" ng-show="(formone.lastname.$dirty && (formone.lastname.$invalid)) || (formone.submited)"> 
+								<label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
+								<label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
+
+								<input type="text" name="lastname"  ng-model="lastname" required/>
+                                <span style="color:red" ng-show="(formone.lastname.$dirty && (formone.lastname.$invalid)) || (formone.submited)"> 
  									<span ng-show="formone.lastname.$error.required">Last Name is required.</span>
                                 </span>
-								<input type="text" name="lastname"  ng-model="lastname" required/>
 							</div>
 						</div>
 						<div class="zipcode-container form-area-wrapper">
 							<div class="form-area">
 								<label for="zipcode">Your Zip Code</label>
-                                 <span style="color:red" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)"> 
+
+								<input type="text" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required/>
+
+
+                                  <span style="color:red" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)"> 
  									<span ng-show="formone.zipcode.$error.required">Zip Code is required.</span>
-                                </span>
-								<input type="text" name="zipcode"  ng-model="zipcode" required/>
+                                     <span ng-show="formone.zipcode.$error.pattern">Please enter valid Zip code.</span> 
+									 <span ng-show="formone.zipcode.$invalid && !formone.zipcode.$error.pattern && !formone.zipcode.$error.required">Zip code is not valid.</span> 
+                                 </span>
 							</div>
 						</div>
 					</div>
+
+
 					<button class="primary-button next-button" data-next=2 ng-click="enrollCustomer(2)">Next</button>
+
+
+
+
+
 
 				</div>
              </form>
@@ -91,24 +119,25 @@
 								<div class="form-area">
 									<h4>New Customer Information</h4>
 									<h5>Gas Utility Account Number</h5>
-									<span class="account-number">9-5000-3674-0840</span>
+									<span class="account-number">{{formatedacno}}</span>
 									<div class="row input-group-wrapper">
 										<div class="col-md-6">
 											<label for="first-name">First Name</label>
-											<input type="text" name="first-name">
+
+                         					<input type="text" name="first-name" ng-model="customerInfo.firstName">
 										</div>
 										<div class="col-md-6">
 											<label for="last-name">Last Name</label>
-											<input type="text" name="last-name">
+											<input type="text" name="last-name" ng-model="customerInfo.lastName">
 										</div>
 									</div>
 									<div class="input-group-wrapper">
 										<label for="email-address">Email</label>
-										<input type="text" name="email-address">
+										<input type="text" name="email-address" ng-model="customerInfo.emailAddress">
 									</div>
 									<div class="input-group-wrapper">
 										<label for="phone-number">Phone Number</label>
-										<input type="tel" name="phone-number"  onkeyup="ohio_ng.transform(this)" placeholder="(_ _ _) - _ _ _ - _ _ _ _">
+										<input type="tel" name="phone-number"  onkeyup="ohio_ng.transform(this)" placeholder="(_ _ _) - _ _ _ - _ _ _ _"  ng-model="customerInfo.phoneNumber">
 									</div>
 									<div class="input-group-wrapper">
 										<label for="source">How Did You Hear About Us?</label>
@@ -138,16 +167,16 @@
 									<h4>Service Address</h4>
 									<div class="input-group-wrapper">
 											<label for="address-one">Street Address</label>
-											<input type="text" name="address-one" placeholder="Street Address">
+											<input type="text" name="address-one" placeholder="Street Address"  ng-model="customerInfo.serviceAddress1">
 									</div>
 									<div class="input-group-wrapper">
-											<input type="text" name="address-two" placeholder="Street Address 2">
+											<input type="text" name="address-two" placeholder="Street Address 2"  ng-model="customerInfo.serviceAddress2">
 									</div>
 									<div class="row address-fields">
 										<div class="col-md-6 col-sm-6">
 											<div class="input-group-wrapper">
 													<label for="address-city">City</label>
-													<input type="text" name="address-city">
+													<input type="text" name="address-city"  ng-model="customerInfo.serviceCity">
 											</div>
 										</div>
 										<div class="col-md-2 col-sm-2">
@@ -159,7 +188,7 @@
 										<div class="col-md-4 col-sm-4">
 											<div class="input-group-wrapper">
 													<label for="address-zip">Zip</label>
-													<input type="text" name="address-zip" maxlength="5">
+													<input type="text" name="address-zip" ng-model="customerInfo.serviceZipCode">
 											</div>
 										</div>
 									</div>
