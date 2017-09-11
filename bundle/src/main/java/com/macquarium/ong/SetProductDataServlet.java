@@ -36,8 +36,9 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String quoteDes = jObj.getString("QuoteDescription");
 			String productCode=jObj.getString("ProductCode");
 			String fixedPricePerTherm=jObj.getString("FixedPricePerTherm");
+			String customerTypeCode=jObj.getString("CustomerTypeCode");
+			String rateClassCode=jObj.getString("RateClassCode");
 			String LDC=jObj.getString("LDC");
-			//String ldcCode=jObj.getString("LdcCode");
 			String ldcDesc=jObj.getString("LdcDesc");
 
 			System.out.println("productDesc:" +productDesc);
@@ -45,17 +46,19 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			session.setAttribute("QuoteDescription", quoteDes);
 			session.setAttribute("ProductCode", productCode);
 			session.setAttribute("LDC",LDC);
-			//session.setAttribute("LdcCode",ldcCode);
 			session.setAttribute("FixedPricePerTherm",fixedPricePerTherm);
 			session.setAttribute("LdcDesc",ldcDesc);
+			session.setAttribute("CustomerTypeCode",customerTypeCode);
+			session.setAttribute("RateClassCode",rateClassCode);
 			JSONObject sessionData=new JSONObject();
 			sessionData.put("prodcutDescription",productDesc);
 			sessionData.put("productcode",productCode);
 			sessionData.put("quoteDesc",quoteDes);
 			sessionData.put("LDC",LDC);
-			//sessionData.put("ldcCode", ldcCode);
 			sessionData.put("fixedPricePerTherm",fixedPricePerTherm);
 			sessionData.put("ldcDesc",ldcDesc);
+			sessionData.put("customerTypeCode",customerTypeCode);
+			sessionData.put("rateClassCode",rateClassCode);
 			obj.put("sessionData",sessionData);
 			obj.put("resultCode", "0");
 			obj.put("resultMessage", "success");
