@@ -1,14 +1,16 @@
-ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http','$window',function ($scope, $rootScope,$http,$window) {
+ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http','$window', 'PrimeService',function ($scope, $rootScope,$http,$window,PrimeService) {
 
 	$scope.displayPlans =false;
      var processPromotionInfo=function(promoInfo){
          if(promoInfo.LDCList.length>0){
+              $scope.ldcinfo=promoInfo.LDCList;
+             setTimeout(function(){  $rootScope.bindClickEvent(); }, 10);
              var ldc=promoInfo.LDCList[0];
              $scope.promotion=ldc.promotion[0];
              $scope.giftCardValue=$scope.promotion.GiftCardValue; 
              $scope.GIFTCARDVALUE=Number($scope.giftCardValue);
 
-          
+
          }
      }
 
@@ -24,8 +26,8 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
     $scope.viewPlans =function(){
 		var ldcCode=$('#fixed-plans-button').val();
         if(ldcCode){
-            var url="/bin/getQuotes?portalName="+$rootScope.portalname+"&ldcCode="+ldcCode+"&promotionCode="+$scope.promotion.PromotionCode;
-             $http.get(url).success(function(data, status, headers, config){
+
+            PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                       $scope.displayPlans = true;
@@ -52,8 +54,7 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
     }
     else{
 
-        var url="/bin/getLDCInfoServlet?portalName="+$rootScope.portalname;
-         $http.get(url).success(function(data, status, headers, config){
+        PrimeService.getLdcInfo().success(function(data, status, headers, config){
                  if(data && data.responseStatus =="0"){
                      $scope.ldcinfo=data.LDCList;
                      setTimeout(function(){  $rootScope.bindClickEvent(); }, 10);
