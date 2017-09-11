@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.macquarium.ong</groupId>
         <artifactId>ohgre</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.6.3-SNAPSHOT</version>
     </parent>
 
     <!-- ====================================================================== -->
@@ -118,7 +118,6 @@
                 <artifactId>maven-sling-plugin</artifactId>
                 <configuration>
                     <slingUrl>http://${crx.host}:${crx.port}/system/console/bundles</slingUrl>
-                    <!--<usePut>false</usePut>-->
                 </configuration>
             </plugin>           
             <plugin>
