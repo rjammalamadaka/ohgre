@@ -27,15 +27,17 @@ public class GetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String productCode=(String)session.getAttribute("ProductCode");
 			String fixedPricePerTherm=(String)session.getAttribute("FixedPricePerTherm");
 			String LDC=(String)session.getAttribute("LDC");
-			//String ldcCode=(String)session.getAttribute("LdcCode");
 			String ldcDesc=(String)session.getAttribute("LdcDesc");
+			String customerTypeCode=(String) session.getAttribute("CustomerTypeCode");
+			String rateClassCode=(String)session.getAttribute("RateClassCode");
 			obj.put("productDesc", productDesc);
 			obj.put("quoteDes", quoteDes);
 			obj.put("productCode",productCode);
 			obj.put("LDC",LDC);
-			//obj.put("ldcCode",ldcCode);
 			obj.put("fixedPricePerTherm", fixedPricePerTherm);
 			obj.put("ldcDesc", ldcDesc);
+			obj.put("customerTypeCode", customerTypeCode);
+			obj.put("rateClassCode", rateClassCode);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
