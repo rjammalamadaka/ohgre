@@ -5,7 +5,9 @@
             Configure Hero Carousel Slides 
          </div>
       </div>
+
       <div class="cycle-slideshow" data-cycle-speed="600" data-cycle-fx="fade" data-cycle-pager="#slide-pager" data-cycle-slides="> .slide" data-cycle-timeout=${properties.timeout}>
+
          <ul data-sly-list.slide="${heroCarousel.slidesList}" data-sly-unwrap>
              <div class="slide">
                <div class="slide-image"><img src="${slide.imagePath}"></div>
