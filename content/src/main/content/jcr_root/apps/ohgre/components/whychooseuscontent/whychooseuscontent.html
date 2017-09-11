@@ -1,34 +1,35 @@
 <section data-sly-use.whyChooseUsData= "com.macquarium.ong.components.WhyChooseUs">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="row promo-wrapper">
-	<div class="col-md-7">
-		<div class="box-with-border inline">
-            <h4>${properties.heading}</h4>
-			<ol>
-                ${properties.text  @ context='html'}
-			</ol>
-		</div>
-	</div>
-	<div class="col-md-5">
-		<div class="card no-flex">
-			<div class="inner-content-wrapper highlighted-bg">
-				<div class="inner-card-content color-white">
-					<h4 class="fs-16 no-margin fw-normal">Check out these other ways to save on energy.</h4>
-					<div class="icon-wrapper" data-sly-repeat="${whyChooseUsData.whyChooseUsDataList}">
-						<img src="${item.imagePath}">
-						<p>${item.descritpion}</p>
-					</div>
-
-					<div class="fs-11">For more energy saving tips, visit:<p class="fs-11"><em>
-http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpb</em></p>				</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-				</div>
-			</div>
-		</div>
-	</section>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-10 col-md-offset-1">
+            <div class="row promo-wrapper">
+               <div class="col-md-7">
+                  <div class="box-with-border inline">
+                     <h4>${properties.heading}</h4>
+                     ${properties.text  @ context='html'}
+                  </div>
+               </div>
+               <div class="col-md-5">
+                  <div class="card no-flex">
+                     <div class="inner-content-wrapper highlighted-bg">
+                        <div class="inner-card-content color-white">
+                           <h4 class="fs-16 no-margin fw-normal">Check out these other ways to save on energy.</h4>
+                           <div class="icon-wrapper" data-sly-repeat="${whyChooseUsData.whyChooseUsDataList}">
+                              <img src="${item.imagePath}">
+                              <p>${item.descritpion}</p>
+                           </div>
+                           <div class="fs-11">
+                              For more energy saving tips, visit:
+                              <p class="fs-11"><em><a href="http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpb">
+                                 http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpb</a></em>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
