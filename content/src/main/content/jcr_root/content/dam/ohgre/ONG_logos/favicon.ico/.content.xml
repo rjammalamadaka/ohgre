@@ -6,14 +6,17 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/ONG_logos/favicon.ico"
-        jcr:lastModified="{Date}2017-08-25T10:00:11.506-04:00"
+        jcr:lastModified="{Date}2017-09-10T13:40:24.307-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2017-08-25T10:00:11.252-04:00"
+            dam:extracted="{Date}2017-09-10T13:40:24.191-04:00"
             dam:sha1="eff3102208095a3810457877bef230cf33a72886"
             dam:size="{Long}1150"
             dc:format="image/x-icon"
+            dc:modified="{Date}2017-08-27T19:28:05.437+05:30"
+            jcr:lastModified="{Date}2017-09-08T09:05:22.124+05:30"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>
         <related jcr:primaryType="nt:unstructured"/>

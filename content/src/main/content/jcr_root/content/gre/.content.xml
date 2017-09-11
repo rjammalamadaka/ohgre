@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2017-08-25T00:57:13.568-04:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-08-30T12:54:51.456-05:00"
+        cq:lastModifiedBy="rebecka.wilson"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy"
@@ -21,11 +21,11 @@
             <herocarousel
                 jcr:created="{Date}2017-08-21T00:30:49.455-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-21T00:33:28.156-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:49:35.711-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today &amp; get 2\,500 Delta Skymiles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;#&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;View Ohio Natural Gas Rate Plans&quot;\,&quot;description&quot;:&quot;Our rates and plans are designed to serve your needs.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Grand Rapids Energy® bill. &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;#&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Grand Rapids Energy® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/card_raf.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Michigan’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We are proud to Michigan residents and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SIGN UP&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
                 timeout="5000"/>
             <promocode
                 jcr:created="{Date}2017-07-23T18:42:01.956+05:30"
@@ -47,12 +47,13 @@
             <cardpromo
                 jcr:created="{Date}2017-07-23T18:43:08.192+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-21T00:30:32.550-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:51:41.258-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
-                buttontitle="SEE OFFER"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, cons"
+                buttonpath="/content/gre/promo-raf"
+                buttontitle="start referring"
+                description="Invite friends to sign up with Grand Rapids Energy® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!"
                 displayLink="true"
                 heading="Refer a Friend"
                 imagepath="/content/dam/ohgre/home/card_raf.jpg"
@@ -64,14 +65,14 @@
             <cardpromo_1267368033
                 jcr:created="{Date}2017-08-21T00:28:08.643-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-21T00:30:27.129-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:52:44.130-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
-                buttontitle="Learn More"
-                description="lorem ipsum dolor sit, lorem ipsum dolor sit, lorem ipsum dolor sit, lorem ipsum dolor sit, lorem ipsum dolor sit, "
+                buttontitle="Let's Get Moving"
+                description="Start, stop or transfer your existing natural gas service."
                 displayLink="true"
-                heading="Moving? Take Grand Rapids Energy with You. "
+                heading="Moving? Take GRE with You. "
                 imagepath="/content/dam/ohgre/home/card_moving.jpg"
                 mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
             <col_break15032896712800
@@ -81,12 +82,12 @@
             <cardpromo_plans
                 jcr:created="{Date}2017-07-23T18:43:13.617+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-25T00:57:13.532-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:53:56.715-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo-plans"
                 buttonpath="/content/gre/plans-detail"
-                description="Lorem ipsum dolor sit amet, cons ectetur adipiscing elit."
+                description="Lock in a great 6 or 12-month fixed rate to avoid price spikes and market fluctuations!"
                 heading="Fixed Rate Plans"/>
             <col_end15008155660770
                 jcr:primaryType="nt:unstructured"
@@ -95,11 +96,11 @@
             <signup
                 jcr:created="{Date}2017-07-23T18:46:36.241+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-23T18:46:50.491+05:30"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:54:51.450-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/signup"
-                description="Sign up to stay informed of promos &amp; offers"/>
+                description="Be the among the first to hear about our promos and special offers."/>
         </content>
         <image jcr:primaryType="nt:unstructured">
             <file.sftmp/>
@@ -128,4 +129,6 @@
     <rate-plans/>
     <special_offer/>
     <faq/>
+    <server_down/>
+    <_x0034_04/>
 </jcr:root>

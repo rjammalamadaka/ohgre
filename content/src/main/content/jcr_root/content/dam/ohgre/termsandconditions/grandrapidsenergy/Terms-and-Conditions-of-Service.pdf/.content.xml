@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="14278e3c-16c3-4cb8-9c6c-12b5cffb869f">
+    <jcr:content
+        cq:name="Terms-and-Conditions-of-Service.pdf"
+        cq:parentPath="/content/dam/ohgre/termsandconditions/grandrapidsenergy"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf"
+        jcr:lastModified="{Date}2017-09-10T13:40:24.585-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Author="CENTEMI"
+            dam:extracted="{Date}2017-09-07T18:05:20.973-04:00"
+            dam:numPages="{Long}6"
+            dam:Physicalheightininches="{Decimal}11.0"
+            dam:Physicalwidthininches="{Decimal}8.5"
+            dam:Producer="Acrobat Distiller 15.0 (Windows)"
+            dam:sha1="5a588a493e2741d17160b24b912fdfc460683f8d"
+            dam:size="{Long}70159"
+            dc:creator="[CENTEMI]"
+            dc:creator_xmpArrayType="rdf:Seq"
+            dc:format="application/pdf"
+            dc:modified="{Date}2017-09-06T07:57:02.242+05:30"
+            dc:title="Microsoft Word - Document1"
+            jcr:lastModified="{Date}2017-09-10T13:40:24.382-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Microsoft Word - Document1"
+            pdf:Producer="Acrobat Distiller 15.0 (Windows)"
+            xmp:CreateDate="{Date}2015-09-09T06:19:20.000+05:30"
+            xmp:CreatorTool="PScript5.dll Version 5.2.2"
+            xmp:MetadataDate="{Date}2017-09-10T21:53:35.000+05:30"
+            xmp:ModifyDate="{Date}2017-09-10T21:53:35.000+05:30"
+            xmpMM:DocumentID="uuid:461b1773-7095-4e70-bcc2-4bf243e1966c"
+            xmpMM:InstanceID="uuid:e1dc19f6-1acd-4fd3-b4fb-61137017ec86"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
