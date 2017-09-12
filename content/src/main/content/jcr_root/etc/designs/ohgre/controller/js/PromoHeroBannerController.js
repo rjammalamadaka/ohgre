@@ -18,11 +18,13 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                      month = date.toLocaleString(locale, { month: "long" });
                  $scope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
 
-                 if(promoInfo.PromotionExpired =="Y"){
+                 if($rootScope.promotion.PromotionExpired =="Y"){
                                     location.href=$rootScope.homeUrl+"/backuppromo.html";
-                 }else{
-                     location.href=$rootScope.homeUrl+"/promo-general.html";
                  }
+
+                 /*else{
+                     location.href=$rootScope.homeUrl+"/promo-general.html";
+                 }*/
 
              }
              }else if(data && data.responseStatus =="1"){
