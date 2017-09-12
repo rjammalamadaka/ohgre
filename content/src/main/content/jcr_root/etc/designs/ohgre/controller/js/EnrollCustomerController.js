@@ -105,6 +105,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
             accountnumber=$scope.an1+$scope.an2+$scope.an3;
            }else if($rootScope.product.LDC == "VED"){
 			 accountnumber=$scope.an2+$scope.an3;
+           }else if($rootScope.product.LDC == "MIC"){
+ 			accountnumber=$scope.an4;
            }else{
 			 accountnumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
            }
