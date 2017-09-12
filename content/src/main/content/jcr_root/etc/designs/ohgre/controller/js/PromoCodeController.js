@@ -1,6 +1,7 @@
 ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','$window','PrimeService','OhGreService',function ($scope, $rootScope,$http,$window,PrimeService,OhGreService) {
 
-    ohgre.store("promoCodeInfo",{});
+    ohgre.removeStore("promoCodeInfo");
+    ohgre.removeStore("promocode");
     $scope.promoCodeSubmit = function(){
 		$scope.promoform.submited = true;
         if($scope.promoform.$valid){
