@@ -20,7 +20,7 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		return $http.get(url,config);
     }
     var getProductData=function(){
-		var url="/bin/getProductData";
+		var url="/bin/getProductData?"+new Date().getTime();
 		return $http.get(url,config);
     }
     var getCustomerInfo=function(requestInfo){
