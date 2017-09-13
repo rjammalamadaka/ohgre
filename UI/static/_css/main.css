@@ -9022,6 +9022,20 @@ input {
     width: 45%;
   }
 }
+.window-wrapper .plan-detail-alt1 .flex-container {
+  margin: 2rem 0;
+}
+.window-wrapper .plan-detail-alt1 .plan-info .plan-button {
+  width: 45%;
+}
+.window-wrapper .plan-detail-alt1 .primary-button {
+  margin: 1rem 0;
+}
+.window-wrapper .plan-detail-alt1 .error-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-style: italic;
+}
 .window-title {
   display: block;
   padding: 1.5rem 0;
