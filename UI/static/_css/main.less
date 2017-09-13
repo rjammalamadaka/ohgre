@@ -288,7 +288,7 @@ footer{
 	}
 	.bbb-info{
 		padding: 2rem 3rem;
-		border-bottom: 1px solid @border_color;
+		//border-bottom: 1px solid @border_color;
 
 		img{
 			mix-blend-mode: luminosity;
@@ -316,7 +316,7 @@ footer{
 		}
 		.bbb-info{
 			float: right;
-			max-width: 30%;
+			max-width: 27%;
 			padding: 0;
 		}
 		#sub-links{
@@ -1825,6 +1825,10 @@ div[class^="cq-colctrl-lt1-"]{
 	width: 100%;
 	margin-bottom: 1rem;
 
+	sup {
+		color: inherit !important;
+	}
+
 	&.has-image{
 		padding: 0;
 
@@ -1928,7 +1932,8 @@ div[class^="cq-colctrl-lt1-"]{
 
 					.box-inner{
 						display: table-cell;
-	    				vertical-align: middle;
+						max-width: 100%;
+	    			vertical-align: middle;
 					}
 				}
 			}
@@ -2908,7 +2913,7 @@ input{
 	background: rgba(0,0,0,0.7);
 	top: 0;
 	left: 0;
-	z-index: 10;
+	z-index: 10000000;
 	display: none;
 
 	&.show-popup{
