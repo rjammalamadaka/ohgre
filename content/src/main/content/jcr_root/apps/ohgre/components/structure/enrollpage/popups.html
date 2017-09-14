@@ -1,6 +1,6 @@
 <div class="popup-wrapper" id="popupconfirm">
    <div class="window-wrapper">
-      <a href="#" id="close-window">X</a>
+      <a href="#" class="close-window">X</a>
       <span class="window-title">Please Confirm Your Account</span>
       <table class="table-wrapper">
          <tr>
@@ -37,9 +37,9 @@
 
 
 
-	<div class="popup-wrapper" id="popupetc">
+	<div class="popup-wrapper" id="popupetc"> <!-- Early Termination charge-->
 		<div class="window-wrapper with-border">
-	      <a href="#" id="close-window">X</a>
+	      <a href="#" class="close-window">X</a>
           <h6>Your contract is not close to ending. If you would like to start your selected new plan today,you will need to pay a {{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination fee.</h6>
 			<div class="inner-window-content">
 				<div class="row">
@@ -111,7 +111,7 @@
 
 <div class="popup-wrapper" id="popupalternate">
 		<div class="window-wrapper with-border">
-	      <a href="#" id="close-window">X</a>
+	      <a href="#" class="close-window">X</a>
 			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
 			<div class="inner-window-content">
 				<div class="row">
@@ -163,7 +163,7 @@
 
 	<div class="popup-wrapper" id="popupwithrenewal">
 		<div class="window-wrapper with-border">
-	      <a href="#" id="close-window">X</a>
+	      <a href="#" class="close-window">X</a>
 			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.</h6>
 			<div class="inner-window-content">
 				<div class="row">
@@ -230,7 +230,7 @@
 
 <div class="popup-wrapper" id="popupalternatenoteligible">
 		<div class="window-wrapper with-border">
-	      <a href="#" id="close-window">X</a>
+	      <a href="#" class="close-window">X</a>
 			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
 			<div class="inner-window-content">
 				<div class="row">
@@ -254,10 +254,46 @@
 				</div>
 				<ul class="plan-detail">
 					<li>
-						<a href="#" class="primary-button" ng-click="enrollselectalternateplans1()">Shop for plans</a>
+						<a href="#" class="primary-button" ng-click="enrollselectalternateplans()">Shop for plans</a>
 					</li>
 				</ul>
 				<!-- end inner content -->
 			</div>
 	   </div>
 	</div>
+
+
+
+   <div class="popup-wrapper" id="popupnoteligiblefornew">
+		<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please choose from one of our many other plans for the best deal!</h6>
+			<div class="inner-window-content">
+
+				<ul class="plan-detail plan-detail-alt1">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray gray-text">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info gray-text">
+									<div class="inner-content">
+										<h4>Selected Plan</h4>
+										<b class="plan-selected gray-text">{{product.productDesc}}</b>
+										<small>{{product.ldcDesc}}</small>
+									</div>
+									<div class="plan-button">
+										<span class="bold error-text">Not eligible for this plan.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="primary-button" ng-click="enrollselectalternateplans()">Shop for plans</a>
+					</li>
+				</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
+
