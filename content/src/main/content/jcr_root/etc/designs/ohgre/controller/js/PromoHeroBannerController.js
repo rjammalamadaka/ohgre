@@ -28,7 +28,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 
              }
              }else if(data && data.responseStatus =="1"){
-                 ohgre.store("promoCodeInfo",{});
+                 //ohgre.store("promoCodeInfo",{});
                             location.href=$rootScope.homeUrl+"/promotion-error.html";
                      }
 
