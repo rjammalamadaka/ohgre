@@ -111,4 +111,12 @@
         height : 210px !important;
     }
 
-   
+
+
+.close-window{
+	position:absolute;right:2rem;top:.5rem;font-size:2rem;color:#757575
+	}
+@media (min-width:992px){
+	.close-window{top:1.5rem}
+}
+

@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-08-30T13:03:55.477-05:00"
-        cq:lastModifiedBy="rebecka.wilson"
+        cq:lastModified="{Date}2017-09-14T11:34:54.177-04:00"
+        cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Ohio Natural Gas"
@@ -16,7 +16,7 @@
         footernavigationlinks="[/content/onlyong,/content/onlyong]"
         mobilenumber="1.888.211.8312"
         portalname="oh"
-        time="8AM - 5PM EST">
+        time="8 a.m. to 5 p.m. EST">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">

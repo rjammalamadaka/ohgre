@@ -51,7 +51,7 @@
       <div class="col-md-10 col-md-offset-1">
 
          <div class="row promo-wrapper flex-wrap">
-            <div class="col-md-6" ng-repeat="product in productList">
+            <div class="col-md-6" ng-repeat="product in productList" ng-if="product.FixedPricePerTherm > 0">
                <div class="box-w-arrow accord-trigger trigger-arrow">
                   <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}} <small>per Ccf</small></span>
                   <span class="rate-plan">{{product.ProductDescription}}</span>

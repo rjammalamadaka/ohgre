@@ -105,7 +105,11 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
         if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0 && promoInfo.LDCList[0].promotion && promoInfo.LDCList[0].promotion.length>0){
 			req.CustomerTypeCode=promoInfo.LDCList[0].promotion[0].CustomerTypeCode;
+            if(promoInfo.LDCList[0].promotion[0].RateClassCode.length>0){
 			req.RateClassCode=promoInfo.LDCList[0].promotion[0].RateClassCode;	
+            }else{
+				req.RateClassCode="01";
+            }
         }else{
 
   			if($rootScope.hashParams && $rootScope.hashParams.lctype){
