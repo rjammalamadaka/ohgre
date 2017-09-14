@@ -942,6 +942,7 @@ div[class^="cq-colctrl-lt1-"]{
 				width: 100%;
 				letter-spacing: .1rem;
 			}
+
 			@media (@screen-md-min){
 				width: 60%;
 
@@ -1095,6 +1096,18 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		.mobile-view{
 			text-transform: none;
+		}
+
+		.fs-11{
+			p{
+				font-family: @secondary_font;
+
+				a {
+					color: #fff;
+					font-size: 1rem;
+					text-transform: none;
+				}
+			}
 		}
 	}
 	@media (@screen-md-min){
@@ -2255,6 +2268,10 @@ div[class^="cq-colctrl-lt1-"]{
 .promo-wrapper{
 	>div{
 		padding: 0;
+
+		.box-with-border:first-of-type {
+			padding: 2.5rem;
+		}
 	}
 	@media (@screen-md-min){
 		display: flex;

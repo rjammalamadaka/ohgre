@@ -6901,6 +6901,14 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .card .inner-card-content .mobile-view {
   text-transform: none;
 }
+.card .inner-card-content .fs-11 p {
+  font-family: 'Roboto', sans-serif;
+}
+.card .inner-card-content .fs-11 p a {
+  color: #fff;
+  font-size: 1rem;
+  text-transform: none;
+}
 @media (min-width: 992px) {
   .card {
     display: block;
@@ -7990,6 +7998,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 .promo-wrapper > div {
   padding: 0;
+}
+.promo-wrapper > div .box-with-border:first-of-type {
+  padding: 2.5rem;
 }
 @media (min-width: 992px) {
   .promo-wrapper {
