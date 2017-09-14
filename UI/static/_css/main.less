@@ -410,6 +410,22 @@ footer{
 			padding-right: 0;
 		}
 	}
+	#promo-enter-wrapper {
+		padding: 3rem 10%;
+
+		input[type="text"] {
+			max-width: 33rem;
+		}
+		p {
+			font-family: @primary_font;
+			margin-bottom: 3rem;
+
+			&:empty {
+				height: 0;
+				margin: 0;
+			}
+		}
+	}
 	@media (@screen-md-min){
 		~ .parsys-column.cq-colctrl-lt0{
 			padding: 0 1.5rem;
@@ -1015,11 +1031,21 @@ div[class^="cq-colctrl-lt1-"]{
 	&.parbase{
 		height: 100%;
 
+		.inner-card-content {
+			height: 100%;
+
+			.promo-link {
+				bottom: 2.5rem;
+				position: absolute;
+			}
+		}
+
 		@media (@screen-md-min){
 
 		}
 	}
 }
+
 .parsys_column.cq-colctrl-lt1-c0{
 	.cardpromo.parbase{
 		padding-left: 0;

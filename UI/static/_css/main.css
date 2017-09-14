@@ -6239,6 +6239,20 @@ footer .bbb-info img {
 .promocode + .parsys-column.cq-colctrl-lt0 > div:first-child {
   padding-right: 0;
 }
+.promocode #promo-enter-wrapper {
+  padding: 3rem 10%;
+}
+.promocode #promo-enter-wrapper input[type="text"] {
+  max-width: 33rem;
+}
+.promocode #promo-enter-wrapper p {
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 3rem;
+}
+.promocode #promo-enter-wrapper p:empty {
+  height: 0;
+  margin: 0;
+}
 @media (min-width: 992px) {
   .promocode ~ .parsys-column.cq-colctrl-lt0 {
     padding: 0 1.5rem;
@@ -6827,6 +6841,15 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .cardpromo.parbase,
 .cardpromo-plans.parbase {
   height: 100%;
+}
+.cardpromo.parbase .inner-card-content,
+.cardpromo-plans.parbase .inner-card-content {
+  height: 100%;
+}
+.cardpromo.parbase .inner-card-content .promo-link,
+.cardpromo-plans.parbase .inner-card-content .promo-link {
+  bottom: 2.5rem;
+  position: absolute;
 }
 .parsys_column.cq-colctrl-lt1-c0 .cardpromo.parbase {
   padding-left: 0;
