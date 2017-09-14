@@ -4,7 +4,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     $scope.businessName=false;
 
-
+ $rootScope.showcurrentplan=false;
 
     PrimeService.getProductData().success(function(data, status, headers, config){
 
@@ -120,26 +120,30 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                  if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
                      console.log($rootScope.customerInfo);
 
-                     if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode){
+                     if($rootScope.product.customerTypeCode =="NEW"){
+                         $('#popupalternate').addClass('show-popup');
+
+                     }else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode){
                          $('#popupalternate').addClass('show-popup');
                          return false;
-                     }
-
-                     if($rootScope.product.rateClassCode =="01"){
+                     }else if($rootScope.product.rateClassCode =="01"){
                          if(($rootScope.customerInfo.lastName.toLowerCase() !=$scope.lastname.toLowerCase()) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                              $('#lastnamezipcodeerror').show();  
                              return false;
+                         }else{
+							$('#popupconfirm').addClass('show-popup');
                          }
-                     }
-
-                     if($rootScope.product.rateClassCode =="04"){
+                     }else if($rootScope.product.rateClassCode =="04"){
                          if(($rootScope.customerInfo.businessName.toLowerCase() !=$scope.lastname.toLowerCase()) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                              $('#lastnamezipcodeerror').show();  
                              return false;
+                         }else{
+							$('#popupconfirm').addClass('show-popup');
                          }
-                     }
+                     }else{
 
-                     $('#popupconfirm').addClass('show-popup');
+                     	$('#popupconfirm').addClass('show-popup');
+                     }
                      // need to work on RateClassCode
                    /*  $('.active-form').removeClass('active-form');
                      $('.active-step').removeClass('active-step');
@@ -148,9 +152,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
                  }else if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="1"){
 
-                     if($rootScope.product.customerTypeCode =="Existing"){
-
-
+                     if($rootScope.product.customerTypeCode =="EXISTING"){
+ 							$('#popupnoteligiblefornew').addClass('show-popup');
 
                      }else{
 
@@ -259,6 +262,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     $rootScope.enrollselectandcontinue =function(){
 
+        $rootScope.showcurrentplan=true;
+
 			$('#popupetc').removeClass('show-popup');
 
         gotNextStep(2);
@@ -276,6 +281,8 @@ var step =2;
                      $('.active-step').removeClass('active-step');
                      $('#step-through >div:nth-child('+step+')').addClass('active-form');
                      $('.steps-container > div:nth-child('+step+')').addClass('active-step');
+
+        $('.popup-wrapper').removeClass('show-popup');
 
     }
 
