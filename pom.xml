@@ -322,6 +322,7 @@
     </profiles>
     <modules>
         <module>bundle</module>
+        <module>code</module>
         <module>content</module>
         <module>ohgre-wsclientbundle</module>
     </modules>
