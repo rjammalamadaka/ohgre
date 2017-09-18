@@ -6381,6 +6381,11 @@ footer .bbb-info img {
     margin-left: -1.5rem;
   }
 }
+.slide .slide-image {
+  background-size: cover;
+  background-position: top right;
+  min-height: 100px;
+}
 .cycle-slideshow {
   overflow: visible !important;
   margin-bottom: 0.5rem;
@@ -7079,6 +7084,10 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
 }
 /* GENERIC FULL WIDTH BANNER CALL OUT */
+.full-banner-callout.flush .slide-image {
+  background-size: cover;
+  min-height: 150px;
+}
 @media (min-width: 992px) {
   .full-banner-callout {
     margin-top: 0;
@@ -7114,6 +7123,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
   .full-banner-callout.flush .slide-image {
     height: 100%;
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   .full-banner-callout.flush .slide-image img {
     height: 100%;
