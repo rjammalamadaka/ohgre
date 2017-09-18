@@ -577,6 +577,13 @@ div[class^="col-"]{
 		}
 	}
 }
+.slide {
+	.slide-image {
+		background-size: cover;
+		background-position: top right;
+		min-height: 100px;
+	}
+}
 .cycle-slideshow{
 	overflow		: visible !important;
 	margin-bottom: 0.5rem;
@@ -1298,6 +1305,13 @@ div[class^="cq-colctrl-lt1-"]{
 }
 /* GENERIC FULL WIDTH BANNER CALL OUT */
 .full-banner-callout{
+
+	&.flush{
+		.slide-image{
+			background-size: cover;
+			min-height: 150px;
+		}
+	}
 	@media (@screen-md-min){
 		margin-top	: 0;
 
@@ -1334,6 +1348,9 @@ div[class^="cq-colctrl-lt1-"]{
 		&.flush{
 			.slide-image{
 				height: 100%;
+				background-position: top right;
+				background-size: contain;
+				background-repeat: no-repeat;
 
 				img{
 					height: 100%;
