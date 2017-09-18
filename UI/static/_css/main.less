@@ -588,7 +588,8 @@ div[class^="col-"]{
 	    z-index		: 10000;
 	    color		: #fff;
 	    left		: 0;
-	    top			: 22vh;
+	    //top			: 22vh;
+			top: 175px;
 	    width		: 100%;
 	    text-align	: center;
 
@@ -617,7 +618,7 @@ div[class^="col-"]{
 	    	width		: auto;
 	    	left		: 25rem;
 	    	top			: auto;
-		    bottom		: 4rem;
+		    bottom		: .5rem;
 
 		    span{
 		    	display: inline-block;
@@ -625,8 +626,11 @@ div[class^="col-"]{
 	    }
 	}
 	.slide-image{
-		height: 25vh;
+		background-position: center;
+		background-size: cover;
+		//height: 25vh;
 		overflow: hidden;
+		min-height: 200px;
 
 		@media (orientation:landscape){
 			min-height: 25rem;
@@ -634,17 +638,18 @@ div[class^="col-"]{
 
 		@media (@screen-md-min){
 			min-height: 3rem;
-			height: inherit;
+			//height: inherit;
 			overflow: visible;
 		}
 		img{
+			display: none;
 			min-height: 100%;
 			width: auto;
 		}
 	}
 	.slide-content{
 		height: 100%;
-		background-color: @primary_color;
+		background-color: #003a8f;
 
 		@media (@screen-md-min){
 			background: none;
@@ -2316,7 +2321,7 @@ div[class^="cq-colctrl-lt1-"]{
 				.box-with-border{
 
 					.box-inner{
-						display: table-cell;
+						//display: table-cell;
 						max-width: 100%;
 	    			vertical-align: middle;
 					}
@@ -2391,6 +2396,20 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+/* ABOUT US PAGE STYLES */
+.about-us {
+	.box-with-border{
+		&.bg-primary-blue {
+			.dropdown-trigger {
+				.value {
+					font-size: 1.4rem;
+				}
+			}
+
+		}
+	}
+}
+
 /* FAQ PAGE STYLES */
 .faq-landing{
 	margin-bottom: 0;
