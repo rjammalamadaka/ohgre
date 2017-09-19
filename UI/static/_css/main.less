@@ -410,6 +410,22 @@ footer{
 			padding-right: 0;
 		}
 	}
+	#promo-enter-wrapper {
+		padding: 3rem 10%;
+
+		input[type="text"] {
+			max-width: 33rem;
+		}
+		p {
+			font-family: @primary_font;
+			margin-bottom: 3rem;
+
+			&:empty {
+				height: 0;
+				margin: 0;
+			}
+		}
+	}
 	@media (@screen-md-min){
 		~ .parsys-column.cq-colctrl-lt0{
 			padding: 0 1.5rem;
@@ -561,6 +577,13 @@ div[class^="col-"]{
 		}
 	}
 }
+.slide {
+	.slide-image {
+		background-size: cover;
+		background-position: top right;
+		min-height: 100px;
+	}
+}
 .cycle-slideshow{
 	overflow		: visible !important;
 	margin-bottom: 0.5rem;
@@ -572,7 +595,8 @@ div[class^="col-"]{
 	    z-index		: 10000;
 	    color		: #fff;
 	    left		: 0;
-	    top			: 22vh;
+	    //top			: 22vh;
+			top: 175px;
 	    width		: 100%;
 	    text-align	: center;
 
@@ -601,7 +625,7 @@ div[class^="col-"]{
 	    	width		: auto;
 	    	left		: 25rem;
 	    	top			: auto;
-		    bottom		: 4rem;
+		    bottom		: .5rem;
 
 		    span{
 		    	display: inline-block;
@@ -609,8 +633,11 @@ div[class^="col-"]{
 	    }
 	}
 	.slide-image{
-		height: 25vh;
+		background-position: center;
+		background-size: cover;
+		//height: 25vh;
 		overflow: hidden;
+		min-height: 200px;
 
 		@media (orientation:landscape){
 			min-height: 25rem;
@@ -618,17 +645,18 @@ div[class^="col-"]{
 
 		@media (@screen-md-min){
 			min-height: 3rem;
-			height: inherit;
+			//height: inherit;
 			overflow: visible;
 		}
 		img{
+			display: none;
 			min-height: 100%;
 			width: auto;
 		}
 	}
 	.slide-content{
 		height: 100%;
-		background-color: @primary_color;
+		background-color: #003a8f;
 
 		@media (@screen-md-min){
 			background: none;
@@ -942,6 +970,7 @@ div[class^="cq-colctrl-lt1-"]{
 				width: 100%;
 				letter-spacing: .1rem;
 			}
+
 			@media (@screen-md-min){
 				width: 60%;
 
@@ -1014,11 +1043,21 @@ div[class^="cq-colctrl-lt1-"]{
 	&.parbase{
 		height: 100%;
 
+		.inner-card-content {
+			height: 100%;
+
+			.promo-link {
+				bottom: 2.5rem;
+				position: absolute;
+			}
+		}
+
 		@media (@screen-md-min){
 
 		}
 	}
 }
+
 .parsys_column.cq-colctrl-lt1-c0{
 	.cardpromo.parbase{
 		padding-left: 0;
@@ -1095,6 +1134,18 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		.mobile-view{
 			text-transform: none;
+		}
+
+		.fs-11{
+			p{
+				font-family: @secondary_font;
+
+				a {
+					color: #fff;
+					font-size: 1rem;
+					text-transform: none;
+				}
+			}
 		}
 	}
 	@media (@screen-md-min){
@@ -1254,6 +1305,13 @@ div[class^="cq-colctrl-lt1-"]{
 }
 /* GENERIC FULL WIDTH BANNER CALL OUT */
 .full-banner-callout{
+
+	&.flush{
+		.slide-image{
+			background-size: cover;
+			min-height: 150px;
+		}
+	}
 	@media (@screen-md-min){
 		margin-top	: 0;
 
@@ -1290,6 +1348,9 @@ div[class^="cq-colctrl-lt1-"]{
 		&.flush{
 			.slide-image{
 				height: 100%;
+				background-position: top right;
+				background-size: contain;
+				background-repeat: no-repeat;
 
 				img{
 					height: 100%;
@@ -2255,6 +2316,10 @@ div[class^="cq-colctrl-lt1-"]{
 .promo-wrapper{
 	>div{
 		padding: 0;
+
+		.box-with-border:first-of-type {
+			padding: 2.5rem;
+		}
 	}
 	@media (@screen-md-min){
 		display: flex;
@@ -2273,7 +2338,11 @@ div[class^="cq-colctrl-lt1-"]{
 				.box-with-border{
 
 					.box-inner{
+<<<<<<< HEAD
 						display: table-cell;
+=======
+						//display: table-cell;
+>>>>>>> remotes/origin/master
 						max-width: 100%;
 	    			vertical-align: middle;
 					}
@@ -2348,6 +2417,20 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+/* ABOUT US PAGE STYLES */
+.about-us {
+	.box-with-border{
+		&.bg-primary-blue {
+			.dropdown-trigger {
+				.value {
+					font-size: 1.4rem;
+				}
+			}
+
+		}
+	}
+}
+
 /* FAQ PAGE STYLES */
 .faq-landing{
 	margin-bottom: 0;
@@ -3568,6 +3651,7 @@ input{
 			}
 			.plan-button{
 				width: 100%;
+				display: block;
 
 				@media (@screen-md-min){
 					width: 35%;
