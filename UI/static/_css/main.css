@@ -6239,8 +6239,6 @@ footer .bbb-info img {
 .promocode + .parsys-column.cq-colctrl-lt0 > div:first-child {
   padding-right: 0;
 }
-<<<<<<< HEAD
-=======
 .promocode #promo-enter-wrapper {
   padding: 3rem 10%;
 }
@@ -6255,7 +6253,6 @@ footer .bbb-info img {
   height: 0;
   margin: 0;
 }
->>>>>>> remotes/origin/master
 @media (min-width: 992px) {
   .promocode ~ .parsys-column.cq-colctrl-lt0 {
     padding: 0 1.5rem;
@@ -6384,14 +6381,11 @@ footer .bbb-info img {
     margin-left: -1.5rem;
   }
 }
-<<<<<<< HEAD
-=======
 .slide .slide-image {
   background-size: cover;
   background-position: top right;
   min-height: 100px;
 }
->>>>>>> remotes/origin/master
 .cycle-slideshow {
   overflow: visible !important;
   margin-bottom: 0.5rem;
@@ -6406,11 +6400,7 @@ footer .bbb-info img {
   z-index: 10000;
   color: #fff;
   left: 0;
-<<<<<<< HEAD
-  top: 22vh;
-=======
   top: 175px;
->>>>>>> remotes/origin/master
   width: 100%;
   text-align: center;
 }
@@ -6439,26 +6429,17 @@ footer .bbb-info img {
     width: auto;
     left: 25rem;
     top: auto;
-<<<<<<< HEAD
-    bottom: 4rem;
-=======
     bottom: .5rem;
->>>>>>> remotes/origin/master
   }
   .cycle-slideshow #slide-pager span {
     display: inline-block;
   }
 }
 .cycle-slideshow .slide-image {
-<<<<<<< HEAD
-  height: 25vh;
-  overflow: hidden;
-=======
   background-position: center;
   background-size: cover;
   overflow: hidden;
   min-height: 200px;
->>>>>>> remotes/origin/master
 }
 @media (orientation: landscape) {
   .cycle-slideshow .slide-image {
@@ -6468,28 +6449,17 @@ footer .bbb-info img {
 @media (min-width: 992px) {
   .cycle-slideshow .slide-image {
     min-height: 3rem;
-<<<<<<< HEAD
-    height: inherit;
-=======
->>>>>>> remotes/origin/master
     overflow: visible;
   }
 }
 .cycle-slideshow .slide-image img {
-<<<<<<< HEAD
-=======
   display: none;
->>>>>>> remotes/origin/master
   min-height: 100%;
   width: auto;
 }
 .cycle-slideshow .slide-content {
   height: 100%;
-<<<<<<< HEAD
-  background-color: #0074bf;
-=======
   background-color: #003a8f;
->>>>>>> remotes/origin/master
 }
 @media (min-width: 992px) {
   .cycle-slideshow .slide-content {
@@ -6879,8 +6849,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .cardpromo-plans.parbase {
   height: 100%;
 }
-<<<<<<< HEAD
-=======
 .cardpromo.parbase .inner-card-content,
 .cardpromo-plans.parbase .inner-card-content {
   height: 100%;
@@ -6890,7 +6858,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
   bottom: 2.5rem;
   position: absolute;
 }
->>>>>>> remotes/origin/master
 .parsys_column.cq-colctrl-lt1-c0 .cardpromo.parbase {
   padding-left: 0;
 }
@@ -6964,8 +6931,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .card .inner-card-content .mobile-view {
   text-transform: none;
 }
-<<<<<<< HEAD
-=======
 .card .inner-card-content .fs-11 p {
   font-family: 'Roboto', sans-serif;
 }
@@ -6974,7 +6939,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-size: 1rem;
   text-transform: none;
 }
->>>>>>> remotes/origin/master
 @media (min-width: 992px) {
   .card {
     display: block;
@@ -7120,13 +7084,10 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
 }
 /* GENERIC FULL WIDTH BANNER CALL OUT */
-<<<<<<< HEAD
-=======
 .full-banner-callout.flush .slide-image {
   background-size: cover;
   min-height: 150px;
 }
->>>>>>> remotes/origin/master
 @media (min-width: 992px) {
   .full-banner-callout {
     margin-top: 0;
@@ -7162,12 +7123,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
   .full-banner-callout.flush .slide-image {
     height: 100%;
-<<<<<<< HEAD
-=======
     background-position: top right;
     background-size: contain;
     background-repeat: no-repeat;
->>>>>>> remotes/origin/master
   }
   .full-banner-callout.flush .slide-image img {
     height: 100%;
@@ -8078,12 +8036,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .promo-wrapper > div {
   padding: 0;
 }
-<<<<<<< HEAD
-=======
 .promo-wrapper > div .box-with-border:first-of-type {
   padding: 2.5rem;
 }
->>>>>>> remotes/origin/master
 @media (min-width: 992px) {
   .promo-wrapper {
     display: flex;
@@ -8099,10 +8054,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
     align-items: stretch;
   }
   .promo-wrapper > div:first-child .box-with-border .box-inner {
-<<<<<<< HEAD
-    display: table-cell;
-=======
->>>>>>> remotes/origin/master
     max-width: 100%;
     vertical-align: middle;
   }
@@ -8164,13 +8115,10 @@ div[class^="cq-colctrl-lt1-"] .card p {
     max-width: 13rem;
   }
 }
-<<<<<<< HEAD
-=======
 /* ABOUT US PAGE STYLES */
 .about-us .box-with-border.bg-primary-blue .dropdown-trigger .value {
   font-size: 1.4rem;
 }
->>>>>>> remotes/origin/master
 /* FAQ PAGE STYLES */
 .faq-landing {
   margin-bottom: 0;
@@ -9361,10 +9309,7 @@ input {
 }
 .inner-window-content .plan-detail li .plan-button {
   width: 100%;
-<<<<<<< HEAD
-=======
   display: block;
->>>>>>> remotes/origin/master
 }
 @media (min-width: 992px) {
   .inner-window-content .plan-detail li .plan-button {
