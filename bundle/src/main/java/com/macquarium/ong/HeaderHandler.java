@@ -46,7 +46,7 @@ public boolean handleMessage(SOAPMessageContext smc) {
             SOAPElement childReplyToElement=replyToElement.addChildElement("Address","wsa");
             childReplyToElement.addTextNode("http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous");            
             SOAPElement toElement= header.addChildElement("To","wsa");
-            toElement.addTextNode("https://test.prime.southstarenergy.com/Prime1/webservices/quoteservice.asmx");
+            toElement.addTextNode("https://test.prime.southstarenergy.com/Prime2/webservices/quoteservice.asmx");
             SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
             long HOUR = 3600*1000;
             dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
