@@ -5630,6 +5630,13 @@ input[type=radio]:checked:before {
   border: 1px solid #ff6008;
   color: #ff6008;
 }
+.primary-button.plain {
+  background-color: #fff;
+  color: #0075c2;
+  box-shadow: none;
+  text-align: left;
+  padding: 0 2rem 0 0;
+}
 .primary-button.inactive {
   background-color: #9bb2c1;
 }
@@ -5657,6 +5664,13 @@ input[type=radio]:checked:before {
   background-color: #fff;
   border: 1px solid #ff6008;
   color: #ff6008;
+}
+.accent-button.plain {
+  background-color: #fff;
+  color: #0075c2;
+  box-shadow: none;
+  text-align: left;
+  padding: 0 2rem 0 0;
 }
 .accent-button.inactive {
   background-color: #9bb2c1;
@@ -6811,6 +6825,13 @@ div[class^="cq-colctrl-lt1-"] .card a.inverted {
   background-color: #fff;
   border: 1px solid #ff6008;
   color: #ff6008;
+}
+div[class^="cq-colctrl-lt1-"] .card a.plain {
+  background-color: #fff;
+  color: #0075c2;
+  box-shadow: none;
+  text-align: left;
+  padding: 0 2rem 0 0;
 }
 div[class^="cq-colctrl-lt1-"] .card a.inactive {
   background-color: #9bb2c1;
@@ -9018,6 +9039,44 @@ input {
 }
 .popup-wrapper.show-popup {
   display: block;
+}
+.popup-wrapper .cancel-button {
+  color: #fff;
+}
+.popup-wrapper#popupconfirm .button-container,
+.popup-wrapper#popupetc .button-container {
+  padding: 1rem 0;
+}
+.popup-wrapper#popupconfirm .button-container .plain,
+.popup-wrapper#popupetc .button-container .plain {
+  padding-right: 6rem;
+}
+.popup-wrapper#popupconfirm .plan-button .primary-button,
+.popup-wrapper#popupetc .plan-button .primary-button {
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupconfirm .plan-button,
+  .popup-wrapper#popupetc .plan-button {
+    width: 40%;
+  }
+  .popup-wrapper#popupconfirm .button-container .primary-button,
+  .popup-wrapper#popupetc .button-container .primary-button {
+    margin: 0;
+    width: 34%;
+  }
+  .popup-wrapper#popupconfirm .button-container .plain,
+  .popup-wrapper#popupetc .button-container .plain {
+    width: 65%;
+    padding: 0;
+  }
+}
+.popup-wrapper#popupwithrenewal .button-container {
+  padding: 1rem 0;
+}
+.popup-wrapper#popupwithrenewal .button-container .cancel-button {
+  margin: 0;
 }
 .window-wrapper {
   width: 100%;

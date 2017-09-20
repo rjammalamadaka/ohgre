@@ -3352,6 +3352,49 @@ input{
 	&.show-popup{
 		display: block;
 	}
+	.cancel-button {
+		color: #fff;
+	}
+	&#popupconfirm, &#popupetc {
+		.button-container {
+			padding: 1rem 0;
+
+			.plain {
+				padding-right: 6rem;
+			}
+		}
+		.plan-button {
+			.primary-button {
+				letter-spacing: normal;
+    		white-space: nowrap;
+			}
+		}
+
+		@media (@screen-md-min){
+			.plan-button {
+					width: 40%;
+			}
+			.button-container {
+				.primary-button {
+					margin: 0;
+					width: 34%
+				}
+				.plain {
+					width: 65%;
+					padding: 0;
+				}
+			}
+		}
+	}
+	&#popupwithrenewal {
+		.button-container {
+			padding: 1rem 0;
+
+			.cancel-button {
+				margin: 0;
+			}
+		}
+	}
 }
 .window-wrapper{
 	width: 100%;
