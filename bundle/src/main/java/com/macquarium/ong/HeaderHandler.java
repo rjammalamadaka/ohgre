@@ -1,9 +1,4 @@
 package com.macquarium.ong;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Set;
-import java.util.TimeZone;
-
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPEnvelope;
@@ -12,6 +7,10 @@ import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Set;
+import java.util.TimeZone;
 
 
 public class HeaderHandler implements SOAPHandler<SOAPMessageContext> {
@@ -46,7 +45,7 @@ public boolean handleMessage(SOAPMessageContext smc) {
             SOAPElement childReplyToElement=replyToElement.addChildElement("Address","wsa");
             childReplyToElement.addTextNode("http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous");            
             SOAPElement toElement= header.addChildElement("To","wsa");
-            toElement.addTextNode("https://test.prime.southstarenergy.com/Prime1/webservices/quoteservice.asmx");
+            toElement.addTextNode("https://test.prime.southstarenergy.com/Prime2/webservices/quoteservice.asmx");
             SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
             long HOUR = 3600*1000;
             dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));

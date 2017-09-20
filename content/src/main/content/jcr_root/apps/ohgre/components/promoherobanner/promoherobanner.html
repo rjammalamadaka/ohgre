@@ -2,7 +2,9 @@
    <div class="container">
       <div class="full-banner-callout"  ng-class="getBannerclass()">
          <div class="slide">
-            <div class="slide-image" ng-class="{hT : heightConstant}"><img src="${properties.imagepath}"></div>
+            <div class="slide-image" ng-class="{hT : heightConstant}" ng-style="{'background-image':'url(${properties.imagepath})'}">
+			<!--<img src="${properties.imagepath}">-->
+			</div>
             <div class="slide-content" ng-class="{hT : heightConstant}" >
                <div class="inner-slide-content clearfix">
                   <!-- <a href="/content/onlyong.html" class="logo-image"> <img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>-->

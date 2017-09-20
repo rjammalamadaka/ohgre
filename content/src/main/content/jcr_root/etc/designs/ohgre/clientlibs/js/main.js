@@ -88,6 +88,26 @@ var ohio_ng = {
 		});
 
 
+    /*    $('#same-billing').on('change',function(event){
+			var service_address = ['address-one','address-two','address-city','address-state','address-zip'];
+
+			if ($(this).is(':checked')) {
+            for(let m in service_address){
+					var item = service_address[m];
+					var inputVal = $('#'+item).val();
+					$('#billing-'+item).val(inputVal);
+				}
+				$('.billing-address').addClass('show-less');
+        }else{
+			  for(let m in service_address){
+				  var item = service_address[m];
+				  $('#billing-'+item).val('');
+			  }
+			  $('.billing-address').removeClass('show-less');
+		  }
+		});*/
+
+
 	}
 }
 $(document).ready(function(){

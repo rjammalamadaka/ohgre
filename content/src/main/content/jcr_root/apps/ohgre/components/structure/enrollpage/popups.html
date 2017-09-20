@@ -29,8 +29,8 @@
          </tr>
       </table>
       <div class="button-container">
-         <a href="#" class="primary-button" ng-click="enrollconfirm()">Confirm</a>
-         <a href="#" class="primary-button inverted" ng-click="enrolltryagain()">Try Again</a>
+		<a href="#" class="primary-button inverted" ng-click="enrolltryagain()">Try Again</a>
+        <a href="#" class="primary-button" ng-click="enrollconfirm()">Confirm</a>
       </div>
    </div>
 </div>
@@ -72,7 +72,7 @@
 									<div class="inner-content">
 										<h4>Current Plan</h4>
 										<span class="plan-selected">{{customerInfo.productDesc}}</span>
-                                        <small>{{customerInfo.ldcdesc}}<br /> {{customerInfo.contractStartDate}} - {{customerInfo.contractTermDate}}</small>
+                                        <small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
 									</div>
 								</div>
 							</div>
@@ -144,7 +144,7 @@
 									<div class="inner-content">
 										<h4>Selected Plan</h4>
 										<span class="plan-selected">{{product.productDesc}}</span>
-										 <small>{{product.ldcDesc}}
+										 <small>{{product.ldcDesc}}</small>
 									</div>
 									<div class="plan-button">
 										<span class="error-text bold">Not eligible for this plan.</span>
@@ -196,7 +196,7 @@
 									<div class="inner-content">
 										<h4>Current Plan</h4>
 										<span class="plan-selected">{{customerInfo.productDesc}}</span>
-										<small>{{customerInfo.ldcdesc}}<br /> {{customerInfo.contractStartDate}} - {{customerInfo.contractTermDate}}</small>
+										<small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
 									</div>
 								</div>
 							</div>

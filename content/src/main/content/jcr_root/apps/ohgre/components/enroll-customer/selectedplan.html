@@ -3,28 +3,32 @@
 
             	<div class="selected-plan flex-container inverted-gray" ng-show="showcurrentplan">
 					<div class="selected-price">
-						<span class="price">$2.970</span>
-						<small>per MCF</small>
+						<span class="price">{{customerInfo.pricePerUnit | currency:"$":3}}</span>
+						<small>per {{customerInfo.uom}}</small>
 					</div>
 					<div class="selected-info">
-						<span class="selected-plan-tag">New Plan - Today</span>
-						<h5>6 Month Fixed Plan</h5>
-						<span class="utility-name">DTE Gas Company</span>
-						<span class="error-text block">Early termination fee of $150.00.</span>
+						<span class="selected-plan-tag">Current Plan</span>
+						<h5>{{customerInfo.productDesc}}</h5>
+						<span class="utility-name">{{customerInfo.ldcdesc}}<br>{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</span>
+
+                        <span class="error-text block" ng-show="showearlyterminationfee">Early termination fee of {{customerInfo.earlyTermChargeAmt | currency:"$":3}} .</span>
+                        
 					</div>
 				</div>
 
 
                <div class="selected-plan flex-container">
-				<div class="selected-price">
-				<span class="price">{{product.fixedPricePerTherm | currency:"$":3}}</span>
-				<small>per {{getNumber(product.quoteDes)}}</small>
-				</div>
-				<div class="selected-info">
-				<span class="selected-plan-tag">Selected Plan</span>
-				<h5>{{product.productDesc}}</h5>
-				<span class="utility-name">{{product.ldcDesc}}</span>
-				</div>
-			</div>
+                    <div class="selected-price">
+                    <span class="price">{{product.fixedPricePerTherm | currency:"$":3}}</span>
+                    <small>per {{getNumberWithoutStar(product.quoteDes)}}</small>
+                    </div>
+                    <div class="selected-info">
+                    <span class="selected-plan-tag" ng-show="!showcurrentplan">Selected Plan</span>
+                    <span class="selected-plan-tag" ng-show="showcurrentplan">New Plan - Today</span>
+                    <h5>{{product.productDesc}}</h5>
+                    <span class="utility-name">{{product.ldcDesc}}</span>
+
+                    </div>
+			   </div>
 
 </div>

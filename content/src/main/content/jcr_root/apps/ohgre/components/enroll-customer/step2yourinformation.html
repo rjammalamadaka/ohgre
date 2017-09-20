@@ -6,30 +6,60 @@
          If you are an existing Ohio Natural Gas customer, please check the account number you entered below. If it is incorrect, please go back and re-enter.
       </p>
    </div>
-   <form id="new-customer-info" class="form mt-2">
+   <form id="formtwo" name="formtwo" class="form mt-2">
       <div class="desktop-flex-container">
          <div class="form-element">
             <div class="new-customer-container">
                <div class="form-area">
                   <h4>New Customer Information</h4>
                   <span class="error-message block no-margin">Required<sup class="required">*</sup></span>
-                  <label>Gas Utility Account Number</label>
-                  <span class="account-number">{{formatedacno}}</span>
-                  <div class="input-group-wrapper">
+				  <label>Gas Utility Account Number</label>
+
+                  <strong class="account-number">{{formatedacno}}</strong>
+
+                  <!-- start existing Customer -->
+                  <div class="input-group-wrapper" ng-show="showexistingcustomer">
+
+
+                     <!--<label ng-show="customerInfo.businessName">Company Name</label>
+                       <strong>{{customerInfo.businessName}} </strong> -->
+
+                     <label>Name on Gas Utility Account</label>
+                     <strong class="account-number">{{customerInfo.firstName}} {{customerInfo.lastName}}</strong>
+                  </div>
+
+                   <!-- end existing Customer -->
+
+
+                   <!-- start new Customer -->
+                  <div class="input-group-wrapper"  ng-show="!showexistingcustomer">
                      <label for="first-name">First Name<sup class="required" >*</sup></label>
-                     <input type="text" name="first-name" ng-model="customerInfo.firstName">
+                     <input type="text" name="first-name" ng-model="firstName">
                   </div>
-                  <div class="input-group-wrapper">
+                  <div class="input-group-wrapper"  ng-show="!showexistingcustomer">
                      <label for="last-name">Last Name<sup class="required" >*</sup></label>
-                     <input type="text" name="last-name" ng-model="customerInfo.lastName">
+                     <input type="text" name="last-name" ng-model="lastName">
                   </div>
+                  <!-- end new Customer -->
+
+
                   <div class="input-group-wrapper">
-                     <label for="email-address">Email<sup class="required">*</sup></label>
-                     <input type="text" name="email-address" ng-model="customerInfo.emailAddress">
+                     <label for="email-address">Email<sup class="required">*</sup></label>                  
+                     <input type="text" name="emailaddress" ng-model="customerInfo.emailAddress" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="true" ng-focus ng-visited>
+
+                            <span class="input-error-message" ng-show="(formtwo.emailaddress.$visited && !formtwo.emailaddress.$focused) || formtwo.submited">
+							<span class="input-error-message" ng-show="formtwo.emailaddress.$error.required">Email id is required.</span> 
+                            <span class="input-error-message" ng-show="formtwo.emailaddress.$invalid && !formtwo.emailaddress.$error.required">Please enter valid email id.</span> 
+
+                         </span>
                   </div>
                   <div class="input-group-wrapper">
                      <label for="phone-number">Phone Number</label>
-                     <input type="tel" name="phone-number"  onkeyup="ohio_ng.transform(this)" placeholder="(_ _ _) - _ _ _ - _ _ _ _" ng-model="customerInfo.phoneNumber">
+                     <input type="tel" name="phonenumber" id="phonenumber" ng-blur="phoneformatchange(phoneNumber)" ng-model="phoneNumber" placeholder="(_ _ _) - _ _ _ - _ _ _ _" data-ng-pattern="/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/" ng-focus ng-visited>
+
+                         <span class="input-error-message" ng-show="(formtwo.phonenumber.$visited && !formtwo.phonenumber.$focused) || formtwo.submited">
+							<span class="input-error-message" ng-show="formtwo.phonenumber.$invalid">Please enter valid phone number.</span> 
+                         </span>
                   </div>
                   <div class="input-group-wrapper">
                      <label for="source">How Did You Hear About Us?</label>
@@ -37,21 +67,42 @@
                         <button class="dropdown-trigger"><span class="value">&nbsp;</span> <span class="fa fa-angle-down carret"></span></button>
                         <div class="expanded-dropdown">
                            <ul class="dropdown-menu" role="menu">
+
                               <li role="menuitem">
                                  <a href="#" class="select-option">
-                                 <span class="">company 1 name</span>
+                                 <span class="">Google</span>
                                  </a>
                               </li>
                               <li role="menuitem">
                                  <a href="#" class="select-option">
-                                 <span class="">company 2 name</span>
+                                 <span class="">Newspaper</span>
                                  </a>
                               </li>
                               <li role="menuitem">
                                  <a href="#" class="select-option">
-                                 <span class="">company 3 name</span>
+                                 <span class="">Online</span>
                                  </a>
                               </li>
+                              <li role="menuitem">
+                                 <a href="#" class="select-option">
+                                 <span class="">Other</span>
+                                 </a>
+                              </li>
+                              <li role="menuitem">
+                                 <a href="#" class="select-option">
+                                 <span class="">White Fence</span>
+                                 </a>
+                              </li>  
+                              <li role="menuitem">
+                                 <a href="#" class="select-option">
+                                 <span class="">Word of Mouth</span>
+                                 </a>
+                              </li> 
+                              <li role="menuitem">
+                                 <a href="#" class="select-option">
+                                 <span class="">Radio</span>
+                                 </a>
+                              </li>                          
                            </ul>
                         </div>
                      </div>
@@ -65,55 +116,85 @@
                <div class="form-area">
                   <h4>Service Address</h4>
                   <span class="error-message block no-margin">Required<sup class="required">*</sup></span>
-                  <div class="input-group-wrapper">
+
+
+                 <div class="input-group-wrapper" ng-show="showexistingcustomer">
+                 	<label for="address-one">Street Address</label>
+                         <strong>{{customerInfo.serviceAddress1}}  {{customerInfo.serviceAddress2}} <br>{{customerInfo.serviceCity}}, OH {{customerInfo.serviceZipCode}}</strong>
+                 </div>
+
+
+                  <div class="input-group-wrapper" ng-show="!showexistingcustomer">
                      <label for="address-one">Street Address</label>
-                     <input type="text" name="address-one" id="address-one" ng-model="customerInfo.serviceAddress1">
+                     <input type="text" name="addressone" id="addressone" ng-model="addressone" ng-required="!showexistingcustomer" ng-focus ng-visited>
+
+                          <span class="input-error-message" ng-show="(formtwo.addressone.$visited && !formtwo.addressone.$focused) || formtwo.submited">
+							<span class="input-error-message" ng-show="formtwo.addressone.$error.required">Address1 is required.</span> 
+                         </span>
+
                   </div>
-                  <div class="input-group-wrapper">
-                     <input type="text" name="address-two" id="address-two" ng-model="customerInfo.serviceAddress2">
+                  <div class="input-group-wrapper" ng-show="!showexistingcustomer">
+                     <input type="text" name="addresstwo" id="addresstwo" ng-model="addresstwo" ng-required="!showexistingcustomer" ng-focus ng-visited>
+                          <span class="input-error-message" ng-show="(formtwo.addresstwo.$visited && !formtwo.addresstwo.$focused) || formtwo.submited">
+							<span class="input-error-message" ng-show="formtwo.addresstwo.$error.required">Address2 is required.</span> 
+                         </span>
+
                   </div>
-                  <div class="row address-fields">
-                     <div class="col-md-6 col-sm-6">
+                  <div class="row address-fields" ng-show="!showexistingcustomer">
+                     <div class="col-md-6 col-sm-6" >
                         <div class="input-group-wrapper">
                            <label for="address-city">City<sup class="required">*</sup></label>
                            <input type="text" name="address-city" id="address-city" ng-model="customerInfo.serviceCity">
                         </div>
                      </div>
-                     <div class="col-md-2 col-sm-2">
+                     <div class="col-md-2 col-sm-2" >
                         <div class="input-group-wrapper">
                            <label for="address-state">State<sup class="required">*</sup></label>
-                           <input type="text" name="address-state" id="address-state" value="OH" />
+                           <input type="text" name="address-state" id="address-state" ng-model="addressstate" disabled="disabled" />
                         </div>
                      </div>
-                     <div class="col-md-4 col-sm-4">
+                     <div class="col-md-4 col-sm-4" >
                         <div class="input-group-wrapper">
                            <label for="address-zip">Zip<sup class="required">*</sup></label>
-                           <input type="text" name="address-zip" id="address-zip" maxlength="5" ng-model="customerInfo.serviceZipCode">
+                           <input type="text" name="address-zip" id="address-zip" maxlength="5" ng-model="zipcode">
                         </div>
                      </div>
                   </div>
+
+
                   <div class="input-group-wrapper">
                      <h4>Billing Address</h4>
                      <div class="input-group-wrapper">
                         <label class="checkbox">
-                        <input type="checkbox" name="same-billing" id="same-billing" value="yes" />
+                        <input type="checkbox" name="same-billing" id="same-billing" ng-model="samebilling" ng-init="samebilling=true" />
                         </label>
                         <span class="after-checkbox">Same as Service Address</span>
                      </div>
                   </div>
-                  <div class="billing-address">
+                  <div class="billing-address" ng-show="!samebilling">
                      <div class="input-group-wrapper">
                         <label for="billing-address-one">Street Address</label>
-                        <input type="text" name="billing-address-one" id="billing-address-one">
+                        <input type="text" name="billingaddressone" ng-model="billingaddressone" id="billingaddressone" ng-required="!samebilling" ng-focus ng-visited>
+                         <span class="input-error-message" ng-show="(formtwo.billingaddressone.$visited && !formtwo.billingaddressone.$focused) || formtwo.submited">
+							<span class="input-error-message" ng-show="formtwo.billingaddressone.$error.required">Billing Address1 is required.</span> 
+                         </span>
+
                      </div>
                      <div class="input-group-wrapper">
-                        <input type="text" name="billing-address-two" id="billing-address-two">
+                        <input type="text" name="billingaddresstwo" ng-model="billingaddresstwo" id="billingaddresstwo" ng-required="!samebilling" ng-focus ng-visited>
+                          <span class="input-error-message" ng-show="(formtwo.billingaddresstwo.$visited && !formtwo.addresstwo.$focused) || formtwo.submited">
+							<span class="input-error-message" ng-show="formtwo.billingaddresstwo.$error.required">Billing Address2 is required.</span> 
+                         </span>
+
                      </div>
                      <div class="row address-fields">
                         <div class="col-md-6 col-sm-6">
                            <div class="input-group-wrapper">
                               <label for="billing-address-city">City<sup class="required">*</sup></label>
-                              <input type="text" name="billing-address-city" id="billing-address-city">
+                              <input type="text" name="billingaddresscity" id="billingaddresscity" ng-model="billingaddresscity" ng-required="!samebilling" ng-focus ng-visited>
+                                  <span class="input-error-message" ng-show="(formtwo.billingaddresscity.$visited && !formtwo.billingaddresscity.$focused) || formtwo.submited">
+                                    <span class="input-error-message" ng-show="formtwo.billingaddresscity.$error.required">City is required.</span> 
+                                 </span>
                            </div>
                         </div>
                         <div class="col-md-2 col-sm-2">
@@ -125,7 +206,10 @@
                         <div class="col-md-4 col-sm-4">
                            <div class="input-group-wrapper">
                               <label for="billing-address-zip">Zip<sup class="required">*</sup></label>
-                              <input type="text" name="billing-address-zip" id="billing-address-zip" maxlength="5">
+                              <input type="text" name="billingaddresszip" ng-model="billingaddresszip" id="billingaddresszip" maxlength="5" ng-required="!samebilling" ng-focus ng-visited>
+                                  <span class="input-error-message" ng-show="(formtwo.billingaddresszip.$visited && !formtwo.billingaddresszip.$focused) || formtwo.submited">
+                                    <span class="input-error-message" ng-show="formtwo.billingaddresszip.$error.required">Zip is required.</span> 
+                                 </span>
                            </div>
                         </div>
                      </div>
@@ -141,7 +225,7 @@
                      <h5>Special Offer Sign Up</h5>
                      <div class="row no-margin">
                         <label class="checkbox">
-                        <input type="checkbox" name="special-offer">
+                        <input type="checkbox" name="special-offer" ng-model="specialoffer">
                         </label>
                         <span class="special-offer">Yes, Ohio Natural Gas may send me information about special offers from Ohio Natural Gas and its marketing partners.</span>
                      </div>
@@ -152,22 +236,30 @@
                         <p>
                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem
                         </p>
-                        <input type="text" name="promo-code" placeholder="Please enter your friends referral code"/>
+                        <input type="text" name="rafcode" ng-model="rafcode" placeholder="Please enter your friends referral code"/>
                      </div>
                   </div>
                   <div class="input-group-wrapper mb-padding-25 mt-2 desktop-only">
                      <label class="checkbox">
-                     <input type="checkbox" name="special-offer">
+                     <input type="checkbox" name="specialoffer" ng-model="specialoffer" ng-required="true" ng-focus ng-visited>
                      </label>
                      <span class="special-offer">I am the utility account holder or a person that has legal authorization to make decisions for this account.</span>
+
+                           <span class="input-error-message" ng-show="(formtwo.specialoffer.$visited && !formtwo.specialoffer.$focused) || formtwo.submited">
+                                    <span class="input-error-message" ng-show="formtwo.specialoffer.$error.required">*Checkbox required in order to continue.</span> 
+                                 </span>
+
                   </div>
                </div>
             </div>
          </div>
       </div>
    </form>
+
+                         <span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
+
    <div class="button-container row">
-      <button class="primary-button next-button inactive" data-next=3 ng-click="enrollCustomer(3)">Next</button>
-      <button class="primary-button prev-button" data-next=2>Previous</button>
+      <button class="primary-button next-button inactive" data-next=3 ng-click="submityourinformation()">Next</button>
+      <button class="primary-button prev-button" ng-click="gotoPreviousStep(1)">Previous</button>
    </div>
 </div>

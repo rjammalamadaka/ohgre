@@ -2,6 +2,10 @@
     <OCD id="OHGRE Common Configuration" name="OHGRE Common Configuration Service" description="%OHGRE Common Configuration.description">
         <AD id="prime.endpoint.url" type="String" default="" name="Prime End Point Url" description="Prime End point url to communicate with prime"/>
     </OCD>
+    <OCD id="com.macquarium.ong.CheckRAFEligibilityServlets" name="%com.macquarium.ong.CheckRAFEligibilityServlets.name" description="%com.macquarium.ong.CheckRAFEligibilityServlets.description">
+        <AD id="sling.servlet.paths" type="String" default="/bin/checkRafEligibility" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
+        <AD id="sling.servlet.methods" type="String" default="GET" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
+    </OCD>
     <OCD id="com.macquarium.ong.EnrollCustomerServlets" name="%com.macquarium.ong.EnrollCustomerServlets.name" description="%com.macquarium.ong.EnrollCustomerServlets.description">
         <AD id="sling.servlet.paths" type="String" default="/bin/enrollCustomer" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
         <AD id="sling.servlet.methods" type="String" default="POST" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
@@ -32,6 +36,9 @@
     </OCD>
     <Designate pid="OHGRE Common Configuration">
         <Object ocdref="OHGRE Common Configuration"/>
+    </Designate>
+    <Designate pid="com.macquarium.ong.CheckRAFEligibilityServlets">
+        <Object ocdref="com.macquarium.ong.CheckRAFEligibilityServlets"/>
     </Designate>
     <Designate pid="com.macquarium.ong.EnrollCustomerServlets">
         <Object ocdref="com.macquarium.ong.EnrollCustomerServlets"/>

@@ -1,0 +1,87 @@
+			<div class="form-wrapper">
+                <form id="formfour" name="formfour" novalidate>
+				<div class="desktop-flex-container confirmation-info">
+   <div class="information-block box-with-border">
+      <div class="form-area">
+         <h4>Your Information</h4>
+         <label>Gas Service Pod ID</label>
+         <strong>{{formatedacno}}</strong>
+         <div class="input-group-wrapper">
+            <label>Name on Gas Utility Account</label>
+            <strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
+         </div>
+         <div class="input-group-wrapper">
+            <label>Email</label>
+            <strong>{{enrollReq.emailAddress}}</strong>
+         </div>
+         <div class="input-group-wrapper">
+            <label>Phone Number</label>
+            <strong>{{enrollReq.phoneNumber}}</strong>
+         </div>
+         <div class="input-group-wrapper">
+            <label>How Did You Hear About us?</label>
+            <strong>{{enrollReq.CustLeadSourceCode}}</strong>
+         </div>
+         <div class="input-group-wrapper">
+            <label>Friend's Referral Code</label>
+            <strong>{{enrollReq.RAFCode}}</strong>
+         </div>
+         <div class="input-group-wrapper mt-3">
+            <label class="checkbox"> 
+               <input type="checkbox" name="email-offers" value="yes" checked disabled="disabled" />
+            </label>
+            <span class="after-checkbox">Yes, Grand Rapids Energy may send me information about special offers from Ohio Natural Gas and its marketing partners.</span>
+         </div>
+      </div>
+   </div>
+   <div class="confirmation-block">
+      <div class="box-with-border">
+         <div class="desktop-flex-container">
+            <div class="col-md-5 no-padding">
+               <h4>Service Address</h4>
+               <strong>{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
+            </div>
+            <div class="col-md-5 no-padding">
+               <h4>Billing Address</h4>
+               <strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+            </div>
+         </div>
+         <hr />
+         <div class="input-group-wrapper mb-3">
+            <label class="checkbox">
+               <input type="checkbox" name="autorized-user" value="yes" checked disabled="disabled"/>
+            </label>
+            <span class="after-checkbox">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</span>
+         </div>
+         <div class="input-group-wrapper mb-2">
+            <label class="checkbox">
+               <input type="checkbox" name="terms-and-conditions" value="yes" checked disabled="disabled" />
+            </label>
+            <span class="after-checkbox">I have previously viewed and agreed to the terms and conditions of service.</span>
+         </div>
+         <hr />
+         <h4>Review and Authorize</h4>
+         <div class="input-group-wrapper mt-2">
+            <label class="checkbox">
+               <input type="checkbox" name="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
+            </label>
+            <span class="after-checkbox">I authorize Grand Rapids Energy to be my natural gas supplier and to process with Columbia Gas of Michigan this transfer of service request to enroll with Grand Rapids Energy.</span> <br>
+
+             <span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
+                  <span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">In order to complete your enrollment, you must authorize Ohio Natural Gas to process your request</span> 
+             </span>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
+
+<div class="button-container">
+   <button class="primary-button next-button inactive" ng-click="reviewauthorizesubmit()">Submit Order</button>
+   <button class="primary-button prev-button" ng-click="gotoPreviousStep(3)">Previous</button>
+</div>
+				<!-- step-through -->
+                    </form>
+			</div>

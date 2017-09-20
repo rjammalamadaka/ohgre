@@ -27,12 +27,32 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/getCustomerInfo";
 		return $http.post(url,angular.toJson(requestInfo),config);
     }
+    var checkRafEligibility=function(rafcode,account,ldc){
+
+        var url="/bin/checkRafEligibility";
+        if(rafcode){
+			url=url+"?rafCode="+rafcode;
+        }
+        if(account){
+			url=url+"&account="+account;
+        }
+        if(ldc){
+			url=url+"&ldc="+ldc;
+        }
+        return $http.get(url,config);
+    }
+    var enrollCustomer =function(requestInfo){
+		var url="/bin/enrollCustomer";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
     return {
         getQuotes:getQuotes,
         getPromoCodeInfo:getPromoCodeInfo,
         getLdcInfo:getLdcInfo,
         getProductData:getProductData,
-        getCustomerInfo:getCustomerInfo
+        getCustomerInfo:getCustomerInfo,
+        checkRafEligibility:checkRafEligibility,
+        enrollCustomer:enrollCustomer
     }               
 }]);
 

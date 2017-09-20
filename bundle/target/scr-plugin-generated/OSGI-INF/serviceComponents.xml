@@ -18,6 +18,16 @@
         <property name="sling.filter.scope" value="REQUEST"/>
         <property name="service.pid" value="com.macquarium.ong.impl.filters.LoggingFilter"/>
     </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.CheckRAFEligibilityServlets">
+        <implementation class="com.macquarium.ong.CheckRAFEligibilityServlets"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/checkRafEligibility"/>
+        <property name="sling.servlet.methods" value="GET"/>
+        <property name="service.pid" value="com.macquarium.ong.CheckRAFEligibilityServlets"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.EnrollCustomerServlets">
         <implementation class="com.macquarium.ong.EnrollCustomerServlets"/>
         <service servicefactory="false">

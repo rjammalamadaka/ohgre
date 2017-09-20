@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-09-18T21:02:41.292-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="MCCORD"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-08-13T22:26:22.223+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-13T22:27:57.940+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Ohio Natural Gas"/>
+            <offerpromotionconten
+                jcr:created="{Date}2017-08-13T22:29:48.604+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-24T17:30:11.647-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/offerpromotioncontent"
+                description="&lt;p>lorem ipsum dolor&lt;/p>&#xd;&#xa;"
+                heading="Lorem ipsum dolor"
+                imagepath="/content/dam/ohgre/raf/hero.jpg"
+                promoheadingline1="lorem ipsum dolor"
+                text="&lt;h4>Enroll online for a Lorem ipsum&lt;/h4>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. LoremipsLorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/faq.html&quot; title=&quot;FAQ&quot; target=&quot;_self&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/terms-of-use.html&quot; title=&quot;Terms And Conditions&quot; target=&quot;Target&quot;>Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true]"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-15T08:49:45.472+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

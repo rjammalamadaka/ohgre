@@ -43,6 +43,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
     } 
 
 
+
      $rootScope.bindClickEvent =function(){
       $('.select-option').on('click',function(event){
 			event.preventDefault();
@@ -105,7 +106,11 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
         if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0 && promoInfo.LDCList[0].promotion && promoInfo.LDCList[0].promotion.length>0){
 			req.CustomerTypeCode=promoInfo.LDCList[0].promotion[0].CustomerTypeCode;
+            if(promoInfo.LDCList[0].promotion[0].RateClassCode.length>0){
 			req.RateClassCode=promoInfo.LDCList[0].promotion[0].RateClassCode;	
+            }else{
+				req.RateClassCode="01";
+            }
         }else{
 
   			if($rootScope.hashParams && $rootScope.hashParams.lctype){
@@ -161,6 +166,37 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 $rootScope.currentYear=new Date().getFullYear();
 
     $rootScope.giftcardvalue="ddd";
+
+
+    $rootScope.getNumberWithoutStar =function(QuoteDescription){
+         
+         if(QuoteDescription){
+
+             if(QuoteDescription.indexOf("CCF")>0){
+                 return("CCF");
+             }else if(QuoteDescription.indexOf("MCF")>0){
+                 return("MCF");
+             }
+         }
+
+     }
+
+    $rootScope.getOnlyDate =function(value){
+
+        var date=new Date(value);
+        var dd = date.getDate();
+        var mm = date.getMonth()+1; //January is 0!
+        var yyyy = date.getFullYear();
+        if(dd<10){
+            dd='0'+dd;
+        } 
+        if(mm<10){
+            mm='0'+mm;
+        } 
+        return dd+'/'+mm+'/'+yyyy;
+
+    }
+
 
 }]); 
 

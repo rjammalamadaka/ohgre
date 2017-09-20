@@ -32,7 +32,7 @@
             <div class="form-area">
                <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
                <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
-               <input type="text" name="lastname"  ng-model="lastname" required/>
+               <input type="text" name="lastname"  ng-model="lastName" required/>
                <span style="color:red" ng-show="(formone.lastname.$dirty && (formone.lastname.$invalid)) || (formone.submited)"> 
                <span ng-show="formone.lastname.$error.required">Last Name is required.</span>
                </span>

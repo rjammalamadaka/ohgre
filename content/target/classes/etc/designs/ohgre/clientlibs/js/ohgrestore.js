@@ -5,7 +5,7 @@ var store = ohgre.store = function( key, value, options ) {
     if(value){
         var stringvalue=JSON.stringify(value);
          returnValue=value;
-         document.cookie=key+"="+stringvalue;
+         document.cookie=key+"="+stringvalue+";path=/";
     }else{
          var cookieValue=getCookie(key);
         if(cookieValue && cookieValue.length>0){
@@ -18,6 +18,11 @@ var store = ohgre.store = function( key, value, options ) {
 
     return returnValue;
 };
+
+    ohgre.removeStore=function(key){
+              document.cookie = key+'=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+
 
 var getCookie= function (cname) {
     var name = cname + "=";

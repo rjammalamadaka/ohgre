@@ -20,3 +20,4 @@ com/macquarium/ong/CommonConfigService.class
 com/macquarium/ong/components/HeroCarousel.class
 com/macquarium/ong/components/CarouselSlide.class
 com/macquarium/ong/components/WhyChooseUsData.class
+com/macquarium/ong/CheckRAFEligibilityServlets.class

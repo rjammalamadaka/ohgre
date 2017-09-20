@@ -127,17 +127,9 @@
     <switch-back/>
     <customer_lookup/>
     <special_offer/>
-    <promotions jcr:primaryType="nt:unstructured">
-        <APPLES
-            jcr:primaryType="nt:unstructured"
-            APPLECOH="/content/onlyong/promo-landing-apples"
-            APPLEDEO="/content/onlyong/promo-landing-apples"
-            APPLEDUKE="/content/onlyong/promo-landing-apples"
-            APPLEVEDO="/content/onlyong/promo-landing-apples"
-            APPLEWGL="/content/onlyong/promo-landing-apples"
-            BUSINESSMVR="/content/onlyong/promo-landing-apples"
-            CHOICE12C="/content/onlyong/promo-landing-apples"
-            MVRSPECIAL="/content/onlyong/promo-landing-apples"/>
+    <promotions
+        jcr:primaryType="nt:unstructured"
+        MCCORD="/content/onlyong/MCCORD.html">
         <RAF
             jcr:primaryType="nt:unstructured"
             RAF25="/content/onlyong/promo-raf"
@@ -232,12 +224,17 @@
                 jcr:primaryType="nt:unstructured"
                 DELTA5K="/content/onlyong/promo_landing"
                 DELTANOMILES="/content/onlyong/promo_landing"/>
+            <MCCORD
+                jcr:primaryType="nt:unstructured"
+                MCCORD="/content/onlyong/MCCORD"/>
+            <mccord jcr:primaryType="nt:unstructured"/>
         </oh>
         <gre jcr:primaryType="nt:unstructured">
             <BACK
                 jcr:primaryType="nt:unstructured"
-                BACKCONV="/content/gre/promo-landing-apples"
-                BACKDTEV="/content/gre/promo-landing-apples"/>
+                BACKCON="/content/gre/backuppromo"
+                BACKDEOV="/content/gre/backuppromo"
+                BACKDTE="/content/gre/backuppromo"/>
             <LOYAL
                 jcr:primaryType="nt:unstructured"
                 LOYAL2017VISA="/content/gre/visa_offer"/>
@@ -248,4 +245,5 @@
     <product-configuration/>
     <server_down/>
     <_x0034_04/>
+    <MCCORD/>
 </jcr:root>
