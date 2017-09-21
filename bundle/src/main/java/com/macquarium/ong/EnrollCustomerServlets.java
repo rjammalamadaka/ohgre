@@ -107,6 +107,10 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			String serviceStateCode=getParameterInfo(jObj,"serviceStateCode");
 			enrollRequest.setServiceStateCode(serviceStateCode);
 			String serviceZipCode=getParameterInfo(jObj,"serviceZipCode");
+			String emailid=getParameterInfo(jObj, "emailAddress");
+			String specialoffer=getParameterInfo(jObj, "specialoffer");
+			enrollRequest.setEmailPrefSSEPromotionalCd(specialoffer);
+			enrollRequest.setEmailAddress(emailid);
 			String portalname=getParameterInfo(jObj,"portalname");
 			if(portalname.equals("oh")){
 				enrollRequest.setEnrolledByUserId("Web Enroll-ONG");
