@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-30T13:06:46.534-05:00"
-        cq:lastModifiedBy="rebecka.wilson"
+        cq:lastModified="{Date}2017-09-20T17:08:40.568-04:00"
+        cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer A Friend Promotion"
@@ -20,11 +20,11 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-03T20:56:38.175-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-30T13:06:46.531-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:lastModified="{Date}2017-09-20T17:08:40.528-04:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
-                description="For every friend that enrolls with Ohio Natural Gas® you’ll each receive a $25 Visa® Reward Card!* Think of it as a natural gas rebate!"
+                description="For every friend that enrolls with Ohio Natural Gas® you’ll each receive a {{GIFTCARDVALUE | currency : '$': 0}} Visa® Reward Card!* Think of it as a natural gas rebate!"
                 imagepath="/content/dam/ohgre/raf/hero.jpg"
                 logopath="/content/dam/ohgre/global/raf-logo.png"/>
             <offerpromotionconten
