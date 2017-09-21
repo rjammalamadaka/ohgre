@@ -53,7 +53,7 @@
          <div class="row promo-wrapper flex-wrap">
             <div class="col-md-6" ng-repeat="product in productList" ng-if="product.FixedPricePerTherm > 0">
                <div class="box-w-arrow accord-trigger trigger-arrow">
-                  <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}} <small>per Ccf</small></span>
+                  <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}} <small>per {{getNumber(product.QuoteDescription)}}</small></span>
                   <span class="rate-plan">{{product.ProductDescription}}</span>
                </div>
                <div class="box-with-border">
@@ -66,7 +66,7 @@
                         <li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
                      </ul>
                      <form id="6-month-fixed-form">
-                        <button class="primary-button">Select Plan</button>
+                        <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
                      </form>
                   </div>
                </div>
@@ -78,3 +78,22 @@
       </div>
    </div>
 </section>
+
+<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="full-banner-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>
+                <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | Promo code required - {{promotion.PromotionCode}}</span></div>
+			</div>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</section>
