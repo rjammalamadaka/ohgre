@@ -425,6 +425,39 @@ footer{
 				margin: 0;
 			}
 		}
+		.input-wrapper {
+	    //background: yellow;
+	    display: inline-table;
+	    min-width: 100%;
+			position: relative;
+		}
+		.input-wrapper .error-message {
+			margin: 0;
+		}
+		.input-wrapper .error-message {
+		    font-style: normal;
+		    left: 1.3rem;
+		    line-height: 2rem;
+			position: absolute;
+		    top: 1.3rem;
+		}
+		.error-hidden {
+		    text-indent: -9999em;
+		}
+		#promotioncode {
+			&.ng-dirty.ng-invalid {
+				text-indent: -33em;
+			}
+			&.ng-invalid.ng-focused,
+			&.ng-untouched {
+				text-indent: 0;
+			}
+		}
+		@media (@screen-md-min){
+			.input-wrapper {
+	    	min-width: 35rem;
+			}
+		}
 	}
 	@media (@screen-md-min){
 		~ .parsys-column.cq-colctrl-lt0{
@@ -436,6 +469,7 @@ footer{
 	margin-bottom: 2rem;
 	padding: 0 1.5rem;
 	@media (@screen-md-min){
+		display: -webkit-flex;
 		display: flex;
 	}
 	>div:first-child{
@@ -456,6 +490,7 @@ footer{
 }
 @media (@screen-md-min){
 	div[class^="cq-colctrl-"].parsys-column{
+		display: -webkit-flex;
 		display: flex;
 
 		.cq-colctrl-lt0-c0{
@@ -488,6 +523,7 @@ footer{
 		}
 	}
 	&.box-w-arrow{
+		display: -webkit-flex;
 		display: flex;
 		text-align: left;
 
@@ -893,6 +929,7 @@ div[class^="col-"]{
 }
 /* CARDS */
 .cards-wrapper{
+	display: -webkit-flex;
 	display: flex;
 	flex-wrap: wrap;
 
@@ -1029,10 +1066,12 @@ div[class^="cq-colctrl-lt1-"]{
 }
 @media (@screen-md-min){
 	.cq-colctrl-lt1 {
+			display: -webkit-flex;
 	    display: flex;
 	    margin-bottom: 3rem !important;
 
 	    .parsys_column {
+				display: -webkit-flex;
 		    display: flex;
 		    flex-direction: column;
 		    padding-left: 0;
@@ -1078,9 +1117,11 @@ div[class^="cq-colctrl-lt1-"]{
 	background: #fff;
 	position: relative;
 	height: 100%;
+	display: -webkit-flex;
 	display: flex;
 
 	@media (@screen-md-min){
+		display: -webkit-flex !important;
 		display: flex !important;
 		margin-bottom: 0;
 		border: 1px solid #bfbfbf;
@@ -1539,6 +1580,7 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 		@media (@screen-md-min){
+			display: -webkit-flex;
 			display: flex;
 		}
 	}
@@ -2324,12 +2366,15 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	@media (@screen-md-min){
+		display: -webkit-flex;
 		display: flex;
 		height: 100%;
+
 
 		> div{
 			float: none !important;
 			padding: 0 1.5rem 0 0;
+			display: -webkit-flex;
 			display: flex;
     		flex-direction: column;
 
@@ -2647,6 +2692,7 @@ div[class^="cq-colctrl-lt1-"]{
 }
 /* WHY CHOOSE US STYLES */
 .icon-wrapper{
+	display: -webkit-flex;
 	display: flex;
 	margin: 2rem 0 1rem 0;
 	font-family: @secondary_font;
@@ -3107,6 +3153,7 @@ input{
 		margin-right: 2rem;
 	}
 	.multiple-input{
+		display: -webkit-flex;
 		display: flex;
 		justify-content: flex-start;
 	}
@@ -3282,7 +3329,6 @@ input{
 			position: absolute;
 			top: 0.3rem;
 
-
 			@media (@screen-md-min){
 				height: 2rem;
 				width: 2rem;
@@ -3296,9 +3342,14 @@ input{
 				font-family: 'fontAwesome';
 				content: "\f00c" !important;
 				color: #fff;
-				font-size: 1.1rem;
+				font-size: .7rem;
 				text-align: center;
-				line-height: 2.2rem;
+				line-height: 1.2rem;
+
+				@media (@screen-md-min){
+					font-size: 1.1rem;
+					line-height: 2.2rem;
+				}
 			}
 		}
 		@media (@screen-md-min){
@@ -3354,6 +3405,37 @@ input{
 	}
 	.cancel-button {
 		color: #fff;
+	}
+	@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+	}
+	@-webkit-keyframes spin {
+	    from { -webkit-transform: rotate(0deg); }
+	    to { -webkit-transform: rotate(360deg); }
+	}
+	@keyframes spin {
+	    from {transform:rotate(0deg);}
+	    to {transform:rotate(360deg);}
+	}
+	.spinner-wrap {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+		.spinner {
+			border: 16px solid #a3a3a3;
+			border-radius: 50%;
+			border-top: 16px solid #0f7abf;
+			border-right: 16px solid #10175f;
+			border-bottom: 16px solid #ffffff;
+			width: 120px;
+			height: 120px;
+			animation: spin 2s linear infinite;
+		}
 	}
 	&#popupconfirm, &#popupetc {
 		.button-container {
@@ -3527,6 +3609,7 @@ input{
 			margin: 0 0 1rem 0;
 		}
 		@media (@screen-md-min){
+			display: -webkit-flex;
 			display: flex;
 
 			a{
@@ -3719,6 +3802,7 @@ input{
 	padding: 0;
 
 	@media (@screen-md-min){
+		display: -webkit-flex;
 		display: flex;
 
 		>div{
