@@ -217,8 +217,18 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
         $scope.formtwo.submited = true;
 		$scope.primeErrorMessage=null;
+        $scope.rafErrorMessage=null;
         if($scope.formtwo.$valid){
-            if($scope.rafcode && $scope.rafcode.length>0 && failcount<2){
+
+           // console.log($scope.promotionInfo.PromotionCode);
+            if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<2 && (!$scope.rafcode ||$scope.rafcode=="")){
+
+
+                  $scope.rafErrorMessage="Please enter your friend's referal code";
+                 failcount=failcount+1;
+
+
+            }else if($scope.rafcode && $scope.rafcode.length>0 && failcount<2){
                 var account;
                 var ldc;
                 if($rootScope.customerInfo.responseStatus =="0"){
@@ -228,9 +238,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                 PrimeService.checkRafEligibility($scope.rafcode,account,ldc).success(function(data, status, headers, config){
                     if(data.responseStatus == "0"){
                         if(data.rafInfo.AwardEligible =="Y"){
+                             $scope.validPromocode=true;
                         	handelsubmityourinformation();
                         }else{
                             failcount=failcount+1;
+                            $scope.validPromocode=false;
 							$scope.primeErrorMessage="RAF code is not valid";
                         }
                     }else{
@@ -279,10 +291,17 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         if($scope.firstName){
 			data.firstName=$scope.firstName;
         }
-        if($scope.lastName){
-			data.lastName=$scope.lastName;
-        }
 
+        if($scope.businessName){
+			if($scope.lastName){
+                data.lastName=$scope.commerlastName;
+                data.businessName=$scope.lastName;
+            }
+        }else{
+            if($scope.lastName){
+                data.lastName=$scope.lastName;
+            }
+        }
 
         if($scope.customerInfo.emailAddress)
         data.emailAddress=$scope.customerInfo.emailAddress;      
@@ -339,11 +358,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         $scope.primeErrorMessage=null;
 		$scope.formfour.submited = true;
 
-        if($scope.formfour.$valid){
+        if($scope.formfour.$valid && !$scope.flag){
 			console.log("data submit to prime");
+            $scope.flag=true;
 
             PrimeService.enrollCustomer($scope.enrollReq).success(function(data, status, headers, config){
                 console.log(data);
+                 $scope.flag=false;
                 if(data){
                    var enrollCustomerResult = JSON.parse(data.EnrollCustomerResult);
                     console.log(enrollCustomerResult);
@@ -355,30 +376,38 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                 }
 
             }).error(function(data, status, headers, config){
+                 $scope.flag=false;
                 console.log(data);
             });
 
         }
     }
 
-    var gotNextStep= function(step){
+    var gotNextStep= function(step,back){
        // $scope.displaystepscontainer=true;
+        if(!back)
         $('.steps-container').show();
 
  					$('.active-form').removeClass('active-form');
-        if(step ==2){
+        if(step ==2 || back){
             $('.active-step').removeClass('active-step');}
             else{
                      $('.active-step').removeClass('active-step').addClass("step-complete");
             }
                      $('#step-through >div:nth-child('+step+')').addClass('active-form');
+        if(!back){
                      $('.steps-container > div:nth-child('+step+')').addClass('active-step');
+        }else{
+			 $('.steps-container > div:nth-child('+step+')').addClass('active-step').removeClass('step-complete');
+        }
 
     }
 
     $scope.gotoPreviousStep =function(step){
+        if(step ==1)
+             $('.steps-container').hide();
         $scope.primeErrorMessage=null;
-		gotNextStep(step);
+		gotNextStep(step,true);
     }
 
     $rootScope.enrollconfirm =function(){
@@ -552,6 +581,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         $scope.enrollReq.responseStatus=data.responseStatus;
         if(data.specialoffer)
         $scope.enrollReq.specialoffer=data.specialoffer;
+        if(data.businessName)
+        $scope.enrollReq.businessName=data.businessName;
 
 
     }
@@ -559,6 +590,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     var promoinfo=ohgre.store("promoCodeInfo");
     if(promoinfo && promoinfo.LDCList && promoinfo.LDCList.length>0 && promoinfo.LDCList[0].promotion && promoinfo.LDCList[0].promotion.length>0){
         var data= promoinfo.LDCList[0].promotion[0];
+        $scope.promotionInfo=data;
         updateenrollrequestobj(data);
     }
 
