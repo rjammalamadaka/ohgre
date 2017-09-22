@@ -21,7 +21,6 @@ public class GetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 		JSONObject obj=new JSONObject();
 		HttpSession session=request.getSession();
 		//session.setMaxInactiveInterval(30);
-		//test
 		try {
 			String productDesc= (String)session.getAttribute("ProductDescription");
 			String quoteDes=(String)session.getAttribute("QuoteDescription");
