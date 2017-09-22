@@ -109,7 +109,11 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			String serviceZipCode=getParameterInfo(jObj,"serviceZipCode");
 			String emailid=getParameterInfo(jObj, "emailAddress");
 			String specialoffer=getParameterInfo(jObj, "specialoffer");
-			enrollRequest.setEmailPrefSSEPromotionalCd(specialoffer);
+			if(specialoffer =="true"){
+				enrollRequest.setEmailPrefSSEPromotionalCd("Y");
+			}else{
+				enrollRequest.setEmailPrefSSEPromotionalCd("N");
+			}
 			enrollRequest.setEmailAddress(emailid);
 			String portalname=getParameterInfo(jObj,"portalname");
 			if(portalname.equals("oh")){
@@ -117,6 +121,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			}else if(portalname.equals("gre")){
 				enrollRequest.setEnrolledByUserId("Web Enroll-GRE");
 			}
+
 			enrollRequest.setServiceZipCode(serviceZipCode);
 			enrollRequest.setEmailPrefTransactionalCd("Y");
 			//Need to make it as dynamic
