@@ -1,3 +1,4 @@
+
 <section ng-controller="PromoCodeController">
    <div class="container">
       <div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
@@ -5,18 +6,21 @@
          <p>${properties.description @ context='html'}</p>
          <form name="promoform" id="promoform"  novalidate ng-class="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused)|| promoform.submited) ? 'has-error' : '' " >
 
-                     <span class="error-message" ng-show="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused) || promoform.submited)"> 
-                   		 <span class="error-message" ng-show="promoform.promotioncode.$error.required">Promotion Code is required.</span> 
-                         <span class="error-message"  ng-show="!promoform.promotioncode.$error.required && promoform.promotioncode.$invalid">Please enter valid promotion code.</span> 
 
-                   </span>
-            <input type="text" name="promotioncode" placeholder="Enter Promo Code" ng-model="promotioncode"  ng-minlength="2" ng-maxlength="20" maxlength=20 ng-pattern="/^[a-zA-Z0-9- ]+$/" ng-focus="" required>
+        <span class="input-wrapper">
+        <span class="error-message-wrapper" ng-show="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused) || promoform.submited)">
+            <span class="error-message" ng-show="promoform.promotioncode.$error.required" ng-click="errorClicked()">Promotion Code is required.</span>
+            <span class="error-message" ng-show="!promoform.promotioncode.$error.required && promoform.promotioncode.$invalid" ng-click="errorClicked()">Please enter valid promotion code.</span>
+        </span>
+		<input type="text" id="promotioncode" name="promotioncode" ng-attr-placeholder="{{ placeholder }}"
 
-
-            <button class="primary-button" type="submit" ng-click="promoCodeSubmit()">Submit</button>
+			ng-model="promotioncode" ng-minlength="2" ng-maxlength="20" maxlength=20 ng-pattern="/^[a-zA-Z0-9- ]+$/" ng-focus="promoCodeFocused()" ng-blur="promoCodeBlur()" required>
+		</span>
+        <button class="primary-button" type="submit" ng-click="promoCodeSubmit()">Submit</button>
 
 
          </form>
+<input type="hidden" name="promocodeholder" ng-model="promocodeholder" ng-bind="promotioncode" />
       </div>
    </div>
 </section>

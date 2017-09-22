@@ -4,12 +4,21 @@
    <div class="information-block box-with-border">
       <div class="form-area">
          <h4>Your Information</h4>
-         <label>Gas Service Pod ID</label>
+
+
+           <label ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+           <label ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
+
+
          <strong>{{formatedacno}}</strong>
          <div class="input-group-wrapper">
             <label>Name on Gas Utility Account</label>
             <strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
          </div>
+         <div class="input-group-wrapper" ng-show="businessName">
+                     <label>Company Name</label>
+                       <strong>{{enrollReq.businessName}} </strong> 
+          </div>
          <div class="input-group-wrapper">
             <label>Email</label>
             <strong>{{enrollReq.emailAddress}}</strong>
@@ -22,7 +31,7 @@
             <label>How Did You Hear About us?</label>
             <strong>{{enrollReq.CustLeadSourceCode}}</strong>
          </div>
-         <div class="input-group-wrapper">
+         <div class="input-group-wrapper" ng-show="validPromocode">
             <label>Friend's Referral Code</label>
             <strong>{{enrollReq.RAFCode}}</strong>
          </div>
@@ -79,7 +88,7 @@
 <span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
 
 <div class="button-container">
-   <button class="primary-button next-button inactive" ng-click="reviewauthorizesubmit()">Submit Order</button>
+   <button class="primary-button next-button" ng-class="flag ? 'inactive' : ''" ng-click="reviewauthorizesubmit()">Submit Order</button>
    <button class="primary-button prev-button" ng-click="gotoPreviousStep(3)">Previous</button>
 </div>
 				<!-- step-through -->
