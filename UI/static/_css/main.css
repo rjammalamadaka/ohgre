@@ -6433,6 +6433,7 @@ footer .bbb-info img {
 .slide .slide-image {
   background-size: cover;
   background-position: top right;
+  background-repeat: no-repeat;
   min-height: 100px;
 }
 .cycle-slideshow {
@@ -8622,8 +8623,6 @@ input {
 }
 .customer-lookup .form-wrapper input[type="checkbox"] {
   float: left;
-  height: auto;
-  width: auto;
 }
 .customer-lookup .form-wrapper .after-checkbox {
   float: left;
@@ -9543,6 +9542,19 @@ input {
   }
 }
 /* MOVING STYLES */
+.moving-banner .slide-image {
+  background-image: url('../_img/home/card_moving.jpg');
+}
+#moving-container.form-confirmation .intro-wrapper h2 {
+  color: #133f98;
+  font-size: 2rem;
+  margin: 0;
+}
+#moving-container.form-confirmation .intro-wrapper p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
 #moving-container label {
   font-weight: normal;
 }
@@ -9559,11 +9571,35 @@ input {
   margin-bottom: 0;
   font-size: 1.8rem;
 }
+#moving-container .information-block {
+  background: #f4f4f4;
+}
+#moving-container .information-block input[type=checkbox][disabled]:before {
+  background-image: url(../_img/global/check_inverted.png);
+}
+#moving-container .information-block .after-checkbox {
+  font-size: 1.3rem;
+}
+#moving-container .information-block label {
+  font-size: 1.25rem;
+}
+#moving-container .information-block h4 {
+  margin-bottom: 1rem;
+}
 #moving-container #moving-form h5 {
   margin: 2rem 0;
 }
 #moving-container .input-group-wrapper.small-radio {
   margin-bottom: 2rem;
+}
+#moving-container .box-with-border {
+  padding: 2.5rem;
+}
+#moving-container .box-with-border h5 {
+  margin: 0 0 1rem;
+}
+#moving-container .box-with-border p {
+  line-height: 2;
 }
 @media (min-width: 992px) {
   #moving-container .box-with-border {

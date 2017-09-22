@@ -617,6 +617,7 @@ div[class^="col-"]{
 	.slide-image {
 		background-size: cover;
 		background-position: top right;
+		background-repeat: no-repeat;
 		min-height: 100px;
 	}
 }
@@ -2922,8 +2923,8 @@ input{
 			}
 			&[type="checkbox"]{
 				float: left;
-				height: auto;
-				width: auto;
+				//height: auto;
+				//width: auto;
 			}
 		}
 		.after-checkbox{
@@ -3857,7 +3858,27 @@ input{
 	}
 }
 /* MOVING STYLES */
+.moving-banner {
+	.slide-image {
+		background-image: url('../_img/home/card_moving.jpg');
+	}
+}
 #moving-container{
+	&.form-confirmation {
+		.intro-wrapper {
+			h2 {
+				color: #133f98;
+				font-size: 2rem;
+				margin: 0;
+			}
+			p {
+				font-family: @secondary_font;
+				font-weight: 600;
+				font-size: 1.6rem;
+			}
+		}
+	}
+
 	label{
 		font-weight: normal;
 	}
@@ -3876,6 +3897,27 @@ input{
 			font-size: 1.8rem;
 		}
 	}
+	.information-block{
+		background: #f4f4f4;
+
+		input[type=checkbox][disabled]{
+			&:before{
+				background-image: url(../_img/global/check_inverted.png);
+			}
+
+
+		}
+		.after-checkbox {
+			font-size: 1.3rem;
+		}
+		label {
+			font-size: 1.25rem;
+		}
+
+		h4 {
+			margin-bottom: 1rem;
+		}
+	}
 	#moving-form{
 		h5{
 			margin: 2rem 0;
@@ -3885,6 +3927,15 @@ input{
 		margin-bottom: 2rem;
 	}
 	.box-with-border{
+		padding: 2.5rem;
+
+		h5 {
+			margin: 0 0 1rem;
+		}
+		p {
+			line-height: 2;
+		}
+
 		@media (@screen-md-min){
 			width: 50%;
 			height: auto;
