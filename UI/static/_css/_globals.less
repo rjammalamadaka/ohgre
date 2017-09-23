@@ -26,7 +26,7 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 * {
 	a{
@@ -47,10 +47,10 @@ body{
 	background-repeat	: no-repeat;
 	color				: #757575;
 
-	@media (@screen-md-min){
-		overflow: visible;
-		background-position	: -8vw 6vw;
-	}
+	 @media (@screen-md-min){
+	 	overflow: visible;
+	 	background-position	: -8vw 6vw;
+	 }
 }
 img{
 	max-width: 100%;
@@ -171,7 +171,7 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	}
 }
 .no-mt{
-	margin-top: 0 !important;
+   margin-top: 0 !important;
 }
 .mt-1{
 	@media(@screen-md-min){
@@ -201,7 +201,7 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	}
 }
 .mb-1{
-	margin-bottom: 1rem !important;
+   margin-bottom: 1rem !important;
 
 	&.desktop-only{
 		margin-bottom: 0 !important;
@@ -212,7 +212,7 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	}
 }
 .mb-2{
-	margin-bottom: 2rem !important;
+   margin-bottom: 2rem !important;
 
 	&.desktop-only{
 		margin-bottom: 0 !important;
@@ -223,7 +223,7 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	}
 }
 .mb-3{
-	margin-bottom: 3rem !important;
+   margin-bottom: 3rem !important;
 
 	&.desktop-only{
 		margin-bottom: 0 !important;
@@ -246,9 +246,9 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 }
 .mb-pdtop-0{
 	padding-top: 0 !important;
-	@media(@screen-md-min){
-		padding-top: auto !important;
-	}
+		@media(@screen-md-min){
+			padding-top: auto !important;
+		}
 }
 .pt-0{
 	padding-top: 0 !important;
@@ -270,33 +270,33 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	padding: 0 !important;
 }
 .padding-5{
-	@media(@screen-md-min){
-		padding: 5rem;
-	}
+   @media(@screen-md-min){
+      padding: 5rem;
+   }
 }
 .mb-padding-25{
 	padding: 2.5rem;
 	@media(@screen-md-min){
-		padding: 0;
-	}
+      padding: 0;
+   }
 }
 .no-margin-btm{
-	margin-bottom: 0;
+   margin-bottom: 0;
 }
 .no-margin-top{
-	margin-top: 0;
+   margin-top: 0;
 }
 .no-margin-left{
-	margin-left: 0 !important;
+   margin-left: 0 !important;
 }
 .no-padding-left{
-	padding-left: 0;
+   padding-left: 0;
 }
 .higher-index{
-	z-index: 40;
+   z-index: 40;
 }
 .no-border{
-	border: none !important;
+   border: none !important;
 }
 .inline{
 	a,button{
@@ -304,10 +304,10 @@ MODULES WILL BE IN CLASS cq-colctrl-*
 	}
 }
 .align-left{
-	text-align: left !important;
+   text-align: left !important;
 }
 .block{
-	display: block !important;
+   display: block !important;
 }
 .display-table{
 	display: table !important;
@@ -320,30 +320,30 @@ ol{
 		margin-left: -2.5rem;
 		color: @primary_color;
 		counter-reset: item;
-		list-style-type: none;
+    	list-style-type: none;
 
 		li{
 			padding-left: 1rem;
 			position: relative;
 
 			&:before {
-				content: counter(item) "  ";
-				counter-increment: item ;
-				position: absolute;
-				top: 0.3rem;
-				left: -1.4rem;
-				z-index: 1;
+			    content: counter(item) "  ";
+			    counter-increment: item ;
+			    position: absolute;
+			    top: 0.3rem;
+    			 left: -1.4rem;
+			    z-index: 1;
 			}
 			&:after{
 				content: "";
-				position: absolute;
-				height: 2.5rem;
-				width: 2.5rem;
-				background-color: #fff;
-				left: -2.3rem;
-				top: -0.2rem;
-				z-index: 0;
-				border-radius: 50%;
+			    position: absolute;
+			    height: 2.5rem;
+			    width: 2.5rem;
+			    background-color: #fff;
+			    left: -2.3rem;
+			    top: -0.2rem;
+			    z-index: 0;
+			    border-radius: 50%;
 			}
 			p{
 				color: #fff;
@@ -373,13 +373,13 @@ section{
 	&:last-child{
 		margin-bottom: 0;
 	}
-	@media (@screen-md-min){
-		margin-bottom	: 3rem;
+	 @media (@screen-md-min){
+	 	margin-bottom	: 3rem;
 
-		&:last-child{
+	 	&:last-child{
 			margin-bottom: 3rem;
 		}
-	}
+	 }
 }
 sup{font-family: @accent_font;}
 input{
@@ -389,7 +389,7 @@ input{
 	color		: @font_color;
 	font-size	: 1.4rem;
 	width		: 100%;
-	font-family: @secondary_font;
+   font-family: @secondary_font;
 }
 .foot-notes{
 	font-size			: 1rem;
@@ -448,13 +448,13 @@ input[type=radio]{
 	position			: absolute;
 	z-index				: 3;
 	top					: .4rem;
-	left				: 0;
-	margin				: 0;
-	height				: 3rem;
-	border				: none;
-	appearance			: none;
-	-webkit-appearance	: none;
-	outline: none;
+    left				: 0;
+    margin				: 0;
+    height				: 3rem;
+    border				: none;
+    appearance			: none;
+    -webkit-appearance	: none;
+    outline: none;
 
 	&:before{
 		content				: "";
@@ -480,9 +480,9 @@ input[type=radio]{
 .inverted-checkbox{
 	.checkbox{
 		input[type=checkbox]{
-			&:before{
-				background-image: url(../_img/global/check_inverted.png);
-			}
+				&:before{
+					background-image: url(../_img/global/check_inverted.png);
+				}
 		}
 	}
 }
@@ -553,29 +553,29 @@ input[type=radio]{
 	box-shadow			: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
 	text-align			: center;
 	font-size			: 1.3rem;
-	line-height			: 4.5rem;
-	border-radius		: 0.2rem;
-	display				: inline-block;
-	padding				: 0 5rem;
-	border				: none;
-	letter-spacing   : .1rem;
+    line-height			: 4.5rem;
+    border-radius		: 0.2rem;
+    display				: inline-block;
+    padding				: 0 5rem;
+    border				: none;
+    letter-spacing   : .1rem;
 
-	&:hover{
-		color	: #fff;
+    &:hover{
+    	color	: #fff;
 		text-decoration: none;
-	}
-	&.inverted{
-		background-color	: #fff;
-		border: 1px solid @accent_color;
-		color: @accent_color;
-	}
-	&.plain {
-		background-color: #fff;
-		color: @highlight_color;
-		box-shadow: none;
-		text-align: left;
-		padding: 0 2rem 0 0;
-	}
+    }
+    &.inverted{
+      background-color	: #fff;
+      border: 1px solid @accent_color;
+      color: @accent_color;
+   }
+	 &.plain {
+		 background-color: #fff;
+		 color: @highlight_color;
+		 box-shadow: none;
+		 text-align: left;
+		 padding: 0 2rem 0 0;
+	 }
 	&.inactive{
 		background-color: #9bb2c1;
 	}
@@ -585,23 +585,24 @@ input[type=radio]{
 	background-color: #002c6e;
 }
 .padding-top-bottom-1{
-	padding: 1rem 0;
+   padding: 1rem 0;
 }
 .border-top{
-	border-top: .1rem solid @border_color;
+   border-top: .1rem solid @border_color;
 }
 .border-bottom{
-	border-bottom: .1rem solid @border_color;
+   border-bottom: .1rem solid @border_color;
 }
 @media (@screen-md-min){
 	.desktop-flex-container{
+		display: -webkit-flex !important;
 		display: flex !important;
 	}
 }
 .light-headings{
-	h1,h2,h3,h4,h5,h6{
-		font-weight: normal;
-	}
+   h1,h2,h3,h4,h5,h6{
+      font-weight: normal;
+   }
 }/*
 .dropdown-showing{
 	&.dropdown-container{
@@ -628,7 +629,7 @@ input[type=radio]{
 		width		: 100%;
 		max-height	: 20rem;
 		display		: none;
-		font-family: @secondary_font;
+      font-family: @secondary_font;
 
 		&.opened{
 			display	: block;
@@ -665,25 +666,25 @@ input[type=radio]{
 }
 .dropdown-trigger{
 	background	: #fff;
-	line-height	: 4.5rem;
-	position	: relative;
-	padding		: 0 3rem;
-	text-align	: left;
-	border		: 1px solid @border_color;
-	width		: 100%;
-	display		: block;
-	font-family: @secondary_font;
-	font-size: 1.8rem;
+    line-height	: 4.5rem;
+    position	: relative;
+    padding		: 0 3rem;
+    text-align	: left;
+    border		: 1px solid @border_color;
+    width		: 100%;
+    display		: block;
+    font-family: @secondary_font;
+    font-size: 1.8rem;
 
 	.carret{
 		position	: absolute;
-		height		: 70%;
-		right		: 1rem;
-		top			: 10%;
-		font-size	: 2.7rem;
-		border-left	: 1px solid @border_color;
-		padding-left: 1rem;
-		line-height	: 3.1rem;
+	    height		: 70%;
+	    right		: 1rem;
+	    top			: 10%;
+	    font-size	: 2.7rem;
+	    border-left	: 1px solid @border_color;
+	    padding-left: 1rem;
+	    line-height	: 3.1rem;
 	}
 }
 .container{
@@ -692,10 +693,11 @@ input[type=radio]{
 
 	@media (@screen-md-min){
 		padding-left: 15px;
-		padding-right: 15px;
+    	padding-right: 15px;
 	}
 }
 .flex-container{
+	display: -webkit-flex !important;
 	display: flex !important;
 }
 .no-flex{
@@ -755,24 +757,24 @@ div[class^="col-"]{
 	text-align: center;
 }
 .right{
-	text-align: right;
+   text-align: right;
 }
 .align-center{
-	margin: auto;
+   margin: auto;
 }
 .width-half{
-	width: 50%;
+   width: 50%;
 }
 .dt-width-half{
-	@media (@screen-md-min){
-		width: 50%;
-	}
+   @media (@screen-md-min){
+      width: 50%;
+   }
 }
 .with-border{
-	border: 1px solid @border_color;
+   border: 1px solid @border_color;
 }
 .float-right{
-	float: right;
+   float: right;
 }
 @media (@screen-md-min){
 	.desktop-no-padding-left{
