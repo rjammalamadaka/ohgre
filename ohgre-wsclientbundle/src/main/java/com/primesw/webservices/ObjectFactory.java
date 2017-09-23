@@ -30,35 +30,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPromoCodesForEnrollment }
+     * Create an instance of {@link GetListOfValues }
      * 
      */
-    public GetPromoCodesForEnrollment createGetPromoCodesForEnrollment() {
-        return new GetPromoCodesForEnrollment();
-    }
-
-    /**
-     * Create an instance of {@link CheckUserSecurity }
-     * 
-     */
-    public CheckUserSecurity createCheckUserSecurity() {
-        return new CheckUserSecurity();
-    }
-
-    /**
-     * Create an instance of {@link SearchCustomers }
-     * 
-     */
-    public SearchCustomers createSearchCustomers() {
-        return new SearchCustomers();
-    }
-
-    /**
-     * Create an instance of {@link GetPromoCodesForEnrollmentResponse }
-     * 
-     */
-    public GetPromoCodesForEnrollmentResponse createGetPromoCodesForEnrollmentResponse() {
-        return new GetPromoCodesForEnrollmentResponse();
+    public GetListOfValues createGetListOfValues() {
+        return new GetListOfValues();
     }
 
     /**
@@ -70,83 +46,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLDCInfo }
+     * Create an instance of {@link GetPromoCodesForEnrollmentResponse }
      * 
      */
-    public GetLDCInfo createGetLDCInfo() {
-        return new GetLDCInfo();
-    }
-
-    /**
-     * Create an instance of {@link GetQuotes }
-     * 
-     */
-    public GetQuotes createGetQuotes() {
-        return new GetQuotes();
-    }
-
-    /**
-     * Create an instance of {@link CheckRAFEligibilityResponse }
-     * 
-     */
-    public CheckRAFEligibilityResponse createCheckRAFEligibilityResponse() {
-        return new CheckRAFEligibilityResponse();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticateCustomer }
-     * 
-     */
-    public AuthenticateCustomer createAuthenticateCustomer() {
-        return new AuthenticateCustomer();
-    }
-
-    /**
-     * Create an instance of {@link CheckRAFEligibility }
-     * 
-     */
-    public CheckRAFEligibility createCheckRAFEligibility() {
-        return new CheckRAFEligibility();
-    }
-
-    /**
-     * Create an instance of {@link AddPreenrollmentResponse }
-     * 
-     */
-    public AddPreenrollmentResponse createAddPreenrollmentResponse() {
-        return new AddPreenrollmentResponse();
-    }
-
-    /**
-     * Create an instance of {@link SendRealTimeEmailResponse }
-     * 
-     */
-    public SendRealTimeEmailResponse createSendRealTimeEmailResponse() {
-        return new SendRealTimeEmailResponse();
-    }
-
-    /**
-     * Create an instance of {@link SendRealTimeEmail }
-     * 
-     */
-    public SendRealTimeEmail createSendRealTimeEmail() {
-        return new SendRealTimeEmail();
-    }
-
-    /**
-     * Create an instance of {@link SearchCustomersResponse }
-     * 
-     */
-    public SearchCustomersResponse createSearchCustomersResponse() {
-        return new SearchCustomersResponse();
-    }
-
-    /**
-     * Create an instance of {@link AuthenticateCustomerResponse }
-     * 
-     */
-    public AuthenticateCustomerResponse createAuthenticateCustomerResponse() {
-        return new AuthenticateCustomerResponse();
+    public GetPromoCodesForEnrollmentResponse createGetPromoCodesForEnrollmentResponse() {
+        return new GetPromoCodesForEnrollmentResponse();
     }
 
     /**
@@ -158,51 +62,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPromoCodeInfoResponse }
+     * Create an instance of {@link GetLDCInfo }
      * 
      */
-    public GetPromoCodeInfoResponse createGetPromoCodeInfoResponse() {
-        return new GetPromoCodeInfoResponse();
+    public GetLDCInfo createGetLDCInfo() {
+        return new GetLDCInfo();
     }
 
     /**
-     * Create an instance of {@link AddPreenrollment }
+     * Create an instance of {@link UpdateCustomerInfoResponse }
      * 
      */
-    public AddPreenrollment createAddPreenrollment() {
-        return new AddPreenrollment();
+    public UpdateCustomerInfoResponse createUpdateCustomerInfoResponse() {
+        return new UpdateCustomerInfoResponse();
     }
 
     /**
-     * Create an instance of {@link UpdateCustomerInfo }
+     * Create an instance of {@link EnrollCustomer }
      * 
      */
-    public UpdateCustomerInfo createUpdateCustomerInfo() {
-        return new UpdateCustomerInfo();
+    public EnrollCustomer createEnrollCustomer() {
+        return new EnrollCustomer();
     }
 
     /**
-     * Create an instance of {@link GetQuotesResponse }
+     * Create an instance of {@link SearchCustomersResponse }
      * 
      */
-    public GetQuotesResponse createGetQuotesResponse() {
-        return new GetQuotesResponse();
-    }
-
-    /**
-     * Create an instance of {@link EnrollCustomerResponse }
-     * 
-     */
-    public EnrollCustomerResponse createEnrollCustomerResponse() {
-        return new EnrollCustomerResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetPromoCodeInfo }
-     * 
-     */
-    public GetPromoCodeInfo createGetPromoCodeInfo() {
-        return new GetPromoCodeInfo();
+    public SearchCustomersResponse createSearchCustomersResponse() {
+        return new SearchCustomersResponse();
     }
 
     /**
@@ -214,11 +102,139 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetListOfValues }
+     * Create an instance of {@link CheckRAFEligibilityResponse }
      * 
      */
-    public GetListOfValues createGetListOfValues() {
-        return new GetListOfValues();
+    public CheckRAFEligibilityResponse createCheckRAFEligibilityResponse() {
+        return new CheckRAFEligibilityResponse();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticateCustomerResponse }
+     * 
+     */
+    public AuthenticateCustomerResponse createAuthenticateCustomerResponse() {
+        return new AuthenticateCustomerResponse();
+    }
+
+    /**
+     * Create an instance of {@link SendRealTimeEmailResponse }
+     * 
+     */
+    public SendRealTimeEmailResponse createSendRealTimeEmailResponse() {
+        return new SendRealTimeEmailResponse();
+    }
+
+    /**
+     * Create an instance of {@link CheckUserSecurity }
+     * 
+     */
+    public CheckUserSecurity createCheckUserSecurity() {
+        return new CheckUserSecurity();
+    }
+
+    /**
+     * Create an instance of {@link GetQuotes }
+     * 
+     */
+    public GetQuotes createGetQuotes() {
+        return new GetQuotes();
+    }
+
+    /**
+     * Create an instance of {@link GetPromoCodesForEnrollment }
+     * 
+     */
+    public GetPromoCodesForEnrollment createGetPromoCodesForEnrollment() {
+        return new GetPromoCodesForEnrollment();
+    }
+
+    /**
+     * Create an instance of {@link GetNESBillDetailData }
+     * 
+     */
+    public GetNESBillDetailData createGetNESBillDetailData() {
+        return new GetNESBillDetailData();
+    }
+
+    /**
+     * Create an instance of {@link CheckRAFEligibility }
+     * 
+     */
+    public CheckRAFEligibility createCheckRAFEligibility() {
+        return new CheckRAFEligibility();
+    }
+
+    /**
+     * Create an instance of {@link UpdateCustomerInfo }
+     * 
+     */
+    public UpdateCustomerInfo createUpdateCustomerInfo() {
+        return new UpdateCustomerInfo();
+    }
+
+    /**
+     * Create an instance of {@link AddPreenrollment }
+     * 
+     */
+    public AddPreenrollment createAddPreenrollment() {
+        return new AddPreenrollment();
+    }
+
+    /**
+     * Create an instance of {@link EnrollCustomerResponse }
+     * 
+     */
+    public EnrollCustomerResponse createEnrollCustomerResponse() {
+        return new EnrollCustomerResponse();
+    }
+
+    /**
+     * Create an instance of {@link AddPreenrollmentResponse }
+     * 
+     */
+    public AddPreenrollmentResponse createAddPreenrollmentResponse() {
+        return new AddPreenrollmentResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCustomerInfo }
+     * 
+     */
+    public GetCustomerInfo createGetCustomerInfo() {
+        return new GetCustomerInfo();
+    }
+
+    /**
+     * Create an instance of {@link GetPromoCodeInfoResponse }
+     * 
+     */
+    public GetPromoCodeInfoResponse createGetPromoCodeInfoResponse() {
+        return new GetPromoCodeInfoResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetQuotesResponse }
+     * 
+     */
+    public GetQuotesResponse createGetQuotesResponse() {
+        return new GetQuotesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfValuesResponse }
+     * 
+     */
+    public GetListOfValuesResponse createGetListOfValuesResponse() {
+        return new GetListOfValuesResponse();
+    }
+
+    /**
+     * Create an instance of {@link AuthenticateCustomer }
+     * 
+     */
+    public AuthenticateCustomer createAuthenticateCustomer() {
+        return new AuthenticateCustomer();
     }
 
     /**
@@ -238,14 +254,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EnrollCustomer }
-     * 
-     */
-    public EnrollCustomer createEnrollCustomer() {
-        return new EnrollCustomer();
-    }
-
-    /**
      * Create an instance of {@link GetCustomerInfoResponse }
      * 
      */
@@ -254,35 +262,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCustomerInfo }
+     * Create an instance of {@link SearchCustomers }
      * 
      */
-    public GetCustomerInfo createGetCustomerInfo() {
-        return new GetCustomerInfo();
+    public SearchCustomers createSearchCustomers() {
+        return new SearchCustomers();
     }
 
     /**
-     * Create an instance of {@link GetListOfValuesResponse }
+     * Create an instance of {@link SendRealTimeEmail }
      * 
      */
-    public GetListOfValuesResponse createGetListOfValuesResponse() {
-        return new GetListOfValuesResponse();
+    public SendRealTimeEmail createSendRealTimeEmail() {
+        return new SendRealTimeEmail();
     }
 
     /**
-     * Create an instance of {@link UpdateCustomerInfoResponse }
+     * Create an instance of {@link GetPromoCodeInfo }
      * 
      */
-    public UpdateCustomerInfoResponse createUpdateCustomerInfoResponse() {
-        return new UpdateCustomerInfoResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetNESBillDetailData }
-     * 
-     */
-    public GetNESBillDetailData createGetNESBillDetailData() {
-        return new GetNESBillDetailData();
+    public GetPromoCodeInfo createGetPromoCodeInfo() {
+        return new GetPromoCodeInfo();
     }
 
 }

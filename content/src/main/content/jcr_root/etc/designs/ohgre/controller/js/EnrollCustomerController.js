@@ -109,15 +109,16 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }else if(ldc =="COH"){
  			accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
         }
-		$scope.formatedacno=accountNumber;
+		$rootScope.formatedacno=accountNumber;
 
     }
     $scope.enrollCustomer =function(step){
 			$('#lastnamezipcodeerror').hide(); 
+        clearEnrollReqObject();
         getFormatedAccountNumber();
 
 			$scope.formone.submited = true;
-       if($scope.formone.$valid || (($rootScope.product.LDC=="MIC") && $scope.formone.lastname.$valid && $scope.formone.zipcode.$valid && $scope.formone.an4.$valid)){
+       if($scope.formone.$valid || (($rootScope.product.LDC=="MIC") && $scope.formone.lastName.$valid && $scope.formone.zipcode.$valid && $scope.formone.an4.$valid)){
  			var accountnumber=null;
             console.log($scope.formone.$valid);
            if($rootScope.product.LDC == "DUK"){
@@ -174,7 +175,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                      $('.steps-container > div:nth-child('+step+')').addClass('active-step');*/
 
                  }else if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="1"){
-
+					$rootScope.showexistingcustomer=false;
                      var accountNumberInfo={};
                      if($scope.unformatedaccountnumber){
 					 accountNumberInfo.account=$scope.unformatedaccountnumber;
@@ -404,8 +405,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     }
 
     $scope.gotoPreviousStep =function(step){
-        if(step ==1)
+        if(step ==1){
              $('.steps-container').hide();
+            $rootScope.showcurrentplan=false;
+            $rootScope.showearlyterminationfee=false;
+
+        }
         $scope.primeErrorMessage=null;
 		gotNextStep(step,true);
     }
@@ -596,6 +601,19 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     $scope.gotoHomePage = function(){
 		location.href=$rootScope.homeUrl+".html";
+    }
+
+   var clearEnrollReqObject =function(){
+	    $scope.enrollReq={};
+       if($scope.promotionInfo){
+        	updateenrollrequestobj($scope.promotionInfo);
+       }
+       updateenrollrequestobj($rootScope.product);
+		if($rootScope.portalname=='oh'){
+		$scope.enrollReq.portalname="oh";       
+		}else if($rootScope.portalname=='gre'){
+		$scope.enrollReq.portalname="gre";       
+		}
     }
 }]);
 

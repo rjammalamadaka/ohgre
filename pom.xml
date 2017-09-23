@@ -7,7 +7,7 @@
 
     <groupId>com.macquarium.ong</groupId>
     <artifactId>ohgre</artifactId>
-    <version>1.6.8-SNAPSHOT</version>
+    <version>1.7.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ohgre - Reactor Project</name>
@@ -21,14 +21,14 @@
     <!-- P R O P E R T I E S -->
     <!-- ====================================================================== -->
     <properties>
-        <crx.host>localhost</crx.host>
+        <crx.host>166.78.247.155</crx.host>
         <crx.port>4505</crx.port>
         <crx.username>admin</crx.username>
-        <crx.password>admin</crx.password>
-        <publish.crx.host>localhost</publish.crx.host>
+        <crx.password>0DmvMMkvVD1eQLaA</crx.password>
+        <publish.crx.host>166.78.247.155</publish.crx.host>
         <publish.crx.port>4503</publish.crx.port>
         <publish.crx.username>admin</publish.crx.username>
-        <publish.crx.password>admin</publish.crx.password>
+        <publish.crx.password>0DmvMMkvVD1eQLaA</publish.crx.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- CXF Versions -->

@@ -3,6 +3,9 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
     ohgre.removeStore("promoCodeInfo");
     ohgre.removeStore("promocode");
 
+    $scope.placeholder = "Enter Promo Code";
+
+
     $scope.promoCodeSubmit = function(){
 		$scope.promoform.submited = true;
         if($scope.promoform.$valid){
@@ -45,10 +48,13 @@ document.cookie="promocode="+$scope.promotioncode;
                             location.href=$rootScope.homeUrl+"/promotion-error.html";
                      }
 
-                }).error(function(data, status, headers, config) {});    
+                }).error(function(data, status, headers, config) {});
             }
 
-        }else{return;}
+        }else{
+            $scope.placeholder = "";
+            return;
+        }
 
     }
     var getPromoGroups= function(promotionCode){
@@ -74,12 +80,32 @@ document.cookie="promocode="+$scope.promotioncode;
         }).error(function (data,status, headers, config){ });
     }
 
+	var promoCodeEl = angular.element( document.querySelector('#promotioncode')),
+        errorMsgWrapper = angular.element(document.querySelector('.error-message-wrapper'));
+
     $scope.$watch('promotioncode', function (newValue, oldValue, scope) {
        if(newValue){
 		$scope.promotioncode = newValue.toUpperCase();
+
        }
 	}, true);
 
+    $scope.promoCodeFocused = function() {
+		errorMsgWrapper.addClass('error-hidden');
+        //$scope.placeholder = "";
+    }
+    $scope.promoCodeBlur = function() {
+		errorMsgWrapper.removeClass('error-hidden');
+        //$scope.placeholder = "";
+    }
+
+    $scope.errorClicked = function() {
+		console.log('errorClicked');
+        errorMsgWrapper.addClass('error-hidden');
+		promoCodeEl.focus();
+        //errorMsgWrapper.hide();
+    }
+
+
 
 }]);
-

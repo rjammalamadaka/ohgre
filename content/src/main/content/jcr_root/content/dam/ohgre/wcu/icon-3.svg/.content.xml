@@ -6,16 +6,16 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/wcu/icon-3.svg"
-        jcr:lastModified="{Date}2017-09-20T00:12:25.683-04:00"
+        jcr:lastModified="{Date}2017-09-21T23:49:32.956-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2017-09-20T00:12:25.524-04:00"
+            dam:extracted="{Date}2017-09-21T23:49:32.828-04:00"
             dam:sha1="ca351a4d6eaab7241a758d4e2e108230c43d7406"
             dam:size="{Long}1925"
             dc:format="image/svg+xml"
             dc:modified="{Date}2017-08-08T21:37:00.249+05:30"
-            jcr:lastModified="{Date}2017-09-20T07:23:07.514+05:30"
+            jcr:lastModified="{Date}2017-09-22T07:53:10.949+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>
