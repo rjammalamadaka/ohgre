@@ -23,8 +23,11 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
          if($rootScope.hashParams.ldc && $rootScope.hashParams.fromabout){
                 $scope.displayPlans =true;
 
+               if( $scope.promotion &&  $scope.promotion.RateClassCode){
+				$scope.rateClassCode=$scope.promotion.RateClassCode;
+            }
 
-               var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+$scope.promotion.PromotionCode;
+               var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+$scope.promotion.PromotionCode+"&rateClassCode="+$scope.rateClassCode;
                  $http.get(url).success(function(data, status, headers, config){
                      $scope.Quotes=data;
                      if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
@@ -61,7 +64,11 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
 		var ldcCode=$('#fixed-plans-button').val();
         if(ldcCode){
-			PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode).success(function(data, status, headers, config){
+             if( $scope.promotion &&  $scope.promotion.RateClassCode){
+				$scope.rateClassCode=$scope.promotion.RateClassCode;
+            }
+
+			PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                      $scope.displayPlans = true;

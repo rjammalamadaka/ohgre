@@ -27,7 +27,11 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
 		var ldcCode=$('#fixed-plans-button').val();
         if(ldcCode){
 
-            PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode).success(function(data, status, headers, config){
+            if( $scope.promotion &&  $scope.promotion.RateClassCode){
+				$scope.rateClassCode=$scope.promotion.RateClassCode;
+            }
+
+            PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                       $scope.displayPlans = true;

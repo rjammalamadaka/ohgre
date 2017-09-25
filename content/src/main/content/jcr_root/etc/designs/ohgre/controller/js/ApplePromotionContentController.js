@@ -23,7 +23,11 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                       }
                   }
 
-                  PrimeService.getQuotes(ldcCode,promotionCode).success(function(data, status, headers, config){
+                  if( promotion &&  promotion.RateClassCode){
+                      $scope.rateClassCode=promotion.RateClassCode;
+                  }
+
+                  PrimeService.getQuotes(ldcCode,promotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                       console.log(data);
                       if(data && data.responseStatus =="0"){
                           var customer=data.Customer[0];

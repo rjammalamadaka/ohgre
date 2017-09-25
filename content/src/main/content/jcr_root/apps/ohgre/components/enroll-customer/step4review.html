@@ -11,7 +11,7 @@
 
 
          <strong>{{formatedacno}}</strong>
-         <div class="input-group-wrapper">
+         <div class="input-group-wrapper" ng-show="enrollReq.firstName">
             <label>Name on Gas Utility Account</label>
             <strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
          </div>
@@ -39,7 +39,7 @@
             <label class="checkbox"> 
                <input type="checkbox" name="email-offers" value="yes" checked disabled="disabled" />
             </label>
-            <span class="after-checkbox">Yes, Grand Rapids Energy may send me information about special offers from Ohio Natural Gas and its marketing partners.</span>
+            <span class="after-checkbox">${properties.acceptspecialoffer}</span>
          </div>
       </div>
    </div>
@@ -74,10 +74,10 @@
             <label class="checkbox">
                <input type="checkbox" name="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
             </label>
-            <span class="after-checkbox">I authorize Grand Rapids Energy to be my natural gas supplier and to process with Columbia Gas of Michigan this transfer of service request to enroll with Grand Rapids Energy.</span> <br>
+               <span class="after-checkbox">${properties.reviewandauthorize}</span> <br>
 
              <span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
-                  <span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">In order to complete your enrollment, you must authorize Ohio Natural Gas to process your request</span> 
+                  <span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span> 
              </span>
 
          </div>

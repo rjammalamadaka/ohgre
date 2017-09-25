@@ -3,6 +3,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     $scope.displaystepscontainer=false;
     $scope.businessName=false;
+    $scope.showgiftcardmessage=false;
     $scope.primeErrorMessage=null;
 
     var failcount=0;
@@ -347,7 +348,17 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     $scope.accepttermsandcond =function(){
  		$scope.formthree.submited = true;
 
+
+
         if($scope.formthree.$valid){
+
+            if($scope.promotionInfo && $scope.promotionInfo.GiftCardValue){
+                $scope.giftCardValue =Number($scope.promotionInfo.GiftCardValue);
+                if($scope.giftCardValue>0){
+                    $scope.showgiftcardmessage=true;
+                }
+            }
+
 			gotNextStep(4);
 
         }
@@ -362,6 +373,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         if($scope.formfour.$valid && !$scope.flag){
 			console.log("data submit to prime");
             $scope.flag=true;
+
+            if($scope.showgiftcardmessage){
+				$scope.showgiftcardmessage=false;
+                $scope.showgiftcardmessageconfirmation=true;
+            }
 
             PrimeService.enrollCustomer($scope.enrollReq).success(function(data, status, headers, config){
                 console.log(data);
@@ -410,6 +426,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
             $rootScope.showcurrentplan=false;
             $rootScope.showearlyterminationfee=false;
 
+        }
+        if(step==3){
+			$scope.showgiftcardmessage=false;
+        }
+        if(step==4){
+			$scope.showgiftcardmessageconfirmation=false;
         }
         $scope.primeErrorMessage=null;
 		gotNextStep(step,true);
@@ -615,5 +637,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 		$scope.enrollReq.portalname="gre";       
 		}
     }
+
+   $scope.acceptterms =function(pdffilepath){
+	   if(pdffilepath)
+       window.open(pdffilepath);
+
+   }
+
+
 }]);
 

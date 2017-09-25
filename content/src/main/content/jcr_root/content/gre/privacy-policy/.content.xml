@@ -4,14 +4,14 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-08-19T08:53:07.939+05:30"
+        cq:lastModified="{Date}2017-09-25T00:27:17.831-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/helppage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Privacy Policy"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true"
-        portalname="Select Portal name">
+        portalname="gre">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">

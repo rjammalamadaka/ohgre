@@ -32,9 +32,9 @@
             <div class="form-area">
                <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
                <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
-               <input type="text" name="lastname"  ng-model="lastName" required/>
-               <span style="color:red" ng-show="(formone.lastname.$dirty && (formone.lastname.$invalid)) || (formone.submited)">
-               <span ng-show="formone.lastname.$error.required">Last Name is required.</span>
+               <input type="text" name="lastName"  ng-model="lastName" required/>
+               <span style="color:red" ng-show="(formone.lastName.$dirty && (formone.lastName.$invalid)) || (formone.submited)">
+               <span ng-show="formone.lastName.$error.required">Last Name is required.</span>
                </span>
             </div>
          </div>
@@ -51,5 +51,5 @@
          </div>
       </div>
       <button class="primary-button next-button" data-next=2 ng-click="enrollCustomer(2)">Next</button>
-   </form>
+   </form> 
 </div>

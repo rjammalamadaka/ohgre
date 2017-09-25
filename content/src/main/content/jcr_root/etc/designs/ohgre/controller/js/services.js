@@ -6,8 +6,8 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
             'Content-Type' :'application/json'
         }
     }
-    var getQuotes =function(ldc,promotionCode){
-		var url="/bin/getQuotes?portalName="+$rootScope.portalname+"&ldcCode="+ldc+"&promotionCode="+promotionCode;
+    var getQuotes =function(ldc,promotionCode,rateClassCode){
+		var url="/bin/getQuotes?portalName="+$rootScope.portalname+"&ldcCode="+ldc+"&promotionCode="+promotionCode+"&rateClassCode="+rateClassCode;
         return $http.get(url,config);
     }
 
@@ -45,6 +45,11 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/enrollCustomer";
 		return $http.post(url,angular.toJson(requestInfo),config);
     }
+
+    var moving =function(requestInfo){
+		var url="/bin/moving";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
     return {
         getQuotes:getQuotes,
         getPromoCodeInfo:getPromoCodeInfo,
@@ -52,7 +57,8 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
         getProductData:getProductData,
         getCustomerInfo:getCustomerInfo,
         checkRafEligibility:checkRafEligibility,
-        enrollCustomer:enrollCustomer
+        enrollCustomer:enrollCustomer,
+        moving:moving
     }               
 }]);
 

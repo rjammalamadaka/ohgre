@@ -10,7 +10,7 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <signup
+            <cardpromo
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Card Promo Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
@@ -76,7 +76,7 @@
                         </items>
                     </column>
                 </items>
-            </signup>
+            </cardpromo>
         </items>
     </content>
 </jcr:root>
