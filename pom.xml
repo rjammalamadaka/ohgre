@@ -21,14 +21,14 @@
     <!-- P R O P E R T I E S -->
     <!-- ====================================================================== -->
     <properties>
-        <crx.host>166.78.247.155</crx.host>
+        <crx.host>localhost</crx.host>
         <crx.port>4505</crx.port>
         <crx.username>admin</crx.username>
-        <crx.password>0DmvMMkvVD1eQLaA</crx.password>
-        <publish.crx.host>166.78.247.155</publish.crx.host>
+        <crx.password>admin</crx.password>
+        <publish.crx.host>localhost</publish.crx.host>
         <publish.crx.port>4503</publish.crx.port>
         <publish.crx.username>admin</publish.crx.username>
-        <publish.crx.password>0DmvMMkvVD1eQLaA</publish.crx.password>
+        <publish.crx.password>admin</publish.crx.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- CXF Versions -->
