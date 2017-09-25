@@ -63,6 +63,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			String portalName=request.getParameter("portalName");
 			String ldcCode=request.getParameter("ldcCode");
 			String locationType=request.getParameter("locationType");
+			String rateClassCode=request.getParameter("rateClassCode");
 
 			QuoteService quoteService=new QuoteService(url);
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
@@ -76,6 +77,9 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			if(ldcCode !=null)
 				quoteRequest.setLDC(ldcCode);
 			quoteRequest.setPrimaryProduct("ALL");
+			if(null !=rateClassCode){
+				quoteRequest.setRateClass(rateClassCode);
+			}
 			//quoteRequest.setEnrolledByUserId("Web Enroll-ONG");  // ong:  Web Enroll-ONG , gre:Web Enroll-GRE
 			quoteRequest.setRateClass("01");// 01 Res, 04 //Commer
 			if(portalName.equals("oh")){
