@@ -164,6 +164,19 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>com.macquarium.ong.ohgre-bundle</Bundle-SymbolicName>
+                        <Import-Package>
+                            com.adobe.cq.sightly,
+                            com.day.cq.wcm.api,
+                            com.fasterxml.jackson.databind,
+                            com.primesw.webservices,javax.jcr, javax.servlet, javax.servlet.http,
+                            javax.xml.namespace, javax.xml.soap, javax.xml.ws.handler, javax.xml.ws.handler.soap,
+                            org.apache.sling.api, org.apache.sling.api.request, org.apache.sling.api.resource,
+                            org.apache.sling.api.scripting, org.apache.sling.api.servlets, org.apache.sling.commons.json,
+                            org.apache.sling.commons.osgi, org.apache.sling.jcr.api,
+                            org.osgi.service.component, org.slf4j, org.tempuri.quoteservice,
+                            com.mysql.jdbc.exceptions,
+                            com.mysql.jdbc
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
