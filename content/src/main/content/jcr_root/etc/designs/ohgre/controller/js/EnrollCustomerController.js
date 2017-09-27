@@ -610,6 +610,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         $scope.enrollReq.specialoffer=data.specialoffer;
         if(data.businessName)
         $scope.enrollReq.businessName=data.businessName;
+        if(data.renewalContractExistsInd)
+        $scope.enrollReq.renewalContractExistsInd=data.renewalContractExistsInd;    
 
 
     }
