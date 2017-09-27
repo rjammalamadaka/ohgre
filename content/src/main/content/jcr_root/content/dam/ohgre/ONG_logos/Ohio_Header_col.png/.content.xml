@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/ONG_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/ONG_logos/Ohio_Header_col.png"
-        jcr:lastModified="{Date}2017-09-24T23:54:41.437-04:00"
+        jcr:lastModified="{Date}2017-09-26T23:42:02.101-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}14536"
             dc:format="image/png"
             dc:modified="{Date}2017-08-20T08:00:05.648+05:30"
-            jcr:lastModified="{Date}2017-09-24T23:54:38.430-04:00"
+            jcr:lastModified="{Date}2017-09-26T07:38:09.272+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

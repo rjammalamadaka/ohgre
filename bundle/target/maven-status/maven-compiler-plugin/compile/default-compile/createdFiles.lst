@@ -5,6 +5,7 @@ com/macquarium/ong/components/ProductContent.class
 com/macquarium/ong/components/WhyChooseUs.class
 com/macquarium/ong/impl/filters/LoggingFilter.class
 com/macquarium/ong/EnrollCustomerServlets.class
+com/macquarium/ong/MovingServlet.class
 com/macquarium/ong/package-info.class
 com/macquarium/ong/HeaderHandlerResolver.class
 com/macquarium/ong/GetPromoCodeInfoServlet.class

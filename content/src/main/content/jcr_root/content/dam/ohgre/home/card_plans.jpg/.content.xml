@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_plans.jpg"
-        jcr:lastModified="{Date}2017-09-24T23:54:42.559-04:00"
+        jcr:lastModified="{Date}2017-09-26T23:42:03.335-04:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[]"
         jcr:primaryType="dam:AssetContent">
@@ -32,7 +32,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}603"
             exif:PixelYDimension="{Long}206"
-            jcr:lastModified="{Date}2017-09-24T23:54:34.204-04:00"
+            jcr:lastModified="{Date}2017-09-26T07:38:03.644+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

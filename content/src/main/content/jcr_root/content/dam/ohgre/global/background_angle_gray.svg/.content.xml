@@ -6,7 +6,7 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/global/background_angle_gray.svg"
-        jcr:lastModified="{Date}2017-09-24T23:54:36.949-04:00"
+        jcr:lastModified="{Date}2017-09-26T23:41:49.532-04:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[]"
         jcr:primaryType="dam:AssetContent">
@@ -16,7 +16,7 @@
             dam:size="{Long}816"
             dc:format="image/svg+xml"
             dc:modified="{Date}2017-07-28T12:19:19.511-04:00"
-            jcr:lastModified="{Date}2017-09-24T12:38:23.436-04:00"
+            jcr:lastModified="{Date}2017-09-26T07:38:09.492+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>

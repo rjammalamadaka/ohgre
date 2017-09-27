@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/ohio-logo-white.png"
-        jcr:lastModified="{Date}2017-09-24T23:54:42.307-04:00"
+        jcr:lastModified="{Date}2017-09-26T23:42:02.998-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}15431"
             dc:format="image/png"
             dc:modified="{Date}2017-07-28T12:19:16.805-04:00"
-            jcr:lastModified="{Date}2017-09-24T23:54:37.948-04:00"
+            jcr:lastModified="{Date}2017-09-26T07:38:08.461+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

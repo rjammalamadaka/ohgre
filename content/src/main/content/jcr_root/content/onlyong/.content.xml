@@ -166,7 +166,8 @@
             SWITCH="/content/onlyong/switch-back"/>
         <VISA
             jcr:primaryType="nt:unstructured"
-            OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
+            OHIO_x0020_VISA="/content/onlyong/visa_offer"
+            SWITCHONLINE="/content/onlyong/visa_offer"/>
         <BACK
             jcr:primaryType="nt:unstructured"
             BACKCONV="/content/gre/promo-landing-apples"
@@ -216,8 +217,11 @@
             <MVR jcr:primaryType="nt:unstructured"/>
             <SWITCH
                 jcr:primaryType="nt:unstructured"
-                SWITCH="/content/onlyong/switch-back"/>
-            <UTILITY jcr:primaryType="nt:unstructured"/>
+                SWITCH="/content/onlyong/switch-back"
+                SWITCHONLINE="/content/onlyong/visa_offer"/>
+            <UTILITY
+                jcr:primaryType="nt:unstructured"
+                UTILITYCHOICE="/content/onlyong/visa_offer"/>
             <VISA
                 jcr:primaryType="nt:unstructured"
                 OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
@@ -239,7 +243,9 @@
             <LOYAL
                 jcr:primaryType="nt:unstructured"
                 LOYAL2017VISA="/content/gre/visa_offer"/>
-            <UTILITY jcr:primaryType="nt:unstructured"/>
+            <UTILITY
+                jcr:primaryType="nt:unstructured"
+                UTILITYCHOICE="/content/gre/visa_offer"/>
         </gre>
     </promotions>
     <faq/>
