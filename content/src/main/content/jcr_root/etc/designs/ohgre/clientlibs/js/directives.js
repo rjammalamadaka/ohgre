@@ -1,4 +1,3 @@
-
 ohgrePortal.directive('ngFocus', [function() {
   var FOCUS_CLASS = "ng-focused";
   return {
@@ -32,18 +31,23 @@ ohgrePortal.directive('ngVisited', [function() {
     }
   }
 }]);
+
 ohgrePortal.directive('restrictTo', function() {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
             var re = RegExp(attrs.restrictTo);
-            var exclude = /Backspace|Enter|Tab|Delete|Del|ArrowUp|Up|ArrowDown|Down|ArrowLeft|Left|ArrowRight|Right/;
-
+            var exclude = [8,13,9,46,38,40,37,39];
             element[0].addEventListener('keydown', function(event) {
-                if (!exclude.test(event.key) && !re.test(event.key)) {
-                    event.preventDefault();
+
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    if(exclude.indexOf(event.keyCode) < 0) {
+						                event.preventDefault();
+                    }
                 }
+
             });
-        }
+
+         }
     }
 });
