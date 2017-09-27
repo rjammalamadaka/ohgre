@@ -1,5 +1,6 @@
 ohgrePortal.controller('MovingController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
+	$rootScope.movingconfirmation=false;
 
     if($rootScope.portalname =="oh"){
 		$scope.addressstate="OH";
@@ -41,13 +42,18 @@ ohgrePortal.controller('MovingController', ['$scope', '$rootScope', '$http','Pri
                 expectedmovedate=$('#expectedmovedate .value').html();
             }
          req.expectedmovedate=expectedmovedate;
+            if($rootScope.portalname =='oh'){
+				req.partner="ONG";
+            }else{
+				req.partner="GRE";
+            }   
 
-
+		$rootScope.movingreq=req;
         PrimeService.moving(req).success(function(data, status, headers, config){
 			console.log(data);
              $scope.flag=false;
             if(data.resultCode =="0"){
-
+					$rootScope.movingconfirmation=true;
             }
 
         }).error(function(data, status, headers, config){
