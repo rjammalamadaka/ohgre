@@ -88,11 +88,11 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			String productCode=getParameterInfo(jObj,"productCode");
 			enrollRequest.setProductCode(productCode);
 			String responseStatus=getParameterInfo(jObj,"responseStatus");
-			String activeContractInd=getParameterInfo(jObj,"activeContractInd");
+			String renewalContractExistsInd=getParameterInfo(jObj,"renewalContractExistsInd");
 			if(responseStatus.equals("0")){
-				if(activeContractInd.equals("Y")){
+				if(renewalContractExistsInd.equals("Y")){
 					enrollRequest.setActionIfContractExists("3");
-				}else if(activeContractInd.equals("N")){
+				}else if(renewalContractExistsInd.equals("N")){
 					enrollRequest.setActionIfContractExists("1");
 				}
 			}else if(responseStatus.equals("1")){
