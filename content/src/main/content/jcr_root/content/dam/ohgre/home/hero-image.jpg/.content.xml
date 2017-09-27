@@ -13,7 +13,7 @@
         dam:copiedAt="{Date}2017-07-25T17:02:06.808-05:00"
         dam:parentAssetID="cabdbf13-6ecb-478e-9c8f-967fec2e76d1"
         dam:relativePath="ohgre/home/hero-image.jpg"
-        jcr:lastModified="{Date}2017-09-24T23:54:37.787-04:00"
+        jcr:lastModified="{Date}2017-09-26T23:41:50.620-04:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -36,7 +36,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1568"
             exif:PixelYDimension="{Long}348"
-            jcr:lastModified="{Date}2017-09-24T23:54:34.086-04:00"
+            jcr:lastModified="{Date}2017-09-26T07:38:01.684+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

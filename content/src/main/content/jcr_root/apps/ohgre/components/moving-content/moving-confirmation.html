@@ -1,0 +1,76 @@
+<section ng-show="movingconfirmation">
+		<div class="container">
+			<div class="col-md-10 col-md-offset-1">
+				<div id="moving-container" class="form-wrapper form-confirmation">
+					<div class="intro-wrapper">
+						<h2>Thank you for considering Ohio Natural Gas.</h2>
+						<p>
+							Your information has been submitted successfully!
+						</p>
+					</div>
+					<div class="desktop-flex-container">
+						<div class="box-with-border information-block">
+							<div class="form-element no-border no-padding">
+								<div class="moving-customer-container">
+									<div class="form-area">
+										<h4>Your Information</h4>
+										<div class="form-area">
+											<div class="input-group-wrapper">
+												<label>Name</label>
+												<strong>{{movingreq.firstname}} {{movingreq.lastname}}</strong>
+											</div>
+											<div class="input-group-wrapper">
+												<label>Email</label>
+												<strong> {{movingreq.email}}</strong>
+											</div>
+											<div class="input-group-wrapper">
+												<label>Phone Number</label>
+												<strong>{{movingreq.phone}}</strong>
+											</div>
+											<div class="input-group-wrapper">
+												<label>May we contact you via the phone number you provided?</label>
+												<strong>{{movingreq.contactpermission}}</strong>
+											</div>
+											<div class="input-group-wrapper">
+												<label>How Did You Hear About us?</label>
+												<strong>{{movingreq.hearaboutus}}</strong>
+											</div>
+
+											<div class="input-group-wrapper mt-3">
+												<label class="checkbox">
+					                <input type="checkbox" name="email-offers" value="yes" checked="" disabled="disabled">
+					             </label>
+												<span class="after-checkbox">Yes, Ohio Natural Gas may send me information about special offers from Ohio Natural Gas and its marketing partners.</span>
+											</div>
+										</div>
+
+
+										<hr>
+										<h4>Moving Information</h4>
+										<div class="input-group-wrapper">
+											<label>Expected Move Date</label>
+											<strong>{{movingreq.expectedmovedate}}</strong>
+										</div>
+										<div class="input-group-wrapper">
+											<label>Mailing address</label>
+											<strong>{{movingreq.addressone}} {{movingreq.addresstwo}} <br>
+											{{movingreq.addresscity}}, {{movingreq.addressstate}} {{movingreq.addresszip}}</strong>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="box-with-border">
+							<h5>Lorem ipsum dolor</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit
+								amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

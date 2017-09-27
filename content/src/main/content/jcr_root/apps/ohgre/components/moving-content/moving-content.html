@@ -1,4 +1,4 @@
-<section ng-controller="MovingController">
+<section ng-controller="MovingController" ng-show="!movingconfirmation">
 		<div class="container">
 			<div class="col-md-10 col-md-offset-1">
 				<div id="moving-container" class="form-wrapper active-form">
@@ -159,9 +159,13 @@
                         </div>
                         <div class="input-group-wrapper">
                            <label class="checkbox">
-                              <input type="checkbox" name="send-emails" ng-model="sendemails" value="yes" checked />
+                              <input type="checkbox" name="sendemails" ng-model="sendemails" ng-required="true" ng-focus ng-visited/>
+
                            </label>
                            <span class="after-checkbox">${properties.specialoffer}</span>
+                           <span class="input-error-message" ng-show="(movingform.sendemails.$visited && !movingform.sendemails.$focused) || movingform.submited">
+                                  <span class="input-error-message" ng-show="movingform.sendemails.$error.required">Send email special offer check is required.</span> 
+                                  </span>
                         </div>
                      </div>
                   </div>
@@ -178,3 +182,7 @@
 			</div>
 		</div>
 	</section>
+
+
+
+    <sly data-sly-include="moving-confirmation.html"></sly>
