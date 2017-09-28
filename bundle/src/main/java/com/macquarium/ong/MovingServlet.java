@@ -80,7 +80,8 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 			customer.setState(getParameterInfo(jObj,"addressstate"));
 			customer.setZip(getParameterInfo(jObj,"addresszip"));
 			customer.setSpecialOffersOption(getParameterInfo(jObj,"sendemails"));
-			signUpDaoService.insertCustomer(customer);
+			boolean b= signUpDaoService.insertCustomer(customer);
+			obj.put("result", b);
 			resultCode="0";
 			resultMessage="success";
 
