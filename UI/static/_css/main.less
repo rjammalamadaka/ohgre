@@ -609,7 +609,7 @@ footer{
 div[class^="col-"]{
 	@media (@screen-md-min){
 		.foot-notes{
-			margin-left: -1.5rem;
+			//margin-left: -1.5rem;
 		}
 	}
 }
@@ -1515,6 +1515,7 @@ div[class^="cq-colctrl-lt1-"]{
 			font-size		: 1.2rem;
 			margin-bottom	: 2rem;
 			color			: #9c9c9c;
+			font-family: @secondary_font;
 
 			&:last-child{
 				margin-bottom: 0;
@@ -1978,8 +1979,28 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+/* REFER A FRIEND STYLES */
+.foot-notes {
+	p {
+		font-family: @secondary_font;
+	}
+}
 /* PROMO LANDING STYLES */
 .full-banner-callout{
+	&#raf-banner {
+		.slide-content {
+			&:before {
+				width: 80%;
+			}
+			&:after {
+				width: 85%;
+			}
+		}
+		
+		.inner-slide-content {
+			padding: 10rem 4rem;
+		}
+	}
 	.slide{
 		.inner-slide-content{
 			padding	: 2rem;
@@ -2975,9 +2996,11 @@ input{
 	background-color: @background_color;
 	padding: 2rem;
 	margin-bottom: 2rem;
+	width: 100%;
 
 	.scroll-container{
 		max-height: 50rem;
+		min-height: 40rem;
 		overflow: auto;
 	}
 	h5{

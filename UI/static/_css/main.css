@@ -6425,11 +6425,6 @@ footer .bbb-info img {
   font-size: 2.3rem;
   margin-top: .5rem;
 }
-@media (min-width: 992px) {
-  div[class^="col-"] .foot-notes {
-    margin-left: -1.5rem;
-  }
-}
 .slide .slide-image {
   background-size: cover;
   background-position: top right;
@@ -7303,6 +7298,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: #9c9c9c;
+  font-family: 'Roboto', sans-serif;
 }
 .utility-form .foot-notes p:last-child {
   margin-bottom: 0;
@@ -7741,7 +7737,20 @@ div[class^="cq-colctrl-lt1-"] .card p {
   left: 0;
   z-index: 1;
 }
+/* REFER A FRIEND STYLES */
+.foot-notes p {
+  font-family: 'Roboto', sans-serif;
+}
 /* PROMO LANDING STYLES */
+.full-banner-callout#raf-banner .slide-content:before {
+  width: 80%;
+}
+.full-banner-callout#raf-banner .slide-content:after {
+  width: 85%;
+}
+.full-banner-callout#raf-banner .inner-slide-content {
+  padding: 10rem 4rem;
+}
 .full-banner-callout .slide .inner-slide-content {
   padding: 2rem;
   background-color: #002f8f;
@@ -8672,9 +8681,11 @@ input {
   background-color: #f7f7f7;
   padding: 2rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 .terms-wrapper .scroll-container {
   max-height: 50rem;
+  min-height: 40rem;
   overflow: auto;
 }
 .terms-wrapper h5 {
