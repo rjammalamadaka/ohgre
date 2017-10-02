@@ -1985,6 +1985,15 @@ div[class^="cq-colctrl-lt1-"]{
 		font-family: @secondary_font;
 	}
 }
+#raf-banner {
+	.slide-image {
+		background-image: url('../_img/raf/hero.jpg');
+	}
+}
+.raf-logo {
+	margin: 0 0 10px;
+}
+
 /* PROMO LANDING STYLES */
 .full-banner-callout{
 	&#raf-banner {
@@ -1996,7 +2005,7 @@ div[class^="cq-colctrl-lt1-"]{
 				width: 85%;
 			}
 		}
-		
+
 		.inner-slide-content {
 			padding: 10rem 4rem;
 		}
@@ -2062,7 +2071,6 @@ div[class^="cq-colctrl-lt1-"]{
 	&.raf{
 		.inner-slide-content{
 			padding: 0 8rem 2rem;
-			width: 60%;
 
 			p{
 				width: 100%;
@@ -2070,6 +2078,10 @@ div[class^="cq-colctrl-lt1-"]{
 				img.logo-image{
 					max-width: 80%;
 				}
+			}
+			@media (@screen-md-min){
+				padding: 0 8rem 2rem;
+				width: 60%;
 			}
 		}
 	}

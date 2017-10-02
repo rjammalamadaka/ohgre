@@ -7741,6 +7741,12 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .foot-notes p {
   font-family: 'Roboto', sans-serif;
 }
+#raf-banner .slide-image {
+  background-image: url('../_img/raf/hero.jpg');
+}
+.raf-logo {
+  margin: 0 0 10px;
+}
 /* PROMO LANDING STYLES */
 .full-banner-callout#raf-banner .slide-content:before {
   width: 80%;
@@ -7805,13 +7811,18 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 .full-banner-callout.raf .inner-slide-content {
   padding: 0 8rem 2rem;
-  width: 60%;
 }
 .full-banner-callout.raf .inner-slide-content p {
   width: 100%;
 }
 .full-banner-callout.raf .inner-slide-content p img.logo-image {
   max-width: 80%;
+}
+@media (min-width: 992px) {
+  .full-banner-callout.raf .inner-slide-content {
+    padding: 0 8rem 2rem;
+    width: 60%;
+  }
 }
 #visa-customer-info {
   margin-top: -2rem;
