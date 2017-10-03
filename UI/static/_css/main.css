@@ -7738,14 +7738,183 @@ div[class^="cq-colctrl-lt1-"] .card p {
   z-index: 1;
 }
 /* REFER A FRIEND STYLES */
+.page-wrapper {
+  background: #fff;
+}
+#view-raf-rewards .border-wrapper {
+  border: 1px solid #e9eef1;
+  margin-right: 0;
+  margin-bottom: 3rem;
+}
+#view-raf-rewards .border-wrapper > div[class^=col-]:last-of-type {
+  padding-right: 0;
+}
+#view-raf-rewards .border-wrapper h4 {
+  font-family: 'Roboto Slab', serif;
+  margin: 0 0 15px;
+}
+#view-raf-rewards small {
+  font-family: 'Roboto', sans-serif;
+}
+#view-raf-rewards .row .row > div[class^=col-]:first-of-type {
+  padding-left: 1.5rem;
+}
+#view-raf-rewards .accord-expanded + .accord-container {
+  display: block;
+}
+#view-raf-rewards table.view-rewards {
+  width: 100%;
+}
+#view-raf-rewards table.view-rewards thead {
+  background-color: #f4f4f4;
+}
+#view-raf-rewards table.view-rewards tbody,
+#view-raf-rewards table.view-rewards thead {
+  border: 1px solid #e2e2e2;
+}
+#view-raf-rewards table.view-rewards tbody {
+  border-top-width: 0;
+}
+#view-raf-rewards table.view-rewards td,
+#view-raf-rewards table.view-rewards th {
+  padding: 10px;
+  width: 50%;
+}
+#view-raf-rewards table.view-rewards td:first-of-type {
+  padding-right: 20px;
+}
+#view-raf-rewards table.view-rewards.ineligible td {
+  width: 65%;
+}
+#view-raf-rewards table.view-rewards.ineligible td:first-of-type {
+  width: 35%;
+}
+@media (min-width: 992px) {
+  #view-raf-rewards .accord-trigger {
+    display: none;
+  }
+  #view-raf-rewards .accord-container {
+    display: block;
+  }
+}
+#raf-share a.alt-link1 {
+  color: #0f7abf;
+  font-style: italic;
+}
+#raf-share h4 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+#raf-share .promo-wrapper > div {
+  padding: 0;
+}
+#raf-share .social-share {
+  display: inline-block;
+  margin: 15px 15px 15px 0;
+}
+#raf-share .social-share img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.dropdown-container.alt-dropdown1 .dropdown-trigger {
+  background: #f7f7f7;
+  font-size: 1.4rem;
+  min-width: 150px;
+  width: auto;
+}
+.dropdown-container.alt-dropdown1 .dropdown-trigger .carret {
+  border-left: none;
+}
 .foot-notes p {
   font-family: 'Roboto', sans-serif;
 }
 #raf-banner .slide-image {
-  background-image: url('../_img/raf/hero.jpg');
+  background-image: url('../_img/raf/raf-hero@2x.jpg');
+  background-size: auto;
 }
 .raf-logo {
   margin: 0 0 10px;
+}
+@media (min-width: 992px) {
+  .raf-logo {
+    max-width: 250px;
+  }
+}
+.raf-promo {
+  background-color: #002f8f;
+  height: 100%;
+  padding: 3.5rem 5rem 2.5rem;
+  text-align: center;
+}
+.raf-promo *,
+.raf-promo p {
+  color: #fff;
+}
+.raf-promo h4 {
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.raf-promo .promo-box {
+  border: 1px solid #fff;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+.raf-promo .promo-box span {
+  display: block;
+  font-size: 5rem;
+  line-height: 1.2;
+  margin: 0 0 5px;
+}
+#raf-code a,
+#raf-code p,
+#raf-code h3 {
+  font-family: 'Roboto', sans-serif;
+}
+#raf-code a {
+  text-transform: none;
+}
+#raf-code h3 {
+  color: #0878bf;
+  font-family: 'Roboto', sans-serif;
+}
+#raf-code .info-links {
+  background-color: #e9eef2;
+  list-style: none;
+  padding: 1.5rem 1rem;
+}
+#raf-code .info-links li {
+  margin: 0 0 10px 0;
+}
+@media (min-width: 992px) {
+  #raf-code .info-links {
+    background: none;
+  }
+}
+.divider-mod {
+  align-items: center;
+}
+.divider-mod span {
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+  bottom: 0;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  height: 3rem;
+  left: 0;
+  line-height: 2.7rem;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  width: 3rem;
+}
+div.alt-col1 {
+  margin-left: 0;
+  padding-left: 0;
 }
 /* PROMO LANDING STYLES */
 .full-banner-callout#raf-banner .slide-content:before {
@@ -8039,6 +8208,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 .box-with-border sup {
   color: inherit !important;
+}
+.box-with-border.alt-border1 {
+  border-width: 0;
 }
 .box-with-border.has-image {
   padding: 0;
