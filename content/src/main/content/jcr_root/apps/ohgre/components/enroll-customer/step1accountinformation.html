@@ -1,6 +1,9 @@
 <div class="form-wrapper active-form account-lookup">
    <form name="formone" id="formone" novalidate>
-      <span class="error-message" id="lastnamezipcodeerror"> We found an account that matches the account number but not the ZIP code or last name. For further inquiries, please call 1-888-466-4427. </span>
+      <span class="error-message" id="lastnamezipcodeerror"> 
+          <div ng-show="!businessName">We found an account that matches the account number but not the ZIP code or last name. For further inquiries, please call 1-888-466-4427. </div>
+          <div ng-show="businessName">We found an account that matches the account number but not the ZIP code or Business name. For further inquiries, please call 1-888-466-4427. </div>
+      </span>
       <div class="desktop-flex-container">
          <div class="form-area-wrapper"  ng-class="product.LDC =='MIC' ? 'mic-account-container' : ''">
             <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
