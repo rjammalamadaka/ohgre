@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_offer1.jpg"
-        jcr:lastModified="{Date}2017-09-26T23:42:00.091-04:00"
+        jcr:lastModified="{Date}2017-10-04T00:22:18.699-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-09-24T12:38:25.693-04:00"
+            dam:extracted="{Date}2017-10-04T00:22:18.479-04:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -24,7 +24,7 @@
             dam:Physicalwidthindpi="{Long}-1"
             dam:Physicalwidthininches="{Decimal}-1.0"
             dam:Progressive="no"
-            dam:sha1="61cc5fea108a8acec2bd0729cd50c6421d87643e"
+            dam:sha1="45700b0066678dde42ad1c3cb2f338e0787e56c6"
             dam:size="{Long}222888"
             dc:format="image/jpeg"
             dc:modified="{Date}2017-07-21T12:05:35.730-05:00"

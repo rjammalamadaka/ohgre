@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/delta-image.jpg"
-        jcr:lastModified="{Date}2017-09-26T23:42:02.779-04:00"
+        jcr:lastModified="{Date}2017-10-04T00:22:21.012-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-09-24T12:38:27.139-04:00"
+            dam:extracted="{Date}2017-10-04T00:22:20.415-04:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -24,7 +24,7 @@
             dam:Physicalwidthindpi="{Long}-1"
             dam:Physicalwidthininches="{Decimal}-1.0"
             dam:Progressive="no"
-            dam:sha1="c71a333ddfa99d0414b5136e54f228e9a3918927"
+            dam:sha1="8ab8bd7fa245aaea849bcf510b2509b5e33649a0"
             dam:size="{Long}513082"
             dc:format="image/jpeg"
             dc:modified="{Date}2017-07-21T12:05:36.995-05:00"
