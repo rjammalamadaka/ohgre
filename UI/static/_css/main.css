@@ -6431,6 +6431,12 @@ footer .bbb-info img {
   background-repeat: no-repeat;
   min-height: 100px;
 }
+.slide .slide-image.slide-image-alt1 {
+  background-size: cover !important;
+}
+.slide .slide-image.slide-image-alt2 {
+  background-size: contain !important;
+}
 .cycle-slideshow {
   overflow: visible !important;
   margin-bottom: 0.5rem;
@@ -6581,6 +6587,10 @@ footer .bbb-info img {
     z-index: 5;
     background: none;
     color: #fff;
+  }
+  .slide-content .ohio-logo {
+    margin: 0 0 5rem;
+    max-width: 130px;
   }
   .slide-content:before {
     content: "";
@@ -7741,6 +7751,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .page-wrapper {
   background: #fff;
 }
+.alt-banner1 .slide-image {
+  height: 100%;
+}
 #view-raf-rewards .border-wrapper {
   border: 1px solid #e9eef1;
   margin-right: 0;
@@ -7756,8 +7769,10 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #view-raf-rewards small {
   font-family: 'Roboto', sans-serif;
 }
-#view-raf-rewards .row .row > div[class^=col-]:first-of-type {
-  padding-left: 1.5rem;
+@media (min-width: 992px) {
+  #view-raf-rewards .row .row > div[class^=col-]:first-of-type {
+    padding-left: 1.5rem;
+  }
 }
 #view-raf-rewards .accord-expanded + .accord-container {
   display: block;
@@ -7780,13 +7795,18 @@ div[class^="cq-colctrl-lt1-"] .card p {
   padding: 10px;
   width: 50%;
 }
+#view-raf-rewards table.view-rewards td {
+  font-size: 1.3rem;
+}
 #view-raf-rewards table.view-rewards td:first-of-type {
   padding-right: 20px;
 }
-#view-raf-rewards table.view-rewards.ineligible td {
+#view-raf-rewards table.view-rewards.ineligible td,
+#view-raf-rewards table.view-rewards.ineligible th {
   width: 65%;
 }
-#view-raf-rewards table.view-rewards.ineligible td:first-of-type {
+#view-raf-rewards table.view-rewards.ineligible td:first-of-type,
+#view-raf-rewards table.view-rewards.ineligible th:first-of-type {
   width: 35%;
 }
 @media (min-width: 992px) {
@@ -7797,14 +7817,172 @@ div[class^="cq-colctrl-lt1-"] .card p {
     display: block;
   }
 }
-#raf-share a.alt-link1 {
-  color: #0f7abf;
-  font-style: italic;
+#raf-email-popup {
+  background-color: #fff;
+  max-width: 85rem;
+  padding: 0;
 }
-#raf-share h4 {
+#raf-email-popup p,
+#raf-email-popup label,
+#raf-email-popup input,
+#raf-email-popup textarea {
+  font-family: 'Roboto', sans-serif;
+}
+#raf-email-popup h4 {
+  margin: 0;
+}
+#raf-email-popup textarea {
+  padding: 10px;
+  max-width: 100%;
+}
+#raf-email-popup p a {
+  text-transform: none;
+}
+#raf-email-popup #raf-email-preview {
+  background: #7e94a2;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner {
+  background-color: #002f8f;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner .company-logo {
+  border-bottom: 50px solid #fff;
+  border-right: 30px #03113E solid;
+  height: 100%;
+  position: relative;
+  width: 145px;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner .company-logo:before {
+  content: "";
+  border-bottom: 100px solid #002f80;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  z-index: -1;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner .company-logo img {
+  margin: 10px 0 0 30px;
+  max-width: 70px;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo {
+  left: 145px;
+  padding: 10px 0 0 50px;
+  position: absolute;
+  top: 0;
+  width: auto;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo:before {
+  border-top: 50px solid #002f8f;
+  border-left: 30px #03113E solid;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo img {
+  max-width: 160px;
+}
+#raf-email-popup #raf-email-preview .row > div[class^=col-]:first-child {
+  padding-left: 1.5rem;
+}
+#raf-email-popup #raf-email-preview .text-center {
+  margin: 0 0 2rem;
+}
+#raf-email-popup #raf-email-preview .raf-promo {
+  background-color: #f7f7f7;
+  padding: 0;
+}
+#raf-email-popup #raf-email-preview .raf-promo * {
+  color: #0074bf;
+}
+#raf-email-popup #raf-email-preview .raf-promo .promo-box {
+  border-color: #0074bf;
+}
+#raf-email-popup #raf-email-preview .email-body {
+  background: #f7f7f7;
+  padding: 2.5rem 2.5rem 0;
+}
+#raf-email-popup #raf-email-preview .email-body h3 {
+  color: #4a4a4a;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+#raf-email-popup #raf-email-preview .button-container {
+  margin: 0 auto 3rem;
+}
+#raf-email-popup #raf-email-preview .raf-email-codes {
+  background-color: #002f8f;
+}
+#raf-email-popup #raf-email-preview .raf-email-codes p,
+#raf-email-popup #raf-email-preview .raf-email-codes h5 {
+  color: #fff;
+  text-align: center;
+}
+#raf-email-popup #raf-email-preview .raf-email-codes h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.5rem 0 0;
+}
+#raf-email-popup #raf-email-preview .raf-email-codes p {
+  font-size: 2rem;
+}
+#raf-email-popup #raf-email-footer {
+  padding: 2.5rem;
+}
+#raf-email-popup #raf-email-footer * {
+  color: #fff;
+}
+#raf-email-popup #raf-email-footer p,
+#raf-email-popup #raf-email-footer a {
+  font-size: 1.3rem;
+}
+#raf-email-popup .row.promo-wrapper > div[class^=col-]:last-of-type {
+  padding-right: 0;
+}
+#raf-email-form .friend-info {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 2.5rem 2rem 2.5rem 2.5rem;
+}
+#raf-email-form .friend-info p a {
+  color: #0074bf;
+}
+#raf-email-form .user-info {
+  padding: 2.5rem;
+}
+#raf-email-form .user-info .small-text {
+  font-size: 1rem;
+  font-style: italic;
+  margin: .5rem 0 3rem;
+}
+#raf-email-form input,
+#raf-email-form textarea {
+  background-color: #fff;
+  border-color: #e6e6e6;
+  font-size: 1.3rem;
+  padding: .5rem 1rem;
+}
+#raf-email-form input:disabled,
+#raf-email-form textarea:disabled {
+  background-color: #e6e6e6;
+}
+#raf-email-form label {
+  margin-top: 15px;
+}
+#raf-share h4,
+#raf-email-popup h4 {
+  color: #0074bf;
   font-family: 'Roboto Slab', serif;
   font-weight: 500;
   font-size: 1.6rem;
+}
+#raf-share a.alt-link1 {
+  color: #0f7abf;
+  font-style: italic;
 }
 #raf-share .promo-wrapper > div {
   padding: 0;
@@ -7829,9 +8007,25 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .foot-notes p {
   font-family: 'Roboto', sans-serif;
 }
+#raf-banner .slide-content:before {
+  width: 80%;
+}
+#raf-banner .slide-content:after {
+  width: 85%;
+}
+#raf-banner .inner-slide-content {
+  padding: 10rem 4rem;
+}
 #raf-banner .slide-image {
   background-image: url('../_img/raf/raf-hero@2x.jpg');
   background-size: auto;
+}
+#raf-banner .brand-logo {
+  margin: 0 0 5rem;
+  max-width: 130px;
+}
+#raf-banner.alt-banner1 .inner-slide-content {
+  padding: 4rem 4rem 10rem;
 }
 .raf-logo {
   margin: 0 0 10px;
@@ -7863,7 +8057,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 .raf-promo .promo-box span {
   display: block;
-  font-size: 5rem;
+  font-size: 6rem;
   line-height: 1.2;
   margin: 0 0 5px;
 }
@@ -7916,16 +8110,11 @@ div.alt-col1 {
   margin-left: 0;
   padding-left: 0;
 }
+div.alt-col2,
+.promo-wrapper > .alt-col2 {
+  padding-left: 1.5rem;
+}
 /* PROMO LANDING STYLES */
-.full-banner-callout#raf-banner .slide-content:before {
-  width: 80%;
-}
-.full-banner-callout#raf-banner .slide-content:after {
-  width: 85%;
-}
-.full-banner-callout#raf-banner .inner-slide-content {
-  padding: 10rem 4rem;
-}
 .full-banner-callout .slide .inner-slide-content {
   padding: 2rem;
   background-color: #002f8f;
@@ -7940,6 +8129,7 @@ div.alt-col1 {
   font-size: 2.2rem;
   line-height: 3.3rem;
   margin: 2rem 0;
+  display: inline-block;
 }
 .full-banner-callout .slide .inner-slide-content p {
   font-family: 'Roboto', sans-serif;
@@ -7971,7 +8161,7 @@ div.alt-col1 {
     width: 55%;
   }
   .full-banner-callout.system-down .slide-content .inner-slide-content {
-    padding: 8rem 5rem 2rem;
+    padding: 3rem 5rem 8rem;
   }
   .full-banner-callout.system-down .slide-content .inner-slide-content .slide-title {
     margin-top: 5rem;
@@ -8118,6 +8308,9 @@ div.alt-col1 {
 .footnote p {
   color: #7c000f;
   line-height: 2rem;
+}
+.text-center {
+  text-align: center;
 }
 #delta-signup-info .desktop-flex-container .two-vert-cols {
   width: 100%;
@@ -8398,7 +8591,7 @@ div.alt-col1 {
 @media (min-width: 992px) {
   .faq .toggle-buttons {
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     right: 1rem;
   }
 }
@@ -8409,13 +8602,14 @@ div.alt-col1 {
   border-bottom: .2rem solid #e9eef1;
   line-height: 4.5rem;
   margin-bottom: -1.5rem;
+  font-family: 'Roboto Slab', serif;
 }
 @media (min-width: 992px) {
   .faq h3 {
     padding: 0;
     font-size: 2.6rem;
     border: none;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0 1rem;
   }
 }
 .faq.full-banner-callout .slide .inner-slide-content > img:first-child {
@@ -8480,6 +8674,9 @@ div.alt-col1 {
     display: none;
   }
 }
+#faq-list .accord-trigger.accord-expanded:after {
+  transform: rotate(180deg);
+}
 #faq-list a {
   text-decoration: none;
   padding: 2rem 4rem 2rem 2rem;
@@ -8522,6 +8719,18 @@ div.alt-col1 {
 }
 #faq-list .accord-expanded + .accord-container {
   display: block;
+}
+/* SITEMAP */
+#sitemap li {
+  margin-bottom: 1rem;
+}
+#sitemap li ul {
+  margin-top: 1rem;
+}
+#sitemap li a {
+  color: #4a4a4a;
+  font-family: 'Roboto', sans-serif;
+  text-transform: none;
 }
 /* CONTACT US STYLES */
 .contact-page {

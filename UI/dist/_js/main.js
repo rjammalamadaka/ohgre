@@ -9,7 +9,7 @@ var ohio_ng = {
          $('.popup-wrapper').addClass('show-popup');
       });
 
-      $('.popup-wrapper,#close-window').on('click',function(event){
+      $('#close-window').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');
       });
