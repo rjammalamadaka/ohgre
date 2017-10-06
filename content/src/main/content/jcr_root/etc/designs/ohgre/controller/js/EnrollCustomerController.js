@@ -5,6 +5,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     $scope.businessName=false;
     $scope.showgiftcardmessage=false;
     $scope.primeErrorMessage=null;
+    $scope.reviewdisplay=true;
+
+    $scope.sendRafEmailReq={};
+
+    $scope.dsmEnrollReq={};
 
     var failcount=0;
 
@@ -113,6 +118,34 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 		$rootScope.formatedacno=accountNumber;
 
     }
+
+    // Validating if the User Entered name is matching with business name in Prime response
+    var validateCommercialName = function(businessName){
+
+        var regex = /[^a-zA-Z]/g;
+        var businessName = businessName.replace(regex,"");
+       // businessName = businessName.substring(0, 5);
+
+
+        var userEnteredName = $scope.lastName.toLowerCase();
+		userEnteredName = userEnteredName.replace(regex,"");
+
+		userEnteredName = userEnteredName.substring(0, 5);
+
+
+        if(userEnteredName.length ==5){
+            if(businessName.indexOf(userEnteredName) !== -1){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else{
+			return true;
+        }
+
+    }
     $scope.enrollCustomer =function(step){
 			$('#lastnamezipcodeerror').hide(); 
         clearEnrollReqObject();
@@ -159,7 +192,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 							$('#popupconfirm').addClass('show-popup');
                          }
                      }else if($rootScope.product.rateClassCode =="04"){
-                         if(($rootScope.customerInfo.businessName.toLowerCase() !=$scope.lastName.toLowerCase()) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
+                         if((validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                              $('#lastnamezipcodeerror').show();  
                              return false;
                          }else{
@@ -365,10 +398,55 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     }
 
+    $scope.reviewauthorizesubmit1 =function(){
+		$scope.formfour.submited = true;
+
+        if($scope.formfour.$valid && !$scope.flag){
+
+            if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
+                $scope.reviewdisplay=false;
+				$scope.reviewdisplaydeltaskymiles =true;
+            }else if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+				$scope.reviewdisplay=false;
+				$scope.reviewdisplayvisa =true;
+            }else if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising =="Y"){
+                $scope.reviewdisplay=false;
+                $scope.reviewdisplayraf =true;
+            }else{
+				$scope.reviewauthorizesubmit();
+            }
+
+        }
+
+    }
+
+    $scope.continuedeltaskymiles =function(){
+
+        $scope.continuefromdeltaskymiles=true;
+		 if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising  =="Y"){
+              $scope.reviewdisplaydeltaskymiles =false;
+              $scope.reviewdisplayraf =true;
+         }else{
+			  $scope.reviewauthorizesubmit();
+         }
+
+    }
+
+    $scope.sendemailwithmoreinfo =function(){
+		$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
+        PrimeService.sendRafEmail($scope.sendRafEmailReq).success(function(data, status, headers, config){
+			console.log(data);
+
+        }).error(function(data, status, headers, config){
+
+                console.log(data);
+        });
+
+    }
     $scope.reviewauthorizesubmit =function(){
 
         $scope.primeErrorMessage=null;
-		$scope.formfour.submited = true;
+		//$scope.formfour.submited = true;
 
         if($scope.formfour.$valid && !$scope.flag){
 			console.log("data submit to prime");
@@ -388,6 +466,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                     if(enrollCustomerResult.responseStatus =="1"){
                    		 $scope.primeErrorMessage=enrollCustomerResult.responseMessage;
                     }else if(enrollCustomerResult.responseStatus =="0"){
+                        $scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
 						gotNextStep(5);
                     }
                 }
@@ -519,6 +598,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         gotNextStep(2);
     }
 
+    $rootScope.redirectToStandardPricingPlan =function(){
+
+			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC;
+    }
+
     $rootScope.enrollselectalternateplans =function(){
 
 			location.href=$rootScope.homeUrl+"/plans-detail.html";
@@ -554,11 +638,40 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }
     }
 
+    $scope.dsmEnrollSubmit =function(){
+
+
+        $scope.deltaskymiles.submited = true;
+
+        if($scope.deltaskymiles.$valid && !$scope.flag){
+        $scope.flag=true;
+
+        $scope.dsmEnrollReq.firstName=$scope.enrollReq.firstName;
+         $scope.dsmEnrollReq.lastName=$scope.enrollReq.lastName;
+         $scope.dsmEnrollReq.dsmfirstName=$scope.dsmFirstName;
+         $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
+         $scope.dsmEnrollReq.dsmEmail=$scope.enrollReq.emailAddress;
+         $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
+        // $scope.dsmEnrollReq.dsmPhone= $scope.enrollReq.phoneNumber;
+		$scope.dsmEnrollReq.LDCAccountNumber=$scope.enrollReq.account;
+        $scope.dsmEnrollReq.LDCName=$scope.enrollReq.LDC;
+
+        PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
+           $scope.flag=false;
+			console.log(data);
+
+        }).error(function(data, status, headers, config){
+$scope.flag=false;
+                console.log(data);
+        });
+        }
+
+    }
 
       var updateenrollrequestobj=function(data){
         if(data.LDC)
 		$scope.enrollReq.LDC=data.LDC;
-        if(data.productCode)
+        if(data.productCode && $scope.enrollReq.productCode == undefined)
 		$scope.enrollReq.productCode=data.productCode;
         if(data.account)
 		$scope.enrollReq.account=data.account;
