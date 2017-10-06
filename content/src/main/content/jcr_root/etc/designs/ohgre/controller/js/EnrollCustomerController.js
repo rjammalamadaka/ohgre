@@ -671,7 +671,7 @@ $scope.flag=false;
       var updateenrollrequestobj=function(data){
         if(data.LDC)
 		$scope.enrollReq.LDC=data.LDC;
-        if(data.productCode)
+        if(data.productCode && $scope.enrollReq.productCode == undefined)
 		$scope.enrollReq.productCode=data.productCode;
         if(data.account)
 		$scope.enrollReq.account=data.account;
