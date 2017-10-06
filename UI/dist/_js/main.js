@@ -2,6 +2,7 @@ var buttonClick = false;
 var ohio_ng = {
 	init : function(){
 		this.listeners();
+		this.homeCarousel();
 	},
 	listeners : function(){
       $('.trigger-popup').on('click',function(event){
@@ -9,7 +10,7 @@ var ohio_ng = {
          $('.popup-wrapper').addClass('show-popup');
       });
 
-      $('.popup-wrapper,#close-window').on('click',function(event){
+      $('#close-window, .close-window-button').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');
       });
@@ -182,7 +183,27 @@ var ohio_ng = {
     } else {
       //alert( 'Invalid input: ' + obj.value );
     }
-  }
+  },
+	homeCarousel: function() {
+		var slides = $('#home-hero-carousel .slide');
+		var pagerCtrls = $('#slide-pager .pager-ctrl');
+
+		var currentSlideIndex = 0;
+
+		pagerCtrls.on('click',function(){
+			prevSlideIndex = currentSlideIndex;
+			currentSlideIndex = pagerCtrls.index(this);
+
+			if (prevSlideIndex !== currentSlideIndex) {
+				slides.eq(prevSlideIndex).fadeOut();
+				slides.eq(currentSlideIndex).fadeIn();
+
+				pagerCtrls.removeClass();
+				pagerCtrls.eq(currentSlideIndex).addClass('cycle-pager-active');
+			}
+
+		});
+	}
 }
 $(document).ready(function(){
 	ohio_ng.init();
