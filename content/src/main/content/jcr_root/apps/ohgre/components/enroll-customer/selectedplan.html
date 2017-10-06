@@ -11,7 +11,7 @@
 						<h5>{{customerInfo.productDesc}}</h5>
 						<span class="utility-name">{{customerInfo.ldcdesc}}<br>{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</span>
 
-                        <span class="error-text block" ng-show="showearlyterminationfee">Early termination fee of {{customerInfo.earlyTermChargeAmt | currency:"$":3}} .</span>
+                        <span class="error-text block" ng-show="showearlyterminationfee">Early termination fee of {{customerInfo.earlyTermChargeAmt | currency:"$":0}} .</span>
                         
 					</div>
 				</div>
