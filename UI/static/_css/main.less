@@ -2494,13 +2494,16 @@ div.alt-col2,
 	margin-top: -2rem;
 
 	@media (@screen-md-min){
-		margin-top: 2rem;
 		margin-bottom: 5rem;
 	}
 	a{
 		text-transform: uppercase;
 		font-size: 1.1rem;
 		padding: 0;
+
+		&.primary-button {
+			padding: 0 7rem;
+		}
 	}
 	.form-element{
 		border: none;
@@ -3957,6 +3960,19 @@ input{
 	background: #fff;
 	position: relative;
 
+	&#signup-confirm {
+		h3 {
+			font-size: 2.5rem;
+			font-weight: 400;
+			margin: .5rem 0 1.5rem;
+			padding: 0;
+			text-align: center;		
+		}
+		p {
+			font-family: @secondary_font;
+		}
+	}
+
 	@media (@screen-md-min){
 		padding: 1rem 4rem;
 	}
@@ -4096,6 +4112,10 @@ input{
 
 		@media (@screen-md-min){
 			font-size: 2.6rem;
+
+			&.alt1 {
+				font-size: 2.4rem;
+			}
 		}
 	}
 	.after-scrollbox{

@@ -4,7 +4,7 @@
 		This will be replaced by the content of _doc_head.html
 	<!-- /build -->
 <body>
-	<div class="popup-wrapper">
+	<div class="popup-wrapper show-popup" id="popup1">
 		<div id="signup-form" class="window-wrapper with-border">
 	      <a href="#" id="close-window">X</a>
 			<div class="inner-window-content">
@@ -12,42 +12,103 @@
 				<p>
 					Please enter email address or mailing service address
 				</p>
-				<label>First Name<sup class="required">*</sup></label>
-				<input type="text" name="first-name" />
-				<label>Last Name<sup class="required">*</sup></label>
-				<input type="text" name="last-name" />
-				<label>Email</label>
-				<input type="text" name="email" />
-				<label>Street Address</label>
-				<input type="text" name="address-1" />
-				<input type="text" name="address-2" />
-				<div class="row address-fields">
-					<div class="col-md-6 col-sm-6">
-						<div class="input-group-wrapper">
-								<label for="billing-address-city">City</label>
-								<input type="text" name="billing-address-city" id="billing-address-city">
+				<form id="offer-signup-form">
+					<label>First Name<sup class="required">*</sup></label>
+					<input type="text" name="first-name" id="first-name" />
+					<label>Last Name<sup class="required">*</sup></label>
+					<input type="text" name="last-name" id="last-name" />
+					<label>Email</label>
+					<input type="text" name="email" id="email" />
+					<label>Street Address</label>
+					<input type="text" name="address-1" id="address-1" />
+					<input type="text" name="address-2" />
+					<div class="row address-fields">
+						<div class="col-md-6 col-sm-6">
+							<div class="input-group-wrapper">
+									<label for="billing-address-city">City</label>
+									<input type="text" name="billing-address-city" id="billing-address-city">
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-2">
+							<div class="input-group-wrapper">
+									<label for="billing-address-state">State</label>
+									<input type="text" name="billing-address-state" value="OH" id="billing-address-state" />
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="input-group-wrapper">
+									<label for="billing-address-zip">Zip Code</label>
+									<input type="text" name="billing-address-zip" id="billing-address-zip" maxlength="5">
+							</div>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<div class="input-group-wrapper">
-								<label for="billing-address-state">State</label>
-								<input type="text" name="billing-address-state" value="OH" id="billing-address-state" />
-						</div>
+					<div class="button-container">
+							<a href="#" class="primary-button inactive close-window-button">cancel</a>
+						<a href="#" class="primary-button submit-button">Sign Up</a>
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="input-group-wrapper">
-								<label for="billing-address-zip">Zip Code</label>
-								<input type="text" name="billing-address-zip" id="billing-address-zip" maxlength="5">
-						</div>
-					</div>
-				</div>
-				<div class="button-container">
-					<a href="#" class="primary-button inactive">cancel</a>
-					<a href="#" class="primary-button">Sign Up</a>
-				</div>
+				</form>
+
 				<!-- end inner content -->
 			</div>
 	   </div>
 	</div>
+	<!-- build:include:dist pop_up_email_signup_confirm.html -->
+		This will be replaced by the content of pop_up_email_signup_confirm.html
+	<!-- /build -->
+	<!-- build:include:dist ../includes/footer.html -->
+	This will be replaced by the content of footer.html
+	<!-- /build -->
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+	initValidate();
+});
+
+function validateSignup() {
+	showConfirmation();
+}
+
+function showConfirmation() {
+	var validForm = 0;
+
+	if(($('#first-name').val().trim() !== '') && ($('#last-name').val().trim() !== '')) {
+		var emailAddress = $('#email').val().trim()
+
+		if(emailAddress !== '') {
+			if( /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+.test(emailAddress)) {
+				validForm = 1;
+			}
+
+		}
+
+		else if($('#address-1').val().trim() !== '') {
+			if($('#billing-address-city').val().trim() !== '' &&
+				$('#billing-address-state').val().trim() !== '' &&
+				$('#billing-address-zip').val().trim() !== '') {
+					validForm = 1;
+				}
+		}
+
+		if(validForm) {
+			$('#popup1').empty().remove();
+			$('#popup2').addClass('show-popup');
+		}
+	}
+
+}
+
+function initValidate() {
+	$('.submit-button').on('click', function(e) {
+		e.preventDefault();
+		$('#offer-signup-form').submit();
+	});
+
+  $('#offer-signup-form').on('submit',function(e){
+    e.preventDefault();
+		validateSignup();
+  });
+
+}
+</script>
 </html>

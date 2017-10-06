@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ohio Natural Gas</title>
+	<link rel="icon" type="image/png" href="_img/favicon.png">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,700|Roboto+Condensed:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="_css/bootstrap.min.css">
+	<link rel="stylesheet" href="_css/main.css" media="screen">
+	<link rel="stylesheet" href="_css/print.css" media="print">
+</head>
+
+<body>
+  <style media="screen">
+
+  </style>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="" id="skymiles-number-enter">
+          <fieldset>
+            <p><input type="text" name="" value="" id="skymiles-num"  maxlength="10"></p>
+            <p><input type="submit" value="Test it" class="primary-button"></p>
+
+          </fieldset>
+
+        </form>
+      </div>
+    </div>
+    <p id="result"></p>
+  </div>
+  <footer>
+	<div class="container">
+		<div class="clearfix">
+			<div class="col-md-2 footer-logo"><img src="_img/global/ohio-logo-white.png"></div>
+			<div id="contact-info" class="col-md-6">
+				<div class="info">
+					<h2>Contact us</h2>
+					<span>1.888.211.8312</span>
+					<span>8AM - 5PM EST</span>
+					<span>Monday - Friday</span>
+				</div>
+				<div class="info">
+					<h2>Company Info</h2>
+					<a href="#">About Us</a>
+					<a href="#">FAQs</a>
+				</div>
+			</div>
+			<div class="bbb-info">
+				<img src="_img/global/bbb.png">
+			</div>
+		</div>
+		<div class="clearfix" id="sub-links">
+			<span>&copy; 2017 Ohio Natural Gas</span>
+			<a href="#">Terms of Use</a>
+			<a href="#">Privacy Policy</a>
+			<a href="#">Sitemap</a>
+		</div>
+	</div>
+</footer>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="_js/jquery.cycle2.min.js"></script>
+<script type="text/javascript" src="_js/main.js"></script>
+</body>
+<script type="text/javascript">
+Number.isInteger = Number.isInteger || function(value) {
+  return typeof value === 'number' &&
+    isFinite(value) &&
+    Math.floor(value) === value;
+};
+
+
+var skymilesNumberStatus = ['passes', 'too long', 'too short', 'invalid skymiles number', 'not a number'];
+
+function initValidate() {
+  $('#skymiles-number-enter').on('submit',function(event){
+    event.preventDefault();
+    var skymilesNumber = $('#skymiles-num').val();
+
+    var checkNumber = validateDeltaSkyMilesNumber(skymilesNumber);
+    $('#result').html(skymilesNumberStatus[checkNumber]);
+    //$('#result').html(checkNumber);
+  });
+}
+
+function validateDeltaSkyMilesNumber(sknum) {
+    var smn = sknum;
+    var integerCheck = 0,
+        smnStatus = 4,
+        smn01;
+
+    var getSingleDigit = function(x) {
+      if (x > 9) {
+        var a,
+            b;
+
+        a = x.toString();
+        b = parseInt(a.substring(0, 1)) + parseInt(a.substring(1, 2));
+
+        return b;
+      }
+
+      else
+        return parseInt(x);
+    };
+
+    var regex=/^[0-9]+$/;
+    if (sknum.match(regex)) {
+        integerCheck = 1;
+    }
+
+    if(integerCheck > 0) {
+      if(smn.length < 10) {
+        smnStatus = 2;
+      }
+      else {
+        smn01 = smn.substring(0, 1) * 2;
+        smn02 = parseInt(smn.substring(1, 2));
+        smn03 = smn.substring(2, 3) * 2;
+        smn04 = parseInt(smn.substring(3, 4));
+        smn05 = smn.substring(4, 5) * 2;
+        smn06 = parseInt(smn.substring(5, 6));
+        smn07 = smn.substring(6, 7) * 2;
+        smn08 = parseInt(smn.substring(7, 8));
+        smn09 = smn.substring(8, 9) * 2;
+        chkDigit = parseInt(smn.substring(9, 10));
+
+        smn01 = getSingleDigit(smn01);
+        smn03 = getSingleDigit(smn03);
+        smn05 = getSingleDigit(smn05);
+        smn07 = getSingleDigit(smn07);
+        smn09 = getSingleDigit(smn09);
+
+        intOdds = smn01 + smn03 + smn05 + smn07 + smn09;
+        intEvens = smn02 + smn04 + smn06 + smn08;
+
+        intRemainder = (intOdds + intEvens) % 10;
+
+        if ((intRemainder == 0) && (chkDigit == 0)) { smnStatus = 0; }
+        else if ((10 - intRemainder) == chkDigit) { smnStatus = 0; }
+        else { smnStatus = 3; }
+      }
+
+    }
+
+    else {
+      smnStatus = 4;
+    }
+
+    return smnStatus;
+}
+$(document).ready(function(){
+  initValidate();
+});
+
+</script>
+
+</html>

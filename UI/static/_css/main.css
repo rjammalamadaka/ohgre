@@ -8188,7 +8188,6 @@ div.alt-col2,
 }
 @media (min-width: 992px) {
   #visa-customer-info {
-    margin-top: 2rem;
     margin-bottom: 5rem;
   }
 }
@@ -8196,6 +8195,9 @@ div.alt-col2,
   text-transform: uppercase;
   font-size: 1.1rem;
   padding: 0;
+}
+#visa-customer-info a.primary-button {
+  padding: 0 7rem;
 }
 #visa-customer-info .form-element {
   border: none;
@@ -9583,6 +9585,16 @@ input {
   background: #fff;
   position: relative;
 }
+.window-wrapper#signup-confirm h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: .5rem 0 1.5rem;
+  padding: 0;
+  text-align: center;
+}
+.window-wrapper#signup-confirm p {
+  font-family: 'Roboto', sans-serif;
+}
 @media (min-width: 992px) {
   .window-wrapper {
     padding: 1rem 4rem;
@@ -9717,6 +9729,9 @@ input {
 @media (min-width: 992px) {
   #step-through h3 {
     font-size: 2.6rem;
+  }
+  #step-through h3.alt1 {
+    font-size: 2.4rem;
   }
 }
 #step-through .after-scrollbox {

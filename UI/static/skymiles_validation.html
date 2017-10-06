@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- build:include:dist ../includes/_doc_head.html -->
+This will be replaced by the content of _doc_head.html
+<!-- /build -->
+
+<body>
+  <style media="screen">
+
+  </style>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="" id="skymiles-number-enter">
+          <fieldset>
+            <p><input type="text" name="" value="" id="skymiles-num"  maxlength="10"></p>
+            <p><input type="submit" value="Test it" class="primary-button"></p>
+
+          </fieldset>
+
+        </form>
+      </div>
+    </div>
+    <p id="result"></p>
+  </div>
+  <!-- build:include:dist ../includes/footer.html -->
+  This will be replaced by the content of footer.html
+  <!-- /build -->
+</body>
+<script type="text/javascript">
+Number.isInteger = Number.isInteger || function(value) {
+  return typeof value === 'number' &&
+    isFinite(value) &&
+    Math.floor(value) === value;
+};
+
+
+var skymilesNumberStatus = ['passes', 'too long', 'too short', 'invalid skymiles number', 'not a number'];
+
+function initValidate() {
+  $('#skymiles-number-enter').on('submit',function(event){
+    event.preventDefault();
+    var skymilesNumber = $('#skymiles-num').val();
+
+    var checkNumber = validateDeltaSkyMilesNumber(skymilesNumber);
+    $('#result').html(skymilesNumberStatus[checkNumber]);
+    //$('#result').html(checkNumber);
+  });
+}
+
+function validateDeltaSkyMilesNumber(sknum) {
+    var smn = sknum;
+    var integerCheck = 0,
+        smnStatus = 4,
+        smn01;
+
+    var getSingleDigit = function(x) {
+      if (x > 9) {
+        var a,
+            b;
+
+        a = x.toString();
+        b = parseInt(a.substring(0, 1)) + parseInt(a.substring(1, 2));
+
+        return b;
+      }
+
+      else
+        return parseInt(x);
+    };
+
+    var regex=/^[0-9]+$/;
+    if (sknum.match(regex)) {
+        integerCheck = 1;
+    }
+
+    if(integerCheck > 0) {
+      if(smn.length < 10) {
+        smnStatus = 2;
+      }
+      else {
+        smn01 = smn.substring(0, 1) * 2;
+        smn02 = parseInt(smn.substring(1, 2));
+        smn03 = smn.substring(2, 3) * 2;
+        smn04 = parseInt(smn.substring(3, 4));
+        smn05 = smn.substring(4, 5) * 2;
+        smn06 = parseInt(smn.substring(5, 6));
+        smn07 = smn.substring(6, 7) * 2;
+        smn08 = parseInt(smn.substring(7, 8));
+        smn09 = smn.substring(8, 9) * 2;
+        chkDigit = parseInt(smn.substring(9, 10));
+
+        smn01 = getSingleDigit(smn01);
+        smn03 = getSingleDigit(smn03);
+        smn05 = getSingleDigit(smn05);
+        smn07 = getSingleDigit(smn07);
+        smn09 = getSingleDigit(smn09);
+
+        intOdds = smn01 + smn03 + smn05 + smn07 + smn09;
+        intEvens = smn02 + smn04 + smn06 + smn08;
+
+        intRemainder = (intOdds + intEvens) % 10;
+
+        if ((intRemainder == 0) && (chkDigit == 0)) { smnStatus = 0; }
+        else if ((10 - intRemainder) == chkDigit) { smnStatus = 0; }
+        else { smnStatus = 3; }
+      }
+
+    }
+
+    else {
+      smnStatus = 4;
+    }
+
+    return smnStatus;
+}
+$(document).ready(function(){
+  initValidate();
+});
+
+</script>
+
+</html>
