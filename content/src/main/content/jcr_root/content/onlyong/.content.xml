@@ -227,6 +227,7 @@
                 OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
             <DELTA
                 jcr:primaryType="nt:unstructured"
+                DELTA25="/content/onlyong/promo_landing"
                 DELTA5K="/content/onlyong/promo_landing"
                 DELTANOMILES="/content/onlyong/promo_landing"/>
             <MCCORD
@@ -246,6 +247,9 @@
             <UTILITY
                 jcr:primaryType="nt:unstructured"
                 UTILITYCHOICE="/content/gre/visa_offer"/>
+            <DELTA
+                jcr:primaryType="nt:unstructured"
+                DELTA25="/content/gre/promo_landing"/>
         </gre>
     </promotions>
     <faq/>
