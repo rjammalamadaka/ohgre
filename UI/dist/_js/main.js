@@ -188,12 +188,31 @@ var ohio_ng = {
 		var slides = $('#home-hero-carousel .slide');
 		var pagerCtrls = $('#slide-pager .pager-ctrl');
 
-		var currentSlideIndex = 0;
+		var numSlides = slides.length,
+				currentSlideIndex = 0,
+				prevSlideIndex;
 
 		pagerCtrls.on('click',function(){
 			prevSlideIndex = currentSlideIndex;
 			currentSlideIndex = pagerCtrls.index(this);
+			moveCarousel();
+			
+			clearInterval(switching);
+			switching = setInterval(function() {getNextSlide(currentSlideIndex)}, interval);
+		});
 
+		function getNextSlide(x) {
+			prevSlideIndex = currentSlideIndex;
+
+			if((x + 1) < numSlides) {
+				currentSlideIndex = x + 1;
+			}
+			else { currentSlideIndex = 0; }
+
+			moveCarousel();
+		}
+
+		function moveCarousel() {
 			if (prevSlideIndex !== currentSlideIndex) {
 				slides.eq(prevSlideIndex).fadeOut();
 				slides.eq(currentSlideIndex).fadeIn();
@@ -201,8 +220,10 @@ var ohio_ng = {
 				pagerCtrls.removeClass();
 				pagerCtrls.eq(currentSlideIndex).addClass('cycle-pager-active');
 			}
+		}
 
-		});
+		var interval = 1500;
+		var switching = setInterval(function() {getNextSlide(currentSlideIndex)}, interval);
 	}
 }
 $(document).ready(function(){
