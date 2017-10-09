@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/termsandconditions/Ohio"
         dam:assetState="processed"
         dam:relativePath="ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
-        jcr:lastModified="{Date}2017-10-04T00:22:19.929-04:00"
+        jcr:lastModified="{Date}2017-10-08T18:20:55.095-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -17,17 +17,17 @@
             dam:numPages="{Long}5"
             dam:Physicalheightininches="{Decimal}11.0"
             dam:Physicalwidthininches="{Decimal}8.5"
-            dam:sha1="43d2ac57f0109c6c73586b731e150d85bcd4c9ab"
+            dam:sha1="f68ce15328366c334ec2c98fffc1fedd6b00ee95"
             dam:size="{Long}361547"
             dc:format="application/pdf"
             dc:modified="{Date}2017-07-30T08:43:55.330+05:30"
-            jcr:lastModified="{Date}2017-10-04T00:22:16.604-04:00"
+            jcr:lastModified="{Date}2017-10-08T18:20:54.547-04:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
-            xmp:CreateDate="{Date}2016-10-31T13:09:55.000-04:00"
-            xmp:MetadataDate="{Date}2017-10-04T00:22:17.000-04:00"
-            xmp:ModifyDate="{Date}2017-10-04T00:22:17.000-04:00"
+            xmp:CreateDate="{Date}2016-10-31T22:39:55.000+05:30"
+            xmp:MetadataDate="{Date}2017-10-08T07:26:12.000+05:30"
+            xmp:ModifyDate="{Date}2017-10-08T07:26:12.000+05:30"
             xmpMM:DocumentID="uuid:A195A9B7-44A0-4A7A-8841-5D61B0D55E22"
             xmpMM:InstanceID="uuid:A195A9B7-44A0-4A7A-8841-5D61B0D55E22"/>
         <related jcr:primaryType="nt:unstructured"/>
