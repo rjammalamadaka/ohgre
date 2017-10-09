@@ -168,22 +168,24 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollRequest.setAuthorizationLevel("3");
 			enrollment.setAuthorizationLevel("3");
 
+			Calendar currentCalendar = Calendar.getInstance();
+			java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
+			enrollment.setCreatedDate(todayDate);
 
-
-
+			enrollment.setCustID("");
+			int generatedKey=enrollmentDaoService.insertEnrollment(enrollment);
+			enrollRequest.setEnrollConfirmationNumber(Integer.toString(generatedKey));
 			EnrollCustomer parameters=new EnrollCustomer();
 			parameters.setEnrollRequest(enrollRequest);
 			EnrollCustomerResponse enrollCustomerResponse=quoteServiceSoap.enrollCustomer(parameters);
 			EnrollCustomerResult enrollCustomerResult=enrollCustomerResponse.getEnrollCustomerResult();
 
 			enrollment.setCustID(enrollCustomerResult.getCustID());
-			Calendar currentCalendar = Calendar.getInstance();
-			java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
-			enrollment.setCreatedDate(todayDate);
-			enrollmentDaoService.insertEnrollment(enrollment);
 
+			enrollmentDaoService.updateEnrollement(enrollment,generatedKey);
 			String jsonString = mapper.writeValueAsString(enrollCustomerResult);
 			obj.put("EnrollCustomerResult", jsonString);
+			obj.put("enrollId", generatedKey);
 			obj.put("status", enrollCustomerResult.getResponseStatus());
 
 			long endTime = System.currentTimeMillis();
