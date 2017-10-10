@@ -1,0 +1,25 @@
+   <div id="visa-customer-info" class="form" ng-show="reviewdisplayvisa">
+      <div class="desktop-flex-container">
+         <div class="form-element">
+             <img src="${properties.visaimagepath}"/>
+         </div>
+         <div class="form-element content-container">
+            <h3>${properties.visaofferheading}</h3>
+
+            <div>
+		${properties.offersubheading @ context = 'html'}
+            </div>
+
+            <div class="link-wrapper visible-md visible-lg visible-xl">
+               <a href="#" class="primary-button block mb-2" ng-click="continuedeltaskymiles()">Continue</a>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footnote" ng-show="reviewdisplayvisa">
+      <div class="link-wrapper visible-xs visible-sm">
+              <a href="#" class="primary-button inactive block" ng-click="continuedeltaskymiles()">Continue</a>
+      </div>
+      ${properties.offerterms @ context = 'html'}
+   </div>

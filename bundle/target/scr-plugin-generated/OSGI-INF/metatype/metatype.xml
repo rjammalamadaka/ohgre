@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/metatype">
     <OCD id="OHGRE Common Configuration" name="OHGRE Common Configuration Service" description="%OHGRE Common Configuration.description">
         <AD id="prime.endpoint.url" type="String" default="" name="Prime End Point Url" description="Prime End point url to communicate with prime"/>
+        <AD id="mysql.connection.url" type="String" default="" name="My SQL Connection URL" description="My SQL Connection URL with schema name"/>
+        <AD id="data.base.username" type="String" default="" name="Data Base Username" description="Data Base Username"/>
+        <AD id="data.base.password" type="String" default="" name="Data Base Password" description="Data Base Password"/>
     </OCD>
     <OCD id="com.macquarium.ong.CheckRAFEligibilityServlets" name="%com.macquarium.ong.CheckRAFEligibilityServlets.name" description="%com.macquarium.ong.CheckRAFEligibilityServlets.description">
         <AD id="sling.servlet.paths" type="String" default="/bin/checkRafEligibility" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
@@ -30,6 +33,10 @@
         <AD id="sling.servlet.paths" type="String" default="/bin/getQuotes" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
         <AD id="sling.servlet.methods" type="String" default="GET" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
     </OCD>
+    <OCD id="com.macquarium.ong.MovingServlet" name="%com.macquarium.ong.MovingServlet.name" description="%com.macquarium.ong.MovingServlet.description">
+        <AD id="sling.servlet.paths" type="String" default="/bin/moving" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
+        <AD id="sling.servlet.methods" type="String" default="get" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
+    </OCD>
     <OCD id="com.macquarium.ong.SetProductDataServlet" name="%com.macquarium.ong.SetProductDataServlet.name" description="%com.macquarium.ong.SetProductDataServlet.description">
         <AD id="sling.servlet.paths" type="String" default="/bin/setProductData" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
         <AD id="sling.servlet.methods" type="String" default="POST" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
@@ -57,6 +64,9 @@
     </Designate>
     <Designate pid="com.macquarium.ong.GetQuotesServlets">
         <Object ocdref="com.macquarium.ong.GetQuotesServlets"/>
+    </Designate>
+    <Designate pid="com.macquarium.ong.MovingServlet">
+        <Object ocdref="com.macquarium.ong.MovingServlet"/>
     </Designate>
     <Designate pid="com.macquarium.ong.SetProductDataServlet">
         <Object ocdref="com.macquarium.ong.SetProductDataServlet"/>

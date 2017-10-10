@@ -19,8 +19,24 @@ var store = ohgre.store = function( key, value, options ) {
     return returnValue;
 };
 
+
+    function eraseCookieFromAllPaths(name) {
+    // This function will attempt to remove a cookie from all paths.
+    var pathBits = location.pathname.split('/');
+    var pathCurrent = ' path=';
+
+    // do a simple pathless delete first.
+    document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;';
+
+    for (var i = 0; i < pathBits.length; i++) {
+        pathCurrent += ((pathCurrent.substr(-1) != '/') ? '/' : '') + pathBits[i];
+        document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;' + pathCurrent + ';';
+    }
+}
+
     ohgre.removeStore=function(key){
               document.cookie = key+'=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        eraseCookieFromAllPaths(key);
     }
 
 

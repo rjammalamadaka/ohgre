@@ -1,19 +1,45 @@
-<section>
-    <div class="container">
-        <div class="email_signup">
-            <div class="row">
-                <div class="col-md-6"><h5> ${properties.description}</h5></div>
-                <div class="col-md-6">
-                    <form>
-                    <div class="col-md-7">
-                    <input type="text" name="email_address" value="" placeholder="Email Address">
-                    </div>
-                    <div class="col-md-5">
-                    <button class="accent-button">Sign up</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="popup-wrapper">
+		<div id="signup-form" class="window-wrapper with-border">
+	      <a href="#" id="close-window">X</a>
+			<div class="inner-window-content">
+				<span class="window-title align-left">Sign up for offers</span>
+				<p>
+					Please enter email address or mailing service address
+				</p>
+				<label>First Name<sup class="required">*</sup></label>
+				<input type="text" name="first-name" />
+				<label>Last Name<sup class="required">*</sup></label>
+				<input type="text" name="last-name" />
+				<label>Email</label>
+				<input type="text" name="email" />
+				<label>Street Address</label>
+				<input type="text" name="address-1" />
+				<input type="text" name="address-2" />
+				<div class="row address-fields">
+					<div class="col-md-6 col-sm-6">
+						<div class="input-group-wrapper">
+								<label for="billing-address-city">City</label>
+								<input type="text" name="billing-address-city" id="billing-address-city">
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2">
+						<div class="input-group-wrapper">
+								<label for="billing-address-state">State</label>
+								<input type="text" name="billing-address-state" value="OH" id="billing-address-state" />
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="input-group-wrapper">
+								<label for="billing-address-zip">Zip Code</label>
+								<input type="text" name="billing-address-zip" id="billing-address-zip" maxlength="5">
+						</div>
+					</div>
+				</div>
+				<div class="button-container">
+					<a href="#" class="primary-button inactive">cancel</a>
+					<a href="#" class="primary-button">Sign Up</a>
+				</div>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>

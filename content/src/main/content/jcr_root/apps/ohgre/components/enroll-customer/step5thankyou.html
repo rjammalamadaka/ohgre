@@ -1,10 +1,17 @@
 				<div class="form-wrapper inverted-checkbox confirmation-wrapper">
 					<div class="mobile-padding">
-   <h3 class="subhead-color">Confirmation Number #110242</h3>
+                        <h3 class="subhead-color">Confirmation Number # {{enrollId}}</h3>
 </div>
 <div class="box-with-border mb-2 mb-pdtop-0">
 
+    <!--  continuefromdeltaskymiles -->
+
 		${properties.confirmationcontent @ context='html'}
+
+        <p ng-show="deltaskymilesaccountnumberprovidelater">
+            ${properties.deltaconfirmationcontent @ context='html'}
+        </p>
+
 </div>
 <div class="desktop-flex-container confirmation-info">
    <div class="information-block box-with-border gray-box">
@@ -39,7 +46,7 @@
          </div>
          <div class="input-group-wrapper mt-3">
             <label class="checkbox">
-               <input type="checkbox" name="email-offers"  value="yes" checked disabled="disabled"/>
+               <input type="checkbox" name="email-offers"  ng-model="specialoffer" disabled="disabled"/>
             </label> 
             <span class="after-checkbox">${properties.thankyouacceptspecialoffer}</span>
          </div>

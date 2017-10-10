@@ -16,11 +16,16 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 
+import com.macquarium.ong.vo.Customer;
+
 @SlingServlet(paths="/bin/moving", methods = "get", metatype=true)
 public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet{
 	private static final long serialVersionUID = 1L;
 	@Reference
 	private CommonConfigService commonConfigService;
+
+	@Reference
+	private SignUpDaoService signUpDaoService;
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
@@ -30,7 +35,6 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		process(request,response);
 	}
-
 	private void process(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		JSONObject obj=new JSONObject();
 		Connection connection = null;
@@ -45,85 +49,59 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 			sb.append(str);
 		}
 		JSONObject jObj = null;
+		boolean result=false;
 
 		try {
 			jObj = new JSONObject(sb.toString());
-			Class.forName("com.mysql.jdbc.Driver");
-			Calendar currentCalendar = Calendar.getInstance();
 			Calendar onemonthcalendar = Calendar.getInstance();
 			onemonthcalendar.add(Calendar.MONTH, -1);
 			Calendar threemonthcalendar = Calendar.getInstance();
 			threemonthcalendar.add(Calendar.MONTH, -3);
-
-			java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
 			java.sql.Date movingOneMonthDate = new java.sql.Date(onemonthcalendar.getTime().getTime());
 			java.sql.Date movingThreeMonthDate = new java.sql.Date(threemonthcalendar.getTime().getTime());
 
+			Customer customer=new Customer();
+			customer.setType( getParameterInfo(jObj,"partner"));
+			customer.setFirstName(getParameterInfo(jObj,"firstname"));
+			customer.setLastName( getParameterInfo(jObj,"lastname"));
+			customer.setEmail(getParameterInfo(jObj,"email"));
+			customer.setPhoneNumber(getParameterInfo(jObj,"phone"));
+			customer.setContactViaPhone(getParameterInfo(jObj,"contactpermission"));
+			customer.setSource(getParameterInfo(jObj,"hearaboutus"));
 
-			connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
-			if (connection != null) {
-				obj.put("got connection","You made it, take control your database now!");
-				String query="insert into signup(type,created,first_name,last_name,email,phone_number,contact_via_phone,source,moving_date,address1,address2,city,state,zip,special_offers_optin)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-				PreparedStatement preparedStmt = connection.prepareStatement(query);
-				preparedStmt.setString(1, "");
-				preparedStmt.setDate(2, todayDate);
-				preparedStmt.setString(3, getParameterInfo(jObj,"firstname"));
-				preparedStmt.setString(4, getParameterInfo(jObj,"lastname"));
-				preparedStmt.setString(5, getParameterInfo(jObj,"email"));
-				preparedStmt.setString(6, getParameterInfo(jObj,"phone"));
-
-				String contactpermission=getParameterInfo(jObj,"contactpermission");
-				if(contactpermission.equalsIgnoreCase("yes")){
-					preparedStmt.setBoolean(7, true);
-				}else{
-					preparedStmt.setBoolean(7, false);
-				}
-
-				preparedStmt.setString(8, getParameterInfo(jObj,"hearaboutus"));
-
-				String expectedmovedate=getParameterInfo(jObj,"expectedmovedate");
-				if(expectedmovedate.equals("Less than a month") || expectedmovedate.equals("1-3 months")){
-					preparedStmt.setDate(9, movingOneMonthDate);
-				}else{
-					preparedStmt.setDate(9, movingThreeMonthDate);
-				}
-
-				preparedStmt.setString(10, getParameterInfo(jObj,"addressone"));
-				preparedStmt.setString(11, getParameterInfo(jObj,"addresstwo"));
-				preparedStmt.setString(12,  getParameterInfo(jObj,"addresscity"));
-				preparedStmt.setString(13, getParameterInfo(jObj,"addressstate"));
-				preparedStmt.setString(14, getParameterInfo(jObj,"addresszip"));
-				String sendemails=getParameterInfo(jObj,"sendemails");
-				if(sendemails.equals("true")){
-					preparedStmt.setBoolean(15,true) ;
-				}else{
-					preparedStmt.setBoolean(15,false );
-				}
-
-				boolean b=preparedStmt.execute();
-				resultCode="0";
-				resultMessage="success";
-			} else {
-				resultCode="1";
-				resultMessage="error";
+			String expectedmovedate=getParameterInfo(jObj,"expectedmovedate");
+			if(expectedmovedate.equals("Less than a month") || expectedmovedate.equals("1-3 months")){
+				customer.setMovingDate(movingOneMonthDate);
+			}else{
+				customer.setMovingDate(movingThreeMonthDate);
 			}
-		}catch(ClassNotFoundException e){
-			resultCode="1";
-			resultMessage=e.getMessage();
+			customer.setAddress1(getParameterInfo(jObj,"addressone"));
+			customer.setAddress2(getParameterInfo(jObj,"addresstwo"));
+			customer.setCity(getParameterInfo(jObj,"addresscity"));
+			customer.setState(getParameterInfo(jObj,"addressstate"));
+			customer.setZip(getParameterInfo(jObj,"addresszip"));
+			customer.setSpecialOffersOption(getParameterInfo(jObj,"sendemails"));
+			boolean customerExisted=signUpDaoService.isExistingCustomer(customer);
+			if(customerExisted){
+				result=signUpDaoService.updateCustomer(customer);
+			}else{
+				result = signUpDaoService.insertCustomer(customer);
+			}
+			obj.put("result", result);
+			resultCode="0";
+			resultMessage="success";
+
 		}catch (JSONException e) {
-			resultCode="1";
-			resultMessage=e.getMessage();
-		}catch (SQLException e) {
 			resultCode="1";
 			resultMessage=e.getMessage();
 		}finally{
 			try {
-				connection.close();
+				if(null !=connection)
+					connection.close();
 			} catch (SQLException e) {
 				resultMessage=e.getMessage();
 			}
 		}
-
 		try {
 			obj.put("resultCode", resultCode);
 			obj.put("resultMessage", resultMessage);

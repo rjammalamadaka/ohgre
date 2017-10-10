@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-30T12:58:00.986-05:00"
-        cq:lastModifiedBy="rebecka.wilson"
+        cq:lastModified="{Date}2017-10-04T17:55:39.161-04:00"
+        cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/mainpage"
         jcr:mixinTypes="[]"
         jcr:primaryType="cq:PageContent"
@@ -76,10 +76,11 @@
             <cardpromo_1485208887
                 jcr:created="{Date}2017-07-21T12:02:58.304+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-30T12:57:40.019-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:lastModified="{Date}2017-10-04T17:55:39.157-04:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/gre/moving"
                 buttontitle="Let's Get Moving"
                 description="Start, stop or transfer your existing natural gas service."
                 displayLink="true"
