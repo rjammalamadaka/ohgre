@@ -49,6 +49,7 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 			sb.append(str);
 		}
 		JSONObject jObj = null;
+		boolean result=false;
 
 		try {
 			jObj = new JSONObject(sb.toString());
@@ -80,8 +81,13 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 			customer.setState(getParameterInfo(jObj,"addressstate"));
 			customer.setZip(getParameterInfo(jObj,"addresszip"));
 			customer.setSpecialOffersOption(getParameterInfo(jObj,"sendemails"));
-			boolean b= signUpDaoService.insertCustomer(customer);
-			obj.put("result", b);
+			boolean customerExisted=signUpDaoService.isExistingCustomer(customer);
+			if(customerExisted){
+				result=signUpDaoService.updateCustomer(customer);
+			}else{
+				result = signUpDaoService.insertCustomer(customer);
+			}
+			obj.put("result", result);
 			resultCode="0";
 			resultMessage="success";
 
