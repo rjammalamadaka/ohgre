@@ -57,6 +57,11 @@
                                             hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
                                             hiddenHeaderEditingCSS="coral-RichText-hiddenHeader--editing"/>
                                     </table>
+                                    <backGroundColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/ohgre/components/colorpicker"
+                                        fieldLabel="Color Picker"
+                                        name="./backGroundColor"/>
                                 </rtePlugins>
                                 <uiSettings jcr:primaryType="nt:unstructured">
                                     <cui jcr:primaryType="nt:unstructured">

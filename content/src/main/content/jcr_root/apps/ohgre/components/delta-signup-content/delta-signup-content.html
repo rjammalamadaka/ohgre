@@ -1,0 +1,177 @@
+
+<section ng-controller="DeltaSignUpController">
+	<div class="container">
+		<div class="col-md-10 col-md-offset-1">
+			<div id="promo-page-wrapper">
+				<div class="form-wrapper active-form">
+   <div class="intro-wrapper">
+   
+      ${properties.header @ context='html'}
+
+   </div>
+   <form id="delta-signup-info" class="form mt-2 desktop-only">
+      <div class="desktop-flex-container">
+         <div class="two-vert-cols mr-2 desktop-only">
+            <div class="form-element full-width bg-white">
+               <div class="">
+                  <div class="form-area">
+                     <div class="accord-trigger">
+                        <h4>Ohio Natural Gas Account Information<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+                     </div>
+                     <div class="accord-container">
+                        <div class="input-group-wrapper">
+                           <label for="first-name">First Name<sup class="required">*</sup></label>
+                           <input type="text" name="first-name" value="">
+                           <span class="error-message">Message for error</span>
+                        </div>
+                        <div class="input-group-wrapper">
+                           <label for="last-name">Last Name<sup class="required">*</sup></label>
+                           <input type="text" name="last-name" value="">
+                           <span class="error-message">Message for error</span>
+                        </div>
+                        <div class="input-group-wrapper">
+                           <label for="email-address">Email<sup class="required">*</sup></label>
+                           <input type="text" name="email-address" value="john@doe.com">
+                           <span class="error-message">Message for error</span>
+                        </div>
+                        <div class="input-group-wrapper">
+                           <label for="phone-number">Phone Number</label>
+                           <input type="number" name="phone-number" value="">
+                           <span class="error-message">Message for error</span>
+                        </div>
+                        <div class="input-group-wrapper">
+                           <label>Email and Phone Number only to be used to contact you if we encounter an issue with the information you have provided.</label>
+                        </div>
+                     </div>
+
+                  <!-- end form area -->
+                  </div>
+               </div>
+            </div>
+            <!-- new element -->
+            <div class="form-element full-width bg-white">
+               <div class="">
+                  <div class="form-area">
+                     <div class="accord-trigger">
+                        <h4>Your Gas Utility Account Information</h4>
+                     </div>
+                     <div class="accord-container">
+                        <div class="input-group-wrapper">
+                           <label>Your Gas Utility</label>
+                           <div class="dropdown-container">
+                              <button class="dropdown-trigger"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+                              <div class="expanded-dropdown">
+                                   <ul class="dropdown-menu" role="menu">
+                                         <li role="menuitem" ng-repeat="x in ldcinfo">
+                                            <a href="#" class="select-option">
+                                            <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
+                                            </a>
+                                         </li>
+                                   </ul>
+                               </div>
+                           </div>
+                        </div>
+                     <!-- group -->
+                        <div class="input-group-wrapper">
+                           <div class="form-area-wrapper">
+                              <label for="account-number">Gas Provider Account Number</label>
+                              <div class="form-area multiple-input no-padding">
+                                   <div class="input-container"  ng-hide="ldc =='MIC'">
+                                      <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
+                                   </div>
+                                   <div class="input-container"  ng-hide="ldc =='MIC'">
+                                      <input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required>
+                                   </div>
+                                   <div class="input-container"  ng-hide="ldc =='MIC'">
+                                      <input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" required>
+                                   </div>
+                                   <div class="input-container" >
+                                      <input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" required>
+                                   </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div><!-- end accordion container -->
+                     <!-- group -->
+                  </div>
+               </div>
+            </div>
+            <!-- new element -->
+            <div class="form-element full-width bg-white">
+               <div class="">
+                  <div class="form-area">
+                     <div class="accord-trigger">
+                        <h4>Ohio Natural Gas Account Information<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+                     </div>
+                     <div class="accord-container">
+                        <div class="input-group-wrapper">
+                           <label>First Name</label>
+                           <input name="first-name" type="text" value="" />
+                        </div>
+                        <!-- group -->
+                        <div class="input-group-wrapper">
+                           <label>Last Name</label>
+                           <input name="last-name" type="text" value="" />
+                        </div>
+                        <!-- group -->
+                        <div class="input-group-wrapper">
+                           <label>Skymiles Number</label>
+                           <input name="skymiles-number" type="text" value="" />
+                           <a href="#" class="fs-11">Forgot your Skymiles Number?</a>
+                        </div>
+                        <!-- group -->
+                        <div class="input-group-wrapper">
+                           <button class="primary-button inactive">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end of column -->
+         </div>
+         <!-- new column element -->
+         <div class="two-vert-cols">
+            <div class="form-element full-width mb-3 switch-to desktop-only">
+               <div class="new-customer-container">
+                  <div class="form-area">
+                     <h4>Switch to Ohio Natural Gas (ONG) and start earning with Delta SkyMiles&reg;.</h4>
+                     <p>Ohio Natural Gas is excited to be a Delta SkyMiles partner and the only natural gas supplier in Ohio with whom you can earn miles from Delta just for paying your natural gas bill.
+                     </p>
+                     <h4 class="no-margin">HOW IT WORKS:</h4>
+                     <ul class="ul-margin">
+                        <li>
+                           Customers will now earn TWO miles for every dollar spent on their ONG supplier natural gas charges (excluding sales tax and one-time charges)!
+                        </li>
+                        <li>
+                           And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!
+                        </li>
+                     </ul>
+                     <a href="#">Frequently Asked Questions ></a>
+                     <a href="#">Program Terms &amp; Conditions ></a>
+                  </div>
+               </div>
+            </div>
+            <div class="form-element full-width no-border no-padding ">
+               <div class="card center">
+               	<div class="card-hero">
+               		<img src="_img/home/card_plans.jpg" alt="">
+               	</div>
+               	<div class="inner-content-wrapper highlighted-bg">
+               		<div class="inner-card-content">
+               			<h2 class="card-title">Not an Ohio Natural Gas Customer?</h2>
+               			<p>Not yet a customer, but want to sign up with Ohio Natural Gas to take advantage of this offer?</p>
+               			<button class="primary-button">view our plans</button>
+               		</div>
+               	</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </form>
+</div>
+				<!-- step-through -->
+			</div>
+		</div>
+		<!-- end container -->
+	</div>
+</section>

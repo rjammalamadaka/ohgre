@@ -11,6 +11,7 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
 
      $scope.viewplans = function(){
         var ldcCode=$('#fixed-plans-button').val();
+         if(ldcCode){
             getPromoGroups(promocode);
 
 			PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
@@ -37,6 +38,8 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
 
                  console.log("error");
              });
+
+         }
 
     }
       var getPromoGroups= function(promotionCode){

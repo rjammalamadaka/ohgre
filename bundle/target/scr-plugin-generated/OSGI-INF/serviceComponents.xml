@@ -7,6 +7,9 @@
         <property name="service.description" type="String" value="Common Settings for OHGRE site Components and Services"/>
         <property name="service.vendor" type="String" value="Reply"/>
         <property name="prime.endpoint.url" type="String" value=""/>
+        <property name="mysql.connection.url" type="String" value=""/>
+        <property name="data.base.username" type="String" value=""/>
+        <property name="data.base.password" type="String" value=""/>
         <property name="service.pid" value="OHGRE Common Configuration"/>
     </scr:component>
     <scr:component enabled="true" immediate="true" name="com.macquarium.ong.impl.filters.LoggingFilter">
@@ -85,6 +88,16 @@
         <property name="sling.servlet.paths" value="/bin/getQuotes"/>
         <property name="sling.servlet.methods" value="GET"/>
         <property name="service.pid" value="com.macquarium.ong.GetQuotesServlets"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.MovingServlet">
+        <implementation class="com.macquarium.ong.MovingServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/moving"/>
+        <property name="sling.servlet.methods" value="get"/>
+        <property name="service.pid" value="com.macquarium.ong.MovingServlet"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
     </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.SetProductDataServlet">

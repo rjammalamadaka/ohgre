@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-24T17:30:45.437-04:00"
+        cq:lastModified="{Date}2017-09-26T17:27:12.654-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
@@ -24,14 +24,13 @@
             <offerpromotionconten
                 jcr:created="{Date}2017-08-13T22:29:48.604+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-24T17:30:45.433-04:00"
+                jcr:lastModified="{Date}2017-09-26T17:27:12.651-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/offerpromotioncontent"
-                heading="Generic Promo code"
+                heading="Select your gas utility company to view your options"
                 imagepath="/content/dam/ohgre/raf/hero.jpg"
-                promoheadingline1="Heading 1"
-                promoheadingline2="Heading 2"
+                promoheadingline1="Select your gas utility company to view your options"
                 text="&lt;h4>Enroll online for a Lorem ipsum&lt;/h4>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. LoremipsLorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/faq.html&quot; title=&quot;FAQ&quot; target=&quot;_self&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/terms-of-use.html&quot; title=&quot;Terms And Conditions&quot; target=&quot;Target&quot;>Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true]"/>
         </content>

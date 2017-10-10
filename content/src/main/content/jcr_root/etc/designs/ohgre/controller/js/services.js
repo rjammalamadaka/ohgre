@@ -50,6 +50,15 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/moving";
 		return $http.post(url,angular.toJson(requestInfo),config);
     }
+    var sendRafEmail =function(requestInfo){
+		var url="/bin/sendRafEmail";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
+
+    var dsmEnroll =function(requestInfo){
+		var url="/bin/DSMEnrollment";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
     return {
         getQuotes:getQuotes,
         getPromoCodeInfo:getPromoCodeInfo,
@@ -58,7 +67,9 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
         getCustomerInfo:getCustomerInfo,
         checkRafEligibility:checkRafEligibility,
         enrollCustomer:enrollCustomer,
-        moving:moving
+        moving:moving,
+        sendRafEmail:sendRafEmail,
+        dsmEnroll:dsmEnroll
     }               
 }]);
 

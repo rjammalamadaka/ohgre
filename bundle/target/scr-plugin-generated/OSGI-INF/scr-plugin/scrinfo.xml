@@ -7,6 +7,9 @@
         <property name="service.description" type="String" value="Common Settings for OHGRE site Components and Services" private="false"/>
         <property name="service.vendor" type="String" value="Reply" private="false"/>
         <property name="prime.endpoint.url" type="String" value="" private="false"/>
+        <property name="mysql.connection.url" type="String" value="" private="false"/>
+        <property name="data.base.username" type="String" value="" private="false"/>
+        <property name="data.base.password" type="String" value="" private="false"/>
         <property name="service.pid" value="OHGRE Common Configuration" private="false"/>
     </scr:component>
     <scr:component enabled="true" immediate="true" name="com.macquarium.ong.impl.filters.LoggingFilter">
@@ -85,6 +88,16 @@
         <property name="sling.servlet.paths" value="/bin/getQuotes" private="false"/>
         <property name="sling.servlet.methods" value="GET" private="false"/>
         <property name="service.pid" value="com.macquarium.ong.GetQuotesServlets" private="false"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService" checked="true" strategy="event"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.MovingServlet">
+        <implementation class="com.macquarium.ong.MovingServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/moving" private="false"/>
+        <property name="sling.servlet.methods" value="get" private="false"/>
+        <property name="service.pid" value="com.macquarium.ong.MovingServlet" private="false"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService" checked="true" strategy="event"/>
     </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.SetProductDataServlet">

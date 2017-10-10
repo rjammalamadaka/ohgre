@@ -1,96 +1,94 @@
-			<div class="form-wrapper">
-                <form id="formfour" name="formfour" novalidate>
-				<div class="desktop-flex-container confirmation-info">
-   <div class="information-block box-with-border">
-      <div class="form-area">
-         <h4>Your Information</h4>
-
-
-           <label ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
-           <label ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
-
-
-         <strong>{{formatedacno}}</strong>
-         <div class="input-group-wrapper" ng-show="enrollReq.firstName">
-            <label>Name on Gas Utility Account</label>
-            <strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
-         </div>
-         <div class="input-group-wrapper" ng-show="businessName">
-                     <label>Company Name</label>
-                       <strong>{{enrollReq.businessName}} </strong> 
-          </div>
-         <div class="input-group-wrapper">
-            <label>Email</label>
-            <strong>{{enrollReq.emailAddress}}</strong>
-         </div>
-         <div class="input-group-wrapper">
-            <label>Phone Number</label>
-            <strong>{{enrollReq.phoneNumber}}</strong>
-         </div>
-         <div class="input-group-wrapper">
-            <label>How Did You Hear About us?</label>
-            <strong>{{enrollReq.CustLeadSourceCode}}</strong>
-         </div>
-         <div class="input-group-wrapper" ng-show="validPromocode">
-            <label>Friend's Referral Code</label>
-            <strong>{{enrollReq.RAFCode}}</strong>
-         </div>
-         <div class="input-group-wrapper mt-3">
-            <label class="checkbox"> 
-               <input type="checkbox" name="email-offers" value="yes" checked disabled="disabled" />
-            </label>
-            <span class="after-checkbox">${properties.acceptspecialoffer}</span>
-         </div>
-      </div>
-   </div>
-   <div class="confirmation-block">
-      <div class="box-with-border">
-         <div class="desktop-flex-container">
-            <div class="col-md-5 no-padding">
-               <h4>Service Address</h4>
-               <strong>{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
-            </div>
-            <div class="col-md-5 no-padding">
-               <h4>Billing Address</h4>
-               <strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
-            </div>
-         </div>
-         <hr />
-         <div class="input-group-wrapper mb-3">
-            <label class="checkbox">
-               <input type="checkbox" name="autorized-user" value="yes" checked disabled="disabled"/>
-            </label>
-            <span class="after-checkbox">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</span>
-         </div>
-         <div class="input-group-wrapper mb-2">
-            <label class="checkbox">
-               <input type="checkbox" name="terms-and-conditions" value="yes" checked disabled="disabled" />
-            </label>
-            <span class="after-checkbox">I have previously viewed and agreed to the terms and conditions of service.</span>
-         </div>
-         <hr />
-         <h4>Review and Authorize</h4>
-         <div class="input-group-wrapper mt-2">
-            <label class="checkbox">
-               <input type="checkbox" name="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
-            </label>
-               <span class="after-checkbox">${properties.reviewandauthorize}</span> <br>
-
-             <span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
-                  <span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span> 
-             </span>
-
-         </div>
-      </div>
-   </div>
-</div>
-
-<span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
-
-<div class="button-container">
-   <button class="primary-button next-button" ng-class="flag ? 'inactive' : ''" ng-click="reviewauthorizesubmit()">Submit Order</button>
-   <button class="primary-button prev-button" ng-click="gotoPreviousStep(3)">Previous</button>
-</div>
-				<!-- step-through -->
-                    </form>
+<div class="form-wrapper" >
+	<form id="formfour" name="formfour" ng-show="reviewdisplay" novalidate>
+		<div class="desktop-flex-container confirmation-info">
+			<div class="information-block box-with-border">
+				<div class="form-area">
+				<h4>Your Information</h4>
+				<label ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+				<label ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
+				<strong>{{formatedacno}}</strong>
+				<div class="input-group-wrapper" ng-show="enrollReq.firstName">
+				<label>Name on Gas Utility Account</label>
+				<strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
+				</div>
+				<div class="input-group-wrapper" ng-show="businessName">
+				<label>Company Name</label>
+				<strong>{{enrollReq.businessName}} </strong> 
+				</div>
+				<div class="input-group-wrapper">
+				<label>Email</label>
+				<strong>{{enrollReq.emailAddress}}</strong>
+				</div>
+				<div class="input-group-wrapper">
+				<label>Phone Number</label>
+				<strong>{{enrollReq.phoneNumber}}</strong>
+				</div>
+				<div class="input-group-wrapper">
+				<label>How Did You Hear About us?</label>
+				<strong>{{enrollReq.CustLeadSourceCode}}</strong>
+				</div>
+				<div class="input-group-wrapper" ng-show="validPromocode">
+				<label>Friend's Referral Code</label>
+				<strong>{{enrollReq.RAFCode}}</strong>
+				</div>
+				<div class="input-group-wrapper mt-3">
+				<label class="checkbox"> 
+				<input type="checkbox" name="email-offers" ng-model="specialoffer" disabled="disabled" />
+				</label>
+				<span class="after-checkbox">${properties.acceptspecialoffer}</span>
+				</div>
+				</div>
 			</div>
+			<div class="confirmation-block">
+				<div class="box-with-border">
+					<div class="desktop-flex-container">
+						<div class="col-md-5 no-padding">
+						<h4>Service Address</h4>
+						<strong>{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
+						</div>
+						<div class="col-md-5 no-padding">
+						<h4>Billing Address</h4>
+						<strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+						</div>
+					</div>
+					<hr />
+					<div class="input-group-wrapper mb-3">
+					<label class="checkbox">
+					<input type="checkbox" name="autorized-user" value="yes" checked disabled="disabled"/>
+					</label>
+					<span class="after-checkbox">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</span>
+					</div>
+					<div class="input-group-wrapper mb-2">
+					<label class="checkbox">
+					<input type="checkbox" name="terms-and-conditions" value="yes" checked disabled="disabled" />
+					</label>
+					<span class="after-checkbox">I have previously viewed and agreed to the terms and conditions of service.</span>
+					</div>
+					<hr />
+					<h4>Review and Authorize</h4>
+					<div class="input-group-wrapper mt-2">
+					<label class="checkbox">
+					<input type="checkbox" name="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
+					</label>
+					<span class="after-checkbox">${properties.reviewandauthorize}</span> <br>
+
+					<span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
+					<span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span> 
+					</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
+		<div class="button-container">
+			<button class="primary-button next-button" ng-class="flag ? 'inactive' : ''" ng-click="reviewauthorizesubmit1()">Submit Order</button>
+			<button class="primary-button prev-button" ng-click="gotoPreviousStep(3)">Previous</button>
+		</div>
+	<!-- step-through -->
+	</form>
+
+       <sly data-sly-include="step4deltaskymiles.html"></sly>
+      <sly data-sly-include="step4visa.html"></sly>
+      <sly data-sly-include="step4raf.html"></sly>
+
+</div>

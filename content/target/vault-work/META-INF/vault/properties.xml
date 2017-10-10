@@ -4,9 +4,9 @@
 <comment>ohgre Package</comment>
 <entry key="createdBy">avinash.dhannuri</entry>
 <entry key="name">ohgre-content</entry>
-<entry key="created">2017-09-22T00:11:43.129-0400</entry>
+<entry key="created">2017-09-27T14:40:01.438-0400</entry>
 <entry key="groupId">com.macquarium.ong</entry>
-<entry key="version">1.7.7-SNAPSHOT</entry>
+<entry key="version">1.8.1-SNAPSHOT</entry>
 <entry key="requiresRoot">false</entry>
 <entry key="group">ohgre</entry>
 <entry key="description">Maven Multimodule project for ohgre.</entry>

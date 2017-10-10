@@ -1,0 +1,24 @@
+   <div id="visa-customer-info" class="form" ng-show="reviewdisplayraf">
+      <div class="desktop-flex-container">
+         <div class="form-element">
+             <img src="${properties.rafimagepath}" />
+         </div>
+         <div class="form-element content-container">
+            <h3>${properties.rafofferheading}</h3>
+           <div>
+           ${properties.rafoffersubheading @ context = 'html'}
+           </div>
+            <div class="link-wrapper visible-md visible-lg visible-xl">
+               <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
+               <a href="#" class="primary-button inactive block" ng-click="reviewauthorizesubmit()">NO THANKS, I’M NOT INTERESTED</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footnote" ng-show="reviewdisplayraf">
+      <div class="link-wrapper visible-xs visible-sm">
+         <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
+         <a href="#" class="primary-button inactive block" ng-click="reviewauthorizesubmit()">NO THANKS, I’M NOT INTERESTED</a>
+      </div>
+     ${properties.rafofferterms @ context = 'html'}
+   </div>

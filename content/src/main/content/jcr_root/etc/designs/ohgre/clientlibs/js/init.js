@@ -22,6 +22,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 		$rootScope.hashParams[param[0]]=param[1];
     }
 
+
+
     $rootScope.cardpromobuttonclick =function(url){
 		location.href=url+'.html'
     }
@@ -88,6 +90,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         if(ldcbutton && ldcbutton.length>0){
 			ldc=$(ldcbutton[0]).val();
         }
+
+        if($rootScope.hashParams && $rootScope.hashParams.ldc){
+			req.LDC=$rootScope.hashParams.ldc;
+        }
         if(ldc){
         	req.LDC=ldc;
             if(!req.LdcDesc){
@@ -95,12 +101,19 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
             }
         }else{
 
-            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
-				req.LDC=promoInfo.LDCList[0].LDCCode;
-                req.LdcDesc=promoInfo.LDCList[0].LDCDesc;
-            }else{
+            if(!req.LDC){
+                if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
+                    req.LDC=promoInfo.LDCList[0].LDCCode;
+                    req.LdcDesc=promoInfo.LDCList[0].LDCDesc;
+                }
+            }else if(req.LDC && promoInfo && promoInfo.LDCList){
+                for(var i=0;i<promoInfo.LDCList.length;i++){
+					if(req.LDC ==promoInfo.LDCList[i].LDCCode)
+                      req.LdcDesc= promoInfo.LDCList[i].LDCDesc;
+                }
 
             }
+
 
         }
 
@@ -169,7 +182,7 @@ $rootScope.currentYear=new Date().getFullYear();
 
 
     $rootScope.getNumberWithoutStar =function(QuoteDescription){
-         
+
          if(QuoteDescription){
 
              if(QuoteDescription.indexOf("CCF")>0){

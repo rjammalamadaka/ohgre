@@ -1,3 +1,4 @@
+
 ohgrePortal.directive('ngFocus', [function() {
   var FOCUS_CLASS = "ng-focused";
   return {
@@ -31,7 +32,6 @@ ohgrePortal.directive('ngVisited', [function() {
     }
   }
 }]);
-
 ohgrePortal.directive('restrictTo', function() {
     return {
         restrict: 'A',
@@ -40,14 +40,15 @@ ohgrePortal.directive('restrictTo', function() {
             var exclude = [8,13,9,46,38,40,37,39];
             element[0].addEventListener('keydown', function(event) {
 
-                if (event.keyCode < 48 || event.keyCode > 57) {
+                if (!(event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
                     if(exclude.indexOf(event.keyCode) < 0) {
-						                event.preventDefault();
+						event.preventDefault();
                     }
                 }
 
             });
 
-         }
+
+        }
     }
 });
