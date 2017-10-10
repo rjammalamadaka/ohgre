@@ -7353,6 +7353,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
     margin-bottom: .5rem;
   }
 }
+#delta-hero .slide-image {
+  background-image: url('../_img/home/delta-image.jpg');
+}
 #promo-page-wrapper label {
   font-weight: normal;
 }
@@ -10064,80 +10067,161 @@ input {
 .moving-banner .slide-image {
   background-image: url('../_img/home/card_moving.jpg');
 }
-#moving-container.form-confirmation .intro-wrapper h2 {
+#moving-container.form-confirmation .intro-wrapper h2,
+#delta-confirmation.form-confirmation .intro-wrapper h2 {
   color: #133f98;
   font-size: 2rem;
   margin: 0;
 }
-#moving-container.form-confirmation .intro-wrapper p {
+#moving-container.form-confirmation .intro-wrapper p,
+#delta-confirmation.form-confirmation .intro-wrapper p {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 1.6rem;
 }
-#moving-container label {
+#moving-container label,
+#delta-confirmation label {
   font-weight: normal;
 }
-#moving-container input {
+#moving-container input,
+#delta-confirmation input {
   margin-bottom: 2rem;
 }
-#moving-container h4 {
+#moving-container h4,
+#delta-confirmation h4 {
   font-size: 2.1rem;
   margin-bottom: 3rem;
 }
-#moving-container .intro-wrapper h4 {
+#moving-container .intro-wrapper h4,
+#delta-confirmation .intro-wrapper h4 {
   font-weight: normal;
   color: #0074bf;
   margin-bottom: 0;
   font-size: 1.8rem;
 }
-#moving-container .information-block {
+#moving-container .information-block,
+#delta-confirmation .information-block {
   background: #f4f4f4;
 }
-#moving-container .information-block input[type=checkbox][disabled]:before {
+#moving-container .information-block input[type=checkbox][disabled]:before,
+#delta-confirmation .information-block input[type=checkbox][disabled]:before {
   background-image: url(../_img/global/check_inverted.png);
 }
-#moving-container .information-block .after-checkbox {
+#moving-container .information-block .after-checkbox,
+#delta-confirmation .information-block .after-checkbox {
   font-size: 1.3rem;
 }
-#moving-container .information-block label {
+#moving-container .information-block label,
+#delta-confirmation .information-block label {
   font-size: 1.25rem;
 }
-#moving-container .information-block h4 {
+#moving-container .information-block h4,
+#delta-confirmation .information-block h4 {
   margin-bottom: 1rem;
 }
-#moving-container #moving-form h5 {
+#moving-container #moving-form h5,
+#delta-confirmation #moving-form h5 {
   margin: 2rem 0;
 }
-#moving-container .input-group-wrapper.small-radio {
+#moving-container .input-group-wrapper.small-radio,
+#delta-confirmation .input-group-wrapper.small-radio {
   margin-bottom: 2rem;
 }
-#moving-container .box-with-border {
+#moving-container .box-with-border,
+#delta-confirmation .box-with-border {
   padding: 2.5rem;
 }
-#moving-container .box-with-border h5 {
+#moving-container .box-with-border h5,
+#delta-confirmation .box-with-border h5 {
   margin: 0 0 1rem;
 }
-#moving-container .box-with-border p {
+#moving-container .box-with-border p,
+#delta-confirmation .box-with-border p {
   line-height: 2;
 }
 @media (min-width: 992px) {
-  #moving-container .box-with-border {
+  #moving-container .box-with-border,
+  #delta-confirmation .box-with-border {
     width: 50%;
     height: auto;
     margin-right: 2.5rem;
   }
 }
-#moving-container .box-with-border:last-child {
+#moving-container .box-with-border:last-child,
+#delta-confirmation .box-with-border:last-child {
   margin-right: 0;
 }
-#moving-container .box-with-border .form-element {
+#moving-container .box-with-border .form-element,
+#delta-confirmation .box-with-border .form-element {
   width: 100%;
 }
 #moving-container .box-with-border .form-area h1,
+#delta-confirmation .box-with-border .form-area h1,
 #moving-container .box-with-border .form-area h2,
+#delta-confirmation .box-with-border .form-area h2,
 #moving-container .box-with-border .form-area h3,
+#delta-confirmation .box-with-border .form-area h3,
 #moving-container .box-with-border .form-area h4,
+#delta-confirmation .box-with-border .form-area h4,
 #moving-container .box-with-border .form-area h5,
-#moving-container .box-with-border .form-area h6 {
+#delta-confirmation .box-with-border .form-area h5,
+#moving-container .box-with-border .form-area h6,
+#delta-confirmation .box-with-border .form-area h6 {
   font-family: 'Roboto Slab', serif;
+}
+ul.info-links {
+  list-style: none;
+}
+ul.info-links li {
+  margin: 0 0 .5rem;
+}
+#delta-confirmation h4 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.7rem;
+}
+#delta-confirmation .info-block-wrapper {
+  margin-right: 2.5rem;
+  width: 50%;
+}
+#delta-confirmation p.footnote {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 3rem 0 0;
+}
+#delta-confirmation .box-with-border {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+#delta-confirmation .box-with-border h5 {
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+}
+#delta-confirmation .box-with-border li,
+#delta-confirmation .box-with-border h5 {
+  font-size: 1.3rem;
+}
+#delta-confirmation .box-with-border p,
+#delta-confirmation .box-with-border li {
+  line-height: 1.8;
+}
+#delta-confirmation .box-with-border .info-links {
+  margin-left: 0;
+  margin-top: 4rem;
+  padding-left: 0;
+}
+#delta-confirmation .information-block {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  width: 100%;
+}
+#delta-confirmation .information-block:last-child {
+  margin-bottom: 0;
+}
+#delta-confirmation .desktop-flex-container > div:last-child {
+  position: relative;
+}
+#delta-confirmation .desktop-flex-container > div:last-child .primary-button {
+  bottom: 0;
+  position: absolute;
 }
