@@ -16,7 +16,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                  var date = new Date($scope.promotion.PromotionExpiratonDate),
                      locale = "en-us",
                      month = date.toLocaleString(locale, { month: "long" });
-                 $scope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
+                 $rootScope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
 
                  if($rootScope.promotion.PromotionExpired =="Y"){
                                     location.href=$rootScope.homeUrl+"/backuppromo.html";
@@ -68,7 +68,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                 var date = new Date($scope.promotion.PromotionExpiratonDate),
                 locale = "en-us",
                 month = date.toLocaleString(locale, { month: "long" });
-                $scope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
+                $rootScope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
                 $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
                $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
 
