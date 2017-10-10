@@ -6,7 +6,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     $scope.showgiftcardmessage=false;
     $scope.primeErrorMessage=null;
     $scope.reviewdisplay=true;
-
+	$scope.showpromocodeconfirmation=false;
+    $scope.deltaskymilesaccountnumberprovidelater=false;
     $scope.sendRafEmailReq={};
 
     $scope.dsmEnrollReq={};
@@ -168,8 +169,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         var req={};
         req.AccountNumber=accountnumber;
 		req.LDC=$rootScope.product.LDC;
+           jQuery('#popup-spinner-wrap').show();
        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
             console.log(data);
+           jQuery('#popup-spinner-wrap').hide();
              if(data){
                  $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
                   updateenrollrequestobj($rootScope.customerInfo);
@@ -177,6 +180,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                      console.log($rootScope.customerInfo); 
                      $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
                       $rootScope.showexistingcustomer=true;
+                     $rootScope.gbplandisplay=false;
 
                      if($rootScope.product.customerTypeCode =="NEW"){
                          $('#popupalternate').addClass('show-popup');
@@ -201,6 +205,18 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                      }else{
 
                      	$('#popupconfirm').addClass('show-popup');
+                     }
+
+                     if($rootScope.customerInfo.productCode =="COK" || $rootScope.customerInfo.productCode=="COJ"){
+
+                         var pricingDesc= $rootScope.customerInfo.pricingDesc;
+
+ 							var pricingDescArray=pricingDesc.split('Term');
+                         if(pricingDescArray.length>0){
+                         	$rootScope.gbplandisplay=true;
+                            $rootScope.gbplandescription=pricingDesc.split('Term')[0].trim();
+                         }
+
                      }
                      // need to work on RateClassCode
                    /*  $('.active-form').removeClass('active-form');
@@ -234,7 +250,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
             */
 		 }).error(function (data,status, headers, config){
-
+			jQuery('#popup-spinner-wrap').hide();
              console.log("error");
          });
 
@@ -420,7 +436,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     }
 
-    $scope.continuedeltaskymiles =function(){
+    $scope.continuedeltaskymiles =function(from){
+
+        if(from =="fromdelta"){
+			$scope.deltaskymilesaccountnumberprovidelater=true;
+        }
 
         $scope.continuefromdeltaskymiles=true;
 		 if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising  =="Y"){
@@ -456,12 +476,16 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 				$scope.showgiftcardmessage=false;
                 $scope.showgiftcardmessageconfirmation=true;
             }
-
+			jQuery('#popup-spinner-wrap').show();
             PrimeService.enrollCustomer($scope.enrollReq).success(function(data, status, headers, config){
                 console.log(data);
                  $scope.flag=false;
+                jQuery('#popup-spinner-wrap').hide();
                 if(data){
                    var enrollCustomerResult = JSON.parse(data.EnrollCustomerResult);
+                    if(data.enrollId){
+						$scope.enrollId=data.enrollId;
+                    }
                     console.log(enrollCustomerResult);
                     if(enrollCustomerResult.responseStatus =="1"){
                    		 $scope.primeErrorMessage=enrollCustomerResult.responseMessage;
@@ -472,6 +496,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                 }
 
             }).error(function(data, status, headers, config){
+                jQuery('#popup-spinner-wrap').hide();
                  $scope.flag=false;
                 console.log(data);
             });
@@ -479,6 +504,17 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }
     }
 
+    var displaypromocodeconfirmation =function(step,back){
+
+         if(step ==2 || step ==3){
+             if($scope.promotionInfo && $scope.promotionInfo.PromotionCode){
+				$scope.showpromocodeconfirmation=true;
+             }
+        }else{
+			$scope.showpromocodeconfirmation=false;
+        }
+
+    }
     var gotNextStep= function(step,back){
        // $scope.displaystepscontainer=true;
         if(!back)
@@ -496,6 +532,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }else{
 			 $('.steps-container > div:nth-child('+step+')').addClass('active-step').removeClass('step-complete');
         }
+
+        displaypromocodeconfirmation(step,back);
 
     }
 
@@ -639,31 +677,40 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     }
 
     $scope.dsmEnrollSubmit =function(){
-
-
+		$scope.invaliddeltaskymilesaccountnumber=false;
         $scope.deltaskymiles.submited = true;
-
+		 var checkNumber=-1;
         if($scope.deltaskymiles.$valid && !$scope.flag){
-        $scope.flag=true;
 
-        $scope.dsmEnrollReq.firstName=$scope.enrollReq.firstName;
-         $scope.dsmEnrollReq.lastName=$scope.enrollReq.lastName;
-         $scope.dsmEnrollReq.dsmfirstName=$scope.dsmFirstName;
-         $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
-         $scope.dsmEnrollReq.dsmEmail=$scope.enrollReq.emailAddress;
-         $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
-        // $scope.dsmEnrollReq.dsmPhone= $scope.enrollReq.phoneNumber;
-		$scope.dsmEnrollReq.LDCAccountNumber=$scope.enrollReq.account;
-        $scope.dsmEnrollReq.LDCName=$scope.enrollReq.LDC;
+       		checkNumber=validateDeltaSkyMilesNumber($scope.dsmAccountNumber);
+             if(checkNumber ==3){
+				$scope.invaliddeltaskymilesaccountnumber=true;
+             }else if(checkNumber==0){
+                 $scope.flag=true;
+                 $scope.dsmEnrollReq.firstName=$scope.enrollReq.firstName;
+                 $scope.dsmEnrollReq.lastName=$scope.enrollReq.lastName;
+                 $scope.dsmEnrollReq.dsmfirstName=$scope.dsmFirstName;
+                 $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
+                 $scope.dsmEnrollReq.dsmEmail=$scope.enrollReq.emailAddress;
+                 $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
+                 // $scope.dsmEnrollReq.dsmPhone= $scope.enrollReq.phoneNumber;
+                 $scope.dsmEnrollReq.LDCAccountNumber=$scope.enrollReq.account;
+                 $scope.dsmEnrollReq.LDCName=$scope.enrollReq.LDC;
+                 
+                 PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
+                     $scope.flag=false;
+                     console.log(data);
+                     if(data.message =="Success"){
+                     $scope.reviewauthorizesubmit();
+                     }
+                     
+                 }).error(function(data, status, headers, config){
+                     $scope.flag=false;
+                     console.log(data);
+                 });
 
-        PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
-           $scope.flag=false;
-			console.log(data);
+             }
 
-        }).error(function(data, status, headers, config){
-$scope.flag=false;
-                console.log(data);
-        });
         }
 
     }
@@ -759,6 +806,79 @@ $scope.flag=false;
 
    }
 
+   var validateDeltaSkyMilesNumber=function (sknum) {
+       var smn = sknum;
+       var integerCheck = 0,
+           smnStatus = 4,
+           smn01;
+       
+       var getSingleDigit = function(x) {
+           if (x > 9) {
+               var a,
+                   b;
+               
+               a = x.toString();
+               b = parseInt(a.substring(0, 1)) + parseInt(a.substring(1, 2));
+               
+               return b;
+           }
+           
+           else
+               return parseInt(x);
+       };
+       
+       var regex=/^[0-9]+$/;
+       if (sknum.match(regex)) {
+           integerCheck = 1;
+       }
+       
+       if(integerCheck > 0) {
+           if(smn.length < 10) {
+               smnStatus = 2;
+           }
+           else {
+               smn01 = smn.substring(0, 1) * 2;
+               smn02 = parseInt(smn.substring(1, 2));
+               smn03 = smn.substring(2, 3) * 2;
+               smn04 = parseInt(smn.substring(3, 4));
+               smn05 = smn.substring(4, 5) * 2;
+               smn06 = parseInt(smn.substring(5, 6));
+               smn07 = smn.substring(6, 7) * 2;
+               smn08 = parseInt(smn.substring(7, 8));
+               smn09 = smn.substring(8, 9) * 2;
+               chkDigit = parseInt(smn.substring(9, 10));
+               
+               smn01 = getSingleDigit(smn01);
+               smn03 = getSingleDigit(smn03);
+               smn05 = getSingleDigit(smn05);
+               smn07 = getSingleDigit(smn07);
+               smn09 = getSingleDigit(smn09);
+               
+               intOdds = smn01 + smn03 + smn05 + smn07 + smn09;
+               intEvens = smn02 + smn04 + smn06 + smn08;
+               
+               intRemainder = (intOdds + intEvens) % 10;
+               
+               if ((intRemainder == 0) && (chkDigit == 0)) { smnStatus = 0; }
+               else if ((10 - intRemainder) == chkDigit) { smnStatus = 0; }
+               else { smnStatus = 3; }
+           }
+           
+       }
+       
+       else {
+           smnStatus = 4;
+       }
+       
+       return smnStatus;
+   }
+
+
+   $scope.$watch('dsmAccountNumber', function (newValue, oldValue, scope) {
+       if(newValue && newValue.length>0){
+		$scope.invaliddeltaskymilesaccountnumber=false;
+       }
+	}, true);
 
 }]);
 
