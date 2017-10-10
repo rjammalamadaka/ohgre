@@ -1,5 +1,5 @@
 
-<section>
+<section ng-controller="DeltaSignUpController">
 	<div class="container">
 		<div class="col-md-10 col-md-offset-1">
 			<div id="promo-page-wrapper">
@@ -62,21 +62,11 @@
                               <button class="dropdown-trigger"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
                               <div class="expanded-dropdown">
                                    <ul class="dropdown-menu" role="menu">
-                                       <li role="menuitem">
-                                         <a href="#" class="select-option">
-                                           <span class="">company 1 name</span>
-                                         </a>
-                                       </li>
-                                       <li role="menuitem">
-                                         <a href="#" class="select-option">
-                                           <span class="">company 2 name</span>
-                                         </a>
-                                       </li>
-                                       <li role="menuitem">
-                                         <a href="#" class="select-option">
-                                           <span class="">company 3 name</span>
-                                         </a>
-                                       </li>
+                                         <li role="menuitem" ng-repeat="x in ldcinfo">
+                                            <a href="#" class="select-option">
+                                            <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
+                                            </a>
+                                         </li>
                                    </ul>
                                </div>
                            </div>
@@ -86,18 +76,18 @@
                            <div class="form-area-wrapper">
                               <label for="account-number">Gas Provider Account Number</label>
                               <div class="form-area multiple-input no-padding">
-                                    <div class="input-container" data-size="10">
-                                       <input type="text" name="accountnumber[]" maxlength="10" data-required="true">
-                                    </div>
-                                    <div class="input-container" data-size="5">
-                                       <input type="text" name="accountnumber[]" maxlength="5" data-required="true">
-                                    </div>
-                                    <div class="input-container" data-size="3">
-                                       <input type="text" name="accountnumber[]" maxlength="3" data-required="true">
-                                    </div>
-                                    <div class="input-container" data-size="4">
-                                       <input type="text" name="accountnumber[]" maxlength="4" value="0000" disabled="disabled">
-                                    </div>
+                                   <div class="input-container"  ng-hide="ldc =='MIC'">
+                                      <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
+                                   </div>
+                                   <div class="input-container"  ng-hide="ldc =='MIC'">
+                                      <input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required>
+                                   </div>
+                                   <div class="input-container"  ng-hide="ldc =='MIC'">
+                                      <input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" required>
+                                   </div>
+                                   <div class="input-container" >
+                                      <input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" required>
+                                   </div>
                               </div>
                            </div>
                         </div>

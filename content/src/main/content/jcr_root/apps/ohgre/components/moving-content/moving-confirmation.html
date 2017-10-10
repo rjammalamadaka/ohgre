@@ -3,9 +3,9 @@
 			<div class="col-md-10 col-md-offset-1">
 				<div id="moving-container" class="form-wrapper form-confirmation">
 					<div class="intro-wrapper">
-						<h2>Thank you for considering Ohio Natural Gas.</h2>
+						<h2>${properties.confirmationpageheader}</h2>
 						<p>
-							Your information has been submitted successfully!
+						${properties.confirmationpagesubhead}
 						</p>
 					</div>
 					<div class="desktop-flex-container">
@@ -40,7 +40,7 @@
 												<label class="checkbox">
 					                <input type="checkbox" name="email-offers" value="yes" checked="" disabled="disabled">
 					             </label>
-												<span class="after-checkbox">Yes, Ohio Natural Gas may send me information about special offers from Ohio Natural Gas and its marketing partners.</span>
+												<span class="after-checkbox">${properties.specialoffer}</span>
 											</div>
 										</div>
 
@@ -63,11 +63,7 @@
 							</div>
 						</div>
 						<div class="box-with-border">
-							<h5>Lorem ipsum dolor</h5>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit
-								amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								${properties.sidecontent @ context='html'}
 						</div>
 					</div>
 				</div>

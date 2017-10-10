@@ -2,9 +2,13 @@
 
 
             	<div class="selected-plan flex-container inverted-gray" ng-show="showcurrentplan">
-					<div class="selected-price">
+
+					<div class="selected-price" ng-show="!gbplandisplay">
 						<span class="price">{{customerInfo.pricePerUnit | currency:"$":3}}</span>
 						<small>per {{customerInfo.uom}}</small>
+					</div>
+					<div class="selected-price" ng-show="gbplandisplay">
+                        {{gbplandescription}}
 					</div>
 					<div class="selected-info">
 						<span class="selected-plan-tag">Current Plan</span>

@@ -64,8 +64,11 @@
 				<ul class="plan-detail">
 					<li>
 						<div class="flex-container">
-							<div class="plan-price gray">
+							<div class="plan-price gray" ng-show="!gbplandisplay">
                                 {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+							</div>
+                            <div class="plan-price gray" ng-show="gbplandisplay">
+                                {{gbplandescription}}
 							</div>
 							<div class="plan-info-wrapper">
 								<div class="plan-info">

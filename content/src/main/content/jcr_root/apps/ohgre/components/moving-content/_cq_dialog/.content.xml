@@ -161,6 +161,16 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="Special offer Text"
                                 name="./specialoffer"/>
+                            <confirmationpageheader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="confirmation Header"
+                                name="./confirmationpageheader"/>
+                            <confirmationpagesubhead
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="confirmation Header sub head"
+                                name="./confirmationpagesubhead"/>
                         </items>
                     </column>
                 </items>

@@ -1,19 +1,13 @@
    <div id="visa-customer-info" class="form" ng-show="reviewdisplayraf">
       <div class="desktop-flex-container">
          <div class="form-element">
-            <img src="_img/visa/image01.jpg" />
+             <img src="${properties.rafimagepath}" />
          </div>
          <div class="form-element content-container">
-            <h3>Want to earn $50 Visa Reward Cards?</h3>
-            <p>
-               You just enrolled on our lowest available 12-Month Fixed plan, congratulations.
-            </p>
-            <p>
-               You can share this rate with your friends through our Refer-a-Friend program, and for each friend who signs up with us, you’ll both receive a $50 Visa Reward Card.
-            </p>
-            <p class="fw-bold">
-               Hurry, the rate you received will only email available through June 30, 2017
-            </p>
+            <h3>${properties.rafofferheading}</h3>
+           <div>
+           ${properties.rafoffersubheading @ context = 'html'}
+           </div>
             <div class="link-wrapper visible-md visible-lg visible-xl">
                <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
                <a href="#" class="primary-button inactive block" ng-click="reviewauthorizesubmit()">NO THANKS, I’M NOT INTERESTED</a>
@@ -26,8 +20,5 @@
          <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
          <a href="#" class="primary-button inactive block" ng-click="reviewauthorizesubmit()">NO THANKS, I’M NOT INTERESTED</a>
       </div>
-      <p>
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. Lorem ipsLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit ametnibh porttitor tempor sit amet finibus mauris. Lorem ipsLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper.Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. Lorem ipsLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. Lorem ipsLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh
-         porttitor tempor sit amet finibus mauris. Lorem ips
-      </p>
+     ${properties.rafofferterms @ context = 'html'}
    </div>

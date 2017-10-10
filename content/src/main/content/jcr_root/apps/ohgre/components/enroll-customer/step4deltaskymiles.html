@@ -1,14 +1,14 @@
   <div class="intro-wrapper" ng-show="reviewdisplaydeltaskymiles">
-      <h3>Welcome to Ohio Natural Gas!</h3>
+      <h3>${properties.header}</h3>
       <p>
-         Switch to Ohio Natural Gas (ONG) and start earning with Delta SkyMiles®. Ohio Natural Gas is excited to be a Delta SkyMiles partner and the only Gas Supplier in Ohio with whom you can earn miles just for paying your natural gas bill.
-      </p>
+          ${properties.headerdesc @ context = 'html'}
+          </p>
    </div>
    <div id="delta-customer-info" class="form mt-2 desktop-only" ng-show="reviewdisplaydeltaskymiles">
       <div class="desktop-flex-container">
          <div class="div-container">
             <div class="box-with-border bg-primary-blue has-image">
-               <img src="_img/about/delta-image.jpg">
+                <img src="${properties.deltaimagepath}">
                <div class="box-inner">
                   <h3>Delta Skymiles Member Information<em class="block">Required*</em></h3>
                   <form name="deltaskymiles" novalidate>
@@ -26,12 +26,15 @@
                          </span>
 
                      <label for="first-name">Skymiles Account#*</label>
-                     <input type="text" name="dsmAccountNumber"  ng-model="dsmAccountNumber" ng-required="true" ng-focus ng-visited>
+                     <input type="text" name="dsmAccountNumber"  ng-model="dsmAccountNumber" ng-required="true" ng-pattern="/^\d+$/" ng-minlength=10 ng-maxlength=10 ng-focus ng-visited>
 
              			<span class="input-error-message" ng-show="(deltaskymiles.dsmAccountNumber.$visited && !deltaskymiles.dsmAccountNumber.$focused) || deltaskymiles.submited">
                          <span class="input-error-message" ng-show="deltaskymiles.dsmAccountNumber.$error.required">Account Number is required.</span> 
+                         <span class="input-error-message" ng-show="(deltaskymiles.dsmAccountNumber.$error.maxlength || deltaskymiles.dsmAccountNumber.$error.minlength) && !deltaskymiles.dsmAccountNumber.$error.pattern">Please enter valid Account Number</span> 
+                          <span class="input-error-message" ng-show="deltaskymiles.dsmAccountNumber.$error.pattern">Please enter valid Account Number.</span> 
+                         <span class="input-error-message" ng-show="invaliddeltaskymilesaccountnumber" >Please enter valid Account Number.</span>
                          </span>
-                     <a href="#">Forgot your Skymiles Number?</a>
+                     <a href="https://www.delta.com/custlogin/validateUser.action" target="_blank">Forgot your Skymiles Number?</a>
                      <button class="primary-button inactive no-padding" ng-click="dsmEnrollSubmit()">continue with skymiles number</button>
                   </form>
                </div>
@@ -42,21 +45,10 @@
             <div class="form-element">
                <div class="new-customer-container">
                   <div class="form-area">
-                     <h3>How It Works</h3>
-                     <ul class="ul-margin">
-                     <li>
-                        Customers will now earn TWO miles for every dollar spent on their ONG supplier natural  gas charges (excluding sales tax and one-time charges)!
-                     </li>
-                     <li>
-                        And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!
-                     </li>
-                     <li>
-                        It’s easy to start participating. Simply enter your ONG account and SkyMiles member information below. If you’d prefer to enroll by phone, call ONG (toll-free) at 1-888-466-4427 and mention that you would like to enroll in ONG’s Delta SkyMiles partnership program. Please have your SkyMiles  account number handy when you call.
-                     </li>
-                     </ul>
-                     <a href="#" class="block">Frequently Asked Questions &gt; </a>
-                     <a href="#" class="block">Program Terms &amp; Conditions &gt; </a>
-                     <a href="#" class="block">Join Delta Skymiles &gt; </a>
+
+         			${properties.howitworks @ context = 'html'}
+
+
                   </div>
                </div>
             </div>
@@ -64,11 +56,11 @@
             <div class="form-element">
                <div class="new-customer-container">
                   <div class="form-area">
-                     <h3>Don’t have your skymiles Number at the Moment?</h3>
-                     <p>
-                        If you do not have your Delta Skymiles Number with you, you may enter it later. You have until <strong>xx/xx/xxxx</strong> to get us your Skymiles number. Instructions on how they can give it to you later should display here.
-                     </p>
-                     <a href="#" class="primary-button" ng-click="continuedeltaskymiles()">I WILL PROVIDE MY SKYMILES NUMBER LATER</a>
+             <h3>${properties.donthaveskymilesnum}</h3>
+                     <div>
+                     ${properties.donthaveskymilesnumdesc @ context = 'html'}
+                         </div>
+                     <a href="#" class="primary-button" ng-click="continuedeltaskymiles('fromdelta')">I WILL PROVIDE MY SKYMILES NUMBER LATER</a>
                   </div>
                </div>
             </div>

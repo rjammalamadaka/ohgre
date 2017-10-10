@@ -61,7 +61,7 @@
                          </span>
                   </div>
                   <div class="input-group-wrapper">
-                     <label for="phone-number">Phone Number</label>
+                     <label for="phone-number">Phone Number<sup class="required" >*</sup></label>
                      <input type="tel" name="phonenumber" id="phonenumber" ng-blur="phoneformatchange(phoneNumber)" ng-model="phoneNumber" placeholder="(_ _ _) - _ _ _ - _ _ _ _" data-ng-pattern="/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/" ng-required="true" ng-focus ng-visited>
 
                          <span class="input-error-message" ng-show="(formtwo.phonenumber.$visited && !formtwo.phonenumber.$focused) || formtwo.submited">
@@ -211,7 +211,7 @@
                         <div class="col-md-2 col-sm-2">
                            <div class="input-group-wrapper">
                               <label for="billing-address-state">State<sup class="required">*</sup></label>
-                              <input type="text" name="billing-address-state" value="OH" id="billing-address-state" />
+                              <input type="text" name="billing-address-state" value="" id="billing-address-state" />
                            </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
