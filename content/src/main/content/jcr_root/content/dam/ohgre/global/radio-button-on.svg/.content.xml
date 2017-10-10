@@ -6,11 +6,11 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/global/radio-button-on.svg"
-        jcr:lastModified="{Date}2017-10-08T18:20:53.958-04:00"
+        jcr:lastModified="{Date}2017-10-09T23:50:41.985-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2017-10-08T18:20:49.878-04:00"
+            dam:extracted="{Date}2017-10-09T23:50:41.351-04:00"
             dam:sha1="badc95e0cf0d402f9f4701475ebec4013fc06565"
             dam:size="{Long}309"
             dc:format="image/svg+xml"

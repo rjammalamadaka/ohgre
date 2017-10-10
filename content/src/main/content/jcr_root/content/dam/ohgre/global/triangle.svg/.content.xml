@@ -6,11 +6,11 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/global/triangle.svg"
-        jcr:lastModified="{Date}2017-10-08T18:20:56.039-04:00"
+        jcr:lastModified="{Date}2017-10-09T23:50:45.210-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2017-10-08T18:20:55.972-04:00"
+            dam:extracted="{Date}2017-10-09T23:50:45.054-04:00"
             dam:sha1="fd67b9397141f957bca9af43d4f7c0edc202f7a3"
             dam:size="{Long}157"
             dc:format="image/svg+xml"

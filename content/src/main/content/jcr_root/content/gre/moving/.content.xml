@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-10-03T17:31:39.979-04:00"
+        cq:lastModified="{Date}2017-10-08T19:35:02.658-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/helppage"
         jcr:primaryType="cq:PageContent"
@@ -20,22 +20,24 @@
             <staticherobanner
                 jcr:created="{Date}2017-09-22T13:39:09.679-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-09-22T13:44:39.300-04:00"
+                jcr:lastModified="{Date}2017-10-08T19:27:54.294-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/staticherobanner"
-                description="Our rates and plans are designed to serve your needs."
+                description="Take our natural gas service with you. Our natural gas service plans are designed to serve your needs."
                 imagepath="/content/dam/ohgre/moving/moving_banner.png"
                 title="Moving?"/>
             <moving_content
                 jcr:created="{Date}2017-09-22T13:25:04.824-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-03T17:31:39.931-04:00"
+                jcr:lastModified="{Date}2017-10-08T19:35:02.650-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/moving-content"
-                header="&lt;h4>Moving can be stressful. That is why we make it easy to sign up for natural gas service.&lt;/h4>&#xd;&#xa;&lt;p>Before you move into your new residence, call your local Gas Utility to establish your service. Ask your realtor, apartment manager or previous owners who is the local Gas Utility for your new address.&lt;/p>&#xd;&#xa;"
-                sidecontent="&lt;h5>In Ohio, the choices are:&lt;/h5>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>DTE Gas Company&lt;/li>&#xd;&#xa;&lt;li>Consumers Energy&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Once you have your Gas Utility account number, you can sign up online with Grand Rapids Energy to lock in a fixed rate.&lt;/p>&#xd;&#xa;&lt;p>Natural gas consumers in the state of Michigan may choose their natural Gas Utility under the state&amp;#39;s customer choice program.&lt;/p>&#xd;&#xa;&lt;h5>WHAT IS ENERGY CHOICE?&lt;/h5>&#xd;&#xa;&lt;p>Just as you shop for other products and services, you may also be able to shop for an energy supplier. With choice, energy customers from large manufacturers to residential homeowners are able to shop for energy options from a diverse group of competitive suppliers certified by the Public Utilities Commission of Ohio (PUCO). As more suppliers are offering their services in your area, you have the opportunity to choose the company that supplies the generation of your electricity and supplies your natural gas.&lt;/p>&#xd;&#xa;&lt;p>For information on the status of natural gas competition in Ohio, visit&amp;nbsp;&lt;a href=&quot;/content/gre/moving.html#&quot;>the Public Utilities Commission of Ohio.&lt;/a>&lt;/p>&#xd;&#xa;"
+                confirmationpageheader="Thank you for considering Grand Rapids Energy."
+                confirmationpagesubhead="Your information has been submitted successfully!"
+                header="&lt;h4>Moving can be stressful. That is why we make it easy to sign up for natural gas service with Grand Rapids Energy.&lt;/h4>&#xd;&#xa;&lt;p>Before you move into your new residence, call your local Gas Utility to establish&amp;nbsp;Before you move into your new residence, call your local gas utility to establish your natural gas service. If you’re not sure who supplies the natural gas service for your new address, ask your realtor, apartment manager or previous owners.&amp;nbsp;&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                sidecontent="&lt;h5>In Ohio, the choices are:&lt;/h5>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>DTE Gas Company&lt;/li>&#xd;&#xa;&lt;li>Consumers Energy&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Once you have your Gas Utility account number, you can sign up online with Grand Rapids Energy to lock in a fixed rate.&lt;/p>&#xd;&#xa;&lt;p>Natural gas consumers in the state of Michigan may choose their natural Gas Utility under the state&amp;#39;s customer choice program.&lt;/p>&#xd;&#xa;&lt;h5>WHAT IS ENERGY CHOICE?&lt;/h5>&#xd;&#xa;&lt;p>In Michigan, it means you have the power to choose your natural gas supplier, which means you could get a lower rate!&lt;/p>&#xd;&#xa;&lt;p>Just as you shop for the products and services, you may also be able to shop for natural gas service. Energy customers from large manufacturers diverse group of competetive supliers certified by the XXXXXXXXX. As more supliers are offering their services in your area, you can choose the natural gas service company that gives you the best rates and natural gas service.&lt;/p>&#xd;&#xa;&lt;p>Compare rates with Grand Rapids Energy and go with the lowest to save on your natural gas bill!&lt;/p>&#xd;&#xa;&lt;p>For information on the status of natural gas competition in Michigan, visit &lt;a href=&quot;http://localhost:4502/mnt/override/apps/ohgre/components/moving-content/_cq_dialog.html/content/gre/moving/jcr:content/content/moving_content?page=true&amp;amp;resourceType=ohgre%2Fcomponents%2Fmoving-content#&quot; target=&quot;_blank&quot;>xxxxxxxxx&lt;/a>&lt;/p>&#xd;&#xa;"
                 specialoffer="Yes, Grand Rapids Energy may send me information about special offers from Grand Rapids Energy and its marketing partners."
                 textIsRich="[true,true]"/>
         </content>
