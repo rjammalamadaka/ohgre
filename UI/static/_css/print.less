@@ -1,5 +1,8 @@
 @import url(bootstrap.less);
 @import url(_globals.less);
+a[href]:after {
+   content: none !important;
+ }
 .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
@@ -167,6 +170,9 @@ html,body{
 }
 #primary-header{
 	padding		: 2rem 0 0 0;
+  position: absolute;
+  height: 100px;
+
 
 	#primary-navigation{
 		display		: block;
@@ -200,27 +206,81 @@ html,body{
 		font-family		: @secondary_font;
 		text-transform	: uppercase;
 		padding			: 0;
+    height: 0;
 	}
 	#primary-logo{
 		width		: auto;
-		height		: 4rem;
+		height		: 8rem;
 		margin-left	: 0;
+    -webkit-print-color-adjust: exact;
+    //background-color: #ccc !important;
 
 		img{
-			width: 10rem;
-			height: auto;
+      height: 150px;
+			//width: 150px;
+      // height: 38px;
+      // width: 77px;
 		}
 	}
 	#mobile-menu{
 		display: none !important;
 	}
 }
+.contact-us-container,
+#contact-us-container {
+  display: none !important;
+}
+.selected-plan {
+  width: 50%;
+
+  .selected-price {
+    background-color: #0074bf !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+
+    span, small {
+      color: white !important;
+    }
+  }
+}
+.gray-box {
+  background-color: #f1f3f4 !important;
+  -webkit-print-color-adjust: exact;
+}
+#step-through {
+  .confirmation-wrapper {
+    .button-container {
+        display: none;
+    }
+  }
+  h4 {
+    color: ##0074bf !important;
+  }
+  .information-block {
+    float: left;
+    margin-right: 4%;
+    width: 40%;
+  }
+  .confirmation-block {
+    float: left;
+    width: 55%;
+  }
+}
+.steps-container {
+  hr {
+    height: 1px;
+    border-width: 1px;
+  }
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 footer{
 	padding: 6rem 0 2rem 0;
 	margin-top: 6rem;
+  display: none !important;
 
 	.footer-logo{
-		display: block;
+		display: block !important;
 	}
 	#contact-info{
 		.info{
@@ -277,7 +337,7 @@ footer{
 	}
 }
 /* FULL WIDTH BANNER */
-.full-banner{	
+.full-banner{
 	padding: 2rem;
 
 	input{
@@ -300,13 +360,13 @@ footer{
 	height				: ~"calc( 100% - 125px)";
 	background			: none;
 	color				: @font_color;
-		
+
 	.card-hero{
 		width		: 100%;
 		display		: block;
 		position	: relative;
 		z-index		: 2;
-		
+
 		img{
 			height	: auto;
 		}
@@ -319,7 +379,7 @@ footer{
 		height	: 100%;
 		padding	: 1rem 2rem;
 	}
-		
+
 	.inner-card-content{
 		display	: block;
 		width	: 100%;
@@ -339,7 +399,7 @@ footer{
 		}
 		p{
 			font-size	: 1.5rem;
-			line-height	: 2.1rem; 
+			line-height	: 2.1rem;
 		}
 	}
 	a{
@@ -353,6 +413,7 @@ footer{
 			bottom			: 2rem;
 			left			: 2rem;
 		}
-		
+
 	}
 }
+/* CONFIRMATION */

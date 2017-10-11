@@ -416,8 +416,10 @@ footer{
 		input[type="text"] {
 			max-width: 33rem;
 		}
+		h2 {
+			font-size: 2.6rem;
+		}
 		p {
-			font-family: @primary_font;
 			margin-bottom: 3rem;
 
 			&:empty {
@@ -425,6 +427,7 @@ footer{
 				margin: 0;
 			}
 		}
+
 		.input-wrapper {
 	    //background: yellow;
 	    display: inline-table;
@@ -465,6 +468,21 @@ footer{
 		}
 	}
 }
+input.alt-radio1{
+		top: 1rem;
+
+		&:before {
+			background-image: url('../_img/global/radio-button-off-wht.svg');
+			top: 0;
+		}
+		&:checked {
+			//background-image: url('../_img/global/radio-button-on.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+}
+
 .parsys-column.cq-colctrl-lt0{
 	margin-bottom: 2rem;
 	padding: 0 1.5rem;
@@ -874,10 +892,12 @@ div[class^="col-"]{
 }
 @media (@screen-lg-min){
 	.slide-content{
-		width	: 60%;
+		//width	: 60%;
+		width: 53%;
 	}
 	.inner-slide-content {
-		width	: 53%;
+		//width: 53%;
+		width: 60%;
 	}
 	.slide-image {
 		padding-left	: 12%;
@@ -1216,8 +1236,10 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 
 		.fs-11{
+			font-family: @secondary_font;
+			font-size: 1.4rem;
+
 			p{
-				font-family: @secondary_font;
 
 				a {
 					color: #fff;
@@ -1288,7 +1310,7 @@ div[class^="cq-colctrl-lt1-"]{
 				margin-bottom	: 2rem;
 			}
 			p{
-				font-size	: 1.5rem;
+				font-size	: 1.6rem;
 				line-height	: 2.1rem;
 				font-family: @secondary_font;
 				font-weight: normal;
@@ -1997,9 +2019,12 @@ div[class^="cq-colctrl-lt1-"]{
 		color: #fff;
 	}
 	input[type=radio]{
+		color: #fff;
+		top: 0.8rem;
+
 		&:before {
-		    background-image: url(../_img/global/radio-button-off-wht.svg);
-		    background-repeat	: no-repeat;
+	    //background-image: url(../_img/global/radio-button-off-wht.svg);
+	    background-repeat	: no-repeat;
 			background-size		: cover;
 			height				: 100%;
 			width				: 100%;
@@ -2009,15 +2034,21 @@ div[class^="cq-colctrl-lt1-"]{
 			left				: 0;
 			z-index				: 1;
 		}
+		&:not(:checked) {
+			background-image: url(../_img/global/radio-button-off-wht.svg);
+
+			&:before {
+				background-image: none !important;
+			}
+		}
 		&:checked{
-			background-image: url(../_img/global/radio-button-on.svg);
+			background-image: url(../_img/global/radio-button-on.svg) !important;
 			background-repeat	: no-repeat;
 			background-size		: cover;
 			height				: 100%;
 			width				: 100%;
 			display				: inline-block;
 			position			: absolute;
-			top					: .4rem;
 			left				: 0;
 			z-index				: 1;
 		}
@@ -3278,7 +3309,39 @@ div.alt-col2,
 		}
 	}
 }
+/* WHAT IS CHOICE STYLES */
+.wiccontent {
+	.promo-wrapper {
+		>div[class^=col-]:last-child {
+			> div{
+				height: auto;
+			}
+		}
+	}
+}
 /* WHY CHOOSE US STYLES */
+.whychooseuscontent,
+.wiccontent {
+	.box-with-border {
+		b {
+			color: #444444;
+			font-size: 1.5rem;
+		}
+	}
+
+	.inner-card-content {
+		.fs-11{
+			font-family: @secondary_font;
+			font-size: 1.2rem !important;
+			p {
+				a {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+
+}
 .icon-wrapper{
 	display: -webkit-flex;
 	display: flex;
@@ -4626,5 +4689,7 @@ ul.info-links {
 		}
 	}
 
-
+}
+@media print footer {
+	display: none;
 }
