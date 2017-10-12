@@ -12,6 +12,7 @@
 @secondary_font	: 'Roboto', sans-serif;
 @accent_font	: 'Roboto Condensed', sans-serif;
 /* BREAK POINTS */
+@screen-xs-min : ~"min-width: 375px";
 @screen-sm-min : ~"min-width: 768px";
 @screen-md-min : ~"min-width: 992px";
 @screen-lg-min : ~"min-width: 1200px";
@@ -328,7 +329,8 @@ ol{
 
 			&:before {
 			    content: counter(item) "  ";
-			    counter-increment: item ;
+			    counter-increment: item;
+					font-weight: bold;
 			    position: absolute;
 			    top: 0.3rem;
     			 left: -1.4rem;
@@ -546,20 +548,22 @@ input[type=radio]{
 	}
 }
 
-.primary-button	{
+.primary-button,
+.accent-button	{
 	text-transform		: uppercase;
 	color				: #fff;
 	background-color	: @accent_color;
-	font-family 		: @secondary_font;
+	font-family 		: @accent_font;
 	box-shadow			: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
 	text-align			: center;
-	font-size			: 1.3rem;
+	font-size			: 1.45rem;
     line-height			: 4.5rem;
     border-radius		: 0.2rem;
     display				: inline-block;
     padding				: 0 5rem;
     border				: none;
     letter-spacing   : .1rem;
+		font-weight: 500;
 
     &:hover{
     	color	: #fff;
@@ -582,7 +586,6 @@ input[type=radio]{
 	}
 }
 .accent-button{
-	.primary-button;
 	background-color: #002c6e;
 }
 .padding-top-bottom-1{

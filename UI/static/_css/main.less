@@ -9,7 +9,7 @@
 	top					: 0;
 
 	+ div, + section {
-	    margin-top: 12rem;
+	    margin-top: 14rem;
 
 	    @media (@screen-md-min){
 	    	margin-top: 0;
@@ -245,6 +245,7 @@ footer{
 	margin-top: 1rem;
 	color: #fff;
 	font-family: @secondary_font;
+	clear: both;
 
 	@media (@screen-md-min){
 		margin-top: 0;
@@ -669,6 +670,11 @@ div[class^="col-"]{
 	}
 	#slide2 {
 		z-index: 1;
+	}
+	.inner-slide-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 }
 .cycle-slideshow{
@@ -1202,7 +1208,7 @@ div[class^="cq-colctrl-lt1-"]{
 
 	.card-title{
 		color		: @primary_color;
-		font-weight	: 300;
+		font-weight	: 500;
 		line-height: 3.5rem;
 	}
 	.dropdown-trigger{
@@ -1766,6 +1772,14 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 /* PLANS DETAILS STYLES */
+.plansdisplay {
+	.col-md-10:first-child {
+		>.row:first-child, .form-wrapper {
+			margin-left: 2rem;
+			margin-right: 2rem;
+		}
+	}
+}
 .plan-detail{
 	margin	: 0;
 	padding	: 0;
@@ -1794,6 +1808,14 @@ div[class^="cq-colctrl-lt1-"]{
 		&:last-child{
 			margin-bottom	: 0;
 		}
+		.plan-price,
+		.plan-info-wrapper{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+
 		.plan-price{
 			padding				: 8% 2rem;
 			width				: 40%;
@@ -1807,7 +1829,7 @@ div[class^="cq-colctrl-lt1-"]{
 
 			span{
 				display		: block;
-				font-size	: 1.1rem;
+				font-size	: 1.35rem;
 			}
 		}
 		.plan-info-wrapper{
@@ -1817,11 +1839,12 @@ div[class^="cq-colctrl-lt1-"]{
 			background-color	: #fff;
 			position: relative;
 
+
 			&:after{
 				position	: absolute;
 				right		: 1rem;
 				top			: 50%;
-				margin-top	: -3rem;
+				margin-top	: -2rem;
 				font-family	: "fontAwesome";
 				content		: "\f107";
 				font-size	: 3rem;
@@ -1829,6 +1852,10 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		.plan-info{
 			display: table;
+
+			b {
+				font-family: @secondary_font;
+			}
 
 			.inner-content{
 				display			: table-cell;
@@ -1916,7 +1943,7 @@ div[class^="cq-colctrl-lt1-"]{
 
 				span{
 					display		: block;
-					font-size	: 1.1rem;
+					font-size	: 1.35rem;
 				}
 			}
 			.plan-info-wrapper{
@@ -1935,16 +1962,24 @@ div[class^="cq-colctrl-lt1-"]{
 
 				h4{
 					font-weight: normal;
-					margin: 0 0 1rem 0;
+					margin: 0;
 					font-size: 2.8rem;
+					line-height: 1.3;
+
+					+b {
+						display: block;
+						margin-bottom: 1rem;
+					}
 				}
 				p,a{
 					display: block !important;
 				}
-				a{
+				a:not(.primary-button){
 					color: @primary_color;
+					font-family: @secondary_font;
 					text-transform: capitalize;
 				}
+
 			}
 			&.accord-expanded{
 				.plan-info-wrapper{
@@ -2861,6 +2896,9 @@ div.alt-col2,
 
 	sup {
 		color: inherit !important;
+		&.required{
+			color: @red !important;
+		}
 	}
 
 	&.alt-border1 {
@@ -3315,6 +3353,12 @@ div.alt-col2,
 		>div[class^=col-]:last-child {
 			> div{
 				height: auto;
+
+				b:first-child{
+						color: #444444;
+						font-size: 1.5rem;
+						margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -3323,19 +3367,22 @@ div.alt-col2,
 .whychooseuscontent,
 .wiccontent {
 	.box-with-border {
-		b {
+		h3 {
 			color: #444444;
 			font-size: 1.5rem;
+			margin-bottom: 0;
 		}
 	}
 
 	.inner-card-content {
 		.fs-11{
 			font-family: @secondary_font;
-			font-size: 1.2rem !important;
+			font-size: 1.4rem !important;
 			p {
 				a {
+					font-family: @secondary_font;
 					font-size: 1.2rem;
+					font-weight: 400;
 				}
 			}
 		}
@@ -3579,13 +3626,27 @@ input{
 		}
 		.after-checkbox{
 			float: left;
-			width: 85%;
+			width: auto;
+
+			@media (@screen-md-min){
+				width: 85%;
+			}
 
 			&:after{
 				content : "";
 				display: table;
 				clear: both;
 			}
+		}
+		.special-offer,
+		.after-checkbox {
+			label {
+				cursor: pointer;
+				margin: 0;
+			}
+		}
+		.address-fields {
+			margin-bottom: 3rem;
 		}
 		label{
 			font-weight: normal;
@@ -3619,6 +3680,12 @@ input{
 				padding: 10% 0;
 			}
 		}
+		.selected-price, .selected-info{
+			display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+		}
+
 	}
 }
 .terms-wrapper{
@@ -3686,6 +3753,9 @@ input{
 	border-bottom: .2rem solid @border_color;
 	color: #4a4a4a;
 	font-size: 1.8rem;
+	@media (@screen-md-min){
+		font-size: 2.2rem;
+	}
 }
 .selected-info{
 	padding: 3rem 2rem;
@@ -3700,6 +3770,11 @@ input{
 		font-weight: bold;
 		font-size: 2rem;
 	}
+}
+.selected-info{
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .account-number-container,.lastname-container{
 	width: 100%;
@@ -3722,6 +3797,9 @@ input{
 	h3,h4,h5{
 		font-family: @primary_font;
 	}
+	h4+.error-message {
+		margin-top: -1rem !important;
+	}
 	.two-vert-cols{
 		width: 100%;
 
@@ -3740,6 +3818,10 @@ input{
 		.box-with-border{
 			@media (@screen-md-min){
 				margin-bottom: 0 !important;
+			}
+
+			&.gray-box {
+				padding: 1.5rem;
 			}
 		}
 	}
@@ -3774,7 +3856,7 @@ input{
 		h5{
 			font-size: 1.8rem;
 			@media (@screen-md-min){
-				font-size: 2rem;
+				font-size: 2.2rem;
 			}
 		}
 	}
@@ -3821,6 +3903,9 @@ input{
 	.zipcode-container{
 		// width: auto;
 	}
+}
+.required {
+	color: @red;
 }
 .error-message{
 	display: none;
@@ -3965,13 +4050,21 @@ input{
 		line-height: 2rem;
 		font-family: @secondary_font;
 		text-align: center;
-		font-size: 1rem;
+		font-size: 1.1rem;
+
+		@media (@screen-xs-min){
+			font-size: 1.2rem;
+		}
 
 		span{
 			padding: 0 0.8rem 0 1.3rem;
 			display: block;
 		}
-
+		&:last-child {
+			span{
+				padding-right: 0;
+			}
+		}
 		&:before{
 			content : "";
 			height: 1rem;
@@ -4095,7 +4188,11 @@ input{
 			padding: 1rem 0;
 
 			.plain {
+				font-weight: 600;
 				padding-right: 6rem;
+			}
+			.primary-button{
+				font-size:1.4rem;
 			}
 		}
 		.plan-button {
@@ -4229,6 +4326,7 @@ input{
 	color: #037bc1;
 	font-size: 1.6rem;
 	font-family: @primary_font;
+	font-weight: 500;
 
 	@media (@screen-md-min){
 		padding: 1.5rem 1rem;
@@ -4300,7 +4398,8 @@ input{
 		}
 	}
 	.after-scrollbox{
-		padding: 1rem 2rem 2rem 2rem;
+		padding: 0 2rem 2rem 2rem;
+		width: 100%;
 		@media (@screen-md-min){
 			padding: 1rem 2rem 0 2rem;
 		}
@@ -4331,8 +4430,9 @@ input{
 		@media (@screen-md-min){
 			background: none;
 			padding: 0;
-			margin-bottom: 0;
-			margin-top: 2rem;
+			// margin-bottom: 0;
+			// margin-top: 2rem;
+			margin: 2rem 0 0;
 		}
 
 		button{
@@ -4342,12 +4442,14 @@ input{
 			margin-bottom: 1rem;
 
 			&.prev-button{
-				background: none;
-				border: none;
-				color: #7d9db2;
-				font-weight: bold;
-				box-shadow: none;
-				padding: 0 1.5rem;
+				// background: none;
+				// border: none;
+				// color: #7d9db2;
+				// font-weight: bold;
+				// box-shadow: none;
+				// padding: 0 1.5rem;
+				color: #fff;
+				background-color: #9bb2c1;
 			}
 			&.next-button{
 				&.inactive{
@@ -4367,6 +4469,9 @@ input{
 				}
 			}
 		}
+	}
+	.form-element {
+		padding: 1.5rem 2rem;
 	}
 }
 .inner-window-content{
@@ -4393,6 +4498,7 @@ input{
 			 color: @secondary_color;
 			 padding: 0;
 			 margin-left: 0;
+			 font-weight: 600;
 		 }
 	}
 	.plan-detail{
@@ -4515,19 +4621,23 @@ input{
 		float: none;
 	}
 }
-#close-window{
+#close-window,
+.close-window{
 	position: absolute;
 	right: 2rem;
-	top: .5rem;
+	top: .7rem;
 	font-size: 2rem;
 	color: @font_color;
+	font-family: @accent_font;
+	transform:scale(1.5,1);
+	font-weight: 100;
 
 	@media (@screen-md-min){
 		top: 1.5rem;
 	}
 }
 /* MOVING STYLES */
-.moving-banner {
+.moving-banner{
 	.slide-image {
 		background-image: url('../_img/home/card_moving.jpg');
 	}
@@ -4692,4 +4802,9 @@ ul.info-links {
 }
 @media print footer {
 	display: none;
+}
+.cq-placeholder,
+.new.newpar {
+	height: 0 !important;
+	margin: 0 !important;
 }

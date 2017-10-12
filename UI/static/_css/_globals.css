@@ -341,7 +341,8 @@ ol.styled-numbers li {
 }
 ol.styled-numbers li:before {
   content: counter(item) "  ";
-  counter-increment: item ;
+  counter-increment: item;
+  font-weight: bold;
   position: absolute;
   top: 0.3rem;
   left: -1.4rem;
@@ -538,65 +539,35 @@ input[type=radio]:checked:before {
   width: calc(100% - 45px) !important;
   float: none !important;
 }
-.primary-button {
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #ff6008;
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
-  text-align: center;
-  font-size: 1.3rem;
-  line-height: 4.5rem;
-  border-radius: 0.2rem;
-  display: inline-block;
-  padding: 0 5rem;
-  border: none;
-  letter-spacing: .1rem;
-}
-.primary-button:hover {
-  color: #fff;
-  text-decoration: none;
-}
-.primary-button.inverted {
-  background-color: #fff;
-  border: 1px solid #ff6008;
-  color: #ff6008;
-}
-.primary-button.plain {
-  background-color: #fff;
-  color: #0075c2;
-  box-shadow: none;
-  text-align: left;
-  padding: 0 2rem 0 0;
-}
-.primary-button.inactive {
-  background-color: #9bb2c1;
-}
+.primary-button,
 .accent-button {
   text-transform: uppercase;
   color: #fff;
   background-color: #ff6008;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   line-height: 4.5rem;
   border-radius: 0.2rem;
   display: inline-block;
   padding: 0 5rem;
   border: none;
   letter-spacing: .1rem;
-  background-color: #002c6e;
+  font-weight: 500;
 }
+.primary-button:hover,
 .accent-button:hover {
   color: #fff;
   text-decoration: none;
 }
+.primary-button.inverted,
 .accent-button.inverted {
   background-color: #fff;
   border: 1px solid #ff6008;
   color: #ff6008;
 }
+.primary-button.plain,
 .accent-button.plain {
   background-color: #fff;
   color: #0075c2;
@@ -604,8 +575,12 @@ input[type=radio]:checked:before {
   text-align: left;
   padding: 0 2rem 0 0;
 }
+.primary-button.inactive,
 .accent-button.inactive {
   background-color: #9bb2c1;
+}
+.accent-button {
+  background-color: #002c6e;
 }
 .padding-top-bottom-1 {
   padding: 1rem 0;
