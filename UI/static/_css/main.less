@@ -2930,7 +2930,10 @@ div.alt-col2,
 		height: 100%;
 	}
 	button{
-		margin-top: 1.5rem;
+		&:not(.dropdown-trigger){
+			margin-top: 1.5rem;
+		}
+
 		width: 100%;
 		display: block;
 
@@ -3442,6 +3445,10 @@ div.alt-col2,
 			line-height: 1.5;
 		}
 
+		strong, b {
+			color: #000;
+		}
+
 		.checkmark-wrapper {
 			float: left;
 			width: 14%;
@@ -3495,8 +3502,8 @@ div.alt-col2,
 		margin: 0;
 	}
 	.account-number{
-		margin-bottom: 1rem;
 		display: block;
+
 	}
 }
 .align-radio{
@@ -3532,7 +3539,7 @@ div.alt-col2,
 	}
 	strong{
 		display: block;
-		margin-bottom: 1rem;
+		//margin-bottom: 1rem;
 	}
 }
 .confirmation-block{
@@ -3588,6 +3595,10 @@ div.alt-col2,
 }
 .intro-wrapper{
 	padding: 1rem;
+
+	p {
+		font-size: 1.5rem;
+	}
 
 	@media (@screen-md-min){
 		padding: 1rem 0;
@@ -3824,6 +3835,10 @@ input{
 .input-group-wrapper{
 	margin-bottom: 1rem;
 	overflow: hidden;
+
+	strong {
+		color: #000;
+	}
 }
 .form-element,.form-element-small{
 	padding: 1rem;
@@ -3930,6 +3945,10 @@ input{
 		display: -webkit-flex;
 		display: flex;
 		justify-content: flex-start;
+
+		.input-container {
+			margin-bottom: 0;
+		}
 	}
 	.account-number-container{
 		// width: 30%;
@@ -4185,6 +4204,7 @@ input{
 	left: 0;
 	z-index: 10000000;
 	display: none;
+	font-size: 1.6rem;
 
 	&.show-popup{
 		display: block;
@@ -4223,6 +4243,56 @@ input{
 			animation: spin 2s linear infinite;
 		}
 	}
+	&#popupalternate {
+		.window-title,
+		tr > td:first-child {
+			padding-left: 0;
+		}
+		.plan-detail {
+			.primary-button {
+				margin: 3rem 0 1rem 0;
+			}
+		}
+		.window-wrapper{
+			padding-top: 0;
+			padding-bottom: 3rem;
+		}
+		.plan-button {
+			display: flex;
+	    flex-direction: column;
+			height: 100%;
+	    justify-content: center;
+			padding: 1rem 0 2rem;
+			font-style: italic;
+			font-family: @secondary_font;
+
+			.error-text {
+				font-size: 1.3rem;
+			}
+			@media (@screen-md-min){
+				.error-text {
+					font-size: 1.5rem;
+				}
+			}
+		}
+		.plan-selected {
+			color: #9b9b9b;
+		}
+	}
+	&#popupetc {
+		td {
+			vertical-align: top;
+		}
+		.plan-detail {
+			margin-bottom: 2rem;
+		}
+	}
+	&#popupalternate,
+	&#popupetc {
+		.window-wrapper {
+			max-width: 80rem;
+		}
+	}
 	&#popupconfirm, &#popupetc {
 		.button-container {
 			padding: 1rem 0;
@@ -4241,7 +4311,7 @@ input{
     		white-space: nowrap;
 			}
 		}
-
+		
 		@media (@screen-md-min){
 			.plan-button {
 					width: 40%;
@@ -4364,7 +4434,6 @@ input{
 	display: block;
 	padding: 1.5rem 0;
 	color: #037bc1;
-	font-size: 1.6rem;
 	font-family: @primary_font;
 	font-weight: 500;
 
@@ -4563,7 +4632,8 @@ input{
 				}
 				h4{
 					font-size: 1.6rem;
-					border-bottom: .1rem solid @border_color;
+					border-bottom: 1px solid @border_color;
+					font-weight: 300;
 
 					@media (@screen-md-min){
 						font-size: 1.8rem;
