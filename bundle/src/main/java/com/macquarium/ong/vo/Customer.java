@@ -18,6 +18,7 @@ public class Customer {
     private String state;
     private String zip;
     private String specialOffersOption;
+    private String signupType;
 
     public String getType() {
         return type;
@@ -108,6 +109,12 @@ public class Customer {
     }
     public void setSpecialOffersOption(String specialOffersOption) {
         this.specialOffersOption = specialOffersOption;
+    }
+    public String getSignupType() {
+        return signupType;
+    }
+    public void setSignupType(String signupType) {
+        this.signupType = signupType;
     }
 
 
