@@ -3416,6 +3416,10 @@ div.alt-col2,
 
 }
 .confirmation-wrapper{
+	.confirmation-header {
+		margin-bottom: 2rem;
+		padding: 2.5rem 2.5rem 2rem;
+	}
 	.confirmation-block{
 		.box-with-border{
 			height: auto;
@@ -3434,9 +3438,36 @@ div.alt-col2,
 		height: 100%;
 		margin-bottom: 0;
 
+		p {
+			line-height: 1.5;
+		}
+
+		.checkmark-wrapper {
+			float: left;
+			width: 14%;
+
+			.checkmark {
+				margin: 0.2rem 2rem 0 .5rem;
+			}
+
+			+ .after-checkbox {
+				width: 85%;
+			}
+		}
+
+		.form-wrapper{
+			label {
+					margin-bottom: 0;
+			}
+		}
+
 		@media (@screen-md-min){
 			padding: 2.5rem;
 			margin-bottom: 1rem;
+
+			.checkmark-wrapper {
+				width: auto;
+			}
 		}
 		h4{
 			font-size: 1.8rem;
@@ -3508,6 +3539,8 @@ div.alt-col2,
 	width: 100%;
 
 	.desktop-flex-container{
+		overflow: hidden;
+
 		>div{
 			margin-bottom: 2rem;
 		}
@@ -3573,7 +3606,13 @@ input{
 	}
 	.account-lookup{
 		width: 100%;
+
+		&.form-wrapper {
+			padding: 2rem .9rem;
+		}
+
 		@media (@screen-md-min){
+			padding: 0;
 			width: 90%;
 		}
 	}
@@ -3675,9 +3714,9 @@ input{
 		}
 
 		.selected-price{
-			padding: 14% 0;
+			//padding: 14% 0;
 			@media (@screen-md-min){
-				padding: 10% 0;
+				//padding: 10% 0;
 			}
 		}
 		.selected-price, .selected-info{
@@ -3728,7 +3767,6 @@ input{
 	}
 	.selected-price{
 		width: 85%;
-		padding: 5rem 0;
 		background-color: @primary_color;
 		position: relative;
 		color: #fff;
@@ -3785,6 +3823,7 @@ input{
 }
 .input-group-wrapper{
 	margin-bottom: 1rem;
+	overflow: hidden;
 }
 .form-element,.form-element-small{
 	padding: 1rem;
@@ -4028,6 +4067,7 @@ input{
 	}
 
 	hr{
+		clear: both;
 		display: none;
 		position: absolute;
 		width: 96%;
@@ -4807,4 +4847,20 @@ ul.info-links {
 .new.newpar {
 	height: 0 !important;
 	margin: 0 !important;
+}
+.checkmark{
+  display:inline-block;
+
+  &:after{
+    content: '';
+    display: block;
+
+    width: 6px;
+    height: 12px;
+
+    border: solid #0077c2;
+    border-width: 0 3px 3px 0;
+
+    transform: rotate(45deg);
+  }
 }

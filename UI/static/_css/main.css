@@ -8986,6 +8986,10 @@ div.alt-col2,
     padding: 6rem 8rem;
   }
 }
+.confirmation-wrapper .confirmation-header {
+  margin-bottom: 2rem;
+  padding: 2.5rem 2.5rem 2rem;
+}
 .confirmation-wrapper .confirmation-block .box-with-border {
   height: auto;
 }
@@ -9000,10 +9004,29 @@ div.alt-col2,
   height: 100%;
   margin-bottom: 0;
 }
+.confirmation-info .box-with-border p {
+  line-height: 1.5;
+}
+.confirmation-info .box-with-border .checkmark-wrapper {
+  float: left;
+  width: 14%;
+}
+.confirmation-info .box-with-border .checkmark-wrapper .checkmark {
+  margin: 0.2rem 2rem 0 .5rem;
+}
+.confirmation-info .box-with-border .checkmark-wrapper + .after-checkbox {
+  width: 85%;
+}
+.confirmation-info .box-with-border .form-wrapper label {
+  margin-bottom: 0;
+}
 @media (min-width: 992px) {
   .confirmation-info .box-with-border {
     padding: 2.5rem;
     margin-bottom: 1rem;
+  }
+  .confirmation-info .box-with-border .checkmark-wrapper {
+    width: auto;
   }
 }
 .confirmation-info .box-with-border h4 {
@@ -9075,6 +9098,9 @@ div.alt-col2,
 .confirmation-block {
   width: 100%;
 }
+.confirmation-block .desktop-flex-container {
+  overflow: hidden;
+}
 .confirmation-block .desktop-flex-container > div {
   margin-bottom: 2rem;
 }
@@ -9136,8 +9162,12 @@ input {
 .customer-lookup .account-lookup {
   width: 100%;
 }
+.customer-lookup .account-lookup.form-wrapper {
+  padding: 2rem .9rem;
+}
 @media (min-width: 992px) {
   .customer-lookup .account-lookup {
+    padding: 0;
     width: 90%;
   }
 }
@@ -9234,14 +9264,6 @@ input {
     padding: 3rem 0;
   }
 }
-.customer-lookup .selected-plan .selected-price {
-  padding: 14% 0;
-}
-@media (min-width: 992px) {
-  .customer-lookup .selected-plan .selected-price {
-    padding: 10% 0;
-  }
-}
 .customer-lookup .selected-plan .selected-price,
 .customer-lookup .selected-plan .selected-info {
   display: flex;
@@ -9285,7 +9307,6 @@ input {
 }
 .selected-plan .selected-price {
   width: 85%;
-  padding: 5rem 0;
   background-color: #0074bf;
   position: relative;
   color: #fff;
@@ -9348,6 +9369,7 @@ input {
 }
 .input-group-wrapper {
   margin-bottom: 1rem;
+  overflow: hidden;
 }
 .form-element,
 .form-element-small {
@@ -9584,6 +9606,7 @@ input {
   }
 }
 .steps-container hr {
+  clear: both;
   display: none;
   position: absolute;
   width: 96%;
@@ -10343,4 +10366,16 @@ ul.info-links li {
 .new.newpar {
   height: 0 !important;
   margin: 0 !important;
+}
+.checkmark {
+  display: inline-block;
+}
+.checkmark:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 12px;
+  border: solid #0077c2;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
