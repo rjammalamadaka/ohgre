@@ -60,11 +60,18 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 			java.sql.Date movingOneMonthDate = new java.sql.Date(onemonthcalendar.getTime().getTime());
 			java.sql.Date movingThreeMonthDate = new java.sql.Date(threemonthcalendar.getTime().getTime());
 
+			String moving=getParameterInfo(jObj,"fromsignup");
+
 			Customer customer=new Customer();
 			customer.setType( getParameterInfo(jObj,"partner"));
 			customer.setFirstName(getParameterInfo(jObj,"firstname"));
 			customer.setLastName( getParameterInfo(jObj,"lastname"));
 			customer.setEmail(getParameterInfo(jObj,"email"));
+			if(!moving.equals("true")){
+				customer.setSignupType("MOVING");
+			}else{
+				customer.setSignupType("SIGNUP");
+			}
 			customer.setPhoneNumber(getParameterInfo(jObj,"phone"));
 			customer.setContactViaPhone(getParameterInfo(jObj,"contactpermission"));
 			customer.setSource(getParameterInfo(jObj,"hearaboutus"));
@@ -81,10 +88,13 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 			customer.setState(getParameterInfo(jObj,"addressstate"));
 			customer.setZip(getParameterInfo(jObj,"addresszip"));
 			customer.setSpecialOffersOption(getParameterInfo(jObj,"sendemails"));
+
 			boolean customerExisted=signUpDaoService.isExistingCustomer(customer);
 			if(customerExisted){
+				System.out.println("already registered");
 				result=signUpDaoService.updateCustomer(customer);
 			}else{
+				System.out.println("already not registered");
 				result = signUpDaoService.insertCustomer(customer);
 			}
 			obj.put("result", result);
