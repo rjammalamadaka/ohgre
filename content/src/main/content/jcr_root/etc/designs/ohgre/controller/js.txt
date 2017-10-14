@@ -16,3 +16,4 @@ EnrollCustomerController.js
 HeroCarouselController.js
 MovingController.js
 DeltaSignUpController.js
+SignupController.js

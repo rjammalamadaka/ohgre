@@ -153,3 +153,58 @@ $(window).scroll(function(){
   }
 }
 */
+
+//SignUp for emails pop-up
+
+/*
+$(document).ready(function(){
+	initValidate();
+});
+
+function validateSignup() {
+	showConfirmation();
+}
+
+function showConfirmation() {
+	var validForm = 0;
+
+	if(($('#first-name').val().trim() !== '') && ($('#last-name').val().trim() !== '')) {
+		var emailAddress = $('#email').val().trim()
+
+		if(emailAddress !== '') {
+			if( /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+.test(emailAddress)) {
+				validForm = 1;
+			}
+
+		}
+
+		else if($('#address-1').val().trim() !== '') {
+			if($('#billing-address-city').val().trim() !== '' &&
+				$('#billing-address-state').val().trim() !== '' &&
+				$('#billing-address-zip').val().trim() !== '') {
+					validForm = 1;
+				}
+		}
+
+		if(validForm) {
+			$('#popup1').empty().remove();
+			$('#popup2').addClass('show-popup');
+		}
+	}
+
+}
+
+function initValidate() {
+	$('.submit-button').on('click', function(e) {
+		e.preventDefault();
+		$('#offer-signup-form').submit();
+	});
+
+  $('#offer-signup-form').on('submit',function(e){
+    e.preventDefault();
+		validateSignup();
+  });
+
+}
+*/

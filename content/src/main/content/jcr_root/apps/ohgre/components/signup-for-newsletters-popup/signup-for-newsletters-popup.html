@@ -1,15 +1,20 @@
-<section>
+<section ng-controller="SignupController">
     <div class="container">
         <div class="email_signup">
             <div class="row">
                 <div class="col-md-6"><h5> ${properties.description}</h5></div>
                 <div class="col-md-6">
-                    <form>
+                    <form name="signup" novalidate>
                     <div class="col-md-7">
-                    <input type="text" name="email_address" value="" placeholder="Email Address">
+                    <input type="text" name="email" ng-model="email" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-focus ng-visited placeholder="Email Address">
+
+                         <span class="input-error-message" ng-show="(signup.email.$visited && !signup.email.$focused) || signup.submited">
+                           <span class="input-error-message" ng-show="signup.email.$invalid">Please enter valid email id.</span>
+               </span> 
+
                     </div>
                     <div class="col-md-5">
-                    <button class="accent-button">Sign up</button>
+                    <button class="accent-button" ng-click="signupsubmit()">Sign up</button>
                     </div>
                     </form>
                 </div>
@@ -17,3 +22,4 @@
         </div>
     </div>
 </section>
+<sly data-sly-include="signup.html"></sly>

@@ -209,12 +209,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
                      if($rootScope.customerInfo.productCode =="COK" || $rootScope.customerInfo.productCode=="COJ"){
 
-                         var pricingDesc= $rootScope.customerInfo.pricingDesc;
+                        var pricingDesc= $rootScope.customerInfo.pricingDesc;
 
  							var pricingDescArray=pricingDesc.split('Term');
                          if(pricingDescArray.length>0){
                          	$rootScope.gbplandisplay=true;
-                            $rootScope.gbplandescription=pricingDesc.split('Term')[0].trim();
+                          //  $rootScope.gbplandescription=pricingDesc.split('Term')[0].trim();
+
+							$rootScope.gbplandescription=$rootScope.customerInfo.contractPrice;
                          }
 
                      }

@@ -96,28 +96,6 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="end"/>
-            <signup
-                jcr:created="{Date}2017-08-07T11:06:14.359-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-25T15:10:54.845-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/signup"
-                description="Sign up to receive new promo codes from us."/>
-            <signup_1946313913
-                jcr:created="{Date}2017-10-09T21:34:35.846-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-09T21:34:35.846-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/signup"/>
-            <signup_744564325
-                jcr:created="{Date}2017-10-09T21:34:44.219-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-09T21:34:44.219-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/signup"/>
             <signup_for_newslette
                 jcr:created="{Date}2017-10-09T21:36:27.570-04:00"
                 jcr:createdBy="admin"

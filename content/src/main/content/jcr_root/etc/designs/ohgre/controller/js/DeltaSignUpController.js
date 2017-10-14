@@ -1,9 +1,17 @@
 ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
-	$scope.ldc='MIC';
-    $scope.setLdcInfo =function(mainValue){
+    	$scope.deltaconfirmation=false;
+
+
+    $scope.setLdcInfo =function(mainValue,description){
 		console.log(mainValue);
         $scope.ldc=mainValue;
+        $scope.ldcDesc=description;
+        $scope.an1=null;
+        $scope.an2=null;
+        $scope.an3=null;
+        $scope.an4=null;
+
         if(mainValue == "COH"){
 			$scope.an1minl="8";
 		    $scope.an2minl="3";
@@ -49,6 +57,7 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
             $scope.an4minl="13";
         }
 
+        $scope.$apply();
     }
 
 
@@ -57,22 +66,65 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
 			event.preventDefault();
 			var obj = $(this);
 			var val = obj.html();
-            ///console.log(val);
+            console.log(val);
 			$('.expanded-dropdown.opened').removeClass('opened');
             var dropdownButton=obj.parent().parent().parent().parent();
             var mainValue=$(this).find('span').attr('class');
+          var description=$(this).find('span').text();
 			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
-             $scope.setLdcInfo(mainValue);
+             $scope.setLdcInfo(mainValue,description);
              $('#fixed-plans-button').val(mainValue);
 
 		});
 
     }
 
+
+$scope.dsmEnrollSubmit =function(){
+
+		$scope.invaliddeltaskymilesaccountnumber=false;
+ 		var checkNumber=-1;
+
+
+    $scope.deltasignupinfo.submited = true;
+    if($scope.deltasignupinfo.$valid && !$scope.flag){
+
+        checkNumber=validateDeltaSkyMilesNumber($scope.dsmAccountNumber);
+             if(checkNumber ==3){
+				$scope.invaliddeltaskymilesaccountnumber=true;
+             }else if(checkNumber==0){
+
+                $scope.dsmEnrollReq={};
+                 $scope.dsmEnrollReq.firstName=$scope.firstName;
+                 $scope.dsmEnrollReq.lastName=$scope.lastName;
+                 $scope.dsmEnrollReq.dsmEmail=$scope.emailaddress;
+                 $scope.dsmEnrollReq.dsmfirstName=$scope.dsmFirsName;
+                 $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
+                 $scope.dsmEnrollReq.dsmPhone=$scope.phoneNumber;
+                 $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
+                 $scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
+                $scope.LDCAccountNumber= $scope.dsmEnrollReq.LDCAccountNumber;
+                 $scope.dsmEnrollReq.LDCName=$scope.ldc;
+
+                PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){ 
+                    $scope.flag=false;
+                    if(data.message =="Success"){
+                        $scope.deltaconfirmation=true;
+                    }
+                }).error(function(data, status, headers, config){
+                    $scope.flag=false;
+                    console.log(data);
+                });
+             }
+
+    }
+}
     
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
         if(data && data.responseStatus =="0"){
-            $scope.ldcinfo=data.LDCList;
+
+            //$rootScope.deltaconfirmation=true;
+			$scope.ldcinfo=data.LDCList;
             setTimeout(function(){ $scope.bindClickEvent(); }, 10);
         }
         
@@ -80,6 +132,97 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
         
         console.log("error");
     });
+
+
+     $scope.phoneformatchange =function(number){
+
+        var phonenumber=$("#phonenumber").val();
+        phonenumber=phonenumber.replace("(","").replace(")","").replace(" ","").replace("-","");
+        if(phonenumber && phonenumber.indexOf('-') ==-1 && phonenumber.length>3){
+           var formatedNumber="("+phonenumber.substring(0,3)+") "+phonenumber.substring(3,6)+"-"+phonenumber.substring(6);
+            $("#phonenumber").val(formatedNumber); 
+            $scope.phoneNumber=formatedNumber;
+        }
+    }
+
+     var validateDeltaSkyMilesNumber=function (sknum) {
+       var smn = sknum;
+       var integerCheck = 0,
+           smnStatus = 4,
+           smn01;
+       
+       var getSingleDigit = function(x) {
+           if (x > 9) {
+               var a,
+                   b;
+               
+               a = x.toString();
+               b = parseInt(a.substring(0, 1)) + parseInt(a.substring(1, 2));
+               
+               return b;
+           }
+           
+           else
+               return parseInt(x);
+       };
+       
+       var regex=/^[0-9]+$/;
+       if (sknum.match(regex)) {
+           integerCheck = 1;
+       }
+       
+       if(integerCheck > 0) {
+           if(smn.length < 10) {
+               smnStatus = 2;
+           }
+           else {
+               smn01 = smn.substring(0, 1) * 2;
+               smn02 = parseInt(smn.substring(1, 2));
+               smn03 = smn.substring(2, 3) * 2;
+               smn04 = parseInt(smn.substring(3, 4));
+               smn05 = smn.substring(4, 5) * 2;
+               smn06 = parseInt(smn.substring(5, 6));
+               smn07 = smn.substring(6, 7) * 2;
+               smn08 = parseInt(smn.substring(7, 8));
+               smn09 = smn.substring(8, 9) * 2;
+               chkDigit = parseInt(smn.substring(9, 10));
+               
+               smn01 = getSingleDigit(smn01);
+               smn03 = getSingleDigit(smn03);
+               smn05 = getSingleDigit(smn05);
+               smn07 = getSingleDigit(smn07);
+               smn09 = getSingleDigit(smn09);
+               
+               intOdds = smn01 + smn03 + smn05 + smn07 + smn09;
+               intEvens = smn02 + smn04 + smn06 + smn08;
+               
+               intRemainder = (intOdds + intEvens) % 10;
+               
+               if ((intRemainder == 0) && (chkDigit == 0)) { smnStatus = 0; }
+               else if ((10 - intRemainder) == chkDigit) { smnStatus = 0; }
+               else { smnStatus = 3; }
+           }
+           
+       }
+       
+       else {
+           smnStatus = 4;
+       }
+       
+       return smnStatus;
+   }
+
+
+   $scope.$watch('dsmAccountNumber', function (newValue, oldValue, scope) {
+       if(newValue && newValue.length>0){
+		$scope.invaliddeltaskymilesaccountnumber=false;
+       }
+	}, true);
+
+    $scope.backtohome =function(){
+
+		location.href=$rootScope.$rootScope.homeUrl+".html";
+    }
 
     /*
 
