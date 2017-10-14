@@ -8557,9 +8557,11 @@ div.alt-col2,
   }
 }
 .box-with-border button {
-  margin-top: 1.5rem;
   width: 100%;
   display: block;
+}
+.box-with-border button:not(.dropdown-trigger) {
+  margin-top: 1.5rem;
 }
 @media (min-width: 992px) {
   .box-with-border button {
@@ -8986,6 +8988,10 @@ div.alt-col2,
     padding: 6rem 8rem;
   }
 }
+.confirmation-wrapper .confirmation-header {
+  margin-bottom: 2rem;
+  padding: 2.5rem 2.5rem 2rem;
+}
 .confirmation-wrapper .confirmation-block .box-with-border {
   height: auto;
 }
@@ -9000,10 +9006,33 @@ div.alt-col2,
   height: 100%;
   margin-bottom: 0;
 }
+.confirmation-info .box-with-border p {
+  line-height: 1.5;
+}
+.confirmation-info .box-with-border strong,
+.confirmation-info .box-with-border b {
+  color: #000;
+}
+.confirmation-info .box-with-border .checkmark-wrapper {
+  float: left;
+  width: 14%;
+}
+.confirmation-info .box-with-border .checkmark-wrapper .checkmark {
+  margin: 0.2rem 2rem 0 .5rem;
+}
+.confirmation-info .box-with-border .checkmark-wrapper + .after-checkbox {
+  width: 85%;
+}
+.confirmation-info .box-with-border .form-wrapper label {
+  margin-bottom: 0;
+}
 @media (min-width: 992px) {
   .confirmation-info .box-with-border {
     padding: 2.5rem;
     margin-bottom: 1rem;
+  }
+  .confirmation-info .box-with-border .checkmark-wrapper {
+    width: auto;
   }
 }
 .confirmation-info .box-with-border h4 {
@@ -9031,7 +9060,6 @@ div.alt-col2,
   margin: 0;
 }
 .form-area .account-number {
-  margin-bottom: 1rem;
   display: block;
 }
 .align-radio {
@@ -9070,10 +9098,12 @@ div.alt-col2,
 }
 .information-block strong {
   display: block;
-  margin-bottom: 1rem;
 }
 .confirmation-block {
   width: 100%;
+}
+.confirmation-block .desktop-flex-container {
+  overflow: hidden;
 }
 .confirmation-block .desktop-flex-container > div {
   margin-bottom: 2rem;
@@ -9120,6 +9150,9 @@ div.alt-col2,
 .intro-wrapper {
   padding: 1rem;
 }
+.intro-wrapper p {
+  font-size: 1.5rem;
+}
 @media (min-width: 992px) {
   .intro-wrapper {
     padding: 1rem 0;
@@ -9136,8 +9169,12 @@ input {
 .customer-lookup .account-lookup {
   width: 100%;
 }
+.customer-lookup .account-lookup.form-wrapper {
+  padding: 2rem .9rem;
+}
 @media (min-width: 992px) {
   .customer-lookup .account-lookup {
+    padding: 0;
     width: 90%;
   }
 }
@@ -9234,14 +9271,6 @@ input {
     padding: 3rem 0;
   }
 }
-.customer-lookup .selected-plan .selected-price {
-  padding: 14% 0;
-}
-@media (min-width: 992px) {
-  .customer-lookup .selected-plan .selected-price {
-    padding: 10% 0;
-  }
-}
 .customer-lookup .selected-plan .selected-price,
 .customer-lookup .selected-plan .selected-info {
   display: flex;
@@ -9285,7 +9314,6 @@ input {
 }
 .selected-plan .selected-price {
   width: 85%;
-  padding: 5rem 0;
   background-color: #0074bf;
   position: relative;
   color: #fff;
@@ -9348,6 +9376,10 @@ input {
 }
 .input-group-wrapper {
   margin-bottom: 1rem;
+  overflow: hidden;
+}
+.input-group-wrapper strong {
+  color: #000;
 }
 .form-element,
 .form-element-small {
@@ -9456,6 +9488,9 @@ input {
     display: -webkit-flex;
     display: flex;
     justify-content: flex-start;
+  }
+  .multiple-input .input-container {
+    margin-bottom: 0;
   }
 }
 .required {
@@ -9584,6 +9619,7 @@ input {
   }
 }
 .steps-container hr {
+  clear: both;
   display: none;
   position: absolute;
   width: 96%;
@@ -9695,6 +9731,7 @@ input {
   left: 0;
   z-index: 10000000;
   display: none;
+  font-size: 1.6rem;
 }
 .popup-wrapper.show-popup {
   display: block;
@@ -9743,6 +9780,47 @@ input {
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
+}
+.popup-wrapper#popupalternate .window-title,
+.popup-wrapper#popupalternate tr > td:first-child {
+  padding-left: 0;
+}
+.popup-wrapper#popupalternate .plan-detail .primary-button {
+  margin: 3rem 0 1rem 0;
+}
+.popup-wrapper#popupalternate .window-wrapper {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+.popup-wrapper#popupalternate .plan-button {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 1rem 0 2rem;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+}
+.popup-wrapper#popupalternate .plan-button .error-text {
+  font-size: 1.3rem;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupalternate .plan-button .error-text {
+    font-size: 1.5rem;
+  }
+}
+.popup-wrapper#popupalternate .plan-selected {
+  color: #9b9b9b;
+}
+.popup-wrapper#popupetc td {
+  vertical-align: top;
+}
+.popup-wrapper#popupetc .plan-detail {
+  margin-bottom: 2rem;
+}
+.popup-wrapper#popupalternate .window-wrapper,
+.popup-wrapper#popupetc .window-wrapper {
+  max-width: 80rem;
 }
 .popup-wrapper#popupconfirm .button-container,
 .popup-wrapper#popupetc .button-container {
@@ -9870,7 +9948,6 @@ input {
   display: block;
   padding: 1.5rem 0;
   color: #037bc1;
-  font-size: 1.6rem;
   font-family: 'Roboto Slab', serif;
   font-weight: 500;
 }
@@ -10062,7 +10139,8 @@ input {
 }
 .inner-window-content .plan-detail li .plan-info h4 {
   font-size: 1.6rem;
-  border-bottom: 0.1rem solid #e9eef1;
+  border-bottom: 1px solid #e9eef1;
+  font-weight: 300;
 }
 @media (min-width: 992px) {
   .inner-window-content .plan-detail li .plan-info h4 {
@@ -10343,4 +10421,16 @@ ul.info-links li {
 .new.newpar {
   height: 0 !important;
   margin: 0 !important;
+}
+.checkmark {
+  display: inline-block;
+}
+.checkmark:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 12px;
+  border: solid #0077c2;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }

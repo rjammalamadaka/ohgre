@@ -2930,7 +2930,10 @@ div.alt-col2,
 		height: 100%;
 	}
 	button{
-		margin-top: 1.5rem;
+		&:not(.dropdown-trigger){
+			margin-top: 1.5rem;
+		}
+
 		width: 100%;
 		display: block;
 
@@ -3416,6 +3419,10 @@ div.alt-col2,
 
 }
 .confirmation-wrapper{
+	.confirmation-header {
+		margin-bottom: 2rem;
+		padding: 2.5rem 2.5rem 2rem;
+	}
 	.confirmation-block{
 		.box-with-border{
 			height: auto;
@@ -3434,9 +3441,40 @@ div.alt-col2,
 		height: 100%;
 		margin-bottom: 0;
 
+		p {
+			line-height: 1.5;
+		}
+
+		strong, b {
+			color: #000;
+		}
+
+		.checkmark-wrapper {
+			float: left;
+			width: 14%;
+
+			.checkmark {
+				margin: 0.2rem 2rem 0 .5rem;
+			}
+
+			+ .after-checkbox {
+				width: 85%;
+			}
+		}
+
+		.form-wrapper{
+			label {
+					margin-bottom: 0;
+			}
+		}
+
 		@media (@screen-md-min){
 			padding: 2.5rem;
 			margin-bottom: 1rem;
+
+			.checkmark-wrapper {
+				width: auto;
+			}
 		}
 		h4{
 			font-size: 1.8rem;
@@ -3464,8 +3502,8 @@ div.alt-col2,
 		margin: 0;
 	}
 	.account-number{
-		margin-bottom: 1rem;
 		display: block;
+
 	}
 }
 .align-radio{
@@ -3501,13 +3539,15 @@ div.alt-col2,
 	}
 	strong{
 		display: block;
-		margin-bottom: 1rem;
+		//margin-bottom: 1rem;
 	}
 }
 .confirmation-block{
 	width: 100%;
 
 	.desktop-flex-container{
+		overflow: hidden;
+
 		>div{
 			margin-bottom: 2rem;
 		}
@@ -3556,6 +3596,10 @@ div.alt-col2,
 .intro-wrapper{
 	padding: 1rem;
 
+	p {
+		font-size: 1.5rem;
+	}
+
 	@media (@screen-md-min){
 		padding: 1rem 0;
 	}
@@ -3573,7 +3617,13 @@ input{
 	}
 	.account-lookup{
 		width: 100%;
+
+		&.form-wrapper {
+			padding: 2rem .9rem;
+		}
+
 		@media (@screen-md-min){
+			padding: 0;
 			width: 90%;
 		}
 	}
@@ -3675,9 +3725,9 @@ input{
 		}
 
 		.selected-price{
-			padding: 14% 0;
+			//padding: 14% 0;
 			@media (@screen-md-min){
-				padding: 10% 0;
+				//padding: 10% 0;
 			}
 		}
 		.selected-price, .selected-info{
@@ -3728,7 +3778,6 @@ input{
 	}
 	.selected-price{
 		width: 85%;
-		padding: 5rem 0;
 		background-color: @primary_color;
 		position: relative;
 		color: #fff;
@@ -3785,6 +3834,11 @@ input{
 }
 .input-group-wrapper{
 	margin-bottom: 1rem;
+	overflow: hidden;
+
+	strong {
+		color: #000;
+	}
 }
 .form-element,.form-element-small{
 	padding: 1rem;
@@ -3891,6 +3945,10 @@ input{
 		display: -webkit-flex;
 		display: flex;
 		justify-content: flex-start;
+
+		.input-container {
+			margin-bottom: 0;
+		}
 	}
 	.account-number-container{
 		// width: 30%;
@@ -4028,6 +4086,7 @@ input{
 	}
 
 	hr{
+		clear: both;
 		display: none;
 		position: absolute;
 		width: 96%;
@@ -4145,6 +4204,7 @@ input{
 	left: 0;
 	z-index: 10000000;
 	display: none;
+	font-size: 1.6rem;
 
 	&.show-popup{
 		display: block;
@@ -4183,6 +4243,56 @@ input{
 			animation: spin 2s linear infinite;
 		}
 	}
+	&#popupalternate {
+		.window-title,
+		tr > td:first-child {
+			padding-left: 0;
+		}
+		.plan-detail {
+			.primary-button {
+				margin: 3rem 0 1rem 0;
+			}
+		}
+		.window-wrapper{
+			padding-top: 0;
+			padding-bottom: 3rem;
+		}
+		.plan-button {
+			display: flex;
+	    flex-direction: column;
+			height: 100%;
+	    justify-content: center;
+			padding: 1rem 0 2rem;
+			font-style: italic;
+			font-family: @secondary_font;
+
+			.error-text {
+				font-size: 1.3rem;
+			}
+			@media (@screen-md-min){
+				.error-text {
+					font-size: 1.5rem;
+				}
+			}
+		}
+		.plan-selected {
+			color: #9b9b9b;
+		}
+	}
+	&#popupetc {
+		td {
+			vertical-align: top;
+		}
+		.plan-detail {
+			margin-bottom: 2rem;
+		}
+	}
+	&#popupalternate,
+	&#popupetc {
+		.window-wrapper {
+			max-width: 80rem;
+		}
+	}
 	&#popupconfirm, &#popupetc {
 		.button-container {
 			padding: 1rem 0;
@@ -4201,7 +4311,7 @@ input{
     		white-space: nowrap;
 			}
 		}
-
+		
 		@media (@screen-md-min){
 			.plan-button {
 					width: 40%;
@@ -4324,7 +4434,6 @@ input{
 	display: block;
 	padding: 1.5rem 0;
 	color: #037bc1;
-	font-size: 1.6rem;
 	font-family: @primary_font;
 	font-weight: 500;
 
@@ -4523,7 +4632,8 @@ input{
 				}
 				h4{
 					font-size: 1.6rem;
-					border-bottom: .1rem solid @border_color;
+					border-bottom: 1px solid @border_color;
+					font-weight: 300;
 
 					@media (@screen-md-min){
 						font-size: 1.8rem;
@@ -4807,4 +4917,20 @@ ul.info-links {
 .new.newpar {
 	height: 0 !important;
 	margin: 0 !important;
+}
+.checkmark{
+  display:inline-block;
+
+  &:after{
+    content: '';
+    display: block;
+
+    width: 6px;
+    height: 12px;
+
+    border: solid #0077c2;
+    border-width: 0 3px 3px 0;
+
+    transform: rotate(45deg);
+  }
 }
