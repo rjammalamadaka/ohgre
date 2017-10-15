@@ -23,20 +23,20 @@ public class CommonConfigServiceImpl implements CommonConfigService {
 
     private static final long serialVersionUID = 1L;
 
-    @Property(value="https://prime.southstarenergy.com/webservices/quoteservice.asmx?wsdl", label="Prime End Point Url", description="Prime End point url to communicate with prime", cardinality=0)
+    @Property(value="", label="Prime End Point Url", description="Prime End point url to communicate with prime", cardinality=0)
     private static final String PRIME_ENDPOINT_URL = "prime.endpoint.url";
 
-    @Property(value="https://test.prime.southstarenergy.com/SouthStar.Services.Web/Service.svc?wsdl", label="Delta Sky Miles End Point Url", description="Delta Sky Miles End point url to communicate with SouthStar", cardinality=0)
+    @Property(value="", label="Delta Sky Miles End Point Url", description="Delta Sky Miles End point url to communicate with SouthStar", cardinality=0)
     private static final String DELTA_SKY_MILES_ENDPOINT_URL = "deltaskymiles.endpoint.url";
 
 
-    @Property(value="jdbc:mysql://localhost:3306/dream11", label="My SQL Connection URL", description="My SQL Connection URL with schema name", cardinality=0)
+    @Property(value="", label="My SQL Connection URL", description="My SQL Connection URL with schema name", cardinality=0)
     private static final String MY_SQL_CONNECTION_URL = "mysql.connection.url";
 
-    @Property(value="root", label="Data Base Username", description="Data Base Username", cardinality=0)
+    @Property(value="", label="Data Base Username", description="Data Base Username", cardinality=0)
     private static final String DATA_BASE_USERNAME = "data.base.username";
 
-    @Property(value="root", label="Data Base Password", description="Data Base Password", cardinality=0)
+    @Property(value="", label="Data Base Password", description="Data Base Password", cardinality=0)
     private static final String DATA_BASE_PASSWORD = "data.base.password";
 
 
