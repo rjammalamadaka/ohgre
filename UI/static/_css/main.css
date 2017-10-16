@@ -9002,6 +9002,9 @@ div.alt-col2,
   margin: auto;
   display: block;
 }
+.confirmation-wrapper .confirmation-block .input-group-wrapper {
+  overflow: hidden;
+}
 .confirmation-info .box-with-border {
   height: 100%;
   margin-bottom: 0;
@@ -9376,7 +9379,6 @@ input {
 }
 .input-group-wrapper {
   margin-bottom: 1rem;
-  overflow: hidden;
 }
 .input-group-wrapper strong {
   color: #000;
