@@ -1127,15 +1127,20 @@ div[class^="cq-colctrl-lt1-"]{
 }
 @media (@screen-md-min){
 	.cq-colctrl-lt1 {
+		clear: both;
+		display: -webkit-box;
+		display: -webkit-flex;
+    display: flex;
+    margin-bottom: 3rem !important;
+		height: 100%;
+		min-height: 100%;
+
+    .parsys_column {
+			display: -webkit-box;
 			display: -webkit-flex;
 	    display: flex;
-	    margin-bottom: 3rem !important;
-
-	    .parsys_column {
-				display: -webkit-flex;
-		    display: flex;
-		    flex-direction: column;
-		    padding-left: 0;
+	    flex-direction: column;
+	    padding-left: 0;
 		}
 	}
 }
@@ -1154,6 +1159,15 @@ div[class^="cq-colctrl-lt1-"]{
 
 		@media (@screen-md-min){
 
+		}
+	}
+}
+.cardpromo-plans {
+	.dropdown-trigger {
+		padding-left: 1.5rem;
+
+		.value {
+			white-space: nowrap;
 		}
 	}
 }
@@ -1196,6 +1210,7 @@ div[class^="cq-colctrl-lt1-"]{
 		display: block;
 		width: 33%;
 		height: auto;
+		clear: both;
 
 		img{
 			width	: 100%;
@@ -1222,6 +1237,9 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	.inner-content-wrapper{
+		clear: both;
+		display: block;
+		//min-height: 40rem;
 		width		: 100%;
 		background	: #fff;
 	}
@@ -1352,6 +1370,9 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 /* FULL BANNER EMAIL SIGN UP */
+.signup-for-newsletters-popup {
+	clear:both;
+}
 .email_signup{
 	padding				: 3rem 2rem;
 	background-color	: @secondary_color;
@@ -4076,6 +4097,32 @@ input{
 		padding: 0 1.5rem;
 	}
 }
+.multiple-input {
+		.input-container {
+			margin-right: 0;
+		}
+		.input-container[data-size="8"] {
+			width: 10rem;
+		}
+		.input-container[data-size="3"] {
+			width: 6rem;
+		}
+		.lastname-container {
+			margin-bottom: 1rem;
+		}
+		@media(@screen-xs-min){
+			.input-container[data-size="8"] {
+				width: 12rem;
+			}
+			.input-container[data-size="3"] {
+				width: 8rem;
+			}
+			.input-container {
+				margin-right: .2rem;
+			}
+		}
+}
+
 .steps-container{
 	position: relative;
 	width: 100%;

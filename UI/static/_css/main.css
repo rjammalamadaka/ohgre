@@ -5119,6 +5119,9 @@ img {
   margin-left: 0;
   margin-right: 0;
 }
+.clearfix {
+  clear: both;
+}
 @media (min-width: 992px) {
   .container,
   .parsys-column {
@@ -6942,11 +6945,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 @media (min-width: 992px) {
   .cq-colctrl-lt1 {
+    clear: both;
+    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     margin-bottom: 3rem !important;
+    height: 100%;
+    min-height: 100%;
   }
   .cq-colctrl-lt1 .parsys_column {
+    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
@@ -6965,6 +6973,12 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .cardpromo-plans.parbase .inner-card-content .promo-link {
   bottom: 2.5rem;
   position: absolute;
+}
+.cardpromo-plans .dropdown-trigger {
+  padding-left: 1.5rem;
+}
+.cardpromo-plans .dropdown-trigger .value {
+  white-space: nowrap;
 }
 .parsys_column.cq-colctrl-lt1-c0 .cardpromo.parbase {
   padding-left: 0;
@@ -7002,6 +7016,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
   display: block;
   width: 33%;
   height: auto;
+  clear: both;
 }
 .card .card-hero img {
   width: 100%;
@@ -7026,6 +7041,8 @@ div[class^="cq-colctrl-lt1-"] .card p {
   color: #fff !important;
 }
 .card .inner-content-wrapper {
+  clear: both;
+  display: block;
   width: 100%;
   background: #fff;
 }
@@ -7138,6 +7155,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
 }
 /* FULL BANNER EMAIL SIGN UP */
+.signup-for-newsletters-popup {
+  clear: both;
+}
 .email_signup {
   padding: 3rem 2rem;
   background-color: #7e94a2;
@@ -9627,6 +9647,29 @@ input {
 .input-container input {
   width: 100%;
   padding: 0 1.5rem;
+}
+.multiple-input .input-container {
+  margin-right: 0;
+}
+.multiple-input .input-container[data-size="8"] {
+  width: 10rem;
+}
+.multiple-input .input-container[data-size="3"] {
+  width: 6rem;
+}
+.multiple-input .lastname-container {
+  margin-bottom: 1rem;
+}
+@media (min-width: 375px) {
+  .multiple-input .input-container[data-size="8"] {
+    width: 12rem;
+  }
+  .multiple-input .input-container[data-size="3"] {
+    width: 8rem;
+  }
+  .multiple-input .input-container {
+    margin-right: .2rem;
+  }
 }
 .steps-container {
   position: relative;
