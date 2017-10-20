@@ -4,16 +4,19 @@ var buttonClick = false;
 var ohio_ng = {
 	init : function(){
 		this.listeners();
+		this.socialButtons();
 	},
 	listeners : function(){
       $('.trigger-popup').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').addClass('show-popup');
+				 $('body').addClass('fixed-body');
       });
 
       $('#close-window, .close-window-button').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');
+				 $('body').removeClass('fixed-body');
       });
 
 		$('.dropdown-trigger').on('click',function(event){
@@ -184,7 +187,28 @@ var ohio_ng = {
     } else {
       //alert( 'Invalid input: ' + obj.value );
     }
-  }
+  },
+	socialButtons: function(){
+		function outBoundTracking(o) {
+		    "function" == typeof ga ? (console.log("tracking"), ga("send", "event", {
+		        eventCategory: "RAF_Share",
+		        eventAction: o,
+		        eventLabel: 'RAFMicrosite'
+		    })) : console.log("not tracking")
+		}
+
+		var code = "test-code", //$("#code").text(),
+    base_url = window.location.protocol + "//" + window.location.host + "/RAF25/";
+		base_url = "http://onlyong.com" + "/RAF25/";
+		$(".fb-icon").click(function() {
+		    var o = base_url + "?referralcode=" + code;
+		    return window.open("https://www.facebook.com/sharer/sharer.php?u=" + o, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Facebook"), !1
+		}), $(".tw-icon").click(function() {
+		    var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
+		        t = "url=" + base_url + "?referralcode=" + code + "&r=1&text=" + o;
+		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
+		});
+	}
 };
 
 (function($) {
@@ -194,7 +218,6 @@ var ohio_ng = {
         }, options );
 
 				var slideDelay = parseInt(settings.slideInterval) * 1000;
- 				console.log('carouseling..' + settings.slideInterval);
 
 				var slides = $('#home-hero-carousel .slide');
 				var pagerCtrlsContainer = $('#slide-pager');
@@ -203,8 +226,6 @@ var ohio_ng = {
 						currentSlideIndex = 0,
 						prevSlideIndex,
 						pageCtrlNode = "";
-
-				console.log('numSlides', numSlides);
 
 				for (var x=0; x < numSlides; x++) {
 					pageCtrlNode += '<span class="pager-ctrl';
@@ -256,9 +277,9 @@ var ohio_ng = {
 
 $(document).ready(function(){
 	ohio_ng.init();
-	$('#home-hero-carousel').carouselSlider({
-		slideInterval: 5
-	});
+	// $('#home-hero-carousel').carouselSlider({
+	// 	slideInterval: 5
+	// });
 });
 
 $(window).scroll(function(){
