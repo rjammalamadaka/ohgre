@@ -8,5 +8,7 @@ public interface CommonConfigService {
     public String getMySqlConnectionUrl();
     public String getDataBaseUsername();
     public String getDataBasePassword();
+    public String getWhatCountsUrl();
+
 
 }
