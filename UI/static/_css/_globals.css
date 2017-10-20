@@ -43,6 +43,9 @@ body {
     background-position: -8vw 6vw;
   }
 }
+body.fixed-body {
+  overflow: hidden;
+}
 img {
   max-width: 100%;
 }
