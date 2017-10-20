@@ -86,16 +86,16 @@
 
                               <div class="form-area multiple-input no-padding">
                                    <div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
-                                      <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
+                                      <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required>
                                    </div>
                                    <div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
-                                      <input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required>
+                                      <input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required>
                                    </div>
                                    <div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
-                                      <input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" required>
+                                      <input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required>
                                    </div>
                                    <div class="input-container" data-size={{an4minl}}>
-                                      <input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" required>
+                                      <input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required>
                                    </div>
                               </div>
                               <span style="color:red" ng-show="(deltasignupinfo.an1.$dirty && ldc !='MIC' && (deltasignupinfo.an1.$invalid || deltasignupinfo.an2.$invalid || deltasignupinfo.an3.$invalid || deltasignupinfo.an4.$invalid)) || (deltasignupinfo.submited)">
@@ -119,7 +119,7 @@
                <div class="">
                   <div class="form-area">
                      <div class="accord-trigger">
-                        <h4>Ohio Natural Gas Account Information<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+					<h4>${properties.deltaformheading}<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
                      </div>
                      <div class="accord-container">
                         <div class="input-group-wrapper">
@@ -150,11 +150,11 @@
                          <span class="input-error-message" ng-show="invaliddeltaskymilesaccountnumber" >Please enter valid Account Number.</span>
                          </span>
 
-                           <a href="#" class="fs-11">Forgot your Skymiles Number?</a>
+                           <a href="https://www.delta.com/custlogin/validateUser.action" target="_blank" class="fs-11">Forgot your Skymiles Number?</a>
                         </div>
                         <!-- group -->
                         <div class="input-group-wrapper">
-                           <button class="primary-button inactive" ng-click="dsmEnrollSubmit()">Submit</button>
+                           <button class="primary-button inactive" ng-click="dsmEnrollSubmit()" >Submit</button>
                         </div>
                      </div>
                   </div>
@@ -179,9 +179,9 @@
                	</div>
                	<div class="inner-content-wrapper highlighted-bg">
                		<div class="inner-card-content">
-               			<h2 class="card-title">Not an Ohio Natural Gas Customer?</h2>
-               			<p>Not yet a customer, but want to sign up with Ohio Natural Gas to take advantage of this offer?</p>
-               			<button class="primary-button">view our plans</button>
+						<h2 class="card-title">${properties.viewplansheader}</h2>
+						<p>${properties.viewplanssubhead}</p>
+               			<button class="primary-button" ng-click="viewPlansDeltaSignup('${properties.deltapromocode}','${properties.promotionpath}')">view our plans</button>
                		</div>
                	</div>
                </div>

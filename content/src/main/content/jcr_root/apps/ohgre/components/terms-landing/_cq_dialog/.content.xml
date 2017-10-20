@@ -113,7 +113,7 @@
                                             </description>
                                             <termsandcondition
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                sling:resourceType="/apps/ohgre/components/multifield"
                                                 class="full-width"
                                                 fieldDescription="Click '+' to add a new page"
                                                 fieldLabel="Terms and Condition Data">

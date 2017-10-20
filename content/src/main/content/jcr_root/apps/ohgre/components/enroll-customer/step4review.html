@@ -13,7 +13,7 @@
 				</div>
 				<div class="input-group-wrapper" ng-show="businessName">
 				<label>Company Name</label>
-				<strong>{{enrollReq.businessName}} </strong> 
+				<strong>{{enrollReq.businessName}} </strong>
 				</div>
 				<div class="input-group-wrapper">
 				<label>Email</label>
@@ -32,7 +32,7 @@
 				<strong>{{enrollReq.RAFCode}}</strong>
 				</div>
 				<div class="input-group-wrapper mt-3">
-				<label class="checkbox"> 
+				<label class="checkbox">
 				<input type="checkbox" name="email-offers" ng-model="specialoffer" disabled="disabled" />
 				</label>
 				<span class="after-checkbox">${properties.acceptspecialoffer}</span>
@@ -53,27 +53,37 @@
 					</div>
 					<hr />
 					<div class="input-group-wrapper mb-3">
+					<!--
 					<label class="checkbox">
-					<input type="checkbox" name="autorized-user" value="yes" checked disabled="disabled"/>
+					<input type="checkbox" name="autorized-user" id="authorized-user" value="yes" checked disabled="disabled"/>
 					</label>
-					<span class="after-checkbox">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</span>
+					-->
+					 <span class="checkmark-wrapper">
+                        <span class="checkmark"></span>
+                    </span>
+					<span class="after-checkbox"><label for="authorized-user">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</label></span>
 					</div>
 					<div class="input-group-wrapper mb-2">
+					<!--
 					<label class="checkbox">
-					<input type="checkbox" name="terms-and-conditions" value="yes" checked disabled="disabled" />
+					<input type="checkbox" name="terms-and-conditions" id="terms-and-conditions" value="yes" checked disabled="disabled" />
 					</label>
-					<span class="after-checkbox">I have previously viewed and agreed to the terms and conditions of service.</span>
+					-->
+					 <span class="checkmark-wrapper">
+                        <span class="checkmark"></span>
+                    </span>
+					<span class="after-checkbox"><label for="terms-and-conditions">I have previously viewed and agreed to the terms and conditions of service.</label></span>
 					</div>
 					<hr />
 					<h4>Review and Authorize</h4>
 					<div class="input-group-wrapper mt-2">
 					<label class="checkbox">
-					<input type="checkbox" name="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
+					<input type="checkbox" name="reviewauthorize" id="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
 					</label>
-					<span class="after-checkbox">${properties.reviewandauthorize}</span> <br>
+					<span class="after-checkbox"><label for="reviewauthorize">${properties.reviewandauthorize}</label></span> <br>
 
 					<span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
-					<span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span> 
+					<span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span>
 					</span>
 					</div>
 				</div>

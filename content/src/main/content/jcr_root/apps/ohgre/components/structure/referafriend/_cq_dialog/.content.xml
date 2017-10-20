@@ -326,12 +326,6 @@
                                             </config>
                                         </items>
                                     </export>
-                                    <errorpages
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                        fieldLabel="Error Pages"
-                                        name="./errorPages"
-                                        rootPath="/content"/>
                                 </items>
                             </column>
                         </items>

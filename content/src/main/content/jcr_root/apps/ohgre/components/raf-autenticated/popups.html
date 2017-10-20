@@ -1,0 +1,104 @@
+<div class="popup-wrapper" id="raf-terms-popup">
+  <div class="window-wrapper" id="raf-email-popup">
+    <div class="container">
+      <div class="row promo-wrapper">
+        <div class="col-md-6 alt-col2">
+          <form id="raf-email-form">
+            <div class="friend-info">
+              <h4>Your Friend's Information</h4>
+              <label for="friend-emails">Friend's Email Address</label>
+              <textarea name="friend-emails" rows="8" cols="80" ng-model="toemailaddress"></textarea>
+              <p>Don't feel like typing? <a href="#">Use your address book</a></p>
+              <label for="raf-email-subject">Subject Line</label>
+    <input type="text" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
+              <label for="raf-email-message">Add or Edit Message</label>
+              <textarea name="rafemailmessage" rows="8" cols="80" ng-model="rafemailmessage">
+
+                  </textarea>
+            </div>
+
+          <div class="user-info">
+            <h4>Your Information</h4>
+            <label for="raf-email-first">Your First Name</label>
+            <input type="text" name="raf-email-first" ng-model="customerInfo.firstName">
+            <label for="raf-email-last">Your Last Name</label>
+            <input type="text" name="raf-email-last" ng-model="customerInfo.lastName">
+            <label for="raf-your-email">Your Email Address</label>
+            <input type="text" name="raf-your-email" ng-model="customerInfo.emailAddress">
+            <p class="small-text">Note: Changing this email address will not change your email address on file with us, only the sender address for this referral email.</p>
+            <p><button class="primary-button" ng-click="refertomyfrineds()">Refer my friends</button></p>
+          </div>
+
+          </form>
+
+        </div>
+        <div class="col-md-6" id="raf-email-preview">
+          <div class="email-body">
+            <h3>Email Preview</h3>
+          </div>
+            <div class="raf-inline-banner">
+                <div class="company-logo"><img src="${properties.companylogoinemail}"></div>
+                <div class="raf-logo"><img src="${properties.raflogoinemail}"></div>
+            </div>
+            <div class="email-body">
+                  <p>{{rafemailmessage}}</p>
+            <h3>Here's the deal</h3>
+            <div class="raf-promo">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="promo-box">You will get<span>${properties.referralamount}</span> in bill credits</div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                <div class="promo-box">I will get<span>${properties.referralamount}</span> in bill credits</div>
+                </div>
+              </div>
+            </div>
+                <p>${properties.rafemailbody @ context = 'html'}</p>
+          </div>
+            <div class="raf-email-codes">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5><span class="visible-sm">Use this</span> Referral Code:</h5>
+                    <p>{{customerInfo.custID}}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h5><span class="visible-sm">Use this</span> Promotion Code:</h5>
+                        <p>${properties.rafpromocode}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="email-body">
+            <div class="text-center"><a href="#" class="primary-button inactive">Enroll online</a></div>
+          </div>
+          <section id="raf-email-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-9">
+                  <h4>Customer Service</h4>
+                  <p>770.850.6200<br> 1.877.850.6200
+                    <br> 7AM – 8PM Monday – Friday<br> 8AM – 5PM (ET) – Saturday</p>
+                </div>
+                <p>The is a post-only message from Georgia Natural Gas. Please do not attempt to reply to this message. We would love to hear from you if you have questions. For assistance with your account. Please contact us via phone, e-mail customerservice@gng.com
+                  </p>
+                <p>
+                  <a href="#">Unsubscribe</a> |
+                  <a href="#">Privacy Policy</a>
+                </p>
+
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+
