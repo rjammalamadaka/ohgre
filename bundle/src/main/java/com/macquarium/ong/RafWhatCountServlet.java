@@ -60,7 +60,7 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 				wcUrl=wcUrl.append(toMailId);
 				wcUrl=wcUrl.append("&sender=");
 				wcUrl=wcUrl.append(toMailId);
-				wcUrl=wcUrl.append("$emails=");
+				wcUrl=wcUrl.append("&emails=");
 				wcUrl=wcUrl.append(emailAddress);
 				wcUrl=wcUrl.append("&body=");
 				//wcUrl=wcUrl.append("Hello%20this%20is%20for%20testing%20RAF");
