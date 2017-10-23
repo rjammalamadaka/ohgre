@@ -173,6 +173,9 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollment.setCreatedDate(todayDate);
 
 			enrollment.setCustID("");
+			String RAFCode=getParameterInfo(jObj,"RAFCode");
+			enrollment.setRafCode(RAFCode);
+			enrollRequest.setRAFCode(RAFCode);
 			int generatedKey=enrollmentDaoService.insertEnrollment(enrollment);
 			enrollRequest.setEnrollConfirmationNumber(Integer.toString(generatedKey));
 			EnrollCustomer parameters=new EnrollCustomer();
