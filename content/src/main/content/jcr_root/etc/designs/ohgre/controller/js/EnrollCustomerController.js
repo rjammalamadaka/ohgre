@@ -37,6 +37,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }
         $rootScope.product=data;
 		var rateClass=$rootScope.product.rateClassCode;
+        if(data.referralcode){
+        	//data.referralcode
+            $scope.rafcode=data.referralcode;
+        }
         if(rateClass =="04"){
 			$scope.businessName=true;
         }
@@ -241,8 +245,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
 							gotNextStep(2);
                      }
-
+					//location.href="/content/onlyong/maintenance.html";
                  }
+
+
+
              }else{
 
 
@@ -383,6 +390,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                 data.mailStateCode=$scope.addressstate;
             if($scope.zipcode)
                 data.mailZipCode=$scope.zipcode;
+        }else{
+            data.mailAddress1=$scope.billingaddressone;            
+            data.mailAddress2=$scope.billingaddresstwo;
+            data.mailCity=$scope.billingaddresscity;
+            data.mailStateCode=$scope.billingaddressstate;
+            data.mailZipCode=$scope.billingaddresszip;
         }
 
         if($scope.specialoffer){
@@ -640,12 +653,25 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     $rootScope.redirectToStandardPricingPlan =function(){
 
-			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC;
+		var locationType = 'residential';
+        ohgre.removeStore("promoCodeInfo");
+        if($rootScope.product.RateClassCode == '04'){
+			locationType = 'commercial';
+        }
+
+			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC+'&lctype='+locationType;
     }
 
     $rootScope.enrollselectalternateplans =function(){
 
-			location.href=$rootScope.homeUrl+"/plans-detail.html";
+			var locationType = 'residential';
+
+        ohgre.removeStore("promoCodeInfo");
+        if($rootScope.customerInfo.rateClass == '04'){
+			locationType = 'commercial';
+        }
+
+			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC+'&lctype='+locationType;
     }
 
     $rootScope.popuprenewalcontinue =function(){
