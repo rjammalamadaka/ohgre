@@ -17,3 +17,5 @@ HeroCarouselController.js
 MovingController.js
 DeltaSignUpController.js
 SignupController.js
+ReferAFriendController.js
+RafAuthenticatedController.js
