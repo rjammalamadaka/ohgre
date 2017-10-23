@@ -5,7 +5,7 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-10-09T21:38:51.511-04:00"
+        cq:lastModified="{Date}2017-10-19T16:04:40.383-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
@@ -13,6 +13,7 @@
         sling:resourceType="/apps/ohgre/components/structure/page"
         companyinfolinks="[/content/onlyong,/content/onlyong]"
         days="Monday - Friday"
+        errorPages="/content/onlyong/errors"
         footernavigationlinks="[/content/onlyong,/content/onlyong]"
         mobilenumber="1.888.211.8312"
         portalname="oh"
@@ -23,11 +24,11 @@
             <herocarousel
                 jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-08T22:05:19.907-04:00"
+                jcr:lastModified="{Date}2017-10-19T08:25:29.231+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Ohio Natural Gas® bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;learn more&quot;\,&quot;buttonpath&quot;:&quot;#&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We’ve proudly served Ohio residents for more than 10 years and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Ohio Natural Gas® bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;learn more&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/refer-a-friend&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We’ve proudly served Ohio residents for more than 10 years and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
                 timeout="5000"/>
             <promocode
                 jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
@@ -51,10 +52,11 @@
             <cardpromo_578718825
                 jcr:created="{Date}2017-07-25T13:13:29.748-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-25T13:34:45.698-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:lastModified="{Date}2017-10-15T20:35:03.730-04:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/onlyong/refer-a-friend"
                 buttontitle="start referring"
                 description="Invite friends to sign up with Ohio Natural Gas® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!"
                 displayLink="true"
@@ -259,4 +261,9 @@
     <MCCORD/>
     <moving/>
     <skymiles/>
+    <refer-a-friend/>
+    <raf-authenticated/>
+    <maintenance/>
+    <test/>
+    <errors/>
 </jcr:root>

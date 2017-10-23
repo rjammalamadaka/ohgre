@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-14T00:08:58.819-04:00"
+        cq:lastModified="{Date}2017-10-19T08:28:29.704+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/helppage"
         jcr:primaryType="cq:PageContent"
@@ -30,13 +30,13 @@
             <terms_landing
                 jcr:created="{Date}2017-08-05T09:47:22.046-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-10T11:03:44.755-04:00"
+                jcr:lastModified="{Date}2017-10-19T08:28:29.702+05:30"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/terms-landing"
                 headertext="&lt;p>These terms and conditions (&amp;quot;terms&amp;quot;) apply to the Ohio Natural Gas (&amp;quot;ONG&amp;quot;) Refer-a-Friend program (&amp;quot;RAF Program&amp;quot; or &amp;quot;Program&amp;quot;). Referrers must click &amp;quot;Agree&amp;quot; to the RAF Program terms to participate in the RAF Program. Referees agree to the RAF Program terms by using an RAF Program Referral Code when enrolling with ONG.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 heading="Overview"
-                termslist="[{&quot;termstitle&quot;:&quot;Rewards and Eligibility&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;},{&quot;termstitle&quot;:&quot;Program Enrollment; Referral Code&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;},{&quot;termstitle&quot;:&quot;Card and Promotional Fulfillment&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;},{&quot;termstitle&quot;:&quot;Limits&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;},{&quot;termstitle&quot;:&quot;General Provisions&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;}]"
+                termslist="[{&quot;termstitle&quot;:&quot;Rewards and Eligibility&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;Program Enrollment; Referral Code&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;Card and Promotional Fulfillment&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;Limits&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;General Provisions&quot;\,&quot;termsdescription&quot;:&quot;The Georgia Natural Gas Refer-a-Friend program allows current GNG customers to earn credits on their bill when they refer their friends who enroll with GNG.&quot;\,&quot;textIsRich&quot;:&quot;&quot;}]"
                 textIsRich="true"
                 updateddate="Updated: June 1, 2017"/>
         </content>
