@@ -12,6 +12,11 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
         $scope.an3=null;
         $scope.an4=null;
 
+           $scope.an1required=true;
+        $scope.an2required=true;
+        $scope.an3required=true;
+        $scope.an4required=true;
+
         if(mainValue == "COH"){
 			$scope.an1minl="8";
 		    $scope.an2minl="3";
@@ -55,6 +60,9 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
             $scope.an2minl="0";
             $scope.an3minl="0";
             $scope.an4minl="13";
+             $scope.an1required=false;
+        $scope.an2required=false;
+        $scope.an3required=false;
         }
 
         $scope.$apply();
@@ -102,7 +110,11 @@ $scope.dsmEnrollSubmit =function(){
                  $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
                  $scope.dsmEnrollReq.dsmPhone=$scope.phoneNumber;
                  $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
-                 $scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
+                                  if($scope.ldc =="MIC"){
+                 	$scope.dsmEnrollReq.LDCAccountNumber=$scope.an4;
+                 }else{
+					$scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
+                 }
                 $scope.LDCAccountNumber= $scope.dsmEnrollReq.LDCAccountNumber;
                  $scope.dsmEnrollReq.LDCName=$scope.ldc;
 
@@ -221,7 +233,36 @@ $scope.dsmEnrollSubmit =function(){
 
     $scope.backtohome =function(){
 
-		location.href=$rootScope.$rootScope.homeUrl+".html";
+		location.href=$rootScope.homeUrl+".html";
+    }
+
+
+    $scope.viewPlansDeltaSignup =function(promotionCode,promotionpath){
+		var promoCode="DELTA25";
+        var promoPath=$rootScope.homeUrl+"/promo_landing.html";
+        if(promotionCode){
+			promoCode=promotionCode;
+        }
+        if(promotionpath){
+			promoPath=promotionpath;
+        }
+
+    PrimeService.getPromoCodeInfo(promoCode).success(function(data, status, headers, config){
+        if(data && data.responseStatus =="0"){                    
+            if(data.LDCList && data.LDCList.length >0){
+                var ldclist= data.LDCList[0];
+                var promotion=ldclist.promotion[0];
+                ohgre.store("promoCodeInfo",data);
+                if(promoPath){
+                    location.href=promoPath+".html";
+                }
+            }
+        }
+        
+    }).error(function (data,status, headers, config){
+        ohgre.store("promoCodeInfo",null);
+        console.log("error");
+    });
     }
 
     /*
