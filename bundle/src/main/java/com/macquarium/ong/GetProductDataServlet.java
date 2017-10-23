@@ -66,7 +66,10 @@ public class GetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			if(null !=AccountNumber){
 				obj.put("AccountNumber", (String)AccountNumber);
 			}
-
+			Object referralcode=session.getAttribute("referralcode");
+			if(null !=referralcode){
+				obj.put("referralcode", (String)referralcode);
+			}
 			// String productDesc= (String)session.getAttribute("ProductDescription");
 			//String quoteDes=(String)session.getAttribute("QuoteDescription");
 			// String productCode=(String)session.getAttribute("ProductCode");
