@@ -43,7 +43,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String LDC=getParameterInfo(jObj,"LDC");//jObj.getString("LDC");
 			String ldcDesc=getParameterInfo(jObj,"LdcDesc");//jObj.getString("LdcDesc");
 			String accountNumber=getParameterInfo(jObj,"AccountNumber");//jObj.getString("AccountNumber");
-
+			String referralcode=getParameterInfo(jObj,"referralcode");
 			System.out.println("productDesc:" +productDesc);
 			session.setAttribute("ProductDescription", productDesc);
 			session.setAttribute("QuoteDescription", quoteDes);
@@ -54,6 +54,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			session.setAttribute("CustomerTypeCode",customerTypeCode);
 			session.setAttribute("RateClassCode",rateClassCode);
 			session.setAttribute("AccountNumber",accountNumber);
+			session.setAttribute("referralcode",referralcode);
 			JSONObject sessionData=new JSONObject();
 			sessionData.put("prodcutDescription",productDesc);
 			sessionData.put("productcode",productCode);
@@ -64,6 +65,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			sessionData.put("customerTypeCode",customerTypeCode);
 			sessionData.put("rateClassCode",rateClassCode);
 			sessionData.put("AccountNumber",accountNumber);
+			sessionData.put("referralcode",referralcode);
 			obj.put("sessionData",sessionData);
 			obj.put("resultCode", "0");
 			obj.put("resultMessage", "success");
