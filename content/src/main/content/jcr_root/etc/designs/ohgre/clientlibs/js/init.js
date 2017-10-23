@@ -22,7 +22,23 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 		$rootScope.hashParams[param[0]]=param[1];
     }
 
+    function isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
 
+     $rootScope.queryParams = {};
+    var queryParams = window.location.search && window.location.search.split("?")[1] && window.location.search.split("?")[1].split('&');
+    for(var i=0;i<queryParams.length;i++){
+        var param = queryParams[i].split("=")
+        $rootScope.queryParams[param[0]]=param[1];
+    }
+    if($rootScope.queryParams && !isEmpty($rootScope.queryParams)){
+		$rootScope.hashParams=$rootScope.queryParams;
+    }
 
     $rootScope.cardpromobuttonclick =function(url){
 		location.href=url+'.html'
@@ -144,6 +160,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
             }
             req.CustomerTypeCode="";
 
+        }
+
+        if($rootScope.hashParams && $rootScope.hashParams.referralcode){
+			req.referralcode=$rootScope.hashParams.referralcode;
         }
 
          $http.post(url, req ,config).success(function(data, status, headers, config){
