@@ -7857,19 +7857,26 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .refer-a-friend .button-container {
   padding-left: 0;
 }
-.refer-a-friend .full-banner-light .content {
+.refer-a-friend .full-banner-light .icon,
+.promotioncontent .full-banner-light .icon {
+  display: none;
+}
+.refer-a-friend .full-banner-light .content,
+.promotioncontent .full-banner-light .content {
   background-size: 45px 45px;
   background: url('/etc/designs/ohgre/clientlibs/_img/global/phone.svg') left 50% no-repeat;
   padding-left: 53px;
   width: 100%;
 }
 @media (min-width: 375px) {
-  .refer-a-friend .full-banner-light .content {
+  .refer-a-friend .full-banner-light .content,
+  .promotioncontent .full-banner-light .content {
     background-size: contain;
   }
 }
 @media (min-width: 992px) {
-  .refer-a-friend .full-banner-light .content {
+  .refer-a-friend .full-banner-light .content,
+  .promotioncontent .full-banner-light .content {
     white-space: nowrap;
   }
 }
@@ -8412,6 +8419,9 @@ div.alt-col2,
   color: #0074bf;
   margin-top: 0;
 }
+#delta-customer-info {
+  width: 100%;
+}
 #delta-customer-info h3 {
   color: #0074bf;
   margin-top: 0;
@@ -8451,21 +8461,40 @@ div.alt-col2,
     margin-bottom: 2rem;
   }
 }
-#delta-customer-info .desktop-flex-container div {
-  width: 100%;
-}
 #delta-customer-info .desktop-flex-container div.div-container {
   margin-right: 2rem;
   text-align: left;
 }
 @media (min-width: 992px) {
   #delta-customer-info .desktop-flex-container div.div-container {
-    width: 70%;
+    width: 37%;
   }
 }
 #delta-customer-info .desktop-flex-container div.div-container .box-with-border.has-image .box-inner h3 {
   text-align: left;
   padding: 0;
+}
+@media (min-width: 992px) {
+  #delta-customer-info .desktop-flex-container .two-vert-cols {
+    width: 63%;
+  }
+  #delta-customer-info .desktop-flex-container .two-vert-cols .form-element:last-child {
+    margin-bottom: 0;
+  }
+}
+#delta-customer-info .desktop-flex-container .div-container,
+#delta-customer-info .desktop-flex-container .two-vert-cols {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+#delta-customer-info .desktop-flex-container .div-container h3,
+#delta-customer-info .desktop-flex-container .two-vert-cols h3 {
+  font-size: 2.3rem;
+}
+#delta-customer-info .desktop-flex-container .div-container div,
+#delta-customer-info .desktop-flex-container .two-vert-cols div {
+  align-items: stretch;
 }
 .footnote {
   padding: 4rem 2rem 2rem 2rem;
@@ -9556,6 +9585,9 @@ input {
   .multiple-input .input-container {
     margin-bottom: 0;
   }
+  .lastname-container label {
+    white-space: nowrap;
+  }
 }
 .required {
   color: #d0011b;
@@ -9681,9 +9713,6 @@ input {
 }
 .multiple-input .lastname-container {
   margin-bottom: 1rem;
-}
-.multiple-input .lastname-container label {
-  white-space: nowrap;
 }
 @media (min-width: 375px) {
   .multiple-input .input-container[data-size="8"] {

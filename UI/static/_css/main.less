@@ -2118,7 +2118,14 @@ div[class^="cq-colctrl-lt1-"]{
 	.button-container {
 		padding-left: 0;
 	}
+
+}
+.refer-a-friend,
+.promotioncontent {
 	.full-banner-light {
+		.icon {
+			display: none;
+		}
 		.content {
 			background-size: 45px 45px;
 
@@ -2757,6 +2764,8 @@ div.alt-col2,
 	}
 }
 #delta-customer-info{
+	width: 100%;
+
 	h3{
 		color: @primary_color;
 		margin-top: 0;
@@ -2799,20 +2808,46 @@ div.alt-col2,
 	}
 	.desktop-flex-container{
 		div{
-			width: 100%;
+			//width: 100%;
 
 			&.div-container{
 				margin-right: 2rem;
 				text-align: left;
 
 				@media (@screen-md-min){
-					width: 70%;
+					width: 37%;
 				}
 
 				.box-with-border.has-image .box-inner h3{
 					text-align: left;
 					padding: 0;
 				}
+			}
+		}
+		.two-vert-cols {
+			@media (@screen-md-min){
+				width: 63%;
+
+				.form-element{
+					&:last-child {
+						//height: 100%;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		.div-container,
+		.two-vert-cols{
+			h3{
+				font-size: 2.3rem;
+			}
+			display: -webkit-flex;
+			display: flex;
+				flex-direction: column;
+
+			div {
+					align-items: stretch;
 			}
 		}
 	}
@@ -4003,6 +4038,9 @@ input{
 	.lastname-container{
 		// width: auto;
 		// margin-right: 2rem;
+		label {
+			white-space: nowrap;
+		}
 	}
 	.zipcode-container{
 		// width: auto;
@@ -4133,9 +4171,6 @@ input{
 		.lastname-container {
 			margin-bottom: 1rem;
 
-			label {
-				white-space: nowrap;
-			}
 		}
 		@media(@screen-xs-min){
 			.input-container[data-size="8"] {
