@@ -3,36 +3,53 @@
     <div class="container">
       <div class="row promo-wrapper">
         <div class="col-md-6 alt-col2">
-          <form id="raf-email-form">
+          <form id="raf-email-form" name="rafemailform" novalidate>
             <div class="friend-info">
               <h4>Your Friend's Information</h4>
               <label for="friend-emails">Friend's Email Address</label>
-              <textarea name="friend-emails" rows="8" cols="80" ng-model="toemailaddress"></textarea>
-              <p>Don't feel like typing? <a href="#">Use your address book</a></p>
+              <textarea name="toemailaddress" class="cloudsponge-contacts" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visited></textarea>
+                  <span class="input-error-message" ng-show="(rafemailform.toemailaddress.$visited && !rafemailform.toemailaddress.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friend's emails are required.</span>
+                  </span>
+              <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
               <label for="raf-email-subject">Subject Line</label>
     <input type="text" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
               <label for="raf-email-message">Add or Edit Message</label>
-              <textarea name="rafemailmessage" rows="8" cols="80" ng-model="rafemailmessage">
+              <textarea name="rafemailmessage" rows="8" cols="80" ng-model="rafemailmessage" ng-required="true" ng-focus ng-visited>
 
                   </textarea>
+                  <span class="input-error-message" ng-show="(rafemailform.rafemailmessage.$visited && !rafemailform.rafemailmessage.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafemailmessage.$error.required">Mail message is required.</span>
+                  </span>
             </div>
 
           <div class="user-info">
             <h4>Your Information</h4>
             <label for="raf-email-first">Your First Name</label>
-            <input type="text" name="raf-email-first" ng-model="customerInfo.firstName">
+            <input type="text" name="rafemailfirst" ng-model="customerInfo.firstName" ng-required="true" ng-focus ng-visited>
+                  <span class="input-error-message" ng-show="(rafemailform.rafemailfirst.$visited && !rafemailform.rafemailfirst.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafemailfirst.$error.required">First Name is required.</span>
+                  </span><br>
             <label for="raf-email-last">Your Last Name</label>
-            <input type="text" name="raf-email-last" ng-model="customerInfo.lastName">
+            <input type="text" name="rafemaillast" ng-model="customerInfo.lastName" ng-required="true" ng-focus ng-visited>
+                  <span class="input-error-message" ng-show="(rafemailform.rafemaillast.$visited && !rafemailform.rafemaillast.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafemaillast.$error.required">Last Name is required.</span>
+                  </span><br>
             <label for="raf-your-email">Your Email Address</label>
-            <input type="text" name="raf-your-email" ng-model="customerInfo.emailAddress">
+            <input type="text" name="rafyouremail" ng-model="customerInfo.emailAddress" ng-required="true" ng-focus ng-visited>
+                  <span class="input-error-message" ng-show="(rafemailform.rafyouremail.$visited && !rafemailform.rafyouremail.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafyouremail.$error.required">Mail Id is required.</span>
+                  </span>
             <p class="small-text">Note: Changing this email address will not change your email address on file with us, only the sender address for this referral email.</p>
             <p><button class="primary-button" ng-click="refertomyfrineds()">Refer my friends</button></p>
           </div>
 
+             <p> {{rafMailSerrverMsg}}</p>
           </form>
 
         </div>
         <div class="col-md-6" id="raf-email-preview">
+			<a href="#" class="close-window">X</a>
           <div class="email-body">
             <h3>Email Preview</h3>
           </div>
@@ -80,15 +97,12 @@
 
                 </div>
                 <div class="col-md-9">
-                  <h4>Customer Service</h4>
-                  <p>770.850.6200<br> 1.877.850.6200
-                    <br> 7AM – 8PM Monday – Friday<br> 8AM – 5PM (ET) – Saturday</p>
+                  ${properties.popupfootercontactinfo @ context = 'html'}
                 </div>
-                <p>The is a post-only message from Georgia Natural Gas. Please do not attempt to reply to this message. We would love to hear from you if you have questions. For assistance with your account. Please contact us via phone, e-mail customerservice@gng.com
-                  </p>
+					${properties.popupfootercontent @ context = 'html'}
                 <p>
                   <a href="#">Unsubscribe</a> |
-                  <a href="#">Privacy Policy</a>
+                  <a href="#" ng-click="redirectToPrivacy()">Privacy Policy</a>
                 </p>
 
               </div>
@@ -101,4 +115,15 @@
   </div>
  </div>
 
+
+<div class="popup-wrapper" id="raf-confirm">
+  <div class="window-wrapper with-border">
+
+    <h3 class="window-title">Thank you for referring your friends of Ohio Natural Gas!</h3>
+    <div class="inner-window-content text-center">
+      <p>If your email address is on file with us, you will receive an email when a friend enrolls with your Referral Code.</p>
+      <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Your Home Page</a>
+    </div>
+  </div>
+</div>
 
