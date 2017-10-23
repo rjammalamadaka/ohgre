@@ -5,13 +5,14 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2017-10-18T17:04:50.933-04:00"
+        cq:lastModified="{Date}2017-10-21T11:21:37.604-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy"
         sling:resourceType="/apps/ohgre/components/structure/page"
         days="Monday - Friday"
+        errorPages="/content/gre/errors"
         mobilenumber="1.888.211.8312"
         portalname="gre"
         time="8AM - 5PM EST">
@@ -146,4 +147,5 @@
     <skymiles/>
     <raf-authenticated/>
     <refer-a-friend/>
+    <errors/>
 </jcr:root>
