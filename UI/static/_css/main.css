@@ -5844,7 +5844,7 @@ div[class^="col-"] {
   position: fixed;
   width: 100%;
   background-color: #fff;
-  z-index: 99999;
+  z-index: 9998;
   top: 0;
 }
 #primary-header + div,
@@ -7851,14 +7851,27 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .page-wrapper {
   background: #fff;
 }
-.refer-a-friend {
-  background: #000;
-}
 .refer-a-friend .form-area-wrapper {
   margin-bottom: 1.5rem;
 }
 .refer-a-friend .button-container {
   padding-left: 0;
+}
+.refer-a-friend .full-banner-light .content {
+  background-size: 45px 45px;
+  background: url('/etc/designs/ohgre/clientlibs/_img/global/phone.svg') left 50% no-repeat;
+  padding-left: 53px;
+  width: 100%;
+}
+@media (min-width: 375px) {
+  .refer-a-friend .full-banner-light .content {
+    background-size: contain;
+  }
+}
+@media (min-width: 992px) {
+  .refer-a-friend .full-banner-light .content {
+    white-space: nowrap;
+  }
 }
 .alt-banner1 .slide-image {
   height: 100%;
@@ -9669,9 +9682,12 @@ input {
 .multiple-input .lastname-container {
   margin-bottom: 1rem;
 }
+.multiple-input .lastname-container label {
+  white-space: nowrap;
+}
 @media (min-width: 375px) {
   .multiple-input .input-container[data-size="8"] {
-    width: 12rem;
+    width: 11.5rem;
   }
   .multiple-input .input-container[data-size="3"] {
     width: 8rem;
@@ -9803,7 +9819,7 @@ input {
   background: rgba(0, 0, 0, 0.7);
   top: 0;
   left: 0;
-  z-index: 10000;
+  z-index: 9999;
   display: none;
   font-size: 1.6rem;
 }
@@ -10431,6 +10447,11 @@ input {
 #moving-container .box-with-border .form-area h6,
 #delta-confirmation .box-with-border .form-area h6 {
   font-family: 'Roboto Slab', serif;
+}
+#moving-container .box-with-border,
+#delta-confirmation .box-with-border {
+  margin-bottom: 2rem;
+  width: 100%;
 }
 ul.info-links {
   list-style: none;

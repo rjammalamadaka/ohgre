@@ -5,7 +5,7 @@
 	position			: fixed;
 	width				: 100%;
 	background-color	: #fff;
-	z-index				: 99999;
+	z-index				: 9998;
 	top					: 0;
 
 	+ div, + section {
@@ -2112,12 +2112,26 @@ div[class^="cq-colctrl-lt1-"]{
 	background: #fff;
 }
 .refer-a-friend {
-	background: #000;
 	.form-area-wrapper {
 		margin-bottom: 1.5rem;
 	}
 	.button-container {
 		padding-left: 0;
+	}
+	.full-banner-light {
+		.content {
+			background-size: 45px 45px;
+
+			@media(@screen-xs-min){
+				background-size: contain;
+			}
+			@media (@screen-md-min){
+				white-space: nowrap;
+			}
+			background: url('/etc/designs/ohgre/clientlibs/_img/global/phone.svg') left 50% no-repeat;
+			padding-left: 53px;
+			width: 100%;
+		}
 	}
 }
 .alt-banner1 {
@@ -4118,10 +4132,14 @@ input{
 		}
 		.lastname-container {
 			margin-bottom: 1rem;
+
+			label {
+				white-space: nowrap;
+			}
 		}
 		@media(@screen-xs-min){
 			.input-container[data-size="8"] {
-				width: 12rem;
+				width: 11.5rem;
 			}
 			.input-container[data-size="3"] {
 				width: 8rem;
@@ -4260,7 +4278,7 @@ input{
 	background: rgba(0,0,0,0.7);
 	top: 0;
 	left: 0;
-	z-index: 10000;
+	z-index: 9999;
 	display: none;
 	font-size: 1.6rem;
 
@@ -4902,6 +4920,10 @@ input{
 				font-family: @primary_font;
 			}
 		}
+	}
+	.box-with-border {
+		margin-bottom: 2rem;
+		width: 100%;
 	}
 }
 ul.info-links {
