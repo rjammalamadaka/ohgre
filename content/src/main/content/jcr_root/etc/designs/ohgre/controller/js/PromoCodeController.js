@@ -9,7 +9,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
     $scope.promoCodeSubmit = function(){
 		$scope.promoform.submited = true;
         if($scope.promoform.$valid){
-document.cookie="promocode="+$scope.promotioncode;
+        //document.cookie="promocode="+$scope.promotioncode;
 
         var promotionCode=$scope.promotioncode;
             if(promotionCode){
@@ -24,9 +24,18 @@ document.cookie="promocode="+$scope.promotioncode;
                      }
                      if(data && data.responseStatus =="0"){
                          if(data.LDCList && data.LDCList.length >0){
+                             var locationType=$("input[name='location_type']:checked"). val(); 
 							//$window.sessionStorage.setItem('promoLDC',angular.toJson(data.LDCList));
                             var ldclist= data.LDCList[0];
                              var promotion=ldclist.promotion[0];
+                             //data.locationType=locationType;
+                             if(!promotion.RateClassCode.length>0){
+								if(locationType=="residential")
+                                 data.LDCList[0].promotion[0].RateClassCode="01";
+                                 else
+                                    data.LDCList[0].promotion[0].RateClassCode="04"; 
+
+                             }
                              ohgre.store("promoCodeInfo",data);
                              if(promotion.PromotionExpired =="Y"){
                                     location.href=$rootScope.homeUrl+"/backuppromo.html";
