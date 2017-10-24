@@ -1,4 +1,4 @@
-
+<!-- /apps/ohgre/components/promocode/promocode.html -->
 <section ng-controller="PromoCodeController">
    <div class="container">
       <div id="promo-enter-wrapper" class="full-banner" style="background-color: ${properties.backGroundColor @ context = 'styleToken'}">
@@ -6,12 +6,23 @@
          <p>${properties.description @ context='html'}</p>
          <form name="promoform" id="promoform"  novalidate ng-class="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused)|| promoform.submited) ? 'has-error' : '' " >
 
+		<div class="form-section">
+				<div class="radio-container">
+					<input type="radio" name="location_type" value="residential" id="promo-location-residential" class="alt-radio1" checked>
+				</div>
+				<label for="promo-location-residential">Residential</label>
 
+				<div class="radio-container">
+					<input type="radio" name="location_type" value="commercial" id="promo-location-commercial" class="alt-radio1">
+				</div>
+				<label for="promo-location-commercial">Commercial</label>
+			</div>
         <span class="input-wrapper">
         <span class="error-message-wrapper" ng-show="((promoform.promotioncode.$dirty && promoform.promotioncode.$invalid && !promoform.promotioncode.$focused) || promoform.submited)">
             <span class="error-message" ng-show="promoform.promotioncode.$error.required" ng-click="errorClicked()">Promotion Code is required.</span>
             <span class="error-message" ng-show="!promoform.promotioncode.$error.required && promoform.promotioncode.$invalid" ng-click="errorClicked()">Please enter valid promotion code.</span>
         </span>
+
 		<input type="text" id="promotioncode" name="promotioncode" ng-attr-placeholder="{{ placeholder }}"
 
 			ng-model="promotioncode" ng-minlength="2" ng-maxlength="20" maxlength=20 ng-pattern="/^[a-zA-Z0-9- ]+$/" ng-focus="promoCodeFocused()" ng-blur="promoCodeBlur()" required>
