@@ -35,6 +35,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
           location.href=$rootScope.homeUrl+".html";
             return false;
         }
+        setPromotionInfoByLDC(data.LDC);
         $rootScope.product=data;
 		var rateClass=$rootScope.product.rateClassCode;
         if(data.referralcode){
@@ -724,14 +725,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                  // $scope.dsmEnrollReq.dsmPhone= $scope.enrollReq.phoneNumber;
                  $scope.dsmEnrollReq.LDCAccountNumber=$scope.enrollReq.account;
                  $scope.dsmEnrollReq.LDCName=$scope.enrollReq.LDC;
-                 
+
                  PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
                      $scope.flag=false;
                      console.log(data);
                      if(data.message =="Success"){
                      $scope.reviewauthorizesubmit();
                      }
-                     
+
                  }).error(function(data, status, headers, config){
                      $scope.flag=false;
                      console.log(data);
@@ -804,13 +805,42 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     }
 
-    var promoinfo=ohgre.store("promoCodeInfo");
+      var setPromotionInfoByLDC =function(ldc){
+
+            var promoinfo=ohgre.store("promoCodeInfo");
+                if(promoinfo && promoinfo.LDCList && promoinfo.LDCList.length>0 && promoinfo.LDCList[0].promotion && promoinfo.LDCList[0].promotion.length>0){
+                    //console.log($rootScope.product.LDC);
+                    var temp=null;
+                    for(var i=0; i<promoinfo.LDCList.length;i++){
+                        if(promoinfo.LDCList[i].LDCCode ==ldc){
+                            temp=promoinfo.LDCList[i].promotion[0];
+                            break;
+                        }
+            
+                    }
+                    //var data= promoinfo.LDCList[0].promotion[0];
+                    var data=temp;
+                    $scope.promotionInfo=data;
+                    updateenrollrequestobj(data);
+                }
+      }
+    /*var promoinfo=ohgre.store("promoCodeInfo");
     if(promoinfo && promoinfo.LDCList && promoinfo.LDCList.length>0 && promoinfo.LDCList[0].promotion && promoinfo.LDCList[0].promotion.length>0){
-        var data= promoinfo.LDCList[0].promotion[0];
+		console.log($rootScope.product.LDC);
+        var temp=null;
+        for(var i=0; i<promoInfo.LDCList.length;i++){
+            if(promoInfo.LDCList[i].LDCCode ==$rootScope.product.LDC){
+				temp=promoinfo.LDCList[i].promotion[0];
+                break;
+            }
+
+        }
+        //var data= promoinfo.LDCList[0].promotion[0];
+        var data=temp;
         $scope.promotionInfo=data;
         updateenrollrequestobj(data);
     }
-
+*/
     $scope.gotoHomePage = function(){
 		location.href=$rootScope.homeUrl+".html";
     }
