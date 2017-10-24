@@ -81,7 +81,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 				quoteRequest.setRateClass(rateClassCode);
 			}
 			//quoteRequest.setEnrolledByUserId("Web Enroll-ONG");  // ong:  Web Enroll-ONG , gre:Web Enroll-GRE
-			quoteRequest.setRateClass("01");// 01 Res, 04 //Commer
+			//quoteRequest.setRateClass("01");// 01 Res, 04 //Commer
 			if(portalName.equals("oh")){
 				quoteRequest.setEnrolledByUserId("Web Enroll-ONG");
 			}else if(portalName.equals("gre")){
