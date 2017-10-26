@@ -24,34 +24,11 @@
 <body>
   <div class="popup-wrapper show-popup">
     <div class="window-wrapper" id="login-popup">
-      <a href="#" id="close-window">X</a>
-      <span class="window-title">Please enter your information below to renew or change your plan</span>
-
-      <div class="dropdown-container">
-        <button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-        <div class="expanded-dropdown">
-              <ul class="dropdown-menu" role="menu">
-                  <li role="menuitem">
-                    <a href="#" class="select-option">
-                      <span class="">company 1 name</span>
-                    </a>
-                  </li>
-                  <li role="menuitem">
-                    <a href="#" class="select-option">
-                      <span class="">company 2 name</span>
-                    </a>
-                  </li>
-                  <li role="menuitem">
-                    <a href="#" class="select-option">
-                      <span class="">company 3 name</span>
-                    </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
+      <a href="#" class="close-window">X</a>
+      <span class="window-title">Enter Your Information Below to Renew or Change Your Plan</span>
       <div class="form-section radio-wrapper">
         <div class="radio-container">
-          <input type="radio" name="location_type" value="residential" id="location-residential">
+          <input type="radio" name="location_type" value="residential" id="location-residential" checked>
         </div>
         <label for="location-residential">Residential</label>
 
@@ -60,39 +37,64 @@
         </div>
         <label for="location-commercial">Commercial</label>
       </div>
-      <form id="" class="form">
-      <div class="desktop-flex-container" id="login-account-info">
-            <div class="form-area-wrapper">
-               <label for="lastname">Gas Utility Account Number</label>
-               <div class="form-area multiple-input">
-                     <div class="input-container" data-size="10">
-                        <input type="text" name="accountnumber[]" maxlength="10" data-required="true">
-                     </div>
-                     <div class="input-container" data-size="5">
-                        <input type="text" name="accountnumber[]" maxlength="5" data-required="true">
-                     </div>
-                     <div class="input-container" data-size="3">
-                        <input type="text" name="accountnumber[]" maxlength="3" data-required="true">
-                     </div>
-                     <div class="input-container" data-size="4">
-                        <input type="text" name="accountnumber[]" maxlength="4" value="0000" disabled="disabled">
-                     </div>
-               </div>
-            </div>
-            <div class="lastname-container form-area-wrapper">
-               <div class="form-area">
-                  <label for="lastname">Last Name on Gas Utility Account</label>
-                  <input type="text" name="lastname" data-required="true">
-               </div>
-            </div>
-            <div class="zipcode-container form-area-wrapper">
-               <div class="form-area">
-                  <label for="zipcode">Your Zip Code</label>
-                  <input type="text" name="zipcode" data-required="true">
-               </div>
-            </div>
+      <div class="dropdown-container">
+        <button class="dropdown-trigger"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+        <div class="expanded-dropdown">
+          <ul class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a href="#" class="select-option">
+                      <span class="">company 1 name</span>
+                    </a>
+            </li>
+            <li role="menuitem">
+              <a href="#" class="select-option">
+                      <span class="">company 2 name</span>
+                    </a>
+            </li>
+            <li role="menuitem">
+              <a href="#" class="select-option">
+                      <span class="">company 3 name</span>
+                    </a>
+            </li>
+          </ul>
+        </div>
       </div>
-   </form>
+
+      <form id="" class="form">
+        <div class="desktop-flex-container" id="login-account-info">
+          <div class="form-area-wrapper">
+            <label for="lastname">Gas Utility Account Number</label><span class="tooltip-trigger">?<span class="tooltip-text">Please be sure to enter your Account Number which is located on your natural gas bill.
+
+If your Account Number does not match what we are requesting for you to provide, please call 1-888-466-4427 so that we may help.</span></span>
+            <div class="form-area multiple-input">
+              <div class="input-container" data-size="10">
+                <input type="text" name="accountnumber[]" maxlength="10" data-required="true">
+              </div>
+              <div class="input-container" data-size="5">
+                <input type="text" name="accountnumber[]" maxlength="5" data-required="true">
+              </div>
+              <div class="input-container" data-size="3">
+                <input type="text" name="accountnumber[]" maxlength="3" data-required="true">
+              </div>
+              <div class="input-container" data-size="4">
+                <input type="text" name="accountnumber[]" maxlength="4" value="0000" disabled="disabled">
+              </div>
+            </div>
+          </div>
+          <div class="lastname-container form-area-wrapper">
+            <div class="form-area">
+              <label for="lastname">Last Name on Gas Utility Account</label>
+              <input type="text" name="lastname" data-required="true">
+            </div>
+          </div>
+          <div class="zipcode-container form-area-wrapper">
+            <div class="form-area">
+              <label for="zipcode">Your Zip Code</label>
+              <input type="text" name="zipcode" data-required="true">
+            </div>
+          </div>
+        </div>
+      </form>
       <div class="button-container">
         <a href="#" class="primary-button inactive close-window-button">Cancel</a>
         <a href="#" class="primary-button">Submit</a>
@@ -133,5 +135,6 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="_js/jquery.cycle2.min.js"></script>
 <script type="text/javascript" src="_js/main.js"></script>
+
 
 </html>
