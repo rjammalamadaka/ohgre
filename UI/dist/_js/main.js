@@ -1,33 +1,103 @@
-// Carousel version
-
 var buttonClick = false;
 var ohio_ng = {
-	init : function(){
-		this.listeners();
-		this.socialButtons();
-	},
-	listeners : function(){
-      $('.trigger-popup').on('click',function(event){
-			event.preventDefault();
-         $('.popup-wrapper').addClass('show-popup');
-				 $('body').addClass('fixed-body');
-      });
+  init: function() {
+    this.listeners();
+    this.socialButtons();
+  },
+  listeners: function() {
 
-      $('#close-window, .close-window-button').on('click',function(event){
+    $('.print-button').on('click', function(event) {
+      event.preventDefault();
+      window.print();
+    });
+
+    $('.trigger-popup').on('click', function(event) {
+      event.preventDefault();
+      $('.popup-wrapper').addClass('show-popup');
+      $('body').addClass('fixed-body');
+
+    });
+
+    /*   $('.popup-wrapper,#close-window').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');
-				 $('body').removeClass('fixed-body');
       });
+      */
 
-		$('.dropdown-trigger').on('click',function(event){
-			event.preventDefault();
+    $('.close-window, .close-window-button').on('click', function(event) {
+      event.preventDefault();
+      $('.popup-wrapper').removeClass('show-popup');
+      $('body').removeClass('fixed-body');
+    });
+
+
+    $('.dropdown-trigger').on('click', function(event) {
+      /*event.preventDefault();
 			var obj = $(this);
-			obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
-			setTimeout(function(){
-				buttonClick = buttonClick ? false : true;
-			},500);
-		});
-		$('#same-billing').on('change',function(event){
+			obj.parent().find('.expanded-dropdown').toggleClass('opened');
+
+*/
+
+      event.preventDefault();
+      var obj = $(this);
+      obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
+      setTimeout(function() {
+        buttonClick = buttonClick ? false : true;
+      }, 500);
+
+
+    });
+    $('.select-option').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      var val = obj.html();
+      console.log(val);
+      $('.expanded-dropdown.opened').removeClass('opened');
+      var dropdownButton = obj.parent().parent().parent().parent();
+      var mainValue = $(this).find('span').attr('class');
+      //console.log(mainValue);
+      // $(this).attr("value",mainValue);
+
+      $(dropdownButton).find('.dropdown-trigger .value').html(val).addClass('dropdown-updated');
+      $('#fixed-plans-button').val(mainValue);
+
+    });
+    $('.accord-trigger').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      obj.toggleClass('accord-expanded');
+    });
+    $('#mobile-menu').on('click', function(event) {
+      event.preventDefault();
+      $(this).toggleClass('menu-open');
+      $('#primary-navigation').toggleClass('expaned-menu');
+    });
+    $('.toggle-button').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      var toggleDirection = obj.data('toggle');
+      console.log(toggleDirection);
+      $('.active-link').removeClass('active-link');
+      obj.addClass('active-link');
+      if (toggleDirection == 'show-all') {
+        $('.accord-trigger').addClass('accord-expanded');
+      } else {
+        $('.accord-trigger').removeClass('accord-expanded');
+      }
+    });
+
+    $('body').on('click', function(event) {
+      if (buttonClick) {
+        if ($('.dropdown-container').hasClass('dropdown-showing')) {
+          buttonClick = false;
+          $('.expanded-dropdown').removeClass('opened');
+          $('.dropdown-container').removeClass('dropdown-showing');
+        }
+      }
+    });
+
+
+    /*    $('#same-billing').on('change',function(event){
 			var service_address = ['address-one','address-two','address-city','address-state','address-zip'];
 
 			if ($(this).is(':checked')) {
@@ -44,152 +114,12 @@ var ohio_ng = {
 			  }
 			  $('.billing-address').removeClass('show-less');
 		  }
-		});
-		/*$(document).on('click','.dropdown-showing.dropdown-container',function(event){
-			$('.dropdown-showing').removeClass('dropdown-showing');
 		});*/
-		$('.select-option').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var val = obj.html();
-			$('.expanded-dropdown.opened').removeClass('opened');
-			$('body').removeClass('dropdown-showing');
-			obj.parent().parent().parent().parent().find('.dropdown-trigger .value').html(val);
-		});
-		$('.accord-trigger').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			obj.toggleClass('accord-expanded');
-		});
-		$('#mobile-menu').on('click',function(event){
-			event.preventDefault();
-			$(this).toggleClass('menu-open');
-			$('#primary-navigation').toggleClass('expaned-menu');
-		});
-		$('.toggle-button').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var toggleDirection = obj.data('toggle');
-			console.log(toggleDirection);
-			$('.active-link').removeClass('active-link');
-			obj.addClass('active-link');
-			if(toggleDirection == 'show-all'){
-				$('.accord-trigger').addClass('accord-expanded');
-			}else{
-				$('.accord-trigger').removeClass('accord-expanded');
-			}
-		});
-		$('.next-button').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var next_section = obj.data('next');
-			var formel = obj.parent().find('.form');
-			var formId = formel.attr('id');
-			$('#'+formId).submit();
-		});
-		$('.redirect-click').on('click',function(event){
-			var obj = $(this);
-			var redirect = obj.data('path');
-			window.location = redirect;
-		});
-		// DROP DOWN VALIDATION
-		$('.someclick-handler').on('click',function(){
-			var dropdownVal = $('.dropdown-trigger .value').html();
-			if(dropdownVal == 'Select Your Gas Utility' || dropdownVal == ''){
-				$('.dropdown-container').addClass('has-error');
-			}
-		});
-		$('input').on('blur',function(){
-			var obj = $(this);
-			if(obj.parent().filter('data-size')){
-				if($(this).val() != ''){
-					$(this).removeClass('has-error');
-				}
-			}
-		});
-		$('body').on('click',function(event){
-			if(buttonClick){
-				if($('.dropdown-container').hasClass('dropdown-showing')){
-					buttonClick = false;
-					$('.expanded-dropdown').removeClass('opened');
-					$('.dropdown-container').removeClass('dropdown-showing');
-				}
-			}
-		});
-		$('input').on('keyup',function(){
-		/*	var obj = $(this);
-			if(obj.parent().filter('data-size')){
-				var lengthval = obj.parent().data('size');
-				var inputlength = obj.val().length;
 
-				if(lengthval == inputlength){
-					console.log('next input');
-					var currentIndex = $(this).parent().index();
-					console.log(currentIndex);
-					if(currentIndex == 0){
-						currentIndex = 1;
-					}
-					var nextElement = currentIndex + 1;
-					console.log(nextElement);
-					$('.form-area.multiple-input .input-container:nth-child('+nextElement+') input').focus();
-				}
-			} */
-		});
-		$('#promo-code-enter').on('submit',function(event){
-			event.preventDefault();
-			if($('#promo-code-value').val() == ''){
-				$(this).addClass('has-error');
-			}else{
-				$(this).removeClass('has-error');
-			}
-		});
-		/*
-		$('form').on('submit',function(event){
-			event.preventDefault();
-			var errors = false;
-			console.log('submit called');
-			var requiredElement = $(this).find('[data-required="true"]');
-			$.each(requiredElement,function(index,value){
-				if($(this).val() == ''){
-					errors = true;
-					$(this).parent().addClass('has-error');
-				}
-			});
-			if(!errors){
-				console.log('no errors');
-				var nextBtn = $('.next-button').data('next');
-				ohio_ng.showNextContent(nextBtn);
-			}else{
-				console.log('found errors');
-			}
-		});*/
-	},
-	mobileOnly : function(){
-		$('.card[data-path]').on('click',function(event){
-			var obj = $(this);
-			var redirect = obj.data('path');
-			window.location = redirect;
-		});
-	},
-	showNextContent : function(next_section){
-		$('.active-form').removeClass('active-form');
-		$('#step-through >div:nth-child('+next_section+')').addClass('active-form');
-		if(next_section > 3){
-			next_section = next_section - 1;
-			$('.active-step').removeClass('active-step');
-			$('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
-		}
-	},
-	transform: function(obj) {
-    var val = obj.value.replace( /\D/g, '' );
-    if ( /^(\d{3})(\d{3})(\d{4})$/.test( val ) ) {
-      obj.value = '('+RegExp.$1 + ')-' + RegExp.$2 + '-' + RegExp.$3;
-    } else {
-      //alert( 'Invalid input: ' + obj.value );
-    }
+
   },
-	socialButtons: function(){
-		function outBoundTracking(o) {
+  socialButtons: function() {
+    /*function outBoundTracking(o) {
 		    "function" == typeof ga ? (console.log("tracking"), ga("send", "event", {
 		        eventCategory: "RAF_Share",
 		        eventAction: o,
@@ -197,99 +127,118 @@ var ohio_ng = {
 		    })) : console.log("not tracking")
 		}
 
-		var code = "test-code", //$("#code").text(),
-    base_url = window.location.protocol + "//" + window.location.host + "/RAF25/";
-		base_url = "http://onlyong.com" + "/RAF25/";
+		var code = "RAF25", //$("#code").text(),
+    base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
+		base_url = "http://dev-ohio.macquarium.com:4503" + "/content/" + "/onlyong/" + "promo-raf.html";
 		$(".fb-icon").click(function() {
-		    var o = base_url + "?referralcode=" + code;
+		    var o = base_url + "?promocode=" + code;
 		    return window.open("https://www.facebook.com/sharer/sharer.php?u=" + o, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Facebook"), !1
 		}), $(".tw-icon").click(function() {
 		    var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
-		        t = "url=" + base_url + "?referralcode=" + code + "&r=1&text=" + o;
+		        t = "url=" + base_url + "?promocode=" + code + "&r=1&text=" + o;
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 		});
-	}
-};
 
-(function($) {
-    $.fn.carouselSlider = function(options) {
-				var settings = $.extend({
-	           slideInterval: 2
-        }, options );
+          */
+  }
 
-				var slideDelay = parseInt(settings.slideInterval) * 1000;
 
-				var slides = $('#home-hero-carousel .slide');
-				var pagerCtrlsContainer = $('#slide-pager');
-
-				var numSlides = slides.length,
-						currentSlideIndex = 0,
-						prevSlideIndex,
-						pageCtrlNode = "";
-
-				for (var x=0; x < numSlides; x++) {
-					pageCtrlNode += '<span class="pager-ctrl';
-					(x == 0) ? (pageCtrlNode += ' cycle-pager-active') : '';
-					pageCtrlNode += '">•</span>';
-				}
-
-				pagerCtrlsContainer.append(pageCtrlNode);
-
-				var pagerCtrls = $('#slide-pager .pager-ctrl');
-
-				pagerCtrls.on('click',function(){
-					prevSlideIndex = currentSlideIndex;
-					currentSlideIndex = pagerCtrls.index(this);
-					moveCarousel();
-
-					clearInterval(switching);
-					switching = setInterval(function() {getNextSlide(currentSlideIndex)}, interval);
-				});
-
-				function getNextSlide(x) {
-					prevSlideIndex = currentSlideIndex;
-
-					if((x + 1) < numSlides) {
-						currentSlideIndex = x + 1;
-					}
-					else { currentSlideIndex = 0; }
-
-					moveCarousel();
-				}
-
-				function moveCarousel() {
-					if (prevSlideIndex !== currentSlideIndex) {
-						slides.eq(prevSlideIndex).fadeOut();
-						slides.eq(currentSlideIndex).fadeIn();
-
-						pagerCtrls.removeClass();
-						pagerCtrls.eq(currentSlideIndex).addClass('cycle-pager-active');
-					}
-				}
-
-				var interval = slideDelay;
-				var switching = setInterval(function() {getNextSlide(currentSlideIndex)}, interval);
-
-        return this;
-    };
-
-}( jQuery ));
-
-$(document).ready(function(){
-	ohio_ng.init();
-	// $('#home-hero-carousel').carouselSlider({
-	// 	slideInterval: 5
-	// });
+}
+$(document).ready(function() {
+  ohio_ng.init();
 });
 
-$(window).scroll(function(){
-	var sTop = $(window).scrollTop();
-	var menu_bar = $('#primary-header');
+$(window).scroll(function() {
+  var sTop = $(window).scrollTop();
+  var menu_bar = $('#primary-header');
 
-		if(sTop >= 20){
-			menu_bar.addClass('sticky');
-		}else{
-			menu_bar.removeClass('sticky');
+  if (sTop >= 20) {
+    menu_bar.addClass('sticky');
+  } else {
+    menu_bar.removeClass('sticky');
+  }
+
+});
+
+
+//custmore lookup
+/*
+
+       $('.next-button').on('click',function(event){
+         event.preventDefault();
+         var obj = $(this);
+         var next_section = obj.data('next');
+         $('.active-form').removeClass('active-form');
+         $('#step-through >div:nth-child('+next_section+')').addClass('active-form');
+         if(next_section > 3){
+            next_section = next_section - 1;
+            $('.active-step').removeClass('active-step');
+            $('.steps-container > div:nth-child('+next_section+')').addClass('active-step');
+         }
+      });
+   },
+   transform: function(obj) {
+    var val = obj.value.replace( /\D/g, '' );
+    if ( /^(\d{3})(\d{3})(\d{4})$/.test( val ) ) {
+      obj.value = '('+RegExp.$1 + ')-' + RegExp.$2 + '-' + RegExp.$3;
+    } else {
+      //alert( 'Invalid input: ' + obj.value );
+    }
+  }
+}
+*/
+
+//SignUp for emails pop-up
+
+/*
+$(document).ready(function(){
+	initValidate();
+});
+
+function validateSignup() {
+	showConfirmation();
+}
+
+function showConfirmation() {
+	var validForm = 0;
+
+	if(($('#first-name').val().trim() !== '') && ($('#last-name').val().trim() !== '')) {
+		var emailAddress = $('#email').val().trim()
+
+		if(emailAddress !== '') {
+			if( /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+.test(emailAddress)) {
+				validForm = 1;
+			}
+
 		}
 
-});
+		else if($('#address-1').val().trim() !== '') {
+			if($('#billing-address-city').val().trim() !== '' &&
+				$('#billing-address-state').val().trim() !== '' &&
+				$('#billing-address-zip').val().trim() !== '') {
+					validForm = 1;
+				}
+		}
+
+		if(validForm) {
+			$('#popup1').empty().remove();
+			$('#popup2').addClass('show-popup');
+		}
+	}
+
+}
+
+function initValidate() {
+	$('.submit-button').on('click', function(e) {
+		e.preventDefault();
+		$('#offer-signup-form').submit();
+	});
+
+  $('#offer-signup-form').on('submit',function(e){
+    e.preventDefault();
+		validateSignup();
+  });
+
+}
+*/

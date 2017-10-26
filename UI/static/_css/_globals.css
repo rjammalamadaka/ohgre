@@ -501,6 +501,9 @@ input[type=radio]:checked:before {
   top: -0.3rem;
   position: relative;
 }
+input[type="text"] {
+  color: #000;
+}
 .checkbox {
   height: 22px;
   width: 21px;
