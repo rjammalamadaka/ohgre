@@ -28,7 +28,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 							//$window.sessionStorage.setItem('promoLDC',angular.toJson(data.LDCList));
                             var ldclist= data.LDCList[0];
                              var promotion=ldclist.promotion[0];
-                             //data.locationType=locationType;
+                             data.locationType=locationType;
                              if(!promotion.RateClassCode.length>0){
 								if(locationType=="residential")
                                  data.LDCList[0].promotion[0].RateClassCode="01";
@@ -37,10 +37,17 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                              }
                              ohgre.store("promoCodeInfo",data);
-                             if(promotion.PromotionExpired =="Y"){
+                             if(promotion.PromotionExpired =="Y" && data.LDCList.length ==1){
                                     location.href=$rootScope.homeUrl+"/backuppromo.html";
                              }else if(data.LDCList && redirectUrl){
-                                    location.href=redirectUrl+".html";
+
+                                 if(promotion.PromotionExpired =="Y" && data.LDCList.length >1){
+									location.href=redirectUrl+".html#isExpired=true";
+                                 }else{
+									location.href=redirectUrl+".html";
+                                 }
+
+
                             }else if(data.LDCList && data.LDCList.length!=0 && !redirectUrl){
                                 if(data.LDCList.length ==1){
                                     location.href=$rootScope.homeUrl+"/promo-general.html";
