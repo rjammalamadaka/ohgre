@@ -18,6 +18,7 @@ ohgrePortal.controller('SignupController', ['$scope', '$rootScope', '$http' ,'Pr
     $('#close-window, .close-window-button').on('click',function(event){
 			event.preventDefault();
         jQuery('#popup1').removeClass("show-popup");
+
     });
 
 }]);
@@ -74,6 +75,7 @@ ohgrePortal.controller('SignupPopupController', ['$scope', '$rootScope', '$http'
       $('#close-window, .close-window-button').on('click',function(event){
 			event.preventDefault();
         jQuery('#popup2').removeClass("show-popup");
+          location.href=$rootScope.homeUrl+".html";
     });
 
 }]);
