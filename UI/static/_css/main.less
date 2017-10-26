@@ -2111,30 +2111,123 @@ div[class^="cq-colctrl-lt1-"]{
 #login-popup {
 	max-width: 90rem;
 
+	input[type="text"]:disabled {
+	 background: #e6e6e6;
+	}
+	.window-title {
+		font-size: 2.4rem;
+		margin-bottom: 2rem;
+		text-align: left;
+	}
 	.radio-wrapper{
 		margin-bottom: 3rem;
-		text-align: center;
+
+		.radio-container+label {
+			font-size: 1.6rem;
+			margin-right: 2rem;
+			@media (@screen-md-min){
+				margin-right: 4rem;
+			}
+		}
 	}
 	#login-account-info{
 		font-size: 1.6rem;
-		margin-bottom: 2rem;
+		margin-bottom: 5rem;
+
 		label {
+			font-family: @secondary_font;
 			font-weight: 500;
 		}
 	}
 	.dropdown-container {
-		margin: 2rem auto 2rem;
-		width: 80%;
+		margin: 0 0 5rem;
+
+		.dropdown-trigger {
+			background-color: #f1f3f4;
+			border: solid .1rem #d0d0d0;
+			border-radius: 0;
+			min-width: 100%;
+			padding-right: 5rem;
+			width: auto;
+			white-space: nowrap;;
+
+			.carret {
+				border-color: #d0d0d0;
+			}
+		}
+	}
+	.input-container {
+		&[data-size="10"] {
+			width: 10rem;
+		}
+		&[data-size="5"] {
+			width: 6.5rem;
+		}
+		&[data-size="4"] {
+			width: 5.5rem;
+		}
+		&[data-size="3"] {
+			width: 4.5rem;
+		}
+		input {
+			padding: 0 1rem;
+		}
+		@media (@screen-xs-min){
+			&[data-size="10"] {
+				width: 12rem;
+			}
+			&[data-size="5"] {
+				width: 8.5rem;
+			}
+			&[data-size="4"] {
+				width: 6rem;
+			}
+			&[data-size="3"] {
+				width: 5rem;
+			}
+			input {
+				padding: 0 1rem;
+			}
+		}
+		@media (@screen-md-min){
+			&[data-size="10"] {
+				width: 14rem;
+			}
+			&[data-size="5"] {
+				width: 9rem;
+			}
+			&[data-size="4"] {
+				width: 8.5rem;
+			}
+			&[data-size="3"] {
+				width: 8rem;
+			}
+			input {
+				padding: 0 1rem;
+			}
+		}
 	}
 	.button-container {
 		padding: 1rem 0;
+
 		.primary-button {
+			min-width: 10rem;
+			padding: 0;
+			width: 30%;
+
 			&:last-child {
 				float: right;
 				margin-right: 0;
 			}
 		}
+	}
 
+	@media (@screen-md-min){
+		.dropdown-container{
+			.dropdown-trigger {
+				min-width: 30rem;
+			}
+		}
 	}
 }
 /* REFER A FRIEND STYLES */
@@ -2514,7 +2607,53 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+.tooltip-trigger {
+	background-color: #f1f3f4;
+	border-radius: 50%;
+	color: #037bc1;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	font-size: 1.4rem;
+	font-weight: bold;
+	height: 1.6rem;
+	line-height: 1.5rem;
+	position: relative;
+	text-align: center;
+	width: 1.6rem;
+
+	.tooltip-text {
+    background-color: #037bc1;
+    border-radius: 6px;
+		bottom: 100%;
+    color: #fff;
+		font-family: @secondary_font;
+		font-size: 1.3rem;
+		font-weight: 300;
+		left: 50%;
+		line-height: 1.5;
+		margin-left: -18rem;
+    padding: 5px 0;
+    text-align: center;
+    visibility: hidden;
+    width: 20rem;
+    position: absolute;
+    z-index: 1;
+		@media (@screen-md-min){
+			margin-left: -18rem;
+		}
+	}
+	&:hover {
+		.tooltip-text {
+		    visibility: visible;
+		}
+	}
+}
+
 .dropdown-container {
+	.dropdown-updated {
+		color: #000;
+	}
 	&.alt-dropdown1 {
 
 		.dropdown-trigger {

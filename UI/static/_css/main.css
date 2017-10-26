@@ -5570,6 +5570,9 @@ input[type=radio]:checked:before {
   top: -0.3rem;
   position: relative;
 }
+input[type="text"] {
+  color: #000;
+}
 .checkbox {
   height: 22px;
   width: 21px;
@@ -7851,27 +7854,114 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #login-popup {
   max-width: 90rem;
 }
+#login-popup input[type="text"]:disabled {
+  background: #e6e6e6;
+}
+#login-popup .window-title {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
 #login-popup .radio-wrapper {
   margin-bottom: 3rem;
-  text-align: center;
+}
+#login-popup .radio-wrapper .radio-container + label {
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+@media (min-width: 992px) {
+  #login-popup .radio-wrapper .radio-container + label {
+    margin-right: 4rem;
+  }
 }
 #login-popup #login-account-info {
   font-size: 1.6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 #login-popup #login-account-info label {
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
 #login-popup .dropdown-container {
-  margin: 2rem auto 2rem;
-  width: 80%;
+  margin: 0 0 5rem;
+}
+#login-popup .dropdown-container .dropdown-trigger {
+  background-color: #f1f3f4;
+  border: solid .1rem #d0d0d0;
+  border-radius: 0;
+  min-width: 100%;
+  padding-right: 5rem;
+  width: auto;
+  white-space: nowrap;
+}
+#login-popup .dropdown-container .dropdown-trigger .carret {
+  border-color: #d0d0d0;
+}
+#login-popup .input-container[data-size="10"] {
+  width: 10rem;
+}
+#login-popup .input-container[data-size="5"] {
+  width: 6.5rem;
+}
+#login-popup .input-container[data-size="4"] {
+  width: 5.5rem;
+}
+#login-popup .input-container[data-size="3"] {
+  width: 4.5rem;
+}
+#login-popup .input-container input {
+  padding: 0 1rem;
+}
+@media (min-width: 375px) {
+  #login-popup .input-container[data-size="10"] {
+    width: 12rem;
+  }
+  #login-popup .input-container[data-size="5"] {
+    width: 8.5rem;
+  }
+  #login-popup .input-container[data-size="4"] {
+    width: 6rem;
+  }
+  #login-popup .input-container[data-size="3"] {
+    width: 5rem;
+  }
+  #login-popup .input-container input {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #login-popup .input-container[data-size="10"] {
+    width: 14rem;
+  }
+  #login-popup .input-container[data-size="5"] {
+    width: 9rem;
+  }
+  #login-popup .input-container[data-size="4"] {
+    width: 8.5rem;
+  }
+  #login-popup .input-container[data-size="3"] {
+    width: 8rem;
+  }
+  #login-popup .input-container input {
+    padding: 0 1rem;
+  }
 }
 #login-popup .button-container {
   padding: 1rem 0;
 }
+#login-popup .button-container .primary-button {
+  min-width: 10rem;
+  padding: 0;
+  width: 30%;
+}
 #login-popup .button-container .primary-button:last-child {
   float: right;
   margin-right: 0;
+}
+@media (min-width: 992px) {
+  #login-popup .dropdown-container .dropdown-trigger {
+    min-width: 30rem;
+  }
 }
 /* REFER A FRIEND STYLES */
 .page-wrapper {
@@ -8200,6 +8290,50 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-share .social-share img {
   max-width: 50px;
   max-height: 50px;
+}
+.tooltip-trigger {
+  background-color: #f1f3f4;
+  border-radius: 50%;
+  color: #037bc1;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 1.6rem;
+  line-height: 1.5rem;
+  position: relative;
+  text-align: center;
+  width: 1.6rem;
+}
+.tooltip-trigger .tooltip-text {
+  background-color: #037bc1;
+  border-radius: 6px;
+  bottom: 100%;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  left: 50%;
+  line-height: 1.5;
+  margin-left: -18rem;
+  padding: 5px 0;
+  text-align: center;
+  visibility: hidden;
+  width: 20rem;
+  position: absolute;
+  z-index: 1;
+}
+@media (min-width: 992px) {
+  .tooltip-trigger .tooltip-text {
+    margin-left: -18rem;
+  }
+}
+.tooltip-trigger:hover .tooltip-text {
+  visibility: visible;
+}
+.dropdown-container .dropdown-updated {
+  color: #000;
 }
 .dropdown-container.alt-dropdown1 .dropdown-trigger {
   background: #f7f7f7;
