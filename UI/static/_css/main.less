@@ -5,7 +5,7 @@
 	position			: fixed;
 	width				: 100%;
 	background-color	: #fff;
-	z-index				: 99999;
+	z-index				: 9998;
 	top					: 0;
 
 	+ div, + section {
@@ -421,7 +421,7 @@ footer{
 			font-size: 2.6rem;
 		}
 		p {
-			margin-bottom: 3rem;
+			margin-bottom: 1rem;
 
 			&:empty {
 				height: 0;
@@ -660,24 +660,21 @@ div[class^="col-"]{
 
 	.slide {
 		position: absolute;
+		z-index: 1;
+
+		&:first-child {
+			z-index: 100;
+		}
 	}
 
-	#slide1 {
-		z-index: 100;
-	}
-	#slide2 {
-		z-index: 50;
-	}
-	#slide2 {
-		z-index: 1;
-	}
 	.inner-slide-content {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
 }
-.cycle-slideshow{
+.cycle-slideshow,
+.hero-slideshow{
 	overflow		: visible !important;
 	margin-bottom: 0.5rem;
 	@media (@screen-md-min){
@@ -1130,15 +1127,20 @@ div[class^="cq-colctrl-lt1-"]{
 }
 @media (@screen-md-min){
 	.cq-colctrl-lt1 {
+		clear: both;
+		display: -webkit-box;
+		display: -webkit-flex;
+    display: flex;
+    margin-bottom: 3rem !important;
+		height: 100%;
+		min-height: 100%;
+
+    .parsys_column {
+			display: -webkit-box;
 			display: -webkit-flex;
 	    display: flex;
-	    margin-bottom: 3rem !important;
-
-	    .parsys_column {
-				display: -webkit-flex;
-		    display: flex;
-		    flex-direction: column;
-		    padding-left: 0;
+	    flex-direction: column;
+	    padding-left: 0;
 		}
 	}
 }
@@ -1157,6 +1159,15 @@ div[class^="cq-colctrl-lt1-"]{
 
 		@media (@screen-md-min){
 
+		}
+	}
+}
+.cardpromo-plans {
+	.dropdown-trigger {
+		padding-left: 1.5rem;
+
+		.value {
+			white-space: nowrap;
 		}
 	}
 }
@@ -1199,6 +1210,7 @@ div[class^="cq-colctrl-lt1-"]{
 		display: block;
 		width: 33%;
 		height: auto;
+		clear: both;
 
 		img{
 			width	: 100%;
@@ -1225,6 +1237,9 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	.inner-content-wrapper{
+		clear: both;
+		display: block;
+		//min-height: 40rem;
 		width		: 100%;
 		background	: #fff;
 	}
@@ -1355,6 +1370,9 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 /* FULL BANNER EMAIL SIGN UP */
+.signup-for-newsletters-popup {
+	clear:both;
+}
 .email_signup{
 	padding				: 3rem 2rem;
 	background-color	: @secondary_color;
@@ -2089,9 +2107,162 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+/* LOGIN STYLES */
+#login-popup {
+	max-width: 90rem;
+
+	input[type="text"]:disabled {
+	 background: #e6e6e6;
+	}
+	.window-title {
+		font-size: 2.4rem;
+		margin-bottom: 2rem;
+		text-align: left;
+	}
+	.radio-wrapper{
+		margin-bottom: 3rem;
+
+		.radio-container+label {
+			font-size: 1.6rem;
+			margin-right: 2rem;
+			@media (@screen-md-min){
+				margin-right: 4rem;
+			}
+		}
+	}
+	#login-account-info{
+		font-size: 1.6rem;
+		margin-bottom: 5rem;
+
+		label {
+			font-family: @secondary_font;
+			font-weight: 500;
+		}
+	}
+	.dropdown-container {
+		margin: 0 0 5rem;
+
+		.dropdown-trigger {
+			background-color: #f1f3f4;
+			border: solid .1rem #d0d0d0;
+			border-radius: 0;
+			min-width: 100%;
+			padding-right: 5rem;
+			width: auto;
+			white-space: nowrap;;
+
+			.carret {
+				border-color: #d0d0d0;
+			}
+		}
+	}
+	.input-container {
+		&[data-size="10"] {
+			width: 10rem;
+		}
+		&[data-size="5"] {
+			width: 6.5rem;
+		}
+		&[data-size="4"] {
+			width: 5.5rem;
+		}
+		&[data-size="3"] {
+			width: 4.5rem;
+		}
+		input {
+			padding: 0 1rem;
+		}
+		@media (@screen-xs-min){
+			&[data-size="10"] {
+				width: 12rem;
+			}
+			&[data-size="5"] {
+				width: 8.5rem;
+			}
+			&[data-size="4"] {
+				width: 6rem;
+			}
+			&[data-size="3"] {
+				width: 5rem;
+			}
+			input {
+				padding: 0 1rem;
+			}
+		}
+		@media (@screen-md-min){
+			&[data-size="10"] {
+				width: 14rem;
+			}
+			&[data-size="5"] {
+				width: 9rem;
+			}
+			&[data-size="4"] {
+				width: 8.5rem;
+			}
+			&[data-size="3"] {
+				width: 8rem;
+			}
+			input {
+				padding: 0 1rem;
+			}
+		}
+	}
+	.button-container {
+		padding: 1rem 0;
+
+		.primary-button {
+			min-width: 10rem;
+			padding: 0;
+			width: 30%;
+
+			&:last-child {
+				float: right;
+				margin-right: 0;
+			}
+		}
+	}
+
+	@media (@screen-md-min){
+		.dropdown-container{
+			.dropdown-trigger {
+				min-width: 30rem;
+			}
+		}
+	}
+}
 /* REFER A FRIEND STYLES */
 .page-wrapper {
 	background: #fff;
+}
+.refer-a-friend {
+	.form-area-wrapper {
+		margin-bottom: 1.5rem;
+	}
+	.button-container {
+		padding-left: 0;
+	}
+
+}
+.refer-a-friend,
+.promotioncontent {
+	.full-banner-light {
+		.icon {
+			display: none;
+		}
+		.content {
+			background-size: 45px 45px;
+
+			@media(@screen-xs-min){
+				background-size: contain;
+			}
+			@media (@screen-md-min){
+				white-space: nowrap;
+			}
+			background: url('/etc/designs/ohgre/clientlibs/_img/global/phone.svg') left 50% no-repeat;
+			padding-left: 53px;
+			width: 100%;
+		}
+	}
 }
 .alt-banner1 {
 	.slide-image {
@@ -2436,7 +2607,53 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
+.tooltip-trigger {
+	background-color: #f1f3f4;
+	border-radius: 50%;
+	color: #037bc1;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	font-size: 1.4rem;
+	font-weight: bold;
+	height: 1.6rem;
+	line-height: 1.5rem;
+	position: relative;
+	text-align: center;
+	width: 1.6rem;
+
+	.tooltip-text {
+    background-color: #037bc1;
+    border-radius: 6px;
+		bottom: 100%;
+    color: #fff;
+		font-family: @secondary_font;
+		font-size: 1.3rem;
+		font-weight: 300;
+		left: 50%;
+		line-height: 1.5;
+		margin-left: -18rem;
+    padding: 5px 0;
+    text-align: center;
+    visibility: hidden;
+    width: 20rem;
+    position: absolute;
+    z-index: 1;
+		@media (@screen-md-min){
+			margin-left: -18rem;
+		}
+	}
+	&:hover {
+		.tooltip-text {
+		    visibility: visible;
+		}
+	}
+}
+
 .dropdown-container {
+	.dropdown-updated {
+		color: #000;
+	}
 	&.alt-dropdown1 {
 
 		.dropdown-trigger {
@@ -2716,6 +2933,8 @@ div.alt-col2,
 	}
 }
 #delta-customer-info{
+	width: 100%;
+
 	h3{
 		color: @primary_color;
 		margin-top: 0;
@@ -2758,20 +2977,46 @@ div.alt-col2,
 	}
 	.desktop-flex-container{
 		div{
-			width: 100%;
+			//width: 100%;
 
 			&.div-container{
 				margin-right: 2rem;
 				text-align: left;
 
 				@media (@screen-md-min){
-					width: 70%;
+					width: 37%;
 				}
 
 				.box-with-border.has-image .box-inner h3{
 					text-align: left;
 					padding: 0;
 				}
+			}
+		}
+		.two-vert-cols {
+			@media (@screen-md-min){
+				width: 63%;
+
+				.form-element{
+					&:last-child {
+						//height: 100%;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		.div-container,
+		.two-vert-cols{
+			h3{
+				font-size: 2.3rem;
+			}
+			display: -webkit-flex;
+			display: flex;
+				flex-direction: column;
+
+			div {
+					align-items: stretch;
 			}
 		}
 	}
@@ -3437,6 +3682,11 @@ div.alt-col2,
 	}
 }
 .confirmation-info{
+	.confirmation-block{
+		.input-group-wrapper {
+			overflow: hidden;
+		}
+	}
 	.box-with-border{
 		height: 100%;
 		margin-bottom: 0;
@@ -3834,7 +4084,7 @@ input{
 }
 .input-group-wrapper{
 	margin-bottom: 1rem;
-	overflow: hidden;
+	//overflow: hidden;
 
 	strong {
 		color: #000;
@@ -3957,6 +4207,9 @@ input{
 	.lastname-container{
 		// width: auto;
 		// margin-right: 2rem;
+		label {
+			white-space: nowrap;
+		}
 	}
 	.zipcode-container{
 		// width: auto;
@@ -4074,6 +4327,33 @@ input{
 		padding: 0 1.5rem;
 	}
 }
+.multiple-input {
+		.input-container {
+			margin-right: 0;
+		}
+		.input-container[data-size="8"] {
+			width: 10rem;
+		}
+		.input-container[data-size="3"] {
+			width: 6rem;
+		}
+		.lastname-container {
+			margin-bottom: 1rem;
+
+		}
+		@media(@screen-xs-min){
+			.input-container[data-size="8"] {
+				width: 11.5rem;
+			}
+			.input-container[data-size="3"] {
+				width: 8rem;
+			}
+			.input-container {
+				margin-right: .2rem;
+			}
+		}
+}
+
 .steps-container{
 	position: relative;
 	width: 100%;
@@ -4202,7 +4482,7 @@ input{
 	background: rgba(0,0,0,0.7);
 	top: 0;
 	left: 0;
-	z-index: 10000000;
+	z-index: 9999;
 	display: none;
 	font-size: 1.6rem;
 
@@ -4311,7 +4591,7 @@ input{
     		white-space: nowrap;
 			}
 		}
-		
+
 		@media (@screen-md-min){
 			.plan-button {
 					width: 40%;
@@ -4347,6 +4627,12 @@ input{
 	overflow: auto;
 	background: #fff;
 	position: relative;
+
+	.button-container {
+		a {
+			font-size: 1.5rem;
+		}
+	}
 
 	&#signup-confirm {
 		h3 {
@@ -4844,6 +5130,10 @@ input{
 				font-family: @primary_font;
 			}
 		}
+	}
+	.box-with-border {
+		margin-bottom: 2rem;
+		width: 100%;
 	}
 }
 ul.info-links {

@@ -43,6 +43,9 @@ body {
     background-position: -8vw 6vw;
   }
 }
+body.fixed-body {
+  overflow: hidden;
+}
 img {
   max-width: 100%;
 }
@@ -497,6 +500,9 @@ input[type=radio]:checked:before {
 .small-radio .radio-container + label {
   top: -0.3rem;
   position: relative;
+}
+input[type="text"] {
+  color: #000;
 }
 .checkbox {
   height: 22px;

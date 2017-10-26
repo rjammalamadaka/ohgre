@@ -13,8 +13,8 @@ This will be replaced by the content of _doc_head.html
             <div class="friend-info">
               <h4>Your Friend's Information</h4>
               <label for="friend-emails">Friend's Email Address</label>
-              <textarea name="friend-emails" rows="8" cols="80"></textarea>
-              <p>Don't feel like typing? <a href="#">Use your address book</a></p>
+              <textarea name="friend-emails" class="cloudsponge-contacts" rows="8" cols="80"></textarea>
+              <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
               <label for="raf-email-subject">Subject Line</label>
               <input type="text" name="raf-email-subject" value="Enroll with Georgia Natural Gas and we could both get $50" disabled>
               <label for="raf-email-message">Add or Edit Message</label>
@@ -37,6 +37,7 @@ This will be replaced by the content of _doc_head.html
 
         </div>
         <div class="col-md-6" id="raf-email-preview">
+          <a href="#" id="close-window">X</a>
           <div class="email-body">
             <h3>Email Preview</h3>
           </div>
