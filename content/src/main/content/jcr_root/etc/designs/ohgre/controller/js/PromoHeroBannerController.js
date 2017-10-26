@@ -124,5 +124,10 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
         }).error(function (data,status, headers, config){ });
     }
 
+  	$rootScope.notexpired=true;
+  if($rootScope.hashParams.isExpired){
+	$rootScope.notexpired=false;
+  }
+
 }]);
 
