@@ -6245,7 +6245,7 @@ footer .bbb-info img {
   font-size: 2.6rem;
 }
 .promocode #promo-enter-wrapper p {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .promocode #promo-enter-wrapper p:empty {
   height: 0;
@@ -7846,6 +7846,32 @@ div[class^="cq-colctrl-lt1-"] .card p {
   position: absolute;
   left: 0;
   z-index: 1;
+}
+/* LOGIN STYLES */
+#login-popup {
+  max-width: 90rem;
+}
+#login-popup .radio-wrapper {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+#login-popup #login-account-info {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+#login-popup #login-account-info label {
+  font-weight: 500;
+}
+#login-popup .dropdown-container {
+  margin: 2rem auto 2rem;
+  width: 80%;
+}
+#login-popup .button-container {
+  padding: 1rem 0;
+}
+#login-popup .button-container .primary-button:last-child {
+  float: right;
+  margin-right: 0;
 }
 /* REFER A FRIEND STYLES */
 .page-wrapper {
@@ -9990,6 +10016,9 @@ input {
   overflow: auto;
   background: #fff;
   position: relative;
+}
+.window-wrapper .button-container a {
+  font-size: 1.5rem;
 }
 .window-wrapper#signup-confirm h3 {
   font-size: 2.5rem;

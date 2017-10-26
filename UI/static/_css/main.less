@@ -421,7 +421,7 @@ footer{
 			font-size: 2.6rem;
 		}
 		p {
-			margin-bottom: 3rem;
+			margin-bottom: 1rem;
 
 			&:empty {
 				height: 0;
@@ -2105,6 +2105,36 @@ div[class^="cq-colctrl-lt1-"]{
 			left				: 0;
 			z-index				: 1;
 		}
+	}
+}
+/* LOGIN STYLES */
+#login-popup {
+	max-width: 90rem;
+
+	.radio-wrapper{
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+	#login-account-info{
+		font-size: 1.6rem;
+		margin-bottom: 2rem;
+		label {
+			font-weight: 500;
+		}
+	}
+	.dropdown-container {
+		margin: 2rem auto 2rem;
+		width: 80%;
+	}
+	.button-container {
+		padding: 1rem 0;
+		.primary-button {
+			&:last-child {
+				float: right;
+				margin-right: 0;
+			}
+		}
+
 	}
 }
 /* REFER A FRIEND STYLES */
@@ -4458,6 +4488,12 @@ input{
 	overflow: auto;
 	background: #fff;
 	position: relative;
+
+	.button-container {
+		a {
+			font-size: 1.5rem;
+		}
+	}
 
 	&#signup-confirm {
 		h3 {
