@@ -7974,6 +7974,19 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 .refer-a-friend .button-container {
   padding-left: 0;
+  padding-right: 0;
+}
+.refer-a-friend .button-container input {
+  display: inline-block;
+  width: 46.5%;
+}
+.refer-a-friend .button-container input[type="button"] {
+  margin-right: 6%;
+}
+@media (min-width: 992px) {
+  .refer-a-friend .button-container input {
+    width: 45%;
+  }
 }
 .refer-a-friend .full-banner-light .icon,
 .promotioncontent .full-banner-light .icon {
