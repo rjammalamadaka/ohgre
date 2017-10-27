@@ -22,7 +22,6 @@
 }
 * a {
   color: #ff6008;
-  text-transform: uppercase;
 }
 html {
   font-size: 62.5%;
@@ -561,6 +560,7 @@ input[type="text"] {
   border: none;
   letter-spacing: .1rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 .primary-button:hover,
 .accent-button:hover {

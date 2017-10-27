@@ -5091,7 +5091,6 @@ button.list-group-item-danger.active:focus {
 }
 * a {
   color: #ff6008;
-  text-transform: uppercase;
 }
 html {
   font-size: 62.5%;
@@ -5630,6 +5629,7 @@ input[type="text"] {
   border: none;
   letter-spacing: .1rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 .primary-button:hover,
 .accent-button:hover {
@@ -6020,6 +6020,7 @@ div[class^="col-"] {
   font-size: 2rem;
   font-family: 'Roboto', sans-serif;
   line-height: 5rem;
+  text-transform: uppercase;
 }
 #primary-header #primary-navigation.expaned-menu {
   display: block;
@@ -6906,6 +6907,7 @@ div[class^="cq-colctrl-lt1-"] .card a {
   border: none;
   letter-spacing: .1rem;
   font-weight: 500;
+  white-space: nowrap;
   text-decoration: none;
 }
 div[class^="cq-colctrl-lt1-"] .card a:hover {
@@ -8784,6 +8786,24 @@ div.alt-col2,
 .box-with-border.alt-border1 {
   border-width: 0;
 }
+.box-with-border.alert-box {
+  background-color: #fff3f5;
+  border-color: #d0021b;
+}
+.box-with-border.alert-box h5 {
+  font-size: 1.8rem;
+}
+.box-with-border.alert-box p {
+  color: #4a4a4a;
+  font-weight: 500;
+}
+.box-with-border.alert-alt1 {
+  background-color: #ebfffd;
+  border-color: #0eb2a5;
+}
+.box-with-border.alert-alt1 h5 {
+  color: #13baac;
+}
 .box-with-border.has-image {
   padding: 0;
 }
@@ -10539,109 +10559,135 @@ input {
   background-image: url('../_img/home/card_moving.jpg');
 }
 #moving-container.form-confirmation .intro-wrapper h2,
-#delta-confirmation.form-confirmation .intro-wrapper h2 {
+#delta-confirmation.form-confirmation .intro-wrapper h2,
+#account-dashboard.form-confirmation .intro-wrapper h2 {
   color: #133f98;
   font-size: 2rem;
   margin: 0;
 }
 #moving-container.form-confirmation .intro-wrapper p,
-#delta-confirmation.form-confirmation .intro-wrapper p {
+#delta-confirmation.form-confirmation .intro-wrapper p,
+#account-dashboard.form-confirmation .intro-wrapper p {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 1.6rem;
 }
 #moving-container label,
-#delta-confirmation label {
+#delta-confirmation label,
+#account-dashboard label {
   font-weight: normal;
 }
 #moving-container input,
-#delta-confirmation input {
+#delta-confirmation input,
+#account-dashboard input {
   margin-bottom: 2rem;
 }
 #moving-container h4,
-#delta-confirmation h4 {
+#delta-confirmation h4,
+#account-dashboard h4 {
   font-size: 2.1rem;
   margin-bottom: 3rem;
 }
 #moving-container .intro-wrapper h4,
-#delta-confirmation .intro-wrapper h4 {
+#delta-confirmation .intro-wrapper h4,
+#account-dashboard .intro-wrapper h4 {
   font-weight: normal;
   color: #0074bf;
   margin-bottom: 0;
   font-size: 1.8rem;
 }
 #moving-container .information-block,
-#delta-confirmation .information-block {
+#delta-confirmation .information-block,
+#account-dashboard .information-block {
   background: #f4f4f4;
 }
 #moving-container .information-block input[type=checkbox][disabled]:before,
-#delta-confirmation .information-block input[type=checkbox][disabled]:before {
+#delta-confirmation .information-block input[type=checkbox][disabled]:before,
+#account-dashboard .information-block input[type=checkbox][disabled]:before {
   background-image: url(../_img/global/check_inverted.png);
 }
 #moving-container .information-block .after-checkbox,
-#delta-confirmation .information-block .after-checkbox {
+#delta-confirmation .information-block .after-checkbox,
+#account-dashboard .information-block .after-checkbox {
   font-size: 1.3rem;
 }
 #moving-container .information-block label,
-#delta-confirmation .information-block label {
+#delta-confirmation .information-block label,
+#account-dashboard .information-block label {
   font-size: 1.25rem;
 }
 #moving-container .information-block h4,
-#delta-confirmation .information-block h4 {
+#delta-confirmation .information-block h4,
+#account-dashboard .information-block h4 {
   margin-bottom: 1rem;
 }
 #moving-container #moving-form h5,
-#delta-confirmation #moving-form h5 {
+#delta-confirmation #moving-form h5,
+#account-dashboard #moving-form h5 {
   margin: 2rem 0;
 }
 #moving-container .input-group-wrapper.small-radio,
-#delta-confirmation .input-group-wrapper.small-radio {
+#delta-confirmation .input-group-wrapper.small-radio,
+#account-dashboard .input-group-wrapper.small-radio {
   margin-bottom: 2rem;
 }
 #moving-container .box-with-border,
-#delta-confirmation .box-with-border {
+#delta-confirmation .box-with-border,
+#account-dashboard .box-with-border {
   padding: 2.5rem;
 }
 #moving-container .box-with-border h5,
-#delta-confirmation .box-with-border h5 {
+#delta-confirmation .box-with-border h5,
+#account-dashboard .box-with-border h5 {
   margin: 0 0 1rem;
 }
 #moving-container .box-with-border p,
-#delta-confirmation .box-with-border p {
+#delta-confirmation .box-with-border p,
+#account-dashboard .box-with-border p {
   line-height: 2;
 }
 @media (min-width: 992px) {
   #moving-container .box-with-border,
-  #delta-confirmation .box-with-border {
+  #delta-confirmation .box-with-border,
+  #account-dashboard .box-with-border {
     width: 50%;
     height: auto;
     margin-right: 2.5rem;
   }
 }
 #moving-container .box-with-border:last-child,
-#delta-confirmation .box-with-border:last-child {
+#delta-confirmation .box-with-border:last-child,
+#account-dashboard .box-with-border:last-child {
   margin-right: 0;
 }
 #moving-container .box-with-border .form-element,
-#delta-confirmation .box-with-border .form-element {
+#delta-confirmation .box-with-border .form-element,
+#account-dashboard .box-with-border .form-element {
   width: 100%;
 }
 #moving-container .box-with-border .form-area h1,
 #delta-confirmation .box-with-border .form-area h1,
+#account-dashboard .box-with-border .form-area h1,
 #moving-container .box-with-border .form-area h2,
 #delta-confirmation .box-with-border .form-area h2,
+#account-dashboard .box-with-border .form-area h2,
 #moving-container .box-with-border .form-area h3,
 #delta-confirmation .box-with-border .form-area h3,
+#account-dashboard .box-with-border .form-area h3,
 #moving-container .box-with-border .form-area h4,
 #delta-confirmation .box-with-border .form-area h4,
+#account-dashboard .box-with-border .form-area h4,
 #moving-container .box-with-border .form-area h5,
 #delta-confirmation .box-with-border .form-area h5,
+#account-dashboard .box-with-border .form-area h5,
 #moving-container .box-with-border .form-area h6,
-#delta-confirmation .box-with-border .form-area h6 {
+#delta-confirmation .box-with-border .form-area h6,
+#account-dashboard .box-with-border .form-area h6 {
   font-family: 'Roboto Slab', serif;
 }
 #moving-container .box-with-border,
-#delta-confirmation .box-with-border {
+#delta-confirmation .box-with-border,
+#account-dashboard .box-with-border {
   margin-bottom: 2rem;
   width: 100%;
 }
@@ -10651,55 +10697,246 @@ ul.info-links {
 ul.info-links li {
   margin: 0 0 .5rem;
 }
-#delta-confirmation h4 {
+#delta-confirmation h4,
+#account-dashboard h4 {
   font-family: 'Roboto Slab', serif;
   font-size: 1.7rem;
 }
-#delta-confirmation .info-block-wrapper {
+#delta-confirmation .info-block-wrapper,
+#account-dashboard .info-block-wrapper {
   margin-right: 2.5rem;
   width: 50%;
 }
-#delta-confirmation p.footnote {
+#delta-confirmation p.footnote,
+#account-dashboard p.footnote {
   font-size: 1.2rem;
   line-height: 1.3;
   margin: 3rem 0 0;
 }
-#delta-confirmation .box-with-border {
+#delta-confirmation .box-with-border,
+#account-dashboard .box-with-border {
   margin-bottom: 2rem;
   width: 100%;
 }
-#delta-confirmation .box-with-border h5 {
+#delta-confirmation .box-with-border h5,
+#account-dashboard .box-with-border h5 {
   font-weight: 600;
   margin: 2rem 0 1rem;
 }
 #delta-confirmation .box-with-border li,
-#delta-confirmation .box-with-border h5 {
+#account-dashboard .box-with-border li,
+#delta-confirmation .box-with-border h5,
+#account-dashboard .box-with-border h5 {
   font-size: 1.3rem;
 }
 #delta-confirmation .box-with-border p,
-#delta-confirmation .box-with-border li {
+#account-dashboard .box-with-border p,
+#delta-confirmation .box-with-border li,
+#account-dashboard .box-with-border li {
   line-height: 1.8;
 }
-#delta-confirmation .box-with-border .info-links {
+#delta-confirmation .box-with-border .info-links,
+#account-dashboard .box-with-border .info-links {
   margin-left: 0;
   margin-top: 4rem;
   padding-left: 0;
 }
-#delta-confirmation .information-block {
+#delta-confirmation .information-block,
+#account-dashboard .information-block {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
   width: 100%;
 }
-#delta-confirmation .information-block:last-child {
+#delta-confirmation .information-block:last-child,
+#account-dashboard .information-block:last-child {
   margin-bottom: 0;
 }
-#delta-confirmation .desktop-flex-container > div:last-child {
+#delta-confirmation .desktop-flex-container > div:last-child,
+#account-dashboard .desktop-flex-container > div:last-child {
   position: relative;
 }
-#delta-confirmation .desktop-flex-container > div:last-child .primary-button {
+#delta-confirmation .desktop-flex-container > div:last-child .primary-button,
+#account-dashboard .desktop-flex-container > div:last-child .primary-button {
   bottom: 0;
   position: absolute;
+}
+.account-info-table {
+  margin: 0 0 2rem 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+.account-info-table tr {
+  border-bottom: 1px solid #e9eef1;
+  display: block;
+  padding: 1rem 0;
+}
+.account-info-table tr:last-child {
+  border-bottom: none;
+}
+@media (min-width: 992px) {
+  .account-info-table tr {
+    display: table-row;
+    padding: 0;
+  }
+}
+.account-info-table td {
+  width: 100%;
+  display: block;
+}
+.account-info-table td:nth-child(even) {
+  color: #000;
+  font-weight: 600;
+  padding-top: .5rem;
+}
+@media (min-width: 992px) {
+  .account-info-table td {
+    width: 65%;
+    padding: 1rem 1rem .5rem 1rem;
+    display: table-cell;
+  }
+  .account-info-table td:nth-child(even) {
+    width: 45%;
+  }
+  .account-info-table td:nth-child(odd) {
+    padding-left: 0;
+  }
+}
+#account-dashboard {
+  background-color: #fff;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+@media (min-width: 992px) {
+  #account-dashboard {
+    border: 1px solid #ccc;
+    margin-top: 5rem;
+  }
+}
+#account-dashboard .desktop-flex-container {
+  background-color: #e0e6e9;
+}
+@media (min-width: 992px) {
+  #account-dashboard .desktop-flex-container {
+    background-color: #fff;
+  }
+}
+#account-dashboard h4 {
+  font-size: 2rem;
+}
+#account-dashboard .intro-wrapper {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 0 0rem 0;
+  padding-left: 2.5rem;
+}
+#account-dashboard .intro-wrapper .user-greeting {
+  font-size: 1.3rem;
+}
+#account-dashboard .intro-wrapper .user-greeting a {
+  color: #0074bf;
+}
+@media (min-width: 992px) {
+  #account-dashboard .intro-wrapper {
+    margin: 0 0 3rem 0;
+    text-align: right;
+  }
+  #account-dashboard .intro-wrapper .user-greeting a {
+    color: #ff6008;
+  }
+}
+#account-dashboard .information-block {
+  height: 100%;
+  padding-top: 2rem;
+}
+#account-dashboard .alert-box {
+  overflow: hidden;
+  padding: 2rem 2rem 0;
+}
+#account-dashboard .alert-box h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+}
+#account-dashboard .alert-box p {
+  color: #000;
+  font-weight: 500;
+  margin: 0 0 2rem;
+}
+#account-dashboard .alert-box b {
+  color: #d0021b;
+}
+#account-dashboard .alert-box.alert-alt1 {
+  margin-bottom: 0;
+}
+#account-dashboard .alert-box.alert-alt1 b {
+  color: #000;
+}
+#account-dashboard .footnote {
+  background-color: inherit;
+  font-size: 1.2rem;
+  margin: 3rem 0;
+  padding: 3rem 0 2rem;
+}
+#account-dashboard .footnote p {
+  color: #4a4a4a;
+  line-height: 1;
+}
+@media (min-width: 992px) {
+  #account-dashboard .footnote {
+    border-top: 1px solid #e9eef1;
+  }
+}
+#account-dashboard .desktop-flex-container > div:last-child .primary-button {
+  position: inherit;
+}
+#account-dashboard .input-group-wrapper {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e9eef1;
+  padding-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  #account-dashboard .input-group-wrapper {
+    border-width: 0;
+  }
+}
+#account-dashboard .plan-info {
+  background: #fff;
+  padding: 0 2.5rem 2rem 2.5rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  #account-dashboard .plan-info {
+    margin: 0;
+  }
+}
+#account-dashboard .plan-info h4 {
+  color: #0074bf;
+  font-weight: 500;
+  margin: 1.8rem 0 2rem;
+}
+#account-dashboard .buttons {
+  background-color: #fff;
+  padding: 4rem 2.5rem 2rem;
+}
+#account-dashboard .buttons .logout-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+}
+#account-dashboard .buttons .primary-button {
+  display: inline-block;
+  margin: 0 1rem 2.5rem 0;
+  padding: 0;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  #account-dashboard .buttons {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #account-dashboard .buttons .primary-button {
+    width: 45%;
+  }
 }
 @media print footer {
   display: none;
