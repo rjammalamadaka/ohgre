@@ -2241,6 +2241,18 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 	.button-container {
 		padding-left: 0;
+		padding-right: 0;
+		input {
+			display: inline-block;
+			width: 46.5%;
+
+			&[type="button"]{
+				margin-right: 6%;
+			}
+			@media (@screen-md-min){
+				width: 45%;
+			}
+		}
 	}
 
 }
