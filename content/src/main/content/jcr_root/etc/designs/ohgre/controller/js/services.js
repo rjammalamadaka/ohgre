@@ -73,6 +73,12 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/whatCount";
 		return $http.post(url,angular.toJson(requestInfo),config);
     }
+
+    var logout=function(){
+		var url="/bin/logout?"+new Date().getTime();
+		return $http.get(url,config);
+    }
+
     return {
         getQuotes:getQuotes,
         getPromoCodeInfo:getPromoCodeInfo,
@@ -86,7 +92,8 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
         dsmEnroll:dsmEnroll,
         setProductData:setProductData,
         rafUpdateCustomerInfo:rafUpdateCustomerInfo,
-        wcRequest:wcRequest
+        wcRequest:wcRequest,
+        logout:logout
     }               
 }]);
 
