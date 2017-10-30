@@ -5427,30 +5427,96 @@ ul.info-links {
 	}
 }
 #renew-plan-select {
+	border-color: #e9eef1;
+	padding-top: 0;
+
+	@media (@screen-md-min){
+		padding-top: 4rem;
+	}
+
+	.foot-notes {
+			strong{
+				color: #4a4a4a;
+				font-family: @accent_font;
+				font-size: 1.2rem;
+    		font-weight: 500;
+			}
+			p {
+				margin-bottom: 2rem;
+			}
+	}
+
+	.select-header {
+		flex-direction: row;
+
+		.intro-wrapper {
+			@media (@screen-md-min){
+				order: 2;
+				text-align: right;
+				width: 50%;
+			}
+		}
+	}
 	h3 {
 		color: @primary_color;
 		font-size: 2rem;
 		font-weight: 500;
 	}
 	.promocode-entry {
+		padding: 0 2rem 3rem;
+
 		label {
 			display: block;
 			font-family: @secondary_font;
 			font-size: 1.4rem;
 			font-weight: 300;
+			margin-bottom: 1.5rem;
 		}
-		input[type="text"] {
-			display: inline-block;
-			width: 30rem;
+		button {
+			padding-left: 3rem;
+			padding-right: 3rem;
 		}
+		input, button {
+			margin-bottom: 2rem;
+			width: 100%;
+		}
+		@media (@screen-md-min){
+			padding-left: 0;
+			padding-right: 0;
+
+			input[type="text"] {
+				display: inline-block;
+				margin-right: 2rem;
+				width: 30rem;
+			}
+			button {
+				width: auto;
+			}
+			input, button {
+				float: left;
+			}
+		}
+
 	}
 
 	.current-plan {
 		margin-bottom: 2rem;
 
+		> div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
 		.selected-price {
 			background-color: #f6f6f6;
+			border: .1rem solid #e9eef1;
 			color: @primary_color;
+		}
+		.selected-info {
+			h5 {
+				color: @primary_color;
+			}
 		}
 	}
 	.plan-detail {
@@ -5461,7 +5527,7 @@ ul.info-links {
 			small {
 				color: #4a4a4a;
 				font-family: @secondary_font;
-				font-size: 1rem;
+				font-size: 1.1rem;
 				line-height: 1.5;
 				margin-top: 1rem;
 				text-align: left;
