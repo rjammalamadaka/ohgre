@@ -1,4 +1,4 @@
-<section>
+<section ng-controller="LoginPopupController">
 		<div class="container">
             <div class="cq-colctrl-lt1-c0-sc">
                 <div class="card">
@@ -9,10 +9,12 @@
                         <div class="inner-card-content">
                             <h2 class="card-title">${properties.title}</h2>
                             <p>${properties.description}</p>
-                            <a href="${properties.buttonpath || '#'}.html">${properties.buttontitle || 'Learn More'}</a>
+                            <a href="#" ng-click="showLoginPopup()">${properties.buttontitle || 'Learn More'}</a>
                         </div>
                     </div>
                 </div>
             </div>
 		</div>
+        <sly data-sly-include="loginpopup.html"></sly>
 </section>
+
