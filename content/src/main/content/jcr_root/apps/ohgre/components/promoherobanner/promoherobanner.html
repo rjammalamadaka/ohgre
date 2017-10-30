@@ -12,7 +12,8 @@
                   <a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="displayPromotionLogo()" src="${inheritedPageProperties.portalname == 'gre' ? '/etc/designs/ohgre/clientlibs/_img/global/GRE%20Logo_Footer.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
                   <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
                   <span class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
-                  <p><span>${properties.description}</span></p>
+                  <p ng-show="notexpired"><span>${properties.description}</span></p>
+                  <p ng-show="!notexpired"><span>Unfortunately this promotion has expired but we have some great plans below</span></p>
                   <p ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>Hurry! Offer ends {{expdate}}</span></p>
                </div>
             </div>
