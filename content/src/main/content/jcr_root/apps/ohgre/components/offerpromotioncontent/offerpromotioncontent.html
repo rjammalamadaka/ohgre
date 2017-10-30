@@ -1,7 +1,13 @@
 
 <section ng-controller="OfferPromoController">
 	<div class="container">
-		<span class="promo-headline" ng-show="!displayPlans">${properties.heading}</span>
+
+		<span class="promo-headline" ng-show="!displayPlans && notexpired">${properties.heading}</span>
+
+        <div class="error show-error" ng-show="!notexpired">
+            <span class="promo-headline with-error">That promotion code does not appear to be active right now. If you think it was entered correctly &amp; should be valid, please call us at <strong>1-888-466-4427</strong> so that we may further assist you.</span>
+         </div>
+
 		<div class="col-md-10 col-md-offset-1">
 
 			<div class="row promo-wrapper" ng-show="!displayPlans">
