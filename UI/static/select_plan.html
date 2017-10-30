@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<!-- build:include:dist ../includes/_doc_head.html -->
-		This will be replaced by the content of _doc_head.html
-	<!-- /build -->
+<!-- build:include:dist ../includes/_doc_head.html -->
+This will be replaced by the content of _doc_head.html
+<!-- /build -->
+
 <body>
 	<!-- build:include:dist ../includes/header.html -->
-		This will be replaced by the content of header.html
+	This will be replaced by the content of header.html
 	<!-- /build -->
+
 	<section>
-		<div class="container">
-			<!-- build:include:dist../includes/hero_rate_plans.html -->
-				This will be replaced by the content of hero_rate_plans.html
+		<div class="container page-wrapper" id="renew-plan-select">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="desktop-flex-container">
+						<div class="selected-plan current-plan flex-container">
+							<div class="selected-price">
+								<span class="price ng-binding">$0.639</span>
+								<small class="ng-binding">per CCF</small>
+							</div>
+							<div class="selected-info">
+								<span class="selected-plan-tag">Current Plan</span>
+								<h5 class="ng-binding">6 Month Fixed Plan</h5>
+								<span class="utility-name">
+									DTE Gas Company<br>
+									12/31/2016 - 06/30/2017</span>
+
+							</div>
+						</div>
+						<div class="intro-wrapper">
+            <span class="user-greeting">Welcome, John. <a href="#">Logout</a></span>
+          </div>
+
+					</div>
+					<div class="steps-container" style="display: block;">
+						<hr>
+						<div id="your-information" class="step first-step active-step">
+							<span>Your Information</span>
+						</div>
+						<div id="accept-terms" class="step">
+							<span>Accept Terms</span>
+						</div>
+						<div id="review" class="step">
+							<span>Review</span>
+						</div>
+						<div id="thank-you" class="step">
+							<span>Thank You!</span>
+						</div>
+					</div>
+					<h3>Please select a new plan or enter your promo code:</h3>
+					<div class="promocode-entry">
+						<form>
+							<label for="promo-code">If you have a promo code, enter it here.</label>
+							<input type="text" name="promo-code" id="promo-code" /> <button type="submit" class="primary-button inactive">Apply Promo Code</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- build:include:dist ../includes/select_plan_renew_cancel.html -->
+			This will be replaced by the content of select_plan_renew_cancel.html
 			<!-- /build -->
 		</div>
 	</section>
-	<section>
-		<div class="container">
-		<!-- build:include:dist ../includes/select_utility_form.html -->
-			This will be replaced by the content of select_utility_form.html
-		<!-- /build -->
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<!-- build:include:dist ../includes/full_banner_light.html -->
-						This will be replaced by the content of full_banner_light.html
-					<!-- /build -->
-				</div>
-			</div>
-		</div>
-	</section>
+
 	<!-- build:include:dist ../includes/footer.html -->
-			This will be replaced by the content of footer.html
+	This will be replaced by the content of footer.html
 	<!-- /build -->
 </body>
+
 </html>
