@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_plans_mobile.jpg"
-        jcr:lastModified="{Date}2017-10-22T23:29:47.504-04:00"
+        jcr:lastModified="{Date}2017-10-30T09:10:16.348-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-10-22T23:29:47.251-04:00"
+            dam:extracted="{Date}2017-10-30T09:10:16.113-04:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}282"
             exif:PixelYDimension="{Long}195"
-            jcr:lastModified="{Date}2017-10-22T23:29:45.550-04:00"
+            jcr:lastModified="{Date}2017-10-30T09:10:14.740-04:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
