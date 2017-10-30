@@ -161,7 +161,12 @@
             <version>4.0.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
 
+        </dependency>
         <!-- <dependency>
             <groupId>javax.xml.soap</groupId>
             <artifactId>javax.xml.soap-api</artifactId>
@@ -204,7 +209,10 @@
                             org.apache.sling.commons.osgi, org.apache.sling.jcr.api,
                             org.osgi.service.component, org.slf4j, org.tempuri.quoteservice,
                             com.mysql.jdbc.exceptions,
-                            com.mysql.jdbc
+                            com.mysql.jdbc,
+                            com.day.cq.mailer,
+                            org.apache.commons.mail,
+                            javax.mail.internet
                         </Import-Package>
                     </instructions>
                 </configuration>
