@@ -51,7 +51,10 @@
 		<div class="container page-wrapper" id="renew-plan-select">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					<div class="desktop-flex-container">
+					<div class="desktop-flex-container select-header">
+						<div class="intro-wrapper">
+							<span class="user-greeting">Welcome, John. <a href="#">Logout</a></span>
+						</div>
 						<div class="selected-plan current-plan flex-container">
 							<div class="selected-price">
 								<span class="price ng-binding">$0.639</span>
@@ -63,63 +66,22 @@
 								<span class="utility-name">
 									DTE Gas Company<br>
 									12/31/2016 - 06/30/2017</span>
-
 							</div>
 						</div>
-						<div class="intro-wrapper">
-            <span class="user-greeting">Welcome, John. <a href="#">Logout</a></span>
-          </div>
-
 					</div>
-					<div class="steps-container" style="display: block;">
-						<hr>
-						<div id="your-information" class="step first-step active-step">
-							<span>Your Information</span>
+						<div class="promocode-entry">
+						<h3>Please select a new plan or enter your promo code:</h3>
+							<form>
+								<label for="promo-code">If you have a promo code, enter it here.</label>
+								<input type="text" name="promo-code" id="promo-code" /> <button type="submit" class="primary-button inactive">Apply Promo Code</button>
+							</form>
 						</div>
-						<div id="accept-terms" class="step">
-							<span>Accept Terms</span>
-						</div>
-						<div id="review" class="step">
-							<span>Review</span>
-						</div>
-						<div id="thank-you" class="step">
-							<span>Thank You!</span>
-						</div>
-					</div>
-					<h3>Please select a new plan or enter your promo code:</h3>
-					<div class="promocode-entry">
-						<form>
-							<label for="promo-code">If you have a promo code, enter it here.</label>
-							<input type="text" name="promo-code" id="promo-code" /> <button type="submit" class="primary-button inactive">Apply Promo Code</button>
-
-						</form>
-					</div>
 				</div>
 			</div>
 
-			<div class="utility-form">
+			<div class="row">
 	<div class="col-md-10 col-md-offset-1">
-		<div class="row form-wrapper">
-			<div class="col-md-10 desktop-no-padding-left">
-				<form>
-          <!--
-					<div class="form-section">
-						<div class="radio-container">
-							<input type="radio" name="location_type" value="residential" id="location-residential">
-						</div>
-						<label for="location-residential">Residential</label>
-
-						<div class="radio-container">
-							<input type="radio" name="location_type" value="commercial" id="location-commercial">
-						</div>
-						<label for="location-commercial">Commercial</label>
-					</div>
-        -->
-
-				</form>
-			</div>
-		</div>
-		<div class="row">
+		<div class="utility-form">
 			<ul class="plan-detail">
 				<li class="accord-trigger">
 					<div class="flex-container">
@@ -131,11 +93,12 @@
 								<div class="inner-content">
 									<h4>Variable Select</h4>
 									<small>discounted for the first 2 months</small>
-									<p class="desktop-content">The Variable Plan with a discount – for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service. This plan does not require a long-term commitment - you can change to another plan at any time with no additional charges!</p>
+									<p class="desktop-content">The Variable Plan with a discount – for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service. This plan does not require a long-term
+										commitment - you can change to another plan at any time with no additional charges!</p>
 								</div>
 								<div class="plan-button">
 									<a href="#" class="primary-button">Select Plan</a>
-                  <small>
+									<small>
                       Customer Service Charge:<br>
                       <span class="strikethrough">$4.99</span> <span class="highlight">$3.99/mo</span>
                   </small>
@@ -154,8 +117,9 @@
 						</div>
 					</div>
 					<div class="accord-container mobile-content">
-					<!-- this is a duplicate of the info, for layout -->
-						<p>The Variable Plan with a discount – for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service. This plan does not require a long-term commitment - you can change to another plan at any time with no additional charges!</p>
+						<!-- this is a duplicate of the info, for layout -->
+						<p>The Variable Plan with a discount – for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service. This plan does not require a long-term commitment
+							- you can change to another plan at any time with no additional charges!</p>
 						<ul>
 							<li>Upon expiration of the discount, customers will remain on our Variable Plan with service at the standard rate in effect at that time.
 							</li>
@@ -173,7 +137,8 @@
 							<div class="plan-info">
 								<div class="inner-content">
 									<h4>6-Month Fixed Plan</h4>
-									<p class="desktop-content">If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months of your contract.</p>
+									<p class="desktop-content">If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months
+										of your contract.</p>
 								</div>
 								<div class="plan-button">
 									<a href="#" class="primary-button">Select Plan</a>
@@ -183,8 +148,9 @@
 						</div>
 					</div>
 					<div class="accord-container mobile-content">
-					<!-- this is a duplicate of the info, for layout -->
-						<p>If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months of your contract.</p>
+						<!-- this is a duplicate of the info, for layout -->
+						<p>If you choose our 6-Month Fixed price plan, you will be billed at a fixed price per Ccf for the length of your contract. This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 6 months
+							of your contract.</p>
 					</div>
 				</li>
 				<li class="accord-trigger">
@@ -197,7 +163,8 @@
 								<div class="inner-content">
 									<h4>12-Month Fixed Plan</h4>
 									<small>* The lowest 12-month rate in the market! *</small>
-									<p class="desktop-content">This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 12 months of your contract. If you choose our 12-Month Fixed Plan, you will be billed at a fixed price per Ccf for the length of your contract.</p>
+									<p class="desktop-content">This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 12 months of your contract. If you choose our 12-Month Fixed Plan, you will be billed at a fixed price per Ccf for the length
+										of your contract.</p>
 								</div>
 								<div class="plan-button">
 									<a href="#" class="primary-button">Select Plan</a>
@@ -207,7 +174,8 @@
 						</div>
 					</div>
 					<div class="accord-container mobile-content">
-						<p>This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 12 months of your contract. If you choose our 12-Month Fixed Plan, you will be billed at a fixed price per Ccf for the length of your contract.</p>
+						<p>This fixed price plan gives you the peace of mind of knowing exactly what you will pay for the gas you use over the 12 months of your contract. If you choose our 12-Month Fixed Plan, you will be billed at a fixed price per Ccf for the length of
+							your contract.</p>
 					</div>
 				</li>
 				<li class="accord-trigger">
@@ -236,8 +204,11 @@
 			</ul>
 		</div>
 		<div class="foot-notes">
-      <p>Enrollment eligibility, price plan availability and actual customer service charge, deposit requirement, and price per therm are subject to GNG's credit and payment policies. See gng.com for price plans and customer service charge ranges. All price plans are subject to GNG's terms and conditions of service. GNG reserves the right to change or limit the availability of certain price plans.</p>
-      <p>GNG's variable prices listed on the site apply to customers with a beginning meter reading date (which appears as the “Prior Meter Reading Date” on the bill) on or after 09/05/2017. GNG customers on a variable plan may choose another GNG price plan for which they qualify without a credit check.</p>
+			<p><strong>*Rates and Price Plans effective 08/05/2017 to 09/04/2017</strong></p>
+			<p>Enrollment eligibility, price plan availability and actual customer service charge, deposit requirement, and price per therm are subject to GNG's credit and payment policies. See gng.com for price plans and customer service charge ranges. All price
+				plans are subject to GNG's terms and conditions of service. GNG reserves the right to change or limit the availability of certain price plans.</p>
+			<p>GNG's variable prices listed on the site apply to customers with a beginning meter reading date (which appears as the “Prior Meter Reading Date” on the bill) on or after 09/05/2017. GNG customers on a variable plan may choose another GNG price plan
+				for which they qualify without a credit check.</p>
 
 
 		</div>

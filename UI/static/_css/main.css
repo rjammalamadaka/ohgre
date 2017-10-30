@@ -10958,26 +10958,90 @@ ul.info-links li {
     width: 45%;
   }
 }
+#renew-plan-select {
+  border-color: #e9eef1;
+  padding-top: 0;
+}
+@media (min-width: 992px) {
+  #renew-plan-select {
+    padding-top: 4rem;
+  }
+}
+#renew-plan-select .foot-notes strong {
+  color: #4a4a4a;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#renew-plan-select .foot-notes p {
+  margin-bottom: 2rem;
+}
+#renew-plan-select .select-header {
+  flex-direction: row;
+}
+@media (min-width: 992px) {
+  #renew-plan-select .select-header .intro-wrapper {
+    order: 2;
+    text-align: right;
+    width: 50%;
+  }
+}
 #renew-plan-select h3 {
   color: #0074bf;
   font-size: 2rem;
   font-weight: 500;
+}
+#renew-plan-select .promocode-entry {
+  padding: 0 2rem 3rem;
 }
 #renew-plan-select .promocode-entry label {
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
+  margin-bottom: 1.5rem;
 }
-#renew-plan-select .promocode-entry input[type="text"] {
-  display: inline-block;
-  width: 30rem;
+#renew-plan-select .promocode-entry button {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+#renew-plan-select .promocode-entry input,
+#renew-plan-select .promocode-entry button {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  #renew-plan-select .promocode-entry {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #renew-plan-select .promocode-entry input[type="text"] {
+    display: inline-block;
+    margin-right: 2rem;
+    width: 30rem;
+  }
+  #renew-plan-select .promocode-entry button {
+    width: auto;
+  }
+  #renew-plan-select .promocode-entry input,
+  #renew-plan-select .promocode-entry button {
+    float: left;
+  }
 }
 #renew-plan-select .current-plan {
   margin-bottom: 2rem;
 }
+#renew-plan-select .current-plan > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #renew-plan-select .current-plan .selected-price {
   background-color: #f6f6f6;
+  border: .1rem solid #e9eef1;
+  color: #0074bf;
+}
+#renew-plan-select .current-plan .selected-info h5 {
   color: #0074bf;
 }
 #renew-plan-select .plan-detail h4 {
@@ -10986,7 +11050,7 @@ ul.info-links li {
 #renew-plan-select .plan-detail .plan-button small {
   color: #4a4a4a;
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   margin-top: 1rem;
   text-align: left;

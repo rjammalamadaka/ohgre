@@ -13,7 +13,10 @@ This will be replaced by the content of _doc_head.html
 		<div class="container page-wrapper" id="renew-plan-select">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
-					<div class="desktop-flex-container">
+					<div class="desktop-flex-container select-header">
+						<div class="intro-wrapper">
+							<span class="user-greeting">Welcome, John. <a href="#">Logout</a></span>
+						</div>
 						<div class="selected-plan current-plan flex-container">
 							<div class="selected-price">
 								<span class="price ng-binding">$0.639</span>
@@ -25,37 +28,16 @@ This will be replaced by the content of _doc_head.html
 								<span class="utility-name">
 									DTE Gas Company<br>
 									12/31/2016 - 06/30/2017</span>
-
 							</div>
 						</div>
-						<div class="intro-wrapper">
-            <span class="user-greeting">Welcome, John. <a href="#">Logout</a></span>
-          </div>
-
 					</div>
-					<div class="steps-container" style="display: block;">
-						<hr>
-						<div id="your-information" class="step first-step active-step">
-							<span>Your Information</span>
+						<div class="promocode-entry">
+						<h3>Please select a new plan or enter your promo code:</h3>
+							<form>
+								<label for="promo-code">If you have a promo code, enter it here.</label>
+								<input type="text" name="promo-code" id="promo-code" /> <button type="submit" class="primary-button inactive">Apply Promo Code</button>
+							</form>
 						</div>
-						<div id="accept-terms" class="step">
-							<span>Accept Terms</span>
-						</div>
-						<div id="review" class="step">
-							<span>Review</span>
-						</div>
-						<div id="thank-you" class="step">
-							<span>Thank You!</span>
-						</div>
-					</div>
-					<h3>Please select a new plan or enter your promo code:</h3>
-					<div class="promocode-entry">
-						<form>
-							<label for="promo-code">If you have a promo code, enter it here.</label>
-							<input type="text" name="promo-code" id="promo-code" /> <button type="submit" class="primary-button inactive">Apply Promo Code</button>
-
-						</form>
-					</div>
 				</div>
 			</div>
 
