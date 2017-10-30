@@ -85,6 +85,12 @@ ${properties.sharesocially @ context = 'html'}
             <td ng-bind="convertToDate(a.giftCardCreateDate)"></td>
             <td>{{a.giftCardAmount | currency : "$"}} - {{giftCardTypeCode}} bill credits</td>
         </tr>
+
+
+        <tr ng-show="awarded.length ==0">
+          <td>-</td>
+          <td>-</td>
+        </tr>
       </table>
     </div>
   </li>
@@ -102,6 +108,11 @@ ${properties.sharesocially @ context = 'html'}
           <td ng-bind="convertToDate(b.giftCardCreateDate)"></td>
           <td>{{b.giftCardAmount | currency : "$"}} - Pending</td>
         </tr>
+       <tr ng-show="pending.length ==0">
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
       </table>
     </div>
   </li>
@@ -119,6 +130,12 @@ ${properties.sharesocially @ context = 'html'}
           <td ng-bind="convertToDate(c.giftCardCreateDate)"></td>
           <td>{{c.giftCardAmount | currency : "$"}} {{noteText}}</td>
         </tr>
+
+        <tr ng-show="ineligible.length ==0">
+          <td>-</td>
+          <td>-</td>
+        </tr>
+
       </table>
     </div>
   </li>
@@ -137,8 +154,7 @@ ${properties.sharesocially @ context = 'html'}
                 <div class="promo-box">I will get<span>${properties.referralamount}</span> in bill credits</div>
                 </div>
               </div>
-              <h4>Here's the benefits of the program</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis egestas sem Lorem ipsum dolor sit amet, consLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              ${properties.benefits @ context = 'html'}
               <p><button class="primary-button" ng-click="rafauthenticated()">Refer a Friend</button></p>
             </div>
           </div>
