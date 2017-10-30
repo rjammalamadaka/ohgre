@@ -222,7 +222,7 @@ $rootScope.currentYear=new Date().getFullYear();
      }
 
     $rootScope.getOnlyDate =function(value){
-
+        if(value){
         var date=new Date(value);
         var dd = date.getDate();
         var mm = date.getMonth()+1; //January is 0!
@@ -234,11 +234,38 @@ $rootScope.currentYear=new Date().getFullYear();
             mm='0'+mm;
         } 
         return mm+'/'+dd+'/'+yyyy;
-
+        }else{
+		return "";
+        }
     }
 
+   /* var getLdcInfo=function(){
+        PrimeService.getLdcInfo().success(function(data, status, headers, config){
+            if(data && data.responseStatus =="0"){
+                console.log(data.LDCList);
+                $rootScope.ldcinfo=data.LDCList;
+                setTimeout(function(){ $rootScope.loginPopupBindClickEvent(); }, 10);
+            }
 
 
+        }).error(function(data, status, headers, config){
+
+        });
+    }
+*/
+   /* $rootScope.myAccountCheck=function(url,name){
+
+		console.log(name);
+        if(name.indexOf('Account') != -1){
+            getLdcInfo();
+            jQuery("#login-popup-wrapper").addClass("show-popup");
+
+        }else{
+
+            location.href=url+".html";
+        }
+    }
+*/
 
 }]); 
 
