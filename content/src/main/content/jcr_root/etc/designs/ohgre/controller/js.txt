@@ -19,3 +19,5 @@ DeltaSignUpController.js
 SignupController.js
 ReferAFriendController.js
 RafAuthenticatedController.js
+LoginPopupController.js
+DashBoardController.js
