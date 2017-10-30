@@ -158,6 +158,10 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				enrollment.setEnrolledByUserId("Web Enroll-GRE");
 			}
 
+			String altrnateEmailAddress=getParameterInfo(jObj,"alternateEmailAddress");
+		   String emailTypeCode=getParameterInfo(jObj,"emailTypeCode");
+		   enrollRequest.setAlternateEmailAddress(altrnateEmailAddress);
+		   enrollRequest.setEmailTypeCode(emailTypeCode);
 			enrollRequest.setServiceZipCode(serviceZipCode);
 			enrollment.setServiceZipCode(serviceZipCode);
 			enrollRequest.setEmailPrefTransactionalCd("Y");
