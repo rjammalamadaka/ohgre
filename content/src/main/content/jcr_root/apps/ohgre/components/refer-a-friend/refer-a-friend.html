@@ -1,121 +1,121 @@
 <section ng-controller="ReferAFriendController">
-   <div class="container">
-      <div class="col-md-10 col-md-offset-1">
-         <div class="row promo-wrapper">
-            <div class="col-md-6">
-               <div class="box-w-arrow no-arrow">
-<img src="${properties.raflogopath}">
-               </div>
-               <div class="box-with-border" ng-show="!step2">
-                  <div class="box-inner">
-						${properties.leftboxcontent @ context = 'html'}
-                     <form id="raf-form">
-                        <div class="dropdown-container">
-										<button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-										<div class="expanded-dropdown">
-											<ul class="dropdown-menu" role="menu">
-												<li role="menuitem" ng-repeat="x in ldcinfo">
-												<a href="#" class="select-option">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row promo-wrapper">
+        <div class="col-md-6">
+          <div class="box-w-arrow no-arrow">
+            <img src="${properties.raflogopath}">
+          </div>
+          <div class="box-with-border" ng-show="!step2">
+            <div class="box-inner">
+              ${properties.leftboxcontent @ context = 'html'}
+              <form id="raf-form">
+                <div class="dropdown-container">
+                  <button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+                  <div class="expanded-dropdown">
+                    <ul class="dropdown-menu" role="menu">
+                      <li role="menuitem" ng-repeat="x in ldcinfo">
+                        <a href="#" class="select-option">
 												<span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
 												</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-                        <button class="primary-button" ng-click="referafriendsubmit()">next</button>
-                     </form>
-
-                     <span class="input-error-message" ng-show="errorInfo">{{errorInfo}}</span>
+                      </li>
+                    </ul>
                   </div>
-               </div>
+                </div>
+                <button class="primary-button" ng-click="referafriendsubmit()">next</button>
+              </form>
 
-                <div class="box-with-border" ng-show="step2">
-                <form name="raf" novalidate>
-                <h4>You selected {{ldcdesc}}</h4>
-                    <div class="form-area-wrapper">
+              <span class="input-error-message" ng-show="errorInfo">{{errorInfo}}</span>
+            </div>
+          </div>
 
-                        <label for="account-number" ng-if="ldc !='MIC'">My Gas Utility Account Number is:</label>
-                        <label for="account-number" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
+          <div class="box-with-border" ng-show="step2">
+            <form name="raf" novalidate>
+              <h4>You selected {{ldcdesc}}</h4>
+              <div class="form-area-wrapper">
+
+                <label for="account-number" ng-if="ldc !='MIC'">My Gas Utility Account Number is:</label>
+                <label for="account-number" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
 
 
-                    <div class="form-area multiple-input">
-                                       <div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
-                                          <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required>
-                                       </div>
-                                       <div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
-                                          <input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required>
-                                       </div>
-                                       <div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
-                                          <input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required>
-                                       </div>
-                                       <div class="input-container" data-size={{an4minl}}>
-                                          <input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required>
-                                       </div>
-                    </div>
-
-                        <span style="color:red" ng-show="(raf.an1.$dirty && ldc !='MIC' && (raf.an1.$invalid || raf.an2.$invalid || raf.an3.$invalid || raf.an4.$invalid)) || (raf.submited)">
-                        <span ng-show="ldc !='MIC' && (raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required)">Account Number is required.</span>
-                        <span ng-show="(!(raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required) && (raf.an1.$error.maxlength || raf.an1.$error.minlength || raf.an2.$error.maxlength || raf.an2.$error.minlength || raf.an3.$error.maxlength || raf.an3.$error.minlength || raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
-                        </span>
-                        <span style="color:red" ng-show="(raf.an1.$dirty && ldc =='MIC' && raf.an4.$invalid || (raf.submited))">
-                        <span ng-show="ldc =='MIC' && ( raf.an4.$error.required)">Account Number is required.</span>
-                        <span ng-show="(!(raf.an4.$error.required) && (raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
-                        </span>
-
-                    </div>
-                    <div class="lastname-container form-area-wrapper">
-                    <div class="form-area">
-                    <label for="lastname">My Last Name is:</label>
-                    	<input type="text" name="lastname" ng-model="lastname" ng-required="true" ng-focus ng-visited>
-
-                            <span class="input-error-message" ng-show="(raf.lastname.$visited && !raf.lastname.$focused) || raf.submited">
-                            <span class="input-error-message" ng-show="raf.lastname.$error.required">Last Name is required.</span>
-                            </span>
-
-                    </div>
-                    </div>
-                    <div class="button-container">
-                    <button class="primary-button inactive" ng-click="referafriendcancel()">Cancel</button>
-                    <button class="primary-button" ng-click="referafriendstep2submit()">Submit</button>
-                    </div>
-                </form>
-
-                            <span class="input-error-message" ng-show="errorInfo">{{errorInfo}}</span>
-
+                <div class="form-area multiple-input">
+                  <div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
+                    <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required>
+                  </div>
+                  <div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
+                    <input type="text" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required>
+                  </div>
+                  <div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
+                    <input type="text" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required>
+                  </div>
+                  <div class="input-container" data-size={{an4minl}}>
+                    <input type="text" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required>
+                  </div>
                 </div>
 
+                <span style="color:red" ng-show="(raf.an1.$dirty && ldc !='MIC' && (raf.an1.$invalid || raf.an2.$invalid || raf.an3.$invalid || raf.an4.$invalid)) || (raf.submited)">
+                        <span ng-show="ldc !='MIC' && (raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required)">Account Number is required.</span>
+                <span ng-show="(!(raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required) && (raf.an1.$error.maxlength || raf.an1.$error.minlength || raf.an2.$error.maxlength || raf.an2.$error.minlength || raf.an3.$error.maxlength || raf.an3.$error.minlength || raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
+                </span>
+                <span style="color:red" ng-show="(raf.an1.$dirty && ldc =='MIC' && raf.an4.$invalid || (raf.submited))">
+                        <span ng-show="ldc =='MIC' && ( raf.an4.$error.required)">Account Number is required.</span>
+                <span ng-show="(!(raf.an4.$error.required) && (raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
+                </span>
+
+              </div>
+              <div class="lastname-container form-area-wrapper">
+                <div class="form-area">
+                  <label for="lastname">My Last Name is:</label>
+                  <input type="text" name="lastname" ng-model="lastname" ng-required="true" ng-focus ng-visited>
+
+                  <span class="input-error-message" ng-show="(raf.lastname.$visited && !raf.lastname.$focused) || raf.submited">
+                            <span class="input-error-message" ng-show="raf.lastname.$error.required">Last Name is required.</span>
+                  </span>
+
+                </div>
+              </div>
+              <div class="button-container">
+                <input class="primary-button inactive" ng-click="referafriendcancel()" type="button" value="cancel">
+                <input class="primary-button" ng-click="referafriendstep2submit()" type="submit" value="submit">
+              </div>
+            </form>
+
+            <span class="input-error-message" ng-show="errorInfo">{{errorInfo}}</span>
+
+          </div>
 
 
-            </div>
-            <div class="col-md-6">
-               <div class="box-with-border">
-						${properties.rightboxcontent @ context = 'html'}
-               </div>
-            </div>
-         </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="box-with-border">
+            ${properties.rightboxcontent @ context = 'html'}
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
 </section>
 <section>
-   <div class="container">
-      <div class="row">
-         <div class="col-md-10 col-md-offset-1">
-            <div class="full-banner-light">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-8 col-md-offset-2">
-                        <!--<div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>-->
-                        <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
-                     </div>
-                  </div>
-               </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="full-banner-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <!--<div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>-->
+                <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
+              </div>
             </div>
-            <div class="foot-notes raf-terms">
-${properties.rafterms @ context ='html'}
-            </div>
-         </div>
+          </div>
+        </div>
+        <div class="foot-notes raf-terms">
+          ${properties.rafterms @ context ='html'}
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
 </section>
 
 <sly data-sly-include="popups.html"></sly>
