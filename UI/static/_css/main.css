@@ -8572,6 +8572,8 @@ div.alt-col2,
 }
 @media (min-width: 992px) {
   #visa-customer-info .form-element {
+    display: flex;
+    flex-direction: column;
     width: 50%;
   }
 }
@@ -10815,17 +10817,33 @@ ul.info-links li {
     padding-left: 0;
   }
 }
-#account-dashboard {
+#account-dashboard,
+#renew-plan-select {
   background-color: #fff;
   margin-top: 2rem;
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
 @media (min-width: 992px) {
-  #account-dashboard {
+  #account-dashboard,
+  #renew-plan-select {
     border: 1px solid #ccc;
     margin-top: 5rem;
   }
+}
+#account-dashboard .intro-wrapper,
+#renew-plan-select .intro-wrapper {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 0 0rem 0;
+  padding-left: 2.5rem;
+}
+#account-dashboard .intro-wrapper .user-greeting,
+#renew-plan-select .intro-wrapper .user-greeting {
+  font-size: 1.3rem;
+}
+#account-dashboard .intro-wrapper .user-greeting a,
+#renew-plan-select .intro-wrapper .user-greeting a {
+  color: #0074bf;
 }
 #account-dashboard .desktop-flex-container {
   background-color: #e0e6e9;
@@ -10837,17 +10855,6 @@ ul.info-links li {
 }
 #account-dashboard h4 {
   font-size: 2rem;
-}
-#account-dashboard .intro-wrapper {
-  font-family: 'Roboto', sans-serif;
-  margin: 0 0 0rem 0;
-  padding-left: 2.5rem;
-}
-#account-dashboard .intro-wrapper .user-greeting {
-  font-size: 1.3rem;
-}
-#account-dashboard .intro-wrapper .user-greeting a {
-  color: #0074bf;
 }
 @media (min-width: 992px) {
   #account-dashboard .intro-wrapper {
@@ -10950,6 +10957,45 @@ ul.info-links li {
   #account-dashboard .buttons .primary-button {
     width: 45%;
   }
+}
+#renew-plan-select h3 {
+  color: #0074bf;
+  font-size: 2rem;
+  font-weight: 500;
+}
+#renew-plan-select .promocode-entry label {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+#renew-plan-select .promocode-entry input[type="text"] {
+  display: inline-block;
+  width: 30rem;
+}
+#renew-plan-select .current-plan {
+  margin-bottom: 2rem;
+}
+#renew-plan-select .current-plan .selected-price {
+  background-color: #f6f6f6;
+  color: #0074bf;
+}
+#renew-plan-select .plan-detail h4 {
+  color: #4a4a4a;
+}
+#renew-plan-select .plan-detail .plan-button small {
+  color: #4a4a4a;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  text-align: left;
+}
+#renew-plan-select .plan-detail .plan-button .highlight {
+  color: #0074bf;
+}
+#renew-plan-select .plan-detail .plan-button .strikethrough {
+  text-decoration: line-through;
 }
 @media print footer {
   display: none;

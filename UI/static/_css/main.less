@@ -2917,6 +2917,8 @@ div.alt-col2,
 		padding: 0;
 
 		@media (@screen-md-min){
+			display: flex;
+			flex-direction: column;
 			width: 50%;
 		}
 	}
@@ -5275,7 +5277,8 @@ ul.info-links {
 		}
 	}
 }
-#account-dashboard {
+#account-dashboard,
+#renew-plan-select {
 	background-color: #fff;
 	margin-top: 2rem;
 	padding-bottom: 3rem;
@@ -5285,6 +5288,20 @@ ul.info-links {
 		border: 1px solid #ccc;
 		margin-top: 5rem;
 	}
+	.intro-wrapper {
+		font-family: @secondary_font;
+		margin: 0 0 0rem 0;
+		padding-left: 2.5rem;
+
+		.user-greeting {
+			font-size: 1.3rem;
+			a{
+				color: #0074bf;
+			}
+		}
+	}
+}
+#account-dashboard {
 
 	.desktop-flex-container {
 		background-color: #e0e6e9;
@@ -5298,16 +5315,6 @@ ul.info-links {
 		font-size: 2rem;
 	}
 	.intro-wrapper {
-		font-family: @secondary_font;
-		margin: 0 0 0rem 0;
-		padding-left: 2.5rem;
-
-		.user-greeting {
-			font-size: 1.3rem;
-			a{
-				color: #0074bf;
-			}
-		}
 
 		@media (@screen-md-min){
 			margin: 0 0 3rem 0;
@@ -5415,6 +5422,55 @@ ul.info-links {
 
 			.primary-button {
 				width: 45%;
+			}
+		}
+	}
+}
+#renew-plan-select {
+	h3 {
+		color: @primary_color;
+		font-size: 2rem;
+		font-weight: 500;
+	}
+	.promocode-entry {
+		label {
+			display: block;
+			font-family: @secondary_font;
+			font-size: 1.4rem;
+			font-weight: 300;
+		}
+		input[type="text"] {
+			display: inline-block;
+			width: 30rem;
+		}
+	}
+
+	.current-plan {
+		margin-bottom: 2rem;
+
+		.selected-price {
+			background-color: #f6f6f6;
+			color: @primary_color;
+		}
+	}
+	.plan-detail {
+		h4 {
+			color: #4a4a4a;
+		}
+		.plan-button {
+			small {
+				color: #4a4a4a;
+				font-family: @secondary_font;
+				font-size: 1rem;
+				line-height: 1.5;
+				margin-top: 1rem;
+				text-align: left;
+			}
+			.highlight {
+				color: @primary_color;
+			}
+			.strikethrough{
+				text-decoration: line-through;
 			}
 		}
 	}
