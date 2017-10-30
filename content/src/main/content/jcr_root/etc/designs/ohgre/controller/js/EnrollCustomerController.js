@@ -184,6 +184,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                  if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
                      console.log($rootScope.customerInfo); 
                      $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
+                     $scope.existingEmail= $rootScope.customerInfo.emailAddress;
+
                       $rootScope.showexistingcustomer=true;
                      $rootScope.gbplandisplay=false;
 
@@ -469,14 +471,23 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     }
 
     $scope.sendemailwithmoreinfo =function(){
-		$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
+
+        if($scope.existingEmail && ($scope.enrollReq.emailAddress !=$scope.existingEmail)){
+
+			$scope.enrollReq.alternateEmailAddress=$scope.enrollReq.emailAddress;
+        }
+        $scope.enrollReq.emailTypeCode="RAFGEN";
+
+$scope.reviewauthorizesubmit();
+
+	/*	$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
         PrimeService.sendRafEmail($scope.sendRafEmailReq).success(function(data, status, headers, config){
 			console.log(data);
 
         }).error(function(data, status, headers, config){
 
                 console.log(data);
-        });
+        });*/
 
     }
     $scope.reviewauthorizesubmit =function(){
