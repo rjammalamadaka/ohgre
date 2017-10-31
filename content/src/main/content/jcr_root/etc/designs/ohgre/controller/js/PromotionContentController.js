@@ -5,9 +5,11 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 	 $scope.displayPlans =false;
 
 
+
     var processPromotionInfo=function(promoInfo){
 
     if(promoInfo.LDCList.length>0){
+        $scope.ldcInfo=promoInfo;
         var ldc=promoInfo.LDCList[0];
         $scope.promotion=ldc.promotion[0];
         $scope.giftCardValue=$scope.promotion.GiftCardValue;
@@ -64,10 +66,32 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
 		var ldcCode=$('#fixed-plans-button').val();
         if(ldcCode){
-             if( $scope.promotion &&  $scope.promotion.RateClassCode){
-				$scope.rateClassCode=$scope.promotion.RateClassCode;
+
+            if($scope.ldcInfo && $scope.ldcInfo.LDCList && $scope.ldcInfo.LDCList.length>0){
+
+                for(var i=0;i<$scope.ldcInfo.LDCList.length;i++){
+                    if(ldcCode==$scope.ldcInfo.LDCList[i].LDCCode){
+
+						$scope.rateClassCode=$scope.ldcInfo.LDCList[i].promotion[0].RateClassCode;
+                        if($scope.ldcInfo.LDCList[i].promotion[0].RateClassCode.length==0){
+                            var promoInfo=ohgre.store("promoCodeInfo");
+                          var locationType=promoInfo.locationType;
+                            if(locationType=="residential"){
+								$scope.rateClassCode="01";
+                            }else{
+								$scope.rateClassCode="04";	
+                            }
+                        }
+                        break;
+                    }
+                }
+
             }
 
+           /*  if( $scope.promotion &&  $scope.promotion.RateClassCode){
+				$scope.rateClassCode=$scope.promotion.RateClassCode;
+            }
+*/
 			PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){

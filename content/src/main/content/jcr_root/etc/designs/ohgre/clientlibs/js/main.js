@@ -2,12 +2,20 @@ var buttonClick = false;
 var ohio_ng = {
 	init : function(){
 		this.listeners();
+        this.socialButtons();
 	},
 	listeners : function(){
+
+         $('.print-button').on('click',function(event){
+			event.preventDefault();
+             window.print();
+          });
 
         $('.trigger-popup').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').addClass('show-popup');
+         $('body').addClass('fixed-body');
+
       });
 
    /*   $('.popup-wrapper,#close-window').on('click',function(event){
@@ -19,9 +27,10 @@ var ohio_ng = {
          $('.close-window').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');
+             $('body').removeClass('fixed-body');
       });
 
-        
+
 		$('.dropdown-trigger').on('click',function(event){
 			/*event.preventDefault();
 			var obj = $(this);
@@ -108,7 +117,32 @@ var ohio_ng = {
 		});*/
 
 
+	},
+      socialButtons: function(){
+		/*function outBoundTracking(o) {
+		    "function" == typeof ga ? (console.log("tracking"), ga("send", "event", {
+		        eventCategory: "RAF_Share",
+		        eventAction: o,
+		        eventLabel: 'RAFMicrosite'
+		    })) : console.log("not tracking")
+		}
+
+		var code = "RAF25", //$("#code").text(),
+    base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
+		base_url = "http://dev-ohio.macquarium.com:4503" + "/content/" + "/onlyong/" + "promo-raf.html";
+		$(".fb-icon").click(function() {
+		    var o = base_url + "?promocode=" + code;
+		    return window.open("https://www.facebook.com/sharer/sharer.php?u=" + o, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Facebook"), !1
+		}), $(".tw-icon").click(function() {
+		    var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
+		        t = "url=" + base_url + "?promocode=" + code + "&r=1&text=" + o;
+		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
+		});
+
+          */
 	}
+
+
 }
 $(document).ready(function(){
 	ohio_ng.init();
@@ -151,5 +185,60 @@ $(window).scroll(function(){
       //alert( 'Invalid input: ' + obj.value );
     }
   }
+}
+*/
+
+//SignUp for emails pop-up
+
+/*
+$(document).ready(function(){
+	initValidate();
+});
+
+function validateSignup() {
+	showConfirmation();
+}
+
+function showConfirmation() {
+	var validForm = 0;
+
+	if(($('#first-name').val().trim() !== '') && ($('#last-name').val().trim() !== '')) {
+		var emailAddress = $('#email').val().trim()
+
+		if(emailAddress !== '') {
+			if( /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+.test(emailAddress)) {
+				validForm = 1;
+			}
+
+		}
+
+		else if($('#address-1').val().trim() !== '') {
+			if($('#billing-address-city').val().trim() !== '' &&
+				$('#billing-address-state').val().trim() !== '' &&
+				$('#billing-address-zip').val().trim() !== '') {
+					validForm = 1;
+				}
+		}
+
+		if(validForm) {
+			$('#popup1').empty().remove();
+			$('#popup2').addClass('show-popup');
+		}
+	}
+
+}
+
+function initValidate() {
+	$('.submit-button').on('click', function(e) {
+		e.preventDefault();
+		$('#offer-signup-form').submit();
+	});
+
+  $('#offer-signup-form').on('submit',function(e){
+    e.preventDefault();
+		validateSignup();
+  });
+
 }
 */

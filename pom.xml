@@ -7,7 +7,7 @@
 
     <groupId>com.macquarium.ong</groupId>
     <artifactId>ohgre</artifactId>
-    <version>1.8.1-SNAPSHOT</version>
+    <version>1.8.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ohgre - Reactor Project</name>
@@ -21,14 +21,14 @@
     <!-- P R O P E R T I E S -->
     <!-- ====================================================================== -->
     <properties>
-        <crx.host>166.78.247.155</crx.host>
-        <crx.port>4505</crx.port>
+        <crx.host>localhost</crx.host>
+        <crx.port>4502</crx.port>
         <crx.username>admin</crx.username>
-        <crx.password>0DmvMMkvVD1eQLaA</crx.password>
-        <publish.crx.host>166.78.247.155</publish.crx.host>
+        <crx.password>admin</crx.password>
+        <publish.crx.host>localhost</publish.crx.host>
         <publish.crx.port>4503</publish.crx.port>
         <publish.crx.username>admin</publish.crx.username>
-        <publish.crx.password>0DmvMMkvVD1eQLaA</publish.crx.password>
+        <publish.crx.password>admin</publish.crx.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- CXF Versions -->
@@ -62,6 +62,29 @@
                 <version>1.6.0</version>
                 <scope>provided</scope>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>1.5.5</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>1.0.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.adobe.acs/acs-aem-commons-bundle -->
+            <dependency>
+                <groupId>com.adobe.acs</groupId>
+                <artifactId>acs-aem-commons-bundle</artifactId>
+                <version>3.10.0</version>
+            </dependency>
+
             <dependency>
                 <groupId>biz.aQute</groupId>
                 <artifactId>bndlib</artifactId>
@@ -161,6 +184,11 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.22</version>
             </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.4</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.adobe.aem</groupId>
@@ -176,6 +204,12 @@
                 <version>1.4.0-b01</version>
             </dependency>
              -->
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-email</artifactId>
+                <version>1.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

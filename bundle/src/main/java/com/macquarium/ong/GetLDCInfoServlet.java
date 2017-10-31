@@ -15,6 +15,8 @@ import org.tempuri.quoteservice.GetLDCInfoRequest;
 import org.tempuri.quoteservice.GetLDCInfoResult;
 import org.tempuri.quoteservice.GetLDCInfoResult.LDC;
 
+import javax.xml.ws.soap.SOAPFaultException.*;
+import javax.xml.ws.soap.SOAPFaultException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -77,8 +79,8 @@ public class GetLDCInfoServlet extends org.apache.sling.api.servlets.SlingAllMet
 			GetLDCInfoResponse getLDCInfoResponse =quoteServiceSoap.getLDCInfo(getLDCInfo);
 			
 			GetLDCInfoResult getLDCInfoResult=getLDCInfoResponse.getGetLDCInfoResult();
-			
-			
+
+
 			String responseStatus=getLDCInfoResult.getResponseStatus();
 			String responsemessage=getLDCInfoResult.getResponseMessage();
 			obj.put("responseStatus", responseStatus);
@@ -110,7 +112,11 @@ public class GetLDCInfoServlet extends org.apache.sling.api.servlets.SlingAllMet
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
 			e.printStackTrace();
-		}
+		} catch (Exception e){
+				System.out.println("got error"+e.getMessage());
+				e.printStackTrace();
+			}
+
 		 String jsonData = obj.toString();
          response.getWriter().write(jsonData);
 	 }

@@ -23,29 +23,36 @@ public class CommonConfigServiceImpl implements CommonConfigService {
 
     private static final long serialVersionUID = 1L;
 
-    @Property(value="https://prime.southstarenergy.com/webservices/quoteservice.asmx?wsdl", label="Prime End Point Url", description="Prime End point url to communicate with prime", cardinality=0)
+    @Property(value="", label="Prime End Point Url", description="Prime End point url to communicate with prime", cardinality=0)
     private static final String PRIME_ENDPOINT_URL = "prime.endpoint.url";
 
-    @Property(value="https://test.prime.southstarenergy.com/SouthStar.Services.Web/Service.svc?wsdl", label="Delta Sky Miles End Point Url", description="Delta Sky Miles End point url to communicate with SouthStar", cardinality=0)
+    @Property(value="", label="Prime Header Handler End Point Url", description="Prime Header Handler End point url to communicate with prime", cardinality=0)
+    private static final String PRIME_HEADER_HANDLER_ENDPOINT_URL = "prime.headerhandler.endpoint.url";
+
+    @Property(value="", label="Delta Sky Miles End Point Url", description="Delta Sky Miles End point url to communicate with SouthStar", cardinality=0)
     private static final String DELTA_SKY_MILES_ENDPOINT_URL = "deltaskymiles.endpoint.url";
 
 
-    @Property(value="jdbc:mysql://localhost:3306/dream11", label="My SQL Connection URL", description="My SQL Connection URL with schema name", cardinality=0)
+    @Property(value="", label="My SQL Connection URL", description="My SQL Connection URL with schema name", cardinality=0)
     private static final String MY_SQL_CONNECTION_URL = "mysql.connection.url";
 
-    @Property(value="root", label="Data Base Username", description="Data Base Username", cardinality=0)
+    @Property(value="", label="Data Base Username", description="Data Base Username", cardinality=0)
     private static final String DATA_BASE_USERNAME = "data.base.username";
 
-    @Property(value="root", label="Data Base Password", description="Data Base Password", cardinality=0)
+    @Property(value="", label="Data Base Password", description="Data Base Password", cardinality=0)
     private static final String DATA_BASE_PASSWORD = "data.base.password";
 
+    @Property(value="", label="What Count URL", description="What Count URL", cardinality=0)
+    private static final String WHAT_COUNT_URL="what.count.url";
 
     private String primeEndPoint=PRIME_ENDPOINT_URL;
+    private String primeHeaderHandlerEndPoint=PRIME_HEADER_HANDLER_ENDPOINT_URL;
 
     private String mySqlConnectionUrl=MY_SQL_CONNECTION_URL;
     private String dataBaseUsername=DATA_BASE_USERNAME;
     private String dataBasePassword=DATA_BASE_PASSWORD;
     private String deltaSkyMilesEndPoint=DELTA_SKY_MILES_ENDPOINT_URL;
+    private String whatCountsUrl=WHAT_COUNT_URL;
 
     public String getPrimeEndPoint() {
 
@@ -66,7 +73,12 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     public String getDeltaSkyMilesEndPoint(){
         return deltaSkyMilesEndPoint;
     }
-
+    public String getPrimeHeaderHandlerUrl() {
+        return primeHeaderHandlerEndPoint;
+    }
+    public String getWhatCountsUrl() {
+        return whatCountsUrl;
+    }
     protected void activate(ComponentContext context) {
         setup(context);
     }
@@ -80,6 +92,8 @@ public class CommonConfigServiceImpl implements CommonConfigService {
         dataBaseUsername=PropertiesUtil.toString(properties.get(DATA_BASE_USERNAME),"");
         dataBasePassword=PropertiesUtil.toString(properties.get(DATA_BASE_PASSWORD),"");
         deltaSkyMilesEndPoint=PropertiesUtil.toString(properties.get(DELTA_SKY_MILES_ENDPOINT_URL),"");
+        primeHeaderHandlerEndPoint=PropertiesUtil.toString(properties.get(PRIME_HEADER_HANDLER_ENDPOINT_URL),"");
+        whatCountsUrl=PropertiesUtil.toString(properties.get(WHAT_COUNT_URL),"");
     }
 
     @Modified
@@ -90,6 +104,8 @@ public class CommonConfigServiceImpl implements CommonConfigService {
         dataBaseUsername=PropertiesUtil.toString(properties.get(DATA_BASE_USERNAME),"");
         dataBasePassword=PropertiesUtil.toString(properties.get(DATA_BASE_PASSWORD),"");
         deltaSkyMilesEndPoint=PropertiesUtil.toString(properties.get(DELTA_SKY_MILES_ENDPOINT_URL),"");
+        primeHeaderHandlerEndPoint=PropertiesUtil.toString(properties.get(PRIME_HEADER_HANDLER_ENDPOINT_URL),"");
+        whatCountsUrl=PropertiesUtil.toString(properties.get(WHAT_COUNT_URL),"");
     }
 
 }

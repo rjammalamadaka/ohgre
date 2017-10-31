@@ -158,6 +158,10 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				enrollment.setEnrolledByUserId("Web Enroll-GRE");
 			}
 
+			String altrnateEmailAddress=getParameterInfo(jObj,"alternateEmailAddress");
+		   String emailTypeCode=getParameterInfo(jObj,"emailTypeCode");
+		   enrollRequest.setAlternateEmailAddress(altrnateEmailAddress);
+		   enrollRequest.setEmailTypeCode(emailTypeCode);
 			enrollRequest.setServiceZipCode(serviceZipCode);
 			enrollment.setServiceZipCode(serviceZipCode);
 			enrollRequest.setEmailPrefTransactionalCd("Y");
@@ -173,6 +177,9 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollment.setCreatedDate(todayDate);
 
 			enrollment.setCustID("");
+			String RAFCode=getParameterInfo(jObj,"RAFCode");
+			enrollment.setRafCode(RAFCode);
+			enrollRequest.setRAFCode(RAFCode);
 			int generatedKey=enrollmentDaoService.insertEnrollment(enrollment);
 			enrollRequest.setEnrollConfirmationNumber(Integer.toString(generatedKey));
 			EnrollCustomer parameters=new EnrollCustomer();

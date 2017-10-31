@@ -326,6 +326,12 @@
                                             </config>
                                         </items>
                                     </export>
+                                    <errorpages
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Error Pages"
+                                        name="./errorPages"
+                                        rootPath="/content"/>
                                 </items>
                             </column>
                         </items>
@@ -778,6 +784,74 @@
                             </column>
                         </items>
                     </portalconfig>
+                    <socialshareconfig
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Facebook share Configurations"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <facebook
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Facebook Configuration"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <appid
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="388067291608116"
+                                                fieldLabel="App Id"
+                                                name="./appid"/>
+                                            <type
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="website"
+                                                fieldLabel="Type"
+                                                name="./ogtype"/>
+                                            <locale
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="en_us"
+                                                fieldLabel="Locale"
+                                                name="./oglocale"/>
+                                            <url
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="http://dev-ohio.macquarium.com:4503/content/onlyong/promo-raf.html"
+                                                fieldLabel="Url"
+                                                name="./ogurl"/>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="ONG's lowest available rate and $25!&quot;"
+                                                fieldLabel="Title"
+                                                name="./ogtitle"/>
+                                            <sitename
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="Ohio Natural Gas Refer-A-Friend"
+                                                fieldLabel="Sitename"
+                                                name="./ogsitename"/>
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="https://onlyong.com/raf25/assets/img/fb_share_image_25.jpg"
+                                                fieldLabel="Image"
+                                                name="./ogimage"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                defaultValue="Enroll with Ohio Natural Gas on their lowest available rates and we could each earn a $25 Visa Reward Card. It's that easy! Program Terms and conditions apply. #ad"
+                                                fieldLabel="Description"
+                                                name="./ogdescription"/>
+                                        </items>
+                                    </facebook>
+                                </items>
+                            </column>
+                        </items>
+                    </socialshareconfig>
                 </items>
             </tabs>
         </items>

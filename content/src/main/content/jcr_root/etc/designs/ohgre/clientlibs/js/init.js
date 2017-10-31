@@ -22,7 +22,23 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 		$rootScope.hashParams[param[0]]=param[1];
     }
 
+    function isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
 
+     $rootScope.queryParams = {};
+    var queryParams = window.location.search && window.location.search.split("?")[1] && window.location.search.split("?")[1].split('&');
+    for(var i=0;i<queryParams.length;i++){
+        var param = queryParams[i].split("=")
+        $rootScope.queryParams[param[0]]=param[1];
+    }
+    if($rootScope.queryParams && !isEmpty($rootScope.queryParams)){
+		$rootScope.hashParams=$rootScope.queryParams;
+    }
 
     $rootScope.cardpromobuttonclick =function(url){
 		location.href=url+'.html'
@@ -118,7 +134,14 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         }
 
         if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0 && promoInfo.LDCList[0].promotion && promoInfo.LDCList[0].promotion.length>0){
-			req.CustomerTypeCode=promoInfo.LDCList[0].promotion[0].CustomerTypeCode;
+
+               for(var i=0;i<promoInfo.LDCList.length;i++){
+                   if(req.LDC ==promoInfo.LDCList[i].LDCCode){
+                      //req.LdcDesc= promoInfo.LDCList[i].LDCDesc;
+                       req.CustomerTypeCode=promoInfo.LDCList[i].promotion[0].CustomerTypeCode;
+                   }
+                }
+
             if(promoInfo.LDCList[0].promotion[0].RateClassCode.length>0){
 			req.RateClassCode=promoInfo.LDCList[0].promotion[0].RateClassCode;	
             }else{
@@ -144,6 +167,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
             }
             req.CustomerTypeCode="";
 
+        }
+
+        if($rootScope.hashParams && $rootScope.hashParams.referralcode){
+			req.referralcode=$rootScope.hashParams.referralcode;
         }
 
          $http.post(url, req ,config).success(function(data, status, headers, config){
@@ -195,7 +222,7 @@ $rootScope.currentYear=new Date().getFullYear();
      }
 
     $rootScope.getOnlyDate =function(value){
-
+        if(value){
         var date=new Date(value);
         var dd = date.getDate();
         var mm = date.getMonth()+1; //January is 0!
@@ -207,9 +234,84 @@ $rootScope.currentYear=new Date().getFullYear();
             mm='0'+mm;
         } 
         return mm+'/'+dd+'/'+yyyy;
-
+        }else{
+		return "";
+        }
     }
 
+   /* var getLdcInfo=function(){
+        PrimeService.getLdcInfo().success(function(data, status, headers, config){
+            if(data && data.responseStatus =="0"){
+                console.log(data.LDCList);
+                $rootScope.ldcinfo=data.LDCList;
+                setTimeout(function(){ $rootScope.loginPopupBindClickEvent(); }, 10);
+            }
+
+
+        }).error(function(data, status, headers, config){
+
+        });
+    }
+*/
+   /* $rootScope.myAccountCheck=function(url,name){
+
+		console.log(name);
+        if(name.indexOf('Account') != -1){
+            getLdcInfo();
+            jQuery("#login-popup-wrapper").addClass("show-popup");
+
+        }else{
+
+            location.href=url+".html";
+        }
+    }
+*/
 
 }]); 
 
+/*
+
+(function (global) {
+
+    if(window.location.pathname.indexOf('customer_lookup.html') !=-1){
+
+    if(typeof (global) === "undefined") {
+        throw new Error("window is undefined");
+    }
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+        // making sure we have the fruit available for juice (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {            
+        noBackPlease();
+
+        // disables backspace on page except on input fields and textarea..
+        document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        };          
+    }
+
+    }
+
+})(window);
+
+
+*/

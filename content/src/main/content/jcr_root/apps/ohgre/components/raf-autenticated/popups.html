@@ -1,0 +1,129 @@
+<div class="popup-wrapper" id="raf-terms-popup">
+  <div class="window-wrapper" id="raf-email-popup">
+    <div class="container">
+      <div class="row promo-wrapper">
+        <div class="col-md-6 alt-col2">
+          <form id="raf-email-form" name="rafemailform" novalidate>
+            <div class="friend-info">
+              <h4>Your Friend's Information</h4>
+              <label for="friend-emails">Friend's Email Address</label>
+              <textarea name="toemailaddress" class="cloudsponge-contacts" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visited></textarea>
+                  <span class="input-error-message" ng-show="(rafemailform.toemailaddress.$visited && !rafemailform.toemailaddress.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friend's emails are required.</span>
+                  </span>
+              <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
+              <label for="raf-email-subject">Subject Line</label>
+    <input type="text" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
+              <label for="raf-email-message">Add or Edit Message</label>
+              <textarea name="rafemailmessage" rows="8" cols="80" ng-model="rafemailmessage" ng-required="true" ng-focus ng-visited>
+
+                  </textarea>
+                  <span class="input-error-message" ng-show="(rafemailform.rafemailmessage.$visited && !rafemailform.rafemailmessage.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafemailmessage.$error.required">Mail message is required.</span>
+                  </span>
+            </div>
+
+          <div class="user-info">
+            <h4>Your Information</h4>
+            <label for="raf-email-first">Your First Name</label>
+            <input type="text" name="rafemailfirst" ng-model="customerInfo.firstName" ng-required="true" ng-focus ng-visited>
+                  <span class="input-error-message" ng-show="(rafemailform.rafemailfirst.$visited && !rafemailform.rafemailfirst.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafemailfirst.$error.required">First Name is required.</span>
+                  </span><br>
+            <label for="raf-email-last">Your Last Name</label>
+            <input type="text" name="rafemaillast" ng-model="customerInfo.lastName" ng-required="true" ng-focus ng-visited>
+                  <span class="input-error-message" ng-show="(rafemailform.rafemaillast.$visited && !rafemailform.rafemaillast.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafemaillast.$error.required">Last Name is required.</span>
+                  </span><br>
+            <label for="raf-your-email">Your Email Address</label>
+            <input type="text" name="rafyouremail" ng-model="customerInfo.emailAddress" ng-required="true" ng-focus ng-visited>
+                  <span class="input-error-message" ng-show="(rafemailform.rafyouremail.$visited && !rafemailform.rafyouremail.$focused) || rafemailform.submited">
+                  <span class="input-error-message" ng-show="rafemailform.rafyouremail.$error.required">Mail Id is required.</span>
+                  </span>
+            <p class="small-text">Note: Changing this email address will not change your email address on file with us, only the sender address for this referral email.</p>
+            <p><button class="primary-button" ng-click="refertomyfrineds()">Refer my friends</button></p>
+          </div>
+
+             <p> {{rafMailSerrverMsg}}</p>
+          </form>
+
+        </div>
+        <div class="col-md-6" id="raf-email-preview">
+			<a href="#" class="close-window">X</a>
+          <div class="email-body">
+            <h3>Email Preview</h3>
+          </div>
+            <div class="raf-inline-banner">
+                <div class="company-logo"><img src="${properties.companylogoinemail}"></div>
+                <div class="raf-logo"><img src="${properties.raflogoinemail}"></div>
+            </div>
+            <div class="email-body">
+                  <p>{{rafemailmessage}}</p>
+            <h3>Here's the deal</h3>
+            <div class="raf-promo">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="promo-box">You will get<span>${properties.referralamount}</span> in bill credits</div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                <div class="promo-box">I will get<span>${properties.referralamount}</span> in bill credits</div>
+                </div>
+              </div>
+            </div>
+                <p>${properties.rafemailbody @ context = 'html'}</p>
+          </div>
+            <div class="raf-email-codes">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5><span class="visible-sm">Use this</span> Referral Code:</h5>
+                    <p>{{customerInfo.custID}}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h5><span class="visible-sm">Use this</span> Promotion Code:</h5>
+                        <p>${properties.rafpromocode}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="email-body">
+            <div class="text-center"><a href="#" class="primary-button inactive">Enroll online</a></div>
+          </div>
+          <section id="raf-email-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-9">
+                  ${properties.popupfootercontactinfo @ context = 'html'}
+                </div>
+					${properties.popupfootercontent @ context = 'html'}
+                <p>
+                  <a href="#">Unsubscribe</a> |
+                  <a href="#" ng-click="redirectToPrivacy()" target="_blank">Privacy Policy</a>
+                </p>
+
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+
+<div class="popup-wrapper" id="raf-confirm">
+  <div class="window-wrapper with-border">
+
+    <h3 class="window-title">${properties.thankyouheader}</h3>
+    <div class="inner-window-content text-center">
+      <p>${properties.bodyofthankyou}</p>
+      <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Your Home Page</a>
+    </div>
+  </div>
+</div>
+

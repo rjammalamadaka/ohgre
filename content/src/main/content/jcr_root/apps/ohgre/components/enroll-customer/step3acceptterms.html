@@ -1,39 +1,31 @@
-				<div class="form-wrapper">
-                    <div class="terms-wrapper">
-                        <div class="scroll-container">
+<div class="form-wrapper">
+  <div class="terms-wrapper">
+    <div class="scroll-container">
+      <p>Having trouble viewing? <a href="${properties.pdffilepath}" target="_blank">Click here</a>
+      </p>
+      <iframe id="terms-embed" width="100%" height="100%" style="min-height: 400px;" src="https://docs.google.com/gview?url=http://stage-ohio.macquarium.com:4505/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&embedded=true"></iframe>
+    </div>
+  </div>
+  <div class="desktop-flex-container after-scrollbox">
+    <div class="input-group-wrapper full-width">
+      <form id="formthree" name="formthree" novalidate>
+        <label class="checkbox">
+            <input type="checkbox" name="agreeterms" id="agreeterms" ng-model="agreeterms" ng-required="true" ng-focus ng-visited>
+        </label>
+        <span class="after-checkbox"><label for="agreeterms">I hereby agree to these <a href="#" class="color-primary display-inline" ng-click="acceptterms('${properties.pdffilepath}')">terms and conditions</a>.</label></span><br>
+        <span class="input-error-message" ng-show="(formthree.agreeterms.$visited && !formthree.agreeterms.$focused) || formthree.submited">
+            <span class="input-error-message" ng-show="formthree.agreeterms.$error.required">You must agree to terms and conditions to process your enrollment</span>
+        </span>
+      </form>
+    </div>
+    <div class="print-wrapper">
+      <a href="#" ng-click="acceptterms('${properties.pdffilepath}')">Print</a>
+      <a href="${properties.pdffilepath}" download>Download</a>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="primary-button next-button" ng-click="accepttermsandcond()">Next</button>
+    <button class="primary-button prev-button" ng-click="gotoPreviousStep(2)">Previous</button>
+  </div>
 
-
-                            <object data="${properties.pdffilepath}" style="width: 100%; height: 100%; min-height: 400px; display: block;" internalinstanceid="6">
-								<embed src="${properties.pdffilepath}" type="application/pdf" style="width: 100%; height: 100%; min-height: 400px; display: block;" internalinstanceid="6"/>
-                            </object>
-
-                        </div>
-					</div>
-
-                        <div class="desktop-flex-container after-scrollbox">
-                            <div class="input-group-wrapper full-width">
-                                <form id="formthree" name="formthree" novalidate>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="agreeterms" id="agreeterms" ng-model="agreeterms" ng-required="true" ng-focus ng-visited>
-                                </label>
-                                    <span class="after-checkbox">I hereby agree to these <a href="#" class="color-primary display-inline" ng-click="acceptterms('${properties.pdffilepath}')">terms and conditions</a>.</span><br>
-                                        
-                                        <span class="input-error-message" ng-show="(formthree.agreeterms.$visited && !formthree.agreeterms.$focused) || formthree.submited">
-                                            <span class="input-error-message" ng-show="formthree.agreeterms.$error.required">You must agree to terms and conditions to process your enrollment</span> 
-                                    </span>
-
-                                </form>
-                            </div>
-                           <div class="print-wrapper">
-                              <a href="#" ng-click="acceptterms('${properties.pdffilepath}')">Print</a>
-                              <a href="${properties.pdffilepath}" download>Download</a>
-                           </div>
-                       </div>
-
-
-                    <div class="button-container">
-                       <button class="primary-button next-button" ng-click="accepttermsandcond()">Next</button>
-                       <button class="primary-button prev-button" ng-click="gotoPreviousStep(2)">Previous</button>
-                    </div>
-
-				</div>
+</div>

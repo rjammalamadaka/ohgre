@@ -10,7 +10,7 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <moving
+            <delta
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Moving Component Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
@@ -156,15 +156,51 @@
                                     </cui>
                                 </uiSettings>
                             </sidecontent>
-                            <specialoffer
+                            <confirmationpageheader
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Special offer Text"
-                                name="./specialoffer"/>
+                                fieldLabel="confirmation Header"
+                                name="./confirmationpageheader"/>
+                            <confirmationpagesubhead
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="confirmation Header sub head"
+                                name="./confirmationpagesubhead"/>
+                            <viewplansheader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="View Plans Header"
+                                name="./viewplansheader"/>
+                            <viewplanssubhead
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="View Plans Description"
+                                name="./viewplanssubhead"/>
+                            <imagepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Right Side Content Image"
+                                name="./imagepath"
+                                rootPath="/content/dam/ohgre"/>
+                            <deltapromocode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Delta Promo Code"
+                                name="./deltapromocode"/>
+                            <promotionpath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Promotion Path"
+                                name="./promotionpath"/>
+                            <deltaformheading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Delta Form Heading"
+                                name="./deltaformheading"/>
                         </items>
                     </column>
                 </items>
-            </moving>
+            </delta>
         </items>
     </content>
 </jcr:root>

@@ -76,10 +76,12 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 
      }
     $scope.heightConstant = false;
+    $scope.displayPromocode = true;
 
-    if(location.pathname.indexOf("404")>0)
+    if(location.pathname.indexOf("404")>0 || location.pathname.indexOf("maintenance")>0 || location.pathname.indexOf("500")>0)
     {
 		$scope.heightConstant = true;
+        $scope.displayPromocode = false;
     }
 
 
@@ -121,6 +123,11 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 			}
         }).error(function (data,status, headers, config){ });
     }
+
+  	$rootScope.notexpired=true;
+  if($rootScope.hashParams.isExpired){
+	$rootScope.notexpired=false;
+  }
 
 }]);
 

@@ -39,7 +39,7 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                 java.sql.Date movingOneMonthDate = new java.sql.Date(onemonthcalendar.getTime().getTime());
                 java.sql.Date movingThreeMonthDate = new java.sql.Date(threemonthcalendar.getTime().getTime());
 
-                String query="insert into signup(type,created,first_name,last_name,email,phone_number,contact_via_phone,source,moving_date,address1,address2,city,state,zip,special_offers_optin)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                String query="insert into signup(type,created,first_name,last_name,email,phone_number,contact_via_phone,source,moving_date,address1,address2,city,state,zip,special_offers_optin,lead_source)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setString(1, customer.getType());
                 preparedStmt.setDate(2, todayDate);
@@ -68,7 +68,7 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                 }else{
                     preparedStmt.setBoolean(15,false );
                 }
-
+                preparedStmt.setString(16,customer.getSignupType());
                 preparedStmt.execute();
                 result=true;
             }
@@ -89,13 +89,18 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
             if (connection != null) {
-                String email=customer.getEmail();
-                String query="SELECT * FROM signup where email=?";
-                PreparedStatement preparedStatement =connection.prepareStatement(query);
-                preparedStatement.setString(1, email);
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    result=true;
+                if(customer.getEmail().length()>0){
+                    String query="SELECT * FROM signup where email=? and type=? and lead_source=?";
+                    PreparedStatement preparedStatement =connection.prepareStatement(query);
+                    preparedStatement.setString(1, customer.getEmail());
+                    preparedStatement.setString(2, customer.getType());
+                    preparedStatement.setString(3, customer.getSignupType());
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    while (resultSet.next()) {
+                        result=true;
+                    }
+                }else{
+
                 }
             }
         }catch(Exception e){
@@ -119,7 +124,7 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                 java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
                 java.sql.Date movingOneMonthDate = new java.sql.Date(onemonthcalendar.getTime().getTime());
                 java.sql.Date movingThreeMonthDate = new java.sql.Date(threemonthcalendar.getTime().getTime());
-                String query="UPDATE signup SET type=?, created=?, first_name=?, last_name=?, phone_number=?, contact_via_phone=?, source=?,moving_date=?, address1=?, address2=?, city=?, state=?, zip=?, special_offers_optin=? where email=?";
+                String query="UPDATE signup SET type=?, created=?, first_name=?, last_name=?, phone_number=?, contact_via_phone=?, source=?,moving_date=?, address1=?, address2=?, city=?, state=?, zip=?, special_offers_optin=? where email=? and type=? and lead_source=?";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setString(1, customer.getType());
                 preparedStmt.setDate(2, todayDate);
@@ -146,6 +151,8 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                     preparedStmt.setBoolean(14,false );
                 }
                 preparedStmt.setString(15, customer.getEmail());
+                preparedStmt.setString(16, customer.getType());
+                preparedStmt.setString(17, customer.getSignupType());
                 int n= preparedStmt.executeUpdate();
                 System.out.println(n);
                 result=true;

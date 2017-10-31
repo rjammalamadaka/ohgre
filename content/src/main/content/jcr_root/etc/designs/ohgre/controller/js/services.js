@@ -50,6 +50,11 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/moving";
 		return $http.post(url,angular.toJson(requestInfo),config);
     }
+    var setProductData =function(requestInfo){
+		var url="/bin/setProductData";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
+
     var sendRafEmail =function(requestInfo){
 		var url="/bin/sendRafEmail";
 		return $http.post(url,angular.toJson(requestInfo),config);
@@ -59,6 +64,21 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/DSMEnrollment";
 		return $http.post(url,angular.toJson(requestInfo),config);
     }
+    var rafUpdateCustomerInfo =function(requestInfo){
+		var url="/bin/rafUpdateCustomerInfo";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
+
+    var wcRequest =function(requestInfo){
+		var url="/bin/whatCount";
+		return $http.post(url,angular.toJson(requestInfo),config);
+    }
+
+    var logout=function(){
+		var url="/bin/logout?"+new Date().getTime();
+		return $http.get(url,config);
+    }
+
     return {
         getQuotes:getQuotes,
         getPromoCodeInfo:getPromoCodeInfo,
@@ -69,7 +89,11 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
         enrollCustomer:enrollCustomer,
         moving:moving,
         sendRafEmail:sendRafEmail,
-        dsmEnroll:dsmEnroll
+        dsmEnroll:dsmEnroll,
+        setProductData:setProductData,
+        rafUpdateCustomerInfo:rafUpdateCustomerInfo,
+        wcRequest:wcRequest,
+        logout:logout
     }               
 }]);
 

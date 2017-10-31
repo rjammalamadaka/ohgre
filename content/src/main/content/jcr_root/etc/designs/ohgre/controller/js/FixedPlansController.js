@@ -39,6 +39,14 @@ ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',
 
          }).error(function (data,status, headers, config){
 
+        if(status == 404){
+			if(portalname =="oh"){
+         	location.href="/content/onlyong/errors/500.html";
+            }else{
+                location.href="/content/gre/errors/500.html";
+            }
+        }
+
              console.log("error");
          });
 

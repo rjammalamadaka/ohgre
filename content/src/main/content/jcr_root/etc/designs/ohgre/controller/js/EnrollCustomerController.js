@@ -35,8 +35,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
           location.href=$rootScope.homeUrl+".html";
             return false;
         }
+        setPromotionInfoByLDC(data.LDC);
         $rootScope.product=data;
 		var rateClass=$rootScope.product.rateClassCode;
+        if(data.referralcode){
+        	//data.referralcode
+            $scope.rafcode=data.referralcode;
+        }
         if(rateClass =="04"){
 			$scope.businessName=true;
         }
@@ -179,6 +184,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                  if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
                      console.log($rootScope.customerInfo); 
                      $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
+                     $scope.existingEmail= $rootScope.customerInfo.emailAddress;
+
                       $rootScope.showexistingcustomer=true;
                      $rootScope.gbplandisplay=false;
 
@@ -209,12 +216,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
                      if($rootScope.customerInfo.productCode =="COK" || $rootScope.customerInfo.productCode=="COJ"){
 
-                         var pricingDesc= $rootScope.customerInfo.pricingDesc;
+                        var pricingDesc= $rootScope.customerInfo.pricingDesc;
 
  							var pricingDescArray=pricingDesc.split('Term');
                          if(pricingDescArray.length>0){
                          	$rootScope.gbplandisplay=true;
-                            $rootScope.gbplandescription=pricingDesc.split('Term')[0].trim();
+                          //  $rootScope.gbplandescription=pricingDesc.split('Term')[0].trim();
+
+							$rootScope.gbplandescription=$rootScope.customerInfo.contractPrice;
                          }
 
                      }
@@ -239,8 +248,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
 							gotNextStep(2);
                      }
-
+					//location.href="/content/onlyong/maintenance.html";
                  }
+
+
+
              }else{
 
 
@@ -381,6 +393,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                 data.mailStateCode=$scope.addressstate;
             if($scope.zipcode)
                 data.mailZipCode=$scope.zipcode;
+        }else{
+            data.mailAddress1=$scope.billingaddressone;            
+            data.mailAddress2=$scope.billingaddresstwo;
+            data.mailCity=$scope.billingaddresscity;
+            data.mailStateCode=$scope.billingaddressstate;
+            data.mailZipCode=$scope.billingaddresszip;
         }
 
         if($scope.specialoffer){
@@ -453,14 +471,23 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     }
 
     $scope.sendemailwithmoreinfo =function(){
-		$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
+
+        if($scope.existingEmail && ($scope.enrollReq.emailAddress !=$scope.existingEmail)){
+
+			$scope.enrollReq.alternateEmailAddress=$scope.enrollReq.emailAddress;
+        }
+        $scope.enrollReq.emailTypeCode="RAFGEN";
+
+$scope.reviewauthorizesubmit();
+
+	/*	$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
         PrimeService.sendRafEmail($scope.sendRafEmailReq).success(function(data, status, headers, config){
 			console.log(data);
 
         }).error(function(data, status, headers, config){
 
                 console.log(data);
-        });
+        });*/
 
     }
     $scope.reviewauthorizesubmit =function(){
@@ -638,12 +665,25 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     $rootScope.redirectToStandardPricingPlan =function(){
 
-			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC;
+		var locationType = 'residential';
+        ohgre.removeStore("promoCodeInfo");
+        if($rootScope.product.RateClassCode == '04'){
+			locationType = 'commercial';
+        }
+
+			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC+'&lctype='+locationType;
     }
 
     $rootScope.enrollselectalternateplans =function(){
 
-			location.href=$rootScope.homeUrl+"/plans-detail.html";
+			var locationType = 'residential';
+
+        ohgre.removeStore("promoCodeInfo");
+        if($rootScope.customerInfo.rateClass == '04'){
+			locationType = 'commercial';
+        }
+
+			location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$rootScope.product.LDC+'&lctype='+locationType;
     }
 
     $rootScope.popuprenewalcontinue =function(){
@@ -696,14 +736,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                  // $scope.dsmEnrollReq.dsmPhone= $scope.enrollReq.phoneNumber;
                  $scope.dsmEnrollReq.LDCAccountNumber=$scope.enrollReq.account;
                  $scope.dsmEnrollReq.LDCName=$scope.enrollReq.LDC;
-                 
+
                  PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
                      $scope.flag=false;
                      console.log(data);
                      if(data.message =="Success"){
                      $scope.reviewauthorizesubmit();
                      }
-                     
+
                  }).error(function(data, status, headers, config){
                      $scope.flag=false;
                      console.log(data);
@@ -776,13 +816,42 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
     }
 
-    var promoinfo=ohgre.store("promoCodeInfo");
+      var setPromotionInfoByLDC =function(ldc){
+
+            var promoinfo=ohgre.store("promoCodeInfo");
+                if(promoinfo && promoinfo.LDCList && promoinfo.LDCList.length>0 && promoinfo.LDCList[0].promotion && promoinfo.LDCList[0].promotion.length>0){
+                    //console.log($rootScope.product.LDC);
+                    var temp=null;
+                    for(var i=0; i<promoinfo.LDCList.length;i++){
+                        if(promoinfo.LDCList[i].LDCCode ==ldc){
+                            temp=promoinfo.LDCList[i].promotion[0];
+                            break;
+                        }
+            
+                    }
+                    //var data= promoinfo.LDCList[0].promotion[0];
+                    var data=temp;
+                    $scope.promotionInfo=data;
+                    updateenrollrequestobj(data);
+                }
+      }
+    /*var promoinfo=ohgre.store("promoCodeInfo");
     if(promoinfo && promoinfo.LDCList && promoinfo.LDCList.length>0 && promoinfo.LDCList[0].promotion && promoinfo.LDCList[0].promotion.length>0){
-        var data= promoinfo.LDCList[0].promotion[0];
+		console.log($rootScope.product.LDC);
+        var temp=null;
+        for(var i=0; i<promoInfo.LDCList.length;i++){
+            if(promoInfo.LDCList[i].LDCCode ==$rootScope.product.LDC){
+				temp=promoinfo.LDCList[i].promotion[0];
+                break;
+            }
+
+        }
+        //var data= promoinfo.LDCList[0].promotion[0];
+        var data=temp;
         $scope.promotionInfo=data;
         updateenrollrequestobj(data);
     }
-
+*/
     $scope.gotoHomePage = function(){
 		location.href=$rootScope.homeUrl+".html";
     }
