@@ -7969,6 +7969,40 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .page-wrapper {
   background: #fff;
 }
+#change-email-popup {
+  padding: 3.5rem 3.5rem 1rem;
+}
+#change-email-popup label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+#change-email-popup p {
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  line-height: 2;
+  margin: 0 0 2rem;
+}
+#change-email-popup .button-container {
+  margin-top: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+#change-email-popup .button-container a {
+  margin: 0 0 1rem;
+  width: 100%;
+}
+#change-email-popup input[type="text"] {
+  display: block;
+}
+@media (min-width: 992px) {
+  #change-email-popup input[type="text"] {
+    max-width: 30rem;
+  }
+  #change-email-popup .button-container a {
+    width: 40%;
+  }
+}
 .refer-a-friend .form-area-wrapper {
   margin-bottom: 1.5rem;
 }

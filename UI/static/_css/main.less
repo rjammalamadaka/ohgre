@@ -2235,6 +2235,43 @@ div[class^="cq-colctrl-lt1-"]{
 .page-wrapper {
 	background: #fff;
 }
+#change-email-popup{
+	padding: 3.5rem 3.5rem 1rem;
+
+	label{
+		font-family: @secondary_font;
+		font-size: 1.4rem;
+		font-weight: 400;
+	}
+	p{
+		color: #4a4a4a;
+		font-size: 1.5rem;
+		line-height: 2;
+		margin: 0 0 2rem;
+	}
+	.button-container {
+		margin-top: 2rem;
+		padding-left: 0;
+		padding-right: 0;
+		a{
+			margin: 0 0 1rem;
+			width: 100%;
+		}
+	}
+	input[type="text"]{
+		display: block;
+	}
+	@media (@screen-md-min){
+		input[type="text"]{
+			max-width: 30rem;
+		}
+		.button-container{
+			a{
+				width: 40%;
+			}
+		}
+	}
+}
 .refer-a-friend {
 	.form-area-wrapper {
 		margin-bottom: 1.5rem;
