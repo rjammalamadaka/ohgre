@@ -10818,7 +10818,9 @@ ul.info-links li {
   }
 }
 #account-dashboard,
-#renew-plan-select {
+#renew-plan-select,
+#cancel-plan-wrapper,
+.cancel-renew-page {
   background-color: #fff;
   margin-top: 2rem;
   padding-bottom: 3rem;
@@ -10826,24 +10828,73 @@ ul.info-links li {
 }
 @media (min-width: 992px) {
   #account-dashboard,
-  #renew-plan-select {
+  #renew-plan-select,
+  #cancel-plan-wrapper,
+  .cancel-renew-page {
     border: 1px solid #ccc;
     margin-top: 5rem;
   }
 }
 #account-dashboard .intro-wrapper,
-#renew-plan-select .intro-wrapper {
+#renew-plan-select .intro-wrapper,
+#cancel-plan-wrapper .intro-wrapper,
+.cancel-renew-page .intro-wrapper {
   font-family: 'Roboto', sans-serif;
   margin: 0 0 0rem 0;
   padding-left: 2.5rem;
 }
 #account-dashboard .intro-wrapper .user-greeting,
-#renew-plan-select .intro-wrapper .user-greeting {
+#renew-plan-select .intro-wrapper .user-greeting,
+#cancel-plan-wrapper .intro-wrapper .user-greeting,
+.cancel-renew-page .intro-wrapper .user-greeting {
   font-size: 1.3rem;
 }
 #account-dashboard .intro-wrapper .user-greeting a,
-#renew-plan-select .intro-wrapper .user-greeting a {
+#renew-plan-select .intro-wrapper .user-greeting a,
+#cancel-plan-wrapper .intro-wrapper .user-greeting a,
+.cancel-renew-page .intro-wrapper .user-greeting a {
   color: #0074bf;
+}
+#account-dashboard .alert-box,
+#renew-plan-select .alert-box,
+#cancel-plan-wrapper .alert-box,
+.cancel-renew-page .alert-box {
+  overflow: hidden;
+  padding: 2rem 2rem 0;
+}
+#account-dashboard .alert-box h5,
+#renew-plan-select .alert-box h5,
+#cancel-plan-wrapper .alert-box h5,
+.cancel-renew-page .alert-box h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+}
+#account-dashboard .alert-box p,
+#renew-plan-select .alert-box p,
+#cancel-plan-wrapper .alert-box p,
+.cancel-renew-page .alert-box p {
+  color: #000;
+  font-weight: 500;
+  margin: 0 0 2rem;
+}
+#account-dashboard .alert-box b,
+#renew-plan-select .alert-box b,
+#cancel-plan-wrapper .alert-box b,
+.cancel-renew-page .alert-box b {
+  color: #d0021b;
+}
+#account-dashboard .alert-box.alert-alt1,
+#renew-plan-select .alert-box.alert-alt1,
+#cancel-plan-wrapper .alert-box.alert-alt1,
+.cancel-renew-page .alert-box.alert-alt1 {
+  margin-bottom: 0;
+}
+#account-dashboard .alert-box.alert-alt1 b,
+#renew-plan-select .alert-box.alert-alt1 b,
+#cancel-plan-wrapper .alert-box.alert-alt1 b,
+.cancel-renew-page .alert-box.alert-alt1 b {
+  color: #000;
 }
 #account-dashboard .desktop-flex-container {
   background-color: #e0e6e9;
@@ -10856,41 +10907,9 @@ ul.info-links li {
 #account-dashboard h4 {
   font-size: 2rem;
 }
-@media (min-width: 992px) {
-  #account-dashboard .intro-wrapper {
-    margin: 0 0 3rem 0;
-    text-align: right;
-  }
-  #account-dashboard .intro-wrapper .user-greeting a {
-    color: #ff6008;
-  }
-}
 #account-dashboard .information-block {
   height: 100%;
   padding-top: 2rem;
-}
-#account-dashboard .alert-box {
-  overflow: hidden;
-  padding: 2rem 2rem 0;
-}
-#account-dashboard .alert-box h5 {
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 0;
-}
-#account-dashboard .alert-box p {
-  color: #000;
-  font-weight: 500;
-  margin: 0 0 2rem;
-}
-#account-dashboard .alert-box b {
-  color: #d0021b;
-}
-#account-dashboard .alert-box.alert-alt1 {
-  margin-bottom: 0;
-}
-#account-dashboard .alert-box.alert-alt1 b {
-  color: #000;
 }
 #account-dashboard .footnote {
   background-color: inherit;
@@ -10956,6 +10975,59 @@ ul.info-links li {
   }
   #account-dashboard .buttons .primary-button {
     width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  #account-dashboard .intro-wrapper,
+  #cancel-plan-wrapper .intro-wrapper {
+    margin: 0 0 3rem 0;
+    text-align: right;
+  }
+  #account-dashboard .intro-wrapper .user-greeting a,
+  #cancel-plan-wrapper .intro-wrapper .user-greeting a {
+    color: #ff6008;
+  }
+}
+#cancel-plan-wrapper #cancel-current-plan {
+  padding: 2.5rem 2.5rem 0;
+}
+#cancel-plan-wrapper #cancel-current-plan,
+#cancel-plan-wrapper .alert-box.alert-alt1,
+#cancel-plan-wrapper ul.plan-detail {
+  margin-bottom: 3rem;
+}
+#cancel-plan-wrapper .cancel-msg {
+  color: #1b1b1b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 2rem 2rem;
+}
+@media (min-width: 992px) {
+  #cancel-plan-wrapper #cancel-current-plan {
+    padding-bottom: 2.5rem;
+  }
+  #cancel-plan-wrapper .cancel-msg {
+    margin: 0 0 2rem;
+  }
+  #cancel-plan-wrapper .foot-notes {
+    padding: 0 0 2rem;
+  }
+}
+@media (min-width: 992px) {
+  #cancel-plan-wrapper .plan-info-col {
+    padding: 1rem 0;
+    width: 50%;
+  }
+  #cancel-plan-wrapper .plan-info-col:first-child {
+    margin-right: 4rem;
+  }
+  #cancel-plan-wrapper .plan-info-col td {
+    width: 50%;
+  }
+  #cancel-plan-wrapper .plan-info-col td:first-child {
+    font-size: 1.3rem;
   }
 }
 #renew-plan-select {
