@@ -22,6 +22,24 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 		$rootScope.hashParams[param[0]]=param[1];
     }
 
+    function isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+     $rootScope.queryParams = {};
+    var queryParams = window.location.search && window.location.search.split("?")[1] && window.location.search.split("?")[1].split('&');
+    for(var i=0;i<queryParams.length;i++){
+        var param = queryParams[i].split("=")
+        $rootScope.queryParams[param[0]]=param[1];
+    }
+    if($rootScope.queryParams && !isEmpty($rootScope.queryParams)){
+		$rootScope.hashParams=$rootScope.queryParams;
+    }
+
     $rootScope.cardpromobuttonclick =function(url){
 		location.href=url+'.html'
     }
@@ -88,6 +106,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         if(ldcbutton && ldcbutton.length>0){
 			ldc=$(ldcbutton[0]).val();
         }
+
+        if($rootScope.hashParams && $rootScope.hashParams.ldc){
+			req.LDC=$rootScope.hashParams.ldc;
+        }
         if(ldc){
         	req.LDC=ldc;
             if(!req.LdcDesc){
@@ -95,17 +117,31 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
             }
         }else{
 
-            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
-				req.LDC=promoInfo.LDCList[0].LDCCode;
-                req.LdcDesc=promoInfo.LDCList[0].LDCDesc;
-            }else{
+            if(!req.LDC){
+                if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
+                    req.LDC=promoInfo.LDCList[0].LDCCode;
+                    req.LdcDesc=promoInfo.LDCList[0].LDCDesc;
+                }
+            }else if(req.LDC && promoInfo && promoInfo.LDCList){
+                for(var i=0;i<promoInfo.LDCList.length;i++){
+					if(req.LDC ==promoInfo.LDCList[i].LDCCode)
+                      req.LdcDesc= promoInfo.LDCList[i].LDCDesc;
+                }
 
             }
+
 
         }
 
         if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0 && promoInfo.LDCList[0].promotion && promoInfo.LDCList[0].promotion.length>0){
-			req.CustomerTypeCode=promoInfo.LDCList[0].promotion[0].CustomerTypeCode;
+
+               for(var i=0;i<promoInfo.LDCList.length;i++){
+                   if(req.LDC ==promoInfo.LDCList[i].LDCCode){
+                      //req.LdcDesc= promoInfo.LDCList[i].LDCDesc;
+                       req.CustomerTypeCode=promoInfo.LDCList[i].promotion[0].CustomerTypeCode;
+                   }
+                }
+
             if(promoInfo.LDCList[0].promotion[0].RateClassCode.length>0){
 			req.RateClassCode=promoInfo.LDCList[0].promotion[0].RateClassCode;	
             }else{
@@ -131,6 +167,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
             }
             req.CustomerTypeCode="";
 
+        }
+
+        if($rootScope.hashParams && $rootScope.hashParams.referralcode){
+			req.referralcode=$rootScope.hashParams.referralcode;
         }
 
          $http.post(url, req ,config).success(function(data, status, headers, config){
@@ -169,7 +209,7 @@ $rootScope.currentYear=new Date().getFullYear();
 
 
     $rootScope.getNumberWithoutStar =function(QuoteDescription){
-         
+
          if(QuoteDescription){
 
              if(QuoteDescription.indexOf("CCF")>0){
@@ -198,5 +238,53 @@ $rootScope.currentYear=new Date().getFullYear();
     }
 
 
+
+
 }]); 
 
+/*
+
+(function (global) {
+
+    if(window.location.pathname.indexOf('customer_lookup.html') !=-1){
+
+    if(typeof (global) === "undefined") {
+        throw new Error("window is undefined");
+    }
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+        // making sure we have the fruit available for juice (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {            
+        noBackPlease();
+
+        // disables backspace on page except on input fields and textarea..
+        document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        };          
+    }
+
+    }
+
+})(window);
+
+
+*/
