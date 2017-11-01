@@ -5436,6 +5436,7 @@ ol.styled-numbers li p {
 p {
   color: #757575;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
   margin-top: 0;
 }
 .ul-margin {
@@ -7645,7 +7646,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .plan-detail li .plan-info {
   display: table;
 }
-.plan-detail li .plan-info b {
+.plan-detail li .plan-info b,
+.plan-detail li .plan-info li,
+.plan-detail li .plan-info p {
   font-family: 'Roboto', sans-serif;
 }
 .plan-detail li .plan-info .inner-content {
@@ -7657,9 +7660,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-weight: 300;
   margin: 0;
 }
-.plan-detail li .plan-info p {
-  font-family: 'Roboto', sans-serif;
-}
 .plan-detail li .plan-info p,
 .plan-detail li .plan-info a {
   display: none;
@@ -7667,6 +7667,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .plan-detail li .plan-info p.primary-button,
 .plan-detail li .plan-info a.primary-button {
   display: block;
+}
+.plan-detail li .plan-info a.accord-trigger.accord-expanded {
+  margin-bottom: 1rem;
 }
 .plan-detail li .plan-button {
   display: none;
@@ -7687,6 +7690,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
   padding: 3% 2rem;
 }
 .plan-detail li.gbp .plan-price img {
+  margin: auto;
   width: 80%;
 }
 .plan-detail li.gbp .plan-button {
@@ -7705,9 +7709,21 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .plan-detail li.accord-expanded .mobile-content {
   display: block;
 }
+.plan-detail li .accord-container ul {
+  margin-bottom: 2rem;
+}
+.plan-detail li .accord-container ul > ul {
+  padding-left: 0;
+}
+.plan-detail li .accord-container ul li {
+  font-family: 'Roboto', sans-serif;
+}
 .plan-detail li .accord-container.mobile-content {
   background: #fff;
   padding: 2rem;
+}
+.plan-detail li .accord-container.mobile-content .primary-button {
+  width: 100%;
 }
 @media (min-width: 992px) {
   .plan-detail li .mobile-content {
@@ -7761,6 +7777,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   .plan-detail li.accord-expanded .plan-info-wrapper:after {
     content: "";
   }
+  .plan-detail li.accord-expanded .desktop-content {
+    display: block !important;
+  }
   .plan-detail li .plan-button {
     display: block;
     width: 20%;
@@ -7769,12 +7788,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
     position: absolute;
     right: 1rem;
     top: 0;
+    height: 100%;
   }
   .plan-detail li .plan-button .primary-button {
     display: block;
     padding: 0 1rem;
     color: #fff;
     text-decoration: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .plan-detail li .plan-button .primary-button:hover {
     color: #fff;
@@ -8586,6 +8609,7 @@ div.alt-col2,
 }
 #visa-customer-info {
   margin-top: -2rem;
+  width: 100%;
 }
 @media (min-width: 992px) {
   #visa-customer-info {
@@ -11099,6 +11123,16 @@ ul.info-links li {
 }
 #renew-plan-select .promocode-entry {
   padding: 0 2rem 3rem;
+}
+#renew-plan-select .promocode-entry .promocode-message {
+  clear: both;
+}
+#renew-plan-select .promocode-entry .promocode-message p {
+  line-height: 1.5;
+}
+#renew-plan-select .promocode-entry .promocode-message p em {
+  color: #0074bf;
+  font-style: normal;
 }
 #renew-plan-select .promocode-entry label {
   display: block;

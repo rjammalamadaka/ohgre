@@ -1872,7 +1872,7 @@ div[class^="cq-colctrl-lt1-"]{
 		.plan-info{
 			display: table;
 
-			b {
+			b,li,p {
 				font-family: @secondary_font;
 			}
 
@@ -1883,16 +1883,20 @@ div[class^="cq-colctrl-lt1-"]{
 			h4{
 				font-size	: 2rem;
 				font-weight	: 300;
-				margin		: 0;
-			}
-			p{
-				font-family		: @secondary_font;
+				margin: 0;
 			}
 			p,a{
 				display	: none;
 
 				&.primary-button{
 					display: block;
+				}
+			}
+			a{
+				&.accord-trigger{
+					&.accord-expanded{
+						margin-bottom: 1rem;
+					}
 				}
 			}
 		}
@@ -1914,6 +1918,7 @@ div[class^="cq-colctrl-lt1-"]{
 				padding	: 3% 2rem;
 
 				img{
+					margin:auto;
 					width: 80%;
 				}
 			}
@@ -1942,9 +1947,24 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 		.accord-container{
+			ul {
+				margin-bottom: 2rem;
+
+				>ul{
+					padding-left: 0;
+				}
+				li {
+					font-family: @secondary_font;
+				}
+			}
+
 			&.mobile-content{
 				background: #fff;
 				padding: 2rem;
+
+				.primary-button{
+					width: 100%;
+				}
 			}
 		}
 		@media (@screen-md-min){
@@ -2006,6 +2026,9 @@ div[class^="cq-colctrl-lt1-"]{
 						content: "";
 					}
 				}
+				.desktop-content{
+					display: block !important;
+				}
 			}
 			.plan-button{
 				display: block;
@@ -2015,12 +2038,16 @@ div[class^="cq-colctrl-lt1-"]{
 				position: absolute;
 				right: 1rem;
 				top: 0;
+				height: 100%;
 
 				.primary-button{
 					display	: block;
 					padding	: 0 1rem;
 					color: #fff;
 					text-decoration: none;
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
 
 					&:hover{
 						color: #fff;
@@ -2936,6 +2963,7 @@ div.alt-col2,
 }
 #visa-customer-info{
 	margin-top: -2rem;
+	width: 100%;
 
 	@media (@screen-md-min){
 		margin-bottom: 5rem;
@@ -5567,6 +5595,19 @@ ul.info-links {
 	}
 	.promocode-entry {
 		padding: 0 2rem 3rem;
+
+		.promocode-message {
+			clear: both;
+
+			p{
+				line-height: 1.5;
+				em {
+					color: @primary_color;
+					font-style: normal;
+				}
+			}
+
+		}
 
 		label {
 			display: block;

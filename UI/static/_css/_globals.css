@@ -367,6 +367,7 @@ ol.styled-numbers li p {
 p {
   color: #757575;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
   margin-top: 0;
 }
 .ul-margin {
