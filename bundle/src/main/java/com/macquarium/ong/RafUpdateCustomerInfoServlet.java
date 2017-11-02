@@ -5,22 +5,23 @@ import java.io.IOException;
 import java.net.URL;
 import java.rmi.ServerException;
 
-import com.primesw.webservices.*;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import org.tempuri.quoteservice.UpdateCustomerInfoRequest;
 import org.tempuri.quoteservice.UpdateCustomerInfoResult;
 
+import com.primesw.webservices.QuoteService;
+import com.primesw.webservices.QuoteServiceSoap;
+import com.primesw.webservices.UpdateCustomerInfo;
+import com.primesw.webservices.UpdateCustomerInfoResponse;
 
 @SlingServlet(paths="/bin/rafUpdateCustomerInfo", methods = "POST", metatype=true)
-public class RafUpdateCustomerInfoServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
-
-    private static final long serialVersionUID = 2598426539166789515L;
-
+public class RafUpdateCustomerInfoServlet extends SlingAllMethodsServlet{
     @Reference
     private CommonConfigService commonConfigService;
 
@@ -36,7 +37,7 @@ public class RafUpdateCustomerInfoServlet extends org.apache.sling.api.servlets.
         JSONObject jObj = null;
         URL url=null;
         try {
-            String endPointUrl=	commonConfigService.getPrimeEndPoint();
+            String endPointUrl=    commonConfigService.getPrimeEndPoint();
             System.out.println("endPointUrl :"+endPointUrl);
             url = new URL(endPointUrl);
             long startTime = System.currentTimeMillis();
@@ -51,16 +52,20 @@ public class RafUpdateCustomerInfoServlet extends org.apache.sling.api.servlets.
             updateCustomerInfoRequest.setAccount(getParameterInfo(jObj, "account"));
             updateCustomerInfoRequest.setLDC(getParameterInfo(jObj, "ldc"));
             updateCustomerInfoRequest.setCustID(getParameterInfo(jObj,"custID"));  //custID
-           // updateCustomerInfoRequest.setEmailAddress(getParameterInfo(jObj,"emailAddress"));   //emailAddress
-            updateCustomerInfoRequest.setRAFTermsCondAcknowledgedInd("Y");
+            String emailAddress=getParameterInfo(jObj,"emailAddress");
+            if(null !=emailAddress && emailAddress.length()>0){
+                updateCustomerInfoRequest.setEmailAddress(emailAddress);   //emailAddress
+            }
+            String RAFTermsCondAcknowledgedInd=getParameterInfo(jObj,"RAFTermsCondAcknowledgedInd");
+            if(null !=RAFTermsCondAcknowledgedInd && RAFTermsCondAcknowledgedInd.length()>0){
+                updateCustomerInfoRequest.setRAFTermsCondAcknowledgedInd(getParameterInfo(jObj,RAFTermsCondAcknowledgedInd));
+            }
+            // updateCustomerInfoRequest.setRAFTermsCondAcknowledgedInd("Y");
 
             UpdateCustomerInfo updateCustomerInfo=new UpdateCustomerInfo();
             updateCustomerInfo.setUpdateCustomerInfoRequest(updateCustomerInfoRequest);
             UpdateCustomerInfoResponse updateCustomerInfoResponse= quoteServiceSoap.updateCustomerInfo(updateCustomerInfo);
             UpdateCustomerInfoResult updateCustomerInfoResult=updateCustomerInfoResponse.getUpdateCustomerInfoResult();
-
-
-
             obj.put("ResponseStatus", updateCustomerInfoResult.getResponseStatus());
             obj.put("ResponseMessage", updateCustomerInfoResult.getResponseMessage());
 
@@ -87,5 +92,4 @@ public class RafUpdateCustomerInfoServlet extends org.apache.sling.api.servlets.
         }
         return result;
     }
-
 }
