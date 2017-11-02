@@ -29,6 +29,8 @@
 
           <div class="box-with-border">
 ${properties.sharebyemail @ context = 'html'}
+            <p><a href="#" class="alt-link1" ng-click="changeemail()">change your email address</a><br> Your email address: <b>{{customerInfo.emailAddress}}</b></p>
+
             <p><button class="primary-button" ng-click="rafauthenticated()">Send email</button></p>
           </div>
         </div>
@@ -164,5 +166,6 @@ ${properties.sharesocially @ context = 'html'}
     </div>
   </section>
   <sly data-sly-include="popups.html"></sly>
+  <sly data-sly-include="changeemailaddress.html"></sly>
 </div>
 
