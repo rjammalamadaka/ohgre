@@ -3,13 +3,15 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
 
      var date=new Date();
+    var updateCustomerInfoReq={};
      var currentYear=date.getFullYear();
     var previouserYear=currentYear-1;
+    var updateCustomerInfoReq={};
     $scope.years=[previouserYear,currentYear];
     $scope.giftCardByYear={};
 	$scope.sclectedYear=currentYear;
 
-    $scope.rafemailmessage="I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $50 credit towards our bill. Not bad, huh?"
+    $scope.rafemailmessage="I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
 
     PrimeService.getProductData().success(function(data, status, headers, config){
 
@@ -29,6 +31,10 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 							$scope.customerInfo=customerInfo;
                            console.log($scope.customerInfo);
                         var giftCard= $scope.customerInfo.giftCard;
+                        updateCustomerInfoReq.custID=$scope.customerInfo.custID;
+                        updateCustomerInfoReq.account=$scope.customerInfo.account;
+                        updateCustomerInfoReq.ldc=$scope.customerInfo.ldc;
+
 						var currentYearGf=[];
                         var previouserYearGf=[];
                         giftCard.forEach(function(entry) {
@@ -142,7 +148,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
         $scope.rafMailSerrverMsg=null;
         $scope.rafemailform.submited = true;
         if($scope.rafemailform.$valid){
-    
+
             var requestInfo={};
             requestInfo.tomailId=$scope.customerInfo.emailAddress;
             requestInfo.firstName=$scope.customerInfo.firstName;
@@ -150,7 +156,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
            requestInfo.emailAddress=$scope.toemailaddress;
             requestInfo.rafBody=$scope.rafemailmessage;
             requestInfo.custID=$scope.customerInfo.custID;
-    
+
             PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config){
                 console.log("success");
                 console.log(data);
@@ -161,14 +167,18 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
 					$scope.rafMailSerrverMsg="Problem with mail server, Please try later";
                 }
-    
+
             }).error(function(data, status, headers, config){
                 console.log(data);
                 console.log("error");
                 $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
-    
+
             });
         }
+    }
+
+    $scope.changeemail=function(){
+		jQuery('#change-email-popup').addClass('show-popup');
     }
 
     $scope.redirectToPrivacy=function(){
@@ -212,6 +222,29 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 		        t = "url=" + base_url + "?promocode=" + code + "&referralcode="+$scope.customerInfo.custID+"&r=1&text=" + o;
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 
+    }
+
+    $scope.updateEmailId =function(){
+
+        $scope.updateemail.submited = true;
+        if($scope.updateemail.$valid){
+
+				console.log(updateCustomerInfoReq);
+            updateCustomerInfoReq.emailAddress=$scope.customerInfo.emailAddress;
+            console.log($scope.customerInfo.emailAddress);
+            
+            PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
+                console.log(data);
+                if(data.ResponseStatus ==0){ 
+                   // setProductData();
+                    jQuery("#change-email-popup").removeClass('show-popup');
+                }
+            }).error(function (data,status, headers, config){
+                
+                console.log("error");
+            });
+
+        }
     }
 
 }]);

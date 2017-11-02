@@ -201,6 +201,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
     }
 
     $rootScope.acceptrafterms =function(){
+        updateCustomerInfoReq.RAFTermsCondAcknowledgedInd="Y";
         PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
             console.log(data);
             if(data.ResponseStatus ==0){ 
