@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-10-31T11:38:28.055-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/homepage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="My Account"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <dashboard
+                jcr:created="{Date}2017-10-27T13:52:59.264-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-31T11:38:28.051-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/dashboard"
+                footernote="&lt;p>If you would like to change your information, please call&lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>&amp;nbsp;1-888-466-4427.&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>We are available 8 a.m. to 5 p.m. EST, Monday-Friday.&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true]"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-10-27T21:25:33.516-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

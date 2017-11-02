@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-09-06T08:42:33.919-05:00"
-        cq:lastModifiedBy="rebecka.wilson"
+        cq:lastModified="{Date}2017-10-30T13:20:20.653-05:00"
+        cq:lastModifiedBy="penny"
         cq:template="/apps/ohgre/templates/mainpage"
         jcr:primaryType="cq:PageContent"
         jcr:title="Rate Plans"
@@ -15,8 +15,8 @@
             <herobaner
                 jcr:created="{Date}2017-08-16T11:17:23.463-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-30T13:01:14.166-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:lastModified="{Date}2017-10-30T13:19:20.023-05:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herobaner"
                 description="Our residential natural gas plans are designed to serve your needs."
@@ -25,8 +25,8 @@
             <plansdisplay_266813004
                 jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-09-06T08:42:33.916-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:lastModified="{Date}2017-10-30T13:20:20.650-05:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/plansdisplay"
                 displayGuranteedPlan="true"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ec56ee18-419d-4176-9cfb-f1ab7275aafb">
+    <jcr:content
+        cq:name="ong-logos-leftstack-spot@2x.png"
+        cq:parentPath="/content/dam/ohgre/ONG_logos"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png"
+        jcr:lastModified="{Date}2017-11-01T22:48:41.388-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2017-11-01T22:48:41.107-04:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="827411b53d759ec73ce1540746c0d48b3a785b7b"
+            dam:size="{Long}8302"
+            dc:format="image/png"
+            dc:modified="{Date}2017-11-01T22:48:41.200-04:00"
+            jcr:lastModified="{Date}2017-11-01T22:48:41.200-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}74"
+            tiff:ImageWidth="{Long}157"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
