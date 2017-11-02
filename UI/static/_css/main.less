@@ -403,6 +403,21 @@ footer{
 /* ====================
 	COMPONENT STYLES
 ====================== */
+#promoform {
+	.radio-container+label{
+		margin-right: 2.5rem;
+
+		@media (@screen-xs-min){
+			margin-right: 4rem;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	>.form-section{
+		margin-bottom: 2rem;
+	}
+}
 .promocode{
 	+ div[class^=cq-colctrl-].parsys-column, + .parsys-column.cq-colctrl-lt0{
 		padding: 0;
@@ -1155,6 +1170,7 @@ div[class^="cq-colctrl-lt1-"]{
 			.promo-link {
 				bottom: 2.5rem;
 				position: absolute;
+				text-transform: uppercase;
 			}
 		}
 
@@ -2318,6 +2334,11 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 	}
+	.multiple-input {
+		.input-container[data-size="8"] {
+			width: 10rem;
+		}
+	}
 
 }
 .refer-a-friend,
@@ -2456,9 +2477,44 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 }
 #raf-email-popup {
-	background-color: #fff;
-	max-width: 85rem;
 	padding: 0;
+
+	.window-wrapper{
+		background-color: #fff;
+		max-width: 85rem;
+		margin: 0;
+		padding: 0;
+		max-height: 100%;
+		@media (@screen-md-min){
+			margin: 5vh auto;
+		}
+	}
+
+	.mobile-header {
+		background-color: #002f8f;
+    padding: 2.5rem 2.5rem .5rem;
+		*{
+			color: #fff;
+		}
+		p{
+			font-size: 1.4rem;
+		}
+		img{
+			margin: 0 0 1rem;
+			max-width: 20rem;
+		}
+
+		@media (@screen-md-min){
+			display: none;
+		}
+	}
+	p {
+		font-size: 1.4rem;
+	}
+
+	.alt-col2 {
+		padding-left: 0;
+	}
 
 	p, label, input, textarea {
 		font-family: @secondary_font;
@@ -2583,9 +2639,15 @@ div[class^="cq-colctrl-lt1-"]{
 		* {
 			color: #fff;
 		}
-
+		.row {
+			> div[class^=col-] {
+				&:first-child{
+					padding-left: 0;
+				}
+			}
+		}
 		p, a {
-			font-size: 1.3rem;
+			font-size: 1.2rem;
 		}
 	}
 	.row.promo-wrapper {
@@ -2625,6 +2687,7 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	label {
+		font-size: 1.4rem;
 		margin-top: 15px;
 	}
 }
@@ -2814,8 +2877,8 @@ div[class^="cq-colctrl-lt1-"]{
 	.promo-box {
 		border: 1px solid #fff;
 		font-size: 1.8rem;
-		margin-bottom: 3rem;
-		padding: 2rem 0;
+		margin-bottom: 1rem;
+		padding: 1rem 0;
 
 		span {
 			display: block;
