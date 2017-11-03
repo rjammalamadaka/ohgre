@@ -5861,6 +5861,9 @@ div[class^="col-"] {
     margin-top: 0;
   }
 }
+#primary-header:empty + div {
+  margin-top: 0;
+}
 #primary-header #mobile-links {
   margin-top: 2rem;
   padding-top: 3rem;
@@ -8064,11 +8067,13 @@ div[class^="cq-colctrl-lt1-"] .card p {
   width: 10rem;
 }
 .refer-a-friend .full-banner-light .icon,
-.promotioncontent .full-banner-light .icon {
+.promotioncontent .full-banner-light .icon,
+.offerpromotioncontent .full-banner-light .icon {
   display: none;
 }
 .refer-a-friend .full-banner-light .content,
-.promotioncontent .full-banner-light .content {
+.promotioncontent .full-banner-light .content,
+.offerpromotioncontent .full-banner-light .content {
   background-size: 45px 45px;
   background: url('/etc/designs/ohgre/clientlibs/_img/global/phone.svg') left 50% no-repeat;
   padding-left: 53px;
@@ -8076,13 +8081,15 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 @media (min-width: 375px) {
   .refer-a-friend .full-banner-light .content,
-  .promotioncontent .full-banner-light .content {
+  .promotioncontent .full-banner-light .content,
+  .offerpromotioncontent .full-banner-light .content {
     background-size: contain;
   }
 }
 @media (min-width: 992px) {
   .refer-a-friend .full-banner-light .content,
-  .promotioncontent .full-banner-light .content {
+  .promotioncontent .full-banner-light .content,
+  .offerpromotioncontent .full-banner-light .content {
     white-space: nowrap;
   }
 }
@@ -8116,6 +8123,17 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-size: 1.5rem;
   margin: 0 0 1.5rem;
 }
+#view-raf-rewards {
+  background-color: #e9eef2;
+}
+#view-raf-rewards .alt-border1 {
+  background-color: inherit;
+  padding-left: 0;
+  padding-right: 0;
+}
+#view-raf-rewards .view-raf-rewards-years {
+  padding: 0 2.5rem;
+}
 #view-raf-rewards .border-wrapper {
   border: 1px solid #e9eef1;
   margin-right: 0;
@@ -8136,8 +8154,23 @@ div[class^="cq-colctrl-lt1-"] .card p {
     padding-left: 1.5rem;
   }
 }
+#view-raf-rewards .raf-promo {
+  display: none;
+}
 #view-raf-rewards .accord-expanded + .accord-container {
   display: block;
+}
+#view-raf-rewards .tabs-list li {
+  margin-bottom: 10px;
+}
+#view-raf-rewards .tabs-list li .accord-trigger {
+  background-color: #fff;
+  color: #4a4a4a;
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  padding: 2.5rem;
+  text-decoration: none;
 }
 #view-raf-rewards table.view-rewards {
   width: 100%;
@@ -8172,11 +8205,23 @@ div[class^="cq-colctrl-lt1-"] .card p {
   width: 35%;
 }
 @media (min-width: 992px) {
+  #view-raf-rewards {
+    background-color: #fff;
+  }
   #view-raf-rewards .accord-trigger {
     display: none;
   }
   #view-raf-rewards .accord-container {
     display: block;
+  }
+  #view-raf-rewards .raf-promo {
+    display: block;
+  }
+  #view-raf-rewards .alt-border1 {
+    padding: 2.5rem;
+  }
+  #view-raf-rewards .view-raf-rewards-years {
+    padding: 0;
   }
 }
 #raf-email-popup {
@@ -8184,7 +8229,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup .window-wrapper {
   background-color: #fff;
-  max-width: 85rem;
   margin: 0;
   padding: 0;
   max-height: 100%;
@@ -8192,7 +8236,25 @@ div[class^="cq-colctrl-lt1-"] .card p {
 @media (min-width: 992px) {
   #raf-email-popup .window-wrapper {
     margin: 5vh auto;
+    max-width: 85rem;
   }
+  #raf-email-popup .window-wrapper .raf-email-step {
+    display: block !important;
+  }
+}
+#raf-email-popup footer {
+  margin-top: 0;
+  padding-top: 0;
+}
+#raf-email-popup .raf-email-step-btns {
+  background-color: #f7f7f7;
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+#raf-email-popup .raf-email-step-btns .primary-button {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 85%;
 }
 #raf-email-popup .mobile-header {
   background-color: #002f8f;
@@ -8208,9 +8270,19 @@ div[class^="cq-colctrl-lt1-"] .card p {
   margin: 0 0 1rem;
   max-width: 20rem;
 }
+#raf-email-popup #raf-email-preview,
+#raf-email-popup #raf-user-info {
+  display: none;
+}
 @media (min-width: 992px) {
-  #raf-email-popup .mobile-header {
+  #raf-email-popup .mobile-header,
+  #raf-email-popup .raf-email-step-btns,
+  #raf-email-popup footer {
     display: none;
+  }
+  #raf-email-popup #raf-email-preview,
+  #raf-email-popup #raf-user-info {
+    display: block;
   }
 }
 #raf-email-popup p {
@@ -8237,6 +8309,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview {
   background: #7e94a2;
+}
+#raf-email-popup #raf-email-preview .close-window {
+  display: none;
 }
 #raf-email-popup #raf-email-preview .raf-inline-banner {
   background-color: #002f8f;
@@ -8282,8 +8357,13 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo img {
   max-width: 160px;
 }
-#raf-email-popup #raf-email-preview .row > div[class^=col-]:first-child {
-  padding-left: 1.5rem;
+@media (min-width: 992px) {
+  #raf-email-popup #raf-email-preview .row > div[class^=col-]:first-child {
+    padding-left: 1.5rem;
+  }
+  #raf-email-popup #raf-email-preview .close-window {
+    display: block;
+  }
 }
 #raf-email-popup #raf-email-preview .text-center {
   margin: 0 0 2rem;
@@ -8300,6 +8380,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview .email-body {
   background: #f7f7f7;
+  overflow: hidden;
   padding: 2.5rem 2.5rem 0;
 }
 #raf-email-popup #raf-email-preview .email-body h3 {
@@ -8314,11 +8395,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview .raf-email-codes {
   background-color: #002f8f;
+  padding-left: 2.5rem;
 }
 #raf-email-popup #raf-email-preview .raf-email-codes p,
 #raf-email-popup #raf-email-preview .raf-email-codes h5 {
   color: #fff;
-  text-align: center;
 }
 #raf-email-popup #raf-email-preview .raf-email-codes h5 {
   font-size: 1.5rem;
@@ -8327,6 +8408,26 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview .raf-email-codes p {
   font-size: 2rem;
+}
+#raf-email-popup #raf-email-footer,
+#raf-email-popup .enroll-button {
+  display: none;
+}
+@media (min-width: 992px) {
+  #raf-email-popup #raf-email-footer,
+  #raf-email-popup .enroll-button {
+    display: block;
+  }
+  #raf-email-popup .raf-email-codes {
+    padding-left: 0;
+  }
+  #raf-email-popup .raf-email-codes p,
+  #raf-email-popup .raf-email-codes h5 {
+    text-align: center;
+  }
+  #raf-email-popup .raf-email-codes h5 span {
+    display: none;
+  }
 }
 #raf-email-popup #raf-email-footer {
   padding: 2.5rem;
@@ -8344,20 +8445,27 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-popup .row.promo-wrapper > div[class^=col-]:last-of-type {
   padding-right: 0;
 }
-#raf-email-form .friend-info {
-  border-bottom: 1px solid #e6e6e6;
+#raf-email-form #raf-friend-info .step-content {
   padding: 2.5rem 2rem 2.5rem 2.5rem;
 }
-#raf-email-form .friend-info p a {
+#raf-email-form #raf-friend-info p a {
   color: #0074bf;
 }
-#raf-email-form .user-info {
+@media (min-width: 992px) {
+  #raf-email-form #raf-friend-info {
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+#raf-email-form #raf-user-info {
   padding: 2.5rem;
 }
-#raf-email-form .user-info .small-text {
+#raf-email-form #raf-user-info .small-text {
   font-size: 1rem;
   font-style: italic;
   margin: .5rem 0 3rem;
+}
+#raf-email-form p:empty {
+  margin: 0;
 }
 #raf-email-form input,
 #raf-email-form textarea {
@@ -8553,6 +8661,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   color: #0878bf;
   font-family: 'Roboto', sans-serif;
 }
+#raf-code .alt-col1 {
+  padding: 1rem 2.5rem;
+}
 #raf-code .info-links {
   background-color: #e9eef2;
   list-style: none;
@@ -8561,10 +8672,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-code .info-links li {
   margin: 0 0 10px 0;
 }
+#raf-code .info-links .alt-col1 {
+  padding: 1rem 2.5rem;
+}
 @media (min-width: 992px) {
   #raf-code .info-links {
     background: none;
     padding: 1.5rem 1rem;
+  }
+  #raf-code .info-links .alt-col1 {
+    padding: 0;
   }
 }
 .divider-mod {

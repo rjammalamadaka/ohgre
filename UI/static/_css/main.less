@@ -15,6 +15,11 @@
 	    	margin-top: 0;
 	    }
 	}
+	&:empty{
+		+ div {
+			margin-top: 0;
+		}
+	}
 
 	#mobile-links{
 		margin-top: 2rem;
@@ -2342,7 +2347,8 @@ div[class^="cq-colctrl-lt1-"]{
 
 }
 .refer-a-friend,
-.promotioncontent {
+.promotioncontent,
+.offerpromotioncontent {
 	.full-banner-light {
 		.icon {
 			display: none;
@@ -2403,6 +2409,17 @@ div[class^="cq-colctrl-lt1-"]{
 }
 
 #view-raf-rewards {
+	background-color: #e9eef2;
+
+	.alt-border1{
+		background-color: inherit;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.view-raf-rewards-years{
+		padding: 0 2.5rem;
+	}
+
 	.border-wrapper {
 		border: 1px solid #e9eef1;
 		margin-right: 0;
@@ -2429,9 +2446,28 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 
 	}
+	.raf-promo{
+		display: none;
+	}
 	.accord-expanded + .accord-container {
 		display: block;
 	}
+	.tabs-list{
+		li{
+			margin-bottom: 10px;
+
+			.accord-trigger {
+				background-color: #fff;
+				color: #4a4a4a;
+				display: block;
+				font-size: 1.8rem;
+				margin-bottom: 5px;
+				padding: 2.5rem;
+				text-decoration: none;
+			}
+		}
+	}
+
 	table.view-rewards {
 		width: 100%;
 
@@ -2468,28 +2504,58 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	@media (@screen-md-min){
+		background-color: #fff;
 		.accord-trigger {
 			display: none;
 		}
 		.accord-container {
 			display: block;
 		}
+		.raf-promo{
+			display: block;
+		}
+		.alt-border1{
+			padding: 2.5rem;
+		}
+		.view-raf-rewards-years{
+			padding: 0;
+		}
 	}
 }
-#raf-email-popup {
+#raf-email-popup{
 	padding: 0;
 
 	.window-wrapper{
 		background-color: #fff;
-		max-width: 85rem;
 		margin: 0;
 		padding: 0;
 		max-height: 100%;
 		@media (@screen-md-min){
 			margin: 5vh auto;
+			max-width: 85rem;
+
+			.raf-email-step{
+				display: block !important;
+			}
 		}
 	}
 
+	footer {
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	.raf-email-step-btns {
+		background-color: #f7f7f7;
+		padding: 2rem 0 1rem;
+		text-align: center;
+
+		.primary-button {
+			display: block;
+			margin: 0 auto 1.5rem;
+			width: 85%;
+		}
+	}
 	.mobile-header {
 		background-color: #002f8f;
     padding: 2.5rem 2.5rem .5rem;
@@ -2504,8 +2570,20 @@ div[class^="cq-colctrl-lt1-"]{
 			max-width: 20rem;
 		}
 
-		@media (@screen-md-min){
+	}
+	#raf-email-preview,
+	#raf-user-info{
+		display: none;
+	}
+	@media (@screen-md-min){
+		.mobile-header,
+		.raf-email-step-btns,
+		footer{
 			display: none;
+		}
+		#raf-email-preview,
+		#raf-user-info {
+			display: block;
 		}
 	}
 	p {
@@ -2534,6 +2612,10 @@ div[class^="cq-colctrl-lt1-"]{
 
 	#raf-email-preview {
 		background: #7e94a2;
+
+		.close-window{
+			display: none;
+		}
 
 		.raf-inline-banner {
 			background-color: #002f8f;
@@ -2585,8 +2667,13 @@ div[class^="cq-colctrl-lt1-"]{
 				}
 			}
 		}
-		.row > div[class^=col-]:first-child {
-			padding-left: 1.5rem;
+		@media (@screen-md-min){
+			.row > div[class^=col-]:first-child {
+				padding-left: 1.5rem;
+			}
+			.close-window{
+				display: block;
+			}
 		}
 		.text-center {
 			margin: 0 0 2rem;
@@ -2605,6 +2692,7 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		.email-body {
 			background: #f7f7f7;
+			overflow: hidden;
 			padding: 2.5rem 2.5rem 0;
 
 			h3 {
@@ -2622,7 +2710,6 @@ div[class^="cq-colctrl-lt1-"]{
 			background-color: #002f8f;
 			p, h5 {
 				color: #fff;
-				text-align: center;
 			}
 			h5 {
 				font-size: 1.5rem;
@@ -2632,9 +2719,35 @@ div[class^="cq-colctrl-lt1-"]{
 			p {
 				font-size: 2rem;
 			}
+			padding-left: 2.5rem;
+
 		}
 	}
+	#raf-email-footer,
+	.enroll-button{
+		display:none;
+	}
+
+	@media (@screen-md-min){
+		#raf-email-footer,
+		.enroll-button{
+			display:block;
+		}
+		.raf-email-codes {
+			padding-left: 0;
+			p,h5{
+				text-align: center;
+			}
+			h5{
+				span {
+					display: none;
+				}
+			}
+		}
+
+	}
 	#raf-email-footer {
+
 		padding: 2.5rem;
 		* {
 			color: #fff;
@@ -2659,15 +2772,18 @@ div[class^="cq-colctrl-lt1-"]{
 }
 
 #raf-email-form {
-	.friend-info {
-		border-bottom: 1px solid #e6e6e6;
-		padding: 2.5rem 2rem 2.5rem 2.5rem;
-
+	#raf-friend-info {
+		.step-content {
+			padding: 2.5rem 2rem 2.5rem 2.5rem;
+		}
 		p a {
 			color: @primary_color;
 		}
+		@media (@screen-md-min){
+			border-bottom: 1px solid #e6e6e6;
+		}
 	}
-	.user-info {
+	#raf-user-info {
 		padding: 2.5rem;
 
 		.small-text {
@@ -2675,6 +2791,9 @@ div[class^="cq-colctrl-lt1-"]{
 			font-style: italic;
 			margin: .5rem 0 3rem;
 		}
+	}
+	p:empty{
+		margin: 0;
 	}
 	input, textarea {
 		background-color: #fff;
@@ -2899,6 +3018,9 @@ div[class^="cq-colctrl-lt1-"]{
 		color: #0878bf;
 		font-family: @secondary_font;
 	}
+	.alt-col1 {
+		padding: 1rem 2.5rem;
+	}
 	.info-links {
 		background-color: #e9eef2;
 		list-style: none;
@@ -2907,10 +3029,17 @@ div[class^="cq-colctrl-lt1-"]{
 		li {
 			margin: 0 0 10px 0;
 		}
+		.alt-col1{
+			padding: 1rem 2.5rem;
+		}
 
 		@media (@screen-md-min){
 			background: none;
 			padding: 1.5rem 1rem;
+
+			.alt-col1 {
+				padding: 0;
+			}
 		}
 	}
 }
