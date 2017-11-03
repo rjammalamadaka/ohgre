@@ -3,20 +3,34 @@
     <div class="container">
       <div class="row promo-wrapper">
         <div class="mobile-header">
-          <img src="${properties.raflogoinemail}">
-          <p>The more you share, the more you earn.</p>
+          <div class="ldc-logo">
+            <a href="/content/onlyong.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img src="/content/dam/ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png" alt="Ohio Natural Gas Logo"></a>
+            <a href="/content/gre.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png" alt="Grand Rapids Energy Logo"></a>
+          </div>
+          <div class="raf-header">
+            <img src="${properties.raflogoinemail}">
+            <p>The more you share, the more you earn.</p>
+          </div>
         </div>
         <div class="col-md-6 alt-col2">
           <form id="raf-email-form" name="rafemailform" novalidate>
-            <div class="friend-info" id="friend-info" data-emailbody='${properties.emailbodyplaceholder}'>
+            <div class="raf-email-step" id="raf-friend-info" data-emailbody='${properties.emailbodyplaceholder}'>
               <div class="step-content">
                 <h4>Your Friend's Information</h4>
-                <label for="friend-emails">Friend's Email Address</label>
-                <textarea name="toemailaddress" class="cloudsponge-contacts" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visited></textarea>
-                <span class="input-error-message" ng-show="(rafemailform.toemailaddress.$visited && !rafemailform.toemailaddress.$focused) || rafemailform.submited">
+                <div id="ContactListCtrl">
+                  <label for="toemailaddress">Friend's Email Address</label>
+                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
+                    ng-focus ng-touched></textarea>
+                  <!--
+<textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts"
+placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)"
+rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visited></textarea>
+-->
+                  <span class="input-error-message" ng-show="(rafemailform.toemailaddress.$visited && !rafemailform.toemailaddress.$focused) || rafemailform.submited">
                     <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friend's emails are required.</span>
-                </span>
-                <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
+                  </span>
+                  <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
+                </div>
                 <label for="raf-email-subject">Subject Line</label>
                 <input type="text" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
                 <label for="rafemailmessage">Add or Edit Message</label>
