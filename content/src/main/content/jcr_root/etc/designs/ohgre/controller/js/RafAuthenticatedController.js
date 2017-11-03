@@ -13,6 +13,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
     $scope.rafemailmessage="I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
 
+    $scope.rafemailmessage=jQuery('#friend-info').data('emailbody');	
     PrimeService.getProductData().success(function(data, status, headers, config){
 
         if(data){
@@ -140,9 +141,22 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     }
 
     $scope.rafauthenticated =function(){
-		jQuery('#raf-terms-popup').addClass('show-popup');
+		jQuery('#raf-email-popup').addClass('show-popup');
+        jQuery('body').addClass('fixed-body');
     }
 
+     $scope.previewEmailMobile = function(){
+        jQuery('.raf-email-step').hide();
+        jQuery('#raf-email-preview').show();
+     }
+     $scope.editEmailMobile = function(){
+        jQuery('.raf-email-step').hide();
+        jQuery('#raf-friend-info').show();
+     }
+     $scope.continueRafEmailMobile = function(){
+        jQuery('.raf-email-step').hide();
+        jQuery('#raf-user-info').show();
+     }
     $scope.refertomyfrineds =function(){
 
         $scope.rafMailSerrverMsg=null;
@@ -232,15 +246,18 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 				console.log(updateCustomerInfoReq);
             updateCustomerInfoReq.emailAddress=$scope.customerInfo.emailAddress;
             console.log($scope.customerInfo.emailAddress);
+            jQuery('#popup-spinner-wrap').show();
             
             PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
                 console.log(data);
+                jQuery('#popup-spinner-wrap').hide();
                 if(data.ResponseStatus ==0){ 
                    // setProductData();
                     jQuery("#change-email-popup").removeClass('show-popup');
                 }
             }).error(function (data,status, headers, config){
-                
+                jQuery('#popup-spinner-wrap').hide();
+
                 console.log("error");
             });
 
