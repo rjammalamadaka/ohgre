@@ -1,9 +1,10 @@
- <section ng-controller="DashBoardController">
+<section ng-controller="DashBoardController">
     <div id="account-dashboard" class="container page-wrapper">
       <div class="col-md-10 col-md-offset-1">
         <div>
           <div class="intro-wrapper">
-            <span class="user-greeting">Welcome, John. <a href="#" ng-click="logout()">Logout</a></span>
+            <span class="user-greeting" ng-show="customerInfo.rateClass =='01'">Welcome, {{customerInfo.firstName}}. <a href="#" ng-click="logout()">Logout</a></span>
+                <span class="user-greeting" ng-show="customerInfo.rateClass =='04'">Welcome, {{customerInfo.businessName}}. <a href="#" ng-click="logout()">Logout</a></span>
           </div>
 	 <div class="desktop-flex-container">
             <div class="col-md-5 alt-col1">
@@ -16,7 +17,8 @@
                   <strong ng-show="customerInfo.rateClass =='04'">{{customerInfo.businessName}}</strong>
                 </div>
                 <div class="input-group-wrapper">
-                  <label>My Gas Utility Account Number</label>
+                  <label  ng-if="customerInfo.ldc !='MIC'">Gas Utility Account Number</label>
+                    <label ng-if="customerInfo.ldc =='MIC'">Gas Service Pod ID</label>
                   <strong>{{customerInfo.account}}</strong>
                 </div>
                 <div class="input-group-wrapper">
@@ -38,8 +40,7 @@
                   <strong>{{customerInfo.mailAddress1}} {{customerInfo.mailAddress2}} <br /> {{customerInfo.mailCity}}, {{customerInfo.mailStateCode}} {{customerInfo.mailZipCode}}</strong>
                 </div>
                 <div class="footnote">
-                  <p>If you would like to change your information, please call <a href="tel:1-888-466-4427">1-888-466-4427</a>. </p>
-                  <p>We are available 8 a.m. to 5 p.m. EST, Monday-Friday.</p>
+                    ${properties.footernote @ context = 'html'}
 
                 </div>
               </div>
@@ -47,7 +48,7 @@
             </div>
             <div class="col-md-8">
 
-              <div class="box-with-border alert-box alert-alt1" ng-show="customerInfo.renewalContractExistsInd =='Y'">
+              <div class="box-with-border alert-box alert-alt1" ng-show="(customerInfo.renewalContractExistsInd =='Y'&& customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
                 <h5>Your Contract Is Up For Renewal:</h5>
                 <p>Your current contract expires on <b>{{getOnlyDate(customerInfo.contractTermDate)}}</b>. Your next contract is set to start
                 on <b>{{getOnlyDate(customerInfo.renewalContractStartDate)}}</b>.</p>
@@ -62,33 +63,39 @@
                       <td>Plan Name</td>
                       <td>{{customerInfo.productDescFriendly}}</td>
                     </tr>
-                    <tr>
+                    <tr ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
                       <td>Price Per Therm</td>
-                      <td>{{customerInfo.pricePerUnit}}</td>
+                      <td>{{customerInfo.pricePerUnit | currency:"$":3}}</td>
+                    </tr>
+
+                    <tr ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+                      <td>Flat Bill Price</td>
+                      <td>{{customerInfo.contractPrice | currency:"$":3}}</td>
                     </tr>
                     <tr>
                       <td>Effective Date</td>
                       <td>{{getOnlyDate(customerInfo.contractStartDate)}}</td>
                     </tr>
-                    <tr>
+                    <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
                       <td>Expiration Date</td>
                       <td>{{getOnlyDate(customerInfo.contractTermDate)}}</td>
                     </tr>
-                    <tr>
+                    <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
                       <td>Early Termination Change</td>
-                      <td>{{customerInfo.earlyTermChargeAmt}}</td>
+                      <td ng-if="customerInfo.earlyTermChargeAmt == '0.0000'">None</td>
+                      <td ng-if="customerInfo.earlyTermChargeAmt !== '0.0000'">{{customerInfo.earlyTermChargeAmt | currency:"$":0}}</td>
                     </tr>
 
                   </tbody>
                 </table>
 
               </div>
-              <div class="box-with-border alert-box" ng-show="customerInfo.renewalContractExistsInd =='N'">
+              <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
                   <p>If you would like to start a new contract or cancel this contract today,
-                      you will need to pay a <b>{{customerInfo.earlyTermChargeAmt}} early termination fee.</b></p>
+                      you will need to pay a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
               </div>
 
-              <div class="plan-info" ng-show="customerInfo.renewalContractExistsInd =='Y'">
+              <div class="plan-info" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
                 <h4>Your Renewal Plan</h4>
                 <table class="table-wrapper account-info-table">
                   <tbody>
@@ -96,9 +103,13 @@
                       <td>Plan Name</td>
                       <td>{{customerInfo.renewalProductDescFriendly}}</td>
                     </tr>
-                    <tr>
+                    <tr ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
                       <td>Price Per Therm</td>
-                      <td>{{customerInfo.renewalPricePerUnit}}</td>
+                      <td>{{customerInfo.renewalPricePerUnit | currency:"$":3}}</td>
+                    </tr>
+                    <tr ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+                      <td>Flat Bill Price</td>
+                      <td>{{customerInfo.contractPrice | currency:"$":3}}</td>
                     </tr>
                     <tr>
                       <td>Effective Date</td>
@@ -108,18 +119,23 @@
                       <td>Expiration Date</td>
                        <td>{{getOnlyDate(customerInfo.renewalContractTermDate)}}</td>
                     </tr>
-                    <tr>
+                   <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
                       <td>Early Termination Change</td>
-                        <td>{{customerInfo.earlyTermChargeAmt}}</td>
+                      <td ng-if="customerInfo.earlyTermChargeAmt == '0.0000'">None</td>
+                      <td ng-if="customerInfo.earlyTermChargeAmt !== '0.0000'">{{customerInfo.earlyTermChargeAmt | currency:"$":0}}</td>
                     </tr>
                   </tbody>
                 </table>
 
               </div>
 
+             <div class="box-with-border alert-box" ng-show="customerInfo.contractTermDate == '12/31/2999 12:00:00 AM'">
+                <p>You can change your contract at any time at no cost.</p>
+              </div>
+
               <div class="buttons">
                 <a href="#" class="primary-button inactive">Cancel My Contract</a>
-                <a href="#" class="primary-button">Change My Renewal Plan</a>
+                <a href="#" class="primary-button" ng-click="changeMyRenewal()">Change My Renewal Plan</a>
                 <a href="#" class="logout-button" ng-click="logout()">Logout</a>
               </div>
 
