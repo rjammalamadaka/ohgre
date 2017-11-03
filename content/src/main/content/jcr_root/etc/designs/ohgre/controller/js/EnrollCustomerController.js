@@ -176,7 +176,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 		req.LDC=$rootScope.product.LDC;
            jQuery('#popup-spinner-wrap').show();
        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
-            console.log(data);
+           // console.log(data);
            jQuery('#popup-spinner-wrap').hide();
              if(data){
                  $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
@@ -284,7 +284,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         if($scope.formtwo.$valid){
 
            // console.log($scope.promotionInfo.PromotionCode);
-            if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<2 && (!$scope.rafcode ||$scope.rafcode=="")){
+            if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<2 && (!$scope.rafcode ||$scope.rafcode=="") && $rootScope.customerInfo.responseStatus=='1'){
 
 
                   $scope.rafErrorMessage="Please enter your friend's referal code";
@@ -306,11 +306,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                         }else{
                             failcount=failcount+1;
                             $scope.validPromocode=false;
-							$scope.primeErrorMessage="RAF code is not valid";
+							//$scope.primeErrorMessage="RAF code is not valid";
+                            $scope.rafErrorMessage="RAF code is not valid";
                         }
                     }else{
                         failcount=failcount+1;
-						$scope.primeErrorMessage="RAF code is not valid";
+						$scope.rafErrorMessage="RAF code is not valid";
                     }
 
                 }).error(function(data, status, headers, config){
