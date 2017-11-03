@@ -55,10 +55,10 @@
                      <input type="text" name="emailaddress" ng-model="customerInfo.emailAddress" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="true" ng-focus ng-visited>
 
                             <span class="input-error-message" ng-show="(formtwo.emailaddress.$visited && !formtwo.emailaddress.$focused) || formtwo.submited">
-							<span class="input-error-message" ng-show="formtwo.emailaddress.$error.required">Email id is required.</span>
-                            <span class="input-error-message" ng-show="formtwo.emailaddress.$invalid && !formtwo.emailaddress.$error.required">Please enter valid email id.</span>
+                                <span class="input-error-message" ng-show="formtwo.emailaddress.$error.required">Email id is required.</span>
+                                <span class="input-error-message" ng-show="formtwo.emailaddress.$invalid && !formtwo.emailaddress.$error.required">Please enter a valid email id.</span>
 
-                         </span>
+                        	 </span>
                   </div>
                   <div class="input-group-wrapper">
                      <label for="phone-number">Phone Number<sup class="required" >*</sup></label>
@@ -244,7 +244,7 @@
                         <span class="special-offer"><label for="special-offer">${properties.specialoffercontent}</label></span>
                      </div>
                   </div>
-                  <div class="input-group-wrapper box-with-border gray-box">
+                  <div class="input-group-wrapper box-with-border gray-box" ng-hide="customerInfo.responseStatus =='0'">
                      <div class="row no-margin">
                         <h5>Friends Referral Code</h5>
                         <p>
