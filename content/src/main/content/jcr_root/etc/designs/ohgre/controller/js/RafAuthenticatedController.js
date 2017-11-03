@@ -1,19 +1,17 @@
 ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
-
-
-     var date=new Date();
-    var updateCustomerInfoReq={};
-     var currentYear=date.getFullYear();
-    var previouserYear=currentYear-1;
-    var updateCustomerInfoReq={};
-    $scope.years=[previouserYear,currentYear];
-    $scope.giftCardByYear={};
-	$scope.sclectedYear=currentYear;
+  var date = new Date();
+  var updateCustomerInfoReq = {};
+  var currentYear = date.getFullYear();
+  var previouserYear = currentYear - 1;
+  var updateCustomerInfoReq = {};
+  $scope.years = [previouserYear, currentYear];
+  $scope.giftCardByYear = {};
+  $scope.sclectedYear = currentYear;
 
     $scope.rafemailmessage="I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
 
-    $scope.rafemailmessage=jQuery('#friend-info').data('emailbody');	
+    $scope.rafemailmessage=jQuery('#raf-friend-info').data('emailbody');
     PrimeService.getProductData().success(function(data, status, headers, config){
 
         if(data){
@@ -146,8 +144,11 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     }
 
      $scope.previewEmailMobile = function(){
-        jQuery('.raf-email-step').hide();
-        jQuery('#raf-email-preview').show();
+        var rafEmailsTextarea = $('#toemailaddress');
+        if (rafEmailsTextarea.val() !== '' && !rafEmailsTextarea.hasClass('ng-invalid')){
+          jQuery('.raf-email-step').hide();
+          jQuery('#raf-email-preview').show();
+        }
      }
      $scope.editEmailMobile = function(){
         jQuery('.raf-email-step').hide();
@@ -163,24 +164,24 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
         $scope.rafemailform.submited = true;
         if($scope.rafemailform.$valid){
 
-            var requestInfo={};
-            requestInfo.tomailId=$scope.customerInfo.emailAddress;
-            requestInfo.firstName=$scope.customerInfo.firstName;
-            requestInfo.lastName=$scope.customerInfo.lastName;
-           requestInfo.emailAddress=$scope.toemailaddress;
-            requestInfo.rafBody=$scope.rafemailmessage;
-            requestInfo.custID=$scope.customerInfo.custID;
+          var requestInfo = {};
+          requestInfo.tomailId = $scope.customerInfo.emailAddress;
+          requestInfo.firstName = $scope.customerInfo.firstName;
+          requestInfo.lastName = $scope.customerInfo.lastName;
+          requestInfo.emailAddress = $scope.toemailaddress;
+          requestInfo.rafBody = $scope.rafemailmessage;
+          requestInfo.custID = $scope.customerInfo.custID;
 
-            PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config){
-                console.log("success");
-                console.log(data);
-				if(data && data.success){
-                    jQuery('#raf-terms-popup').removeClass('show-popup');
- 					jQuery('#raf-confirm').addClass('show-popup');
-                }else{
+          PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config){
+            console.log("success");
+            console.log(data);
+		        if(data && data.success){
+              jQuery('#raf-terms-popup').removeClass('show-popup');
+					    jQuery('#raf-confirm').addClass('show-popup');
+            }else{
 
-					$scope.rafMailSerrverMsg="Problem with mail server, Please try later";
-                }
+			         $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+            }
 
             }).error(function(data, status, headers, config){
                 console.log(data);
@@ -247,11 +248,11 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
             updateCustomerInfoReq.emailAddress=$scope.customerInfo.emailAddress;
             console.log($scope.customerInfo.emailAddress);
             jQuery('#popup-spinner-wrap').show();
-            
+
             PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
                 console.log(data);
                 jQuery('#popup-spinner-wrap').hide();
-                if(data.ResponseStatus ==0){ 
+                if(data.ResponseStatus ==0){
                    // setProductData();
                     jQuery("#change-email-popup").removeClass('show-popup');
                 }
@@ -265,4 +266,3 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     }
 
 }]);
-
