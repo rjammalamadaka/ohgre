@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-19T09:20:38.209+05:30"
+        cq:lastModified="{Date}2017-11-02T23:48:03.734-05:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
@@ -15,10 +15,11 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-13T22:54:07.994+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-19T09:20:38.203+05:30"
+                jcr:lastModified="{Date}2017-11-02T23:48:03.729-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
                 title="Unfortunately this promotion has expired"/>
             <ldc_backup_promo_con
