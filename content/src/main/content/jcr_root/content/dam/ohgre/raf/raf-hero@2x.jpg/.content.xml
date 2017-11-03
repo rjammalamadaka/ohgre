@@ -5,16 +5,20 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="2d7f792a-6bae-4832-9cde-25e78ac0a00a">
     <jcr:content
+        cq:lastReplicated="{Date}2017-11-02T16:25:24.638-05:00"
+        cq:lastReplicatedBy="rebecka01"
+        cq:lastReplicationAction="Activate"
         cq:name="raf-hero@2x.jpg"
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/raf-hero@2x.jpg"
-        jcr:lastModified="{Date}2017-11-01T22:48:39.641-04:00"
+        jcr:lastModified="{Date}2017-11-03T15:14:29.078-04:00"
         jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-11-01T22:48:39.087-04:00"
+            dam:extracted="{Date}2017-11-03T15:14:28.728-04:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -28,7 +32,7 @@
             dam:size="{Long}101761"
             dc:format="image/jpeg"
             dc:modified="{Date}2017-10-14T08:06:35.257+05:30"
-            jcr:lastModified="{Date}2017-11-01T22:48:37.452-04:00"
+            jcr:lastModified="{Date}2017-11-03T15:14:28.529-04:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
