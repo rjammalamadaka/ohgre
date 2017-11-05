@@ -35,6 +35,9 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 	@Reference
 	private CommonConfigService commonConfigService;
 
+	@Reference
+	private SendEmailService sendEmailService;
+
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		JSONObject obj=new JSONObject();
@@ -195,14 +198,21 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			long endTime = System.currentTimeMillis();
 			long differenceTime=endTime-startTime;
 			System.out.println("time taken to get the response from prime: "+String.valueOf(differenceTime));
+
 			obj.put("Customer", customerArray);
-		}  catch (MalformedURLException e) {
+		}
+
+		catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
+			sendEmailService.sendEmail("avinash.dhannuri@macquarium.com", e.getMessage());
+
 			e.printStackTrace();
 		}	catch (JSONException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
+			sendEmailService.sendEmail("avinash.dhannuri@macquarium.com", e.getMessage());
+
 			e.printStackTrace();
 		}
 		String jsonData = obj.toString();

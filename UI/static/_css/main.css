@@ -5436,6 +5436,7 @@ ol.styled-numbers li p {
 p {
   color: #757575;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
   margin-top: 0;
 }
 .ul-margin {
@@ -5860,6 +5861,9 @@ div[class^="col-"] {
     margin-top: 0;
   }
 }
+#primary-header:empty + div {
+  margin-top: 0;
+}
 #primary-header #mobile-links {
   margin-top: 2rem;
   padding-top: 3rem;
@@ -6230,6 +6234,20 @@ footer .bbb-info img {
 /* ====================
 	COMPONENT STYLES
 ====================== */
+#promoform .radio-container + label {
+  margin-right: 2.5rem;
+}
+@media (min-width: 375px) {
+  #promoform .radio-container + label {
+    margin-right: 4rem;
+  }
+}
+#promoform .radio-container + label:last-child {
+  margin-right: 0;
+}
+#promoform > .form-section {
+  margin-bottom: 2rem;
+}
 .promocode + div[class^=cq-colctrl-].parsys-column,
 .promocode + .parsys-column.cq-colctrl-lt0 {
   padding: 0;
@@ -6978,6 +6996,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .cardpromo-plans.parbase .inner-card-content .promo-link {
   bottom: 2.5rem;
   position: absolute;
+  text-transform: uppercase;
 }
 .cardpromo-plans .dropdown-trigger {
   padding-left: 1.5rem;
@@ -7645,7 +7664,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .plan-detail li .plan-info {
   display: table;
 }
-.plan-detail li .plan-info b {
+.plan-detail li .plan-info b,
+.plan-detail li .plan-info li,
+.plan-detail li .plan-info p {
   font-family: 'Roboto', sans-serif;
 }
 .plan-detail li .plan-info .inner-content {
@@ -7657,9 +7678,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-weight: 300;
   margin: 0;
 }
-.plan-detail li .plan-info p {
-  font-family: 'Roboto', sans-serif;
-}
 .plan-detail li .plan-info p,
 .plan-detail li .plan-info a {
   display: none;
@@ -7667,6 +7685,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .plan-detail li .plan-info p.primary-button,
 .plan-detail li .plan-info a.primary-button {
   display: block;
+}
+.plan-detail li .plan-info a.accord-trigger.accord-expanded {
+  margin-bottom: 1rem;
 }
 .plan-detail li .plan-button {
   display: none;
@@ -7687,6 +7708,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
   padding: 3% 2rem;
 }
 .plan-detail li.gbp .plan-price img {
+  margin: auto;
   width: 80%;
 }
 .plan-detail li.gbp .plan-button {
@@ -7705,9 +7727,21 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .plan-detail li.accord-expanded .mobile-content {
   display: block;
 }
+.plan-detail li .accord-container ul {
+  margin-bottom: 2rem;
+}
+.plan-detail li .accord-container ul > ul {
+  padding-left: 0;
+}
+.plan-detail li .accord-container ul li {
+  font-family: 'Roboto', sans-serif;
+}
 .plan-detail li .accord-container.mobile-content {
   background: #fff;
   padding: 2rem;
+}
+.plan-detail li .accord-container.mobile-content .primary-button {
+  width: 100%;
 }
 @media (min-width: 992px) {
   .plan-detail li .mobile-content {
@@ -7761,6 +7795,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   .plan-detail li.accord-expanded .plan-info-wrapper:after {
     content: "";
   }
+  .plan-detail li.accord-expanded .desktop-content {
+    display: block !important;
+  }
   .plan-detail li .plan-button {
     display: block;
     width: 20%;
@@ -7769,12 +7806,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
     position: absolute;
     right: 1rem;
     top: 0;
+    height: 100%;
   }
   .plan-detail li .plan-button .primary-button {
     display: block;
     padding: 0 1rem;
     color: #fff;
     text-decoration: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .plan-detail li .plan-button .primary-button:hover {
     color: #fff;
@@ -7969,6 +8010,40 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .page-wrapper {
   background: #fff;
 }
+#change-email-popup {
+  padding: 3.5rem 3.5rem 1rem;
+}
+#change-email-popup label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+#change-email-popup p {
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  line-height: 2;
+  margin: 0 0 2rem;
+}
+#change-email-popup .button-container {
+  margin-top: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+#change-email-popup .button-container a {
+  margin: 0 0 1rem;
+  width: 100%;
+}
+#change-email-popup input[type="text"] {
+  display: block;
+}
+@media (min-width: 992px) {
+  #change-email-popup input[type="text"] {
+    max-width: 30rem;
+  }
+  #change-email-popup .button-container a {
+    width: 40%;
+  }
+}
 .refer-a-friend .form-area-wrapper {
   margin-bottom: 1.5rem;
 }
@@ -7988,12 +8063,17 @@ div[class^="cq-colctrl-lt1-"] .card p {
     width: 45%;
   }
 }
+.refer-a-friend .multiple-input .input-container[data-size="8"] {
+  width: 10rem;
+}
 .refer-a-friend .full-banner-light .icon,
-.promotioncontent .full-banner-light .icon {
+.promotioncontent .full-banner-light .icon,
+.offerpromotioncontent .full-banner-light .icon {
   display: none;
 }
 .refer-a-friend .full-banner-light .content,
-.promotioncontent .full-banner-light .content {
+.promotioncontent .full-banner-light .content,
+.offerpromotioncontent .full-banner-light .content {
   background-size: 45px 45px;
   background: url('/etc/designs/ohgre/clientlibs/_img/global/phone.svg') left 50% no-repeat;
   padding-left: 53px;
@@ -8001,13 +8081,15 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 @media (min-width: 375px) {
   .refer-a-friend .full-banner-light .content,
-  .promotioncontent .full-banner-light .content {
+  .promotioncontent .full-banner-light .content,
+  .offerpromotioncontent .full-banner-light .content {
     background-size: contain;
   }
 }
 @media (min-width: 992px) {
   .refer-a-friend .full-banner-light .content,
-  .promotioncontent .full-banner-light .content {
+  .promotioncontent .full-banner-light .content,
+  .offerpromotioncontent .full-banner-light .content {
     white-space: nowrap;
   }
 }
@@ -8041,6 +8123,17 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-size: 1.5rem;
   margin: 0 0 1.5rem;
 }
+#view-raf-rewards {
+  background-color: #e9eef2;
+}
+#view-raf-rewards .alt-border1 {
+  background-color: inherit;
+  padding-left: 0;
+  padding-right: 0;
+}
+#view-raf-rewards .view-raf-rewards-years {
+  padding: 0 2.5rem;
+}
 #view-raf-rewards .border-wrapper {
   border: 1px solid #e9eef1;
   margin-right: 0;
@@ -8061,8 +8154,23 @@ div[class^="cq-colctrl-lt1-"] .card p {
     padding-left: 1.5rem;
   }
 }
+#view-raf-rewards .raf-promo {
+  display: none;
+}
 #view-raf-rewards .accord-expanded + .accord-container {
   display: block;
+}
+#view-raf-rewards .tabs-list li {
+  margin-bottom: 10px;
+}
+#view-raf-rewards .tabs-list li .accord-trigger {
+  background-color: #fff;
+  color: #4a4a4a;
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  padding: 2.5rem;
+  text-decoration: none;
 }
 #view-raf-rewards table.view-rewards {
   width: 100%;
@@ -8097,17 +8205,91 @@ div[class^="cq-colctrl-lt1-"] .card p {
   width: 35%;
 }
 @media (min-width: 992px) {
+  #view-raf-rewards {
+    background-color: #fff;
+  }
   #view-raf-rewards .accord-trigger {
     display: none;
   }
   #view-raf-rewards .accord-container {
     display: block;
   }
+  #view-raf-rewards .raf-promo {
+    display: block;
+  }
+  #view-raf-rewards .alt-border1 {
+    padding: 2.5rem;
+  }
+  #view-raf-rewards .view-raf-rewards-years {
+    padding: 0;
+  }
 }
 #raf-email-popup {
-  background-color: #fff;
-  max-width: 85rem;
   padding: 0;
+}
+#raf-email-popup .window-wrapper {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  max-height: 100%;
+}
+@media (min-width: 992px) {
+  #raf-email-popup .window-wrapper {
+    margin: 5vh auto;
+    max-width: 85rem;
+  }
+  #raf-email-popup .window-wrapper .raf-email-step {
+    display: block !important;
+  }
+}
+#raf-email-popup footer {
+  margin-top: 0;
+  padding-top: 0;
+}
+#raf-email-popup .raf-email-step-btns {
+  background-color: #f7f7f7;
+  padding: 2rem 0 1rem;
+  text-align: center;
+}
+#raf-email-popup .raf-email-step-btns .primary-button {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 85%;
+}
+#raf-email-popup .mobile-header {
+  background-color: #002f8f;
+  padding: 2.5rem 2.5rem .5rem;
+}
+#raf-email-popup .mobile-header * {
+  color: #fff;
+}
+#raf-email-popup .mobile-header p {
+  font-size: 1.4rem;
+}
+#raf-email-popup .mobile-header img {
+  margin: 0 0 1rem;
+  max-width: 20rem;
+}
+#raf-email-popup #raf-email-preview,
+#raf-email-popup #raf-user-info {
+  display: none;
+}
+@media (min-width: 992px) {
+  #raf-email-popup .mobile-header,
+  #raf-email-popup .raf-email-step-btns,
+  #raf-email-popup footer {
+    display: none;
+  }
+  #raf-email-popup #raf-email-preview,
+  #raf-email-popup #raf-user-info {
+    display: block;
+  }
+}
+#raf-email-popup p {
+  font-size: 1.4rem;
+}
+#raf-email-popup .alt-col2 {
+  padding-left: 0;
 }
 #raf-email-popup p,
 #raf-email-popup label,
@@ -8127,6 +8309,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview {
   background: #7e94a2;
+}
+#raf-email-popup #raf-email-preview .close-window {
+  display: none;
 }
 #raf-email-popup #raf-email-preview .raf-inline-banner {
   background-color: #002f8f;
@@ -8172,8 +8357,13 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo img {
   max-width: 160px;
 }
-#raf-email-popup #raf-email-preview .row > div[class^=col-]:first-child {
-  padding-left: 1.5rem;
+@media (min-width: 992px) {
+  #raf-email-popup #raf-email-preview .row > div[class^=col-]:first-child {
+    padding-left: 1.5rem;
+  }
+  #raf-email-popup #raf-email-preview .close-window {
+    display: block;
+  }
 }
 #raf-email-popup #raf-email-preview .text-center {
   margin: 0 0 2rem;
@@ -8190,6 +8380,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview .email-body {
   background: #f7f7f7;
+  overflow: hidden;
   padding: 2.5rem 2.5rem 0;
 }
 #raf-email-popup #raf-email-preview .email-body h3 {
@@ -8204,11 +8395,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview .raf-email-codes {
   background-color: #002f8f;
+  padding-left: 2.5rem;
 }
 #raf-email-popup #raf-email-preview .raf-email-codes p,
 #raf-email-popup #raf-email-preview .raf-email-codes h5 {
   color: #fff;
-  text-align: center;
 }
 #raf-email-popup #raf-email-preview .raf-email-codes h5 {
   font-size: 1.5rem;
@@ -8218,33 +8409,63 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-popup #raf-email-preview .raf-email-codes p {
   font-size: 2rem;
 }
+#raf-email-popup #raf-email-footer,
+#raf-email-popup .enroll-button {
+  display: none;
+}
+@media (min-width: 992px) {
+  #raf-email-popup #raf-email-footer,
+  #raf-email-popup .enroll-button {
+    display: block;
+  }
+  #raf-email-popup .raf-email-codes {
+    padding-left: 0;
+  }
+  #raf-email-popup .raf-email-codes p,
+  #raf-email-popup .raf-email-codes h5 {
+    text-align: center;
+  }
+  #raf-email-popup .raf-email-codes h5 span {
+    display: none;
+  }
+}
 #raf-email-popup #raf-email-footer {
   padding: 2.5rem;
 }
 #raf-email-popup #raf-email-footer * {
   color: #fff;
 }
+#raf-email-popup #raf-email-footer .row > div[class^=col-]:first-child {
+  padding-left: 0;
+}
 #raf-email-popup #raf-email-footer p,
 #raf-email-popup #raf-email-footer a {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 #raf-email-popup .row.promo-wrapper > div[class^=col-]:last-of-type {
   padding-right: 0;
 }
-#raf-email-form .friend-info {
-  border-bottom: 1px solid #e6e6e6;
+#raf-email-form #raf-friend-info .step-content {
   padding: 2.5rem 2rem 2.5rem 2.5rem;
 }
-#raf-email-form .friend-info p a {
+#raf-email-form #raf-friend-info p a {
   color: #0074bf;
 }
-#raf-email-form .user-info {
+@media (min-width: 992px) {
+  #raf-email-form #raf-friend-info {
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+#raf-email-form #raf-user-info {
   padding: 2.5rem;
 }
-#raf-email-form .user-info .small-text {
+#raf-email-form #raf-user-info .small-text {
   font-size: 1rem;
   font-style: italic;
   margin: .5rem 0 3rem;
+}
+#raf-email-form p:empty {
+  margin: 0;
 }
 #raf-email-form input,
 #raf-email-form textarea {
@@ -8258,6 +8479,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
   background-color: #e6e6e6;
 }
 #raf-email-form label {
+  font-size: 1.4rem;
   margin-top: 15px;
 }
 #raf-share h4,
@@ -8418,8 +8640,8 @@ div[class^="cq-colctrl-lt1-"] .card p {
 .raf-promo .promo-box {
   border: 1px solid #fff;
   font-size: 1.8rem;
-  margin-bottom: 3rem;
-  padding: 2rem 0;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
 }
 .raf-promo .promo-box span {
   display: block;
@@ -8439,6 +8661,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   color: #0878bf;
   font-family: 'Roboto', sans-serif;
 }
+#raf-code .alt-col1 {
+  padding: 1rem 2.5rem;
+}
 #raf-code .info-links {
   background-color: #e9eef2;
   list-style: none;
@@ -8447,10 +8672,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-code .info-links li {
   margin: 0 0 10px 0;
 }
+#raf-code .info-links .alt-col1 {
+  padding: 1rem 2.5rem;
+}
 @media (min-width: 992px) {
   #raf-code .info-links {
     background: none;
     padding: 1.5rem 1rem;
+  }
+  #raf-code .info-links .alt-col1 {
+    padding: 0;
   }
 }
 .divider-mod {
@@ -8552,6 +8783,7 @@ div.alt-col2,
 }
 #visa-customer-info {
   margin-top: -2rem;
+  width: 100%;
 }
 @media (min-width: 992px) {
   #visa-customer-info {
@@ -10818,7 +11050,9 @@ ul.info-links li {
   }
 }
 #account-dashboard,
-#renew-plan-select {
+#renew-plan-select,
+#cancel-plan-wrapper,
+.cancel-renew-page {
   background-color: #fff;
   margin-top: 2rem;
   padding-bottom: 3rem;
@@ -10826,24 +11060,73 @@ ul.info-links li {
 }
 @media (min-width: 992px) {
   #account-dashboard,
-  #renew-plan-select {
+  #renew-plan-select,
+  #cancel-plan-wrapper,
+  .cancel-renew-page {
     border: 1px solid #ccc;
     margin-top: 5rem;
   }
 }
 #account-dashboard .intro-wrapper,
-#renew-plan-select .intro-wrapper {
+#renew-plan-select .intro-wrapper,
+#cancel-plan-wrapper .intro-wrapper,
+.cancel-renew-page .intro-wrapper {
   font-family: 'Roboto', sans-serif;
   margin: 0 0 0rem 0;
   padding-left: 2.5rem;
 }
 #account-dashboard .intro-wrapper .user-greeting,
-#renew-plan-select .intro-wrapper .user-greeting {
+#renew-plan-select .intro-wrapper .user-greeting,
+#cancel-plan-wrapper .intro-wrapper .user-greeting,
+.cancel-renew-page .intro-wrapper .user-greeting {
   font-size: 1.3rem;
 }
 #account-dashboard .intro-wrapper .user-greeting a,
-#renew-plan-select .intro-wrapper .user-greeting a {
+#renew-plan-select .intro-wrapper .user-greeting a,
+#cancel-plan-wrapper .intro-wrapper .user-greeting a,
+.cancel-renew-page .intro-wrapper .user-greeting a {
   color: #0074bf;
+}
+#account-dashboard .alert-box,
+#renew-plan-select .alert-box,
+#cancel-plan-wrapper .alert-box,
+.cancel-renew-page .alert-box {
+  overflow: hidden;
+  padding: 2rem 2rem 0;
+}
+#account-dashboard .alert-box h5,
+#renew-plan-select .alert-box h5,
+#cancel-plan-wrapper .alert-box h5,
+.cancel-renew-page .alert-box h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+}
+#account-dashboard .alert-box p,
+#renew-plan-select .alert-box p,
+#cancel-plan-wrapper .alert-box p,
+.cancel-renew-page .alert-box p {
+  color: #000;
+  font-weight: 500;
+  margin: 0 0 2rem;
+}
+#account-dashboard .alert-box b,
+#renew-plan-select .alert-box b,
+#cancel-plan-wrapper .alert-box b,
+.cancel-renew-page .alert-box b {
+  color: #d0021b;
+}
+#account-dashboard .alert-box.alert-alt1,
+#renew-plan-select .alert-box.alert-alt1,
+#cancel-plan-wrapper .alert-box.alert-alt1,
+.cancel-renew-page .alert-box.alert-alt1 {
+  margin-bottom: 0;
+}
+#account-dashboard .alert-box.alert-alt1 b,
+#renew-plan-select .alert-box.alert-alt1 b,
+#cancel-plan-wrapper .alert-box.alert-alt1 b,
+.cancel-renew-page .alert-box.alert-alt1 b {
+  color: #000;
 }
 #account-dashboard .desktop-flex-container {
   background-color: #e0e6e9;
@@ -10856,41 +11139,9 @@ ul.info-links li {
 #account-dashboard h4 {
   font-size: 2rem;
 }
-@media (min-width: 992px) {
-  #account-dashboard .intro-wrapper {
-    margin: 0 0 3rem 0;
-    text-align: right;
-  }
-  #account-dashboard .intro-wrapper .user-greeting a {
-    color: #ff6008;
-  }
-}
 #account-dashboard .information-block {
   height: 100%;
   padding-top: 2rem;
-}
-#account-dashboard .alert-box {
-  overflow: hidden;
-  padding: 2rem 2rem 0;
-}
-#account-dashboard .alert-box h5 {
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 0;
-}
-#account-dashboard .alert-box p {
-  color: #000;
-  font-weight: 500;
-  margin: 0 0 2rem;
-}
-#account-dashboard .alert-box b {
-  color: #d0021b;
-}
-#account-dashboard .alert-box.alert-alt1 {
-  margin-bottom: 0;
-}
-#account-dashboard .alert-box.alert-alt1 b {
-  color: #000;
 }
 #account-dashboard .footnote {
   background-color: inherit;
@@ -10958,6 +11209,59 @@ ul.info-links li {
     width: 45%;
   }
 }
+@media (min-width: 992px) {
+  #account-dashboard .intro-wrapper,
+  #cancel-plan-wrapper .intro-wrapper {
+    margin: 0 0 3rem 0;
+    text-align: right;
+  }
+  #account-dashboard .intro-wrapper .user-greeting a,
+  #cancel-plan-wrapper .intro-wrapper .user-greeting a {
+    color: #ff6008;
+  }
+}
+#cancel-plan-wrapper #cancel-current-plan {
+  padding: 2.5rem 2.5rem 0;
+}
+#cancel-plan-wrapper #cancel-current-plan,
+#cancel-plan-wrapper .alert-box.alert-alt1,
+#cancel-plan-wrapper ul.plan-detail {
+  margin-bottom: 3rem;
+}
+#cancel-plan-wrapper .cancel-msg {
+  color: #1b1b1b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 2rem 2rem;
+}
+@media (min-width: 992px) {
+  #cancel-plan-wrapper #cancel-current-plan {
+    padding-bottom: 2.5rem;
+  }
+  #cancel-plan-wrapper .cancel-msg {
+    margin: 0 0 2rem;
+  }
+  #cancel-plan-wrapper .foot-notes {
+    padding: 0 0 2rem;
+  }
+}
+@media (min-width: 992px) {
+  #cancel-plan-wrapper .plan-info-col {
+    padding: 1rem 0;
+    width: 50%;
+  }
+  #cancel-plan-wrapper .plan-info-col:first-child {
+    margin-right: 4rem;
+  }
+  #cancel-plan-wrapper .plan-info-col td {
+    width: 50%;
+  }
+  #cancel-plan-wrapper .plan-info-col td:first-child {
+    font-size: 1.3rem;
+  }
+}
 #renew-plan-select {
   border-color: #e9eef1;
   padding-top: 0;
@@ -10993,6 +11297,16 @@ ul.info-links li {
 }
 #renew-plan-select .promocode-entry {
   padding: 0 2rem 3rem;
+}
+#renew-plan-select .promocode-entry .promocode-message {
+  clear: both;
+}
+#renew-plan-select .promocode-entry .promocode-message p {
+  line-height: 1.5;
+}
+#renew-plan-select .promocode-entry .promocode-message p em {
+  color: #0074bf;
+  font-style: normal;
 }
 #renew-plan-select .promocode-entry label {
   display: block;
