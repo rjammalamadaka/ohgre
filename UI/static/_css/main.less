@@ -2413,8 +2413,7 @@ div[class^="cq-colctrl-lt1-"]{
 
 	.alt-border1{
 		background-color: inherit;
-		padding-left: 0;
-		padding-right: 0;
+		padding: 2.5rem 0 0;
 	}
 	.view-raf-rewards-years{
 		padding: 0 2.5rem;
@@ -2436,6 +2435,7 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 	small {
 		font-family: @secondary_font;
+		padding: 0 2.5rem
 	}
 
 	.row .row {
@@ -2465,10 +2465,15 @@ div[class^="cq-colctrl-lt1-"]{
 				padding: 2.5rem;
 				text-decoration: none;
 			}
+
+		}
+		.accord-container{
+			padding: 1rem 2.5rem;
 		}
 	}
 
 	table.view-rewards {
+		background: #fff;
 		width: 100%;
 
 		thead {
@@ -2520,6 +2525,9 @@ div[class^="cq-colctrl-lt1-"]{
 		.view-raf-rewards-years{
 			padding: 0;
 		}
+		small{
+			padding: 0;
+		}
 	}
 }
 #raf-email-popup{
@@ -2557,18 +2565,29 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	.mobile-header {
-		background-color: #002f8f;
-    padding: 2.5rem 2.5rem .5rem;
-		*{
-			color: #fff;
+		background-color: #fff;
+		.ldc-logo{
+			padding: 2rem 2.5rem;
+
+			img {
+				max-width: 8rem;
+			}
 		}
-		p{
-			font-size: 1.4rem;
+		.raf-header{
+			background-color: #002f8f;
+	    padding: 2.5rem 2.5rem .5rem;
+			*{
+				color: #fff;
+			}
+			p{
+				font-size: 1.4rem;
+			}
+			img{
+				margin: 0 0 1rem;
+				max-width: 20rem;
+			}
 		}
-		img{
-			margin: 0 0 1rem;
-			max-width: 20rem;
-		}
+
 
 	}
 	#raf-email-preview,
@@ -2960,12 +2979,25 @@ div[class^="cq-colctrl-lt1-"]{
 	.brand-logo {
 		margin: 0 0 5rem;
 		max-width: 130px;
+
+		img {
+			max-width: 15rem;
+		}
+		@media (@screen-md-min){
+			max-width: 100%;
+		}
 	}
 
 	&.alt-banner1 {
 		.inner-slide-content {
-			padding: 4rem 4rem 10rem;
+			padding: 2rem 4rem 1rem;
 
+			.raf-logo {
+				clear: both;
+				display: block;
+				margin-top: 2rem;
+				max-width: 20rem;
+			}
 			@media (@screen-md-min){
 				padding: 4rem 4rem 10rem;
 			}

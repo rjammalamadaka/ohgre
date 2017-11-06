@@ -8128,8 +8128,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #view-raf-rewards .alt-border1 {
   background-color: inherit;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 2.5rem 0 0;
 }
 #view-raf-rewards .view-raf-rewards-years {
   padding: 0 2.5rem;
@@ -8148,6 +8147,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #view-raf-rewards small {
   font-family: 'Roboto', sans-serif;
+  padding: 0 2.5rem;
 }
 @media (min-width: 992px) {
   #view-raf-rewards .row .row > div[class^=col-]:first-of-type {
@@ -8172,7 +8172,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
   padding: 2.5rem;
   text-decoration: none;
 }
+#view-raf-rewards .tabs-list .accord-container {
+  padding: 1rem 2.5rem;
+}
 #view-raf-rewards table.view-rewards {
+  background: #fff;
   width: 100%;
 }
 #view-raf-rewards table.view-rewards thead {
@@ -8223,6 +8227,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
   #view-raf-rewards .view-raf-rewards-years {
     padding: 0;
   }
+  #view-raf-rewards small {
+    padding: 0;
+  }
 }
 #raf-email-popup {
   padding: 0;
@@ -8257,16 +8264,25 @@ div[class^="cq-colctrl-lt1-"] .card p {
   width: 85%;
 }
 #raf-email-popup .mobile-header {
+  background-color: #fff;
+}
+#raf-email-popup .mobile-header .ldc-logo {
+  padding: 2rem 2.5rem;
+}
+#raf-email-popup .mobile-header .ldc-logo img {
+  max-width: 8rem;
+}
+#raf-email-popup .mobile-header .raf-header {
   background-color: #002f8f;
   padding: 2.5rem 2.5rem .5rem;
 }
-#raf-email-popup .mobile-header * {
+#raf-email-popup .mobile-header .raf-header * {
   color: #fff;
 }
-#raf-email-popup .mobile-header p {
+#raf-email-popup .mobile-header .raf-header p {
   font-size: 1.4rem;
 }
-#raf-email-popup .mobile-header img {
+#raf-email-popup .mobile-header .raf-header img {
   margin: 0 0 1rem;
   max-width: 20rem;
 }
@@ -8607,8 +8623,22 @@ div[class^="cq-colctrl-lt1-"] .card p {
   margin: 0 0 5rem;
   max-width: 130px;
 }
+#raf-banner .brand-logo img {
+  max-width: 15rem;
+}
+@media (min-width: 992px) {
+  #raf-banner .brand-logo {
+    max-width: 100%;
+  }
+}
 #raf-banner.alt-banner1 .inner-slide-content {
-  padding: 4rem 4rem 10rem;
+  padding: 2rem 4rem 1rem;
+}
+#raf-banner.alt-banner1 .inner-slide-content .raf-logo {
+  clear: both;
+  display: block;
+  margin-top: 2rem;
+  max-width: 20rem;
 }
 @media (min-width: 992px) {
   #raf-banner.alt-banner1 .inner-slide-content {
