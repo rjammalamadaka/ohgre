@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2017-11-06T09:37:29.779-05:00"
+        cq:lastModified="{Date}2017-11-08T13:50:07.000-05:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-11-06T12:47:24.345-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy"
+        jcr:uuid="b06e6651-f99d-4feb-ab2e-187582e26bbc"
         sling:resourceType="/apps/ohgre/components/structure/page"
         days="Monday - Friday"
         errorPages="/content/gre/errors"
@@ -22,12 +28,23 @@
             <herocarousel
                 jcr:created="{Date}2017-08-21T00:30:49.455-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-18T17:04:50.922-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-11-06T12:47:18.872-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles.&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Grand Rapids Energy® bill. &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Grand Rapids Energy® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/card_raf.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/refer-a-friend.html&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Michigan’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We are proud to Michigan residents and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SIGN UP&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
-                timeout="5000"/>
+                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Grand Rapids Energy® bill. &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Grand Rapids Energy® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/card_raf.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/refer-a-friend.html&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Michigan’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We are proud to serve Michigan residents and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SIGN UP&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                timeout="5500">
+                <cq:annotations jcr:primaryType="nt:unstructured">
+                    <_x0032__1509993699203
+                        jcr:created="{Date}2017-11-06T12:41:39.204-06:00"
+                        jcr:createdBy="penny"
+                        jcr:lastModified="{Date}2017-11-06T12:41:39.204-06:00"
+                        jcr:lastModifiedBy="penny"
+                        jcr:primaryType="nt:unstructured"
+                        x="{Long}287"
+                        y="{Long}234"/>
+                </cq:annotations>
+            </herocarousel>
             <promocode
                 jcr:created="{Date}2017-07-23T18:42:01.956+05:30"
                 jcr:createdBy="admin"

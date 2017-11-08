@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-03T11:10:57.067-05:00"
-        cq:lastModifiedBy="rebecka01"
+        cq:lastModified="{Date}2017-11-08T12:34:15.871-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-11-03T11:11:07.578-05:00"
         cq:lastReplicatedBy="rebecka01"
         cq:lastReplicationAction="Activate"
@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer A Friend Authenticated"
-        jcr:uuid="3c1f2130-d08f-48cf-b5b4-38aaa9202b3f"
+        jcr:uuid="d20b9f96-6b1c-4d9e-8070-eb6a00090497"
         sling:resourceType="/apps/ohgre/components/structure/referafriend"
         hideInNav="true">
         <content
@@ -21,11 +21,11 @@
             <rafherobanner
                 jcr:created="{Date}2017-10-15T09:11:59.938+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-15T09:15:38.321+05:30"
+                jcr:lastModified="{Date}2017-11-08T12:34:15.868-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/rafherobanner"
-                imagepath="/content/dam/ohgre/global/raf-logo.png"/>
+                imagepath="/content/dam/ohgre/raf/RAF_GRE white.png"/>
             <raf_autenticated
                 jcr:created="{Date}2017-10-15T09:16:53.996+05:30"
                 jcr:createdBy="admin"

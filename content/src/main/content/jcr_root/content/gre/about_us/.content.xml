@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="ABOUT US"
-        jcr:uuid="315c877d-7082-47a1-8b8b-2e576ae8ca50"
+        jcr:uuid="5474dd4c-568b-416d-af1b-ac618f6af243"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

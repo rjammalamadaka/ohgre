@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-10-30T13:50:25.783-05:00"
+        cq:lastModified="{Date}2017-11-06T12:55:26.741-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-10-30T13:50:55.639-05:00"
+        cq:lastReplicated="{Date}2017-11-06T12:55:45.335-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="View Rate Plans"
-        jcr:uuid="90308cb6-a846-4a8a-88af-d5cfde5e1ed3"
+        jcr:uuid="edf34875-3489-4f89-b322-87922f4d0e28"
         sling:resourceType="/apps/ohgre/components/structure/mainpage">
         <image
             jcr:lastModified="{Date}2017-08-19T09:08:49.647+05:30"
@@ -35,12 +35,12 @@
             <select_gas_utility
                 jcr:created="{Date}2017-07-21T07:52:48.758+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-22T15:13:39.301-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-11-06T12:55:26.735-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/select-gas-utility"
-                description="&lt;p>Choose from one of our popular plans to get started right away!&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                heading="Select Gas Utility"
+                description="&lt;p>Choose from one of our popular plans to get started right away!&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                heading="Select Your Gas Utility"
                 textIsRich="true"/>
             <promocode
                 jcr:created="{Date}2017-07-21T07:45:29.013+05:30"

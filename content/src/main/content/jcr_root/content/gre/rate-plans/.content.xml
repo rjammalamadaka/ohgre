@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-10-30T13:20:20.653-05:00"
+        cq:lastModified="{Date}2017-11-07T11:36:41.058-06:00"
         cq:lastModifiedBy="penny"
         cq:template="/apps/ohgre/templates/mainpage"
         jcr:primaryType="cq:PageContent"
@@ -15,7 +15,7 @@
             <herobaner
                 jcr:created="{Date}2017-08-16T11:17:23.463-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-30T13:19:20.023-05:00"
+                jcr:lastModified="{Date}2017-11-07T11:36:41.055-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herobaner"

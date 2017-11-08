@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Delta SignUp"
-        jcr:uuid="1dba75c8-1e0d-41b8-bfac-9a4b620cd8b2"
+        jcr:uuid="04d7cf79-bda8-478f-87e3-98ce35e0681e"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true">
         <content

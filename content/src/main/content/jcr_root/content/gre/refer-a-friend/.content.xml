@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-03T13:27:26.234-05:00"
+        cq:lastModified="{Date}2017-11-08T12:29:10.136-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-11-03T13:05:46.256-05:00"
         cq:lastReplicatedBy="rebecka01"
@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer A Friend"
-        jcr:uuid="400519be-f9a5-494b-82ca-f800327a7199"
+        jcr:uuid="54364ae6-df25-46ea-a04d-29fad7d66de8"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true">
         <content
@@ -21,13 +21,13 @@
             <staticherobanner
                 jcr:created="{Date}2017-10-13T14:02:30.402-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-03T13:26:29.267-05:00"
+                jcr:lastModified="{Date}2017-11-08T12:29:10.133-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/staticherobanner"
                 description="For every friend that enrolls with Grand Rapids Energy® you’ll each receive a $25 Visa® Reward Card!* Think of it as a natural gas rebate!"
                 imagepath="/content/dam/ohgre/raf/hero.jpg"
-                logopath="/content/dam/ohgre/raf/raf-logo.png"/>
+                logopath="/content/dam/ohgre/raf/RAF_GRE white.png"/>
             <refer_a_friend
                 jcr:created="{Date}2017-10-13T14:19:37.315-04:00"
                 jcr:createdBy="admin"

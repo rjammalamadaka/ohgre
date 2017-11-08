@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-10-21T11:22:33.625-04:00"
+        cq:lastModified="{Date}2017-11-05T20:23:04.082-06:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
@@ -15,10 +15,11 @@
             <promoherobanner
                 jcr:created="{Date}2017-09-10T22:51:02.364-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-21T11:22:33.621-04:00"
+                jcr:lastModified="{Date}2017-11-05T20:23:04.077-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
                 imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
                 title="Page Not Found"/>
             <pagenotfound
