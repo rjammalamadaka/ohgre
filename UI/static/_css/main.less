@@ -2411,12 +2411,27 @@ div[class^="cq-colctrl-lt1-"]{
 #view-raf-rewards {
 	background-color: #e9eef2;
 
+	>.container {
+		>div[class^=col-]{
+			padding-right: 0;
+		}
+	}
+
 	.alt-border1{
 		background-color: inherit;
 		padding: 2.5rem 0 0;
 	}
 	.view-raf-rewards-years{
 		padding: 0 2.5rem;
+		.dropdown-trigger {
+			border-radius: 0;
+		}
+		.dropdown-menu{
+			padding: 0;
+			li {
+				margin: 2px 0;
+			}
+		}
 	}
 
 	.border-wrapper {
@@ -2470,6 +2485,17 @@ div[class^="cq-colctrl-lt1-"]{
 		.accord-container{
 			padding: 1rem 2.5rem;
 		}
+		@media (@screen-md-min){
+			li{
+				.accord-trigger{
+					display: none;
+				}
+				.accord-container{
+					padding: 1rem 0;
+				}
+			}
+
+		}
 	}
 
 	table.view-rewards {
@@ -2520,7 +2546,7 @@ div[class^="cq-colctrl-lt1-"]{
 			display: block;
 		}
 		.alt-border1{
-			padding: 2.5rem;
+			padding: 2.5rem 2.5rem 0;
 		}
 		.view-raf-rewards-years{
 			padding: 0;
@@ -5819,6 +5845,11 @@ ul.info-links {
 	}
 	.promocode-entry {
 		padding: 0 2rem 3rem;
+
+		.input-error-message{
+			clear: both;
+			display: block;
+		}
 
 		.promocode-message {
 			clear: both;
