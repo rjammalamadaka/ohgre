@@ -215,10 +215,15 @@ $scope.errorMessage=null;
                  $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
                     if($scope.customerInfo && $scope.customerInfo.responseStatus=="0"){
 						//if($scope.lctype =="residential" && $scope.customerInfo.lastName !=)
-                        if(($scope.lctype=="residential")&&(($scope.customerInfo.lastName.toLowerCase()!=$scope.lastName.toLowerCase()) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase()))){
+                        if($scope.customerInfo.b2BCustomerInd =="Y"){
 							$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                            $('#lastnamezipcodeerror').show();
+                        }else if(($scope.lctype=="residential")&&(($scope.customerInfo.lastName.toLowerCase()!=$scope.lastName.toLowerCase()) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase()))){
+							$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                            $('#lastnamezipcodeerror').show();
                         }else if(($scope.lctype=="commercial")&&(validateCommercialName($scope.customerInfo.businessName.toLowerCase())) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
 							$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                            $('#lastnamezipcodeerror').show();
                         }else{
 							jQuery("#login-popup-wrapper").removeClass("show-popup");
                         	jQuery("#popupconfirm").addClass("show-popup");
