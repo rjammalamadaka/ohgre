@@ -12,7 +12,7 @@
         <items jcr:primaryType="nt:unstructured">
             <cancelcontract
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Renewal Plan Content Configuration"
+                jcr:title="Cancel Contract Content Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -22,11 +22,11 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <promocode
+                            <commercialpromocode
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Promotion Code"
-                                name="./promocode"/>
+                                fieldLabel="Commercial Promo Code"
+                                name="./commercialpromocode"/>
                             <cancelmsg
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
@@ -172,6 +172,11 @@
                                     </cui>
                                 </uiSettings>
                             </cancelterms>
+                            <residentailpromocode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Residentail Promotion Code"
+                                name="./residentailpromocode"/>
                         </items>
                     </column>
                 </items>

@@ -1,5 +1,5 @@
 <section ng-controller="CancelContractController">
-   <div class="container page-wrapper cancel-renew-page" id="cancel-plan-wrapper" data-promocode="${properties.promocode || 'save2017'}">
+   <div class="container page-wrapper cancel-renew-page" id="cancel-plan-wrapper" data-respromocode="${properties.residentailpromocode || 'delta25'}" data-compromocode="${properties.commercialpromocode || 'delta25'}">
    <div class="row">
       <div class="col-md-10 col-md-offset-1">
          <div class="intro-wrapper">
@@ -70,7 +70,7 @@
                            <p class="desktop-content">{{product.ProductPlanDesc}}</p>
                         </div>
                         <div class="plan-button">
-                           <a href="#" class="primary-button">Select Plan</a>
+                           <a href="#" class="primary-button" ng-click="planSelectRenewal(product)">Select Plan</a>
                         </div>
                         <a href="" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
                         <div ng-show="product.displayAccordian" class="">
@@ -107,4 +107,5 @@
    </div>
    </div>
    </div>
+   <sly data-sly-include="popups.html"></sly>
 </section>
