@@ -20,7 +20,7 @@
                 <div id="ContactListCtrl">
                   <label for="toemailaddress">Friend's Email Address</label>
                   <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
-                    ng-focus ng-touched></textarea>
+                    ng-focus ng-touched multiple-emails></textarea>
                   <!--
 <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts"
 placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)"
@@ -28,6 +28,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
 -->
                   <span class="input-error-message" ng-show="(rafemailform.toemailaddress.$visited && !rafemailform.toemailaddress.$focused) || rafemailform.submited">
                     <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friend's emails are required.</span>
+					<span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.multipleEmails">Valid friend email(s) are required</span>
                   </span>
                   <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
                 </div>
