@@ -1,6 +1,6 @@
 ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
- $scope.formButton="Apply Promo Code";
+// $scope.formButton="Apply Promo Code";
 
       function isEmpty(obj) {
         for(var key in obj) {
@@ -15,12 +15,17 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
 
     var getQuotes=function(req){
-
-        var PromoCode=$("#renew-plan-select").data("promocode");
-        if(req.PromoCode){
-            
-            PromoCode=req.PromoCode;
+		var PromoCode=null;
+        var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+        var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
+        if(req.rateClassCode =="01"){
+			PromoCode=ResPromoCode;
+        }else if(req.rateClassCode =="04"){
+			PromoCode=ComPromoCode;
         }
+       /* if(req.PromoCode){            
+            PromoCode=req.PromoCode;
+        }*/
         
         PrimeService.getQuotes(req.LDC,PromoCode,req.rateClassCode).success(function(data, status, headers, config){
             
@@ -38,9 +43,9 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
                     console.log($scope.products);
                 }
             }
-            
+
         }).error(function (data,status, headers, config){
-            
+
             console.log("error");
         });
 
@@ -123,29 +128,30 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
     }
 
 
+        $scope.planSelectRenewal =function(product){
 
+		console.log(product);
+        $scope.selectedProduct=product;
 
-/*var promocode="RAF25";
-     PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
+        console.log($scope.selectedProduct.ProductDescription);
 
+		console.log($scope.customerInfo);
+		console.log($scope.productData);
 
-                 if(data && data.responseStatus =="0"){
+        if($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y"){
+             $('#popupwithrenewal').addClass('show-popup');
+        }else{
+            var earlyTermChargeAmt= Number($scope.customerInfo.earlyTermChargeAmt);
+            if(earlyTermChargeAmt>0){
+                $rootScope.showearlyterminationfee=true;
+                $('#popupetc').addClass('show-popup');                
+            }else{
+                 $scope.continueenroll();
+				//location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
+            }
+        }
 
-                     console.log(data);
-
-                 }else if(data && data.responseStatus =="1"){
-						$scope.serverError=data.responsemessage;
-
-                 }
-
-             }).error(function (data,status, headers, config){
-
-                 console.log("error");
-             });
-
-*/
-
-     //Code for controlling Accordian display
+    }
 
      $scope.displayAddlInfo = function(product){
         console.log("Inside Function");
@@ -185,58 +191,58 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     }
 
-    $scope.submitPromoCode =function(){
-		$scope.serverError=null;
-		$scope.renewalPlanPromo.submited = true;
 
-        if($scope.formButton=="CLEAR"){
+    $scope.continueenroll =function(){
+         var req={};
 
-            $scope.products=$scope.defaultProducts;
-            $scope.formButton="Apply Promo Code";
-            $('#submit-promo-code').removeClass("inactive");
-       }else if($scope.renewalPlanPromo.$valid){
-           $('#submit-promo-code').addClass("inactive");
-            PrimeService.getPromoCodeInfo($scope.promocode).success(function(data, status, headers, config){
-                //$('#submit-promo-code').removeClass("inactive");
-                $scope.formButton="CLEAR";
-                if(data && data.responseStatus =="0"){                    
-                    console.log(data);
-                    if(data.LDCList.length>0 && data.LDCList[0].promotion[0].PromotionExpired=="Y"){
-						console.log("code expired");
+        req.QuoteDescription=$scope.selectedProduct.QuoteDescription;
+		req.ProductDescription=$scope.selectedProduct.ProductDescription;
+        req.ProductCode=$scope.selectedProduct.ProductCode;
+        req.LdcDesc= $scope.productData.ldcDesc;
+        req.LDC= $scope.productData.LDC;
+		req.FixedPricePerTherm=$scope.selectedProduct.FixedPricePerTherm;
+        req.AccountNumber=$scope.productData.AccountNumber;
+        req.RateClassCode=$scope.productData.rateClassCode;
 
-                        if(data.LDCList[0].promotion[0].BackupPromotionCode){
-                            var req={};
-                            $scope.serverError="Unfortunately this promotion has expired but we have some great plans below"; 
-                            req.AccountNumber=$scope.productData.AccountNumber; 
-                            req.LDC=$scope.productData.LDC;
-                            req.PromoCode=data.LDCList[0].promotion[0].BackupPromotionCode;
-                            req.rateClassCode=$scope.productData.rateClassCode;
-                            getQuotes(req);
+         PrimeService.setProductData(req).success(function(data, status, headers, config){  
 
-                        }else{
-							$scope.serverError="Sorry the promotion code has been expired"; 
-                        }
-                    }else{
-                        var req={};
-						req.AccountNumber=$scope.productData.AccountNumber; 
-						req.LDC=$scope.productData.LDC;
-						req.PromoCode=$scope.promocode;
-                        req.rateClassCode=$scope.productData.rateClassCode;
-						getQuotes(req);
-                    }
+             location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
 
-                }else if(data && data.responseStatus =="1"){
-                    $scope.serverError="Please enter a valid Promo code";                    
-                }
-                
-            }).error(function (data,status, headers, config){  
-               // $('#submit-promo-code').removeClass("inactive");
-                $scope.formButton="CLEAR";
-                console.log("error");
-            });
-        }
+         }).error(function (data,status, headers, config){ 
+
+         });
+
+
     }
 
+    $scope.redirecttodashboard =function(){
+        location.href=$rootScope.homeUrl+"/myaccount.html";
+
+    }
+
+      $scope.getFormatedAccountnumber =function(accountNumber){
+        var formattedNumber="";
+        if(accountNumber){
+            var ldc="";
+            if($scope.productData && $scope.productData.LDC){
+		    ldc=$scope.productData.LDC;
+            }
+			if(ldc == "COH"){       
+			formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
+			}else if(ldc == "DUK"){
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+accountNumber.substring(10,11);
+			}else if(ldc == "DEO"){
+			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
+			}else if(ldc == "VED"){
+			formattedNumber="03-"+accountNumber.substring(2,11)+"-"+accountNumber.substring(11,18)+"-0";
+			}else if(ldc == "MCG"){
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
+			}else if(ldc == "MIC"){
+			formattedNumber=accountNumber;
+			}
+			return formattedNumber;
+        }else{return "";}
+      }
 
 }]);
 
