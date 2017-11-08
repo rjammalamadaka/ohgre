@@ -77,7 +77,7 @@ public class RafUpdateCustomerInfoServlet extends SlingAllMethodsServlet{
                 obj.put("ResponseStatus", "1");
                 obj.put("ResponseMessage", "error");
             } catch (Exception e1) {
-
+                e.printStackTrace();
             }
 
         }
@@ -90,8 +90,9 @@ public class RafUpdateCustomerInfoServlet extends SlingAllMethodsServlet{
         String result="";
         try{
             result=JObject.getString(parameter);
-        }catch(Exception e){
-
+        }catch (Exception e){
+            System.out.println("got error"+e.getMessage());
+            e.printStackTrace();
         }
         return result;
     }

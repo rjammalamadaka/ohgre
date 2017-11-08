@@ -77,7 +77,7 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 				obj.put("ResponseStatus", "1");
 				obj.put("ResponseMessage", "error");
 			} catch (Exception e1) {
-
+				e.printStackTrace();
 			}
 			
 		}
@@ -91,8 +91,9 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 	    	try{
 	    		result=JObject.getString(parameter);
 	    	}catch(Exception e){
-	    		
-	    	}
+				e.printStackTrace();
+
+			}
 	    	return result;
 	    }
 

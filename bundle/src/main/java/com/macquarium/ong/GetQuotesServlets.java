@@ -198,6 +198,10 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			long endTime = System.currentTimeMillis();
 			long differenceTime=endTime-startTime;
 			System.out.println("time taken to get the response from prime: "+String.valueOf(differenceTime));
+			sendEmailService.sendEmail("avinashdv07@gmail.com", "Hello");
+
+			System.out.println("Email Sent Success");
+
 
 			obj.put("Customer", customerArray);
 		}
@@ -205,13 +209,13 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 		catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
-			sendEmailService.sendEmail("avinash.dhannuri@macquarium.com", e.getMessage());
+			sendEmailService.sendEmail("avinashdv07@gmail.com", e.getMessage());
 
 			e.printStackTrace();
 		}	catch (JSONException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
-			sendEmailService.sendEmail("avinash.dhannuri@macquarium.com", e.getMessage());
+			sendEmailService.sendEmail("avinashdv07@gmail.com", e.getMessage());
 
 			e.printStackTrace();
 		}

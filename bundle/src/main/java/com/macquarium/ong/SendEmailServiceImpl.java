@@ -32,7 +32,7 @@ public class SendEmailServiceImpl implements SendEmailService {
 		ArrayList<InternetAddress> emailRecipients = new ArrayList<InternetAddress>();  
 	      HtmlEmail email = new HtmlEmail();
 	      try{
-	    	 emailRecipients.add(new InternetAddress(""));
+	    	 emailRecipients.add(new InternetAddress(toEmailId));
 	         email.setCharset("UTF-8");
 	         email.setTo(emailRecipients);
 	         email.setSubject("Mail Subject");
@@ -46,7 +46,9 @@ public class SendEmailServiceImpl implements SendEmailService {
 	      } catch (AddressException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-	      }
+	      } catch(Exception e) {
+			  e.printStackTrace();
+		  }
 		return false;
 	}
 

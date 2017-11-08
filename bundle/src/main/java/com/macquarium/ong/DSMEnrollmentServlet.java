@@ -166,7 +166,7 @@ public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAll
      	try{
      		result=JObject.getString(parameter);
      	}catch(Exception e){
-     		
+            e.printStackTrace();
      	}
      	return result;
      }
