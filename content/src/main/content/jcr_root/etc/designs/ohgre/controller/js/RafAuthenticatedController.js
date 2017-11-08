@@ -173,22 +173,26 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
           requestInfo.custID = $scope.customerInfo.custID;
 
           PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config){
-            console.log("success");
-            console.log(data);
-		        if(data && data.success){
-              jQuery('#raf-terms-popup').removeClass('show-popup');
-					    jQuery('#raf-confirm').addClass('show-popup');
-            }else{
+              console.log("success");
+              console.log(data);
+              if(data && data.success){
+                  jQuery('#raf-terms-popup').removeClass('show-popup');
+                  jQuery('#toemailaddress').val('');
+                  jQuery('#raf-confirm').addClass('show-popup');
+				$scope.rafemailform.toemailaddress.$setPristine();
+                  $scope.toemailaddress = '';
 
-			         $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
-            }
+              }else{
+                  
+                  $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+              }
 
-            }).error(function(data, status, headers, config){
-                console.log(data);
-                console.log("error");
-                $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
-
-            });
+          }).error(function(data, status, headers, config){
+              console.log(data);
+              console.log("error");
+              $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+              
+          });
         }
     }
 
