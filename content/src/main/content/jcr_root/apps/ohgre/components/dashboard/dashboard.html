@@ -19,7 +19,7 @@
                 <div class="input-group-wrapper">
                   <label  ng-if="customerInfo.ldc !='MIC'">Gas Utility Account Number</label>
                     <label ng-if="customerInfo.ldc =='MIC'">Gas Service Pod ID</label>
-                  <strong>{{customerInfo.account}}</strong>
+                  <strong>{{getFormatedAccountnumber(customerInfo.account)}}</strong>
                 </div>
                 <div class="input-group-wrapper">
                   <label>Service Address</label>
@@ -56,7 +56,7 @@
 
 
               <div class="plan-info">
-                <h4>Your Current Plan</h4>
+                <h4>Your Current Contract</h4>
                 <table class="table-wrapper account-info-table">
                   <tbody>
                     <tr>
@@ -69,7 +69,7 @@
                     </tr>
 
                     <tr ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
-                      <td>Flat Bill Price</td>
+                      <td>Guaranteed Bill Plan Amount</td>
                       <td>{{customerInfo.contractPrice | currency:"$":3}}</td>
                     </tr>
                     <tr>
@@ -81,7 +81,7 @@
                       <td>{{getOnlyDate(customerInfo.contractTermDate)}}</td>
                     </tr>
                     <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
-                      <td>Early Termination Change</td>
+                      <td>Early Termination Charge</td>
                       <td ng-if="customerInfo.earlyTermChargeAmt == '0.0000'">None</td>
                       <td ng-if="customerInfo.earlyTermChargeAmt !== '0.0000'">{{customerInfo.earlyTermChargeAmt | currency:"$":0}}</td>
                     </tr>
@@ -91,8 +91,7 @@
 
               </div>
               <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
-                  <p>If you would like to start a new contract or cancel this contract today,
-                      you will need to pay a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
+                  <p>If you would like to start a new contract or cancel this contract today, you will need to pay now or be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
               </div>
 
               <div class="plan-info" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
@@ -120,7 +119,7 @@
                        <td>{{getOnlyDate(customerInfo.renewalContractTermDate)}}</td>
                     </tr>
                    <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
-                      <td>Early Termination Change</td>
+                      <td>Early Termination Charge</td>
                       <td ng-if="customerInfo.earlyTermChargeAmt == '0.0000'">None</td>
                       <td ng-if="customerInfo.earlyTermChargeAmt !== '0.0000'">{{customerInfo.earlyTermChargeAmt | currency:"$":0}}</td>
                     </tr>
@@ -130,11 +129,11 @@
               </div>
 
              <div class="box-with-border alert-box" ng-show="customerInfo.contractTermDate == '12/31/2999 12:00:00 AM'">
-                <p>You can change your contract at any time at no cost.</p>
+                <p>You can change your contract at any time with no penalty.</p>
               </div>
 
               <div class="buttons">
-                <a href="#" class="primary-button inactive">Cancel My Contract</a>
+                <a href="#" class="primary-button inactive" ng-click="cancelMyContract()">Cancel My Contract</a>
                 <a href="#" class="primary-button" ng-click="changeMyRenewal()">Change My Renewal Plan</a>
                 <a href="#" class="logout-button" ng-click="logout()">Logout</a>
               </div>
