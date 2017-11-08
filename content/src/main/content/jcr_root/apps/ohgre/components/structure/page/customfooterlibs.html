@@ -46,7 +46,9 @@
         if (scope.emails) {
           scope.emails = arrStr;
         }
-		console.log('after...');
+
+        angular.element(jQuery('#toemailaddress')).triggerHandler('input');
+
         var emailPopup = document.getElementById('raf-email-popup');
         emailPopup.classList.add('show-popup');
       });
