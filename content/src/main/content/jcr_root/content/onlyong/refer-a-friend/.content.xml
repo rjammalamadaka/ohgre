@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer A Friend"
-        jcr:uuid="7906150a-da73-4a54-80f6-36a31991a3b6"
+        jcr:uuid="1ae6ae83-f3e3-4fc5-9394-5f201d73e6f2"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         appid="388067291608116"
         hideInNav="true"
