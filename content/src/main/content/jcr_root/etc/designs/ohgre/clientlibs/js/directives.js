@@ -55,8 +55,12 @@ ohgrePortal.directive('restrictTo', function() {
 ohgrePortal.directive('multipleEmails', function () {
     return {
         require: 'ngModel',
+        restrict: 'A',
         link: function(scope, element, attrs, ctrl) {
+
             ctrl.$parsers.unshift(function(viewValue) {
+                console.log('multipleEmails');
+                console.log('viewValue', viewValue);
 
                 var emails = viewValue.split(',');
                 // loop that checks every email, returns undefined if one of them fails.
@@ -66,7 +70,6 @@ ohgrePortal.directive('multipleEmails', function () {
                 var validityArr = emails.map(function(str){
                     return re.test(str.trim());
                 }); // sample return is [true, true, true, false, false, false]
-                console.log(emails, validityArr);
                 var atLeastOneInvalid = false;
                 angular.forEach(validityArr, function(value) {
                     if(value === false)
@@ -80,8 +83,41 @@ ohgrePortal.directive('multipleEmails', function () {
                     ctrl.$setValidity('multipleEmails', false);
                     return undefined;
                 }
+
                 // })
             });
+
+			/*
+            ctrl.$parsers.unshift(checkEmails);
+      		ctrl.$formatters.unshift(checkEmails);
+
+            function checkEmails(viewValue){
+                if(viewValue){
+                     var emails = viewValue.split(',');
+                    // loop that checks every email, returns undefined if one of them fails.
+                    var re = /\S+@\S+\.\S+/;
+    
+                    // angular.foreach(emails, function() {
+                    var validityArr = emails.map(function(str){
+                        return re.test(str.trim());
+                    }); // sample return is [true, true, true, false, false, false]
+                    var atLeastOneInvalid = false;
+                    angular.forEach(validityArr, function(value) {
+                        if(value === false)
+                            atLeastOneInvalid = true;
+                    });
+                    if(!atLeastOneInvalid) {
+                        // ^ all I need is to call the angular email checker here, I think.
+                        ctrl.$setValidity('multipleEmails', true);
+                        return viewValue;
+                    } else {
+                        ctrl.$setValidity('multipleEmails', false);
+                        return undefined;
+                    }
+                }
+                console.log('checkEmails');
+            }
+            */
         }
     };
 })
