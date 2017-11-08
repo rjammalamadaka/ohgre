@@ -29,6 +29,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         $scope.addressstate="MI";
     }
 
+
+
+
+
     PrimeService.getProductData().success(function(data, status, headers, config){
 
         if(!data.LDC){
@@ -96,6 +100,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
         updateenrollrequestobj(data);
 
+        if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){
+			getCustomerInfo(data,true);
+            $rootScope.showcurrentplan=true;
+            var promoCodeInfo=ohgre.store("promoCodeInfo");
+            if(promoCodeInfo && !isEmpty(promoCodeInfo)){
+				$scope.showpromocodeconfirmation=true;
+            }
+        }
+
     }).error(function (data,status, headers, config){
 
          if(!data.LDC){
@@ -103,6 +116,47 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }
     });
 
+    function isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+    var getCustomerInfo=function(req,fromRenewal){        
+
+        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
+            if(data){
+                $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
+               updateenrollrequestobj($rootScope.customerInfo);
+                if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
+                     console.log($rootScope.customerInfo); 
+                   // $rootScope.account
+                    $scope.formatedacno=getFormatedAccountnumber($rootScope.customerInfo.account);
+                     $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
+                     $scope.existingEmail= $rootScope.customerInfo.emailAddress;
+
+                      $rootScope.showexistingcustomer=true;
+                    if(fromRenewal){
+                        if(!($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y")){
+
+                            var earlyTermChargeAmt= Number($scope.customerInfo.earlyTermChargeAmt);
+            				if(earlyTermChargeAmt>0){
+                            $scope.showearlyterminationfee=true;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+        }).error(function(data, status, headers, config){
+
+        });
+
+    }
 
     var getFormatedAccountNumber= function(){
 
@@ -567,9 +621,14 @@ $scope.reviewauthorizesubmit();
 
     $scope.gotoPreviousStep =function(step){
         if(step ==1){
-             $('.steps-container').hide();
-            $rootScope.showcurrentplan=false;
-            $rootScope.showearlyterminationfee=false;
+
+             if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){
+                 window.history.back();
+             }else{
+                 $('.steps-container').hide();
+                 $rootScope.showcurrentplan=false;
+                 $rootScope.showearlyterminationfee=false;
+             }
 
         }
         if(step==3){
@@ -881,7 +940,7 @@ $scope.reviewauthorizesubmit();
        var integerCheck = 0,
            smnStatus = 4,
            smn01;
-       
+
        var getSingleDigit = function(x) {
            if (x > 9) {
                var a,
@@ -917,7 +976,7 @@ $scope.reviewauthorizesubmit();
                smn08 = parseInt(smn.substring(7, 8));
                smn09 = smn.substring(8, 9) * 2;
                chkDigit = parseInt(smn.substring(9, 10));
-               
+
                smn01 = getSingleDigit(smn01);
                smn03 = getSingleDigit(smn03);
                smn05 = getSingleDigit(smn05);
@@ -928,12 +987,12 @@ $scope.reviewauthorizesubmit();
                intEvens = smn02 + smn04 + smn06 + smn08;
                
                intRemainder = (intOdds + intEvens) % 10;
-               
+
                if ((intRemainder == 0) && (chkDigit == 0)) { smnStatus = 0; }
                else if ((10 - intRemainder) == chkDigit) { smnStatus = 0; }
                else { smnStatus = 3; }
            }
-           
+
        }
        
        else {
@@ -949,6 +1008,41 @@ $scope.reviewauthorizesubmit();
 		$scope.invaliddeltaskymilesaccountnumber=false;
        }
 	}, true);
+
+
+
+
+    if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){
+      gotNextStep(2);
+
+    }
+
+    var getFormatedAccountnumber =function(accountNumber){
+
+        var formattedNumber="";
+        if(accountNumber){
+			var ldc=$rootScope.product.LDC;
+			if(ldc == "COH"){       
+			formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
+			}else if(ldc == "DUK"){
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+accountNumber.substring(10,11);
+			}else if(ldc == "DEO"){
+			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
+			}else if(ldc == "VED"){
+			formattedNumber="03-"+accountNumber.substring(2,11)+"-"+accountNumber.substring(11,18)+"-0";
+			}else if(ldc == "MCG"){
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
+			}else if(ldc == "MIC"){
+			formattedNumber=accountNumber;
+			}
+			return formattedNumber;
+
+        }else{
+			return "";
+        }
+
+
+    }
 
 }]);
 
