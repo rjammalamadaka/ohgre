@@ -8126,12 +8126,24 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #view-raf-rewards {
   background-color: #e9eef2;
 }
+#view-raf-rewards > .container > div[class^=col-] {
+  padding-right: 0;
+}
 #view-raf-rewards .alt-border1 {
   background-color: inherit;
   padding: 2.5rem 0 0;
 }
 #view-raf-rewards .view-raf-rewards-years {
   padding: 0 2.5rem;
+}
+#view-raf-rewards .view-raf-rewards-years .dropdown-trigger {
+  border-radius: 0;
+}
+#view-raf-rewards .view-raf-rewards-years .dropdown-menu {
+  padding: 0;
+}
+#view-raf-rewards .view-raf-rewards-years .dropdown-menu li {
+  margin: 2px 0;
 }
 #view-raf-rewards .border-wrapper {
   border: 1px solid #e9eef1;
@@ -8174,6 +8186,14 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #view-raf-rewards .tabs-list .accord-container {
   padding: 1rem 2.5rem;
+}
+@media (min-width: 992px) {
+  #view-raf-rewards .tabs-list li .accord-trigger {
+    display: none;
+  }
+  #view-raf-rewards .tabs-list li .accord-container {
+    padding: 1rem 0;
+  }
 }
 #view-raf-rewards table.view-rewards {
   background: #fff;
@@ -8222,7 +8242,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
     display: block;
   }
   #view-raf-rewards .alt-border1 {
-    padding: 2.5rem;
+    padding: 2.5rem 2.5rem 0;
   }
   #view-raf-rewards .view-raf-rewards-years {
     padding: 0;
@@ -11327,6 +11347,10 @@ ul.info-links li {
 }
 #renew-plan-select .promocode-entry {
   padding: 0 2rem 3rem;
+}
+#renew-plan-select .promocode-entry .input-error-message {
+  clear: both;
+  display: block;
 }
 #renew-plan-select .promocode-entry .promocode-message {
   clear: both;
