@@ -76,6 +76,10 @@ public class Enrollment {
     private Date renewalCtrctTermDate;
     private String sourceSystemReferenceID;
 
+    private String serviceTransferAuthFlag;
+    private String authorityToSwitchFlag;
+    private String agreeToTermsFlag;
+
     public String getId() {
         return id;
     }
@@ -650,5 +654,29 @@ public class Enrollment {
 
     public void setSourceSystemReferenceID(String sourceSystemReferenceID) {
         this.sourceSystemReferenceID = sourceSystemReferenceID;
+    }
+    
+    public String getServiceTransferAuthFlag() {
+        return serviceTransferAuthFlag;
+    }
+
+    public void setServiceTransferAuthFlag(String serviceTransferAuthFlag) {
+        this.serviceTransferAuthFlag = serviceTransferAuthFlag;
+    }
+
+    public String getAuthorityToSwitchFlag() {
+        return authorityToSwitchFlag;
+    }
+
+    public void setAuthorityToSwitchFlag(String authorityToSwitchFlag) {
+        this.authorityToSwitchFlag = authorityToSwitchFlag;
+    }
+
+    public String getAgreeToTermsFlag() {
+        return agreeToTermsFlag;
+    }
+
+    public void setAgreeToTermsFlag(String agreeToTermsFlag) {
+        this.agreeToTermsFlag = agreeToTermsFlag;
     }
 }

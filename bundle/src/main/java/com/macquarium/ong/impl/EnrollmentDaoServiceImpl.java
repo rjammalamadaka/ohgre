@@ -18,7 +18,6 @@ import com.macquarium.ong.vo.Enrollment;
 @Service
 @Component(metatype = false)
 public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
-
 	@Reference
 	private CommonConfigService commonConfigService;
 
@@ -38,7 +37,7 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 						"rafCode,enrolledByUserId,authorizationCode,authorizationLevel,channelID,promotionCode,campaignID,webSiteURL,custLeadSourceCode,actionIfContractExists,preventCancelFeeifContractExists," +
 						"bypassCreditCheckInd,soldDate,bypassCIRInd,expectedQuoteAmt,tpvRequiredInd,emailTypeCode,alternateEmailAddress,editOnlyInd,b2BCustomerInd,expressConsentInd,brokerID," +
 						"delaySendToUtilDate,renewalProductCode,renewalFixPricePerThermCd,renewalFixPricePerTherm,renewalVarPriceAddOnPerTherm,renewalCtrctDurationMonths,renewalCtrctTermDate," +
-						"sourceSystemReferenceID) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
 				PreparedStatement ps = connection.prepareStatement(query,new String[]{"id"});
@@ -134,6 +133,9 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 					ps.setString(70,"");
 				}
 				ps.setString(71,enrollment.getSourceSystemReferenceID());
+				ps.setString(72,enrollment.getServiceTransferAuthFlag());
+				ps.setString(73,enrollment.getAuthorityToSwitchFlag());
+				ps.setString(74,enrollment.getAgreeToTermsFlag());
 				ps.execute();
 				ResultSet rs=ps.getGeneratedKeys();
 				if(rs.next()){
