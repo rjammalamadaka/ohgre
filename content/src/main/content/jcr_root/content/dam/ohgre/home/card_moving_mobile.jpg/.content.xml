@@ -5,20 +5,20 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="dad2efbb-6713-4042-b4fe-2e9636d8d2a5">
     <jcr:content
-        cq:lastReplicated="{Date}2017-09-07T00:28:09.023-04:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastReplicated="{Date}2017-10-30T13:49:06.819-05:00"
+        cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="card_moving_mobile.jpg"
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_moving_mobile.jpg"
-        jcr:lastModified="{Date}2017-10-30T09:10:14.256-04:00"
+        jcr:lastModified="{Date}2017-11-08T13:45:28.664-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-10-30T09:10:14.047-04:00"
+            dam:extracted="{Date}2017-11-08T13:45:27.989-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}222"
             exif:PixelYDimension="{Long}195"
-            jcr:lastModified="{Date}2017-10-30T09:10:13.189-04:00"
+            jcr:lastModified="{Date}2017-11-08T13:45:19.176-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

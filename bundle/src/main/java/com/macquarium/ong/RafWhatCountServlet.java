@@ -102,12 +102,13 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 		}	catch (JSONException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
+			e.printStackTrace();
 			try {
 				obj.put("resultCode", "1");
 				obj.put("resultMessage", "systemError");
 				obj.put("errorDescription", e.getMessage());
 			} catch (Exception e1) {
-
+				e.printStackTrace();
 			}
 		}
 		// String jsonData = obj.toString();
@@ -121,7 +122,7 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 		try{
 			result=JObject.getString(parameter);
 		}catch(Exception e){
-
+			e.printStackTrace();
 		}
 		return result;
 	}

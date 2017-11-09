@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-10-25T09:57:19.850-04:00"
+        cq:lastModified="{Date}2017-11-02T16:39:49.114-05:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-11-02T16:36:33.063-05:00"
+        cq:lastReplicatedBy="rebecka01"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Delta SignUp"
+        jcr:uuid="04d7cf79-bda8-478f-87e3-98ce35e0681e"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true">
         <content
@@ -15,31 +21,32 @@
             <staticherobanner
                 jcr:created="{Date}2017-09-29T16:09:56.194-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-13T11:11:51.664-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-11-02T16:29:42.780-05:00"
+                jcr:lastModifiedBy="rebecka01"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/staticherobanner"
-                description="New miles earning structure effective January 1, 2018*"
+                description="New miles earning structure effective January 1, 2015*"
                 imagepath="/content/dam/ohgre/home/delta-image.jpg"
                 title="Earn miles just for paying your gas bill!"/>
             <delta_signup_content
                 jcr:created="{Date}2017-09-29T16:10:02.335-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-25T09:57:19.847-04:00"
+                jcr:lastModified="{Date}2017-11-02T16:39:49.109-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/delta-signup-content"
-                confirmationpageheader="Thank you for considering Grand Rapids Energy."
-                confirmationpagesubhead="Your information has been submitted successfully!"
+                confirmationpageheader="Success!"
+                confirmationpagesubhead="You are now enrolled in Ohio Natural Gas' Delta SkyMiles partnership program, where you can earn miles just for paying your gas bill!"
                 deltaformheading="Delta SkyMiles Member Information"
                 deltapromocode="DELTA25"
-                header="&lt;h4>It’s easy to start participating.&lt;/h4>&#xd;&#xa;&lt;p>Simply enter your GRE account and Skymiles member information below. if you’d prefer to enroll by phone, call GRE(toll-free) at 1-888-466-4427 and mention that you would like to enroll in GRE&amp;#39;s Delta SkyMiles partnership program. Please have your SkyMiles account number handy when you call.&lt;/p>&#xd;&#xa;"
+                formheader="Grand Rapids Energy Account Information"
+                header="&lt;h4>It’s easy to start participating.&lt;/h4>&#xd;&#xa;&lt;p>Simply enter your ONG account and SkyMiles member information below. If you’d prefer to enroll by phone, call ONG (toll-free) at 1-888-466-4427 and mention that you would like to enroll in ONG’s Delta SkyMiles partnership program. Please have your SkyMiles account number handy when you call.&lt;/p>&#xd;&#xa;"
                 imagepath="/content/dam/ohgre/home/card_plans.jpg"
                 promotionpath="/content/gre/promo_landing"
-                sidecontent="&lt;h4>Switch to Grand Rapids Energy (GRE) and start earning with Delta SkyMiles®.&lt;/h4>&#xd;&#xa;&lt;p>Grand Rapids Energy is excited to be a Delta SkyMiles partner and the only natural gas supplier in Ohio with whom you can earn miles from Delta just for paying your natural gas bill.&lt;/p>&#xd;&#xa;&lt;h4>HOW IT WORKS:&lt;/h4>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Customers will now earn TWO miles for every dollar spent on their GRE supplier natural gas charges (excluding sales tax and one-time charges)!&lt;/li>&#xd;&#xa;&lt;li>And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/faq.html&quot; target=&quot;Target&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/terms-of-use.html&quot; target=&quot;Target&quot;>Program Terms &amp;amp; Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                sidecontent="&lt;h4>Switch to Ohio Natural Gas (ONG) and start earning with Delta SkyMiles®.&lt;/h4>&#xd;&#xa;&lt;p>Ohio Natural Gas is excited to be a Delta SkyMiles partner and the only natural gas supplier in Ohio with whom you can earn miles from Delta just for paying your natural gas bill.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;h4>HOW IT WORKS:&lt;/h4>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Customers will now earn TWO miles for every dollar spent on their GRE supplier natural gas charges (excluding sales tax and one-time charges)!&lt;/li>&#xd;&#xa;&lt;li>And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/faq.html&quot; target=&quot;Target&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/terms-of-use.html&quot; target=&quot;Target&quot;>Program Terms &amp;amp; Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true]"
-                viewplansheader="Not a Grand Rapids Energy Customer?"
-                viewplanssubhead="Not yet a customer, but want to sign up with Grand Rapids Energy to take advantage of this offer?"/>
+                viewplansheader="Not an Ohio Natural Gas Customer?"
+                viewplanssubhead="Not yet a customer, but want to sign up with Ohio Natural Gas to take advantage of this offer?"/>
         </content>
         <image
             jcr:lastModified="{Date}2017-10-01T22:31:06.747-04:00"

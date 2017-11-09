@@ -15,6 +15,11 @@
 	    	margin-top: 0;
 	    }
 	}
+	&:empty{
+		+ div {
+			margin-top: 0;
+		}
+	}
 
 	#mobile-links{
 		margin-top: 2rem;
@@ -403,6 +408,21 @@ footer{
 /* ====================
 	COMPONENT STYLES
 ====================== */
+#promoform {
+	.radio-container+label{
+		margin-right: 2.5rem;
+
+		@media (@screen-xs-min){
+			margin-right: 4rem;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	>.form-section{
+		margin-bottom: 2rem;
+	}
+}
 .promocode{
 	+ div[class^=cq-colctrl-].parsys-column, + .parsys-column.cq-colctrl-lt0{
 		padding: 0;
@@ -1155,6 +1175,7 @@ div[class^="cq-colctrl-lt1-"]{
 			.promo-link {
 				bottom: 2.5rem;
 				position: absolute;
+				text-transform: uppercase;
 			}
 		}
 
@@ -2318,10 +2339,16 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 	}
+	.multiple-input {
+		.input-container[data-size="8"] {
+			width: 10rem;
+		}
+	}
 
 }
 .refer-a-friend,
-.promotioncontent {
+.promotioncontent,
+.offerpromotioncontent {
 	.full-banner-light {
 		.icon {
 			display: none;
@@ -2382,6 +2409,31 @@ div[class^="cq-colctrl-lt1-"]{
 }
 
 #view-raf-rewards {
+	background-color: #e9eef2;
+
+	>.container {
+		>div[class^=col-]{
+			padding-right: 0;
+		}
+	}
+
+	.alt-border1{
+		background-color: inherit;
+		padding: 2.5rem 0 0;
+	}
+	.view-raf-rewards-years{
+		padding: 0 2.5rem;
+		.dropdown-trigger {
+			border-radius: 0;
+		}
+		.dropdown-menu{
+			padding: 0;
+			li {
+				margin: 2px 0;
+			}
+		}
+	}
+
 	.border-wrapper {
 		border: 1px solid #e9eef1;
 		margin-right: 0;
@@ -2398,6 +2450,7 @@ div[class^="cq-colctrl-lt1-"]{
 	}
 	small {
 		font-family: @secondary_font;
+		padding: 0 2.5rem
 	}
 
 	.row .row {
@@ -2408,10 +2461,45 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 
 	}
+	.raf-promo{
+		display: none;
+	}
 	.accord-expanded + .accord-container {
 		display: block;
 	}
+	.tabs-list{
+		li{
+			margin-bottom: 10px;
+
+			.accord-trigger {
+				background-color: #fff;
+				color: #4a4a4a;
+				display: block;
+				font-size: 1.8rem;
+				margin-bottom: 5px;
+				padding: 2.5rem;
+				text-decoration: none;
+			}
+
+		}
+		.accord-container{
+			padding: 1rem 2.5rem;
+		}
+		@media (@screen-md-min){
+			li{
+				.accord-trigger{
+					display: none;
+				}
+				.accord-container{
+					padding: 1rem 0;
+				}
+			}
+
+		}
+	}
+
 	table.view-rewards {
+		background: #fff;
 		width: 100%;
 
 		thead {
@@ -2447,18 +2535,109 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	@media (@screen-md-min){
+		background-color: #fff;
 		.accord-trigger {
 			display: none;
 		}
 		.accord-container {
 			display: block;
 		}
+		.raf-promo{
+			display: block;
+		}
+		.alt-border1{
+			padding: 2.5rem 2.5rem 0;
+		}
+		.view-raf-rewards-years{
+			padding: 0;
+		}
+		small{
+			padding: 0;
+		}
 	}
 }
-#raf-email-popup {
-	background-color: #fff;
-	max-width: 85rem;
+#raf-email-popup{
 	padding: 0;
+
+	.window-wrapper{
+		background-color: #fff;
+		margin: 0;
+		padding: 0;
+		max-height: 100%;
+		@media (@screen-md-min){
+			margin: 5vh auto;
+			max-width: 85rem;
+
+			.raf-email-step{
+				display: block !important;
+			}
+		}
+	}
+
+	footer {
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	.raf-email-step-btns {
+		background-color: #f7f7f7;
+		padding: 2rem 0 1rem;
+		text-align: center;
+
+		.primary-button {
+			display: block;
+			margin: 0 auto 1.5rem;
+			width: 85%;
+		}
+	}
+	.mobile-header {
+		background-color: #fff;
+		.ldc-logo{
+			padding: 2rem 2.5rem;
+
+			img {
+				max-width: 8rem;
+			}
+		}
+		.raf-header{
+			background-color: #002f8f;
+	    padding: 2.5rem 2.5rem .5rem;
+			*{
+				color: #fff;
+			}
+			p{
+				font-size: 1.4rem;
+			}
+			img{
+				margin: 0 0 1rem;
+				max-width: 20rem;
+			}
+		}
+
+
+	}
+	#raf-email-preview,
+	#raf-user-info{
+		display: none;
+	}
+	@media (@screen-md-min){
+		.mobile-header,
+		.raf-email-step-btns,
+		footer{
+			display: none;
+		}
+		#raf-email-preview,
+		#raf-user-info {
+			display: block;
+		}
+	}
+	p {
+		font-size: 1.4rem;
+	}
+
+	.alt-col2 {
+		padding-left: 0;
+	}
 
 	p, label, input, textarea {
 		font-family: @secondary_font;
@@ -2478,6 +2657,10 @@ div[class^="cq-colctrl-lt1-"]{
 
 	#raf-email-preview {
 		background: #7e94a2;
+
+		.close-window{
+			display: none;
+		}
 
 		.raf-inline-banner {
 			background-color: #002f8f;
@@ -2529,8 +2712,13 @@ div[class^="cq-colctrl-lt1-"]{
 				}
 			}
 		}
-		.row > div[class^=col-]:first-child {
-			padding-left: 1.5rem;
+		@media (@screen-md-min){
+			.row > div[class^=col-]:first-child {
+				padding-left: 1.5rem;
+			}
+			.close-window{
+				display: block;
+			}
 		}
 		.text-center {
 			margin: 0 0 2rem;
@@ -2549,6 +2737,7 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 		.email-body {
 			background: #f7f7f7;
+			overflow: hidden;
 			padding: 2.5rem 2.5rem 0;
 
 			h3 {
@@ -2566,7 +2755,6 @@ div[class^="cq-colctrl-lt1-"]{
 			background-color: #002f8f;
 			p, h5 {
 				color: #fff;
-				text-align: center;
 			}
 			h5 {
 				font-size: 1.5rem;
@@ -2576,16 +2764,48 @@ div[class^="cq-colctrl-lt1-"]{
 			p {
 				font-size: 2rem;
 			}
+			padding-left: 2.5rem;
+
 		}
 	}
+	#raf-email-footer,
+	.enroll-button{
+		display:none;
+	}
+
+	@media (@screen-md-min){
+		#raf-email-footer,
+		.enroll-button{
+			display:block;
+		}
+		.raf-email-codes {
+			padding-left: 0;
+			p,h5{
+				text-align: center;
+			}
+			h5{
+				span {
+					display: none;
+				}
+			}
+		}
+
+	}
 	#raf-email-footer {
+
 		padding: 2.5rem;
 		* {
 			color: #fff;
 		}
-
+		.row {
+			> div[class^=col-] {
+				&:first-child{
+					padding-left: 0;
+				}
+			}
+		}
 		p, a {
-			font-size: 1.3rem;
+			font-size: 1.2rem;
 		}
 	}
 	.row.promo-wrapper {
@@ -2597,15 +2817,18 @@ div[class^="cq-colctrl-lt1-"]{
 }
 
 #raf-email-form {
-	.friend-info {
-		border-bottom: 1px solid #e6e6e6;
-		padding: 2.5rem 2rem 2.5rem 2.5rem;
-
+	#raf-friend-info {
+		.step-content {
+			padding: 2.5rem 2rem 2.5rem 2.5rem;
+		}
 		p a {
 			color: @primary_color;
 		}
+		@media (@screen-md-min){
+			border-bottom: 1px solid #e6e6e6;
+		}
 	}
-	.user-info {
+	#raf-user-info {
 		padding: 2.5rem;
 
 		.small-text {
@@ -2613,6 +2836,9 @@ div[class^="cq-colctrl-lt1-"]{
 			font-style: italic;
 			margin: .5rem 0 3rem;
 		}
+	}
+	p:empty{
+		margin: 0;
 	}
 	input, textarea {
 		background-color: #fff;
@@ -2625,6 +2851,7 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	label {
+		font-size: 1.4rem;
 		margin-top: 15px;
 	}
 }
@@ -2778,12 +3005,25 @@ div[class^="cq-colctrl-lt1-"]{
 	.brand-logo {
 		margin: 0 0 5rem;
 		max-width: 130px;
+
+		img {
+			max-width: 15rem;
+		}
+		@media (@screen-md-min){
+			max-width: 100%;
+		}
 	}
 
 	&.alt-banner1 {
 		.inner-slide-content {
-			padding: 4rem 4rem 10rem;
+			padding: 2rem 4rem 1rem;
 
+			.raf-logo {
+				clear: both;
+				display: block;
+				margin-top: 2rem;
+				max-width: 20rem;
+			}
 			@media (@screen-md-min){
 				padding: 4rem 4rem 10rem;
 			}
@@ -2814,8 +3054,8 @@ div[class^="cq-colctrl-lt1-"]{
 	.promo-box {
 		border: 1px solid #fff;
 		font-size: 1.8rem;
-		margin-bottom: 3rem;
-		padding: 2rem 0;
+		margin-bottom: 1rem;
+		padding: 1rem 0;
 
 		span {
 			display: block;
@@ -2836,6 +3076,9 @@ div[class^="cq-colctrl-lt1-"]{
 		color: #0878bf;
 		font-family: @secondary_font;
 	}
+	.alt-col1 {
+		padding: 1rem 2.5rem;
+	}
 	.info-links {
 		background-color: #e9eef2;
 		list-style: none;
@@ -2844,10 +3087,17 @@ div[class^="cq-colctrl-lt1-"]{
 		li {
 			margin: 0 0 10px 0;
 		}
+		.alt-col1{
+			padding: 1rem 2.5rem;
+		}
 
 		@media (@screen-md-min){
 			background: none;
 			padding: 1.5rem 1rem;
+
+			.alt-col1 {
+				padding: 0;
+			}
 		}
 	}
 }
@@ -5595,6 +5845,11 @@ ul.info-links {
 	}
 	.promocode-entry {
 		padding: 0 2rem 3rem;
+
+		.input-error-message{
+			clear: both;
+			display: block;
+		}
 
 		.promocode-message {
 			clear: both;

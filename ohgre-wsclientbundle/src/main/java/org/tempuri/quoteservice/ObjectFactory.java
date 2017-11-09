@@ -46,6 +46,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetPromoCodesForEnrollmentResult.Promotion.Product }
+     * 
+     */
+    public GetPromoCodesForEnrollmentResult.Promotion.Product createGetPromoCodesForEnrollmentResultPromotionProduct() {
+        return new GetPromoCodesForEnrollmentResult.Promotion.Product();
+    }
+
+    /**
      * Create an instance of {@link GetPromoCodesForEnrollmentResult }
      * 
      */
@@ -75,14 +83,6 @@ public class ObjectFactory {
      */
     public GetNESBillDetailDataResult.ProductCategory.Transaction createGetNESBillDetailDataResultProductCategoryTransaction() {
         return new GetNESBillDetailDataResult.ProductCategory.Transaction();
-    }
-
-    /**
-     * Create an instance of {@link GetPromoCodesForEnrollmentResult.Promotion.Product }
-     * 
-     */
-    public GetPromoCodesForEnrollmentResult.Promotion.Product createGetPromoCodesForEnrollmentResultPromotionProduct() {
-        return new GetPromoCodesForEnrollmentResult.Promotion.Product();
     }
 
     /**
@@ -334,19 +334,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetQuotesResult.Customer.Product.Message }
-     * 
-     */
-    public GetQuotesResult.Customer.Product.Message createGetQuotesResultCustomerProductMessage() {
-        return new GetQuotesResult.Customer.Product.Message();
-    }
-
-    /**
      * Create an instance of {@link GetQuotesResult }
      * 
      */
     public GetQuotesResult createGetQuotesResult() {
         return new GetQuotesResult();
+    }
+
+    /**
+     * Create an instance of {@link GetQuotesResult.Customer.Product.Message }
+     * 
+     */
+    public GetQuotesResult.Customer.Product.Message createGetQuotesResultCustomerProductMessage() {
+        return new GetQuotesResult.Customer.Product.Message();
     }
 
     /**

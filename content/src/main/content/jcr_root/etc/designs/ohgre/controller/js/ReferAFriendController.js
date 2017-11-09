@@ -36,6 +36,10 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
         $scope.an3=null;
         $scope.an4=null;
 
+         $scope.an1r=false;
+        $scope.an3r=false;
+         $scope.an4r=false;
+
         $scope.an1required=true;
         $scope.an2required=true;
         $scope.an3required=true;
@@ -91,6 +95,12 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
             $scope.an2required=false;
             $scope.an3required=false;
         }
+
+         $scope.raf.submited = false;
+         $scope.raf.lastname.$visited=false; 
+        $scope.lastname=null;
+       // $scope.raf.$setUntouched();
+        $scope.raf.$setPristine();
          $scope.$apply();
     }
 
@@ -201,13 +211,16 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
     }
 
     $rootScope.acceptrafterms =function(){
+        updateCustomerInfoReq.RAFTermsCondAcknowledgedInd="Y";
+        jQuery('#popup-spinner-wrap').show();
         PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
             console.log(data);
+            jQuery('#popup-spinner-wrap').hide();
             if(data.ResponseStatus ==0){ 
             	setProductData();
             }
         }).error(function (data,status, headers, config){
-
+			jQuery('#popup-spinner-wrap').hide();
             console.log("error");
         });
     }

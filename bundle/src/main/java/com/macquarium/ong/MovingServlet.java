@@ -127,8 +127,9 @@ public class MovingServlet extends org.apache.sling.api.servlets.SlingAllMethods
 		String result="";
 		try{
 			result=JObject.getString(parameter);
-		}catch(Exception e){
-
+		}catch (Exception e){
+			System.out.println("got error"+e.getMessage());
+			e.printStackTrace();
 		}
 		return result;
 	}

@@ -1,52 +1,54 @@
 <div class="page-wrapper container" ng-controller="RafAuthenticatedController">
 
-    <section id="raf-code">
-  <div class="container">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="row promo-wrapper">
-        <div class="col-md-9 alt-col1">
+  <section id="raf-code">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="row promo-wrapper">
+          <div class="col-md-9 alt-col1">
             <h3>${properties.referralcode} {{customerInfo.custID}}</h3>
-          <p>${properties.subheader @ context = 'html'}</p>
+            <p>${properties.subheader @ context = 'html'}</p>
+          </div>
+          <div class="col-md-3">
+            <ul class="info-links">
+              ${properties.helppagelinks @ context = 'html'}
+            </ul>
+          </div>
         </div>
-        <div class="col-md-3">
-			<ul class="info-links">
-          ${properties.helppagelinks @ context = 'html'}
-			</ul>
-        </div>
+
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
   <section id="raf-share">
-  <div class="container">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="row promo-wrapper">
-        <div class="col-md-5">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="row promo-wrapper">
+          <div class="col-md-5">
 
-          <div class="box-with-border">
-${properties.sharebyemail @ context = 'html'}
-            <p><button class="primary-button" ng-click="rafauthenticated()">Send email</button></p>
+            <div class="box-with-border">
+              ${properties.sharebyemail @ context = 'html'}
+              <p><a href="#" class="alt-link1" ng-click="changeemail()">change your email address</a><br> Your email address: <b>{{customerInfo.emailAddress}}</b></p>
+
+              <p><button class="primary-button" ng-click="rafauthenticated()" id="send-email-button">Send email</button></p>
+            </div>
           </div>
-        </div>
-        <div class="col-md-2 divider-mod visible-lg visible-md">
-          <span>or</span>
-        </div>
-        <div class="col-md-5">
+          <div class="col-md-2 divider-mod visible-lg visible-md">
+            <span>or</span>
+          </div>
+          <div class="col-md-5">
 
-          <div class="box-with-border">
-${properties.sharesocially @ context = 'html'}
-            <a href="#" class="social-share fb-icon" ng-click="fbIconClick()"><img src="${properties.facebook}"/></a>
-            <a href="#" class="social-share tw-icon" ng-click="twIconClick()"><img src="${properties.twitter}"/></a>
+            <div class="box-with-border">
+              ${properties.sharesocially @ context = 'html'}
+              <a href="#" class="social-share fb-icon" ng-click="fbIconClick()"><img src="${properties.facebook}"/></a>
+              <a href="#" class="social-share tw-icon" ng-click="twIconClick()"><img src="${properties.twitter}"/></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="view-raf-rewards">
     <div class="container">
@@ -54,92 +56,93 @@ ${properties.sharesocially @ context = 'html'}
         <div class="row promo-wrapper border-wrapper">
           <div class="col-md-6">
             <div class="box-with-border alt-border1">
+              <div class="view-raf-rewards-years">
                 <h4>View My Rewards  {{sclectedYear}}</h4>
-              <form id="raf-form">
-                <div class="dropdown-container alt-dropdown1">
-                  <button id="raf-dropdown" class="dropdown-trigger"><span class="value">Year</span> <span class="fa fa-angle-down carret"></span></button>
-                  <div class="expanded-dropdown">
-                    <ul class="dropdown-menu" role="menu">
-                      <li role="menuitem" ng-repeat="year in years">
-                        <a href="#" class="select-option">
+                <form id="raf-form">
+                  <div class="dropdown-container alt-dropdown1">
+                    <button id="raf-dropdown" class="dropdown-trigger"><span class="value">Year</span> <span class="fa fa-angle-down carret"></span></button>
+                    <div class="expanded-dropdown">
+                      <ul class="dropdown-menu" role="menu">
+                        <li role="menuitem" ng-repeat="year in years">
+                          <a href="#" class="select-option">
                             <span class="">{{year}}</span>
                         </a>
-                      </li>
-                    </ul>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </form>
-
+                </form>
+              </div>
 
               <ul class="tabs-list">
-  <li><a href="#" class="accord-trigger">Awarded</a>
-    <div class="accord-container">
-      <table class="view-rewards">
-        <thead>
-          <tr>
-            <th>Awarded</th>
-            <th>{{awardedTotal | currency : "$"}} Total </th>
-          </tr>
-        </thead>
-        <tr ng-repeat="a in awarded">
-            <td ng-bind="convertToDate(a.giftCardCreateDate)"></td>
-            <td>{{a.giftCardAmount | currency : "$"}} - {{giftCardTypeCode}} bill credits</td>
-        </tr>
+                <li><a href="#" class="accord-trigger">Awarded</a>
+                  <div class="accord-container">
+                    <table class="view-rewards">
+                      <thead>
+                        <tr>
+                          <th>Awarded</th>
+                          <th>{{awardedTotal | currency : "$"}} Total </th>
+                        </tr>
+                      </thead>
+                      <tr ng-repeat="a in awarded">
+                        <td ng-bind="convertToDate(a.giftCardCreateDate)"></td>
+                        <td>{{a.giftCardAmount | currency : "$"}} - {{giftCardTypeCode}} bill credits</td>
+                      </tr>
 
 
-        <tr ng-show="awarded.length ==0">
-          <td>-</td>
-          <td>-</td>
-        </tr>
-      </table>
-    </div>
-  </li>
-  <li><a href="#" class="accord-trigger">Pending</a>
-    <div class="accord-container">
+                      <tr ng-show="awarded.length ==0">
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
+                    </table>
+                  </div>
+                </li>
+                <li><a href="#" class="accord-trigger">Pending</a>
+                  <div class="accord-container">
 
-      <table class="view-rewards">
-        <thead>
-          <tr>
-            <th>Pending</th>
-            <th>{{pendingTotal | currency : "$"}} Total</th>
-          </tr>
-        </thead>
-        <tr ng-repeat="b in pending">
-          <td ng-bind="convertToDate(b.giftCardCreateDate)"></td>
-          <td>{{b.giftCardAmount | currency : "$"}} - Pending</td>
-        </tr>
-       <tr ng-show="pending.length ==0">
-          <td>-</td>
-          <td>-</td>
-        </tr>
+                    <table class="view-rewards">
+                      <thead>
+                        <tr>
+                          <th>Pending</th>
+                          <th>{{pendingTotal | currency : "$"}} Total</th>
+                        </tr>
+                      </thead>
+                      <tr ng-repeat="b in pending">
+                        <td ng-bind="convertToDate(b.giftCardCreateDate)"></td>
+                        <td>{{b.giftCardAmount | currency : "$"}} - Pending</td>
+                      </tr>
+                      <tr ng-show="pending.length ==0">
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
 
-      </table>
-    </div>
-  </li>
-  <li><a href="#" class="accord-trigger">Ineligible</a>
-    <div class="accord-container">
+                    </table>
+                  </div>
+                </li>
+                <li><a href="#" class="accord-trigger">Ineligible</a>
+                  <div class="accord-container">
 
-      <table class="view-rewards ineligible">
-        <thead>
-          <tr>
-            <th>Ineligible</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tr ng-repeat="c in ineligible">
-          <td ng-bind="convertToDate(c.giftCardCreateDate)"></td>
-          <td>{{c.giftCardAmount | currency : "$"}} {{noteText}}</td>
-        </tr>
+                    <table class="view-rewards ineligible">
+                      <thead>
+                        <tr>
+                          <th>Ineligible</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tr ng-repeat="c in ineligible">
+                        <td ng-bind="convertToDate(c.giftCardCreateDate)"></td>
+                        <td>{{c.giftCardAmount | currency : "$"}} {{noteText}}</td>
+                      </tr>
 
-        <tr ng-show="ineligible.length ==0">
-          <td>-</td>
-          <td>-</td>
-        </tr>
+                      <tr ng-show="ineligible.length ==0">
+                        <td>-</td>
+                        <td>-</td>
+                      </tr>
 
-      </table>
-    </div>
-  </li>
-</ul>
+                    </table>
+                  </div>
+                </li>
+              </ul>
 
             </div>
           </div>
@@ -147,11 +150,11 @@ ${properties.sharesocially @ context = 'html'}
             <div class="raf-promo">
               <div class="row">
                 <div class="col-md-6 col-sm-6">
-                <div class="promo-box">You will get<span>${properties.referralamount}</span> in bill credits</div>
+                  <div class="promo-box">You will get<span>${properties.referralamount}</span> in bill credits</div>
                 </div>
 
                 <div class="col-md-6 col-sm-6">
-                <div class="promo-box">I will get<span>${properties.referralamount}</span> in bill credits</div>
+                  <div class="promo-box">I will get<span>${properties.referralamount}</span> in bill credits</div>
                 </div>
               </div>
               ${properties.benefits @ context = 'html'}
@@ -164,5 +167,5 @@ ${properties.sharesocially @ context = 'html'}
     </div>
   </section>
   <sly data-sly-include="popups.html"></sly>
+  <sly data-sly-include="changeemailaddress.html"></sly>
 </div>
-

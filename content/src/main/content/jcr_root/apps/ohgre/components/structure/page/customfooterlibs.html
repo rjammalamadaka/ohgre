@@ -1,13 +1,73 @@
-<script src="//api.cloudsponge.com/widget/55f173bada0d361f7c04f1c435d61d6708d1b174.js"></script>
+<!-- <script src="//api.cloudsponge.com/widget/55f173bada0d361f7c04f1c435d61d6708d1b174.js"></script>
 <script>
     window.csPageOptions = {
     sources: ["yahoo", "outlook", "icloud", "aol", "linkedin"],
     selectionLimit: 25
     }
     </script>
+-->
+<script>
+  window.csPageOptions = {
+    sources: ["yahoo", "outlook", "icloud", "aol", "linkedin"],
+    selectionLimit: 25,
+    mobile_render: true,
+    inlineOauth: 'mobile',
+    // exclude 'name' from the list and we'll format
+    //  the resulting email addresses only
+    include: ['email'],
+    // pass the full address book to the contactListCtrl
+    beforeDisplayContacts: function(contacts, b, c) {
+      // obtain access to the ContactListCtrl's scope
+      var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
+      scope.$apply(function() {
+        scope.fullAddressbook = contacts;
+      });
+    },
+    // pass only the selected contacts to the contactListCtrl
+    afterSubmitContacts: function(contacts) {
+      // obtain access to the ContactListCtrl's scope
+      var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
+      scope.$apply(function() {
+        //update view for mobile
+        //scope.showFriendsInfo();
+        scope.contacts = contacts;
+        //console.log(contacts);
+        var emailsArr = [];
+
+        for (var i = 0; i < contacts.length; i++) {
+          scope.emails = contacts[i].email[0].address;
+          scope.emails = UTILS.trim(scope.emails);
+          //console.log('Email:[' + scope.emails + ']');
+          emailsArr.push(scope.emails);
+        }
+
+        var arrStr = emailsArr.join(", ");
+        //console.log(arrStr);
+        if (scope.emails) {
+          scope.emails = arrStr;
+        }
+
+        angular.element(jQuery('#toemailaddress')).triggerHandler('input');
+
+        var emailPopup = document.getElementById('raf-email-popup');
+        emailPopup.classList.add('show-popup');
+      });
+    }
+  };
+  // Asynchronously include the widget library.
+  (function(u) {
+    var d = document,
+      s = 'script',
+      a = d.createElement(s),
+      m = d.getElementsByTagName(s)[0];
+    a.async = 1;
+    a.src = u;
+    m.parentNode.insertBefore(a, m);
+  })('//api.cloudsponge.com/widget/55f173bada0d361f7c04f1c435d61d6708d1b174.js');
+</script>
 
 <meta name=viewport content="width=device-width, initial-scale=1">
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.js @ categories='ohgre.clientlibs.controler'}"/>
+  <sly data-sly-call="${clientlib.js @ categories='ohgre.clientlibs.controler'}" />
 
 </sly>

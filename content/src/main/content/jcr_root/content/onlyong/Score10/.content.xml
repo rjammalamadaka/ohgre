@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-11-03T15:06:30.791-05:00"
+        cq:lastModifiedBy="josh"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Score10"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-03T15:06:30.786-05:00"
+                jcr:lastModifiedBy="josh"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                description="Hurry, this offer is limited to the first 500 enrollments received on or before 10/31/2017."
+                displaylogo="true"
+                imagepath="/content/dam/ohgre/home/hero-image.jpg"
+                promocode="Appale3"
+                title="Lock in the lowest fixed price in the market.*"/>
+            <applepromotionconten
+                jcr:created="{Date}2017-07-28T21:26:17.785+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-03T15:02:27.664-05:00"
+                jcr:lastModifiedBy="josh"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/applepromotioncontent"
+                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Vectren Energy Delivery of Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer."
+                heading="For a limited time, switch to Ohio Natural Gas® and enjoy the Lowest Fixed Price in the market!"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-15T08:49:28.111+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

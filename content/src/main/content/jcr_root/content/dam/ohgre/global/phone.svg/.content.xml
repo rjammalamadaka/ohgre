@@ -6,16 +6,16 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/global/phone.svg"
-        jcr:lastModified="{Date}2017-10-30T09:10:11.947-04:00"
+        jcr:lastModified="{Date}2017-11-08T13:45:04.701-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2017-10-30T09:10:11.846-04:00"
+            dam:extracted="{Date}2017-11-08T13:45:04.111-05:00"
             dam:sha1="43ee938ad7c04395b70532ece1733581cc557569"
             dam:size="{Long}619"
             dc:format="image/svg+xml"
             dc:modified="{Date}2017-07-28T12:19:21.265-04:00"
-            jcr:lastModified="{Date}2017-10-30T09:10:10.691-04:00"
+            jcr:lastModified="{Date}2017-11-08T13:44:43.011-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>

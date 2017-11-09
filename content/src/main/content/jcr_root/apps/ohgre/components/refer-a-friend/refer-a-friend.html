@@ -53,11 +53,11 @@
                   </div>
                 </div>
 
-                <span style="color:red" ng-show="(raf.an1.$dirty && ldc !='MIC' && (raf.an1.$invalid || raf.an2.$invalid || raf.an3.$invalid || raf.an4.$invalid)) || (raf.submited)">
+                <span class="input-error-message" ng-show="(raf.an1.$dirty && ldc !='MIC' && (raf.an1.$invalid || raf.an2.$invalid || raf.an3.$invalid || raf.an4.$invalid)) || (raf.submited)">
                         <span ng-show="ldc !='MIC' && (raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required)">Account Number is required.</span>
                 <span ng-show="(!(raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required) && (raf.an1.$error.maxlength || raf.an1.$error.minlength || raf.an2.$error.maxlength || raf.an2.$error.minlength || raf.an3.$error.maxlength || raf.an3.$error.minlength || raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
                 </span>
-                <span style="color:red" ng-show="(raf.an1.$dirty && ldc =='MIC' && raf.an4.$invalid || (raf.submited))">
+                <span class="input-error-message" ng-show="(raf.an1.$dirty && ldc =='MIC' && raf.an4.$invalid || (raf.submited))">
                         <span ng-show="ldc =='MIC' && ( raf.an4.$error.required)">Account Number is required.</span>
                 <span ng-show="(!(raf.an4.$error.required) && (raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
                 </span>

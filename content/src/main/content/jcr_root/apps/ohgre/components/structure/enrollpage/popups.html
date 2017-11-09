@@ -25,7 +25,8 @@
          </tr>
          <tr>
             <td>Ohio Natural Gas Account Status:</td>
-            <td>{{customerInfo.accountStatus}}</td>
+            <td ng-if="customerInfo.activeContractInd == 'N'">Inactive</td>
+            <td ng-if="customerInfo.activeContractInd == 'Y'">Active</td>
          </tr>
       </table>
       <div class="button-container">

@@ -98,6 +98,10 @@ public class CheckRAFEligibilityServlets extends org.apache.sling.api.servlets.S
 			System.out.println("got error"+e.getMessage());
 			e.printStackTrace();
 		}
+			catch (Exception e){
+				System.out.println("got error"+e.getMessage());
+				e.printStackTrace();
+			}
 		 String jsonData = obj.toString();
          response.getWriter().write(jsonData);
 	 }

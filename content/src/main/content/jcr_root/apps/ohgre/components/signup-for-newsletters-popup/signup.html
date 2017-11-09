@@ -30,7 +30,7 @@
             <!--<label>Email</label>
                <input type="text" name="email" id="email" />-->
             <div class="input-group-wrapper">
-               <label for="email">Email<sup class="required">*</sup></label>
+               <label for="email">Email<sup class="required"></sup></label>
                <span class="error-message">Error message copy goes here</span>
                <input type="text" name="email" ng-model="email" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="!(addressone && addresscity && addressstate && addresszip)" ng-focus ng-visited>
                <span class="input-error-message" ng-show="(movingform.email.$visited && !movingform.email.$focused) || movingform.submited">
@@ -119,7 +119,7 @@
    <div class="window-wrapper with-border" id="signup-confirm">
       <h3 class="window-title">Thank you for signing up.</h3>
       <div class="inner-window-content text-center">
-         <p>You must confirm your email address your email address before we can send you. Please check your email and follow the instructions.</p>
+         <p>You must confirm your email address before we can send you. Please check your email and follow the instructions.</p>
          <a href="#" class="primary-button close-window-button">Return to Your Home Page</a>
       </div>
    </div>

@@ -703,6 +703,11 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="Body of ThankYou pop-up"
                                 name="./bodyofthankyou"/>
+                            <emailbodyplaceholder
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Email Message"
+                                name="./emailbodyplaceholder"/>
                         </items>
                     </column>
                 </items>

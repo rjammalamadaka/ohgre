@@ -49,6 +49,12 @@
                                         fieldLabel="Logo Path"
                                         name="./logopath"
                                         rootPath="/content/dam/ohgre"/>
+                                    <displaylogo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./displaylogo"
+                                        text="Display Logo"
+                                        value="{Boolean}true"/>
                                 </items>
                             </column>
                         </items>

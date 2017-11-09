@@ -132,6 +132,10 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		catch (Exception e){
+			System.out.println("got error"+e.getMessage());
+			e.printStackTrace();
+		}
 
 	}
 }

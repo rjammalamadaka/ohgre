@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_offer2_mobile.jpg"
-        jcr:lastModified="{Date}2017-10-30T09:10:13.986-04:00"
+        jcr:lastModified="{Date}2017-11-08T13:45:27.987-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-10-30T09:10:13.778-04:00"
+            dam:extracted="{Date}2017-11-08T13:45:26.408-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -28,7 +28,7 @@
             dam:size="{Long}52606"
             dc:format="image/jpeg"
             dc:modified="{Date}2017-07-21T12:05:36.486-05:00"
-            jcr:lastModified="{Date}2017-10-30T09:10:10.815-04:00"
+            jcr:lastModified="{Date}2017-11-08T13:44:44.673-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

@@ -202,16 +202,18 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		}  catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
+			e.printStackTrace();
 			try{
 				obj.put("resultCode", "1");
 				obj.put("resultMessage", "systemError");
 				obj.put("errorDescription", e.getMessage());
 			}catch(Exception e3){
-
+				e.printStackTrace();
 			}
 		}	catch (JSONException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
+			e.printStackTrace();
 			try {
 				obj.put("resultCode", "1");
 				obj.put("resultMessage", "systemError");
@@ -237,7 +239,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		try{
 			result=JObject.getString(parameter);
 		}catch(Exception e){
-
+			e.printStackTrace();
 		}
 		return result;
 	}

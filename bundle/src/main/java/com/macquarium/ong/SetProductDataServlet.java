@@ -77,6 +77,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 				obj.put("resultCode", "0");
 				obj.put("resultMessage", "success");
 			} catch (Exception e1) {
+				e.printStackTrace();
 
 			}
 			// TODO Auto-generated catch block
@@ -91,6 +92,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 		try{
 			result=JObject.getString(parameter);
 		}catch(Exception e){
+			e.printStackTrace();
 
 		}
 		return result;

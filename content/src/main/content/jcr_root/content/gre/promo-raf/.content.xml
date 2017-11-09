@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-10-22T00:32:41.640-04:00"
+        cq:lastModified="{Date}2017-11-08T12:42:34.563-06:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
@@ -20,13 +20,14 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-03T20:56:38.175-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-22T00:32:41.632-04:00"
+                jcr:lastModified="{Date}2017-11-08T12:42:34.558-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 description="For every friend that enrolls with Grand Rapids Energy® you’ll each receive a $25 Visa® Reward Card!* Think of it as a natural gas rebate!"
+                displaylogo="true"
                 imagepath="/content/dam/ohgre/raf/hero.jpg"
-                logopath="/content/dam/ohgre/raf/ReferAFriend_Horizontal_SPOT_ONG.png"/>
+                logopath="/content/dam/ohgre/global/raf-logo.png"/>
             <offerpromotionconten
                 jcr:created="{Date}2017-08-03T20:59:52.234-04:00"
                 jcr:createdBy="admin"
