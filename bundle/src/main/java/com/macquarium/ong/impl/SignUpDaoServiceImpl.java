@@ -39,7 +39,7 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                 java.sql.Date movingOneMonthDate = new java.sql.Date(onemonthcalendar.getTime().getTime());
                 java.sql.Date movingThreeMonthDate = new java.sql.Date(threemonthcalendar.getTime().getTime());
 
-                String query="insert into signup(type,created,first_name,last_name,email,phone_number,contact_via_phone,source,moving_date,address1,address2,city,state,zip,special_offers_optin,lead_source)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                String query="insert into signup(website,created,first_name,last_name,email,phone_number,contact_via_phone,source,moving_date,address1,address2,city,state,zip,special_offers_optin,lead_source)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement preparedStmt = connection.prepareStatement(query);
                 preparedStmt.setString(1, customer.getType());
                 preparedStmt.setDate(2, todayDate);
