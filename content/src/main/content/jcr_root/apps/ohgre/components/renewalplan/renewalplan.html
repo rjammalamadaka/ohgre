@@ -1,6 +1,6 @@
 <section ng-controller="RenewalPlanController">
 
-		<div class="container page-wrapper" id="renew-plan-select" data-promocode="${properties.promocode || 'RAF25'}" >
+		<div class="container page-wrapper" id="renew-plan-select" data-respromocode="${properties.residentailpromocode || 'RAF25'}" data-compromocode="${properties.commercialpromocode || 'RAF25'}">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="desktop-flex-container select-header">
@@ -37,6 +37,11 @@
 
 
                                 {{serverError}}
+
+                                    <div class="promocode-message" ng-show="showgiftcardmsg">
+                                    <p>Your Promo Code <em>{{promocode}}</em> has been successfully applied.</p>
+                                    <p>${properties.giftcardmessage @ context = 'html'}</p>
+                                    </div>
 						</div>
 				</div>
 			</div>
@@ -59,7 +64,7 @@
 									<p class="desktop-content">{{product.ProductPlanDesc}}</p>
 								</div>
 								<div class="plan-button">
-									<a href="#" class="primary-button">Select Plan</a>
+									<a href="#" class="primary-button" ng-click="planSelectRenewal(product)">Select Plan</a>
    								</div>
 								<a href="" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
                   <div ng-show="product.displayAccordian" class="">
@@ -99,4 +104,10 @@
 </div>
 
 		</div>
+
+
+
+
+<sly data-sly-include="popups.html"></sly>
+                                    
 	</section>
