@@ -57,7 +57,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			long startTime = System.currentTimeMillis();
 
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 
@@ -186,7 +186,12 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			parameters.setEnrollRequest(enrollRequest);
 			EnrollCustomerResponse enrollCustomerResponse=quoteServiceSoap.enrollCustomer(parameters);
 			EnrollCustomerResult enrollCustomerResult=enrollCustomerResponse.getEnrollCustomerResult();
-
+			String soapRequest=handlerResolver.getRequest();
+			String soapResponse=handlerResolver.getResponse();
+			System.out.println("request");
+			System.out.println(soapRequest);
+			System.out.println("response");
+			System.out.println(soapResponse);
 			enrollment.setCustID(enrollCustomerResult.getCustID());
 
 			enrollmentDaoService.updateEnrollement(enrollment,generatedKey);

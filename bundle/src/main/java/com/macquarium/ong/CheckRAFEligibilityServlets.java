@@ -60,7 +60,7 @@ public class CheckRAFEligibilityServlets extends org.apache.sling.api.servlets.S
 			String ldc=request.getParameter("ldc");
 			
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);		
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			
@@ -77,6 +77,12 @@ public class CheckRAFEligibilityServlets extends org.apache.sling.api.servlets.S
 			checkRAFEligibility.setCheckRAFEligibilityRequest(checkRAFEligibilityRequest);
 			CheckRAFEligibilityResponse checkRAFEligibilityResponse= quoteServiceSoap.checkRAFEligibility(checkRAFEligibility);
 			CheckRAFEligibilityResult checkRAFEligibilityResult=checkRAFEligibilityResponse.getCheckRAFEligibilityResult();
+				String soapRequest=handlerResolver.getRequest();
+				String soapResponse=handlerResolver.getResponse();
+				System.out.println("request");
+				System.out.println(soapRequest);
+				System.out.println("response");
+				System.out.println(soapResponse);
 			String responseStatus=checkRAFEligibilityResult.getResponseStatus();
 			String responsemessage=checkRAFEligibilityResult.getResponseMessage();
 			obj.put("responseStatus", responseStatus);

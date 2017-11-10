@@ -57,7 +57,7 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			System.out.println("endPointUrl :"+endPointUrl);
 			url = new URL(endPointUrl);
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 
@@ -81,6 +81,12 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 
 			GetPromoCodeInfoResult getPromoCodeInfoResult=  getPromoCodeInfoResponse.getGetPromoCodeInfoResult();
 
+			String soapRequest=handlerResolver.getRequest();
+			String soapResponse=handlerResolver.getResponse();
+			System.out.println("request");
+			System.out.println(soapRequest);
+			System.out.println("response");
+			System.out.println(soapResponse);
 			String responsemessage=getPromoCodeInfoResult.getResponseMessage();
 			String responseStatus=getPromoCodeInfoResult.getResponseStatus();
 			obj.put("responseStatus", responseStatus);

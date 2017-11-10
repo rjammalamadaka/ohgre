@@ -69,7 +69,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			String rateClassCode=request.getParameter("rateClassCode");
 
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 
@@ -110,6 +110,12 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			System.out.println("Got Response");
 			GetQuotesResult getQuotesResult=getQuotesResponse.getGetQuotesResult();
 
+			String soapRequest=handlerResolver.getRequest();
+			String soapResponse=handlerResolver.getResponse();
+			System.out.println("request");
+			System.out.println(soapRequest);
+			System.out.println("response");
+			System.out.println(soapResponse);
 			String responseStatus=getQuotesResult.getResponseStatus();
 			String responsemessage=getQuotesResult.getResponseMessage();
 			obj.put("responseStatus", responseStatus);
@@ -198,7 +204,10 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			long endTime = System.currentTimeMillis();
 			long differenceTime=endTime-startTime;
 			System.out.println("time taken to get the response from prime: "+String.valueOf(differenceTime));
-			sendEmailService.sendEmail("avinashdv07@gmail.com", "Hello");
+			System.out.println("To Mail Address "+commonConfigService.getToMailAddress());
+			if(responseStatus.equalsIgnoreCase("0")) {
+				sendEmailService.sendEmail(commonConfigService, soapRequest, soapResponse);
+			}
 
 			System.out.println("Email Sent Success");
 
@@ -209,13 +218,13 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 		catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
-			sendEmailService.sendEmail("avinashdv07@gmail.com", e.getMessage());
+			sendEmailService.sendEmail(commonConfigService, e.getMessage(),"");
 
 			e.printStackTrace();
 		}	catch (JSONException e) {
 			// TODO Auto-generated catch block
 			System.out.println("got error"+e.getMessage());
-			sendEmailService.sendEmail("avinashdv07@gmail.com", e.getMessage());
+			sendEmailService.sendEmail(commonConfigService, e.getMessage(),"");
 
 			e.printStackTrace();
 		}

@@ -63,7 +63,7 @@ public class GetLDCInfoServlet extends org.apache.sling.api.servlets.SlingAllMet
 			String portalName=request.getParameter("portalName");
 			
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);		
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();			
 				GetLDCInfo getLDCInfo=new GetLDCInfo(); 
@@ -79,8 +79,12 @@ public class GetLDCInfoServlet extends org.apache.sling.api.servlets.SlingAllMet
 			GetLDCInfoResponse getLDCInfoResponse =quoteServiceSoap.getLDCInfo(getLDCInfo);
 			
 			GetLDCInfoResult getLDCInfoResult=getLDCInfoResponse.getGetLDCInfoResult();
-
-
+            String soapRequest=handlerResolver.getRequest();
+			String soapResponse=handlerResolver.getResponse();
+			System.out.println("request");
+			System.out.println(soapRequest);
+			System.out.println("response");
+			System.out.println(soapResponse);
 			String responseStatus=getLDCInfoResult.getResponseStatus();
 			String responsemessage=getLDCInfoResult.getResponseMessage();
 			obj.put("responseStatus", responseStatus);

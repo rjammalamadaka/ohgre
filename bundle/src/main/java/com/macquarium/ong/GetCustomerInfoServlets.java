@@ -52,7 +52,7 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 
 			long startTime = System.currentTimeMillis();
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			GetCustomerInfo getCustomerInfo=new GetCustomerInfo();
@@ -67,6 +67,14 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 
 			GetCustomerInfoResponse getCustomerInfoResponse = quoteServiceSoap.getCustomerInfo(getCustomerInfo);
 			getCustomerInfoResult=getCustomerInfoResponse.getGetCustomerInfoResult();
+
+			String soapRequest=handlerResolver.getRequest();
+			String soapResponse=handlerResolver.getResponse();
+			System.out.println("request");
+			System.out.println(soapRequest);
+			System.out.println("response");
+			System.out.println(soapResponse);
+
 			// getCustomerInfoResult.get
 			String jsonString = mapper.writeValueAsString(getCustomerInfoResult);
 			obj.put("CustomerInfoResult", jsonString);

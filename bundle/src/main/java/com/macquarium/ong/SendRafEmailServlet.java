@@ -47,7 +47,7 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 			jObj = new JSONObject(sb.toString());
 			
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);		
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			
@@ -68,6 +68,13 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 			sendRealTimeEmail.setSendRealTimeEmailRequest(sendRealTimeEmailRequest);
 			SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
 			SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
+
+			String soapRequest=handlerResolver.getRequest();
+			String soapResponse=handlerResolver.getResponse();
+			System.out.println("request");
+			System.out.println(soapRequest);
+			System.out.println("response");
+			System.out.println(soapResponse);
 	
 			obj.put("ResponseStatus", sendRealTimeEmailResult.getResponseStatus());
 			obj.put("ResponseMessage", sendRealTimeEmailResult.getResponseMessage());

@@ -44,7 +44,7 @@ public class RafUpdateCustomerInfoServlet extends SlingAllMethodsServlet{
             jObj = new JSONObject(sb.toString());
 
             QuoteService quoteService=new QuoteService(url);
-            HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
+            HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
             quoteService.setHandlerResolver(handlerResolver);
             QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 
@@ -69,6 +69,12 @@ public class RafUpdateCustomerInfoServlet extends SlingAllMethodsServlet{
             updateCustomerInfo.setUpdateCustomerInfoRequest(updateCustomerInfoRequest);
             UpdateCustomerInfoResponse updateCustomerInfoResponse= quoteServiceSoap.updateCustomerInfo(updateCustomerInfo);
             UpdateCustomerInfoResult updateCustomerInfoResult=updateCustomerInfoResponse.getUpdateCustomerInfoResult();
+            String soapRequest=handlerResolver.getRequest();
+            String soapResponse=handlerResolver.getResponse();
+            System.out.println("request");
+            System.out.println(soapRequest);
+            System.out.println("response");
+            System.out.println(soapResponse);
             obj.put("ResponseStatus", updateCustomerInfoResult.getResponseStatus());
             obj.put("ResponseMessage", updateCustomerInfoResult.getResponseMessage());
 
