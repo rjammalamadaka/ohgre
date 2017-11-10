@@ -1,4 +1,38 @@
 var buttonClick = false;
+
+UTILS = {
+    trim: function(str) {
+        try {
+            str = UTILS.ltrim( str );
+            str = UTILS.rtrim( str );
+            return str;
+        } catch(ex) {
+            console.log('UTIL.trim exception: ' + ex);
+        }
+    },
+    rtrim: function( str ) {
+        try {
+            str = str.replace(/\s+$/g,'');
+            return str;
+        } catch(ex) {
+            console.log('UTIL.rtrim exception: ' + ex);
+        }
+    },
+    ltrim: function(str) {
+        try {
+            str = str.replace(/^\s+/g,'');
+            return str;
+        } catch(ex) {
+            console.log('UTIL.ltrim exception: ' + ex);
+        }
+    },
+    isMobileDevice: function() {
+        var isMobileDevice = false;
+        isMobileDevice = $(window).width() < 1024 ? true : false;
+        return isMobileDevice;
+    }
+};
+
 var ohio_ng = {
   init: function() {
     this.listeners();
