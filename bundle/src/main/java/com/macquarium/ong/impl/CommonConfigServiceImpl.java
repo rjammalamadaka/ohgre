@@ -45,6 +45,9 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     @Property(value="", label="What Count URL", description="What Count URL", cardinality=0)
     private static final String WHAT_COUNT_URL="what.count.url";
 
+    @Property(value="", label="To Mail Address", description="To Mail Address", cardinality=0)
+    private static final String TO_MAIL_ADDRESS="to.mail.address";
+
     private String primeEndPoint=PRIME_ENDPOINT_URL;
     private String primeHeaderHandlerEndPoint=PRIME_HEADER_HANDLER_ENDPOINT_URL;
 
@@ -53,7 +56,7 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     private String dataBasePassword=DATA_BASE_PASSWORD;
     private String deltaSkyMilesEndPoint=DELTA_SKY_MILES_ENDPOINT_URL;
     private String whatCountsUrl=WHAT_COUNT_URL;
-
+    private String toMailAddress = TO_MAIL_ADDRESS;
     public String getPrimeEndPoint() {
 
         return primeEndPoint;
@@ -79,6 +82,11 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     public String getWhatCountsUrl() {
         return whatCountsUrl;
     }
+
+    public String getToMailAddress() {
+        return toMailAddress;
+    }
+
     protected void activate(ComponentContext context) {
         setup(context);
     }
@@ -94,6 +102,7 @@ public class CommonConfigServiceImpl implements CommonConfigService {
         deltaSkyMilesEndPoint=PropertiesUtil.toString(properties.get(DELTA_SKY_MILES_ENDPOINT_URL),"");
         primeHeaderHandlerEndPoint=PropertiesUtil.toString(properties.get(PRIME_HEADER_HANDLER_ENDPOINT_URL),"");
         whatCountsUrl=PropertiesUtil.toString(properties.get(WHAT_COUNT_URL),"");
+        toMailAddress = PropertiesUtil.toString(properties.get(TO_MAIL_ADDRESS),"");
     }
 
     @Modified
@@ -106,6 +115,7 @@ public class CommonConfigServiceImpl implements CommonConfigService {
         deltaSkyMilesEndPoint=PropertiesUtil.toString(properties.get(DELTA_SKY_MILES_ENDPOINT_URL),"");
         primeHeaderHandlerEndPoint=PropertiesUtil.toString(properties.get(PRIME_HEADER_HANDLER_ENDPOINT_URL),"");
         whatCountsUrl=PropertiesUtil.toString(properties.get(WHAT_COUNT_URL),"");
+        toMailAddress = PropertiesUtil.toString(properties.get(TO_MAIL_ADDRESS),"");
     }
 
 }
