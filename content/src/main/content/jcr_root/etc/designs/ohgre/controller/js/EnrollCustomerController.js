@@ -1,6 +1,5 @@
 ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$http', 'PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
-
     $scope.displaystepscontainer=false;
     $scope.businessName=false;
     $scope.showgiftcardmessage=false;
@@ -9,6 +8,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 	$scope.showpromocodeconfirmation=false;
     $scope.deltaskymilesaccountnumberprovidelater=false;
     $scope.sendRafEmailReq={};
+
 
     $scope.dsmEnrollReq={};
 
@@ -235,11 +235,23 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
              if(data){
                  $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
                   updateenrollrequestobj($rootScope.customerInfo);
+
+
+
                  if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
                      console.log($rootScope.customerInfo); 
                      $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
                      $scope.existingEmail= $rootScope.customerInfo.emailAddress;
+                      var productInfo={};
 
+                     if($rootScope.product && $rootScope.product.productCode && $rootScope.product.productCode==$rootScope.customerInfo.productCode){
+						productInfo.sameProductCode="Y";
+                     }else{
+						productInfo.sameProductCode="N";
+                     }
+                     var existingCustomerStatus=$rootScope.getCustomerStatus($rootScope.customerInfo.accountStatus);
+					  productInfo.existingCustomerStatus=existingCustomerStatus;
+					  updateenrollrequestobj(productInfo);
                       $rootScope.showexistingcustomer=true;
                      $rootScope.gbplandisplay=false;
 
@@ -293,6 +305,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                      if($scope.unformatedaccountnumber){
 					 accountNumberInfo.account=$scope.unformatedaccountnumber;
                      updateenrollrequestobj(accountNumberInfo);
+                     }
+
+                     if($scope.product.rateClassCode =="04"){
+                         $scope.customerInfo.businessName=$scope.lastName;
                      }
 
                      if($rootScope.product.customerTypeCode =="EXISTING"){
@@ -459,6 +475,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         if($scope.specialoffer){
 			data.specialoffer=$scope.specialoffer;
         }
+
+        if($scope.existingEmail && (data.emailAddress !=data.existingEmail)){
+            data.alternateEmailAddress=data.emailAddress;
+        }
+
         updateenrollrequestobj(data);
 
 
@@ -871,9 +892,13 @@ $scope.reviewauthorizesubmit();
         if(data.businessName)
         $scope.enrollReq.businessName=data.businessName;
         if(data.renewalContractExistsInd)
-        $scope.enrollReq.renewalContractExistsInd=data.renewalContractExistsInd;    
-
-
+        $scope.enrollReq.renewalContractExistsInd=data.renewalContractExistsInd;  
+        if(data.sameProductCode)
+        $scope.enrollReq.sameProductCode=data.sameProductCode;  
+        if(data.existingCustomerStatus)
+        $scope.enrollReq.existingCustomerStatus=data.existingCustomerStatus;
+		if(data.alternateEmailAddress)
+        $scope.enrollReq.alternateEmailAddress=data.alternateEmailAddress;  
     }
 
       var setPromotionInfoByLDC =function(ldc){
@@ -887,7 +912,7 @@ $scope.reviewauthorizesubmit();
                             temp=promoinfo.LDCList[i].promotion[0];
                             break;
                         }
-            
+
                     }
                     //var data= promoinfo.LDCList[0].promotion[0];
                     var data=temp;
@@ -998,7 +1023,7 @@ $scope.reviewauthorizesubmit();
        else {
            smnStatus = 4;
        }
-       
+
        return smnStatus;
    }
 
@@ -1043,6 +1068,8 @@ $scope.reviewauthorizesubmit();
 
 
     }
+
+ 
 
 }]);
 
