@@ -133,7 +133,7 @@ If your Account Number does not match what we are requesting for you to provide,
          </tr>
          <tr>
             <td>Ohio Natural Gas Account Status:</td>
-            <td>{{customerInfo.accountStatus}}</td>
+           <td> {{getCustomerStatus(customerInfo.accountStatus)}}</td>
          </tr>
       </table>
       <div class="button-container">
@@ -142,3 +142,16 @@ If your Account Number does not match what we are requesting for you to provide,
       </div>
    </div>
 </div>
+
+  <div class="popup-wrapper" id="logininactivepopup">
+    <div class="window-wrapper">
+      <a href="#" class="close-window">X</a>
+      <span class="window-title">Your account is inactive</span>
+      <p>You will have to lorem ipsum dolor.</p>
+      <p><a href="#" class="primary-button" ng-click="closeInactive()">Go to (Page Name Here)</a></p>
+
+    </div>
+  </div>
+
+
+
