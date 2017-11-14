@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-11-08T10:18:04.040-06:00"
+        cq:lastModifiedBy="jason01"
+        cq:lastReplicated="{Date}2017-11-03T11:11:25.723-05:00"
+        cq:lastReplicatedBy="rebecka01"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/referafriend"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Refer A Friend Authenticated"
+        jcr:uuid="eb079e3a-5e20-4ce5-8d8a-4a67cccff295"
+        sling:resourceType="/apps/ohgre/components/structure/referafriend"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <rafherobanner
+                jcr:created="{Date}2017-10-15T09:11:59.938+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-03T17:12:13.164-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/rafherobanner"
+                imagepath="/content/dam/ohgre/raf/ReferAFriend_Horizontal_SPOT_ONG.png"/>
+            <raf_autenticated
+                jcr:created="{Date}2017-10-15T09:16:53.996+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-08T10:18:04.032-06:00"
+                jcr:lastModifiedBy="jason01"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/raf-autenticated"
+                benefits="&lt;h4> &lt;/h4>&#xd;&#xa;&lt;h4>Here's the benefits of the program&lt;/h4>&#xd;&#xa;&lt;ul style=&quot;list-style-position: inside;&quot;>&#xd;&#xa;&lt;li>You share the ONG experience with a friend.&lt;/li>&#xd;&#xa;&lt;li>You each get a $25 Visa® Rewards Card.*&lt;br />&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>The more you share, the more you earn!&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;i>*$500 limit per calendar year&lt;/i>&lt;/p>&#xd;&#xa;"
+                bodyofthankyou="If your email address is on file with us, you will receive an email when a friend enrolls with your Referral Code."
+                companylogoinemail="/content/dam/ohgre/ONG_logos/ohio-logo-stacked@3x.png"
+                emailbodyplaceholder="I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
+                facebook="/content/dam/ohgre/socialsharing/facebook@3x.png"
+                helppagelinks="&lt;p>&lt;a href=&quot;/content/onlyong/faq.html&quot; target=&quot;Target&quot;>Frequently Asked Questions&amp;gt;&lt;/a>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/termsandconditions.html&quot; target=&quot;Target&quot;>Program Terms&amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                popupfootercontactinfo="&lt;h4>Customer Service&lt;/h4>&#xd;&#xa;&lt;p>770.850.6200&lt;br />&#xd;&#xa;1.877.850.6200 &lt;br />&#xd;&#xa;7AM – 8PM Monday – Friday&lt;br />&#xd;&#xa;8AM – 5PM (ET) – Saturday&lt;/p>&#xd;&#xa;"
+                popupfootercontent="&lt;p>The is a post-only message from Ohio Natural Gas. Please do not attempt to reply to this message. We would love to hear from you if you have questions. For assistance with your account. Please contact us via phone, e-mail customerservice@ong.com&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                rafemailbody="&lt;p>Enrolling is easy. Either click the button below to enroll online, or give ONG a call at 1.877.850.6200 and provide the Referral Code and Promotion Code below. Your gas service won't be interrupted when you switch. Ohio Natural Gas experts will handle all the details for you.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                rafemailsubject="Enroll with Ohio Natural Gas and we could both get $25"
+                raflogoinemail="/content/dam/ohgre/raf/raf-logo.png"
+                rafpromocode="RAF25"
+                rafterms="&lt;p>Subject to the Refer-a-Friend program (&amp;quot;RAF Program&amp;quot;) rules and terms and conditions (at onlyong.com/refer). Offer limited to: (i) qualified new residential/commercial customers (each a “Referee&amp;quot;) who use a promotion code through this RAF Program to enroll in an eligible ONG price plan (each a “RAF Referee&amp;quot;), and (ii) existing customers who refer one or more Referees using the RAF Program (each a “Referrer&amp;quot;).&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                referralamount="$25*"
+                referralcode="Your unique Referral Code is"
+                sharebyemail="&lt;h4>Share by Email&lt;/h4>&#xd;&#xa;&lt;p>Send a customized email to your friends. This email contains all the information your friends need to enroll with ONG using your Referral Code.&lt;/p>&#xd;&#xa;"
+                sharesocially="&lt;h4>Share Socially&lt;/h4>&#xd;&#xa;&lt;p>Click the icons below to share this offer with your friends through your favorite social networks. If they enroll with ONG, you could both earn a natural gas rebate in the form of a $25 Visa&lt;sup>®&lt;/sup> Rewards Card.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                subheader="&lt;p>Tell your friends to enroll with Ohio Natural Gas by going online to&amp;nbsp;&lt;a href=&quot;http://www.onlyong.com/RAF25&quot; target=&quot;Target&quot;>www.onlyong.com/RAF25&lt;/a> or calling &lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>1-888-466-4427&lt;/a>. In order for you both to be eligible for the natural gas rebate – a $25 Visa&lt;sup>®&lt;/sup> Rewards Card –&amp;nbsp;your friend must provide Promotion Code RAF25 and your Referral Code&amp;nbsp;{{customerInfo.custID}} at the time he or she enrolls.*&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true,true,true,true,true,true,true,true]"
+                thankyouheader="Thank you for referring your friends to Ohio Natural Gas!"
+                twitter="/content/dam/ohgre/socialsharing/twitter@3x.png"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-10-15T01:27:49.830-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d492b0ce-47c9-4863-9597-02f8e51f0954">
+    <jcr:content
+        cq:name="ReferAFriend_Horizontal_RGB_GRE.png"
+        cq:parentPath="/content/dam/ohgre/raf"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/raf/ReferAFriend_Horizontal_RGB_GRE.png"
+        jcr:lastModified="{Date}2017-11-14T10:15:50.474-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2017-11-14T10:15:43.591-05:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}300"
+            dam:Physicalheightininches="{Decimal}0.6433346271514893"
+            dam:Physicalwidthindpi="{Long}300"
+            dam:Physicalwidthininches="{Decimal}2.7533388137817383"
+            dam:Progressive="no"
+            dam:sha1="816453e9ba24967a9a7acd19a5311ed0db37fa1c"
+            dam:size="{Long}31513"
+            dc:format="image/png"
+            dc:modified="{Date}2017-11-09T14:16:45.005-06:00"
+            exif:ColorSpace="{Long}65535"
+            exif:PixelXDimension="{Long}826"
+            exif:PixelYDimension="{Long}193"
+            jcr:lastModified="{Date}2017-11-14T10:15:50.356-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            photoshop:ColorMode="{Long}3"
+            tiff:ImageLength="{Long}193"
+            tiff:ImageWidth="{Long}826"
+            tiff:Orientation="{Long}1"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:XResolution="3000000/10000"
+            tiff:YResolution="3000000/10000"
+            xmp:CreateDate="{Date}2017-08-11T17:16:59.000-04:00"
+            xmp:CreatorTool="Adobe Photoshop CC 2017 (Macintosh)"
+            xmp:MetadataDate="{Date}2017-11-07T17:09:48.000-05:00"
+            xmp:ModifyDate="{Date}2017-11-07T17:09:48.000-05:00"
+            xmpMM:DocumentID="adobe:docid:photoshop:88c4f6a7-0495-117b-86b9-b82546818271"
+            xmpMM:InstanceID="xmp.iid:b832149c-c43a-42c7-ba72-21aec9cd37cf"
+            xmpMM:OriginalDocumentID="xmp.did:874d46b5-f6a1-4e4e-b0b3-b8bbb70847dc">
+            <xmpMM:History
+                jcr:primaryType="nt:unstructured"
+                xmpArraySize="{Long}2"
+                xmpArrayType="rdf:Seq"
+                xmpNodeType="xmpArray">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    stEvt:action="created"
+                    stEvt:instanceID="xmp.iid:874d46b5-f6a1-4e4e-b0b3-b8bbb70847dc"
+                    stEvt:softwareAgent="Adobe Photoshop CC 2017 (Macintosh)"
+                    stEvt:when="{Date}2017-08-11T17:16:59.000-04:00"
+                    xmpNodeType="xmpStruct"/>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    stEvt:action="saved"
+                    stEvt:changed="/"
+                    stEvt:instanceID="xmp.iid:b832149c-c43a-42c7-ba72-21aec9cd37cf"
+                    stEvt:softwareAgent="Adobe Photoshop CC 2017 (Macintosh)"
+                    stEvt:when="{Date}2017-11-07T17:09:48.000-05:00"
+                    xmpNodeType="xmpStruct"/>
+            </xmpMM:History>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

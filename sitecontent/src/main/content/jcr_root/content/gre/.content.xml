@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:designPath="/etc/designs/gre"
+        cq:lastModified="{Date}2017-11-07T10:06:14.796-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-11-06T12:47:24.345-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/homepage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Grand Rapids Energy"
+        jcr:uuid="9a685de0-b1ba-41fd-a290-0e4b2d51da8b"
+        sling:resourceType="/apps/ohgre/components/structure/page"
+        days="Monday - Friday"
+        errorPages="/content/gre/errors"
+        mobilenumber="1.888.211.8312"
+        portalname="gre"
+        time="8AM - 5PM EST">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herocarousel
+                jcr:created="{Date}2017-08-21T00:30:49.455-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-06T12:47:18.872-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herocarousel"
+                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Grand Rapids Energy® bill. &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Grand Rapids Energy® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/card_raf.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/refer-a-friend.html&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Michigan’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We are proud to serve Michigan residents and always put the needs of our customers first.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SIGN UP&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                timeout="5500">
+                <cq:annotations jcr:primaryType="nt:unstructured">
+                    <_x0032__1509993699203
+                        jcr:created="{Date}2017-11-06T12:41:39.204-06:00"
+                        jcr:createdBy="penny"
+                        jcr:lastModified="{Date}2017-11-06T12:41:39.204-06:00"
+                        jcr:lastModifiedBy="penny"
+                        jcr:primaryType="nt:unstructured"
+                        x="{Long}287"
+                        y="{Long}234"/>
+                </cq:annotations>
+            </herocarousel>
+            <promocode
+                jcr:created="{Date}2017-07-23T18:42:01.956+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-13T13:59:06.803-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promocode"
+                description="&lt;p>Did you receive a flyer in the mail from us? Please enter the promo code from the flyer below to view your special offer rates.&lt;/p>&#xd;&#xa;"
+                heading="I received an offer in the mail"
+                textIsRich="true"/>
+            <herocard
+                jcr:created="{Date}2017-10-27T12:45:48.838-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-07T10:06:14.790-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herocard"
+                buttonpath="/content/onlyong/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer Grand Rapids Energy, you can manage your account online.  Log in to your account to view your current contract and make changes."
+                imagepath="/content/dam/ohgre/home/card_plans.jpg"
+                title="Currently a GRE customer?  "
+                title2="Manage your account here. "/>
+            <colctrl
+                jcr:created="{Date}2017-07-23T18:42:46.076+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-21T00:27:51.275-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                layout="3;cq-colctrl-lt1"/>
+            <cardpromo
+                jcr:created="{Date}2017-07-23T18:43:08.192+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-17T01:57:29.676-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/gre/refer-a-friend"
+                buttontitle="start referring"
+                description="Invite friends to sign up with Grand Rapids Energy® and you’ll each receive a $25 Visa® Reward Card.* It’s that easy!"
+                displayLink="true"
+                heading="Refer a Friend"
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
+            <col_break15008155783250
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_1267368033
+                jcr:created="{Date}2017-08-21T00:28:08.643-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-04T13:19:34.806-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/gre/moving"
+                buttontitle="Let's Get Moving"
+                description="Start, stop or transfer your existing natural gas service."
+                displayLink="true"
+                heading="Moving? Take GRE with You. "
+                imagepath="/content/dam/ohgre/home/card_moving.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
+            <col_break15032896712800
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_plans
+                jcr:created="{Date}2017-07-23T18:43:13.617+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:53:56.715-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo-plans"
+                buttonpath="/content/gre/plans-detail"
+                description="Lock in a great 6 or 12-month fixed rate to avoid price spikes and market fluctuations!"
+                heading="Fixed Rate Plans"/>
+            <col_end15008155660770
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="end"/>
+            <signup
+                jcr:created="{Date}2017-07-23T18:46:36.241+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:54:51.450-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup"
+                description="Be the among the first to hear about our promos and special offers."/>
+            <signup_for_newslette
+                jcr:created="{Date}2017-10-09T21:37:38.598-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-09T21:38:17.200-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup-for-newsletters-popup"
+                description="Be the among the first to hear about our promos and special offers."/>
+        </content>
+        <image jcr:primaryType="nt:unstructured">
+            <file.sftmp/>
+        </image>
+    </jcr:content>
+    <plans-detail/>
+    <what_is_choice/>
+    <why_choose_us/>
+    <about_us/>
+    <termsandconditions/>
+    <terms-of-use/>
+    <privacy-policy/>
+    <promo_landing/>
+    <promo-landing-apples/>
+    <raf-faqs/>
+    <promo-raf/>
+    <promo-general/>
+    <save2017/>
+    <visa_offer/>
+    <generic-promo/>
+    <promotion-error/>
+    <switch-back/>
+    <customer_lookup/>
+    <contact-us/>
+    <rate-plans/>
+    <special_offer/>
+    <faq/>
+    <server_down/>
+    <_x0034_04/>
+    <test/>
+    <backuppromo/>
+    <moving/>
+    <skymiles/>
+    <raf-authenticated/>
+    <refer-a-friend/>
+    <errors/>
+    <myaccount/>
+    <select-plan/>
+    <cancel-contract/>
+</jcr:root>

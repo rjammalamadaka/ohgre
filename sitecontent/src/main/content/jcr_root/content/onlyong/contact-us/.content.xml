@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2017-11-10T13:17:59.675-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-11-10T13:20:17.036-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Contact Us"
+        jcr:uuid="30e2f377-90a5-4b18-afed-643fa1aac5eb"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true"
+        portalname="oh">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                jcr:created="{Date}2017-08-12T21:28:19.166+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-12T21:28:53.196+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="If you have any questions or concerns about Ohio Natural Gas, please contact us by choosing the method that's best for you."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Contact Us"/>
+            <contact_us
+                jcr:created="{Date}2017-08-04T13:22:31.062-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-10T13:17:59.671-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/contact-us"
+                description1="&lt;p>&lt;b>Mailing Address:&lt;/b>&lt;br>&#xd;&#xa;PO BOX 14657,&lt;br>&#xd;&#xa;Cleveland, OH 44114&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br>&#xd;&#xa;toll-free &lt;a href=&quot;tel:18884664427&quot; target=&quot;Target&quot;>1.888.466.4427&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;mailto:customerservice@onlyong.com?Subject=Ohio Natural gas&quot; target=&quot;_top&quot;>customerservice@onlyong.com&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Note:&lt;/b>&lt;br>&#xd;&#xa;&lt;i>Please use the above contact information if you have questions about your ONG service. If you have billing questions, please contact the utility directly. The number is on your natural gas bill.&lt;/i>&lt;/p>&#xd;&#xa;"
+                description2="&lt;p>&lt;b>Chris Turner&lt;/b>&lt;br>&#xd;&#xa;817 West Peachtree St., NW, Suite 1000 Atlanta, GA 30308&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;tel:4046854169&quot; target=&quot;Target&quot;>404.685.4169&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;mailto:chris.turner@onlyong.com?Subject=Ohio Natural gas&quot; target=&quot;_top&quot;>chris.turner@onlyong.com&lt;/a>&lt;/p>&#xd;&#xa;"
+                description3="&lt;p>&lt;b>Anne Webb&lt;/b>&lt;br>&#xd;&#xa;817 West Peachtree St., NW, Suite 1000 Atlanta, GA 30308&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br>&#xd;&#xa;toll-free &lt;a href=&quot;tel:4046854105&quot; target=&quot;Target&quot;>404.685.4105&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;mailto:anne.webb@onlyong.com?Subject=Ohio Natural gas&quot; target=&quot;_top&quot;>anne.webb@onlyong.com&lt;/a>&lt;/p>&#xd;&#xa;"
+                heading1="Residential Contacts ONG Customer Service"
+                heading2="Commercial Industrial Contacts"
+                heading3="Aggregation Programs / Sales Agency Opportunities"
+                textIsRich="[true,true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>
