@@ -23,7 +23,7 @@
     <!-- ====================================================================== -->
     <properties>
         <crx.host>166.78.247.155</crx.host>
-        <crx.port>4502</crx.port>
+        <crx.port>4505</crx.port>
         <crx.username>admin</crx.username>
         <crx.password>0DmvMMkvVD1eQLaA</crx.password>
         <publish.crx.host>166.78.247.155</publish.crx.host>
@@ -296,7 +296,7 @@
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
-                    <version>0.0.20</version>
+                    <version>0.0.24</version>
                     <extensions>true</extensions>
                     <configuration>
                         <failOnError>true</failOnError>
