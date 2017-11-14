@@ -4,6 +4,7 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
 
     $scope.lctype="residential";
 
+
     $scope.setLdcInfo= function(mainValue,description){
 
         var ldc=mainValue;
@@ -215,7 +216,13 @@ $scope.errorMessage=null;
                  $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
                     if($scope.customerInfo && $scope.customerInfo.responseStatus=="0"){
 						//if($scope.lctype =="residential" && $scope.customerInfo.lastName !=)
-                        if($scope.customerInfo.b2BCustomerInd =="Y"){
+                        var accountStatus=$rootScope.getCustomerStatus($scope.customerInfo.accountStatus);
+                        if(accountStatus =="Inactive"){
+							jQuery("#login-popup-wrapper").removeClass("show-popup");
+                        	jQuery("#logininactivepopup").addClass("show-popup");
+
+                            console.log("inactive customer");
+                        }else if($scope.customerInfo.b2BCustomerInd =="Y"){
 							$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
                             $('#lastnamezipcodeerror').show();
                         }else if(($scope.lctype=="residential")&&(($scope.customerInfo.lastName.toLowerCase()!=$scope.lastName.toLowerCase()) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase()))){
@@ -267,6 +274,10 @@ req.LdcDesc=$scope.ldcdesc;
         });
 
 
+    }
+
+    $scope.closeInactive =function(){
+		jQuery("#logininactivepopup").removeClass("show-popup");
     }
 
 
