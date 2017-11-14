@@ -7896,6 +7896,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
 /* LOGIN STYLES */
 #login-popup {
   max-width: 90rem;
+  overflow: inherit;
 }
 #login-popup input[type="text"]:disabled {
   background: #e6e6e6;
@@ -8567,7 +8568,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
   max-width: 50px;
   max-height: 50px;
 }
-.tooltip-trigger {
+#tooltip-account {
+  display: inline-block;
+  position: relative;
+}
+@media (min-width: 992px) {
+  #tooltip-account {
+    float: right;
+  }
+}
+#tooltip-account .tooltip-trigger {
   background-color: #f1f3f4;
   border-radius: 50%;
   color: #037bc1;
@@ -8582,31 +8592,42 @@ div[class^="cq-colctrl-lt1-"] .card p {
   text-align: center;
   width: 1.6rem;
 }
-.tooltip-trigger .tooltip-text {
-  background-color: #037bc1;
-  border-radius: 6px;
-  bottom: 100%;
+#tooltip-account .tooltip-text {
+  background: url('/content/dam/ohgre/global/popover-2@2x.jpg') 0 0 no-repeat;
+  background-size: cover;
+  bottom: 3rem;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  left: 50%;
+  cursor: default;
+  display: none;
+  height: 123px;
+  left: -150px;
   line-height: 1.5;
-  margin-left: -18rem;
-  padding: 5px 0;
   text-align: center;
-  visibility: hidden;
-  width: 20rem;
+  width: 300px;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
 }
-@media (min-width: 992px) {
-  .tooltip-trigger .tooltip-text {
-    margin-left: -18rem;
-  }
+#tooltip-account .tooltip-text:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #d0d0d0 transparent transparent transparent;
+  top: 119px;
+  left: 148px;
 }
-.tooltip-trigger:hover .tooltip-text {
-  visibility: visible;
+#tooltip-account .tooltip-text .close-tooltip {
+  font-size: 1.5rem;
+  right: 1rem;
+  top: 1rem;
+}
+#tooltip-account .tooltip-text.gre-tooltip {
+  background-image: url(/content/dam/ohgre/global/dte-bitmap@2x.jpg);
+}
+#tooltip-account .tooltip-text.tooltip-open {
+  display: block;
 }
 .dropdown-container .dropdown-updated {
   color: #000;
@@ -9746,10 +9767,16 @@ input {
 .customer-lookup .account-lookup.form-wrapper {
   padding: 2rem .9rem;
 }
+.customer-lookup .account-lookup.form-wrapper label {
+  display: inline-block;
+}
 @media (min-width: 992px) {
   .customer-lookup .account-lookup {
     padding: 0;
     width: 90%;
+  }
+  .customer-lookup .account-lookup #tooltip-account {
+    margin-top: 2rem;
   }
 }
 .customer-lookup .form-wrapper {
@@ -10839,7 +10866,8 @@ input {
   }
 }
 #close-window,
-.close-window {
+.close-window,
+.close-tooltip {
   position: absolute;
   right: 2rem;
   top: .7rem;
@@ -10849,9 +10877,15 @@ input {
   transform: scale(1.5, 1);
   font-weight: 100;
 }
+#close-window:hover,
+.close-window:hover,
+.close-tooltip:hover {
+  text-decoration: none;
+}
 @media (min-width: 992px) {
   #close-window,
-  .close-window {
+  .close-window,
+  .close-tooltip {
     top: 1.5rem;
   }
 }
@@ -11289,6 +11323,9 @@ ul.info-links li {
   font-weight: 500;
   line-height: 1.5;
   margin: 0 2rem 2rem;
+}
+#cancel-plan-wrapper .foot-notes p {
+  color: #4a4a4a;
 }
 @media (min-width: 992px) {
   #cancel-plan-wrapper #cancel-current-plan {

@@ -30,7 +30,13 @@ UTILS = {
         var isMobileDevice = false;
         isMobileDevice = $(window).width() < 1024 ? true : false;
         return isMobileDevice;
-    }
+    },
+    preventBodyScroll: function() {
+      $('body').addClass('fixed-body');
+    },
+    allowBodyScroll: function() {
+      $('body').removeClass('fixed-body');
+    },
 };
 
 var ohio_ng = {
@@ -64,6 +70,15 @@ var ohio_ng = {
       $('body').removeClass('fixed-body');
     });
 
+    $('.tooltip-trigger').on('click', function(event) {
+      event.preventDefault();
+      $('.tooltip-text').toggleClass('tooltip-open');
+    });
+    $('.close-tooltip').on('click', function(event) {
+      event.preventDefault();
+      $('.tooltip-text').removeClass('tooltip-open');
+      console.log('close tooltip');
+    });
 
     $('.dropdown-trigger').on('click', function(event) {
       /*event.preventDefault();

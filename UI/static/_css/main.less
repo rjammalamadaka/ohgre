@@ -2159,6 +2159,7 @@ div[class^="cq-colctrl-lt1-"]{
 /* LOGIN STYLES */
 #login-popup {
 	max-width: 90rem;
+	overflow: inherit;
 
 	input[type="text"]:disabled {
 	 background: #e6e6e6;
@@ -2198,7 +2199,7 @@ div[class^="cq-colctrl-lt1-"]{
 			min-width: 100%;
 			padding-right: 5rem;
 			width: auto;
-			white-space: nowrap;;
+			white-space: nowrap;
 
 			.carret {
 				border-color: #d0d0d0;
@@ -2914,48 +2915,72 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
-.tooltip-trigger {
-	background-color: #f1f3f4;
-	border-radius: 50%;
-	color: #037bc1;
-	cursor: pointer;
+#tooltip-account{
 	display: inline-block;
-	float: right;
-	font-size: 1.4rem;
-	font-weight: bold;
-	height: 1.6rem;
-	line-height: 1.5rem;
 	position: relative;
-	text-align: center;
-	width: 1.6rem;
 
-	.tooltip-text {
-    background-color: #037bc1;
-    border-radius: 6px;
-		bottom: 100%;
-    color: #fff;
-		font-family: @secondary_font;
-		font-size: 1.3rem;
-		font-weight: 300;
-		left: 50%;
-		line-height: 1.5;
-		margin-left: -18rem;
-    padding: 5px 0;
-    text-align: center;
-    visibility: hidden;
-    width: 20rem;
-    position: absolute;
-    z-index: 1;
-		@media (@screen-md-min){
-			margin-left: -18rem;
-		}
+	@media (@screen-md-min){
+		float: right;
 	}
-	&:hover {
-		.tooltip-text {
-		    visibility: visible;
+
+	.tooltip-trigger {
+		background-color: #f1f3f4;
+		border-radius: 50%;
+		color: #037bc1;
+		cursor: pointer;
+		display: inline-block;
+		float: right;
+		font-size: 1.4rem;
+		font-weight: bold;
+		height: 1.6rem;
+		line-height: 1.5rem;
+		position: relative;
+		text-align: center;
+		width: 1.6rem;
+	}
+	.tooltip-text {
+		background: url('/content/dam/ohgre/global/popover-2@2x.jpg') 0 0 no-repeat;
+		background-size: cover;
+		bottom: 3rem;
+    color: #fff;
+		cursor: default;
+		display: none;
+		height: 123px;
+		left: -150px;
+		line-height: 1.5;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+
+		&:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 10px;
+      border-style: solid;
+      border-color: #d0d0d0 transparent transparent transparent;
+      top: 119px;
+      left: 148px;
+		}
+
+		.close-tooltip{
+			font-size: 1.5rem;
+			right: 1rem;
+			top: 1rem;
+		}
+
+		&.gre-tooltip{
+			background-image:url(/content/dam/ohgre/global/dte-bitmap@2x.jpg);
+		}
+
+		&.tooltip-open{
+			display: block;
 		}
 	}
 }
+
 
 .dropdown-container {
 	.dropdown-updated {
@@ -4223,11 +4248,19 @@ input{
 
 		&.form-wrapper {
 			padding: 2rem .9rem;
+
+			label {
+				display: inline-block;
+			}
 		}
 
 		@media (@screen-md-min){
 			padding: 0;
 			width: 90%;
+
+			#tooltip-account {
+				margin-top: 2rem;
+			}
 		}
 	}
 	.form-wrapper{
@@ -5372,7 +5405,8 @@ input{
 	}
 }
 #close-window,
-.close-window{
+.close-window,
+.close-tooltip{
 	position: absolute;
 	right: 2rem;
 	top: .7rem;
@@ -5381,6 +5415,10 @@ input{
 	font-family: @accent_font;
 	transform:scale(1.5,1);
 	font-weight: 100;
+
+	&:hover{
+		text-decoration: none;
+	}
 
 	@media (@screen-md-min){
 		top: 1.5rem;
@@ -5767,7 +5805,11 @@ ul.info-links {
 		line-height: 1.5;
 		margin: 0 2rem 2rem;
 	}
-
+	.foot-notes{
+		p {
+			color: #4a4a4a;
+		}
+	}
 	@media (@screen-md-min){
 		#cancel-current-plan{
 			padding-bottom: 2.5rem;
