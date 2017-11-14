@@ -4,15 +4,20 @@
 </div>
 <div class="box-with-border confirmation-header">
 
-<!--  continuefromdeltaskymiles -->
+    <div>
+        
+        ${properties.confirmationcontent @ context='html'}
 
-${properties.confirmationcontent @ context='html'}
+     </div>
 
-<p ng-show="deltaskymilesaccountnumberprovidelater">
-    ${properties.deltaconfirmationcontent @ context='html'}
-</p>
+    <div ng-show="deltaskymilesaccountnumberprovidelater">
+
+            ${properties.deltaconfirmationcontent @ context='html'}
+
+    </div>
 
 </div>
+
 <div class="desktop-flex-container confirmation-info">
 <div class="information-block box-with-border gray-box">
 <div class="form-area">
