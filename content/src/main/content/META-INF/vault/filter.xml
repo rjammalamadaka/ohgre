@@ -2,9 +2,6 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/ohgre"/>
     <filter root="/apps/sling"/>
-    <filter root="/content/gre"/>
-    <filter root="/content/onlyong"/>
-    <filter root="/content/dam/ohgre"/>
     <filter root="/etc/designs/ohgre"/>
     <filter root="/etc/designs/gre"/>
 </workspaceFilter>
