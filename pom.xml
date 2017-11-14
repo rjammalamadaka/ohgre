@@ -13,6 +13,7 @@
     <name>ohgre - Reactor Project</name>
     <description>Maven Multimodule project for ohgre.</description>
 
+
     <prerequisites>
         <maven>3.0.2</maven>
     </prerequisites>
@@ -22,7 +23,7 @@
     <!-- ====================================================================== -->
     <properties>
         <crx.host>166.78.247.155</crx.host>
-        <crx.port>4505</crx.port>
+        <crx.port>4502</crx.port>
         <crx.username>admin</crx.username>
         <crx.password>0DmvMMkvVD1eQLaA</crx.password>
         <publish.crx.host>166.78.247.155</publish.crx.host>
@@ -364,5 +365,6 @@
         <module>bundle</module>
         <module>content</module>
         <module>ohgre-wsclientbundle</module>
+        <module>sitecontent</module>
     </modules>
 </project>
