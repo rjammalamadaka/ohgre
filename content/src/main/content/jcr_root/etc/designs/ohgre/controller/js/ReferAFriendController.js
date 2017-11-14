@@ -24,8 +24,9 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
     }
 
-     $rootScope.redirecttohome =function(){
 
+
+     $rootScope.redirecttohome =function(){
 			location.href=$rootScope.homeUrl+".html";
     }
     $scope.setLdcInfo =function(ldc,description){
@@ -231,6 +232,59 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
     jQuery('#close-window').click(function(){
         jQuery('#raf-terms-popup').removeClass('show-popup');
     });
+
+
+    if($rootScope.hashParams && $rootScope.hashParams.refferalcode){
+		jQuery('#popup-spinner-wrap').show();
+
+        var req ={};
+        req.custId=$rootScope.hashParams.refferalcode;
+
+        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
+            if(data && data.CustomerInfoResult){
+                        var customerInfo=JSON.parse(data.CustomerInfoResult);
+                            console.log(customerInfo);
+                            if(customerInfo.responseStatus ==1){
+                                $scope.errorInfo="We were unable to find your account. Please try again or call 1-888-466-4427 for assistance";
+                            }else if(customerInfo.responseStatus ==0){
+                                //var req={};
+
+                                req.LDC=customerInfo.ldc;
+                                req.LdcDesc=customerInfo.ldcdesc;
+                                req.AccountNumber=customerInfo.account;
+                                req.referralcode=customerInfo.custID;
+                                req.ProductDescription=customerInfo.productDesc;
+                                req.ProductCode=customerInfo.productCode;
+
+                                 if(customerInfo.raftermsCondAcknowledgedInd !='Y'){
+									jQuery('#popup-spinner-wrap').hide();
+                                    updateCustomerInfoReq.custID=customerInfo.custID;
+                                    updateCustomerInfoReq.account=customerInfo.account;
+                                    updateCustomerInfoReq.ldc=customerInfo.ldc;
+
+                                    jQuery('#raf-terms-popup').addClass('show-popup');
+                                 }else{
+                                     
+                                     PrimeService.setProductData(req).success(function(data, status, headers, config){            
+                                         console.log(data);
+                                         location.href=$rootScope.homeUrl+'/raf-authenticated.html';
+                                         
+                                     }).error(function (data,status, headers, config){
+                                         
+                                         console.log("error");
+                                     });
+                                 }
+                            }
+            }else{
+				jQuery('#popup-spinner-wrap').show();
+            }
+
+        }).error(function (data,status, headers, config){
+			jQuery('#popup-spinner-wrap').hide();
+            console.log("error");
+        });
+
+    }
 
 }]);
 
