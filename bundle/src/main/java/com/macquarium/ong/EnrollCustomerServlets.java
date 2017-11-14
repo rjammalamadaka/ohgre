@@ -7,6 +7,7 @@ import java.net.URL;
 import java.rmi.ServerException;
 import java.util.Calendar;
 
+import com.primesw.webservices.*;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -18,10 +19,8 @@ import org.tempuri.quoteservice.EnrollRequest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.macquarium.ong.vo.Enrollment;
-import com.primesw.webservices.EnrollCustomer;
-import com.primesw.webservices.EnrollCustomerResponse;
-import com.primesw.webservices.QuoteService;
-import com.primesw.webservices.QuoteServiceSoap;
+import org.tempuri.quoteservice.SendRealTimeEmailRequest;
+import org.tempuri.quoteservice.SendRealTimeEmailResult;
 
 
 @SlingServlet(paths="/bin/enrollCustomer", methods = "POST", metatype=true)
@@ -195,6 +194,48 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			System.out.println(soapRequest);
 			System.out.println("response");
 			System.out.println(soapResponse);
+			String sameProductCode=getParameterInfo(jObj,"sameProductCode");
+			String existingCustomerStatus=getParameterInfo(jObj,"existingCustomerStatus");
+		    String emailtype="";
+			if(responseStatus.equals("0")){
+				System.out.println("existing customer");
+				if(existingCustomerStatus.equals("Active")){
+					System.out.println("active customer");
+					if(sameProductCode.equals("Y")){
+						System.out.println("customer with same plan");
+						emailtype="PPCCONFIRM";
+					}else{
+						System.out.println("customer with different plan");
+						emailtype="RENEWCONFIRM";
+					}
+				}else{
+					System.out.println("In active customer");
+					emailtype="ENCONFIRM";
+				}
+			}else if(responseStatus.equals("1")){
+				System.out.println("New customer");
+				emailtype="ENCONFIRM";
+			}
+
+			String alternateEmailAddress =getParameterInfo(jObj,"alternateEmailAddress");
+
+			SendRealTimeEmailRequest sendRealTimeEmailRequest=new SendRealTimeEmailRequest();
+
+			sendRealTimeEmailRequest.setCustID(enrollCustomerResult.getCustID());
+			sendRealTimeEmailRequest.setEmailAddress(emailid);   //emailAddress
+			sendRealTimeEmailRequest.setEmailType(emailtype);
+			if(alternateEmailAddress.length()>0){
+				sendRealTimeEmailRequest.setUpdateCustEmailAddressInd("Y");
+			}
+			SendRealTimeEmail sendRealTimeEmail=new SendRealTimeEmail();
+			sendRealTimeEmail.setSendRealTimeEmailRequest(sendRealTimeEmailRequest);
+			System.out.println("start sendRealTimeEmail");
+			SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
+			System.out.println("end sendRealTimeEmail");
+			SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
+						System.out.println("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
+						System.out.println("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
+
 			enrollment.setCustID(enrollCustomerResult.getCustID());
 
 			enrollmentDaoService.updateEnrollement(enrollment,generatedKey);
@@ -247,7 +288,8 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		try{
 			result=JObject.getString(parameter);
 		}catch(Exception e){
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+			//e.printStackTrace();
 		}
 		return result;
 	}
