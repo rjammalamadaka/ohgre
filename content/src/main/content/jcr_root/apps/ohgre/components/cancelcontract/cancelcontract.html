@@ -48,8 +48,15 @@
             </div>
          </div>
          <div class="box-with-border alert-box alert-alt1">
-            <h5>We Hate to See You Go!</h5>
-            <p>We'd love to continue being your natural gas provider. Please reconsider with one of these great plans:</p>
+            <div ng-show="productData.LDC =='COH'">
+               ${properties.cohcontent}
+            </div>
+             <div ng-show="productData.LDC =='VED'">
+               ${properties.vedcontent}
+            </div>
+
+              <h5>We Hate to See You Go!</h5>
+              <p>We'd love to continue being your natural gas provider. Please reconsider with one of these great plans:</p>
          </div>
       </div>
    </div>
@@ -94,6 +101,12 @@
                      </div>
                </div>
                </li>
+
+               <li class="accord-trigger" ng-show="guaranteeProductDisplay">
+
+               </li>
+
+
                </ul>
          </div>
       </div>
