@@ -1,4 +1,7 @@
 ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService", function ($rootScope, $compile, $http,PrimeService,OhGreService){ 
+
+    var activeStates=["ENROLLMENT ACTIVE", "ENROLLMENT PENDING", "ENROLLMENT REJECTED",  "ENROLLMENT SENT WAITING FOR RESPONSE", "ENROLLMENT WAITING TO BE SENT"];
+
     setTimeout(function(){ 
         $('#portalbody').show();
     }, 500);
@@ -237,6 +240,16 @@ $rootScope.currentYear=new Date().getFullYear();
         }else{
 		return "";
         }
+    }
+
+      $rootScope.getCustomerStatus=function(status){
+
+        if(activeStates.indexOf(status) != -1){
+			return "Active";
+        }else{
+			return "Inactive";
+        }
+
     }
 
    /* var getLdcInfo=function(){
