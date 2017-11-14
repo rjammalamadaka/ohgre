@@ -44,9 +44,9 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 			}
 			JSONObject jObj = null;
 			jObj = new JSONObject(sb.toString());
-			String accountNumber = jObj.getString("AccountNumber");
-			String ldc = jObj.getString("LDC");
-
+			String accountNumber = getParameterInfo(jObj,"AccountNumber");// jObj.getString("AccountNumber");
+				String ldc = getParameterInfo(jObj,"LDC");//jObj.getString("LDC");
+				String custId = getParameterInfo(jObj,"custId"); //jObj.getString("custId");
 			String endPointUrl=	commonConfigService.getPrimeEndPoint();
 			url = new URL(endPointUrl);
 
@@ -59,9 +59,13 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 			GetCustomerInfoRequest getCustomerInfoRequest=new GetCustomerInfoRequest();
 			System.out.println("ldc :"+ldc);
 			System.out.println("accountNumber :"+accountNumber);
-			getCustomerInfoRequest.setAccount(accountNumber);
-			// getCustomerInfoRequest.setCustID("");
-			getCustomerInfoRequest.setLDC(ldc);
+			//if(accountNumber.length()>0 && ldc.length()>0){
+	           getCustomerInfoRequest.setAccount(accountNumber);
+	           getCustomerInfoRequest.setLDC(ldc);
+	           //}
+	           //if(custId.length()>0){
+	           getCustomerInfoRequest.setCustID(custId);
+	           //}
 			//getCustomerInfoRequest.setPremise("");
 			getCustomerInfo.setGetCustomerInfoRequest(getCustomerInfoRequest);
 
@@ -102,6 +106,14 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		doPost(request,response);
 	}
-
+    String getParameterInfo(JSONObject JObject, String parameter){
+	    	String result="";
+		try{
+			result=JObject.getString(parameter);
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		return result;
+	}
 
 }
