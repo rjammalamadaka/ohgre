@@ -2,6 +2,8 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
 // $scope.formButton="Apply Promo Code";
 
+    $scope.guaranteeProductDisplay=false;
+
       function isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
@@ -26,9 +28,9 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
        /* if(req.PromoCode){            
             PromoCode=req.PromoCode;
         }*/
-        
+
         PrimeService.getQuotes(req.LDC,PromoCode,req.rateClassCode).success(function(data, status, headers, config){
-            
+
             //console.log(data);
             if(data && data.responseStatus=="0"){
                 $scope.products={};
@@ -101,6 +103,9 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
          console.log();
 
          if(!isEmpty(data)){
+             if(data.LDC == "COH"){
+ 				$scope.guaranteeProductDisplay=true;
+             }
              $scope.productData=data;
              var req={};
              req.AccountNumber=data.AccountNumber; 
