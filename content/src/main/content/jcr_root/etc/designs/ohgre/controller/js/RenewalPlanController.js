@@ -35,6 +35,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
         PrimeService.getQuotes(req.LDC,PromoCode,req.rateClassCode).success(function(data, status, headers, config){
 
             //console.log(data);
+             jQuery('#popup-spinner-wrap').hide();
             if(data && data.responseStatus=="0"){
                 $scope.products={};
                 if(data.Customer && data.Customer.length>0){
@@ -199,7 +200,6 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
     $scope.submitPromoCode =function(){
 		$scope.serverError=null;
         $scope.showgiftcardmsg=null;
-		$scope.renewalPlanPromo.submited = true;
 
         if($scope.formButton=="CLEAR"){
 			ohgre.removeStore("promoCodeInfo");
@@ -208,7 +208,10 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
             $('#submit-promo-code').removeClass("inactive");
             $scope.promocode=null;
        }else if($scope.renewalPlanPromo.$valid){
+           $scope.renewalPlanPromo.submited = true;
+
            $('#submit-promo-code').addClass("inactive");
+           jQuery('#popup-spinner-wrap').show();
             PrimeService.getPromoCodeInfo($scope.promocode).success(function(data, status, headers, config){
                 //$('#submit-promo-code').removeClass("inactive");
                 $scope.formButton="CLEAR";
@@ -228,6 +231,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
                         if(!ldcinfo){
  							$scope.serverError="Please enter a valid promocode"; 
+                            jQuery('#popup-spinner-wrap').hide();
                         }
                          ohgre.store("promoCodeInfo",data);
 
@@ -241,7 +245,12 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                             }
                         }
 
-                        if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="Y"){
+                        if(ldcinfo && ldcinfo.promotion[0].CustomerTypeCode=="NEW"){
+
+                                jQuery('#popup-spinner-wrap').hide();
+                                $scope.serverError="Sorry you are not eligible for this offer."; 
+
+                        }else  if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="Y"){
                             if(ldcinfo.promotion[0].BackupPromotionCode){
                                 var req={};
                                 $scope.serverError="Unfortunately this promotion has expired but we have some great plans below"; 
@@ -252,8 +261,17 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                                 getQuotes(req);
 
                             }else{
+                                 jQuery('#popup-spinner-wrap').hide();
                                 $scope.serverError="Sorry the promotion code you entered has expired"; 
                             }
+                        }else if(ldcinfo && ldcinfo.promotion[0]){
+                            var req={};
+ 								req.AccountNumber=$scope.productData.AccountNumber; 
+                                req.LDC=$scope.productData.LDC;
+                                req.PromoCode=ldcinfo.promotion[0].PromotionCode;
+                                req.rateClassCode=$scope.productData.rateClassCode;
+                                getQuotes(req);
+
                         }
                     }else{
                         var req={};
@@ -270,6 +288,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
             }).error(function (data,status, headers, config){  
                // $('#submit-promo-code').removeClass("inactive");
+                jQuery('#popup-spinner-wrap').hide();
                 $scope.formButton="CLEAR";
                 console.log("error");
             });
