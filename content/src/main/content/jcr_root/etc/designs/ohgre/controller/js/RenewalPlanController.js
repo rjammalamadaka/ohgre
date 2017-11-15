@@ -3,6 +3,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
     ohgre.removeStore("promoCodeInfo");
     $scope.formButton="Apply Promo Code";
+     $scope.guaranteeProductDisplay=false;
 
       function isEmpty(obj) {
         for(var key in obj) {
@@ -88,6 +89,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
                 console.log("$scope.guaranteeProduct");
                 console.log($scope.guaranteeProduct);
+                 $scope.guaranteeProductDisplay=true;
 
             }
 
@@ -125,16 +127,16 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
 
      $scope.logout=function(){
-        PrimeService.logout().success(function(data, status, headers, config){
-
-            location.href=$rootScope.homeUrl+".html";            
-        }).error(function(data, status, headers, config){
-
-        });
-
+      jQuery('#logout-popup').show();
     }
 
+   $scope.confirmlogout =function(){
+		$rootScope.commonLogout();
+    }
 
+    $scope.cancellogout=function(){
+		jQuery('#logout-popup').hide();
+    }
 
 
 /*var promocode="RAF25";
@@ -215,8 +217,10 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
             PrimeService.getPromoCodeInfo($scope.promocode).success(function(data, status, headers, config){
                 //$('#submit-promo-code').removeClass("inactive");
                 $scope.formButton="CLEAR";
+                jQuery('#popup-spinner-wrap').hide();
                 if(data && data.responseStatus =="0"){                    
                     console.log(data);
+
                     if(data.LDCList.length>0){
 						console.log("code expired");
 						var ldcinfo=null;
@@ -281,6 +285,8 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                         req.rateClassCode=$scope.productData.rateClassCode;
 						getQuotes(req);
                     }
+
+
 
                 }else if(data && data.responseStatus =="1"){
                     $scope.serverError="Please enter a valid Promo code";                    
@@ -375,6 +381,19 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 			return formattedNumber;
         }else{return "";}
 }
+
+
+        $scope.showDeskAccordGuarantee =function(){
+
+
+        if($scope.displayGuranteedAccord){
+            $scope.displayGuranteedAccord=false;
+        }else{
+			$scope.displayGuranteedAccord=true;
+        }
+        console.log("showMobileAccordGuarantee");
+
+    }
 
 }]);
 
