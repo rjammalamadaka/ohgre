@@ -294,7 +294,9 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 					 accountNumberInfo.account=$scope.unformatedaccountnumber;
                      updateenrollrequestobj(accountNumberInfo);
                      }
-
+                     if($scope.product.rateClassCode =="04"){
+                         $scope.customerInfo.businessName=$scope.lastName;
+                     }
                      if($rootScope.product.customerTypeCode =="EXISTING"){
  							$('#popupnoteligiblefornew').addClass('show-popup');
 
