@@ -9,9 +9,13 @@
                 <span class="user-greeting" ng-show="customerInfo.rateClass =='04'">Welcome, {{customerInfo.businessName}}. <a href="#" ng-click="logout()">Logout</a></span>
 						</div>
 						<div class="selected-plan current-plan flex-container">
-							<div class="selected-price">
+							<div class="selected-price" ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
 								<span class="price ng-binding">{{customerInfo.pricePerUnit | currency:"$":3}}</span>
 								<small class="ng-binding">per {{customerInfo.uom}}</small>
+							</div>
+                            <div class="selected-price" ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+								<span class="price ng-binding">{{customerInfo.contractPrice | currency:"$":2}}</span>
+								<small class="ng-binding">per Month</small>
 							</div>
 							<div class="selected-info">
 								<span class="selected-plan-tag">Current Plan</span>
@@ -91,6 +95,32 @@
 				</li>
 
 
+               <li class="accord-trigger gbp" ng-show="guaranteeProductDisplay" ng-click="showMobileAccordGuarantee()" >
+                   <div class="flex-container">
+                       <div class="plan-price">
+                           <img src="/content/dam/ohgre/Rates/gbp-seal.png">
+                       </div>
+                       <div class="plan-info-wrapper">
+                       	<div class="plan-info">
+                        	<div class="inner-content">
+                                       <h4>{{guaranteeProduct.ProductDescription}}</h4>
+                                       <p class="desktop-content">{{guaranteeProduct.QuoteDescription}}</p>
+                             </div>
+                              <div class="plan-button">
+                                           <span><strong>CALL US FOR A CUSTOM QUOTE ${inheritedPageProperties.mobilenumber}</strong></span>
+                               </div>
+                                           <a href="" ng-click="showDeskAccordGuarantee()" class="accord-trigger"><span ng-hide="displayGuranteedAccord">+</span><span ng-show="displayGuranteedAccord">-</span>Additional Information</a>
+                                           <div ng-show="displayGuranteedAccord" class="">
+                                               <p>{{guaranteeProduct.ProductDescFriendly}}</p>
+                             </div>
+                           </div>
+                        </div>
+                      </div>
+
+                </li>
+
+
+
 
 			</ul>
 		</div>
@@ -109,5 +139,5 @@
 
 
 <sly data-sly-include="popups.html"></sly>
-                                    
+
 	</section>
