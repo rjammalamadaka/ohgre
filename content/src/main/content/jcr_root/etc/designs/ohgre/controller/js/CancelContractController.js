@@ -84,6 +84,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
                 console.log("$scope.guaranteeProduct");
                 console.log($scope.guaranteeProduct);
+                $scope.guaranteeProductDisplay=true;
 
             }
 
@@ -103,9 +104,9 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
          console.log();
 
          if(!isEmpty(data)){
-             if(data.LDC == "COH"){
+            /* if(data.LDC == "COH"){
  				$scope.guaranteeProductDisplay=true;
-             }
+             }*/
              $scope.productData=data;
              var req={};
              req.AccountNumber=data.AccountNumber; 
@@ -121,15 +122,16 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
      });
 
+  $scope.logout=function(){
+      jQuery('#logout-popup').show();
+    }
 
-     $scope.logout=function(){
-        PrimeService.logout().success(function(data, status, headers, config){
+   $scope.confirmlogout =function(){
+		$rootScope.commonLogout();
+    }
 
-            location.href=$rootScope.homeUrl+".html";            
-        }).error(function(data, status, headers, config){
-
-        });
-
+    $scope.cancellogout=function(){
+		jQuery('#logout-popup').hide();
     }
 
 
@@ -248,6 +250,20 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 			return formattedNumber;
         }else{return "";}
       }
+
+
+       $scope.showDeskAccordGuarantee =function(){
+
+
+        if($scope.displayGuranteedAccord){
+            $scope.displayGuranteedAccord=false;
+        }else{
+			$scope.displayGuranteedAccord=true;
+        }
+        console.log("showMobileAccordGuarantee");
+
+    }
+
 
 }]);
 
