@@ -170,10 +170,10 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
         });
     }
     $scope.showLoginPopup= function(){
-
-		     getLdcInfo();
-            jQuery("#login-popup-wrapper").addClass("show-popup");
-
+		//event.preventDefault();
+        getLdcInfo();
+        jQuery("#login-popup-wrapper").addClass("show-popup");
+		UTILS.preventBodyScroll();
     }
 
     $scope.closeConfirm =function(){
@@ -219,7 +219,7 @@ $scope.errorMessage=null;
                         var accountStatus=$rootScope.getCustomerStatus($scope.customerInfo.accountStatus);
                         if(accountStatus =="Inactive"){
 							jQuery("#login-popup-wrapper").removeClass("show-popup");
-                        	jQuery("#logininactivepopup").addClass("show-popup");
+                        	jQuery("#login-inactive-popup").addClass("show-popup");
 
                             console.log("inactive customer");
                         }else if($scope.customerInfo.b2BCustomerInd =="Y"){
@@ -277,7 +277,8 @@ req.LdcDesc=$scope.ldcdesc;
     }
 
     $scope.closeInactive =function(){
-		jQuery("#logininactivepopup").removeClass("show-popup");
+		jQuery("#login-inactive-popup").removeClass("show-popup");
+        location.reload(true);
     }
 
 
