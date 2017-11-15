@@ -47,15 +47,15 @@ ohgrePortal.controller('DashBoardController', ['$scope', '$rootScope', '$http' ,
      });
 
     $scope.logout=function(){
-        PrimeService.logout().success(function(data, status, headers, config){
-
-            location.href=$rootScope.homeUrl+".html";            
-        }).error(function(data, status, headers, config){
-
-        });
-
+        jQuery('#logout-popup').show();
+    }
+    $scope.confirmlogout =function(){
+		$rootScope.commonLogout();
     }
 
+    $scope.cancellogout=function(){
+		jQuery('#logout-popup').hide();
+    }
     $scope.changeMyRenewal =function(){
 		location.href=$rootScope.homeUrl+'/select-plan.html';
     }
