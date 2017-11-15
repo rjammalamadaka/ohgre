@@ -8,6 +8,16 @@
          <div class="form-area-wrapper"  ng-class="product.LDC =='MIC' ? 'mic-account-container' : ''">
             <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
             <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
+<span id="tooltip-account">
+            <span class="tooltip-trigger">?</span>
+          <span class="tooltip-text" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+              <a href="#" class="close-tooltip">X</a>
+              </span>
+          <span class="tooltip-text gre-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+	           <a href="#" class="close-tooltip">X</a>
+           </span>
+
+          </span>
             <div class="form-area multiple-input">
                <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
                   <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
