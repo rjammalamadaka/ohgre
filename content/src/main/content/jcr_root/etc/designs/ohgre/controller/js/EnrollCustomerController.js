@@ -8,7 +8,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 	$scope.showpromocodeconfirmation=false;
     $scope.deltaskymilesaccountnumberprovidelater=false;
     $scope.sendRafEmailReq={};
-
+   jQuery('#popup-spinner-wrap').show();
 
     $scope.dsmEnrollReq={};
 
@@ -107,6 +107,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
             if(promoCodeInfo && !isEmpty(promoCodeInfo)){
 				$scope.showpromocodeconfirmation=true;
             }
+        }else{
+			jQuery('#popup-spinner-wrap').hide();
         }
 
     }).error(function (data,status, headers, config){
@@ -146,14 +148,20 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                             $scope.showearlyterminationfee=true;
                             }
                         }
+
+                        if($scope.customerInfo.productCode =="COK" || $scope.customerInfo.productCode=="COJ"){
+							$rootScope.gbplandisplay=true;
+                            $rootScope.gbplandescription=$rootScope.customerInfo.contractPrice;
+                        }
+
                     }
                 }
             }
 
-
+			jQuery('#popup-spinner-wrap').hide();
 
         }).error(function(data, status, headers, config){
-
+			jQuery('#popup-spinner-wrap').hide();
         });
 
     }
