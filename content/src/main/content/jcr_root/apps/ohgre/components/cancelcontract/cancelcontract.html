@@ -36,8 +36,8 @@
                            <td>{{customerInfo.pricePerUnit | currency:"$":3}}</td>
                         </tr>
                         <tr ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
-                           <td>Flat Bill Amount</td>
-                           <td>{{customerInfo.contractPrice | currency:"$":3}}</td>
+                           <td>Guaranteed Bill Plan Amount</td>
+                           <td>{{customerInfo.contractPrice | currency:"$":2}}</td>
                         </tr>
                         <tr>
                            <td></td>
@@ -48,15 +48,29 @@
             </div>
          </div>
          <div class="box-with-border alert-box alert-alt1">
+
+         <h5>We Hate to See You Go!</h5>
+              <p>We'd love to continue being your natural gas provider. Please reconsider with one of these great plans:</p>
             <div ng-show="productData.LDC =='COH'">
-               ${properties.cohcontent}
+               ${properties.cohcontent @ context='html'}
             </div>
              <div ng-show="productData.LDC =='VED'">
-               ${properties.vedcontent}
+               ${properties.vedcontent @ context='html'}
+            </div>
+            <div ng-show="productData.LDC =='COH'">
+               ${properties.cohcontent @ context='html'}
+            </div>
+             <div ng-show="productData.LDC =='DUK'">
+               ${properties.dukcontent @ context='html'}
+            </div>
+            <div ng-show="productData.LDC =='MCG'">
+               ${properties.mcgcontent @ context='html'}
+            </div>
+             <div ng-show="productData.LDC =='MIC'">
+               ${properties.miccontent @ context='html'}
             </div>
 
-              <h5>We Hate to See You Go!</h5>
-              <p>We'd love to continue being your natural gas provider. Please reconsider with one of these great plans:</p>
+
          </div>
       </div>
    </div>
@@ -102,9 +116,29 @@
                </div>
                </li>
 
-               <li class="accord-trigger" ng-show="guaranteeProductDisplay">
+               <li class="accord-trigger gbp" ng-show="guaranteeProductDisplay" ng-click="showMobileAccordGuarantee()" >
+                   <div class="flex-container">
+                       <div class="plan-price">
+                           <img src="/content/dam/ohgre/Rates/gbp-seal.png">
+                       </div>
+                       <div class="plan-info-wrapper">
+                       	<div class="plan-info">
+                        	<div class="inner-content">
+                                       <h4>{{guaranteeProduct.ProductDescription}}</h4>
+                                       <p class="desktop-content">{{guaranteeProduct.QuoteDescription}}</p>
+                             </div>
+                              <div class="plan-button">
+                                           <span><strong>CALL US FOR A CUSTOM QUOTE ${inheritedPageProperties.mobilenumber}</strong></span>
+                               </div>
+                                           <a href="" ng-click="showDeskAccordGuarantee()" class="accord-trigger"><span ng-hide="displayGuranteedAccord">+</span><span ng-show="displayGuranteedAccord">-</span>Additional Information</a>
+                                           <div ng-show="displayGuranteedAccord" class="">
+                                               <p>{{guaranteeProduct.ProductDescFriendly}}</p>
+                             </div>
+                           </div>
+                        </div>
+                      </div>
 
-               </li>
+                </li>
 
 
                </ul>
