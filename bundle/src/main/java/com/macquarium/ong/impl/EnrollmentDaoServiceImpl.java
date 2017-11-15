@@ -44,9 +44,10 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 
 				ps.setString(1,enrollment.getCustID());
 				if(null !=enrollment.getCreatedDate()){
-					ps.setString(2,enrollment.getCreatedDate().toLocaleString());
+					java.sql.Timestamp sqlDate = new java.sql.Timestamp(enrollment.getCreatedDate().getTime());
+					ps.setTimestamp(2, sqlDate);
 				}else{
-					ps.setString(2,"");
+					ps.setTimestamp(2, null);
 				}
 				ps.setInt(3, enrollment.getApiStatus());
 				ps.setString(4, enrollment.getLdc());
