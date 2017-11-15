@@ -252,6 +252,15 @@ $rootScope.currentYear=new Date().getFullYear();
 
     }
 
+      $rootScope.commonLogout=function(){
+
+          PrimeService.logout().success(function(data, status, headers, config){
+             location.href=$rootScope.homeUrl+".html";            
+          }).error(function(data, status, headers, config){
+              
+          });
+      }
+
    /* var getLdcInfo=function(){
         PrimeService.getLdcInfo().success(function(data, status, headers, config){
             if(data && data.responseStatus =="0"){
