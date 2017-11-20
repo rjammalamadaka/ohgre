@@ -258,6 +258,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 						productInfo.sameProductCode="N";
                      }
                      var existingCustomerStatus=$rootScope.getCustomerStatus($rootScope.customerInfo.accountStatus);
+
+                     if(existingCustomerStatus=="Active"){
+							$rootScope.showcurrentplan=true;
+                     }
+
 					  productInfo.existingCustomerStatus=existingCustomerStatus;
 					  updateenrollrequestobj(productInfo);
                       $rootScope.showexistingcustomer=true;
