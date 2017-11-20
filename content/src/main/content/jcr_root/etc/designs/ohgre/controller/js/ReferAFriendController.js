@@ -246,6 +246,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
                             console.log(customerInfo);
                             if(customerInfo.responseStatus ==1){
                                 $scope.errorInfo="We were unable to find your account. Please try again or call 1-888-466-4427 for assistance";
+                                jQuery('#popup-spinner-wrap').hide();
                             }else if(customerInfo.responseStatus ==0){
                                 //var req={};
 
