@@ -61,7 +61,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
                   <span class="input-error-message" ng-show="rafemailform.rafemaillast.$error.required">Last Name is required.</span>
               </span><br>
               <label for="raf-your-email">Your Email Address</label>
-              <input type="text" name="rafyouremail" ng-model="customerInfo.emailAddress" ng-required="true" ng-focus ng-visited>
+              <input type="text" name="rafyouremail" ng-model="customerInfoEmailAddress" ng-required="true" ng-focus ng-visited>
               <span class="input-error-message" ng-show="(rafemailform.rafyouremail.$visited && !rafemailform.rafyouremail.$focused) || rafemailform.submited">
                   <span class="input-error-message" ng-show="rafemailform.rafyouremail.$error.required">Mail Id is required.</span>
               </span>
