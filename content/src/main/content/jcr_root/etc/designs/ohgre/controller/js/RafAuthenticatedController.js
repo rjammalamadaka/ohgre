@@ -33,7 +33,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
                         updateCustomerInfoReq.custID=$scope.customerInfo.custID;
                         updateCustomerInfoReq.account=$scope.customerInfo.account;
                         updateCustomerInfoReq.ldc=$scope.customerInfo.ldc;
-
+                        $scope.customerInfoEmailAddress=$scope.customerInfo.emailAddress;
 						var currentYearGf=[];
                         var previouserYearGf=[];
                         giftCard.forEach(function(entry) {
@@ -139,6 +139,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     }
 
     $scope.rafauthenticated =function(){
+        $scope.customerInfoEmailAddress=$scope.customerInfo.emailAddress;
 		jQuery('#raf-email-popup').addClass('show-popup');
         jQuery('body').addClass('fixed-body');
     }
@@ -165,7 +166,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
         if($scope.rafemailform.$valid){
 
           var requestInfo = {};
-          requestInfo.tomailId = $scope.customerInfo.emailAddress;
+          requestInfo.tomailId = $scope.customerInfoEmailAddress;
           requestInfo.firstName = $scope.customerInfo.firstName;
           requestInfo.lastName = $scope.customerInfo.lastName;
           requestInfo.emailAddress = $scope.toemailaddress;
@@ -183,7 +184,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
                   $scope.toemailaddress = '';
 
               }else{
-                  
+
                   $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
               }
 
@@ -191,7 +192,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
               console.log(data);
               console.log("error");
               $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
-              
+
           });
         }
     }
