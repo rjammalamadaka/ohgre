@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy"
-        jcr:uuid="9a685de0-b1ba-41fd-a290-0e4b2d51da8b"
+        jcr:uuid="6df982e0-2da8-4ddf-b9d2-8dab4dbf80dd"
         sling:resourceType="/apps/ohgre/components/structure/page"
         days="Monday - Friday"
         errorPages="/content/gre/errors"

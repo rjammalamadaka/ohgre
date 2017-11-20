@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Delta Promotion"
-        jcr:uuid="d6f00b35-0c71-4bbe-9319-6f7c38c32890"
+        jcr:uuid="7202488b-6f3f-465b-99dc-53d7d3440c37"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WHY CHOOSE US?"
-        jcr:uuid="bf7a5fae-1e90-4bde-9cc9-58f12b933ed1"
+        jcr:uuid="b3c0d260-f1c4-483f-965b-9aafd71706d2"
         sling:resourceType="/apps/ohgre/components/structure/helppage">
         <content
             jcr:primaryType="nt:unstructured"
