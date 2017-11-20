@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WHAT IS CHOICE?"
-        jcr:uuid="f4319e14-5375-46f1-bbd6-5d1349ba5e5d"
+        jcr:uuid="a3a2bb8f-fe35-46e0-a878-f7daf9b48eef"
         sling:resourceType="/apps/ohgre/components/structure/helppage">
         <content
             jcr:primaryType="nt:unstructured"

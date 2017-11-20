@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Terms Of Use"
-        jcr:uuid="7f201716-c6d6-4883-8c29-82930f0311b1"
+        jcr:uuid="bfb82942-4d35-4ad9-bafb-53ce1b5397a1"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

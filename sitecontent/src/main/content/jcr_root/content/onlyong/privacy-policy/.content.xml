@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Privacy Policy"
-        jcr:uuid="7cd816a0-4320-4b2a-b7f1-da750c3a429b"
+        jcr:uuid="9176b16b-6afc-4c93-86d0-ebd7beda71f8"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true"
         portalname="oh">
