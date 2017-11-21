@@ -1,9 +1,12 @@
 package com.macquarium.ong;
 
-import com.primesw.webservices.GetQuotes;
-import com.primesw.webservices.GetQuotesResponse;
-import com.primesw.webservices.QuoteService;
-import com.primesw.webservices.QuoteServiceSoap;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.rmi.ServerException;
+import java.util.HashMap;
+import java.util.List;
+
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -11,25 +14,23 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tempuri.quoteservice.GetQuotesResult;
 import org.tempuri.quoteservice.GetQuotesResult.Customer;
 import org.tempuri.quoteservice.GetQuotesResult.Customer.Product;
 import org.tempuri.quoteservice.QuoteRequest;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.rmi.ServerException;
-import java.util.List;
+import com.primesw.webservices.GetQuotes;
+import com.primesw.webservices.GetQuotesResponse;
+import com.primesw.webservices.QuoteService;
+import com.primesw.webservices.QuoteServiceSoap;
 
 
 @SlingServlet(paths="/bin/getQuotes", methods = "GET", metatype=true)
 public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
 
-
-	/**
-	 *
-	 */
+	private Logger logger = LoggerFactory.getLogger(GetQuotesServlets.class);
 	private static final long serialVersionUID = 1L;
 
 	@Reference
@@ -54,28 +55,25 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
+		logger.info("--> GetQuotesServlets doGet -->");
 		JSONObject obj=new JSONObject();
-
 		URL url=null;
 		try {
 			String endPointUrl=	commonConfigService.getPrimeEndPoint();
-			System.out.println("endPointUrl :"+endPointUrl);
+			logger.info("Prime End PointUrl :"+endPointUrl);
 			url = new URL(endPointUrl);
 			long startTime = System.currentTimeMillis();
+			logger.info("Start Time :"+startTime);
 			String promotionCode=request.getParameter("promotionCode");
 			String portalName=request.getParameter("portalName");
 			String ldcCode=request.getParameter("ldcCode");
 			String locationType=request.getParameter("locationType");
 			String rateClassCode=request.getParameter("rateClassCode");
-
 			QuoteService quoteService=new QuoteService(url);
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
-
 			GetQuotes parameters=new GetQuotes();
-
-
 			QuoteRequest quoteRequest=new QuoteRequest();
 			if(ldcCode !=null)
 				quoteRequest.setLDC(ldcCode);
@@ -83,8 +81,6 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			if(null !=rateClassCode){
 				quoteRequest.setRateClass(rateClassCode);
 			}
-			//quoteRequest.setEnrolledByUserId("Web Enroll-ONG");  // ong:  Web Enroll-ONG , gre:Web Enroll-GRE
-			//quoteRequest.setRateClass("01");// 01 Res, 04 //Commer
 			if(portalName.equals("oh")){
 				quoteRequest.setEnrolledByUserId("Web Enroll-ONG");
 			}else if(portalName.equals("gre")){
@@ -103,55 +99,31 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			if(null !=promotionCode){
 				quoteRequest.setPromotionCode(promotionCode);
 			}
+			logger.info("PRIME getQuotes");
 			parameters.setQuoteRequest(quoteRequest);
-			System.out.println(quoteRequest);
-
 			GetQuotesResponse getQuotesResponse =quoteServiceSoap.getQuotes(parameters);
-			System.out.println("Got Response");
 			GetQuotesResult getQuotesResult=getQuotesResponse.getGetQuotesResult();
-
 			String soapRequest=handlerResolver.getRequest();
 			String soapResponse=handlerResolver.getResponse();
-			System.out.println("request");
-			System.out.println(soapRequest);
-			System.out.println("response");
-			System.out.println(soapResponse);
+			logger.info("SOAP REQUEST");
+			logger.info(soapRequest);
+			logger.info("SOAP RESPONSE");
+			logger.info(soapResponse);
 			String responseStatus=getQuotesResult.getResponseStatus();
 			String responsemessage=getQuotesResult.getResponseMessage();
 			obj.put("responseStatus", responseStatus);
 			obj.put("responsemessage", responsemessage);
-
-			System.out.println("responseStatus :"+responseStatus);
-			System.out.println("responsemessage :"+responsemessage);
 			List<Customer> customerList=getQuotesResult.getCustomer();
-
-
-			System.out.println("retrive customerList");
 			JSONArray customerArray=new JSONArray();
 			for(Customer customer:customerList){
-
 				JSONObject customerObj=new JSONObject();
 				customerObj.put("LDCDesc", customer.getLDCDesc());
 				customerObj.put("LDC", customer.getLDC());
-
 				List<Product> productList =customer.getProduct();
 				JSONArray productArray=new JSONArray();
 				for(Product product:productList){
 					JSONObject productObj=new JSONObject();
 					String productDesc=product.getProductCode();
-
-
-
-					/*productObj.put("ComboFixedPricePct",product.getComboFixedPricePct());
-					productObj.put("ContractPrice",product.getContractPrice());
-					productObj.put("CtrctTermDate",product.getCtrctTermDate());
-					productObj.put("FixedPricePerTherm",product.getFixedPricePerTherm());
-					productObj.put("MonthlyCustChrg",product.getMonthlyCustChrg());
-					productObj.put("ProductDescription",product.getProductDescription());
-					productObj.put("QuoteDescription",product.getQuoteDescription());
-					productObj.put("VarPriceTotal",product.getVarPriceTotal());
-					productObj.put("ProductCode",product.getProductCode());
-					productObj.put("ProductPlanDesc",product.getProductPlanDesc());	*/
 					productObj.put("CanQuoteInd",product.getCanQuoteInd());
 					productObj.put("ComboFixedPricePct",product.getComboFixedPricePct());
 					productObj.put("ComboProductAllocTypeCd",product.getComboProductAllocTypeCd());
@@ -163,9 +135,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 					productObj.put("EstimatedFirstFlowDate",product.getEstimatedFirstFlowDate());
 					productObj.put("FixedPricePerTherm",product.getFixedPricePerTherm());
 					productObj.put("FixedPricePerThermCd",product.getFixedPricePerThermCd());
-					//product.getMessage();
 					productObj.put("MonthlyCapCostChrg",product.getMonthlyCapCostChrg());
-
 					productObj.put("MonthlyCustChrg",product.getMonthlyCustChrg());
 					productObj.put("PPCEarlyTermChargeAmt",product.getPPCEarlyTermChargeAmt());
 					productObj.put("PriceChangeFrequency",product.getPriceChangeFrequency());
@@ -185,50 +155,48 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 					productObj.put("VarPriceBasisAmt",product.getVarPriceBasisAmt());
 					productObj.put("VarPriceBasisCd",product.getVarPriceBasisCd());
 					productObj.put("VarPriceTotal",product.getVarPriceTotal());
-
-
-					//productObj.put("FullDescription", product.getProductDescription().concat("– for new ONG residential customers only – has a guaranteed savings of at least 20% off of ONG's Variable Plan at the standard price for the first two months of service"));
-					//productObj.put("AditionalDescription", product.getProductDescription().concat("– discounted for the first 2 months"));
-
-
-					/***
-					 Need to make it as Dynamic
-					 **/
 					productObj.put("ProductDesc", productDesc);
-					System.out.println(productDesc);
 					productArray.put(productObj);
 				}
 				customerObj.put("Product", productArray);
 				customerArray.put(customerObj);
 			}
 			long endTime = System.currentTimeMillis();
+			logger.info("End Time :"+endTime);
 			long differenceTime=endTime-startTime;
-			System.out.println("time taken to get the response from prime: "+String.valueOf(differenceTime));
-			System.out.println("To Mail Address "+commonConfigService.getToMailAddress());
-			if(responseStatus.equalsIgnoreCase("0")) {
-				sendEmailService.sendEmail(commonConfigService, soapRequest, soapResponse);
+			logger.info("Time taken to get the response from prime:"+String.valueOf(differenceTime));
+			if(responseStatus.equalsIgnoreCase("-1")) {
+				logger.info("Send mail with prime error");
+				String referrer = request.getHeader("referer");
+				String domain=request.getServerName();
+				HashMap<String,String> mailContent=new HashMap<String,String>();
+				mailContent.put("request", soapRequest);
+				mailContent.put("response", soapResponse);
+				mailContent.put("responseMessage", responsemessage);
+				mailContent.put("currentPagePath", referrer);
+				mailContent.put("siteDomain", domain);
+				sendEmailService.sendEmail(mailContent);
 			}
-
-			System.out.println("Email Sent Success");
-
-
 			obj.put("Customer", customerArray);
 		}
 
 		catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
-			sendEmailService.sendEmail(commonConfigService, e.getMessage(),"");
-
-			e.printStackTrace();
-		}	catch (JSONException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
-			sendEmailService.sendEmail(commonConfigService, e.getMessage(),"");
-
-			e.printStackTrace();
+			logger.info("MalformedURLException :"+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(),e);
+		}catch (JSONException e) {
+			logger.info("JSONException :"+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(),e);
+		}catch (Exception e) {
+			logger.info("JSONException :"+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(),e);
 		}
 		String jsonData = obj.toString();
+		logger.info("Json Response");
+		logger.info(jsonData);
+		logger.info("<-- GetQuotesServlets doGet <--");
 		response.getWriter().write(jsonData);
 	}
 
