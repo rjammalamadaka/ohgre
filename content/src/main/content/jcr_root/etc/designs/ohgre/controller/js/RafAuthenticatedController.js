@@ -14,7 +14,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     $scope.rafemailmessage=jQuery('#raf-friend-info').data('emailbody');
     PrimeService.getProductData().success(function(data, status, headers, config){
 
-        if(data){
+        if(!($rootScope.isEmpty(data))){
             var req={};
              req.LDC= data.LDC;
               req.AccountNumber= data.AccountNumber;
@@ -68,6 +68,8 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
                 console.log("error");
             });
 
+        }else{
+location.href=$rootScope.homeUrl+"/refer-a-friend.html";
         }
 
     }).error(function(data, status, headers, config){
