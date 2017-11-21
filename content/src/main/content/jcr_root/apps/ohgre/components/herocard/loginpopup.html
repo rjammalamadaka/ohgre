@@ -34,21 +34,21 @@
       </div>
     </div>
 
-    <form id="" class="form" ng-show="ldc" name="loginform" novalidate>
+    <form id="loginform" class="form" ng-show="ldc" name="loginform" novalidate>
       <div class="desktop-flex-container" id="login-account-info">
         <div class="form-area-wrapper" ng-class="ldc =='MIC' ? 'mic-account-container' : ''">
           <label for="lastname" ng-if="ldc !='MIC'">Gas Utility Account Number</label>
           <label for="lastname" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
           <span id="tooltip-account">
             <span class="tooltip-trigger">?</span>
-          <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+            <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
               <a href="#" class="close-tooltip">X</a>
               <p>Please be sure to enter your Account Number which is located on your natural gas bill. If your Account Number does not match what we are requesting for you to provide, please call<br>
-                 <a href="tel:1-888-466-4427">1-888-466-4427</a> so that we may help.</p>
-              </span>
-          <span class="tooltip-text" ng-class="ldc =='MCG' ? 'gre-tooltip' : 'dte-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
-	           <a href="#" class="close-tooltip">X</a>
-           </span>
+              <a href="tel:1-888-466-4427">1-888-466-4427</a> so that we may help.</p>
+            </span>
+            <span class="tooltip-text" ng-class="ldc =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+	             <a href="#" class="close-tooltip">X</a>
+             </span>
 
           </span>
 
@@ -65,17 +65,15 @@
             <div class="input-container" data-size={{an4minl}}>
               <input type="text" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required>
             </div>
+            <span class="error-message" ng-show="(loginform.an1.$dirty && ldc !='MIC' && (loginform.an1.$invalid || loginform.an2.$invalid || loginform.an3.$invalid || loginform.an4.$invalid)) || (loginform.submited)">
+            <span ng-show="ldc !='MIC' && (loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required)">Account Number is required.</span>
+            <span ng-show="(!(loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required) && (loginform.an1.$error.maxlength || loginform.an1.$error.minlength || loginform.an2.$error.maxlength || loginform.an2.$error.minlength || loginform.an3.$error.maxlength || loginform.an3.$error.minlength || loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
+            </span>
+            <span class="error-message" ng-show="(loginform.an1.$dirty && ldc =='MIC' && loginform.an4.$invalid || (loginform.submited))">
+            <span ng-show="ldc =='MIC' && ( loginform.an4.$error.required)">Account Number is required.</span>
+            <span ng-show="(!(loginform.an4.$error.required) && (loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
+            </span>
           </div>
-
-          <span style="color:red" ng-show="(loginform.an1.$dirty && ldc !='MIC' && (loginform.an1.$invalid || loginform.an2.$invalid || loginform.an3.$invalid || loginform.an4.$invalid)) || (loginform.submited)">
-          <span ng-show="ldc !='MIC' && (loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required)">Account Number is required.</span>
-          <span ng-show="(!(loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required) && (loginform.an1.$error.maxlength || loginform.an1.$error.minlength || loginform.an2.$error.maxlength || loginform.an2.$error.minlength || loginform.an3.$error.maxlength || loginform.an3.$error.minlength || loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
-          </span>
-          <span style="color:red" ng-show="(loginform.an1.$dirty && ldc =='MIC' && loginform.an4.$invalid || (loginform.submited))">
-          <span ng-show="ldc =='MIC' && ( loginform.an4.$error.required)">Account Number is required.</span>
-          <span ng-show="(!(loginform.an4.$error.required) && (loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
-          </span>
-
 
         </div>
         <div class="lastname-container form-area-wrapper">
@@ -84,7 +82,7 @@
             <label for="lastname" ng-if="ldc =='MIC'">{{lctype =='residential' ? "Last Name" : "Business Name"}} on Gas Utility Account</label>
             <input type="text" name="lastName" ng-model="lastName" ng-required=true>
 
-            <span style="color:red" ng-show="(loginform.lastName.$dirty && (loginform.lastName.$invalid)) || (loginform.submited)">
+            <span class="error-message" ng-show="(loginform.lastName.$dirty && (loginform.lastName.$invalid)) || (loginform.submited)">
              <span ng-show="loginform.lastName.$error.required">Last Name is required.</span>
             </span>
 
@@ -94,10 +92,10 @@
           <div class="form-area">
             <label for="zipcode">Your Zip Code</label>
             <input type="text" name="zipcode" ng-model="zipcode" ng-minlength="5" ng-maxlength="5" maxlength="5" ng-required=true>
-            <span style="color:red" ng-show="(loginform.zipcode.$dirty && (loginform.zipcode.$invalid)) || (loginform.submited)">
-             <span ng-show="loginform.zipcode.$error.required">Zip Code is required.</span>
-            <span ng-show="loginform.zipcode.$error.pattern">Please enter valid Zip code.</span>
-            <span ng-show="loginform.zipcode.$invalid && !loginform.zipcode.$error.pattern && !loginform.zipcode.$error.required">Zip code is not valid.</span>
+            <span class="error-message" ng-show="(loginform.zipcode.$dirty && (loginform.zipcode.$invalid)) || (loginform.submited)">
+              <span ng-show="loginform.zipcode.$error.required">Zip Code is required.</span>
+              <span ng-show="loginform.zipcode.$error.pattern">Please enter valid Zip code.</span>
+              <span ng-show="loginform.zipcode.$invalid && !loginform.zipcode.$error.pattern && !loginform.zipcode.$error.required">Zip code is not valid.</span>
             </span>
 
           </div>
@@ -150,11 +148,11 @@
 </div>
 
 <div class="popup-wrapper" id="login-inactive-popup">
-    <div class="window-wrapper">
-      <a href="#" class="close-window">X</a>
-      <span class="window-title">Your account is inactive</span>
-      <p>You have to select a plan to continue enrollment</p>
-      <p><a href="#" class="primary-button" ng-click="closeInactive()">Shop for Plans</a></p>
+  <div class="window-wrapper">
+    <a href="#" class="close-window">X</a>
+    <span class="window-title">Your account is inactive</span>
+    <p>You have to select a plan to continue enrollment</p>
+    <p><a href="#" class="primary-button" ng-click="closeInactive()">Shop for Plans</a></p>
 
-    </div>
   </div>
+</div>
