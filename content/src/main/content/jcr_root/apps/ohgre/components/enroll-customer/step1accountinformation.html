@@ -1,6 +1,6 @@
 <div class="form-wrapper active-form account-lookup">
    <form name="formone" id="formone" novalidate>
-      <span class="error-message" id="lastnamezipcodeerror"> 
+      <span class="error-message" id="lastnamezipcodeerror">
           <div ng-show="!businessName">We found an account that matches the account number but not the ZIP code or last name. For further inquiries, please call 1-888-466-4427. </div>
           <div ng-show="businessName">We found an account that matches the account number but not the ZIP code or Business name. For further inquiries, please call 1-888-466-4427. </div>
       </span>
@@ -8,16 +8,18 @@
          <div class="form-area-wrapper"  ng-class="product.LDC =='MIC' ? 'mic-account-container' : ''">
             <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
             <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
-<span id="tooltip-account">
-            <span class="tooltip-trigger">?</span>
-          <span class="tooltip-text" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
-              <a href="#" class="close-tooltip">X</a>
+            <span id="tooltip-account">
+              <span class="tooltip-trigger">?</span>
+              <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+                <a href="#" class="close-tooltip">X</a>
+                <p>Please be sure to enter your Account Number which is located on your natural gas bill. If your Account Number does not match what we are requesting for you to provide, please call<br>
+                <a href="tel:1-888-466-4427">1-888-466-4427</a> so that we may help.</p>
               </span>
-          <span class="tooltip-text gre-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
-	           <a href="#" class="close-tooltip">X</a>
-           </span>
+              <span class="tooltip-text" ng-class="product.LDC =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+                 <a href="#" class="close-tooltip">X</a>
+               </span>
 
-          </span>
+            </span>
             <div class="form-area multiple-input">
                <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
                   <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
@@ -64,5 +66,5 @@
          </div>
       </div>
       <button class="primary-button next-button" data-next=2 ng-click="enrollCustomer(2)">Next</button>
-   </form> 
+   </form>
 </div>
