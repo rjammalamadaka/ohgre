@@ -302,6 +302,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
     }
 
     $scope.planSelectRenewal =function(product){
+		console.log('in planSelectRenewal');
 
 		console.log(product);
         $scope.selectedProduct=product;
@@ -315,7 +316,8 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
         // $scope.$apply();
         if($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y"){
-             $('#popupwithrenewal').addClass('show-popup');
+
+            $('#popupwithrenewal').addClass('show-popup');
         }else{
             var earlyTermChargeAmt= Number($scope.customerInfo.earlyTermChargeAmt);
             if(earlyTermChargeAmt>0){
