@@ -17,6 +17,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
         if(!($rootScope.isEmpty(data))){
             var req={};
              req.LDC= data.LDC;
+            $rootScope.ldc=data.LDC;
               req.AccountNumber= data.AccountNumber;
 
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
