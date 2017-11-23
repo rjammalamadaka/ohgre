@@ -8,6 +8,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 	$scope.showpromocodeconfirmation=false;
     $scope.deltaskymilesaccountnumberprovidelater=false;
     $scope.sendRafEmailReq={};
+    $scope.confirmationButton="Back to Home page";
    jQuery('#popup-spinner-wrap').show();
 
     $scope.dsmEnrollReq={};
@@ -107,6 +108,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
             if(promoCodeInfo && !isEmpty(promoCodeInfo)){
 				$scope.showpromocodeconfirmation=true;
             }
+                $scope.confirmationButton="Back to My Account";
+
         }else{
 			jQuery('#popup-spinner-wrap').hide();
         }
@@ -608,6 +611,7 @@ $scope.reviewauthorizesubmit();
                     }else if(enrollCustomerResult.responseStatus =="0"){
                         $scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
 						gotNextStep(5);
+                        document.title="Confirmation Page";
                     }
                 }
 
@@ -951,7 +955,17 @@ $scope.reviewauthorizesubmit();
     }
 */
     $scope.gotoHomePage = function(){
-		location.href=$rootScope.homeUrl+".html";
+		//location.href=$rootScope.homeUrl+".html";
+        if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){
+
+            location.href=$rootScope.homeUrl+"/myaccount.html";
+
+        }else{
+
+				location.href=$rootScope.homeUrl+".html";
+        }
+
+
     }
 
    var clearEnrollReqObject =function(){
@@ -998,7 +1012,7 @@ $scope.reviewauthorizesubmit();
        if (sknum.match(regex)) {
            integerCheck = 1;
        }
-       
+
        if(integerCheck > 0) {
            if(smn.length < 10) {
                smnStatus = 2;
