@@ -220,7 +220,7 @@ $scope.errorMessage=null;
 						//if($scope.lctype =="residential" && $scope.customerInfo.lastName !=)
                         var accountStatus=$rootScope.getCustomerStatus($scope.customerInfo.accountStatus);
 
-                        if(($scope.customerInfo.rateClass == "01" && $scope.lctype=="residential") || ($scope.customerInfo.rateClass == "02" && $scope.lctype=="commercial")){
+                        if(($scope.customerInfo.rateClass == "01" && $scope.lctype=="residential") || ($scope.customerInfo.rateClass == "04" && $scope.lctype=="commercial")){
 
 
                             
@@ -290,7 +290,9 @@ req.LdcDesc=$scope.ldcdesc;
 
     $scope.closeInactive =function(){
 		jQuery("#login-inactive-popup").removeClass("show-popup");
-        location.reload(true);
+      	 location.reload(true);
+
+		location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$scope.ldc+'&lctype='+$scope.lctype;
     }
 
 
