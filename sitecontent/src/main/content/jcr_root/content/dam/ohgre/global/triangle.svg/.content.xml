@@ -6,16 +6,16 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/global/triangle.svg"
-        jcr:lastModified="{Date}2017-11-21T15:41:22.093-05:00"
+        jcr:lastModified="{Date}2017-11-22T23:20:04.181-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2017-11-21T15:41:20.705-05:00"
+            dam:extracted="{Date}2017-11-22T23:20:04.069-05:00"
             dam:sha1="fd67b9397141f957bca9af43d4f7c0edc202f7a3"
             dam:size="{Long}157"
             dc:format="image/svg+xml"
             dc:modified="{Date}2017-07-28T12:19:17.408-04:00"
-            jcr:lastModified="{Date}2017-11-21T15:41:22.092-05:00"
+            jcr:lastModified="{Date}2017-11-22T23:20:03.924-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>

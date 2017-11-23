@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/Visa"
         dam:assetState="processed"
         dam:relativePath="ohgre/Visa/hero.jpg"
-        jcr:lastModified="{Date}2017-11-21T15:41:29.693-05:00"
+        jcr:lastModified="{Date}2017-11-22T23:20:14.243-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-11-21T15:41:29.125-05:00"
+            dam:extracted="{Date}2017-11-22T23:20:13.637-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1461"
             exif:PixelYDimension="{Long}570"
-            jcr:lastModified="{Date}2017-11-21T15:41:29.025-05:00"
+            jcr:lastModified="{Date}2017-11-22T23:20:13.426-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/callout_image.jpg"
-        jcr:lastModified="{Date}2017-11-21T15:41:22.021-05:00"
+        jcr:lastModified="{Date}2017-11-22T23:20:11.159-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-11-21T15:41:21.288-05:00"
+            dam:extracted="{Date}2017-11-22T23:20:10.763-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}614"
             exif:PixelYDimension="{Long}254"
-            jcr:lastModified="{Date}2017-11-21T15:41:18.772-05:00"
+            jcr:lastModified="{Date}2017-11-22T23:20:09.131-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

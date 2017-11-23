@@ -5,16 +5,20 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="3fcff25e-3aa0-46fd-9085-5f12d4541623">
     <jcr:content
+        cq:lastReplicated="{Date}2017-11-21T14:43:31.334-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
         cq:name="image01.jpg"
         cq:parentPath="/content/dam/ohgre/Visa"
         dam:assetState="processed"
         dam:relativePath="ohgre/Visa/image01.jpg"
-        jcr:lastModified="{Date}2017-11-21T15:41:46.400-05:00"
+        jcr:lastModified="{Date}2017-11-22T23:20:13.922-05:00"
         jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-11-21T15:41:45.738-05:00"
+            dam:extracted="{Date}2017-11-22T23:20:13.700-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -31,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}776"
             exif:PixelYDimension="{Long}483"
-            jcr:lastModified="{Date}2017-11-21T15:41:45.841-05:00"
+            jcr:lastModified="{Date}2017-11-22T23:20:13.776-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
