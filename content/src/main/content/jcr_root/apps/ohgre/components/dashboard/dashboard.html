@@ -27,11 +27,11 @@
                   <strong>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br /> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</strong>
 
                 </div>
-                <div class="input-group-wrapper">
+                <div class="input-group-wrapper" ng-show="customerInfo.phoneNumber">
                   <label>Phone Number</label>
                   <strong>{{customerInfo.phoneNumber}}</strong>
                 </div>
-                <div class="input-group-wrapper">
+                <div class="input-group-wrapper" ng-show="customerInfo.emailAddress">
                   <label>Email</label>
                   <strong>{{customerInfo.emailAddress}}</strong>
                 </div>
