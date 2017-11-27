@@ -95,5 +95,37 @@ public class SendEmailServiceImpl implements SendEmailService {
 		return false;
 	}
 
+	public boolean sendExceptionEmail(HashMap<String,String> mailContent) {
+		logger.info("--> SendEmailServiceImpl sendEmail -->");
+		ArrayList<InternetAddress> emailRecipients = new ArrayList<InternetAddress>();
+		HtmlEmail email = new HtmlEmail();
+		String stackTrace=mailContent.get("stackTrace");
+
+		try{
+			logger.info("To Mail Address :"+commonConfigService.getToMailAddress());
+			emailRecipients.add(new InternetAddress(commonConfigService.getToMailAddress()));
+			email.setCharset("UTF-8");
+			email.setTo(emailRecipients);
+			email.setSubject("OHGRE Error Print Stact Trace");
+			MimeMultipart mimeMultipart=new MimeMultipart();
+			MimeBodyPart mbp1 = new MimeBodyPart();
+			//mbp1.setContent(stackTrace, "text/html");
+			mbp1.setText(stackTrace);
+			mimeMultipart.addBodyPart(mbp1);
+
+			email.setContent(mimeMultipart,"alternative");
+			MessageGateway<HtmlEmail> messageGateway = this.messageGatewayService.getGateway(HtmlEmail.class);
+			messageGateway.send(email);
+			emailRecipients.clear();
+			logger.info("<-- SendEmailServiceImpl sendEmail <--");
+		}catch(EmailException e){
+			logger.info("EmailException :"+e.getMessage());
+		} catch (AddressException e) {
+			logger.info("AddressException :"+e.getMessage());
+		} catch(Exception e) {
+			logger.info("Exception :"+e.getMessage());
+		}
+		return false;
+	}
 
 }
