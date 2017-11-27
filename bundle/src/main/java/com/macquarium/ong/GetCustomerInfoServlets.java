@@ -19,10 +19,14 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.ServerException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @SlingServlet(paths="/bin/getCustomerInfo", methods = "POST", metatype=true)
 public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
+
+	private Logger logger = LoggerFactory.getLogger(GetCustomerInfoServlets.class);
 
 	private static final long serialVersionUID = 2598426539166789515L;
 	@Reference
@@ -30,7 +34,8 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
-		JSONObject obj=new JSONObject();
+
+		logger.info("--> GetCustomerInfoServlets doGet -->");JSONObject obj=new JSONObject();
 		URL url=null;
 		GetCustomerInfoResult getCustomerInfoResult=null;
 		ObjectMapper mapper = new ObjectMapper();
@@ -48,17 +53,19 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 				String ldc = getParameterInfo(jObj,"LDC");//jObj.getString("LDC");
 				String custId = getParameterInfo(jObj,"custId"); //jObj.getString("custId");
 			String endPointUrl=	commonConfigService.getPrimeEndPoint();
+			logger.info("Prime End PointUrl :"+endPointUrl);
 			url = new URL(endPointUrl);
 
 			long startTime = System.currentTimeMillis();
+			logger.info("Start Time :"+startTime);
 			QuoteService quoteService=new QuoteService(url);
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			GetCustomerInfo getCustomerInfo=new GetCustomerInfo();
 			GetCustomerInfoRequest getCustomerInfoRequest=new GetCustomerInfoRequest();
-			System.out.println("ldc :"+ldc);
-			System.out.println("accountNumber :"+accountNumber);
+			logger.info("ldc :"+ldc);
+			logger.info("accountNumber :"+accountNumber);
 			//if(accountNumber.length()>0 && ldc.length()>0){
 	           getCustomerInfoRequest.setAccount(accountNumber);
 	           getCustomerInfoRequest.setLDC(ldc);
@@ -67,17 +74,21 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 	           getCustomerInfoRequest.setCustID(custId);
 	           //}
 			//getCustomerInfoRequest.setPremise("");
+			logger.info("PRIME getCustomerInfo");
 			getCustomerInfo.setGetCustomerInfoRequest(getCustomerInfoRequest);
 
 			GetCustomerInfoResponse getCustomerInfoResponse = quoteServiceSoap.getCustomerInfo(getCustomerInfo);
 			getCustomerInfoResult=getCustomerInfoResponse.getGetCustomerInfoResult();
-
+			long endTime = System.currentTimeMillis();
+			logger.info("End Time :"+endTime);
+			long differenceTime=endTime-startTime;
+			logger.info("Time taken to get the response from prime:"+String.valueOf(differenceTime));
 			String soapRequest=handlerResolver.getRequest();
 			String soapResponse=handlerResolver.getResponse();
-			System.out.println("request");
-			System.out.println(soapRequest);
-			System.out.println("response");
-			System.out.println(soapResponse);
+			logger.info("request");
+			logger.info(soapRequest);
+			logger.info("response");
+			logger.info(soapResponse);
 
 			// getCustomerInfoResult.get
 			String jsonString = mapper.writeValueAsString(getCustomerInfoResult);
@@ -85,19 +96,25 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 			obj.put("status", getCustomerInfoResult.getResponseStatus());
 
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
-			e.printStackTrace();
+
+			logger.info("MalformedURLException "+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(),e);
 		}	catch (JSONException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
-			e.printStackTrace();
+
+			logger.info("JSONException"+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(), e);
 		}
 		catch (Exception e){
-			System.out.println("got error"+e.getMessage());
-			e.printStackTrace();
+			logger.info("Exception"+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(), e);
 		}
 		String jsonData = obj.toString();
+		logger.info("Json Response");
+		logger.info(jsonData);
+		logger.info("<-- GetCustomerInfoServlets doGet <--");
 		response.getWriter().write(jsonData);
 
 	}
@@ -111,7 +128,9 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 		try{
 			result=JObject.getString(parameter);
 		}catch(Exception e){
-			System.out.println(e.getMessage());
+			logger.info("Exception"+e.getMessage());
+			logger.error(e.getMessage());
+			logger.error(e.getMessage(), e);
 		}
 		return result;
 	}
