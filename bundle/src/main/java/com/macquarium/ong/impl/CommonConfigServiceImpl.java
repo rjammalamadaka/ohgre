@@ -52,19 +52,15 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     private String deltaSkyMilesEndPoint=DELTA_SKY_MILES_ENDPOINT_URL;
     private String whatCountsUrl=WHAT_COUNT_URL;
     private String toMailAddress = TO_MAIL_ADDRESS;
-    public String getPrimeEndPoint() {
 
-        return primeEndPoint;
-    }
 
+    public String getPrimeEndPoint() { return primeEndPoint; }
     public String getMySqlConnectionUrl() {
         return mySqlConnectionUrl;
     }
-
     public String getDataBaseUsername() {
         return dataBaseUsername;
     }
-
     public String getDataBasePassword() {
         return dataBasePassword;
     }
@@ -74,7 +70,6 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     public String getWhatCountsUrl() {
         return whatCountsUrl;
     }
-
     public String getToMailAddress() {
         return toMailAddress;
     }

@@ -83,7 +83,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			String locationType=request.getParameter("locationType");
 			String rateClassCode=request.getParameter("rateClassCode");
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeEndPoint());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			GetQuotes parameters=new GetQuotes();

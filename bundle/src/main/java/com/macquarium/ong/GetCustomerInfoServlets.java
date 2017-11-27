@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.ServerException;
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +33,12 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 	private static final long serialVersionUID = 2598426539166789515L;
 	@Reference
 	private CommonConfigService commonConfigService;
+
+	@Reference
+	private RequestResponseDaoService requestResponseDaoService;
+
+	private HashMap<String,String> mailContent=new HashMap<String,String>();
+
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
@@ -59,7 +67,7 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 			long startTime = System.currentTimeMillis();
 			logger.info("Start Time :"+startTime);
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeEndPoint());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			GetCustomerInfo getCustomerInfo=new GetCustomerInfo();

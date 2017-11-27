@@ -63,7 +63,7 @@ public class GetLDCInfoServlet extends org.apache.sling.api.servlets.SlingAllMet
 			String portalName=request.getParameter("portalName");
 			
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeEndPoint());
 			quoteService.setHandlerResolver(handlerResolver);		
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();			
 				GetLDCInfo getLDCInfo=new GetLDCInfo(); 

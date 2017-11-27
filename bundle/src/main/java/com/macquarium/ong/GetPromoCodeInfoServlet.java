@@ -61,7 +61,7 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			url = new URL(endPointUrl);
 			logger.info("Start Time :"+startTime);
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeEndPoint());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 
