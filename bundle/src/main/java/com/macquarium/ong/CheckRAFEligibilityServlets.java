@@ -60,7 +60,7 @@ public class CheckRAFEligibilityServlets extends org.apache.sling.api.servlets.S
 			String ldc=request.getParameter("ldc");
 			
 			QuoteService quoteService=new QuoteService(url);
-			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
+			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver();
 			quoteService.setHandlerResolver(handlerResolver);		
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
 			
