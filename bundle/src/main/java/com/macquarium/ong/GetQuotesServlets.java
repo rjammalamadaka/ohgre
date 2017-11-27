@@ -1,11 +1,15 @@
 package com.macquarium.ong;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.ServerException;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -21,6 +25,7 @@ import org.tempuri.quoteservice.GetQuotesResult.Customer;
 import org.tempuri.quoteservice.GetQuotesResult.Customer.Product;
 import org.tempuri.quoteservice.QuoteRequest;
 
+import com.macquarium.ong.vo.RequestResponseVo;
 import com.primesw.webservices.GetQuotes;
 import com.primesw.webservices.GetQuotesResponse;
 import com.primesw.webservices.QuoteService;
@@ -38,6 +43,11 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 
 	@Reference
 	private SendEmailService sendEmailService;
+
+	@Reference
+	private RequestResponseDaoService requestResponseDaoService;
+
+	private HashMap<String,String> mailContent=new HashMap<String,String>();
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
@@ -64,6 +74,9 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			url = new URL(endPointUrl);
 			long startTime = System.currentTimeMillis();
 			logger.info("Start Time :"+startTime);
+			String referrer = request.getHeader("referer");
+			String domain=request.getServerName();
+
 			String promotionCode=request.getParameter("promotionCode");
 			String portalName=request.getParameter("portalName");
 			String ldcCode=request.getParameter("ldcCode");
@@ -113,6 +126,21 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			String responsemessage=getQuotesResult.getResponseMessage();
 			obj.put("responseStatus", responseStatus);
 			obj.put("responsemessage", responsemessage);
+
+			RequestResponseVo requestResponseVo=new RequestResponseVo();
+			requestResponseVo.setAccnt("");
+			requestResponseVo.setApiCall("GetQuotes");
+			requestResponseVo.setLdc(ldcCode);
+			requestResponseVo.setOrderNumber("0");
+			requestResponseVo.setPage(referrer);
+			requestResponseVo.setPostXML(soapRequest);
+			requestResponseVo.setRespMessage(responsemessage);
+			requestResponseVo.setRespNumb(responseStatus);
+			requestResponseVo.setReturnXML(soapResponse);
+			requestResponseVo.setSite(domain);
+
+			requestResponseDaoService.insertPrimeRequestResponse(requestResponseVo);
+
 			List<Customer> customerList=getQuotesResult.getCustomer();
 			JSONArray customerArray=new JSONArray();
 			for(Customer customer:customerList){
@@ -167,31 +195,45 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			logger.info("Time taken to get the response from prime:"+String.valueOf(differenceTime));
 			if(responseStatus.equalsIgnoreCase("-1")) {
 				logger.info("Send mail with prime error");
-				String referrer = request.getHeader("referer");
-				String domain=request.getServerName();
-				HashMap<String,String> mailContent=new HashMap<String,String>();
 				mailContent.put("request", soapRequest);
 				mailContent.put("response", soapResponse);
 				mailContent.put("responseMessage", responsemessage);
 				mailContent.put("currentPagePath", referrer);
 				mailContent.put("siteDomain", domain);
 				sendEmailService.sendEmail(mailContent);
-			}
+				RequestDispatcher requestDispatcher;
+				if(portalName.equals("oh")){
+					requestDispatcher=request.getRequestDispatcher("/content/onlyong/errors/500.html");
+				}else{
+					requestDispatcher=request.getRequestDispatcher("/content/gre/errors/500.html");
+				}
+				requestDispatcher.forward(request, response);			}
 			obj.put("Customer", customerArray);
 		}
 
 		catch (MalformedURLException e) {
+			String stackTrace=CommonUtil.stackTraceToString(e);
 			logger.info("MalformedURLException :"+e.getMessage());
 			logger.error(e.getMessage());
 			logger.error(e.getMessage(),e);
+			mailContent.put("stackTrace", stackTrace);
+			sendEmailService.sendExceptionEmail(mailContent);
 		}catch (JSONException e) {
+			String stackTrace=CommonUtil.stackTraceToString(e);
 			logger.info("JSONException :"+e.getMessage());
 			logger.error(e.getMessage());
 			logger.error(e.getMessage(),e);
+			mailContent.put("stackTrace", stackTrace);
+			sendEmailService.sendExceptionEmail(mailContent);
 		}catch (Exception e) {
+			String stackTrace=CommonUtil.stackTraceToString(e);
 			logger.info("JSONException :"+e.getMessage());
 			logger.error(e.getMessage());
 			logger.error(e.getMessage(),e);
+			StringWriter writer = new StringWriter();
+			e.printStackTrace(new PrintWriter(writer));
+			mailContent.put("stackTrace", stackTrace);
+			sendEmailService.sendExceptionEmail(mailContent);
 		}
 		String jsonData = obj.toString();
 		logger.info("Json Response");
@@ -199,8 +241,5 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 		logger.info("<-- GetQuotesServlets doGet <--");
 		response.getWriter().write(jsonData);
 	}
-
-
-
 
 }
