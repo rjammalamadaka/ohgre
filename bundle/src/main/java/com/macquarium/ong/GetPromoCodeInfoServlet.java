@@ -21,13 +21,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.rmi.ServerException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SlingServlet(paths="/bin/getPromoCodeInfo", methods = "GET", metatype=true)
 public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.SlingAllMethodsServlet{
 
-	/**
-	 *
-	 */
+	private Logger logger = LoggerFactory.getLogger(GetPromoCodeInfoServlet.class);
+
 	private static final long serialVersionUID = 1L;
 
 	@Reference
@@ -41,10 +42,12 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		doProcess(request,response);
+		logger.info("--> GetPromoCodeIndfoServlet doGet -->");
 	}
 
 	private void  doProcess(SlingHttpServletRequest request, SlingHttpServletResponse response){
 		JSONObject obj=new JSONObject();
+
 		URL url=null;
 		long startTime = System.currentTimeMillis();
 		ObjectMapper mapper = new ObjectMapper();
@@ -54,8 +57,9 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			String portalName=request.getParameter("portalName");
 
 			String endPointUrl=commonConfigService.getPrimeEndPoint();
-			System.out.println("endPointUrl :"+endPointUrl);
+			logger.info("endPointUrl :"+endPointUrl);
 			url = new URL(endPointUrl);
+			logger.info("Start Time :"+startTime);
 			QuoteService quoteService=new QuoteService(url);
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeHeaderHandlerUrl());
 			quoteService.setHandlerResolver(handlerResolver);
@@ -125,7 +129,8 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 			}
 			long endTime = System.currentTimeMillis();
 			long differenceTime=endTime-startTime;
-			System.out.println("time taken to get the response from prime: "+String.valueOf(differenceTime));
+			logger.info("time taken to get the response from prime: "+String.valueOf(differenceTime));
+
 			obj.put("LDCList", ldcListAray);
 
 			String jsonData = obj.toString();
