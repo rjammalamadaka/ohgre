@@ -15,20 +15,23 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SlingServlet(paths="/bin/whatCount", methods = "POST", metatype=true)
 public class RafWhatCountServlet extends SlingAllMethodsServlet {
 
+	private Logger logger = LoggerFactory.getLogger(RafWhatCountServlet.class);
 	private static final long serialVersionUID = 2598426539166789515L;
 	@Reference
 	private CommonConfigService commonConfigService;
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
+		logger.info("--> RafWhatCountServlet doPost -->");
 		JSONObject obj=new JSONObject();
-		System.out.println("doPost");
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = request.getReader();
 		String str = null;
@@ -36,15 +39,11 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 			sb.append(str);
 		}
 		JSONObject jObj = null;
-
-		System.out.println("mapper create");
 		ObjectMapper mapper = new ObjectMapper();
 		String result="{}";
 		try {
-			System.out.println(sb);
 			jObj = new JSONObject(sb.toString());
-			String endPointUrl = commonConfigService.getWhatCountsUrl(); //"http://dev-gngraf.macquarium.com/refer/api.php?f=ONGRAFSendEmail";
-
+			String endPointUrl = commonConfigService.getWhatCountsUrl();
 			StringBuffer wcUrl = new StringBuffer (endPointUrl);
 			String toMailId=getParameterInfo(jObj,"tomailId");
 			String firstName=getParameterInfo(jObj,"firstName");
@@ -71,19 +70,17 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 			wcUrl=wcUrl.append("&referral=");
 			wcUrl=wcUrl.append(custID);
 			String url=wcUrl.toString();
-			//url=URLEncoder.encode( url, "UTF-8" );
-			System.out.println(url);
+			logger.info("What Count url"+url);
+			long startTime = System.currentTimeMillis();
+			logger.info("Start Time :"+startTime);
 			URL urlObj = new URL(url);
-			System.out.println(url);
 			HttpURLConnection urlConnection = (HttpURLConnection) urlObj.openConnection();
 			urlConnection.setDoOutput(true);
 			urlConnection.setConnectTimeout(50000);
 			urlConnection.setReadTimeout(50000);
 			urlConnection.connect();
 			StringBuilder sb1 = new StringBuilder();
-
 			int HttpResult = urlConnection.getResponseCode();
-			System.out.println("code:"+HttpResult);
 			if (HttpResult == HttpURLConnection.HTTP_OK) {
 				BufferedReader br1 = new BufferedReader(new InputStreamReader(
 						urlConnection.getInputStream(), "utf-8"));
@@ -92,16 +89,14 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 					sb1.append(line + "\n");
 				}
 				br1.close();
-				System.out.println(sb1.toString());
 				result=sb1.toString();
-
 			}
+			long endTime = System.currentTimeMillis();
+			logger.info("End Time :"+endTime);
+			long differenceTime=endTime-startTime;
+			logger.info("Time taken to get the response from prime:"+String.valueOf(differenceTime));
 
-
-			long startTime = System.currentTimeMillis();
 		}	catch (JSONException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
 			e.printStackTrace();
 			try {
 				obj.put("resultCode", "1");
@@ -111,11 +106,8 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 				e.printStackTrace();
 			}
 		}
-		// String jsonData = obj.toString();
 		response.getWriter().write(result);
 	}
-
-
 
 	String getParameterInfo(JSONObject JObject, String parameter){
 		String result="";
@@ -126,6 +118,4 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 		}
 		return result;
 	}
-
-
 }

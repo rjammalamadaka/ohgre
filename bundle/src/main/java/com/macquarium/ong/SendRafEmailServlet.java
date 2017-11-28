@@ -26,8 +26,8 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 	private static final long serialVersionUID = 2598426539166789515L;
 
 	@Reference
-    private CommonConfigService commonConfigService;
-	
+	private CommonConfigService commonConfigService;
+
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		JSONObject obj = new JSONObject();
@@ -45,14 +45,14 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 			url = new URL(endPointUrl);
 			long startTime = System.currentTimeMillis();
 			jObj = new JSONObject(sb.toString());
-			
+
 			QuoteService quoteService=new QuoteService(url);
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeEndPoint());
-			quoteService.setHandlerResolver(handlerResolver);		
+			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
-			
-			SendRealTimeEmailRequest sendRealTimeEmailRequest=new SendRealTimeEmailRequest();			
-			
+
+			SendRealTimeEmailRequest sendRealTimeEmailRequest=new SendRealTimeEmailRequest();
+
 			//sendRealTimeEmailRequest.setCampaignName("");
 			sendRealTimeEmailRequest.setCustID(getParameterInfo(jObj,"custID"));  //custID
 			sendRealTimeEmailRequest.setEmailAddress(getParameterInfo(jObj,"emailAddress"));   //emailAddress
@@ -63,7 +63,7 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 			//sendRealTimeEmailRequest.setRealmID("");
 			//sendRealTimeEmailRequest.setTemplateID("");
 			sendRealTimeEmailRequest.setUpdateCustEmailAddressInd("Y");
-						
+
 			SendRealTimeEmail sendRealTimeEmail=new SendRealTimeEmail();
 			sendRealTimeEmail.setSendRealTimeEmailRequest(sendRealTimeEmailRequest);
 			SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
@@ -75,10 +75,10 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 			System.out.println(soapRequest);
 			System.out.println("response");
 			System.out.println(soapResponse);
-	
+
 			obj.put("ResponseStatus", sendRealTimeEmailResult.getResponseStatus());
 			obj.put("ResponseMessage", sendRealTimeEmailResult.getResponseMessage());
-			
+
 		} catch (JSONException e) {
 			try {
 				obj.put("ResponseStatus", "1");
@@ -86,22 +86,22 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 			} catch (Exception e1) {
 				e.printStackTrace();
 			}
-			
+
 		}
 		String jsonData = obj.toString();
 		response.getWriter().write(jsonData);
 
 	}
-	
-	  String getParameterInfo(JSONObject JObject, String parameter){
-	    	String result="";
-	    	try{
-	    		result=JObject.getString(parameter);
-	    	}catch(Exception e){
-				e.printStackTrace();
 
-			}
-	    	return result;
-	    }
+	String getParameterInfo(JSONObject JObject, String parameter){
+		String result="";
+		try{
+			result=JObject.getString(parameter);
+		}catch(Exception e){
+			e.printStackTrace();
+
+		}
+		return result;
+	}
 
 }

@@ -47,7 +47,7 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 	@Reference
 	private RequestResponseDaoService requestResponseDaoService;
 
-	private HashMap<String,String> mailContent=new HashMap<String,String>();
+	private HashMap<String,String> mailContent=new HashMap<String,String>(8);
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
@@ -55,12 +55,10 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 		try {
 			obj.put("method", "Post");
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String jsonData = obj.toString();
 		response.getWriter().write(jsonData);
-
 	}
 
 	@Override
@@ -76,7 +74,6 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 			logger.info("Start Time :"+startTime);
 			String referrer = request.getHeader("referer");
 			String domain=request.getServerName();
-
 			String promotionCode=request.getParameter("promotionCode");
 			String portalName=request.getParameter("portalName");
 			String ldcCode=request.getParameter("ldcCode");
@@ -207,33 +204,17 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 				}else{
 					requestDispatcher=request.getRequestDispatcher("/content/gre/errors/500.html");
 				}
-				requestDispatcher.forward(request, response);			}
+				requestDispatcher.forward(request, response);
+			}
 			obj.put("Customer", customerArray);
 		}
 
 		catch (MalformedURLException e) {
-			String stackTrace=CommonUtil.stackTraceToString(e);
-			logger.info("MalformedURLException :"+e.getMessage());
-			logger.error(e.getMessage());
-			logger.error(e.getMessage(),e);
-			mailContent.put("stackTrace", stackTrace);
-			sendEmailService.sendExceptionEmail(mailContent);
+			handelCatchBlock(e,mailContent);
 		}catch (JSONException e) {
-			String stackTrace=CommonUtil.stackTraceToString(e);
-			logger.info("JSONException :"+e.getMessage());
-			logger.error(e.getMessage());
-			logger.error(e.getMessage(),e);
-			mailContent.put("stackTrace", stackTrace);
-			sendEmailService.sendExceptionEmail(mailContent);
+			handelCatchBlock(e,mailContent);
 		}catch (Exception e) {
-			String stackTrace=CommonUtil.stackTraceToString(e);
-			logger.info("JSONException :"+e.getMessage());
-			logger.error(e.getMessage());
-			logger.error(e.getMessage(),e);
-			StringWriter writer = new StringWriter();
-			e.printStackTrace(new PrintWriter(writer));
-			mailContent.put("stackTrace", stackTrace);
-			sendEmailService.sendExceptionEmail(mailContent);
+			handelCatchBlock(e,mailContent);
 		}
 		String jsonData = obj.toString();
 		logger.info("Json Response");
@@ -242,4 +223,12 @@ public class GetQuotesServlets extends org.apache.sling.api.servlets.SlingAllMet
 		response.getWriter().write(jsonData);
 	}
 
+	private void handelCatchBlock(Exception e, HashMap<String,String> mailContent){
+		String stackTrace=CommonUtil.stackTraceToString(e);
+		logger.info("MalformedURLException :"+e.getMessage());
+		logger.error(e.getMessage());
+		logger.error(e.getMessage(),e);
+		mailContent.put("stackTrace", stackTrace);
+		sendEmailService.sendExceptionEmail(mailContent);
+	}
 }

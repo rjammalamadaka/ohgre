@@ -6,38 +6,59 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.ServerException;
 import java.util.Calendar;
+import java.util.HashMap;
 
-import com.primesw.webservices.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tempuri.quoteservice.EnrollCustomerResult;
 import org.tempuri.quoteservice.EnrollRequest;
+import org.tempuri.quoteservice.SendRealTimeEmailRequest;
+import org.tempuri.quoteservice.SendRealTimeEmailResult;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.macquarium.ong.vo.Enrollment;
-import org.tempuri.quoteservice.SendRealTimeEmailRequest;
-import org.tempuri.quoteservice.SendRealTimeEmailResult;
+import com.macquarium.ong.vo.RequestResponseVo;
+import com.primesw.webservices.EnrollCustomer;
+import com.primesw.webservices.EnrollCustomerResponse;
+import com.primesw.webservices.QuoteService;
+import com.primesw.webservices.QuoteServiceSoap;
+import com.primesw.webservices.SendRealTimeEmail;
+import com.primesw.webservices.SendRealTimeEmailResponse;
 
 
 @SlingServlet(paths="/bin/enrollCustomer", methods = "POST", metatype=true)
 public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
 
+
+	private Logger logger = LoggerFactory.getLogger(EnrollCustomerServlets.class);
 	private static final long serialVersionUID = 2598426539166789515L;
 	@Reference
 	private CommonConfigService commonConfigService;
 
 	@Reference
+	private SendEmailService sendEmailService;
+
+	@Reference
+	private RequestResponseDaoService requestResponseDaoService;
+
+	@Reference
 	private EnrollmentDaoService enrollmentDaoService;
 
+	private HashMap<String,String> mailContent=new HashMap<String,String>(8);
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		JSONObject obj=new JSONObject();
-		System.out.println("doPost");
+		logger.info(" --> EnrollCustomerServlets doPost -->");
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = request.getReader();
 		String str = null;
@@ -46,20 +67,23 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		}
 		JSONObject jObj = null;
 		URL url=null;
-		System.out.println("mapper create");
+		logger.info("mapper create");
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			System.out.println(sb);
+			logger.info(sb.toString());
 			jObj = new JSONObject(sb.toString());
 			String endPointUrl=	commonConfigService.getPrimeEndPoint();
+			logger.info("Prime End PointUrl :"+endPointUrl);
 			url = new URL(endPointUrl);
+			String referrer = request.getHeader("referer");
+			String portalName=getParameterInfo(jObj,"portalName");
+			String domain=request.getServerName();
 			long startTime = System.currentTimeMillis();
-
+			logger.info("Start Time :"+startTime);
 			QuoteService quoteService=new QuoteService(url);
 			HeaderHandlerResolver handlerResolver=new HeaderHandlerResolver(commonConfigService.getPrimeEndPoint());
 			quoteService.setHandlerResolver(handlerResolver);
 			QuoteServiceSoap quoteServiceSoap=quoteService.getQuoteServiceSoap();
-
 			EnrollRequest enrollRequest =new EnrollRequest();
 			Enrollment enrollment =new Enrollment();
 			String LDC=getParameterInfo(jObj,"LDC");
@@ -110,6 +134,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollRequest.setProductCode(productCode);
 			enrollment.setProductCode(productCode);
 			String responseStatus=getParameterInfo(jObj,"responseStatus");
+			String responsemessage=getParameterInfo(jObj, "responseMessage");
 			String renewalContractExistsInd=getParameterInfo(jObj,"renewalContractExistsInd");
 			if(responseStatus.equals("0")){
 				if(renewalContractExistsInd.equals("Y")){
@@ -158,9 +183,9 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			}
 
 			String altrnateEmailAddress=getParameterInfo(jObj,"alternateEmailAddress");
-		   String emailTypeCode=getParameterInfo(jObj,"emailTypeCode");
-		   enrollRequest.setAlternateEmailAddress(altrnateEmailAddress);
-		   enrollRequest.setEmailTypeCode(emailTypeCode);
+			String emailTypeCode=getParameterInfo(jObj,"emailTypeCode");
+			enrollRequest.setAlternateEmailAddress(altrnateEmailAddress);
+			enrollRequest.setEmailTypeCode(emailTypeCode);
 			enrollRequest.setServiceZipCode(serviceZipCode);
 			enrollment.setServiceZipCode(serviceZipCode);
 			enrollRequest.setEmailPrefTransactionalCd("Y");
@@ -190,30 +215,42 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			EnrollCustomerResult enrollCustomerResult=enrollCustomerResponse.getEnrollCustomerResult();
 			String soapRequest=handlerResolver.getRequest();
 			String soapResponse=handlerResolver.getResponse();
-			System.out.println("request");
-			System.out.println(soapRequest);
-			System.out.println("response");
-			System.out.println(soapResponse);
+			logger.info("request");
+			logger.info(soapRequest);
+			logger.info("response");
+			logger.info(soapResponse);
+			RequestResponseVo requestResponseVo=new RequestResponseVo();
+			requestResponseVo.setAccnt(account);
+			requestResponseVo.setApiCall("EnrollCustomer");
+			requestResponseVo.setLdc(LDC);
+			requestResponseVo.setOrderNumber("0");
+			requestResponseVo.setPage(referrer);
+			requestResponseVo.setPostXML(soapRequest);
+			requestResponseVo.setRespMessage(enrollCustomerResult.getResponseMessage());
+			requestResponseVo.setRespNumb(enrollCustomerResult.getResponseStatus());
+			requestResponseVo.setReturnXML(soapResponse);
+			requestResponseVo.setSite(domain);
+			requestResponseDaoService.insertPrimeRequestResponse(requestResponseVo);
 			String sameProductCode=getParameterInfo(jObj,"sameProductCode");
 			String existingCustomerStatus=getParameterInfo(jObj,"existingCustomerStatus");
-		    String emailtype="";
+			String emailtype="";
 			if(responseStatus.equals("0")){
-				System.out.println("existing customer");
+				logger.info("existing customer");
 				if(existingCustomerStatus.equals("Active")){
-					System.out.println("active customer");
+					logger.info("active customer");
 					if(sameProductCode.equals("Y")){
-						System.out.println("customer with same plan");
+						logger.info("customer with same plan");
 						emailtype="PPCCONFIRM";
 					}else{
-						System.out.println("customer with different plan");
+						logger.info("customer with different plan");
 						emailtype="RENEWCONFIRM";
 					}
 				}else{
-					System.out.println("In active customer");
+					logger.info("In active customer");
 					emailtype="ENCONFIRM";
 				}
 			}else if(responseStatus.equals("1")){
-				System.out.println("New customer");
+				logger.info("New customer");
 				emailtype="ENCONFIRM";
 			}
 
@@ -229,12 +266,12 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			}
 			SendRealTimeEmail sendRealTimeEmail=new SendRealTimeEmail();
 			sendRealTimeEmail.setSendRealTimeEmailRequest(sendRealTimeEmailRequest);
-			System.out.println("start sendRealTimeEmail");
+			logger.info("start sendRealTimeEmail");
 			SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
-			System.out.println("end sendRealTimeEmail");
+			logger.info("end sendRealTimeEmail");
 			SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
-						System.out.println("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
-						System.out.println("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
+			logger.info("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
+			logger.info("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
 
 			enrollment.setCustID(enrollCustomerResult.getCustID());
 
@@ -243,33 +280,48 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			obj.put("EnrollCustomerResult", jsonString);
 			obj.put("enrollId", generatedKey);
 			obj.put("status", enrollCustomerResult.getResponseStatus());
+			obj.put("ResponseMessage", enrollCustomerResult.getResponseMessage());
+			if(enrollCustomerResult.getResponseStatus().equalsIgnoreCase("-1")) {
+				logger.info("Send mail with prime error");
+				mailContent.put("request", soapRequest);
+				mailContent.put("response", soapResponse);
+				mailContent.put("responseMessage", responsemessage);
+				mailContent.put("currentPagePath", referrer);
+				mailContent.put("siteDomain", domain);
+				sendEmailService.sendEmail(mailContent);
+				RequestDispatcher requestDispatcher;
+				if(portalName.equals("oh")){
+					requestDispatcher=request.getRequestDispatcher("/content/onlyong/errors/500.html");
+				}else{
+					requestDispatcher=request.getRequestDispatcher("/content/gre/errors/500.html");
+				}
+				requestDispatcher.forward(request, response);
+			}
 
 			long endTime = System.currentTimeMillis();
 			long differenceTime=endTime-startTime;
-			System.out.println("time taken to get the response from prime: "+String.valueOf(differenceTime));
-			//obj.put("Customer", customerArray);
+			logger.info("time taken to get the response from prime: "+String.valueOf(differenceTime));
+
 		}  catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
-			e.printStackTrace();
+			handelCatchBlock(e,mailContent);
 			try{
 				obj.put("resultCode", "1");
 				obj.put("resultMessage", "systemError");
 				obj.put("errorDescription", e.getMessage());
 			}catch(Exception e3){
-				e.printStackTrace();
+				handelCatchBlock(e3,mailContent);
 			}
 		}	catch (JSONException e) {
-			// TODO Auto-generated catch block
-			System.out.println("got error"+e.getMessage());
-			e.printStackTrace();
+			handelCatchBlock(e,mailContent);
 			try {
 				obj.put("resultCode", "1");
 				obj.put("resultMessage", "systemError");
 				obj.put("errorDescription", e.getMessage());
 			} catch (Exception e1) {
-
+				handelCatchBlock(e1,mailContent);
 			}
+		} catch (ServletException e) {
+			handelCatchBlock(e,mailContent);
 		}
 		String jsonData = obj.toString();
 		response.getWriter().write(jsonData);
@@ -281,6 +333,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		JSONObject obj=new JSONObject();
 		String jsonData = obj.toString();
 		response.getWriter().write(jsonData);
+		logger.info("<-- EnrollCustomerServlets doPost <--");
 	}
 
 	String getParameterInfo(JSONObject JObject, String parameter){
@@ -288,9 +341,16 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		try{
 			result=JObject.getString(parameter);
 		}catch(Exception e){
-			System.out.println(e.getMessage());
-			//e.printStackTrace();
+			logger.info(e.getMessage());
 		}
 		return result;
+	}
+	private void handelCatchBlock(Exception e, HashMap<String,String> mailContent){
+		String stackTrace=CommonUtil.stackTraceToString(e);
+		logger.info("MalformedURLException :"+e.getMessage());
+		logger.error(e.getMessage());
+		logger.error(e.getMessage(),e);
+		mailContent.put("stackTrace", stackTrace);
+		sendEmailService.sendExceptionEmail(mailContent);
 	}
 }
