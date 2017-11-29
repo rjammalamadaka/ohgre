@@ -9,6 +9,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
     $scope.deltaskymilesaccountnumberprovidelater=false;
     $scope.sendRafEmailReq={};
     $scope.confirmationButton="Back to Home page";
+    $scope.specialoffer=true;
    jQuery('#popup-spinner-wrap').show();
 
     $scope.dsmEnrollReq={};
@@ -158,6 +159,19 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                         }
 
                     }
+                     var customerStatus=$rootScope.getCustomerStatus($rootScope.customerInfo.accountStatus);
+                    if(customerStatus =="Active"){
+                        if($scope.customerInfo.emailPrefNonTransactionalCd =="Y"){
+
+							$scope.specialoffer=true;
+                        }else{
+							$scope.specialoffer=false;
+                        }
+
+                    }else{
+                        $scope.specialoffer=false;
+                    }
+
                 }
             }
 
