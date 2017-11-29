@@ -162,7 +162,7 @@ public class GetPromoCodeInfoServlet  extends org.apache.sling.api.servlets.Slin
 				ldcListAray.put(ldcObj);
 			}
 
-			if(responseStatus.equalsIgnoreCase("1")) {
+			if(responseStatus.equalsIgnoreCase("-1")) {
 				logger.info("Send mail with prime error");
 				mailContent.put("request", soapRequest);
 				mailContent.put("response", soapResponse);
