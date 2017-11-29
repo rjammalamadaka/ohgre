@@ -165,11 +165,12 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			String emailid=getParameterInfo(jObj, "emailAddress");
 			String specialoffer=getParameterInfo(jObj, "specialoffer");
 			if(specialoffer =="true"){
-				enrollRequest.setEmailPrefSSEPromotionalCd("Y");
-				enrollment.setEmailPrefSSEPromotionalCd("Y");
+				//enrollRequest.setEmailPrefSSEPromotionalCd("Y");
+				enrollRequest.setEmailPrefNonTransactionalCd("Y");
+				enrollment.setEmailPrefNonTransactionalCd("Y");
 			}else{
-				enrollRequest.setEmailPrefSSEPromotionalCd("N");
-				enrollment.setEmailPrefSSEPromotionalCd("N");
+				enrollRequest.setEmailPrefNonTransactionalCd("N");
+				enrollment.setEmailPrefNonTransactionalCd("N");
 			}
 			enrollRequest.setEmailAddress(emailid);
 			enrollment.setEmailAddress(emailid);
@@ -223,7 +224,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			requestResponseVo.setAccnt(account);
 			requestResponseVo.setApiCall("EnrollCustomer");
 			requestResponseVo.setLdc(LDC);
-			requestResponseVo.setOrderNumber("0");
+			requestResponseVo.setOrderNumber(Integer.toString(generatedKey));
 			requestResponseVo.setPage(referrer);
 			requestResponseVo.setPostXML(soapRequest);
 			requestResponseVo.setRespMessage(enrollCustomerResult.getResponseMessage());
