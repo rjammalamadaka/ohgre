@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-11-21T14:27:39.202-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-11-28T22:27:58.305-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-11-15T15:44:40.024-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -30,7 +30,7 @@
             <herocarousel
                 jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-21T14:27:39.195-06:00"
+                jcr:lastModified="{Date}2017-11-28T08:19:05.638-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
@@ -47,16 +47,7 @@
                 description="&lt;p>Your special offer awaits!&lt;/p>&#xd;&#xa;"
                 heading="Have a Promo Code?"
                 textIsRich="true">
-                <cq:annotations jcr:primaryType="nt:unstructured">
-                    <_x0031__1509993645780
-                        jcr:created="{Date}2017-11-06T12:40:45.781-06:00"
-                        jcr:createdBy="penny"
-                        jcr:lastModified="{Date}2017-11-06T12:40:45.781-06:00"
-                        jcr:lastModifiedBy="penny"
-                        jcr:primaryType="nt:unstructured"
-                        x="{Long}1093"
-                        y="{Long}23"/>
-                </cq:annotations>
+                <cq:annotations jcr:primaryType="nt:unstructured"/>
             </promocode>
             <herocard
                 jcr:created="{Date}2017-10-27T12:45:48.838-05:00"
@@ -97,10 +88,10 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
-            <cardpromo_1519299391
-                jcr:created="{Date}2017-07-25T13:13:27.257-04:00"
+            <cardpromo
+                jcr:created="{Date}2017-11-28T22:26:21.701-06:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-09-23T09:19:32.385+05:30"
+                jcr:lastModified="{Date}2017-11-28T22:27:58.297-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
@@ -108,7 +99,7 @@
                 buttontitle="Let's Get Moving"
                 description="Start, stop or transfer your existing natural gas service."
                 displayLink="true"
-                heading="Moving? Take ONG with You."
+                heading="Moving? Take ONG with You. "
                 imagepath="/content/dam/ohgre/home/card_moving.jpg"
                 mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
             <col_break15010028026211
