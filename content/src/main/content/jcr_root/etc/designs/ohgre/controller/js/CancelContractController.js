@@ -48,7 +48,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         }).error(function (data,status, headers, config){
 
-            console.log("error");
+
         });
 
 
@@ -60,11 +60,8 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
 
-            console.log(data);
 
             $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
-
-            console.log($scope.customerInfo);
 
 
         }).error(function(data, status, headers, config){
@@ -82,8 +79,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
                 $scope.guaranteeProduct=$scope.products[key];
 
-                console.log("$scope.guaranteeProduct");
-                console.log($scope.guaranteeProduct);
                 $scope.guaranteeProductDisplay=true;
 
             }
@@ -101,7 +96,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
      PrimeService.getProductData().success(function(data, status, headers, config){
 
-         console.log();
 
          if(!isEmpty(data)){
             /* if(data.LDC == "COH"){
@@ -137,7 +131,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         $scope.planSelectRenewal =function(product){
 
-		console.log(product);
         $scope.selectedProduct=product;
 
         console.log($scope.selectedProduct.ProductDescription);

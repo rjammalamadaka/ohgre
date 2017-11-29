@@ -6,7 +6,6 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
   var processPromotionInfo=function(promoInfo){
 
 
-      console.log("calling processPromotionInfo");
 
               if(promoInfo && promoInfo.LDCList.length>0){
                   var ldc=promoInfo.LDCList[0];
@@ -28,7 +27,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                   }
 
                   PrimeService.getQuotes(ldcCode,promotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
-                      console.log(data);
+
                       if(data && data.responseStatus =="0"){
                           var customer=data.Customer[0];
                           $scope.productList= customer.Product;
@@ -37,7 +36,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
                   }).error(function (data,status, headers, config){
 
-                      console.log("error");
+
                   });
 
               }
@@ -45,7 +44,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
     }
 
     $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
-         console.log(newValue);
+         
         if(newValue){
 
 			var promoInfo=ohgre.store("promoCodeInfo");
