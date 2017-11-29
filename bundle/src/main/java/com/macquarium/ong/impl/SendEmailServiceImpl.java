@@ -55,7 +55,7 @@ public class SendEmailServiceImpl implements SendEmailService {
 			emailRecipients.add(new InternetAddress(commonConfigService.getToMailAddress()));
 			email.setCharset("UTF-8");
 			email.setTo(emailRecipients);
-			email.setSubject("Mail Subject");
+			email.setSubject("EM WEB: Prime Communications Error -");
 			MimeMultipart mimeMultipart=new MimeMultipart();
 			MimeBodyPart mbp1 = new MimeBodyPart();
 			mbp1.setContent("<p> ISSUE : PRIME ERROR </p>", "text/html");
@@ -66,11 +66,11 @@ public class SendEmailServiceImpl implements SendEmailService {
 			String currentPagePat1="<p> Page : "+currentPagePath+"</p>";
 			mbp3.setContent(currentPagePat1, "text/html");
 			MimeBodyPart mbp4 = new MimeBodyPart();
-			mbp4.setContent("<p> Request </p>", "text/html");
+			mbp4.setContent("<p><b> Request </b></p>", "text/html");
 			MimeBodyPart mbp5 = new MimeBodyPart();
 			mbp5.setText(request);
 			MimeBodyPart mbp6 = new MimeBodyPart();
-			mbp6.setContent("<p> Response </p>", "text/html");
+			mbp6.setContent("<p><b> Response</b> </p>", "text/html");
 			MimeBodyPart mbp7 = new MimeBodyPart();
 			mbp7.setText(response);
 			mimeMultipart.addBodyPart(mbp1);
