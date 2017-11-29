@@ -7,6 +7,9 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
       'Content-Type': 'application/json'
     }
   }
+
+     jQuery('#popup-spinner-wrap').show();
+
   $scope.displayPlans = true;
 
   $scope.guaranteeProductDisplay = false;
@@ -30,8 +33,11 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     if (locationType) {
       url = url + "&locationType=" + locationType;
     }
+
     $http.get(url).success(function(data, status, headers, config) {
       //goToByScroll();
+           jQuery('#popup-spinner-wrap').hide();
+
       $scope.Quotes = data;
       if ($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length > 0) {
         $scope.Customer = $scope.Quotes.Customer;
@@ -46,6 +52,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
       console.log(data);
 
     }).error(function(data, status, headers, config) {
+   jQuery('#popup-spinner-wrap').hide();
 
       console.log("error");
     })
@@ -172,6 +179,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
   $scope.getPlans = function() {
 
+
     $scope.displayPlans = false;
     var ldcCode = $('#fixed-plans-button').val();
 
@@ -194,6 +202,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
       $rootScope.hashParams.ldc = ldcCode;
       console.log(currentHash);
       location.hash = currentHash;
+	  jQuery('#popup-spinner-wrap').show();
 
       getQuotes(ldcCode);
     }
