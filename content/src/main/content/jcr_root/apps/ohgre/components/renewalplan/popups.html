@@ -102,7 +102,12 @@
 					<li>
 						<div class="flex-container">
 							<div class="plan-price gray" ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
+                                <div class="price" ng-show="customerInfo.renewalContractExistsInd=='N'">
                                 {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+                             <div class="price" ng-show="customerInfo.renewalContractExistsInd=='Y'">
+                                {{customerInfo.renewalPricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
 							</div>
                             <div class="plan-price gray" ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
                                 {{customerInfo.contractPrice | currency:"$":2}}<span>per Month</span>
@@ -111,8 +116,10 @@
 								<div class="plan-info">
 									<div class="inner-content">
 										<h4>Current Plan</h4>
-										<span class="plan-selected">{{customerInfo.productDesc}}</span>
-										<small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDesc}}</span>
+                                        <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDesc}}</span>
+										<small ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<small ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
 									</div>
 								</div>
 							</div>
