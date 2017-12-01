@@ -384,14 +384,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         if($scope.formtwo.$valid){
 
            // console.log($scope.promotionInfo.PromotionCode);
-            if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<2 && (!$scope.rafcode ||$scope.rafcode=="") && $rootScope.customerInfo.responseStatus=='1'){
+            if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<1 && (!$scope.rafcode ||$scope.rafcode=="") && $rootScope.customerInfo.responseStatus=='1'){
 
 
                   $scope.rafErrorMessage="Please enter your friend's referal code";
                  failcount=failcount+1;
 
 
-            }else if($scope.rafcode && $scope.rafcode.length>0 && failcount<2){
+            }else if($scope.rafcode && $scope.rafcode.length>0 && failcount<1){
                 var account;
                 var ldc;
                 if($rootScope.customerInfo.responseStatus =="0"){
