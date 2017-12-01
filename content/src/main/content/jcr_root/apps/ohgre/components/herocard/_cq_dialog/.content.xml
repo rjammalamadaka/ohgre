@@ -33,11 +33,16 @@
                                         fieldLabel="Image Path"
                                         name="./imagepath"
                                         rootPath="/content/dam/ohgre"/>
-                                    <title
+                                    <title1
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldLabel="Title"
+                                        fieldLabel="Heading line 2"
                                         name="./title"/>
+                                    <title2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Heading line 2"
+                                        name="./title2"/>
                                     <description
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/form/textarea"
