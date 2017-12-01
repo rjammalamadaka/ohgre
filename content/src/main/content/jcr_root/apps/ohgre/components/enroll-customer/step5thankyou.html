@@ -1,4 +1,4 @@
-<div class="form-wrapper inverted-checkbox confirmation-wrapper">
+<div class="form-wrapper inverted-checkbox confirmation-wrapper" id="order-confirmation">
   <div class="mobile-padding">
     <h3 class="subhead-color">Confirmation Number # {{enrollId}}</h3>
   </div>
@@ -10,6 +10,7 @@
       ${properties.deltaconfirmationcontent @ context='html'}
     </div>
   </div>
+<div class="html2pdf__page-break"></div>
   <div class="desktop-flex-container confirmation-info">
     <div class="information-block box-with-border gray-box">
       <div class="form-area">
@@ -112,7 +113,7 @@
       <div class="button-container">
         <div class="print-container">
           <a href="#" class="print-button">Print</a>
-          <a href="${properties.pdffilepath}" download>Download</a>
+          <a href="#" class="download-button" download>Download</a>
         </div>
         <a href="#" class="primary-button next-button" ng-click="gotoHomePage()">{{confirmationButton}}</a>
       </div>
