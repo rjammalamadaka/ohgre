@@ -4,7 +4,7 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-11-02T23:41:08.824-05:00"
+        cq:lastModified="{Date}2017-11-30T12:45:05.221-06:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
@@ -45,16 +45,17 @@
             <offerpromotionconten
                 jcr:created="{Date}2017-08-03T20:59:52.234-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-05T14:59:55.089-04:00"
+                jcr:lastModified="{Date}2017-11-30T12:45:05.216-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/offerpromotioncontent"
-                description="&lt;p>Receive a &amp;nbsp;{{GIFTCARDVALUE | currency : &amp;#39;$&amp;#39;: 0}}&amp;nbsp;VISA Reward Card instead?&lt;/p>&#xd;&#xa;"
+                description="&lt;p>Receive a  {{GIFTCARDVALUE | currency : '$': 0}} VISA Reward Card instead?&lt;/p>&#xd;&#xa;"
+                fineprinttext="&lt;p>* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices&amp;nbsp;do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;"
                 heading="Your friend is an Ohio Natural Gas customer and thinks you should be too!"
                 imagepath="/content/dam/ohgre/global/raf-logo.png"
                 promoheadingline1="Select your gas utility company to view your options."
                 text="&lt;h4>The Ohio Natural Gas&lt;sup>®&lt;/sup> Refer-a-Friend natural gas rebate program allows current Ohio Natural Gas customers to earn up to $500 in Visa&lt;sup>®&lt;/sup> reward cards each year when they refer their friends who enroll with Ohio Natural Gas. &lt;/h4>&#xd;&#xa;&lt;h4>&lt;span style=&quot;font-weight: normal;&quot;>The more you share, the more you can earn!&lt;/span>&lt;/h4>&#xd;&#xa;&lt;p>1. Get your Referral Code.&lt;/p>&#xd;&#xa;&lt;p>2. Share your Referral Code.&lt;/p>&#xd;&#xa;&lt;p>3. Enjoy the rewards!*&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/raf-faqs.html&quot; target=&quot;_self&quot; title=&quot;Terms &amp;amp; Contitions&quot;>Frequently Asked Questions&amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/termsandconditions.html&quot; target=&quot;_self&quot; title=&quot;Terms &amp;amp; Conditions&quot;>Program Terms And Conditions&amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;"
-                textIsRich="[true,true]"/>
+                textIsRich="[true,true,true]"/>
         </content>
     </jcr:content>
 </jcr:root>

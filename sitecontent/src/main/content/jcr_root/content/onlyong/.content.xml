@@ -5,7 +5,7 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-11-28T22:27:58.305-06:00"
+        cq:lastModified="{Date}2017-11-30T11:39:25.146-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-11-15T15:44:40.024-06:00"
         cq:lastReplicatedBy="penny"
@@ -49,19 +49,6 @@
                 textIsRich="true">
                 <cq:annotations jcr:primaryType="nt:unstructured"/>
             </promocode>
-            <herocard
-                jcr:created="{Date}2017-10-27T12:45:48.838-05:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-15T15:44:30.095-06:00"
-                jcr:lastModifiedBy="penny"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/herocard"
-                buttonpath="/content/onlyong/myaccount"
-                buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer of Ohio Natural Gas, you can manage your account online.  Log in to your account to view your current contract and make changes."
-                imagepath="/content/dam/ohgre/home/card_plans.jpg"
-                title="Currently an ONG customer?"
-                title2="Manage your account here."/>
             <colctrl_545067701
                 jcr:created="{Date}2017-07-25T13:13:15.145-04:00"
                 jcr:createdBy="admin"
@@ -88,20 +75,19 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
-            <cardpromo
-                jcr:created="{Date}2017-11-28T22:26:21.701-06:00"
+            <myaccount
+                jcr:created="{Date}2017-11-29T20:49:54.217-06:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-28T22:27:58.297-06:00"
+                jcr:lastModified="{Date}2017-11-30T11:39:25.137-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/cardpromo"
-                buttonpath="/content/onlyong/moving"
-                buttontitle="Let's Get Moving"
-                description="Start, stop or transfer your existing natural gas service."
+                sling:resourceType="ohgre/components/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer of Ohio Natural Gas, you can manage your account online.  Log in to your account to view your current contract and make changes."
                 displayLink="true"
-                heading="Moving? Take ONG with You. "
-                imagepath="/content/dam/ohgre/home/card_moving.jpg"
-                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
+                heading="Currently an ONG customer?  Manage your account here."
+                imagepath="/content/dam/ohgre/home/card_plans.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_plans_mobile.jpg"/>
             <col_break15010028026211
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
@@ -155,53 +141,6 @@
     <promotions
         jcr:primaryType="nt:unstructured"
         MCCORD="/content/onlyong/MCCORD.html">
-        <RAF
-            jcr:primaryType="nt:unstructured"
-            RAF25="/content/onlyong/promo-raf"
-            RAF50="/content/onlyong/promo-raf"/>
-        <BACKUP
-            jcr:primaryType="nt:unstructured"
-            BACKCOH="/content/onlyong/backuppromo"
-            BACKCOHV="/content/onlyong/backuppromo"
-            BACKCON="/content/onlyong/backuppromo"
-            BACKCONV="/content/onlyong/backuppromo"
-            BACKDEO="/content/onlyong/backuppromo"
-            BACKDEOV="/content/onlyong/backuppromo"
-            BACKDTE="/content/onlyong/backuppromo"
-            BACKDTEV="/content/onlyong/backuppromo"
-            BACKVEDO="/content/onlyong/backuppromo"
-            BACKVEDOV="/content/onlyong/backuppromo"/>
-        <SAVE
-            jcr:primaryType="nt:unstructured"
-            SAVEBIZ2017="/content/onlyong/save2017"/>
-        <MVR jcr:primaryType="nt:unstructured"/>
-        <SPECIALOFFER
-            jcr:primaryType="nt:unstructured"
-            CSEA="/content/onlyong/special_offer"
-            DSEA="/content/onlyong/special_offer"
-            MISEA="/content/onlyong/special_offer"
-            VSEA="/content/onlyong/special_offer"/>
-        <DELTA
-            jcr:primaryType="nt:unstructured"
-            DELTA5K="/content/onlyong/promo_landing"
-            DELTANOMILES="/content/onlyong/promo_landing"/>
-        <SWITCH
-            jcr:primaryType="nt:unstructured"
-            SWITCH="/content/onlyong/switch-back"/>
-        <VISA
-            jcr:primaryType="nt:unstructured"
-            OHIO_x0020_VISA="/content/onlyong/visa_offer"
-            SWITCHONLINE="/content/onlyong/visa_offer"/>
-        <BACK
-            jcr:primaryType="nt:unstructured"
-            BACKCONV="/content/gre/promo-landing-apples"
-            BACKDTEV="/content/gre/promo-landing-apples"/>
-        <LOYAL
-            jcr:primaryType="nt:unstructured"
-            LOYAL2017VISA="/content/gre/visa_offer"/>
-        <UTILITY
-            jcr:primaryType="nt:unstructured"
-            UTILITYCHOICE="/content/gre/special_offer"/>
         <oh jcr:primaryType="nt:unstructured">
             <APPLES
                 jcr:primaryType="nt:unstructured"
@@ -231,7 +170,8 @@
                 BACKVEDOV="/content/onlyong/backuppromo"/>
             <SAVE
                 jcr:primaryType="nt:unstructured"
-                SAVEBIZ2017="/content/onlyong/save2017"/>
+                SAVEBIZ2017="/content/onlyong/save2017"
+                SAVEME2017="/content/onlyong/saveme2017"/>
             <SPECIALOFFER
                 jcr:primaryType="nt:unstructured"
                 CSEA="/content/onlyong/special_offer"
@@ -259,22 +199,6 @@
                 MCCORD="/content/onlyong/MCCORD"/>
             <mccord jcr:primaryType="nt:unstructured"/>
         </oh>
-        <gre jcr:primaryType="nt:unstructured">
-            <BACK
-                jcr:primaryType="nt:unstructured"
-                BACKCON="/content/gre/backuppromo"
-                BACKDEOV="/content/gre/backuppromo"
-                BACKDTE="/content/gre/backuppromo"/>
-            <LOYAL
-                jcr:primaryType="nt:unstructured"
-                LOYAL2017VISA="/content/gre/visa_offer"/>
-            <UTILITY
-                jcr:primaryType="nt:unstructured"
-                UTILITYCHOICE="/content/gre/visa_offer"/>
-            <DELTA
-                jcr:primaryType="nt:unstructured"
-                DELTA25="/content/gre/promo_landing"/>
-        </gre>
     </promotions>
     <faq/>
     <product-configuration/>

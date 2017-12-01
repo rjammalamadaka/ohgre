@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-02T23:45:10.937-05:00"
+        cq:lastModified="{Date}2017-11-30T13:33:14.436-06:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:primaryType="cq:PageContent"
@@ -30,15 +30,16 @@
             <offerpromotionconten
                 jcr:created="{Date}2017-08-11T17:21:52.801-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-28T08:55:50.368+05:30"
+                jcr:lastModified="{Date}2017-11-30T13:33:14.431-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/offerpromotioncontent"
                 description="&lt;p>Receive a $25 VISA Reward card instead?&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                fineprinttext="&lt;p>* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices&amp;nbsp;do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 heading="Sign up today and receive {{GIFTCARDVALUE | currency : '$': 0}} Visa Reward Card!"
                 promoheadingline1="Select your gas utility company to view your options."
                 text="&lt;h4>Enroll online for a $25 VISA Reward Card&lt;/h4>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. LoremipsLorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/faq.html&quot; target=&quot;_self&quot; title=&quot;FAQ&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/terms-of-use.html&quot; target=&quot;_blank&quot; title=&quot;Terms And Conditions&quot;>Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
-                textIsRich="[true,true]"/>
+                textIsRich="[true,true,true]"/>
         </content>
     </jcr:content>
 </jcr:root>
