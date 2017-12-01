@@ -58,6 +58,41 @@ var ohio_ng = {
 
     });
 
+    $('.download-button').on('click', function(event) {
+      event.preventDefault();
+      // var pdf = new jsPDF('p', 'in', [8.5, 11]);
+      // var specialElementHandlers = {
+      //   'footer': function(element, renderer){
+      //        return true;
+      //     }
+      // };
+      // // pdf.canvas.height = 72 * 11;
+      // // pdf.canvas.width = 72 * 8.5;
+      // //pdf.fromHTML($('.customer-lookup').html(), 15, 15);
+      // pdf.fromHTML($('#order-confirmation').html(),15,15,{
+      //   'elementHandlers': specialElementHandlers
+      // });
+      //
+      // pdf.save('test.pdf');
+
+      html2pdf($('body').get(0), {
+         margin:       0,
+         filename:     'myfile.pdf',
+         image:        { type: 'jpeg', quality: 0.98 },
+         html2canvas:  { dpi: 192, letterRendering: true },
+         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      });
+
+      // html2canvas(document.body, {
+      //   onrendered: function(canvas) {
+      //     var contentDataURL = canvas.toDataURL('image/png')
+      //     var pdf = new jsPDF()
+      //     pdf.addImage(contentDataURL, 'JPEG', 20, 20)
+      //     pdf.save('form.pdf')
+      //   }
+      // })
+    });
+
     /*   $('.popup-wrapper,#close-window').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');

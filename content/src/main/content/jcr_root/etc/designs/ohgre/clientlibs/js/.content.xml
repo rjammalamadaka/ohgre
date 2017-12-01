@@ -11,4 +11,6 @@
     <init.js/>
     <directives.js/>
     <angular.js/>
+    <html2canvas.min.js/>
+    <html2pdf.min.js/>
 </jcr:root>
