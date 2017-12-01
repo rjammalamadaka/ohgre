@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_offer1.jpg"
-        jcr:lastModified="{Date}2017-11-28T23:59:02.789-05:00"
+        jcr:lastModified="{Date}2017-11-30T23:54:42.371-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-11-28T23:59:02.589-05:00"
+            dam:extracted="{Date}2017-11-30T23:54:42.077-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}923"
             exif:PixelYDimension="{Long}209"
-            jcr:lastModified="{Date}2017-11-28T23:58:52.462-05:00"
+            jcr:lastModified="{Date}2017-11-30T23:54:37.248-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
