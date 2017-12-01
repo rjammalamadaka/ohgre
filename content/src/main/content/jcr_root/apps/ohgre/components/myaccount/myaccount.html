@@ -1,0 +1,20 @@
+<div class="card myaccount" ng-controller="LoginPopupController">
+    <div class="card-hero">
+
+       <img src="${properties.mobileimagepath}" alt="" class="visible-xs visible-sm">
+		<img src="${properties.imagepath}" alt="" class="visible-md visible-lg">
+    </div>
+    <div class="inner-content-wrapper ${properties.displaybackground ? 'highlighted-bg' : ''} " >
+        <div class="inner-card-content">
+        <a ng-href="${properties.buttonpath || '#'}.html" class="redirect-click" data-path="">
+            <h2 class="card-title">${properties.heading || 'Heading'}</h2>
+            </a>
+            <!--<a class="mobile-view" href="${properties.buttonpath || '#'}.html" ><h2 class="card-title">${properties.heading || 'Heading'}</h2></a>-->
+            <p class="visible-md visible-lg">${properties.description || 'Promo default Description'}</p>
+			<a  href="#" class="visible-md visible-lg promo-link" ng-click="showLoginPopup()">${properties.buttontitle || 'See Offer'} </a>
+
+        </div>
+    </div>
+    <sly data-sly-include="loginpopup.html"></sly>
+</div>
+
