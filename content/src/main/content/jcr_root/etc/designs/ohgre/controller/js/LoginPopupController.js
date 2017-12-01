@@ -159,6 +159,8 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
     var getLdcInfo=function(){
         PrimeService.getLdcInfo().success(function(data, status, headers, config){
             if(data && data.responseStatus =="0"){
+                console.log("test");
+                console.log(data.LDCList);
                 $rootScope.ldcinfo=data.LDCList;
                 setTimeout(function(){ $scope.loginPopupBindClickEvent(); }, 10);
             }
