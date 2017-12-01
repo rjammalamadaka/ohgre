@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2017-11-22T09:19:16.558-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-11-30T11:38:31.298-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-11-22T09:19:30.971-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -55,19 +55,6 @@
                 description="&lt;p>Your special offer awaits!&lt;/p>&#xd;&#xa;"
                 heading="Have a promo code?"
                 textIsRich="true"/>
-            <herocard
-                jcr:created="{Date}2017-10-27T12:45:48.838-05:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-07T10:06:14.790-06:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/herocard"
-                buttonpath="/content/onlyong/myaccount"
-                buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer Grand Rapids Energy, you can manage your account online.  Log in to your account to view your current contract and make changes."
-                imagepath="/content/dam/ohgre/home/card_plans.jpg"
-                title="Currently a GRE customer?  "
-                title2="Manage your account here. "/>
             <colctrl
                 jcr:created="{Date}2017-07-23T18:42:46.076+05:30"
                 jcr:createdBy="admin"
@@ -94,20 +81,19 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
-            <cardpromo_1267368033
-                jcr:created="{Date}2017-08-21T00:28:08.643-04:00"
+            <myaccount
+                jcr:created="{Date}2017-11-29T20:56:07.679-06:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-04T13:19:34.806-04:00"
+                jcr:lastModified="{Date}2017-11-30T11:38:31.289-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/cardpromo"
-                buttonpath="/content/gre/moving"
-                buttontitle="Let's Get Moving"
-                description="Start, stop or transfer your existing natural gas service."
+                sling:resourceType="ohgre/components/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer of Grand Rapids Energy, you can manage your account online.  Log in to your account to view your current contract and make changes."
                 displayLink="true"
-                heading="Moving? Take GRE with You. "
-                imagepath="/content/dam/ohgre/home/card_moving.jpg"
-                mobileimagepath="/content/dam/ohgre/home/card_moving_mobile.jpg"/>
+                heading="Currently a GRE customer? Manage your account here."
+                imagepath="/content/dam/ohgre/home/card_plans.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_plans_mobile.jpg"/>
             <col_break15032896712800
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
@@ -181,4 +167,22 @@
     <myaccount/>
     <select-plan/>
     <cancel-contract/>
+    <promotions jcr:primaryType="nt:unstructured">
+        <gre jcr:primaryType="nt:unstructured">
+            <BACK
+                jcr:primaryType="nt:unstructured"
+                BACKCON="/content/gre/backuppromo"
+                BACKDEOV="/content/gre/backuppromo"
+                BACKDTE="/content/gre/backuppromo"/>
+            <LOYAL
+                jcr:primaryType="nt:unstructured"
+                LOYAL2017VISA="/content/gre/visa_offer"/>
+            <UTILITY
+                jcr:primaryType="nt:unstructured"
+                UTILITYCHOICE="/content/gre/visa_offer"/>
+            <DELTA
+                jcr:primaryType="nt:unstructured"
+                DELTA25="/content/gre/promo_landing"/>
+        </gre>
+    </promotions>
 </jcr:root>

@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-22T10:38:16.869-06:00"
+        cq:lastModified="{Date}2017-11-29T09:44:46.153-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-11-22T10:36:30.158-06:00"
+        cq:lastReplicated="{Date}2017-11-29T09:44:51.425-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
@@ -31,14 +31,14 @@
             <contact_us
                 jcr:created="{Date}2017-08-04T13:22:31.062-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-22T10:38:16.864-06:00"
+                jcr:lastModified="{Date}2017-11-29T09:44:46.147-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/contact-us"
                 description1="&lt;p>&lt;b>Mailing Address:&lt;/b>&lt;br />&#xd;&#xa;400 Renaissance Center, Suite 2600&lt;br />&#xd;&#xa;Detroit, MI 48243&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br />&#xd;&#xa;toll-free &lt;a href=&quot;tel:18008411541&quot; target=&quot;Target&quot;>1.800.841.1541&lt;/a>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;mailto:customerservice@grandrapidsenergy.com&quot; target=&quot;_blank&quot;>customerservice@grandrapidsenergy.com&lt;/a>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Note:&lt;/b>&lt;br />&#xd;&#xa;&lt;i>Please use the above contact information if you have questions about your Grand Rapids Energy service. If you have billing questions, contact DTE Energy/Michigan Consolidated Gas at 1.800.477.4747 or Consumers Energy at 1.800.477.5050.&lt;/i>&lt;/p>&#xd;&#xa;"
-                description2="&lt;p>&lt;b>Chris Turner&lt;/b>&lt;br />&#xd;&#xa;817 West Peachtree St., NW, Suite 1000, Atlanta, GA 30308&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;tel:4046854169&quot; target=&quot;Target&quot;>1.404.685.4169&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;mailto:chris.turner@onlyong.com?Subject=Grand Rapids Energy&quot; target=&quot;_top&quot;>chris.turner@onlyong.com&lt;/a>&lt;/p>&#xd;&#xa;"
-                description3="&lt;p>&lt;b>Anne Webb&lt;/b>&lt;br />&#xd;&#xa;817 West Peachtree St., NW, Suite 1000, Atlanta, GA 30308&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;tel:4046854105&quot; target=&quot;Target&quot;>1.404.685.4105&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;mailto:anne.webb@onlyong.com?Subject=Grand Rapids Energy&quot; target=&quot;_top&quot;>anne.webb@onlyong.com&lt;/a>&lt;/p>&#xd;&#xa;"
-                heading1="Residential Contacts ONG Customer Service"
+                description2="&lt;p>&lt;b>Chris Turner&lt;/b>&lt;br>&#xd;&#xa;817 West Peachtree St., NW, Suite 1000, Atlanta, GA 30308&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;tel:4046854169&quot; target=&quot;Target&quot;>1.404.685.4169&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;mailto:chris.turner@southstarenergy.com&quot; target=&quot;_top&quot;>chris.turner@southstarenergy.com&lt;/a>&lt;/p>&#xd;&#xa;"
+                description3="&lt;p>&lt;b>Anne Webb&lt;/b>&lt;br>&#xd;&#xa;817 West Peachtree St., NW, Suite 1000, Atlanta, GA 30308&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;tel:4046854105&quot; target=&quot;Target&quot;>1.404.685.4105&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;mailto:anne.webb@southstarenergy.com&quot; target=&quot;_top&quot;>anne.webb@southstarenergy.com&lt;/a>&lt;/p>&#xd;&#xa;"
+                heading1="Residential Contacts GRE Customer Service"
                 heading2="Commercial Industrial Contacts"
                 heading3="Aggregation Programs / Sales Agency Opportunities"
                 textIsRich="[true,true,true]"/>
