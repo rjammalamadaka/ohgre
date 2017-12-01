@@ -213,6 +213,7 @@ html,body{
 		height		: 8rem;
 		margin-left	: 0;
     -webkit-print-color-adjust: exact;
+    color-adjust: exact;
     //background-color: #ccc !important;
 
 		img{
@@ -230,22 +231,52 @@ html,body{
 #contact-us-container {
   display: none !important;
 }
+#enroll-customer{
+  .desktop-flex-container{
+    clear: both;
+    overflow: hidden;
+  }
+}
 .selected-plan {
-  width: 50%;
+  float: left;
+  margin-right: 20px;
+  min-height: 200px;
+  width: 47%;
 
+  &:last-child{
+    // margin-right: 0;
+  }
   .selected-price {
     background-color: #0074bf !important;
     color: #ffffff !important;
     -webkit-print-color-adjust: exact;
+    color-adjust: exact;
 
+    .price{
+      font-size: 4.4rem;
+    }
     span, small {
       color: white !important;
     }
   }
+  &.inverted-gray{
+    .selected-price {
+      background-color: #f6f6f6 !important;
+      color: #0074bf !important;
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
+
+      span, small {
+        color: #0074bf !important;
+      }
+    }
+  }
 }
+
 .gray-box {
   background-color: #f1f3f4 !important;
   -webkit-print-color-adjust: exact;
+  color-adjust: exact;
 }
 #step-through {
   .confirmation-wrapper {
@@ -274,6 +305,7 @@ html,body{
   .step {
     &:before {
       -webkit-print-color-adjust: exact;
+      color-adjust: exact;
     }
   }
   margin-bottom: 0;

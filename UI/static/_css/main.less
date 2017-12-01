@@ -2180,6 +2180,16 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 	}
+	.multiple-input{
+		margin-bottom: 2rem;
+
+		.input-container{
+			margin-bottom: 0;
+		}
+	}
+	.lastname-container{
+		margin-bottom: 2rem;
+	}
 	#login-account-info{
 		font-size: 1.6rem;
 		margin-bottom: 5rem;
@@ -2187,6 +2197,9 @@ div[class^="cq-colctrl-lt1-"]{
 		label {
 			font-family: @secondary_font;
 			font-weight: 500;
+		}
+		.error-message{
+			display: inline;
 		}
 	}
 	.dropdown-container {
@@ -2261,8 +2274,10 @@ div[class^="cq-colctrl-lt1-"]{
 		padding: 1rem 0;
 
 		.primary-button {
+			font-weight: normal;
 			min-width: 10rem;
 			padding: 0;
+			text-decoration: none;
 			width: 30%;
 
 			&:last-child {
@@ -2292,6 +2307,13 @@ div[class^="cq-colctrl-lt1-"]{
 	.inner-content-wrapper{
 		background-position: 0 -4.25rem;
 	}
+	.card-title{
+		font-size: 2.6rem;
+		font-weight: 300;
+		line-height: 3.6rem;
+		width: 100%;
+	}
+
 }
 
 /* REFER A FRIEND STYLES */
@@ -2448,7 +2470,6 @@ div[class^="cq-colctrl-lt1-"]{
 			}
 		}
 	}
-
 	.border-wrapper {
 		border: 1px solid #e9eef1;
 		margin-right: 0;
@@ -2467,7 +2488,6 @@ div[class^="cq-colctrl-lt1-"]{
 		font-family: @secondary_font;
 		padding: 0 2.5rem
 	}
-
 	.row .row {
 		@media (@screen-md-min){
 			> div[class^=col-]:first-of-type {
@@ -3271,6 +3291,15 @@ div.alt-col2,
 		}
 	}
 }
+.promo-fine-print{
+	font-size: 1.2rem;
+	padding: 2rem 4rem;
+	line-height: 1.7;
+	font-family:@secondary_font;
+	p{
+		color: #7c000f;
+	}
+}
 #visa-customer-info{
 	margin-top: -2rem;
 	width: 100%;
@@ -4071,7 +4100,11 @@ div.alt-col2,
 	@media (@screen-md-min){
 		padding: 6rem 8rem;
 	}
-
+	.selected-plan{
+		&:last-child{
+			margin-right: 0;
+		}
+	}
 }
 .confirmation-wrapper{
 	.confirmation-header {
@@ -5891,6 +5924,14 @@ ul.info-links {
 	// 		}
 	// 	}
 	// }
+}
+#cancel-plan-wrapper,
+#renew-plan-select{
+	.plan-detail{
+		.mobile-content {
+			padding: 1rem;
+		}
+	}
 }
 #renew-plan-select {
 	border-color: #e9eef1;

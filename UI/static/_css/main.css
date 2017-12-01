@@ -5726,6 +5726,7 @@ input[type="text"] {
   padding: .3rem 3rem;
   line-height: 3rem;
   color: #757575;
+  text-decoration: none;
 }
 .dropdown-container .dropdown-menu > li:last-child {
   border-bottom: none;
@@ -7918,6 +7919,15 @@ div[class^="cq-colctrl-lt1-"] .card p {
     margin-right: 4rem;
   }
 }
+#login-popup .multiple-input {
+  margin-bottom: 2rem;
+}
+#login-popup .multiple-input .input-container {
+  margin-bottom: 0;
+}
+#login-popup .lastname-container {
+  margin-bottom: 2rem;
+}
 #login-popup #login-account-info {
   font-size: 1.6rem;
   margin-bottom: 5rem;
@@ -7925,6 +7935,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #login-popup #login-account-info label {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+}
+#login-popup #login-account-info .error-message {
+  display: inline;
 }
 #login-popup .dropdown-container {
   margin: 0 0 5rem;
@@ -7994,8 +8007,10 @@ div[class^="cq-colctrl-lt1-"] .card p {
   padding: 1rem 0;
 }
 #login-popup .button-container .primary-button {
+  font-weight: normal;
   min-width: 10rem;
   padding: 0;
+  text-decoration: none;
   width: 30%;
 }
 #login-popup .button-container .primary-button:last-child {
@@ -8018,6 +8033,12 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #login-banner .inner-content-wrapper {
   background-position: 0 -4.25rem;
+}
+#login-banner .card-title {
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 3.6rem;
+  width: 100%;
 }
 /* REFER A FRIEND STYLES */
 .page-wrapper {
@@ -8888,6 +8909,15 @@ div.alt-col2,
     width: 60%;
   }
 }
+.promo-fine-print {
+  font-size: 1.2rem;
+  padding: 2rem 4rem;
+  line-height: 1.7;
+  font-family: 'Roboto', sans-serif;
+}
+.promo-fine-print p {
+  color: #7c000f;
+}
 #visa-customer-info {
   margin-top: -2rem;
   width: 100%;
@@ -9612,6 +9642,9 @@ div.alt-col2,
   .customer-lookup {
     padding: 6rem 8rem;
   }
+}
+.customer-lookup .selected-plan:last-child {
+  margin-right: 0;
 }
 .confirmation-wrapper .confirmation-header {
   margin-bottom: 2rem;
@@ -11387,6 +11420,10 @@ ul.info-links li {
   #cancel-plan-wrapper .plan-info-col td:first-child {
     font-size: 1.3rem;
   }
+}
+#cancel-plan-wrapper .plan-detail .mobile-content,
+#renew-plan-select .plan-detail .mobile-content {
+  padding: 1rem;
 }
 #renew-plan-select {
   border-color: #e9eef1;
