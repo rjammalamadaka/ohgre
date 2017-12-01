@@ -2,7 +2,7 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
 
 
 
-    $scope.lctype="residential";
+    $rootScope.lctype="residential";
 
 
     $scope.setLdcInfo= function(mainValue,description){
@@ -159,7 +159,6 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
     var getLdcInfo=function(){
         PrimeService.getLdcInfo().success(function(data, status, headers, config){
             if(data && data.responseStatus =="0"){
-                console.log(data.LDCList);
                 $rootScope.ldcinfo=data.LDCList;
                 setTimeout(function(){ $scope.loginPopupBindClickEvent(); }, 10);
             }
@@ -223,11 +222,11 @@ $scope.errorMessage=null;
                         if(($scope.customerInfo.rateClass == "01" && $scope.lctype=="residential") || ($scope.customerInfo.rateClass == "04" && $scope.lctype=="commercial")){
 
 
-                            
+
                             if(accountStatus =="Inactive"){
                                 jQuery("#login-popup-wrapper").removeClass("show-popup");
                                 jQuery("#login-inactive-popup").addClass("show-popup");
-                                
+
                                 console.log("inactive customer");
                             }else if($scope.customerInfo.b2BCustomerInd =="Y"){
                                 $scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
