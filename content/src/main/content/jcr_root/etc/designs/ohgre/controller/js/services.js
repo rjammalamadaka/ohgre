@@ -121,7 +121,7 @@ ohgrePortal.factory('OhGreService', ['$http','$rootScope',function($http,$rootSc
 
     return {
         getPromoGroups:getPromoGroups
-    }               
+    }              
 }]);
 
 
