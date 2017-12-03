@@ -8,6 +8,16 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     }
   }
 
+
+    var isEmpty=function(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+
      jQuery('#popup-spinner-wrap').show();
 
   $scope.displayPlans = true;
@@ -37,27 +47,36 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     $http.get(url).success(function(data, status, headers, config) {
       //goToByScroll();
            jQuery('#popup-spinner-wrap').hide();
+        if(!isEmpty(data)){
 
-      $scope.Quotes = data;
-      if ($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length > 0) {
-        $scope.Customer = $scope.Quotes.Customer;
-        $scope.products = $scope.Customer[0].Product;
-        updateProductFinePrint();
-        //$window.sessionStorage.setItem('products', angular.toJson($scope.products));
-        $scope.displayPlans = true;
-        setTimeout(function() {
-          $rootScope.bindAccordian();
-        }, 10);
-      }
-      console.log(data);
+              $scope.Quotes = data;
+              if ($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length > 0) {
+                $scope.Customer = $scope.Quotes.Customer;
+                $scope.products = $scope.Customer[0].Product;
+                updateProductFinePrint();
+                //$window.sessionStorage.setItem('products', angular.toJson($scope.products));
+                $scope.displayPlans = true;
+                setTimeout(function() {
+                  $rootScope.bindAccordian();
+                }, 10);
+              }
+
+        }else{
+            location.href=$rootScope.homeUrl+"/errors/500.html";
+        }
 
     }).error(function(data, status, headers, config) {
-   jQuery('#popup-spinner-wrap').hide();
-
-      console.log("error");
-    })
+   		jQuery('#popup-spinner-wrap').hide();
+ 		if(status == 404){
+                location.href=$rootScope.homeUrl+"/errors/404.html";
+        }else{
+                location.href=$rootScope.homeUrl+"/errors/500.html";
+        }
+    });
 
   }
+
+
 
   var updateProductFinePrint = function() {
 
