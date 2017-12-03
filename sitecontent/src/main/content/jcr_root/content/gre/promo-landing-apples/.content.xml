@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-02T23:40:39.324-05:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-12-01T16:38:30.353-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-01T16:38:36.721-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Apple Promotion"
+        jcr:uuid="8b3fe0aa-99d0-4f09-929f-a024b25b67bf"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
@@ -15,13 +21,13 @@
             <promoherobanner
                 jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-02T23:40:39.320-05:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-12-01T16:38:30.347-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
-                title="When you compare apples to apples, Ohio Natural Gas is the CLEAR CHOICE"/>
+                title="When you compare apples to apples, Grand Rapids Energy is the CLEAR CHOICE"/>
             <applepromotionconten
                 jcr:created="{Date}2017-07-28T21:26:17.785+05:30"
                 jcr:createdBy="admin"
