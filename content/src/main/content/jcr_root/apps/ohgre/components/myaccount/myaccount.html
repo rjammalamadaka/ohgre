@@ -6,12 +6,12 @@
     </div>
     <div class="inner-content-wrapper ${properties.displaybackground ? 'highlighted-bg' : ''} " >
         <div class="inner-card-content">
-        <a ng-href="${properties.buttonpath || '#'}.html" class="redirect-click" data-path="">
+        <a href="#" ng-click="showLoginPopup()" class="redirect-click" data-path="">
             <h2 class="card-title">${properties.heading || 'Heading'}</h2>
             </a>
             <!--<a class="mobile-view" href="${properties.buttonpath || '#'}.html" ><h2 class="card-title">${properties.heading || 'Heading'}</h2></a>-->
             <p class="visible-md visible-lg">${properties.description || 'Promo default Description'}</p>
-			<a  href="#" class="visible-md visible-lg promo-link" ng-click="showLoginPopup()">${properties.buttontitle || 'See Offer'} </a>
+			<a data-sly-test="${properties.displayLink}" href="#" class="visible-md visible-lg promo-link" ng-click="showLoginPopup()">${properties.buttontitle || 'See Offer'} </a>
 
         </div>
     </div>
