@@ -74,7 +74,7 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Current Plan</h4>
+										<h4>Current Contract</h4>
 										<span class="plan-selected">{{customerInfo.productDesc}}</span>
                                         <small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
 									</div>
@@ -90,7 +90,7 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Selected New Plan</h4>
+										<h4>Selected New Contract</h4>
 										<span class="plan-selected">{{product.productDesc}}</span>
 										<small>{{product.ldcDesc}}</small>
 									</div>
@@ -172,7 +172,7 @@
 	<div class="popup-wrapper" id="popupwithrenewal">
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.</h6>
+			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call ${inheritedPageProperties.mobilenumber} to discuss your options.</h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -210,7 +210,7 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Current Plan</h4>
+										<h4>Renewal Contract</h4>
 										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDesc}}</span>
                                         <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDesc}}</span>
 										<small ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
@@ -229,7 +229,7 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Selected New Plan</h4>
+										<h4>Selected New Contract</h4>
 										<span class="plan-selected">{{product.productDesc}}</span>
 										<small>{{product.ldcDesc}}</small>
 									</div>
