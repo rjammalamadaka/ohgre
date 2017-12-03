@@ -1,6 +1,6 @@
 ohgrePortal.controller('DashBoardController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
-
+jQuery('#popup-spinner-wrap').show();
 
     function isEmpty(obj) {
         for(var key in obj) {
@@ -20,9 +20,10 @@ ohgrePortal.controller('DashBoardController', ['$scope', '$rootScope', '$http' ,
             $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
 
             console.log($scope.customerInfo);
-
+            jQuery('#popup-spinner-wrap').hide();
 
         }).error(function(data, status, headers, config){
+            jQuery('#popup-spinner-wrap').hide();
 
         });
 
@@ -43,6 +44,8 @@ ohgrePortal.controller('DashBoardController', ['$scope', '$rootScope', '$http' ,
 
          }
      }).error(function(data, status, headers, config){
+
+         jQuery('#popup-spinner-wrap').hide();
 
      });
 
