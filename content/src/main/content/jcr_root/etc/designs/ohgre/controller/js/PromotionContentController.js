@@ -78,12 +78,17 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                           var locationType=promoInfo.locationType;
                             if(locationType=="residential"){
 								$scope.rateClassCode="01";
-                            }else{
+                            }else if(locationType=="commercial"){
 								$scope.rateClassCode="04";	
                             }
                         }
                         break;
                     }
+                }
+
+
+                if($scope.rateClassCode.length ==0){
+					$scope.rateClassCode="01";
                 }
 
             }
