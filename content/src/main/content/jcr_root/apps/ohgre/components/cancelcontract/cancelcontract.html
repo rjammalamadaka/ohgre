@@ -7,7 +7,7 @@
           <span class="user-greeting" ng-show="customerInfo.rateClass =='04'">Welcome, {{customerInfo.businessName}}. <a href="#" ng-click="logout()">Logout</a></span>
         </div>
         <div class="box-with-border" id="cancel-current-plan">
-          <h4>Your Current Plan</h4>
+          <h4>Your Current Contract</h4>
           <div class="desktop-flex-container">
             <div class="plan-info-col">
               <table class="table-wrapper account-info-table">
@@ -48,6 +48,8 @@
           </div>
         </div>
         <div class="box-with-border alert-box alert-alt1">
+		<h5>Cancel Service</h5>
+		<p>If you would like to cancel the service, please call ${inheritedPageProperties.mobilenumber}</p>
 
           <h5>We Hate to See You Go!</h5>
           <p>We'd love to continue being your natural gas provider. Please reconsider with one of these great plans:</p>

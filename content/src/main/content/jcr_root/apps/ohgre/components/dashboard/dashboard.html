@@ -134,11 +134,12 @@
               </div>
 
              <div class="box-with-border alert-box" ng-show="customerInfo.contractTermDate == '12/31/2999 12:00:00 AM'">
-                <p>You can change your contract at any time with no penalty.</p>
+                <p>You can change your contract at any time with no early termination charge</p>
               </div>
 
               <div class="buttons">
-                <a href="#" class="primary-button" ng-click="changeMyRenewal()">Change My Renewal Plan</a>
+                <a href="#" class="primary-button" ng-click="changeMyRenewal()" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">Select a Different Renewal Contract</a>
+                <a href="#" class="primary-button" ng-click="changeMyRenewal()" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">Select a Different Contract</a>
                 <a href="#" class="primary-button inactive" ng-click="cancelMyContract()">How to Cancel My Contract</a>
                 <a href="#" class="logout-button" ng-click="logout()">Logout</a>
               </div>

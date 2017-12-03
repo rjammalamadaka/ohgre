@@ -18,11 +18,12 @@
               <small class="ng-binding">per Month</small>
             </div>
             <div class="selected-info">
-              <span class="selected-plan-tag">Current Plan</span>
+              <span class="selected-plan-tag">Current Contract</span>
               <h5 class="ng-binding">{{customerInfo.productDescFriendly}}</h5>
               <span class="utility-name">
                                     {{productData.ldcDesc}}<br>
-									{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}} </span>
+
+									<span ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}} </span></span>
             </div>
           </div>
         </div>
