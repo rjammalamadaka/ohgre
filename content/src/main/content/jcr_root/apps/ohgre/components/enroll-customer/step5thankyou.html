@@ -15,7 +15,9 @@
     <div class="information-block box-with-border gray-box">
       <div class="form-area">
         <h4>Your Information</h4>
-        <label>Gas Service Pod ID</label>
+           <label ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+     <label ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
+
         <strong>{{formatedacno}}</strong>
         <div class="input-group-wrapper" ng-show="enrollReq.firstName">
           <label>Name on Gas Utility Account</label>
@@ -106,8 +108,7 @@
       </div>
       <div class="footnote-box">
         <div class="mobile-padding">
-          You may rescind your enrollment without penalty within 7 business days of the postmark date of that letter by contacting the utility by phone or in writing. If any of the information above is not correct or you have additional questions, please call Ohio
-          Natural Gas at 1-888-466-4427 and reference the Order Number shown above.
+          ${properties.footernote @ context = 'html'}
         </div>
       </div>
       <div class="button-container">

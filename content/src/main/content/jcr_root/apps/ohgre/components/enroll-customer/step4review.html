@@ -48,7 +48,8 @@
 						</div>
 						<div class="col-md-5 no-padding">
 						<h4>Billing Address</h4>
-						<strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+						<strong ng-show="!samebilling">{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+                        <strong ng-show="samebilling">{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
 						</div>
 					</div>
 					<hr />
