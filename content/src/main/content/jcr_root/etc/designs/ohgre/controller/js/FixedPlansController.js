@@ -19,7 +19,6 @@ ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',
 			event.preventDefault();
 			var obj = $(this);
 			var val = obj.html();
-            console.log(val);
 			$('.expanded-dropdown.opened').removeClass('opened');
             var dropdownButton=obj.parent().parent().parent().parent();
             var mainValue=$(this).find('span').attr('class');
@@ -32,22 +31,20 @@ ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',
 
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
-               console.log(data.LDCList);
-             $scope.ldcinfo=data.LDCList;
+              $scope.ldcinfo=data.LDCList;
              setTimeout(function(){ bindClickEvent(); }, 10);
+         }else{
+    		location.href=$rootScope.homeUrl+'/errors/500.html';
          }
 
          }).error(function (data,status, headers, config){
 
-        if(status == 404){
-			if(portalname =="oh"){
-         	location.href="/content/onlyong/errors/500.html";
+            if(status == 404){
+                location.href=$rootScope.homeUrl+"/errors/404.html";
             }else{
-                location.href="/content/gre/errors/500.html";
+                location.href=$rootScope.homeUrl+"/errors/500.html";
             }
-        }
 
-             console.log("error");
          });
 
 }]);
