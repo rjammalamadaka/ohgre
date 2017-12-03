@@ -231,6 +231,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }
 
     }
+
+    var updateBillingAddressInfo=function(){
+
+        $scope.billingaddressone=$rootScope.customerInfo.mailAddress1;
+        $scope.billingaddresstwo=$rootScope.customerInfo.mailAddress2;
+        $scope.billingaddresscity=$rootScope.customerInfo.mailCity;
+        $scope.billingaddressstate=$rootScope.customerInfo.mailStateCode;
+        $scope.billingaddresszip=$rootScope.customerInfo.mailZipCode;
+    }
     $scope.enrollCustomer =function(step){
 			$('#lastnamezipcodeerror').hide(); 
         clearEnrollReqObject();
@@ -257,18 +266,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
            // console.log(data);
            jQuery('#popup-spinner-wrap').hide();
-             if(data){
+             if(data && data.CustomerInfoResult){
                  $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
                   updateenrollrequestobj($rootScope.customerInfo);
-
-
-
                  if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
                      console.log($rootScope.customerInfo); 
                      $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
                      $scope.existingEmail= $rootScope.customerInfo.emailAddress;
                       var productInfo={};
-
                      if($rootScope.product && $rootScope.product.productCode && $rootScope.product.productCode==$rootScope.customerInfo.productCode){
 						productInfo.sameProductCode="Y";
                      }else{
@@ -276,14 +281,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                      }
                      var existingCustomerStatus=$rootScope.getCustomerStatus($rootScope.customerInfo.accountStatus);
 
-                     if(existingCustomerStatus=="Active"){
-							$rootScope.showcurrentplan=true;
-                     }
-
+                    //if(existingCustomerStatus=="Active"){
+                       //  $rootScope.showcurrentplan=true;
+                    // }
 					  productInfo.existingCustomerStatus=existingCustomerStatus;
 					  updateenrollrequestobj(productInfo);
                       $rootScope.showexistingcustomer=true;
                      $rootScope.gbplandisplay=false;
+
+                     updateBillingAddressInfo();
 
                      if($rootScope.product.customerTypeCode =="NEW"){
                          $('#popupalternate').addClass('show-popup');
@@ -354,8 +360,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
 
 
              }else{
-
-
+						location.href=$rootScope.homeUrl+'/errors/500.html';
              }
 
           /* 
@@ -632,7 +637,7 @@ $scope.reviewauthorizesubmit();
             }).error(function(data, status, headers, config){
                 jQuery('#popup-spinner-wrap').hide();
                  $scope.flag=false;
-                console.log(data);
+                location.href=$rootScope.homeUrl+'/errors/500.html';
             });
 
         }
@@ -694,6 +699,10 @@ $scope.reviewauthorizesubmit();
     }
 
     $rootScope.enrollconfirm =function(){
+
+         if($scope.enrollReq.existingCustomerStatus=="Active"){
+             $rootScope.showcurrentplan=true;
+         }
 
 
         if($rootScope.product.rateClassCode == "New"){
@@ -1021,7 +1030,7 @@ $scope.reviewauthorizesubmit();
            else
                return parseInt(x);
        };
-       
+
        var regex=/^[0-9]+$/;
        if (sknum.match(regex)) {
            integerCheck = 1;
@@ -1051,7 +1060,7 @@ $scope.reviewauthorizesubmit();
                
                intOdds = smn01 + smn03 + smn05 + smn07 + smn09;
                intEvens = smn02 + smn04 + smn06 + smn08;
-               
+
                intRemainder = (intOdds + intEvens) % 10;
 
                if ((intRemainder == 0) && (chkDigit == 0)) { smnStatus = 0; }
