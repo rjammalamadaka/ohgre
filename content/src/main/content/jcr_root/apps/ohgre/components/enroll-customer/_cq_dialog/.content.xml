@@ -187,6 +187,11 @@
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldLabel="PDF file path"
                                 name="./pdffilepath"/>
+                            <iframepdffilepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Iframe PDF file path"
+                                name="./iframepdffilepath"/>
                         </items>
                     </column>
                 </items>
