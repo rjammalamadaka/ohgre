@@ -36,6 +36,26 @@
 }
 html{
 	font-size	: 62.5%;
+
+	&.fixed-body {
+		height: 100%;
+		overflow: hidden;
+
+		body{
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.popup-wrapper{
+			 position: fixed;
+			 top: 0;
+			 left: 0;
+			 right: 0;
+			 bottom: 0;
+			 overflow-y: scroll;
+			 -webkit-overflow-scrolling: touch;
+		}
+	}
 }
 body{
 	background-color	: #fff;
@@ -51,9 +71,7 @@ body{
 	 	overflow: visible;
 	 	background-position	: -8vw 6vw;
 	 }
-	 &.fixed-body {
-		 overflow: hidden;
-	 }
+
 }
 img{
 	max-width: 100%;

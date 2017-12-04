@@ -5095,6 +5095,23 @@ button.list-group-item-danger.active:focus {
 html {
   font-size: 62.5%;
 }
+html.fixed-body {
+  height: 100%;
+  overflow: hidden;
+}
+html.fixed-body body {
+  height: 100%;
+  overflow: hidden;
+}
+html.fixed-body .popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 body {
   background-color: #fff;
   font-family: 'Roboto Slab', serif;
@@ -5110,9 +5127,6 @@ body {
     overflow: visible;
     background-position: -8vw 6vw;
   }
-}
-body.fixed-body {
-  overflow: hidden;
 }
 img {
   max-width: 100%;
