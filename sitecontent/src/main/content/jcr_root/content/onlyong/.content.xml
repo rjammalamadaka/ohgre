@@ -191,6 +191,8 @@
                 OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
             <DELTA
                 jcr:primaryType="nt:unstructured"
+                DELTA10K="/content/onlyong/promo_landing"
+                DELTA15K="/content/onlyong/promo_landing"
                 DELTA25="/content/onlyong/promo_landing"
                 DELTA5K="/content/onlyong/promo_landing"
                 DELTANOMILES="/content/onlyong/promo_landing"/>
