@@ -29,7 +29,17 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 				$scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 
-               var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+$scope.promotion.PromotionCode+"&rateClassCode="+$scope.rateClassCode;
+             var promotionCode=null;
+                  if($scope.promotion && $scope.promotion.PromotionCode){
+                      if($scope.promotion.PromotionExpired =="Y"){
+                          promotionCode= $scope.promotion.BackupPromotionCode; 
+                      }else{
+                          promotionCode=$scope.promotion.PromotionCode; 
+
+                      }
+                  }
+
+               var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+promotionCode+"&rateClassCode="+$scope.rateClassCode;
                  $http.get(url).success(function(data, status, headers, config){
                      $scope.Quotes=data;
                      if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
@@ -53,11 +63,35 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
     }
 
+    var getBackupPromoCodeInfo=function(promocode){
+
+
+         PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config) {
+				processPromotionInfo(data);
+
+         }).error(function(data, status, headers, config) {
+
+        });
+    }
      $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
           if(newValue){
 
-			var promoInfo=ohgre.store("promoCodeInfo");
-     		processPromotionInfo(promoInfo);
+              var promoInfo=ohgre.store("promoCodeInfo");
+
+              if($rootScope.hashParams.isExpired){
+                     if(promoInfo.LDCList.length>0){
+                            var ldc=promoInfo.LDCList[0];
+                            var promotion=ldc.promotion[0];
+                         if(promotion.BackupPromotionCode){
+							getBackupPromoCodeInfo(promotion.BackupPromotionCode);
+                         }else{
+							processPromotionInfo(promoInfo);
+                         }
+                     }
+
+              }else{
+     				processPromotionInfo(promoInfo);
+              }
         }
     });
 
@@ -93,11 +127,21 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
             }
 
+ 				var promotionCode=null;
+                  if($scope.promotion && $scope.promotion.PromotionCode){
+                      if($scope.promotion.PromotionExpired =="Y"){
+                          promotionCode= $scope.promotion.BackupPromotionCode; 
+                      }else{
+                          promotionCode=$scope.promotion.PromotionCode; 
+
+                      }
+                  }
+
            /*  if( $scope.promotion &&  $scope.promotion.RateClassCode){
 				$scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 */
-			PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
+			PrimeService.getQuotes(ldcCode,promotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                      $scope.displayPlans = true;

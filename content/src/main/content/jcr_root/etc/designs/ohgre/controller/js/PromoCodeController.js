@@ -72,7 +72,16 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                     }else if(data.LDCList && redirectUrl){
 
                         if(promotion.PromotionExpired =="Y" && data.LDCList.length >1){
-                            location.href=redirectUrl+".html#isExpired=true";
+
+                            if(promotion.BackupPromotionCode){
+
+                                 location.href=redirectUrl+".html#isExpired=true";
+
+                                                             }else{
+location.href=$rootScope.homeUrl+"/promotion-error.html";
+                                                             }
+
+
                         }else{
                             location.href=redirectUrl+".html";
                         }
@@ -93,9 +102,9 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                 //ohgre.store("promoCodeInfo",null);
                 location.href=$rootScope.homeUrl+"/promotion-error.html";
             }
-            
+
         }).error(function(data, status, headers, config) {
-            
+
         });
 
 
