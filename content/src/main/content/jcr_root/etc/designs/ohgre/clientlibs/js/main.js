@@ -32,10 +32,10 @@ UTILS = {
         return isMobileDevice;
     },
     preventBodyScroll: function() {
-      $('body').addClass('fixed-body');
+      $('html').addClass('fixed-body');
     },
     allowBodyScroll: function() {
-      $('body').removeClass('fixed-body');
+      $('html').removeClass('fixed-body');
     },
 };
 
@@ -54,7 +54,7 @@ var ohio_ng = {
     $('.trigger-popup').on('click', function(event) {
       event.preventDefault();
       $('.popup-wrapper').addClass('show-popup');
-      $('body').addClass('fixed-body');
+      $('html').addClass('fixed-body');
 
     });
 
@@ -102,7 +102,7 @@ var ohio_ng = {
     $('.close-window, .close-window-button').on('click', function(event) {
       event.preventDefault();
       $('.popup-wrapper').removeClass('show-popup');
-      $('body').removeClass('fixed-body');
+      $('html').removeClass('fixed-body');
     });
 
     $('.tooltip-trigger').on('click', function(event) {
