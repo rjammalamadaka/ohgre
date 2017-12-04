@@ -1,5 +1,6 @@
 ohgrePortal.controller('DashBoardController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
+    ohgre.removeStore("promoCodeInfo");
 jQuery('#popup-spinner-wrap').show();
 
     function isEmpty(obj) {
