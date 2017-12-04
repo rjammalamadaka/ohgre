@@ -628,6 +628,7 @@ $scope.reviewauthorizesubmit();
                     if(enrollCustomerResult.responseStatus =="1"){
                    		 $scope.primeErrorMessage=enrollCustomerResult.responseMessage;
                     }else if(enrollCustomerResult.responseStatus =="0"){
+						ohgre.removeStore("promoCodeInfo");
                         $scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
 						gotNextStep(5);
                         document.title="Confirmation Page";
@@ -1023,7 +1024,7 @@ $scope.reviewauthorizesubmit();
                
                a = x.toString();
                b = parseInt(a.substring(0, 1)) + parseInt(a.substring(1, 2));
-               
+
                return b;
            }
            
