@@ -37,7 +37,7 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 						"rafCode,enrolledByUserId,authorizationCode,authorizationLevel,channelID,promotionCode,campaignID,webSiteURL,custLeadSourceCode,actionIfContractExists,preventCancelFeeifContractExists," +
 						"bypassCreditCheckInd,soldDate,bypassCIRInd,expectedQuoteAmt,tpvRequiredInd,emailTypeCode,alternateEmailAddress,editOnlyInd,b2BCustomerInd,expressConsentInd,brokerID," +
 						"delaySendToUtilDate,renewalProductCode,renewalFixPricePerThermCd,renewalFixPricePerTherm,renewalVarPriceAddOnPerTherm,renewalCtrctDurationMonths,renewalCtrctTermDate," +
-						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag,transactionType,customerType,price,tcVersion,originalPromoCode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
 				PreparedStatement ps = connection.prepareStatement(query,new String[]{"id"});
@@ -137,6 +137,11 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 				ps.setString(72,enrollment.getServiceTransferAuthFlag());
 				ps.setString(73,enrollment.getAuthorityToSwitchFlag());
 				ps.setString(74,enrollment.getAgreeToTermsFlag());
+				ps.setString(75,enrollment.getTransactionType());
+				ps.setString(76,enrollment.getCustomerType());
+				ps.setString(77,enrollment.getPrice());
+				ps.setString(78,enrollment.getTCVersion());
+				ps.setString(79,enrollment.getOriginalPromoCode());
 				ps.execute();
 				ResultSet rs=ps.getGeneratedKeys();
 				if(rs.next()){
