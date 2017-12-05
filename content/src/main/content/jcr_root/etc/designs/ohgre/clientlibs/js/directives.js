@@ -38,6 +38,7 @@ ohgrePortal.directive('restrictTo', function() {
         link: function (scope, element, attrs) {
             var re = RegExp(attrs.restrictTo);
             var exclude = [8,13,9,46,38,40,37,39];
+           /*
             element[0].addEventListener('keydown', function(event) {
 
                 if (!(event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
@@ -46,6 +47,30 @@ ohgrePortal.directive('restrictTo', function() {
                     }
                 }
 
+            });
+            */
+			element[0].addEventListener('input', function(event) {
+                var reg = /^\d+$/;
+                 /*
+                var userInput = event.data.length;
+
+				console.log('data length', userInput);
+
+
+                if(!reg.test(event.data)){
+
+                    var isnum = /^\d+$/.test(event.data);
+
+                    if(!isnum) {
+                    }
+
+					$(element[0]).val(
+                        function(index, value){
+                            return value.substr(0, value.length - 1);
+                    })
+
+                }
+                */
             });
 
 
@@ -123,3 +148,23 @@ ohgrePortal.directive('multipleEmails', function () {
         }
     };
 })
+ohgrePortal.directive('numbersOnly', function(){
+   return {
+     require: 'ngModel',
+     link: function(scope, element, attrs, modelCtrl) {
+       modelCtrl.$parsers.push(function (inputValue) {
+           // this next if is necessary for when using ng-required on your input. 
+           // In such cases, when a letter is typed first, this parser will be called
+           // again, and the 2nd time, the value will be undefined
+           if (inputValue == undefined) return '' 
+           var transformedInput = inputValue.replace(/[^0-9]/g, ''); 
+           if (transformedInput!=inputValue) {
+              modelCtrl.$setViewValue(transformedInput);
+              modelCtrl.$render();
+           }         
+
+           return transformedInput;         
+       });
+     }
+   };
+});
