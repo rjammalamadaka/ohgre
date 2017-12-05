@@ -5,9 +5,9 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-12-01T16:10:02.906-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-11-15T15:44:40.024-06:00"
+        cq:lastModified="{Date}2017-12-04T13:42:57.900-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-04T13:43:01.321-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
@@ -30,11 +30,11 @@
             <herocarousel
                 jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-28T08:19:05.638-06:00"
+                jcr:lastModified="{Date}2017-12-04T13:42:01.749-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your Ohio Natural Gas® bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you'll each receive a $25 Visa® Reward Card.*  It's that easy!&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;start referring&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/refer-a-friend&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;For more than 10 years\, we’ve proudly served Ohio residents with flexible plan options\, exceptional customer service and outstanding perks.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                iItems="[{&quot;title&quot;:&quot;Sign up today and get 2\,500 bonus miles*&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your natural gas bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you could each receive a $25 Visa® Reward Card.* &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;start referring&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/refer-a-friend&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;For more than 10 years\, we’ve proudly served Ohio residents with flexible plan options\, exceptional customer service and outstanding perks.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
                 timeout="5500"/>
             <promocode
                 jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
@@ -95,12 +95,12 @@
             <cardpromo_plans
                 jcr:created="{Date}2017-07-25T13:13:33.058-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-10T11:11:15.778-06:00"
+                jcr:lastModified="{Date}2017-12-04T13:42:57.893-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo-plans"
                 buttonpath="/content/onlyong/plans-detail"
-                description="Lock in a 6- or 12-month fixed rate to avoid price spikes and market fluctuations!"
+                description="Lock in a 6- or 12-month fixed rate to avoid the potential for price spikes and market fluctuations!"
                 heading="View Rate Plans"/>
             <col_end15010027951470
                 jcr:primaryType="nt:unstructured"
@@ -109,11 +109,11 @@
             <signup_for_newslette
                 jcr:created="{Date}2017-10-09T21:36:27.570-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-10T11:15:07.035-06:00"
+                jcr:lastModified="{Date}2017-12-04T13:40:02.523-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/signup-for-newsletters-popup"
-                description="Sign up to receive new promo codes from us."/>
+                description="Sign up to receive promotional emails from us."/>
         </content>
     </jcr:content>
     <plans-detail/>

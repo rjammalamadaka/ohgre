@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-21T15:24:27.932-06:00"
+        cq:lastModified="{Date}2017-12-04T14:42:55.605-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-11-21T15:24:46.380-06:00"
+        cq:lastReplicated="{Date}2017-12-04T14:44:21.891-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -21,17 +21,17 @@
             <staticherobanner
                 jcr:created="{Date}2017-09-29T16:09:56.194-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-10-13T09:44:00.579-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-12-04T14:38:28.882-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/staticherobanner"
                 description="New miles earning structure effective January 1, 2018*"
                 imagepath="/content/dam/ohgre/home/delta-image.jpg"
-                title="Earn miles just for paying your gas bill!"/>
+                title="Earn miles just for paying your gas bill!*"/>
             <delta_signup_content
                 jcr:created="{Date}2017-09-29T16:10:02.335-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-21T15:24:27.926-06:00"
+                jcr:lastModified="{Date}2017-12-04T14:42:55.599-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/delta-signup-content"
@@ -40,10 +40,10 @@
                 deltaformheading="Delta SkyMiles Member Information"
                 deltapromocode="DELTA25"
                 formheader="Ohio Natural Gas Account Information"
-                header="&lt;h4>It’s easy to start participating.&lt;/h4>&#xd;&#xa;&lt;p style=&quot;text-align: left;&quot;>Simply enter your ONG account and SkyMiles member information below. if you’d prefer to enroll by phone, call ONG(toll-free) at &lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>1.888.466.4427&lt;/a> and mention that you would like to enroll in ONG’s Delta SkyMiles partnership program. Please have your SkyMiles account number handy when you call.&lt;/p>&#xd;&#xa;"
+                header="&lt;h4>It’s easy to start participating.&lt;/h4>&#xd;&#xa;&lt;p style=&quot;text-align: left;&quot;>Simply enter your ONG account and SkyMiles member information below. If you’d prefer to enroll by phone, call ONG (toll-free) at &lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>1.888.211.8312&lt;/a> and mention that you would like to enroll in ONG’s Delta SkyMiles program. Please have your SkyMiles account number handy when you call.&lt;/p>&#xd;&#xa;"
                 imagepath="/content/dam/ohgre/home/card_plans.jpg"
                 promotionpath="/content/onlyong/promo_landing"
-                sidecontent="&lt;h4>Switch to Ohio Natural Gas and start earning with Delta SkyMiles®.&lt;/h4>&#xd;&#xa;&lt;p>Ohio Natural Gas(ONG) is excited to be a Delta SkyMiles partner and the only natural gas supplier in Ohio with whom you can earn miles from Delta just for paying your natural gas bill.&lt;/p>&#xd;&#xa;&lt;h4>HOW IT WORKS:&lt;/h4>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Customers will earn TWO miles for every dollar spent on their ONG supplier natural gas charges (excluding sales tax and one-time charges)!&lt;/li>&#xd;&#xa;&lt;li>And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/faq.html&quot; target=&quot;Target&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/terms-of-use.html&quot; target=&quot;Target&quot;>Program Terms &amp;amp; Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                sidecontent="&lt;h4>Switch to Ohio Natural Gas&amp;nbsp;and start earning with Delta SkyMiles®.&lt;/h4>&#xd;&#xa;&lt;p>Ohio Natural Gas(ONG) is excited to be a Delta SkyMiles partner and the only natural gas supplier in Ohio with whom you can earn miles from Delta just for paying your natural gas bill.&lt;/p>&#xd;&#xa;&lt;h4>HOW IT WORKS:&lt;/h4>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Customers will&amp;nbsp;earn TWO miles for every dollar spent on their ONG supplier natural gas charges (excluding sales tax and one-time charges)!Ɨ&lt;/li>&#xd;&#xa;&lt;li>And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/faq.html&quot; target=&quot;Target&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/onlyong/terms-of-use.html&quot; target=&quot;Target&quot;>Program Terms &amp;amp; Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true]"
                 viewplansheader="Not an Ohio Natural Gas Customer?"
                 viewplanssubhead="Not yet a customer, but want to sign up with Ohio Natural Gas to take advantage of this offer?"/>

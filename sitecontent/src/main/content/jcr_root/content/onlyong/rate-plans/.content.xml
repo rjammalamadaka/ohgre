@@ -4,9 +4,9 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-12-03T19:46:39.337-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-11-21T14:47:07.424-06:00"
+        cq:lastModified="{Date}2017-12-04T15:10:09.174-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-04T14:52:16.554-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -24,24 +24,24 @@
             <herobaner
                 jcr:created="{Date}2017-08-16T11:17:23.463-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-25T15:43:04.143-05:00"
-                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:lastModified="{Date}2017-12-04T14:48:53.828-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herobaner"
-                description="Our residential natural gas plans are designed to serve your needs."
+                description="Our natural gas plans are designed to serve your needs."
                 imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
-                title="View All Residential Natural Gas Plans"/>
+                title="View Our Natural Gas Plans"/>
             <plansdisplay_266813004
                 jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-03T19:46:39.331-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-12-04T15:10:09.169-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/plansdisplay"
                 displayGuranteedPlan="true"
                 footernotes="&lt;p>* Published price is the Variable Plan current standard &lt;g class=&quot;gr_ gr_7 gr-alert gr_gramm gr_inline_cards gr_run_anim Style multiReplace&quot; id=&quot;7&quot; data-gr-id=&quot;7&quot;>rate .&lt;/g> Variable rate may change or remain the same each month based on market conditions.&lt;/p>&#xd;&#xa;&lt;p>** Published price is the Variable Plan discounted rate for Jun 2017. Variable rate may change or remain the same each month based on market conditions.&lt;/p>&#xd;&#xa;&lt;p>**Price comparison claim based on PUCO Apples-to Apples website published 6-Month Fixed prices as of 11/01/2016 and ONG’s online 6-Month Fixed price offer&lt;/p>&#xd;&#xa;"
                 guranteedBillDesc=" Call us for a Guaranteed and protected bill plan"
-                text="&lt;p>With ONG, choosing the residential natural gas plan that&amp;#39;s best for you is easy. We offer competitive fixed rate, variable rate and Guaranteed Bill℠ plans – all designed to meet your needs and backed by straightforward &lt;a href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>.&amp;nbsp;&lt;br>&#xa;&lt;/p>&#xa;"
+                text="&lt;p>With ONG, choosing the residential natural gas plan that&amp;#39;s best for you is easy. We offer&amp;nbsp;great fixed rates and variable rates – all designed to meet your needs and backed by straightforward &lt;a href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>.&amp;nbsp;&lt;br>&#xa;&lt;/p>&#xa;"
                 textIsRich="true"/>
         </content>
         <image
