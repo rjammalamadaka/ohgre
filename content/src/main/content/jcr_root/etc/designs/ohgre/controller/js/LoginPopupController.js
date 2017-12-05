@@ -291,12 +291,14 @@ req.LdcDesc=$scope.ldcdesc;
 
     $scope.closeInactive =function(){
 		jQuery("#login-inactive-popup").removeClass("show-popup");
-      	 location.reload(true);
+      	 //location.reload(true);
 
 		location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$scope.ldc+'&lctype='+$scope.lctype;
     }
 
-
-
+    $scope.closeandreload = function(){
+            jQuery("#login-inactive-popup").removeClass("show-popup");
+             location.reload(true);
+    }
 }]);
 
