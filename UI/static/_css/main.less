@@ -54,7 +54,7 @@
 			color: @accent_color;
 		}
 	}
-	
+
 	.contact-us-container{
 		font-family		: @secondary_font;
 		background-color	: #e9eef2;
@@ -2183,11 +2183,12 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 	.multiple-input{
-		margin-bottom: 2rem;
-
 		.input-container{
 			margin-bottom: 0;
 		}
+	}
+	.form-area-wrapper{
+			margin-bottom: 2rem;
 	}
 	.lastname-container{
 		margin-bottom: 2rem;
@@ -5290,7 +5291,6 @@ input{
 			// margin-top: 2rem;
 			margin: 2rem 0 0;
 		}
-
 		button{
 			font-family: @accent_font;
 			width: 90%;
@@ -5328,6 +5328,15 @@ input{
 	}
 	.form-element {
 		padding: 1.5rem 2rem;
+	}
+	#formone{
+		.error-message{
+			display: inline;
+
+			&#lastnamezipcodeerror{
+				display: none;
+			}
+		}
 	}
 }
 .inner-window-content{

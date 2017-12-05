@@ -7933,11 +7933,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
     margin-right: 4rem;
   }
 }
-#login-popup .multiple-input {
-  margin-bottom: 2rem;
-}
 #login-popup .multiple-input .input-container {
   margin-bottom: 0;
+}
+#login-popup .form-area-wrapper {
+  margin-bottom: 2rem;
 }
 #login-popup .lastname-container {
   margin-bottom: 2rem;
@@ -10801,6 +10801,12 @@ input {
 }
 #step-through .form-element {
   padding: 1.5rem 2rem;
+}
+#step-through #formone .error-message {
+  display: inline;
+}
+#step-through #formone .error-message#lastnamezipcodeerror {
+  display: none;
 }
 .inner-window-content {
   padding: 0;
