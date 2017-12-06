@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-12-05T14:21:42.320-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-05T14:22:57.188-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:lastRolledout="{Date}2017-12-05T14:18:21.897-06:00"
+        cq:lastRolledoutBy="penny"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSync,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="SkyMiles Terms and Conditions"
+        jcr:uuid="7d5c7ece-1c1f-4af4-b041-051590e01f58"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true">
+        <image
+            cq:lastRolledout="{Date}2017-12-05T14:18:21.870-06:00"
+            cq:lastRolledoutBy="penny"
+            jcr:lastModified="{Date}2017-12-05T14:18:21.865-06:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            cq:lastRolledout="{Date}2017-12-05T14:18:21.876-06:00"
+            cq:lastRolledoutBy="penny"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2017-12-05T14:18:21.888-06:00"
+                cq:lastRolledoutBy="penny"
+                jcr:created="{Date}2017-08-07T16:53:23.243-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-05T14:19:39.194-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="You have questions. We have answers."
+                imagepath="/content/dam/ohgre/home/delta-image.jpg"
+                title="Delta SkyMiles Program Terms and Conditions"/>
+            <termsofuse
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2017-12-05T14:18:21.897-06:00"
+                cq:lastRolledoutBy="penny"
+                jcr:created="{Date}2017-08-07T16:53:50.284-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-05T14:21:42.315-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/termsofuse"
+                termsofuse="&lt;p>You must be a SkyMiles member and provide your SkyMiles account number to ONG to participate in this program and earn miles. For monthly gas service, two miles will be awarded for each dollar spent for ONG supplier gas charges. Miles will not be awarded for taxes or one -time charges such as late fees for any plan. SkyMiles Medallion® members will receive one additional mile for eligible charges. Miles will be posted to your SkyMiles account up to 4 weeks after each monthly bill date, provided you remain in good standing in the SkyMiles program. Visit &lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/onlyong/promo_landing.html&quot; target=&quot;Target&quot;>onlyong.com/skymiles&lt;/a> for program terms and conditions. All SkyMiles program rules apply. To review the rules, please visit Membership Guide &amp;amp; Program Rules at &lt;a href=&quot;http://www.delta.com/memberguide&quot; target=&quot;_blank&quot;>www.delta.com/memberguide&lt;/a>. All ONG program rules, and Delta prices and SkyMiles rules, are subject to change without notice. Taxes and fees for Award Travel are the responsibility of the passenger and must be paid at the time the ticket is booked. Award Travel seats are limited and may not be available on all flights or in all markets. Delta, SkyMiles, and the Delta logo are registered service marks of Delta Air Lines, Inc. Delta is not responsible for goods or services offered by any companies participating in miles promotions. Partner offers subject to the terms and conditions of each individual offer. See individual offers for details. Offers void where prohibited by law. Other restrictions may apply. Ohio Natural Gas and Delta Air Lines, Inc. are not affiliated, and neither has any obligation or liability with respect to the products or services to be provided by the other.&lt;/p>&#xd;&#xa;&lt;p>ONG customers in good standing who are on any of ONG’s published residential or commercial price plans and are also SkyMiles members are eligible to start earning miles. In order to maintain eligibility, a participant must receive continuous natural gas service from ONG. ONG reserves the right, in its sole discretion, to discontinue the program and/or modify the terms and conditions of the program at any time and without notice to any customer or other party.&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+        </content>
+        <cq:LiveSyncConfig
+            cq:isDeep="{Boolean}false"
+            cq:master="/content/onlyong/terms-of-use"
+            cq:rolloutConfigs="[]"
+            jcr:primaryType="cq:LiveCopy"/>
+    </jcr:content>
+</jcr:root>
