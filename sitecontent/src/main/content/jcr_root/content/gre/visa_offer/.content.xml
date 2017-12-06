@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-01T16:22:06.764-06:00"
+        cq:lastModified="{Date}2017-12-05T15:28:02.076-06:00"
         cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2017-12-01T16:22:15.071-06:00"
         cq:lastReplicatedBy="penny"
@@ -36,7 +36,7 @@
             <offerpromotionconten
                 jcr:created="{Date}2017-08-11T17:21:52.801-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-01T16:22:06.759-06:00"
+                jcr:lastModified="{Date}2017-12-05T15:28:02.072-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/offerpromotioncontent"
