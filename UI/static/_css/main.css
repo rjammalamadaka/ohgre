@@ -5610,7 +5610,7 @@ input[type="text"] {
 }
 .checkbox input[type=checkbox]:before {
   position: absolute;
-  top: .1rem;
+  top: 0rem;
   left: 0;
   height: 100%;
   width: 100%;
@@ -6508,7 +6508,7 @@ input.alt-radio1:checked {
 .cycle-slideshow #slide-pager,
 .hero-slideshow #slide-pager {
   position: absolute;
-  z-index: 10000;
+  z-index: 9997;
   color: #fff;
   left: 0;
   top: 175px;
@@ -9902,7 +9902,7 @@ input {
 }
 .customer-lookup .form-wrapper input[type="checkbox"] {
   float: left;
-  height: 2.5rem;
+  height: 2.1rem;
 }
 .customer-lookup .form-wrapper .after-checkbox {
   float: left;
