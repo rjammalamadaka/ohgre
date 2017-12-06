@@ -189,7 +189,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollRequest.setEmailTypeCode(emailTypeCode);
 			enrollRequest.setServiceZipCode(serviceZipCode);
 			enrollment.setServiceZipCode(serviceZipCode);
-			enrollRequest.setEmailPrefTransactionalCd("Y");
+			//enrollRequest.setEmailPrefTransactionalCd("Y");
 			enrollment.setEmailPrefTranctionalCd("Y");
 			//Need to make it as dynamic
 			enrollRequest.setAuthorizationCode("internal");
