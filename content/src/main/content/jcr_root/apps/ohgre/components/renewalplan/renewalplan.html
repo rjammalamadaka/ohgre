@@ -31,12 +31,12 @@
           <h3>Please select a new plan or enter your promo code:</h3>
           <form name="renewalPlanPromo" id="renewalPlanPromo" novalidate>
             <label for="promocode">If you have a promo code, enter it here.</label>
-            <input type="text" name="promocode" ng-model="promocode" id="promo-code" ng-required="true" ng-focus ng-visited/>
+            <input type="text" name="promocode" ng-model="promocode" id="promo-code" />
 
             <button id="submit-promo-code" name="submit" type="submit" class="primary-button active" ng-click="submitPromoCode()" value="Apply Promo Code">{{formButton}}</button>
 
           </form>
-          <span class="input-error-message" ng-show="(renewalPlanPromo.promocode.$visited && !renewalPlanPromo.promocode.$focused) || renewalPlanPromo.submited">
+          <span class="input-error-message" ng-show="renewalPlanPromo.submited">
                                     <span class="input-error-message" ng-show="renewalPlanPromo.promocode.$error.required">Promo code is required.</span>
           </span>
 

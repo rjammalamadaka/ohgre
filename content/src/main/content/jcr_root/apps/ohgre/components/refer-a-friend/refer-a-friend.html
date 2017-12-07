@@ -40,16 +40,16 @@
 
                 <div class="form-area multiple-input">
                   <div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
-                    <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required restrict-to>
+                    <input type="text" pattern="[0-9]*" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required numbers-only>
                   </div>
                   <div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
-                    <input type="text" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required restrict-to>
+                    <input type="text" pattern="[0-9]*" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required numbers-only>
                   </div>
                   <div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
-                    <input type="text" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required restrict-to>
+                    <input type="text" pattern="[0-9]*" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required numbers-only>
                   </div>
                   <div class="input-container" data-size={{an4minl}}>
-                    <input type="text" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required restrict-to>
+                    <input type="text" pattern="[0-9]*" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required numbers-only>
                   </div>
                 </div>
 

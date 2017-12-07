@@ -778,6 +778,11 @@
                                                     name="./footernavigationlinks"
                                                     required="{Boolean}true"/>
                                             </compinfolinks>
+                                            <tearmsadnconditions
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Terms and Conditions"
+                                                name="./termsandconditions"/>
                                         </items>
                                     </footernav>
                                 </items>
