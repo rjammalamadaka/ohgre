@@ -122,8 +122,25 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
             if(!req.LDC){
                 if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
-                    req.LDC=promoInfo.LDCList[0].LDCCode;
-                    req.LdcDesc=promoInfo.LDCList[0].LDCDesc;
+
+ 					for(var i=0;i<promoInfo.LDCList.length;i++){
+					     ldc=promoInfo.LDCList[i];
+                         var promotion=ldc.promotion[0];
+                         if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
+ 								req.LDC=promoInfo.LDCList[i].LDCCode;
+                   				 req.LdcDesc=promoInfo.LDCList[i].LDCDesc;
+
+                              break;
+                          }if(promotion.PromotionExpired =="N"){
+								 req.LDC=promoInfo.LDCList[i].LDCCode;
+                    			req.LdcDesc=promoInfo.LDCList[i].LDCDesc;
+
+                              break;                              
+                          }
+
+                    }
+
+
                 }
             }else if(req.LDC && promoInfo && promoInfo.LDCList){
                 for(var i=0;i<promoInfo.LDCList.length;i++){
