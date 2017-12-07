@@ -165,6 +165,34 @@ ohgrePortal.directive('numbersOnly', function(){
 
            return transformedInput;         
        });
+
+         element[0].addEventListener('input', function(event) {
+                var reg = /^\d+$/;
+
+                var userInput;
+
+
+                 if(event.data){
+                     userInput = event.data.length;
+                     console.log('data length', userInput);
+                     if(!reg.test(event.data)){
+
+                    var isnum = /^\d+$/.test(event.data);
+    
+                        if(!isnum) {
+                        }
+    
+                        $(element[0]).val(
+                            function(index, value){
+                                return value.substr(0, value.length - 1);
+                        })
+    
+                    }
+                 }
+
+
+            });
+
      }
    };
 });
