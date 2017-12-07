@@ -237,12 +237,12 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
  							$scope.serverError="Please enter a valid promocode"; 
                             jQuery('#popup-spinner-wrap').hide();
                         }
-                         ohgre.store("promoCodeInfo",data);
+
 
                         if(ldcinfo && ldcinfo.promotion[0].GiftCardEligible == "Y"){
                         	var giftCardValue=Number(ldcinfo.promotion[0].GiftCardValue);
                             if(giftCardValue>0){
-
+                               ohgre.store("promoCodeInfo",data);
 								$scope.showgiftcardmsg=true;
                                 $scope.giftCardValue=giftCardValue;
                                $scope.GIFTCARDVALUE =giftCardValue;
@@ -250,9 +250,10 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                         }
 
                         if(ldcinfo && ldcinfo.promotion[0].CustomerTypeCode=="NEW"){
-
+								ohgre.removeStore("promoCodeInfo");
                                 jQuery('#popup-spinner-wrap').hide();
                                 $scope.serverError="Sorry you are not eligible for this offer."; 
+                            $scope.showgiftcardmsg=false;
 
                         }else  if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="Y"){
                             if(ldcinfo.promotion[0].BackupPromotionCode){
