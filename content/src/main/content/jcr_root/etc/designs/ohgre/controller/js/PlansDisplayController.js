@@ -313,8 +313,13 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     var smallDesc = null;
     if ($scope.productsInfo && $scope.productsInfo.length > 0) {
       for (var i = 0; i < $scope.productsInfo.length; i++) {
-        var product = JSON.parse($scope.productsInfo[i]);
-        if (product.productcode == productCode) {
+
+ 		var product =null;
+          try{
+         product = JSON.parse($scope.productsInfo[i]);
+          }catch(e){
+          }
+        if (product && product.productcode &&  product.productcode == productCode) {
           smallDesc = product.description;
           break;
         }
