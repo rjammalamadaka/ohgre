@@ -1,5 +1,6 @@
 ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$http', 'PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
+    $scope.iframeurl="";
     $scope.displaystepscontainer=false;
     $scope.businessName=false;
     $scope.showgiftcardmessage=false;
@@ -1021,13 +1022,13 @@ $scope.reviewauthorizesubmit();
            if (x > 9) {
                var a,
                    b;
-               
+
                a = x.toString();
                b = parseInt(a.substring(0, 1)) + parseInt(a.substring(1, 2));
 
                return b;
            }
-           
+
            else
                return parseInt(x);
        };
@@ -1058,7 +1059,7 @@ $scope.reviewauthorizesubmit();
                smn05 = getSingleDigit(smn05);
                smn07 = getSingleDigit(smn07);
                smn09 = getSingleDigit(smn09);
-               
+
                intOdds = smn01 + smn03 + smn05 + smn07 + smn09;
                intEvens = smn02 + smn04 + smn06 + smn08;
 
@@ -1070,7 +1071,7 @@ $scope.reviewauthorizesubmit();
            }
 
        }
-       
+
        else {
            smnStatus = 4;
        }
@@ -1120,7 +1121,12 @@ $scope.reviewauthorizesubmit();
 
     }
 
- 
+    $scope.getIframePath=function(url){
+        $scope.iframeurl=url;
+jQuery('#terms-embed').attr("src",url);
+
+		return url;
+    }
 
 }]);
 
