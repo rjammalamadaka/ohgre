@@ -147,6 +147,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                      $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
                      $scope.products=$scope.Customer[0].Product;
+                     updateProductFinePrint();
                      setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                  }else{
@@ -159,6 +160,21 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
         }
 
     }
+
+     var updateProductFinePrint = function() {
+
+         angular.forEach($scope.products, function(value, key) {
+ 				var ProductFinePrintText = value.ProductFinePrintText.split(".");
+     			 var lastword = ProductFinePrintText[ProductFinePrintText.length - 1];
+      				if (!(lastword.length > 1))
+        		ProductFinePrintText.pop();
+      		$scope.products[key].ProductFinePrintText = ProductFinePrintText;
+         });
+
+     }
+
+
+
 
      PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
