@@ -8,7 +8,8 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
 
               if(promoInfo && promoInfo.LDCList.length>0){
-                  var ldc=promoInfo.LDCList[0];
+
+                 /* var ldc=promoInfo.LDCList[0];
                   var ldcCode=ldc.LDCCode;
                   var promotion=ldc.promotion[0];
 
@@ -20,11 +21,31 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                           promotionCode=promotion.PromotionCode; 
 
                       }
+                  }*/
+                  var ldc=null,promotionCode=null;
+                  for(var i=0;i<promoInfo.LDCList.length;i++){
+					 ldc=promoInfo.LDCList[i];
+                       var ldcCode=ldc.LDCCode;
+                      var promotion=ldc.promotion[0];
+
+                      if(promotion && promotion.PromotionCode){
+                           if( promotion &&  promotion.RateClassCode){
+                              $scope.rateClassCode=promotion.RateClassCode;
+                          }
+                          if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
+                              promotionCode= promotion.BackupPromotionCode; 
+                              break;
+                          }if(promotion.PromotionExpired =="N"){
+                              promotionCode=promotion.PromotionCode; 
+                              break;                              
+                          }
+
+
+                      }
+
                   }
 
-                  if( promotion &&  promotion.RateClassCode){
-                      $scope.rateClassCode=promotion.RateClassCode;
-                  }
+
 
                   PrimeService.getQuotes(ldcCode,promotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
 
