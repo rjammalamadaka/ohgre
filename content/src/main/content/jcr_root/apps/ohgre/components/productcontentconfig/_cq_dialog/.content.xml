@@ -10,7 +10,7 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <carousel
+            <productcontentconfig
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Product Content Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
@@ -36,10 +36,10 @@
                                         <items jcr:primaryType="nt:unstructured">
                                             <pages
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                sling:resourceType="/apps/ohgre/components/multifield"
                                                 class="full-width"
                                                 fieldDescription="Click '+' to add a new page"
-                                                fieldLabel="Slide Data">
+                                                fieldLabel="Product config data">
                                                 <field
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
@@ -77,7 +77,7 @@
                         </items>
                     </column>
                 </items>
-            </carousel>
+            </productcontentconfig>
         </items>
     </content>
 </jcr:root>
