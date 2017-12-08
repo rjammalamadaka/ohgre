@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-06T15:01:20.169-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-07T16:31:18.888-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-05T13:41:50.285-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -30,10 +30,11 @@
             <whychooseuscontent
                 jcr:created="{Date}2017-08-06T23:39:55.712-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-06T15:01:20.165-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-07T16:31:18.883-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/whychooseuscontent"
+                blueboxheading="Cut Energy Usage and Save."
                 energysavelist="[{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-1.svg&quot;\,&quot;termsdescription&quot;:&quot;Getting rid of an old refrigerator or freezer may save you up to $150 per year.&quot;},{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-2.svg&quot;\,&quot;termsdescription&quot;:&quot;Set your water heater thermostat to “warm”\, or 120 degrees. Turn it down more if you will be away from home.&quot;},{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-3.svg&quot;\,&quot;termsdescription&quot;:&quot;Purchase ENERGY STAR® approved kitchen appliances that cook more efficiently.&quot;}]"
                 heading="Whether you’re choosing a natural gas supplier for the first time or switching from your utility company, here are three solid reasons to go with Ohio Natural Gas:"
                 text="&lt;ol>&#xd;&#xa;&lt;li>&lt;p>&lt;b>We provide options.&lt;/b>&lt;br />&#xd;&#xa;Your local utility company currently only offers pricing that may change or remain the same each month. Want to lock in your rate with a fixed plan? ONG offers fixed plans and variable plans designed to suit your needs. &lt;a title=&quot;view plans&quot; href=&quot;/content/onlyong/plans-detail.html&quot; target=&quot;_blank&quot;>Find the one that’s right for you.&lt;/a>&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>&lt;b>We care about our customers.&lt;/b>&lt;br />&#xd;&#xa;Our exceptional customer service is at the ready. Call 1.888.466.4727 to speak with one of our representatives.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>&lt;b>We offer outstanding perks.&lt;/b>&lt;br />&#xd;&#xa;You can earn rewards when you refer friends to sign up for ONG. Check out the details of our &lt;a href=&quot;/content/onlyong/promo-raf.html&quot; target=&quot;_blank&quot;>Refer-a-Friend program.&lt;/a> Also, you can earn miles with Delta just for paying your natual gas bill. &lt;a href=&quot;/content/onlyong/promo_landing.html&quot; target=&quot;_blank&quot;>Learn more here.&lt;/a>&lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ol>&#xd;&#xa;"

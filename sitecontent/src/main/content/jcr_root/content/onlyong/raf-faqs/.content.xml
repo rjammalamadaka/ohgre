@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-06T08:55:04.721-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-07T14:44:16.314-06:00"
+        cq:lastModifiedBy="josh"
         cq:lastReplicated="{Date}2017-12-06T08:55:08.917-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -26,8 +26,8 @@
             <staticherobanner
                 jcr:created="{Date}2017-08-16T11:02:21.919-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-08-16T11:02:53.404-04:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-12-07T14:44:16.311-06:00"
+                jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/staticherobanner"
                 description="If you have questions, we have answers."

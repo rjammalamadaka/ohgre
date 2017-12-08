@@ -2,17 +2,14 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-07T12:28:14.803-06:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-07T12:28:21.341-06:00"
-        cq:lastReplicatedBy="penny"
-        cq:lastReplicationAction="Activate"
+        cq:lastModified="{Date}2017-12-07T21:59:43.104-06:00"
+        cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Promotion Error"
-        jcr:uuid="1dfe0fae-557e-4fdb-98de-3412e643b21a"
+        jcr:title="Invalid Promocode"
+        jcr:uuid="2d6bae43-f03b-4036-937d-b1e3b7249a91"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
@@ -21,13 +18,13 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-13T22:54:07.994+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-06T21:15:43.611-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-07T21:59:43.100-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
-                title="Unfortunately, this promotion has expired."/>
+                title="The promocode is invalid"/>
             <ldc_backup_promo_con
                 jcr:created="{Date}2017-08-13T23:08:07.772+05:30"
                 jcr:createdBy="admin"
@@ -38,7 +35,7 @@
                 heading="Please call us at 1.888.466.4427 to learn about current promotions. "/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-08-13T23:18:22.786+05:30"
+            jcr:lastModified="{Date}2017-12-07T21:57:57.506-06:00"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
