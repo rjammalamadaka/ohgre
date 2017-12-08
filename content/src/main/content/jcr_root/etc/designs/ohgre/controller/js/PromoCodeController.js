@@ -56,22 +56,67 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                 if(data.LDCList && data.LDCList.length >0){
                     var locationType=$("input[name='location_type']:checked"). val(); 
                     //$window.sessionStorage.setItem('promoLDC',angular.toJson(data.LDCList));
-                    var ldclist= data.LDCList[0];
-                    var promotion=ldclist.promotion[0];
-                    data.locationType=locationType;
-                    if(!promotion.RateClassCode.length>0){
+
+					var ldc=null,promotionCode=null;
+                    var promotion=null;
+
+                    for(var i=0;i<data.LDCList.length;i++){
+                        ldc=data.LDCList[i];
+                        var ldcCode=ldc.LDCCode;
+                       promotion =ldc.promotion[0];
+
+                        if(promotion && promotion.PromotionCode){
+                            if( promotion &&  promotion.RateClassCode){
+
+                                if(locationType=="residential" && promotion.RateClassCode=="01"){
+									$scope.rateClassCode=promotion.RateClassCode;
+                                }else if(locationType=="commercial" && promotion.RateClassCode=="04"){
+									$scope.rateClassCode=promotion.RateClassCode;
+                                }
+
+                            }
+
+                            if(!promotion.RateClassCode.length>0){
+                                if(locationType=="residential"){
+                            		data.LDCList[i].promotion[0].RateClassCode="01";
+                                    $scope.rateClassCode="01";
+                                } else{
+                           			 data.LDCList[i].promotion[0].RateClassCode="04"; 
+                                     $scope.rateClassCode="04";
+                                }
+
+                            }
+                            if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
+                                promotionCode= promotion.BackupPromotionCode; 
+                                break;
+                            }if(promotion.PromotionExpired =="N"){
+                                promotionCode=promotion.PromotionCode; 
+                                break;                              
+                            }
+                        }
+                    }
+
+                    if(!$scope.rateClassCode){
+						location.href=$rootScope.homeUrl+"/promotion-error.html";
+                        return false;
+                    }
+
+                  //  var ldclist= data.LDCList[0];
+                   // var promotion=ldclist.promotion[0];
+                    //data.locationType=locationType;
+                  /*  if(!promotion.RateClassCode.length>0){
                         if(locationType=="residential")
                             data.LDCList[0].promotion[0].RateClassCode="01";
                         else
                             data.LDCList[0].promotion[0].RateClassCode="04"; 
 
-                    }
+                    }*/
                     ohgre.store("promoCodeInfo",data);
-                    if(promotion.PromotionExpired =="Y" && data.LDCList.length ==1){
+                    if(promotion.PromotionExpired =="Y"){
                         location.href=$rootScope.homeUrl+"/backuppromo.html";
                     }else if(data.LDCList && redirectUrl){
 
-                        if(promotion.PromotionExpired =="Y" && data.LDCList.length >1){
+                        if(promotion.PromotionExpired =="Y"){
 
                             if(promotion.BackupPromotionCode){
 

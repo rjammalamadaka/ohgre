@@ -52,6 +52,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                       if(data && data.responseStatus =="0"){
                           var customer=data.Customer[0];
                           $scope.productList= customer.Product;
+                          updateProductFinePrint();
                           setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
                       }
 
@@ -62,7 +63,10 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
               }
 
+
+
     }
+
 
     $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
          
@@ -82,17 +86,29 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
  }
 
+var updateProductFinePrint = function() {
 
+console.log("updateProductFinePrint");
+         angular.forEach($scope.productList, function(value, key) {
+ 				var ProductFinePrintText = value.ProductFinePrintText.split(".");
+     			 var lastword = ProductFinePrintText[ProductFinePrintText.length - 1];
+      				if (!(lastword.length > 1))
+        		ProductFinePrintText.pop();
+      		$scope.productList[key].ProductFinePrintText = ProductFinePrintText;
+         });
+
+     }
 
     $scope.getNumber =function(QuoteDescription){
 
         if(QuoteDescription.indexOf("CCF")>0){
-			return("Ccf**");
+			return("Ccf");
         }else if(QuoteDescription.indexOf("MCF")>0){
-			return("Mcf**");
+			return("Mcf");
         }
 
     } 
+
 
 
 

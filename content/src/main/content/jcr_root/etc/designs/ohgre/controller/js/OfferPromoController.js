@@ -37,6 +37,7 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
                       $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
                      $scope.products=$scope.Customer[0].Product;
+                     updateProductFinePrint();
 					 setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
 
@@ -49,6 +50,19 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
         }
 
     }
+
+
+    var updateProductFinePrint = function() {
+
+         angular.forEach($scope.products, function(value, key) {
+ 				var ProductFinePrintText = value.ProductFinePrintText.split(".");
+     			 var lastword = ProductFinePrintText[ProductFinePrintText.length - 1];
+      				if (!(lastword.length > 1))
+        		ProductFinePrintText.pop();
+      		$scope.products[key].ProductFinePrintText = ProductFinePrintText;
+         });
+
+     }
 
     var promoLDC = angular.fromJson($window.sessionStorage.getItem('promoLDC'));
 
