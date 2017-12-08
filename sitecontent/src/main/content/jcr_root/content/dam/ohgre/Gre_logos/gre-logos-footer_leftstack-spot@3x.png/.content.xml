@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/Gre_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png"
-        jcr:lastModified="{Date}2017-11-30T23:54:50.359-05:00"
+        jcr:lastModified="{Date}2017-12-07T23:49:20.013-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}32"
-            dam:extracted="{Date}2017-11-30T23:54:50.209-05:00"
+            dam:extracted="{Date}2017-12-07T23:49:19.871-05:00"
             dam:Fileformat="PNG"
             dam:MIMEtype="image/png"
             dam:Numberofimages="{Long}1"
@@ -28,7 +28,7 @@
             dam:size="{Long}13946"
             dc:format="image/png"
             dc:modified="{Date}2017-11-09T14:16:42.584-06:00"
-            jcr:lastModified="{Date}2017-11-30T23:54:50.226-05:00"
+            jcr:lastModified="{Date}2017-12-07T23:49:19.776-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

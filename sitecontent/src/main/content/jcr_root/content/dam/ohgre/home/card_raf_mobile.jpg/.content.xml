@@ -5,20 +5,20 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="5c4fb346-2858-47ad-a8f3-b30e07220db9">
     <jcr:content
-        cq:lastReplicated="{Date}2017-11-10T11:03:39.040-06:00"
+        cq:lastReplicated="{Date}2017-12-04T13:42:13.281-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="card_raf_mobile.jpg"
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_raf_mobile.jpg"
-        jcr:lastModified="{Date}2017-11-30T23:54:47.468-05:00"
+        jcr:lastModified="{Date}2017-12-07T23:49:19.251-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2017-11-30T23:54:47.303-05:00"
+            dam:extracted="{Date}2017-12-07T23:49:19.037-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}248"
             exif:PixelYDimension="{Long}195"
-            jcr:lastModified="{Date}2017-11-30T23:54:47.120-05:00"
+            jcr:lastModified="{Date}2017-12-07T23:49:16.965-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
