@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2017-12-06T11:07:28.425-06:00"
-        cq:lastModifiedBy="josh"
+        cq:lastModified="{Date}2017-12-07T17:09:02.417-06:00"
+        cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2017-12-06T10:52:02.354-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -115,7 +115,7 @@
             <signup_for_newslette
                 jcr:created="{Date}2017-10-09T21:37:38.598-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-06T10:49:18.483-06:00"
+                jcr:lastModified="{Date}2017-12-07T17:09:02.411-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/signup-for-newsletters-popup"
@@ -179,4 +179,5 @@
     </promotions>
     <delta-faqs/>
     <skymilesterms/>
+    <invalid-promocode/>
 </jcr:root>

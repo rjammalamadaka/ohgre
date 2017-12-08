@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-06T16:03:44.984-06:00"
+        cq:lastModified="{Date}2017-12-07T21:43:45.711-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-11-06T16:03:59.647-06:00"
+        cq:lastReplicated="{Date}2017-12-07T21:43:48.890-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -32,12 +32,12 @@
             <applepromotionconten
                 jcr:created="{Date}2017-07-28T21:26:17.785+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-06T16:03:44.977-06:00"
+                jcr:lastModified="{Date}2017-12-07T21:43:45.708-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
-                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer."
-                heading="Choose from one of our popular plans to get started right away!"/>
+                description="*GRE service is available for eligible residential customers participating in the Gas Customer Choice program through DTE Gas Company and Consumers Energy. GRE prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.210.7157, write to Grand Rapids Energy, 120 N. Washington Square, Ste. 805, Lansing, MI 48933 or visit grandrapidsenergy.com. Early termination charges apply for residential fixed price plans (12-Month plan: $50/$25, 6-Month plan: $25)."
+                heading="Choose from one of our plans to get started right away!"/>
         </content>
         <image
             jcr:lastModified="{Date}2017-08-15T08:49:28.111+05:30"
