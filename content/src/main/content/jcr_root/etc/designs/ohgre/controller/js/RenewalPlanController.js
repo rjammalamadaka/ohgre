@@ -249,6 +249,10 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                             }
                         }
 
+                        if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="N"){
+								$scope.showpromosuccessdmsg=true;
+                        }
+
                         if(ldcinfo && ldcinfo.promotion[0].CustomerTypeCode=="NEW"){
 								ohgre.removeStore("promoCodeInfo");
                                 jQuery('#popup-spinner-wrap').hide();
