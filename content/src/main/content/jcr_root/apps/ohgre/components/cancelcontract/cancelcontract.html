@@ -83,7 +83,7 @@
             <li class="accord-trigger" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0" ng-click="showMobileAccord(product)">
               <div class="flex-container">
                 <div class="plan-price">
-                  {{product.FixedPricePerTherm | currency:"$":3}}<span>per {{customerInfo.uom}}**</span>
+                  {{product.FixedPricePerTherm | currency:"$":3}}<span>per {{customerInfo.uom}}</span>
                 </div>
                 <div class="plan-info-wrapper">
                   <div class="plan-info">

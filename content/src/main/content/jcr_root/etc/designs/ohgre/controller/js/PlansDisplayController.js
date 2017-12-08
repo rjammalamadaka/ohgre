@@ -188,9 +188,9 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
   $scope.getNumber = function(QuoteDescription) {
 
     if (QuoteDescription.indexOf("CCF") > 0) {
-      return ("Ccf**");
+      return ("Ccf");
     } else if (QuoteDescription.indexOf("MCF") > 0) {
-      return ("Mcf**");
+      return ("Mcf");
     }
 
   }

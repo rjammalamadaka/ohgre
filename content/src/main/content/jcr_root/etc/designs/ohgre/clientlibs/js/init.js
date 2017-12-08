@@ -55,9 +55,9 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
          if(QuoteDescription){
 
         if(QuoteDescription.indexOf("CCF")>0){
-			return("Ccf**");
+			return("Ccf");
         }else if(QuoteDescription.indexOf("MCF")>0){
-			return("Mcf**");
+			return("Mcf");
         }
          }
 
