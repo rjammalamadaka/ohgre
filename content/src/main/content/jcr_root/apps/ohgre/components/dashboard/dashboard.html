@@ -50,7 +50,7 @@
 
               <div class="box-with-border alert-box alert-alt1" ng-show="(customerInfo.renewalContractExistsInd =='Y'&& customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
                 <h5>Your Contract Is Up For Renewal:</h5>
-                <p>Your current contract expires on <b>{{getOnlyDate(customerInfo.contractTermDate)}}</b>. Your Renewal contract is set to start on <b>{{getNextDayDate(customerInfo.renewalContractStartDate)}}.</b> if you would like to select a different renewal contract, please do so by <b>{{getOnlyDate(customerInfo.contractTermDate)}}</b>.</p>
+                <p>Your current contract expires on <b>{{getOnlyDate(customerInfo.contractTermDate)}}</b>. Your Renewal contract is set to start on <b>{{getNextDayDate(customerInfo.renewalContractStartDate)}}.</b> If you would like to make changes, please do so prior to <b>{{getOnlyDate(customerInfo.contractTermDate)}}</b>.</p>
               </div>
 
 
@@ -89,8 +89,12 @@
                 </table>
 
               </div>
-              <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
-                  <p>If you would like to start a new contract or cancel this contract today, you will need to pay now or be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
+              <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt !== '0.000')">
+                  <p>If you would like to start a new contract or cancel this contract today, you will be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
+              </div>
+
+                  <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt == '0.000')">
+                  <p>There is no charge to start a new contract or cancel this contract today.</p>
               </div>
 
               <div class="plan-info" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">
