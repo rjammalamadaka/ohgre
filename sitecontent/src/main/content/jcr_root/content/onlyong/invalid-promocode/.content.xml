@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-07T21:59:43.104-06:00"
+        cq:lastModified="{Date}2017-12-09T00:44:37.116-06:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
@@ -18,21 +18,21 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-13T22:54:07.994+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-07T21:59:43.100-06:00"
+                jcr:lastModified="{Date}2017-12-09T00:42:07.060-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
-                title="The promocode is invalid"/>
+                title="We are unable to find this promotion code."/>
             <ldc_backup_promo_con
                 jcr:created="{Date}2017-08-13T23:08:07.772+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-07T12:28:14.800-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-09T00:44:37.114-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/ldc-backup-promo-content"
-                heading="Please call us at 1.888.466.4427 to learn about current promotions. "/>
+                heading="Sorry we are unable to find the promotion code.  Please call us at 1-888-466-4427 so that we may further assist you."/>
         </content>
         <image
             jcr:lastModified="{Date}2017-12-07T21:57:57.506-06:00"

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-07T11:59:02.374-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-09T00:07:15.285-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-12-08T16:50:57.148-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Renewal Contract"
+        jcr:uuid="6109f472-3e18-46cf-82e3-47807da414eb"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true">
         <content
@@ -15,12 +21,11 @@
             <renewalplan
                 jcr:created="{Date}2017-10-30T21:50:22.114-05:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-07T11:59:02.370-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-09T00:07:15.281-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/renewalplan"
                 giftcardmessage="&lt;p>You will receive a {{GIFTCARDVALUE | currency : '$': 0}} VISA gift card if you have continuous active service with Ohio Natural Gas for at least 60 days.&lt;/p>&#xd;&#xa;"
-                planseffectivedate="*Rates and Price Plans effective 08/05/2017 to 09/04/2017"
                 promocode="RAF25"
                 textIsRich="[true,true]"/>
         </content>
