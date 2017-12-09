@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        cq:lastReplicated="{Date}2017-12-08T20:18:19.136-06:00"
+        cq:lastReplicatedBy="jason01"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="nt:unstructured"/>
+    <fontawesome-webfont.woff/>
+    <fontawesome-webfont.woff2/>
+    <fontawesome-webfont.eot/>
+    <Roboto.woff2/>
+    <RobotoBold.woff2/>
+    <FontAwesome.otf/>
+    <fontawesome-webfont.ttf/>
+    <RobotoCondensed-Bold.woff2/>
+    <RobotoCondensed-Light.woff2/>
+    <RobotoCondensed-Regular.woff2/>
+    <RobotoSlab-Bold.woff2/>
+    <RobotoSlab-Light.woff2/>
+    <RobotoSlab-Regular.woff2/>
+    <fontawesome-webfont.svg/>
+</jcr:root>

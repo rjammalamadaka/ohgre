@@ -99,6 +99,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         var req={};
         req.QuoteDescription=product.QuoteDescription;
 		req.ProductDescription=product.ProductDescription;
+        req.ProductDescriptionFriendly=product.ProductDescriptionFriendly;
         req.ProductCode=product.ProductCode;
         req.LdcDesc=$rootScope.ldcDesc;
 		req.FixedPricePerTherm=product.FixedPricePerTherm;
