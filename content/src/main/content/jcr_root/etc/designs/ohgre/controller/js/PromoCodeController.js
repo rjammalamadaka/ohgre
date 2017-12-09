@@ -97,7 +97,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                     }
 
                     if(!$scope.rateClassCode){
-						location.href=$rootScope.homeUrl+"/promotion-error.html";
+						location.href=$rootScope.homeUrl+"/invalid-promocode.html";
                         return false;
                     }
 
@@ -145,7 +145,7 @@ location.href=$rootScope.homeUrl+"/promotion-error.html";
 
             }else if(data && data.responseStatus =="1"){
                 //ohgre.store("promoCodeInfo",null);
-                location.href=$rootScope.homeUrl+"/promotion-error.html";
+                location.href=$rootScope.homeUrl+"/invalid-promocode.html";
             }
 
         }).error(function(data, status, headers, config) {
