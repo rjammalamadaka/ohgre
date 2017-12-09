@@ -16,7 +16,6 @@
 	    	margin-top: 0;
 	    }
 	}
-
 	&:empty{
 		+ div {
 			margin-top: 0;
@@ -37,6 +36,7 @@
 			font-size: 1.8rem;
 		}
 	}
+	
 	#contact-us-container,.contact-us-container{
 		font-family		: @secondary_font;
 		text-transform	: none;
@@ -4109,6 +4109,11 @@ div.alt-col2,
 	}
 }
 .confirmation-wrapper{
+	&#order-confirmation{
+		.information-block{
+			overflow: hidden;
+		}
+	}
 	.confirmation-header {
 		margin-bottom: 2rem;
 		padding: 2.5rem 2.5rem 2rem;
@@ -4373,8 +4378,12 @@ input{
 			}
 			&[type="checkbox"]{
 				float: left;
-				height: 2.1rem;
+				height: 2.2rem;
 				//height: 2.5rem;
+
+				@media (@screen-md-min){
+					height: 2.1rem;
+				}
 			}
 		}
 
@@ -4778,7 +4787,7 @@ input{
 	}
 	input{
 		width: 100%;
-		padding: 0 1.5rem;
+		padding: 0 1rem;
 	}
 }
 .multiple-input {
