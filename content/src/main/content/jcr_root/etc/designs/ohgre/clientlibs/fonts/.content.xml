@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="sling:OrderedFolder">
     <jcr:content
-        cq:lastReplicated="{Date}2017-12-08T20:18:19.136-06:00"
+        cq:lastReplicated="{Date}2017-12-09T10:12:15.569-06:00"
         cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
         jcr:mixinTypes="[cq:ReplicationStatus]"
@@ -21,4 +21,44 @@
     <RobotoSlab-Light.woff2/>
     <RobotoSlab-Regular.woff2/>
     <fontawesome-webfont.svg/>
+    <roboto-v18-latin-700.eot/>
+    <roboto-v18-latin-700.woff/>
+    <roboto-v18-latin-700.svg/>
+    <roboto-v18-latin-700.woff2/>
+    <roboto-v18-latin-700.ttf/>
+    <roboto-v18-latin-regular.eot/>
+    <roboto-v18-latin-regular.woff/>
+    <roboto-v18-latin-regular.woff2/>
+    <roboto-v18-latin-regular.ttf/>
+    <roboto-v18-latin-regular.svg/>
+    <roboto-slab-v7-latin-300.eot/>
+    <roboto-slab-v7-latin-300.woff/>
+    <roboto-slab-v7-latin-700.eot/>
+    <roboto-slab-v7-latin-300.svg/>
+    <roboto-slab-v7-latin-300.ttf/>
+    <roboto-slab-v7-latin-300.woff2/>
+    <roboto-slab-v7-latin-700.svg/>
+    <roboto-slab-v7-latin-regular.eot/>
+    <roboto-slab-v7-latin-700.ttf/>
+    <roboto-slab-v7-latin-700.woff/>
+    <roboto-slab-v7-latin-regular.ttf/>
+    <roboto-slab-v7-latin-700.woff2/>
+    <roboto-slab-v7-latin-regular.woff/>
+    <roboto-slab-v7-latin-regular.svg/>
+    <roboto-slab-v7-latin-regular.woff2/>
+    <roboto-condensed-v16-latin-300.eot/>
+    <roboto-condensed-v16-latin-300.woff/>
+    <roboto-condensed-v16-latin-300.woff2/>
+    <roboto-condensed-v16-latin-700.eot/>
+    <roboto-condensed-v16-latin-300.ttf/>
+    <roboto-condensed-v16-latin-700.svg/>
+    <roboto-condensed-v16-latin-700.ttf/>
+    <roboto-condensed-v16-latin-300.svg/>
+    <roboto-condensed-v16-latin-700.woff/>
+    <roboto-condensed-v16-latin-700.woff2/>
+    <roboto-condensed-v16-latin-regular.eot/>
+    <roboto-condensed-v16-latin-regular.svg/>
+    <roboto-condensed-v16-latin-regular.ttf/>
+    <roboto-condensed-v16-latin-regular.woff/>
+    <roboto-condensed-v16-latin-regular.woff2/>
 </jcr:root>

@@ -2,11 +2,10 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:file">
     <jcr:content
-        cq:lastReplicated="{Date}2017-12-05T08:34:09.449-06:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastReplicated="{Date}2017-12-09T09:48:46.875-06:00"
+        cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
-        jcr:lastModifiedBy="Administrator"
-        jcr:mimeType="text/javascript"
+        jcr:lastModifiedBy="jason jackson"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="nt:resource"/>
 </jcr:root>
