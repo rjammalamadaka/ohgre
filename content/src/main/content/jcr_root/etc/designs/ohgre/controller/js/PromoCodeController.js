@@ -24,8 +24,9 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                         $scope.promoInfo=promoinfo;
 						getPromoCodeInfo(promotionCode);
                     }else{
+                        getPromoCodeInfo(promotionCode);
 						//$scope.errorInfo=data.errorMessage;
-                       location.href=$rootScope.homeUrl+"/promotion-error.html";
+                      // location.href=$rootScope.homeUrl+"/promotion-error.html";
                     }
                 }).error(function(data, status, headers, config) {
 
@@ -67,7 +68,6 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                         if(promotion && promotion.PromotionCode){
                             if( promotion &&  promotion.RateClassCode){
-
                                 if(locationType=="residential" && promotion.RateClassCode=="01"){
 									$scope.rateClassCode=promotion.RateClassCode;
                                 }else if(locationType=="commercial" && promotion.RateClassCode=="04"){
@@ -113,7 +113,14 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                     }*/
                     ohgre.store("promoCodeInfo",data);
                     if(promotion.PromotionExpired =="Y"){
-                        location.href=$rootScope.homeUrl+"/backuppromo.html";
+
+                        if(promotion.BackupPromotionCode.length>0){
+                        	location.href=$rootScope.homeUrl+"/backuppromo.html";
+                        }else{
+							location.href=$rootScope.homeUrl+"/promotion-error.html";
+                        }
+
+
                     }else if(data.LDCList && redirectUrl){
 
                         if(promotion.PromotionExpired =="Y"){
