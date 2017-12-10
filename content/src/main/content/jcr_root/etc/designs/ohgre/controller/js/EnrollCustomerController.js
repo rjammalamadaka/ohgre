@@ -1,4 +1,4 @@
-ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$http', 'PrimeService',function ($scope, $rootScope,$http,PrimeService) {
+ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$http', 'PrimeService','$sce',function ($scope, $rootScope,$http,PrimeService,$sce) {
 
     $scope.iframeurl="";
     $scope.displaystepscontainer=false;
@@ -14,6 +14,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
    jQuery('#popup-spinner-wrap').show();
 
     $scope.dsmEnrollReq={};
+
+
 
     var failcount=0;
 
@@ -282,9 +284,16 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
                      }
                      var existingCustomerStatus=$rootScope.getCustomerStatus($rootScope.customerInfo.accountStatus);
 
-                    //if(existingCustomerStatus=="Active"){
+                    if(existingCustomerStatus=="Active"){
                        //  $rootScope.showcurrentplan=true;
-                    // }
+
+                         if($rootScope.customerInfo.emailPrefNonTransactionalCd =="Y"){
+
+							$scope.specialoffer=true;
+                        }else{
+							$scope.specialoffer=false;
+                        }
+                     }
 					  productInfo.existingCustomerStatus=existingCustomerStatus;
 					  updateenrollrequestobj(productInfo);
                       $rootScope.showexistingcustomer=true;
@@ -1121,12 +1130,12 @@ $scope.reviewauthorizesubmit();
 
     }
 
-    $scope.getIframePath=function(url){
-        $scope.iframeurl=url;
-jQuery('#terms-embed').attr("src",url);
+     $scope.$watch('iframeurl', function (newValue, oldValue, scope) {
+       if(newValue && newValue.length>0){
+           $scope.url = $sce.trustAsResourceUrl('https://docs.google.com/gview?url='+location.origin+newValue+'&embedded=true');
+       }
+	}, true);
 
-		return url;
-    }
 
 }]);
 
