@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-07T21:54:38.665-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-09T15:00:02.846-06:00"
+        cq:lastModifiedBy="josh"
         cq:lastReplicated="{Date}2017-12-06T21:17:18.552-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -13,7 +13,9 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Apple Promotion"
         jcr:uuid="ef2042d5-50e2-4416-b2e0-c8f26ade00ca"
+        sling:redirect="true"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        sling:vanityPath="[onlyong.com/appledeo,onlyong.com/applecoh]"
         hideInNav="true">
         <content
             jcr:primaryType="nt:unstructured"
@@ -21,8 +23,8 @@
             <promoherobanner
                 jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-06T21:17:40.264-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-09T15:00:02.841-06:00"
+                jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
@@ -39,7 +41,7 @@
                 heading="Choose from one of our plans to get started right away!"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-11-02T15:40:11.902-05:00"
+            jcr:lastModified="{Date}2017-12-09T14:04:33.440-06:00"
             jcr:lastModifiedBy="josh"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>

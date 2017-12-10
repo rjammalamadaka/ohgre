@@ -5,7 +5,7 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-12-09T01:04:56.207-06:00"
+        cq:lastModified="{Date}2017-12-09T18:07:52.205-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-06T08:56:42.276-06:00"
         cq:lastReplicatedBy="penny"
@@ -23,7 +23,7 @@
         footernavigationlinks="[/content/onlyong,/content/onlyong]"
         mobilenumber="1-888-466-4427"
         portalname="oh"
-        termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/AAA-claim_form.pdf"
+        termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
         time="8 a.m. to 5 p.m. EST">
         <content
             jcr:primaryType="nt:unstructured"
@@ -147,10 +147,10 @@
         <oh jcr:primaryType="nt:unstructured">
             <APPLES
                 jcr:primaryType="nt:unstructured"
-                APPLECOH="/content/onlyong/promo-landing-apples"
-                APPLEDEO="/content/onlyong/promo-landing-apples"
-                APPLEDUKE="/content/onlyong/promo-landing-apples"
-                APPLEVEDO="/content/onlyong/promo-landing-apples"
+                APPLECOH="/content/onlyong/applecoh"
+                APPLEDEO="/content/onlyong/appledeo"
+                APPLEDUKE="/content/onlyong/appleduke"
+                APPLEVEDO="/content/onlyong/applevedo"
                 APPLEWGL="/content/onlyong/promo-landing-apples"
                 BUSINESSMVR="/content/onlyong/promo-landing-apples"
                 CHOICE12C="/content/onlyong/promo-landing-apples"
@@ -225,4 +225,8 @@
     <saveme2017/>
     <Score10/>
     <invalid-promocode/>
+    <applecoh/>
+    <appleduke/>
+    <appledeo/>
+    <applevedo/>
 </jcr:root>

@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-07T12:28:14.803-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-09T22:53:36.099-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-07T12:28:21.341-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -28,14 +28,14 @@
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
                 title="Unfortunately, this promotion has expired."/>
-            <ldc_backup_promo_con
-                jcr:created="{Date}2017-08-13T23:08:07.772+05:30"
+            <promotionerrorpage
+                jcr:created="{Date}2017-12-09T21:58:05.946-06:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-07T12:28:14.800-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-09T22:53:36.096-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/ldc-backup-promo-content"
-                heading="Please call us at 1.888.466.4427 to learn about current promotions. "/>
+                sling:resourceType="ohgre/components/promotionerrorpage"
+                callusmessage="Please call us at 1-888-466-4427 to learn about current promotions."/>
         </content>
         <image
             jcr:lastModified="{Date}2017-08-13T23:18:22.786+05:30"

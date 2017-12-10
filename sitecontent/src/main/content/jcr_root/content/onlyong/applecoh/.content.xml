@@ -2,40 +2,42 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-09T22:56:52.412-06:00"
+        cq:lastModified="{Date}2017-12-09T19:36:19.848-06:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-12-09T14:39:11.144-06:00"
+        cq:lastReplicatedBy="josh"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Invalid Promocode"
-        jcr:uuid="2d6bae43-f03b-4036-937d-b1e3b7249a91"
+        jcr:title="applecoh promotion"
+        jcr:uuid="7323606b-ebed-4882-99b8-e7ab8d5f3e5b"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
             <promoherobanner
-                jcr:created="{Date}2017-08-13T22:54:07.994+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-09T00:42:07.060-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:created="{Date}2017-12-09T14:45:57.469-06:00"
+                jcr:createdBy="josh"
+                jcr:lastModified="{Date}2017-12-09T15:15:24.327-06:00"
+                jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
-                title="We are unable to find this promotion code."/>
-            <promotionerrorpage
-                jcr:created="{Date}2017-12-09T22:56:47.091-06:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-09T22:56:52.409-06:00"
-                jcr:lastModifiedBy="admin"
+                title="When you compare apples to apples, Ohio Natural Gas is the clear choice."/>
+            <applepromotionconten
+                jcr:created="{Date}2017-12-09T14:30:50.179-06:00"
+                jcr:createdBy="josh"
+                jcr:lastModified="{Date}2017-12-09T15:15:32.434-06:00"
+                jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/promotionerrorpage"
-                callusmessage="Sorry we are unable to find the promotion code.  Please call us at 1-888-466-4427 so that we may further assist you."/>
+                sling:resourceType="ohgre/components/applepromotioncontent"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-12-07T21:57:57.506-06:00"
+            jcr:lastModified="{Date}2017-12-09T19:36:19.845-06:00"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
