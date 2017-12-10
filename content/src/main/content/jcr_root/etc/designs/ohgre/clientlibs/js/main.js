@@ -154,7 +154,7 @@ var ohio_ng = {
     $('#mobile-menu').on('click', function(event) {
       event.preventDefault();
       $(this).toggleClass('menu-open');
-      $('#primary-navigation').toggleClass('expaned-menu');
+      $('#primary-navigation').toggleClass('expanded-menu');
     });
     $('.toggle-button').on('click', function(event) {
       event.preventDefault();
