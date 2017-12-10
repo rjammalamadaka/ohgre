@@ -148,6 +148,21 @@
                                                     </items>
                                                 </field>
                                             </energysaveoptions>
+                                            <energysaveoptionslink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Energy save options link Heading"
+                                                name="./energysaveoptionslink"/>
+                                            <energysaveoptionsurl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Energy save options url"
+                                                name="./energysaveoptionsurl"/>
+                                            <energysaveoptionslinkdisplay
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Energy save options display linkl"
+                                                name="./energysaveoptionslinkdisplay"/>
                                         </items>
                                     </column>
                                 </items>
