@@ -1,6 +1,7 @@
 ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
 
+    $scope.showgiftcardmsg=false;
     ohgre.removeStore("promoCodeInfo");
     $scope.formButton="Apply Promo Code";
      $scope.guaranteeProductDisplay=false;
@@ -201,9 +202,10 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
     $scope.submitPromoCode =function(){
 		$scope.serverError=null;
-        $scope.showgiftcardmsg=null;
+        $scope.showgiftcardmsg=false;
 
         if($scope.formButton=="CLEAR"){
+            $scope.showpromosuccessdmsg=false;
 			ohgre.removeStore("promoCodeInfo");
             $scope.products=$scope.defaultProducts;
             $scope.formButton="Apply Promo Code";
@@ -234,9 +236,20 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                         }
 
                         if(!ldcinfo){
- 							$scope.serverError="Please enter a valid promocode"; 
+ 							$scope.serverError="Sorry, we are unable to find that promotion code. Please call us at ${inheritedPageProperties.mobilenumber} so we may further assist you."; 
                             jQuery('#popup-spinner-wrap').hide();
                         }
+
+
+                        if(ldcinfo.promotion[0].RateClassCode.length>0 && $scope.productData.rateClassCode.length>0 && (ldcinfo.promotion[0].RateClassCode != $scope.productData.rateClassCode)){
+
+                            $scope.serverError="Sorry, we are unable to find that promotion code. Please call us at ${inheritedPageProperties.mobilenumber} so we may further assist you";
+
+                            return false;
+
+                         }
+
+
 
 
                         if(ldcinfo && ldcinfo.promotion[0].GiftCardEligible == "Y"){
@@ -258,6 +271,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                                 jQuery('#popup-spinner-wrap').hide();
                                 $scope.serverError="Sorry you are not eligible for this offer."; 
                             $scope.showgiftcardmsg=false;
+                            $scope.showpromosuccessdmsg=false;
 
                         }else  if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="Y"){
                             if(ldcinfo.promotion[0].BackupPromotionCode){
