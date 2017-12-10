@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-08T15:06:03.955-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-09T19:49:57.816-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-06T10:44:33.447-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -30,12 +30,15 @@
             <whychooseuscontent
                 jcr:created="{Date}2017-08-06T23:39:55.712-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-08T15:06:03.949-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-09T19:49:57.811-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/whychooseuscontent"
                 blueboxheading="Cut Energy Usage and Save."
                 energysavelist="[{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-1.svg&quot;\,&quot;termsdescription&quot;:&quot;Getting rid of old refrigerators or freezers may save you up to $150 per year.&quot;},{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-2.svg&quot;\,&quot;termsdescription&quot;:&quot;Set your water heater thermostat to \\&quot;warm\\&quot; or 120 degrees. Turn it down more if you'll be away from home.&quot;},{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-3.svg&quot;\,&quot;termsdescription&quot;:&quot;Buy ENERGY STAR® approved kitchen appliances that cook more efficiently.&quot;}]"
+                energysaveoptionslink="For more energy saving tips, visit:"
+                energysaveoptionslinkdisplay="http://www.michigan.gov/mpsc"
+                energysaveoptionsurl="http://www.michigan.gov/mpsc"
                 heading="Whether you’re choosing a natural gas supplier for the first time or switching from your utility company, here are three solid reasons to go with Grand Rapids Energy:"
                 imagepath="[/content/dam/ohgre/wcu/icon-3.svg,]"
                 termsdescription="[Purchase ENERGY STAR approved kitchen appliances that cook more efficiently.,]"
