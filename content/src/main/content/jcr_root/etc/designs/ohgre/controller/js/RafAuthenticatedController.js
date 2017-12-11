@@ -138,13 +138,14 @@ location.href=$rootScope.homeUrl+"/refer-a-friend.html";
 
     $scope.convertToDate =function(date){
         var temp=date.split(" ");
-		return temp[0];
+		      return temp[0];
     }
 
     $scope.rafauthenticated =function(){
         $scope.customerInfoEmailAddress=$scope.customerInfo.emailAddress;
-		jQuery('#raf-email-popup').addClass('show-popup');
-        jQuery('body').addClass('fixed-body');
+		    jQuery('#raf-email-popup').addClass('show-popup');
+        jQuery('html').addClass('fixed-body');
+        //UTILS.preventBodyScroll();
     }
 
      $scope.previewEmailMobile = function(){
@@ -162,7 +163,7 @@ location.href=$rootScope.homeUrl+"/refer-a-friend.html";
         jQuery('.raf-email-step').hide();
         jQuery('#raf-user-info').show();
      }
-    $scope.refertomyfrineds =function(){
+    $scope.referToMyFriends =function(){
 
         $scope.rafMailSerrverMsg=null;
         $scope.rafemailform.submited = true;
@@ -176,10 +177,15 @@ location.href=$rootScope.homeUrl+"/refer-a-friend.html";
           requestInfo.rafBody = $scope.rafemailmessage;
           requestInfo.custID = $scope.customerInfo.custID;
 
+          jQuery('#popup-spinner-wrap').addClass('show-popup').css('display', 'block');
+
           PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config){
-              console.log("success");
               console.log(data);
+              console.log('raf prime success');
+              //$window.scrollTo(0, 0);
               if(data && data.success){
+                  console.log('data success');
+                  jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
                   jQuery('#raf-terms-popup').removeClass('show-popup');
                   jQuery('#toemailaddress').val('');
                   jQuery('#raf-confirm').addClass('show-popup');
@@ -189,12 +195,16 @@ location.href=$rootScope.homeUrl+"/refer-a-friend.html";
               }else{
 
                   $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+                  jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
+                  console.log('server error');
               }
 
           }).error(function(data, status, headers, config){
               console.log(data);
               console.log("error");
               $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+              jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
+              console.log('server error');
 
           });
         }
@@ -255,7 +265,7 @@ location.href=$rootScope.homeUrl+"/refer-a-friend.html";
 				console.log(updateCustomerInfoReq);
             updateCustomerInfoReq.emailAddress=$scope.customerInfo.emailAddress;
             console.log($scope.customerInfo.emailAddress);
-            jQuery('#popup-spinner-wrap').show();
+            jQuery('#popup - spinner-wrap').show();
 
             PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
                 console.log(data);
