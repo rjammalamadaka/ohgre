@@ -87,7 +87,7 @@ jQuery('#popup-spinner-wrap').show();
 
         }else if(ldc == "VED"){
             //2971
-			formattedNumber="03-"+accountNumber.substring(0,9)+"-"+accountNumber.substring(9,15)+"-0";
+			formattedNumber="03-"+accountNumber.substring(0,9)+"-"+accountNumber.substring(9,16)+"-0";
 
         }else if(ldc == "MCG"){
 			//4341

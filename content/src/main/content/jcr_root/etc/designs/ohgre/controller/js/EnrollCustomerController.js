@@ -1115,7 +1115,7 @@ $scope.reviewauthorizesubmit();
 			}else if(ldc == "DEO"){
 			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
 			}else if(ldc == "VED"){
-			formattedNumber="03-"+accountNumber.substring(0,9)+"-"+accountNumber.substring(9,15)+"-0";
+			formattedNumber="03-"+accountNumber.substring(0,9)+"-"+accountNumber.substring(9,16)+"-0";
 			}else if(ldc == "MCG"){
 			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
 			}else if(ldc == "MIC"){
