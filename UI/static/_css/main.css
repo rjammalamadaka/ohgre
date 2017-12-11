@@ -6129,8 +6129,17 @@ div[class^="col-"] {
   line-height: 5rem;
   text-transform: uppercase;
 }
-#primary-header #primary-navigation.expaned-menu {
+#primary-header #primary-navigation.expanded-menu {
   display: block;
+}
+#primary-header #primary-navigation.expanded-menu #contact-us-container {
+  color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+}
+#primary-header #primary-navigation.expanded-menu #contact-us-container a,
+#primary-header #primary-navigation.expanded-menu #contact-us-container span {
+  color: #f2f2f2;
 }
 @media (min-width: 992px) {
   #primary-header {
@@ -6364,7 +6373,7 @@ footer .bbb-info img {
   padding: 3rem 10%;
 }
 .promocode #promo-enter-wrapper input[type="text"] {
-  max-width: 33rem;
+  max-width: 100%;
 }
 .promocode #promo-enter-wrapper h2 {
   font-size: 2.6rem;
@@ -6404,6 +6413,11 @@ footer .bbb-info img {
 @media (min-width: 992px) {
   .promocode #promo-enter-wrapper .input-wrapper {
     min-width: 35rem;
+  }
+}
+@media (min-width: 1200px) {
+  .promocode #promo-enter-wrapper input[type="text"] {
+    max-width: 33rem;
   }
 }
 @media (min-width: 992px) {
@@ -7127,6 +7141,14 @@ div[class^="cq-colctrl-lt1-"] .card p {
   display: -webkit-flex;
   display: flex;
 }
+.card .window-wrapper .primary-button {
+  font-weight: 500;
+  text-decoration: none;
+}
+.card .window-wrapper .close-window {
+  font-weight: 100;
+  text-decoration: none;
+}
 @media (min-width: 992px) {
   .card {
     display: -webkit-flex !important;
@@ -7263,7 +7285,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
     margin-top: .5rem;
   }
   .card a:not(.select-option),
-  .card a:not(.redirect-click) {
+  .card a:not(.redirect-click),
+  .card a:not(.close-window),
+  .card a:not(.primary-button) {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     text-decoration: underline;
@@ -8229,6 +8253,24 @@ div[class^="cq-colctrl-lt1-"] .card p {
     white-space: nowrap;
   }
 }
+@media (min-width: 992px) {
+  .promo-plan-description.box-with-border {
+    padding-bottom: 8rem;
+  }
+  .promo-plan-description.box-with-border form {
+    bottom: 2rem;
+    position: absolute;
+  }
+}
+@media (min-width: 992px) {
+  .offerpromotioncontent .accord-trigger.box-w-arrow + .box-with-border {
+    padding-bottom: 8rem;
+  }
+  .offerpromotioncontent .accord-trigger.box-w-arrow + .box-with-border form {
+    bottom: 2rem;
+    position: absolute;
+  }
+}
 .alt-banner1 .slide-image {
   height: 100%;
 }
@@ -8376,6 +8418,18 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
   #view-raf-rewards .raf-promo {
     display: block;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  #view-raf-rewards .raf-promo > .row {
+    display: flex;
+  }
+  #view-raf-rewards .raf-promo > .row > div[class^=col-] {
+    flex: 1;
+  }
+  #view-raf-rewards .raf-promo > .row > div[class^=col-] .promo-box {
+    font-size: 1.7rem;
+    height: 100%;
   }
   #view-raf-rewards .alt-border1 {
     padding: 2.5rem 2.5rem 0;
@@ -8404,6 +8458,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
   #raf-email-popup .window-wrapper .raf-email-step {
     display: block !important;
   }
+}
+#raf-email-popup .server-msg {
+  color: #d0011b;
+  font-style: italic;
+  text-transform: uppercase;
 }
 #raf-email-popup footer {
   margin-top: 0;
@@ -10120,8 +10179,13 @@ input {
 }
 @media (min-width: 992px) {
   .selected-plan-tag {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
+}
+.selected-plan-tag .plan-addl-info {
+  color: #757575;
+  display: block;
+  font-size: 1.35rem;
 }
 .selected-info {
   padding: 3rem 2rem;
@@ -10667,9 +10731,12 @@ input {
 .popup-wrapper#popupwithrenewal .button-container .cancel-button {
   margin: 0;
 }
+#popup-spinner-wrap {
+  z-index: 100000;
+}
 .window-wrapper {
   width: 100%;
-  margin: 5vh auto;
+  margin: 2vh auto;
   max-width: 70rem;
   padding: 1rem 2rem;
   max-height: 90vh;
@@ -10692,6 +10759,7 @@ input {
 }
 @media (min-width: 992px) {
   .window-wrapper {
+    margin: 5vh auto;
     padding: 1rem 4rem;
   }
 }
@@ -11478,7 +11546,11 @@ ul.info-links li {
     padding-right: 0;
   }
   #account-dashboard .buttons .primary-button {
-    width: 45%;
+    font-size: 1.3rem;
+    width: 48%;
+  }
+  #account-dashboard .buttons .primary-button.inactive {
+    margin-right: 0;
   }
 }
 @media (min-width: 992px) {
