@@ -2,26 +2,26 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-11T11:02:25.294-06:00"
+        cq:lastModified="{Date}2017-12-11T11:02:57.268-06:00"
         cq:lastModifiedBy="josh"
-        cq:lastReplicated="{Date}2017-12-09T15:04:15.150-06:00"
+        cq:lastReplicated="{Date}2017-12-11T09:01:33.610-06:00"
         cq:lastReplicatedBy="josh"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="AppleDuke Promotion"
-        jcr:uuid="7569a7d3-d8c6-4907-a75c-dc3b97e2e759"
+        jcr:title="AppleVEDO Promotion"
+        jcr:uuid="c2fb1124-e9e4-4dd0-8c18-86732cfef282"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
             <promoherobanner
-                jcr:created="{Date}2017-12-09T15:02:11.229-06:00"
+                jcr:created="{Date}2017-12-09T15:09:07.159-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2017-12-11T08:41:46.589-06:00"
+                jcr:lastModified="{Date}2017-12-09T15:09:37.725-06:00"
                 jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
@@ -29,16 +29,16 @@
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
                 title="When you compare apples to apples, Ohio Natural Gas is the clear choice."/>
             <applepromotionconten
-                jcr:created="{Date}2017-12-09T15:03:10.565-06:00"
+                jcr:created="{Date}2017-12-09T15:09:45.129-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2017-12-11T11:02:25.291-06:00"
+                jcr:lastModified="{Date}2017-12-11T11:02:57.265-06:00"
                 jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
-                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer"/>
+                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Vectren Energy Delivery Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-12-11T09:36:11.684-06:00"
+            jcr:lastModified="{Date}2017-12-11T09:35:49.728-06:00"
             jcr:lastModifiedBy="josh"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>

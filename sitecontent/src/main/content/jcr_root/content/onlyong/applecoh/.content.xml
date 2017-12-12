@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-09T19:36:19.848-06:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-12-11T11:03:47.278-06:00"
+        cq:lastModifiedBy="josh"
         cq:lastReplicated="{Date}2017-12-09T14:39:11.144-06:00"
         cq:lastReplicatedBy="josh"
         cq:lastReplicationAction="Activate"
@@ -21,7 +21,7 @@
             <promoherobanner
                 jcr:created="{Date}2017-12-09T14:45:57.469-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2017-12-09T15:15:24.327-06:00"
+                jcr:lastModified="{Date}2017-12-11T10:25:22.680-06:00"
                 jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
@@ -31,14 +31,15 @@
             <applepromotionconten
                 jcr:created="{Date}2017-12-09T14:30:50.179-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2017-12-09T15:15:32.434-06:00"
+                jcr:lastModified="{Date}2017-12-11T11:03:47.275-06:00"
                 jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/applepromotioncontent"/>
+                sling:resourceType="ohgre/components/applepromotioncontent"
+                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Columbia Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-12-09T19:36:19.845-06:00"
-            jcr:lastModifiedBy="admin"
+            jcr:lastModified="{Date}2017-12-11T09:36:23.001-06:00"
+            jcr:lastModifiedBy="josh"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
     </jcr:content>
