@@ -207,6 +207,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 
              location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
+             return false;
 
          }).error(function (data,status, headers, config){ 
 

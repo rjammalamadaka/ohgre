@@ -236,14 +236,14 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                         }
 
                         if(!ldcinfo){
- 							$scope.serverError="Sorry, we are unable to find that promotion code. Please call us at ${inheritedPageProperties.mobilenumber} so we may further assist you."; 
+ 							$scope.serverError="Sorry, we are unable to find that promotion code. Please call us at 1-888-466-4427 so we may further assist you."; 
                             jQuery('#popup-spinner-wrap').hide();
                         }
 
 
                         if(ldcinfo.promotion[0].RateClassCode.length>0 && $scope.productData.rateClassCode.length>0 && (ldcinfo.promotion[0].RateClassCode != $scope.productData.rateClassCode)){
 
-                            $scope.serverError="Sorry, we are unable to find that promotion code. Please call us at ${inheritedPageProperties.mobilenumber} so we may further assist you";
+                            $scope.serverError="Sorry, we are unable to find that promotion code. Please call us at 1-888-466-4427 so we may further assist you";
 
                             return false;
 
@@ -365,6 +365,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 
              location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
+             return false;
 
          }).error(function (data,status, headers, config){ 
 

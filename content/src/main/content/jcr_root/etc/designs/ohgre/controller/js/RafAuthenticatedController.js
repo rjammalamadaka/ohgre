@@ -163,6 +163,14 @@ location.href=$rootScope.homeUrl+"/refer-a-friend.html";
         jQuery('.raf-email-step').hide();
         jQuery('#raf-user-info').show();
      }
+     $scope.testChange = function() {
+        console.log('testChange');
+    };
+    $scope.testBlur = function() {
+        console.log('testBlur');
+        console.log('toemailVal', $('#toemailaddress').val());
+        $scope.$apply();
+    };
     $scope.referToMyFriends =function(){
 
         $scope.rafMailSerrverMsg=null;
