@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-09T07:29:20.204-06:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-09T07:28:50.390-06:00"
+        cq:lastModified="{Date}2017-12-11T16:43:05.527-06:00"
+        cq:lastModifiedBy="josh"
+        cq:lastReplicated="{Date}2017-12-11T16:25:25.658-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -32,8 +32,8 @@
             <promotioncontent
                 jcr:created="{Date}2017-07-27T10:17:02.253+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-09T07:29:20.199-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-11T16:43:05.523-06:00"
+                jcr:lastModifiedBy="josh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promotioncontent"
                 description="&lt;p>Get {{DELTAMILES}} bonus miles for signing up on a GRE fixed price plan, using applicable promo code.*&lt;/p>&#xd;&#xa;&lt;p>First, select your gas utility. Then, you'll be able to view our great natural gas rate plans.&lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;"
@@ -42,7 +42,7 @@
                 imagepath="/content/dam/ohgre/Gre_logos/GRE_Logo_Footer.png"
                 promoheadingline1="Choose from these"
                 promoheadingline2="Fixed Rate Plans"
-                text="&lt;h4>Earn TWO miles for every dollar spent on your GRE supplier natural gas charges.*&lt;/h4>&#xd;&#xa;&lt;p>And, if you are a SkyMiles Medallion® member, earn an additional mile for a total of THREE miles for each eligible dollar spent.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Don’t wait too long. Bonus miles offer ends {{EXPIRATIONDATE}}. &lt;/b>&lt;/p>&#xd;&#xa;&lt;h5>Easy Sign Up&lt;/h5>&#xd;&#xa;&lt;ul style=&quot;list-style-position: inside;&quot;>&#xd;&#xa;&lt;li>Switching is easy! One call to us and we'll handle all the details.&lt;/li>&#xd;&#xa;&lt;li>There will be no service interruption.&lt;/li>&#xd;&#xa;&lt;li>Our experts ensure a seamless transition.&lt;/li>&#xd;&#xa;&lt;li>Your utility will continue to deliver your gas, send you one monthly bill and respond to service calls.&lt;/li>&#xd;&#xa;&lt;li>Limited to qualified new customers enrolled on an eligible price plan.*&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>For more program details, visit &lt;a href=&quot;/content/gre/skymiles.html&quot; target=&quot;_blank&quot;>www.grandrapidsenergy.com/skymiles&lt;/a>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/gre/delta-faqs.html&quot; target=&quot;_blank&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/skymilesterms.html&quot; target=&quot;_blank&quot;>Delta Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a title=&quot;Join Delta&quot; href=&quot;https://www.delta.com/profile/enrolllanding.action?mkcpgn=DP_ALL_DRCT_ALL_SP_150915_PRTNER17&quot; target=&quot;_blank&quot;>Join Delta Skymiles &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                text="&lt;h4>Earn TWO miles for every dollar spent on your GRE supplier natural gas charges.*&lt;/h4>&#xd;&#xa;&lt;p>And, if you are a SkyMiles Medallion® member, earn an additional mile for a total of THREE miles for each eligible dollar spent.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Don’t wait too long. Bonus miles offer ends {{EXPIRATIONDATE}}. &lt;/b>&lt;/p>&#xd;&#xa;&lt;h5>Easy Sign Up&lt;/h5>&#xd;&#xa;&lt;ul style=&quot;list-style-position: inside;&quot;>&#xd;&#xa;&lt;li>Switching is easy! One call to us and we'll handle all the details.&lt;/li>&#xd;&#xa;&lt;li>There will be no service interruption.&lt;/li>&#xd;&#xa;&lt;li>Our experts ensure a seamless transition.&lt;/li>&#xd;&#xa;&lt;li>Your utility will continue to deliver your gas, send you one monthly bill and respond to service calls.&lt;/li>&#xd;&#xa;&lt;li>Limited to qualified new customers enrolled on an eligible price plan.*&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>For more program details, visit &lt;a href=&quot;/content/gre/skymiles.html&quot; target=&quot;_blank&quot;>www.grandrapidsenergy.com/skymiles&lt;/a>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/gre/delta-faqs.html&quot; target=&quot;Target&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/skymilesterms.html&quot; target=&quot;_blank&quot;>Delta Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a title=&quot;Join Delta&quot; href=&quot;https://www.delta.com/profile/enrolllanding.action?mkcpgn=DP_ALL_DRCT_ALL_SP_150915_PRTNER17&quot; target=&quot;_blank&quot;>Join Delta Skymiles &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true,true]"/>
         </content>
         <image

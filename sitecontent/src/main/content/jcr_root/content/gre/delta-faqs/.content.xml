@@ -4,8 +4,8 @@
     <jcr:content
         cq:lastModified="{Date}2017-12-06T15:31:07.500-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-06T15:37:46.353-06:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastReplicated="{Date}2017-12-11T16:42:28.469-06:00"
+        cq:lastReplicatedBy="josh"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
         jcr:isCheckedOut="{Boolean}true"
