@@ -8263,9 +8263,13 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
 }
 @media (min-width: 992px) {
+  .promo-wrapper .accord-trigger.box-w-arrow + .box-with-border,
+  .ldc-backup-promo-content .accord-trigger.box-w-arrow + .box-with-border,
   .offerpromotioncontent .accord-trigger.box-w-arrow + .box-with-border {
     padding-bottom: 8rem;
   }
+  .promo-wrapper .accord-trigger.box-w-arrow + .box-with-border form,
+  .ldc-backup-promo-content .accord-trigger.box-w-arrow + .box-with-border form,
   .offerpromotioncontent .accord-trigger.box-w-arrow + .box-with-border form {
     bottom: 2rem;
     position: absolute;
