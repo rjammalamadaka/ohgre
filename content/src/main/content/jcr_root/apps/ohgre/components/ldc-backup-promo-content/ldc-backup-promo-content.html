@@ -56,13 +56,13 @@
                   <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}} <small>per {{getNumber(product.QuoteDescription)}}</small></span>
                   <span class="rate-plan">{{product.ProductDescription}}</span>
                </div>
-               <div class="box-with-border">
+               <div class="box-with-border promo-plan-description">
                   <div class="box-inner">
                      <p>
                         {{product.ProductPlanDesc}}
                      </p>
                      <ul>
-                       <!-- <li ng-repeat="text in product.ProductFinePrintText">{{text}}</li>-->
+                       <li ng-repeat="text in product.ProductFinePrintText">{{text}}</li>
                      </ul>
                      <form id="6-month-fixed-form">
                         <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>

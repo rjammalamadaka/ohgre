@@ -21,9 +21,13 @@
                 <h4>Your Friend's Information</h4>
                 <div id="ContactListCtrl">
                   <label for="toemailaddress">Friend's Email Address</label>
-                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
-                    ng-focus ng-touched multiple-emails></textarea>
+                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
+                    multiple-emails></textarea>
                   <!--
+ <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
+                    ng-focus ng-touched multiple-emails></textarea>
+
+                  ng-blur="rafemailform.$valid"
 <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts"
 placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)"
 rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visited></textarea>
