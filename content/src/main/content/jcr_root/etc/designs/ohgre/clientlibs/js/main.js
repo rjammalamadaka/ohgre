@@ -77,7 +77,7 @@ var ohio_ng = {
 
       html2pdf($('body').get(0), {
          margin:       0,
-         filename:     'myfile.pdf',
+         filename:     'confirmation.pdf',
          image:        { type: 'jpeg', quality: 0.98 },
          html2canvas:  { dpi: 192, letterRendering: true },
          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
