@@ -27,8 +27,19 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
 
      $rootScope.redirecttohome =function(){
-			location.href=$rootScope.homeUrl+".html";
+			//location.href=$rootScope.homeUrl+".html";
+          jQuery("#raf-terms-popup").removeClass("show-popup");
+          jQuery("#login-inactive-popup").addClass("show-popup");
+
+
+
+
     }
+
+     $rootScope.closeDeclinePopup =function(){
+
+				jQuery("#login-inactive-popup").removeClass("show-popup");
+     }
     $scope.setLdcInfo =function(ldc,description){
 		$scope.ldc=ldc;
         $scope.ldcdesc=description;

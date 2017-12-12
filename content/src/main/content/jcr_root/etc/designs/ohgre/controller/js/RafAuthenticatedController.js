@@ -61,7 +61,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
                         $scope.setProductData(currentYear);
                     }
                 }else{
-					location.href=$rootScope.homeUrl+"/refer-a-friend.html";
+					location.href=$rootScope.homeUrl+"/refer.html";
                 }
 
             }).error(function (data,status, headers, config){
@@ -70,7 +70,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
             });
 
         }else{
-location.href=$rootScope.homeUrl+"/refer-a-friend.html";
+location.href=$rootScope.homeUrl+"/refer.html";
         }
 
     }).error(function(data, status, headers, config){
