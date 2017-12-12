@@ -5,7 +5,7 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-12-09T18:07:52.205-06:00"
+        cq:lastModified="{Date}2017-12-12T13:04:14.079-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-06T08:56:42.276-06:00"
         cq:lastReplicatedBy="penny"
@@ -61,11 +61,11 @@
             <cardpromo_578718825
                 jcr:created="{Date}2017-07-25T13:13:29.748-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-10T11:09:16.944-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-12T13:04:14.072-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
-                buttonpath="/content/onlyong/refer-a-friend"
+                buttonpath="/content/onlyong/refer"
                 buttontitle="start referring"
                 description="Learn how you can invite friends to sign up with Ohio Natural Gas® and each receive a $25 Visa® Reward Card. Terms and conditions apply.*"
                 displayLink="true"
@@ -212,7 +212,7 @@
     <MCCORD/>
     <moving/>
     <skymiles/>
-    <refer-a-friend/>
+    <refer/>
     <raf-authenticated/>
     <maintenance/>
     <test/>
@@ -228,5 +228,4 @@
     <appleduke/>
     <appledeo/>
     <applevedo/>
-    <backupgen/>
 </jcr:root>

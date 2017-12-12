@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-09T18:23:21.469-06:00"
+        cq:lastModified="{Date}2017-12-12T11:12:46.292-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-08T14:49:46.376-06:00"
         cq:lastReplicatedBy="penny"
@@ -28,13 +28,13 @@
             <raf_autenticated
                 jcr:created="{Date}2017-10-15T09:16:53.996+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-09T18:23:21.462-06:00"
+                jcr:lastModified="{Date}2017-12-12T11:12:46.286-06:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/raf-autenticated"
                 benefits="&lt;h4> &lt;/h4>&#xd;&#xa;&lt;h4>Here are the benefits of the program&lt;/h4>&#xd;&#xa;&lt;ul style=&quot;list-style-position: inside;&quot;>&#xd;&#xa;&lt;li style=&quot;text-align: left;&quot;>You share the ONG experience with a friend.&lt;/li>&#xd;&#xa;&lt;li style=&quot;text-align: left;&quot;>For each friend who enrolls, you can each get a $25 Visa® Reward Card.*&lt;br />&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li style=&quot;text-align: left;&quot;>The more you share, the more you can earn!*&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;i> &lt;/i>&lt;/p>&#xd;&#xa;"
                 bodyofthankyou="If your email address is on file with us, you will receive an email when a friend enrolls with your Referral Code."
-                changeemailmsg="&lt;p>By changing your email here, you will change the email address associated with all of your ONG notifications. If you&amp;#39;d prefer to use a different address to send your referral emails, you can do so on the next screen.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                changeemailmsg="&lt;p>By changing your email here, you will change the email address associated with all of your ONG notifications. If you&amp;#39;d prefer to use a different address to send your referral emails, you can do so &lt;g class=&quot;gr_ gr_145 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar multiReplace gr-progress sel&quot; id=&quot;145&quot; data-gr-id=&quot;145&quot;>after&lt;/g> clicking &amp;quot;Send Email&amp;quot; on the next screen.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 companylogoinemail="/content/dam/ohgre/ONG_logos/ohio-logo-stacked@3x.png"
                 emailbodyplaceholder="I'm very happy with my service from Ohio Natural Gas, and I think you will be too. If you sign up with ONG using the promotion codes below, we can both get a $25 Visa Reward Card . Not bad, huh?"
                 facebook="/content/dam/ohgre/socialsharing/facebook@3x.png"
