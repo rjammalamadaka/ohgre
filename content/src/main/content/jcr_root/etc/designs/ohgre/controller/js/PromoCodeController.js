@@ -112,7 +112,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                     }*/
                     ohgre.store("promoCodeInfo",data);
-                    if(promotion.PromotionExpired =="Y"){
+                    if(promotion.PromotionExpired =="Y" && !redirectUrl){
 
                         if(promotion.BackupPromotionCode.length>0){
                         	location.href=$rootScope.homeUrl+"/backuppromo.html";
