@@ -1,7 +1,7 @@
 <div class="popup-wrapper" id="raf-terms-popup">
 <div class="window-wrapper">
 	 <a href="#" id="close-window">X</a>
-	 <span class="window-title">Terms and Conditions Update</span>
+	 <span class="window-title">Terms and Conditions</span>
 	 <div class="scroll-container">
 		${properties.termsandconditions @ context ='html'}
 
@@ -14,3 +14,14 @@
  </div>
 
 
+
+
+<div class="popup-wrapper" id="login-inactive-popup">
+  <div class="window-wrapper">
+    <a href="#" class="close-window" ng-click="closeandreload()">X</a>
+    <span class="window-title"></span>
+    <p>Thank you for providing your information. In order to participate in the Refer a Friend program, please read and accept the program terms and conditions.</p>
+    <p><a href="#" class="primary-button" ng-click="closeDeclinePopup()">Close</a></p>
+
+  </div>
+</div>

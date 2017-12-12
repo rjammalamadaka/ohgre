@@ -42,7 +42,8 @@
                     </div>
                     <div class="selected-info">
                     <span class="selected-plan-tag" ng-show="!showcurrentplan">Selected Contract</span>
-                    <span class="selected-plan-tag" ng-show="showcurrentplan">Selected New Contract <span class="plan-addl-info">Start at end of Current Contract</span><span ng-show="showearlyterminationfee">-Today </span></span>
+                    <span class="selected-plan-tag" ng-show="showcurrentplan">Selected New Contract <span ng-show="!showearlyterminationfee" class="plan-addl-info">Start at end of Current Contract</span><span ng-show="showearlyterminationfee">-Today </span></span>
+
 
                     <h5>{{product.productDesc}}</h5>
                     <span class="utility-name">{{product.ldcDesc}}</span>

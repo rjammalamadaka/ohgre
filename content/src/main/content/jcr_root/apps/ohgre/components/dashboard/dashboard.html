@@ -89,11 +89,11 @@
                 </table>
 
               </div>
-              <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt !== '0.000')">
+              <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt !== '0.0000')">
                   <p>If you would like to start a new contract or cancel this contract today, you will be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
               </div>
 
-                  <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt == '0.000')">
+                  <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt == '0.0000')">
                   <p>There is no charge to start a new contract or cancel this contract today.</p>
               </div>
 
