@@ -253,13 +253,16 @@ location.href=$rootScope.homeUrl+"/refer.html";
   		var code = "RAF25";
        // var base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
 		var base_url = window.location.origin+$rootScope.homeUrl+"/promo-raf.html";
+
+        var site = (/ong/.test(window.location.href)) ? 'Ohio Natural Gas' : 'Grand Rapids Energy';
+
 		//var base_url = window.location.origin+$rootScope.homeUrl+"/promo-raf.html";
        /* var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
 		        t = "url=" + base_url + "?promocode=" + code + "&referralcode="+$scope.customerInfo.custID+"&r=1&text=" + o;
          t=encodeURIComponent(t);
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 */
-         var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
+         var o = "$25 for you %26 $25 for me. Enroll with " + site + " on their lowest available rates! Terms apply. %23ad",
 		        t = "url=" + base_url + "?promocode=" + code + "&referralcode="+$scope.customerInfo.custID+"&r=1&text=" + o;
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 
