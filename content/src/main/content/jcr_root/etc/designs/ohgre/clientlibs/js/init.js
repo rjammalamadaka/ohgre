@@ -305,5 +305,19 @@ $rootScope.currentYear=new Date().getFullYear();
         }
         return true;
     }
+
+
+      var metaList = document.getElementsByTagName("meta");
+    for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("property") == "og:url") {
+            var url=metaList[i].getAttribute("content");
+            metaList[i].content = location.origin+url;
+        }
+        if (metaList[i].getAttribute("property") == "og:image") {
+            var image=metaList[i].getAttribute("content");
+            metaList[i].content = location.origin+image;
+        }
+    }
+
 }]); 
 
