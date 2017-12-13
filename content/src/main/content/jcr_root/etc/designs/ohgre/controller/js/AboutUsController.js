@@ -1,5 +1,9 @@
 ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
+
+
+/*
+
     var promocode=$("#promocode").data("promocode");
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
@@ -63,6 +67,8 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
 
         }).error(function (data,status, headers, config){ });
     }
+
+    */
 
 }]);
 
