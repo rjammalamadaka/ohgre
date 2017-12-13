@@ -130,17 +130,25 @@
         <td>Account Type:</td>
         <td>{{customerInfo.rateClassDesc}}</td>
       </tr>
-      <tr>
-        <td>Gas Utility Account Number:</td>
-        <td>{{formatedacno}}</td>
-      </tr>
+      <tr ng-if="customerInfo.ldc !='MIC'">
+			<td>Gas Utility Account Number:</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+        <tr ng-if="customerInfo.ldc =='MIC'">
+			<td>Gas Service Pod ID</td>
+			<td>{{formatedacno}}</td>
+		</tr>
       <tr>
         <td>Service Address:</td>
         <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
       </tr>
-      <tr>
-        <td>Ohio Natural Gas Account Status:</td>
-        <td> {{getCustomerStatus(customerInfo.accountStatus)}}</td>
+      <tr ng-show="(customerInfo.ldc !=='MIC' && customerInfo.ldc !=='MCG')">
+            <td>Ohio Natural Gas Account Status:</td>
+            <td>{{getCustomerStatus(customerInfo.accountStatus)}}</td>
+      </tr>
+      <tr ng-show="(customerInfo.ldc =='MIC' || customerInfo.ldc =='MCG')">
+          <td>Grand Rapids Energy Account Status:</td>
+          <td>{{getCustomerStatus(customerInfo.accountStatus)}}</td>
       </tr>
     </table>
     <div class="button-container">

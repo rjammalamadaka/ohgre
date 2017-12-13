@@ -118,8 +118,9 @@
 										<h4>Renewal Contract</h4>
 										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDescFriendly}}</span>
                                         <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDescFriendly}}</span>
-										<small ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
-										<small ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
+
 									</div>
 								</div>
 							</div>

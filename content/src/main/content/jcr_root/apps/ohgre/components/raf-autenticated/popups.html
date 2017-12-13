@@ -36,7 +36,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
                     <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friend's emails are required.</span>
                   <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.multipleEmails">Valid friend email(s) are required</span>
                   </span>
-                  <p>Don't feel like typing? <a href="#" class="cloudsponge-launch">Use your address book</a></p>
+                  <p>Don't feel like typing? <a class="cloudsponge-launch">Use your address book</a></p>
                 </div>
                 <label for="raf-email-subject">Subject Line</label>
                 <input type="text" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
@@ -95,10 +95,10 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
             <div class="raf-promo">
               <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                  <div class="promo-box">You will get<span>${properties.referralamount}</span> in bill credits</div>
+                  <div class="promo-box">You will get<span>${properties.referralamount}</span> Visa Reward Card</div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                  <div class="promo-box">I will get<span>${properties.referralamount}</span> in bill credits</div>
+                  <div class="promo-box">Your Friend will get <span>${properties.referralamount}</span> Visa Reward Card</div>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
     <h3 class="window-title">${properties.thankyouheader}</h3>
     <div class="inner-window-content text-center">
       <p>${properties.bodyofthankyou}</p>
-      <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Your Home Page</a>
+      <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Home Page</a>
     </div>
   </div>
 </div>

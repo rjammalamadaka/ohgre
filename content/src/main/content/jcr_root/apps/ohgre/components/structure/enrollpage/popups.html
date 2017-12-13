@@ -15,16 +15,25 @@
             <td>Account Type:</td>
             <td>{{customerInfo.rateClassDesc}}</td>
          </tr>
-         <tr>
-            <td>Gas Utility Account Number:</td>
-            <td>{{formatedacno}}</td>
-         </tr>
+         <tr ng-if="product.LDC !='MIC'">
+			<td>Gas Utility Account Number:</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+        <tr ng-if="product.LDC =='MIC'">
+			<td>Gas Service Pod ID</td>
+			<td>{{formatedacno}}</td>
+		</tr>
          <tr>
             <td>Service Address:</td>
             <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
          </tr>
-         <tr>
+         <tr ng-show="(customerInfo.ldc !=='MIC' && customerInfo.ldc !=='MCG')">
             <td>Ohio Natural Gas Account Status:</td>
+           <td> {{getCustomerStatus(customerInfo.accountStatus)}}</td>
+
+         </tr>
+         <tr ng-show="(customerInfo.ldc =='MIC' || customerInfo.ldc =='MCG')">
+            <td>Grand Rapids Energy Account Status:</td>
            <td> {{getCustomerStatus(customerInfo.accountStatus)}}</td>
 
          </tr>
@@ -51,8 +60,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+						 <tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -129,8 +142,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+						<tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -182,8 +199,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+							<tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -213,8 +234,8 @@
 										<h4>Renewal Contract</h4>
 										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDescFriendly}}</span>
                                         <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDescFriendly}}</span>
-										<small ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
-										<small ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
 
 									</div>
 								</div>
@@ -263,8 +284,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+						 <tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>

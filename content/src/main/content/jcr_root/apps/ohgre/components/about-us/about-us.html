@@ -1,39 +1,24 @@
 <section ng-controller="AboutUsController">
-		<div class="container" id="promocode" data-promocode="${properties.promocode || 'DELTANOMILES'}">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="row promo-wrapper">
-	<div class="col-md-8">
-		<div class="box-with-border">
-			<div class="box-inner">
-                ${properties.description @ context='html'}
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="box-with-border bg-primary-blue has-image">
-            <img src="${properties.imagepath}">
-			<div class="box-inner">
-				${properties.righttext @ context='html'}
+	<div class="container" id="promocode" data-promocode="${properties.promocode || 'DELTANOMILES'}">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row promo-wrapper">
+					<div class="col-md-8">
+						<div class="box-with-border">
+						<div class="box-inner">
+						${properties.description @ context='html'}
+						</div>
+						</div>
+					</div>
+					<div class="col-md-4">
 
-				<div class="dropdown-container full-width">
-					<button class="dropdown-trigger" ng-model="fixedplanbutton" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-					<div class="expanded-dropdown">
-				        <ul class="dropdown-menu" role="menu">
-	                     <li role="menuitem" ng-repeat="x in ldcinfo">
-                        	<a href="#" class="select-option">
-                        	<span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
-                        	</a>
-                     		</li>			           
-				        </ul>
-				    </div>
+
+						<div data-sly-resource="${'content' @ resourceType='/apps/ohgre/components/cardpromo-plans'}"></div>
+                        
+
+					</div>
 				</div>
-				<button class="primary-button"  ng-click="viewplans()">view plans</button>
 			</div>
 		</div>
 	</div>
-</div>
-				</div>
-			</div>
-		</div>
-	</section>
+</section>

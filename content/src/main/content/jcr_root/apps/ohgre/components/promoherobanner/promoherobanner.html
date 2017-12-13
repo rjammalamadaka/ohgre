@@ -10,9 +10,12 @@
                   <a href="/content/onlyong.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
                   <a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
                   <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
-                  <span class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
+
+                  <span ng-show="notexpired" class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
+
+
                   <p ng-show="notexpired"><span>${properties.description}</span></p>
-                  <p ng-show="!notexpired"><span>Unfortunately this promotion has expired but we have some great plans below</span></p>
+                  <p ng-show="!notexpired"><span class="slide-title">Unfortunately this promotion has expired.</span></p>
                   <p ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>Hurry! Offer ends {{expdate}}</span></p>
                </div>
             </div>
