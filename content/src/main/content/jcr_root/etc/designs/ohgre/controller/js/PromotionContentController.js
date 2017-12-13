@@ -187,6 +187,9 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
              console.log("error");
          });
 
+    if($rootScope.hashParams.isExpired){
+        $rootScope.expired=true;
+    }
 
 }]);
 

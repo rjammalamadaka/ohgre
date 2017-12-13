@@ -109,7 +109,9 @@ console.log("updateProductFinePrint");
 
     } 
 
-
+  if($rootScope.hashParams.isExpired){
+        $rootScope.expired=true;
+    }
 
 
 }]);

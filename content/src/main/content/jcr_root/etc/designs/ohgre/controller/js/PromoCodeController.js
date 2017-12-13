@@ -140,11 +140,13 @@ location.href=$rootScope.homeUrl+"/promotion-error.html";
 
 
                     }else if(data.LDCList && data.LDCList.length!=0 && !redirectUrl){
-                        if(data.LDCList.length ==1){
-                            location.href=$rootScope.homeUrl+"/promo-general.html";
-                        }else{
-                            location.href=$rootScope.homeUrl+"/generic-promo.html";
-                        }
+                       // if(data.LDCList.length ==1){
+                        //    location.href=$rootScope.homeUrl+"/promo-general.html";
+                        //}else{
+                            ohgre.removeStore("promoCodeInfo");
+                            ohgre.removeStore("promocode");
+                            location.href=$rootScope.homeUrl+"/invalid-promocode.html";
+                        //}
                     }else{
                         location.href=$rootScope.homeUrl+"/promo-general.html";
                     }
