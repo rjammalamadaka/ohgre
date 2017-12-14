@@ -35,6 +35,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			//session.setMaxInactiveInterval(30);
 			System.out.println("in set product data");
 			String productDesc =getParameterInfo(jObj,"ProductDescription");
+			String productDescFriendly =getParameterInfo(jObj,"ProductDescriptionFriendly");
 			String quoteDes = getParameterInfo(jObj,"QuoteDescription");//jObj.getString("QuoteDescription");
 			String productCode=getParameterInfo(jObj,"ProductCode");//jObj.getString("ProductCode");
 			String fixedPricePerTherm=getParameterInfo(jObj,"FixedPricePerTherm");//jObj.getString("FixedPricePerTherm");
@@ -46,6 +47,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String referralcode=getParameterInfo(jObj,"referralcode");
 			System.out.println("productDesc:" +productDesc);
 			session.setAttribute("ProductDescription", productDesc);
+			session.setAttribute("ProductDescriptionFriendly", productDescFriendly);
 			session.setAttribute("QuoteDescription", quoteDes);
 			session.setAttribute("ProductCode", productCode);
 			session.setAttribute("LDC",LDC);
@@ -57,6 +59,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			session.setAttribute("referralcode",referralcode);
 			JSONObject sessionData=new JSONObject();
 			sessionData.put("prodcutDescription",productDesc);
+			sessionData.put("productDescriptionFriendly",productDescFriendly);
 			sessionData.put("productcode",productCode);
 			sessionData.put("quoteDesc",quoteDes);
 			sessionData.put("LDC",LDC);
@@ -72,7 +75,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			System.out.println("end");
 
 		} catch (JSONException e) {
-			System.out.println("errro in set product data");
+			System.out.println("error in set product data");
 			try {
 				obj.put("resultCode", "0");
 				obj.put("resultMessage", "success");

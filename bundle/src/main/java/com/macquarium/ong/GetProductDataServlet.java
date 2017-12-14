@@ -30,6 +30,10 @@ public class GetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			if(null !=productDesc){
 				obj.put("productDesc", (String)productDesc);
 			}
+			Object productDescFriendly=session.getAttribute("ProductDescriptionFriendly");
+			if(null !=productDescFriendly){
+				obj.put("productDescFriendly", (String)productDescFriendly);
+			}
 			Object quoteDes=session.getAttribute("QuoteDescription");
 			if(null !=quoteDes){
 				obj.put("quoteDes", (String)quoteDes);
