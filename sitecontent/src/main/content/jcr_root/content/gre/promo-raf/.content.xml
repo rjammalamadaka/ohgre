@@ -4,8 +4,8 @@
     <jcr:content
         cq:lastModified="{Date}2017-12-12T13:32:39.937-06:00"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-12-08T14:34:00.239-06:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastReplicated="{Date}2017-12-14T13:08:04.953-06:00"
+        cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
@@ -14,7 +14,14 @@
         jcr:title="Refer A Friend Promotion"
         jcr:uuid="484386e5-5c29-4120-a3b5-3515186617a7"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
-        hideInNav="true">
+        appid="388067291608115"
+        hideInNav="true"
+        ogdescription="Enroll with Grand Rapids Energy on their lowest available rates and we could each earn a $25 Visa Reward Card. It's that easy! Program Terms and conditions apply. #ad"
+        ogimage="/content/dam/ohgre/raf/gre_social_image.png"
+        ogsitename="GRE Refer-A-Friend"
+        ogtitle="GRE's lowest available rate and $25!"
+        ogtype="website"
+        ogurl="/content/gre/promo-raf.html">
         <image
             jcr:lastModified="{Date}2017-08-04T11:07:05.696-04:00"
             jcr:lastModifiedBy="admin"

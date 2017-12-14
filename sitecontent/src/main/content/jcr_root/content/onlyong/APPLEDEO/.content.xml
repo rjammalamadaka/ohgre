@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-12T14:43:26.126-06:00"
+        cq:lastModified="{Date}2017-12-14T08:36:48.920-06:00"
         cq:lastModifiedBy="josh"
         cq:lastReplicated="{Date}2017-12-09T15:07:36.581-06:00"
         cq:lastReplicatedBy="josh"
@@ -39,7 +39,7 @@
                 heading="Choose from one of our plans to get started right away!"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-12-11T09:36:00.013-06:00"
+            jcr:lastModified="{Date}2017-12-14T08:36:48.914-06:00"
             jcr:lastModifiedBy="josh"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
