@@ -9,17 +9,21 @@
         <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
         <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
         <span id="tooltip-account">
-              <span class="tooltip-trigger">?</span>
-        <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
-                <a href="#" class="close-tooltip">X</a>
-                <p>Please be sure to enter your Account Number which is located on your natural gas bill. If your Account Number does not match what we are requesting for you to provide, please call<br>
-                <a href="tel:1-888-466-4427">1-888-466-4427</a> so that we may help.</p>
-              </span>
-        <span class="tooltip-text" ng-class="product.LDC =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
-                 <a href="#" class="close-tooltip">X</a>
-               </span>
+            <span class="tooltip-trigger">?</span>
+            <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+              <a href="#" class="close-tooltip">X</a>
+            <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we’re asking you to provide, please call 
+              <a href="tel:1-888-466-4427">1-888-466-4427</a> so we may help.</p>
+            </span>
+            <span class="tooltip-text" ng-class="ldc =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+	             <a href="#" class="close-tooltip">X</a>
+                 <img class="dte-tooltip-image" src="/content/dam/ohgre/global/dte-bitmap@2x.jpg"/>
+                 <img class="gre-tooltip-image" src="/content/dam/ohgre/global/popover-2@2x.jpg"/>
+                 <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we're asking you to provide, please call 
+              <a href="tel:1-800-841-1541">1.800.841.1541</a> so we may help.</p>
+             </span>
 
-        </span>
+          </span>
         <div class="form-area multiple-input">
           <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
             <input type="text" pattern="[0-9]*" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only>

@@ -81,13 +81,14 @@
                     <table class="view-rewards">
                       <thead>
                         <tr>
-                          <th>Awarded</th>
+                          <th>Awarded <span class="tooltip-container"><span class="tooltip-trigger">?</span>
+<span class="tooltip-text"><p>Visa Reward cards you have earned</p><a href="#" class="close-tooltip">X</a></span></span></a></th>
                           <th>{{awardedTotal | currency : "$"}} Total </th>
                         </tr>
                       </thead>
                       <tr ng-repeat="a in awarded">
                         <td ng-bind="convertToDate(a.giftCardCreateDate)"></td>
-                        <td>{{a.giftCardAmount | currency : "$"}} - {{giftCardTypeCode}}</td>
+                        <td>{{a.giftCardAmount | currency : "$"}} - {{giftCardDescription}}</td>
                       </tr>
 
 
@@ -159,7 +160,7 @@
                 </div>
               </div>
               ${properties.benefits @ context = 'html'}
-              <p><button class="primary-button" ng-click="rafauthenticated()">Refer a Friend</button></p>
+              <!--<p><button class="primary-button" ng-click="rafauthenticated()">Refer a Friend</button></p>-->
             </div>
           </div>
         </div>

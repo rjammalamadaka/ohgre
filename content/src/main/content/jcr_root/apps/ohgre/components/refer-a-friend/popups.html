@@ -1,7 +1,15 @@
 <div class="popup-wrapper" id="raf-terms-popup">
 <div class="window-wrapper">
 	 <a href="#" id="close-window">X</a>
-	 <span class="window-title">Terms and Conditions</span>
+	 <span class="window-title" ng-show="!termsupdate">Terms and Conditions</span>
+      <span class="window-title" ng-show="termsupdate">Terms and Conditions update</span>
+		<span ng-show="termsupdate">The Terms & Conditions of the Refer-a-Friend Program have changed since your last visit.</span>
+       <!--<h5 class="window-title" ng-show="!termsupdate">Terms & Conditions for Refer a Friend Program </h5>
+      <h5 class="window-title" ng-show="termsupdate">Terms & Conditions Update for Refer a Friend Program </h5>-->
+
+
+
+
 	 <div class="scroll-container">
 		${properties.termsandconditions @ context ='html'}
 
