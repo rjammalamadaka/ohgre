@@ -101,6 +101,7 @@ location.href=$rootScope.homeUrl+"/refer.html";
                 $scope.awarded.push($scope.giftcardinfo[i]);
                 $scope.awardedTotal=$scope.awardedTotal+parseInt($scope.giftcardinfo[i].giftCardAmount);
                 $scope.giftCardTypeCode=$scope.giftcardinfo[i].giftCardTypeCode;
+                $scope.giftCardDescription=$scope.giftcardinfo[i].giftCardDescription;
 
             }else if($scope.giftcardinfo[i].giftCardStatusCode =="005"){
                  $scope.pending.push($scope.giftcardinfo[i]);
@@ -244,8 +245,9 @@ location.href=$rootScope.homeUrl+"/refer.html";
         var code = "RAF25";
         //var base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
 		var base_url = window.location.origin+$rootScope.homeUrl+"/promo-raf.html";
-         var o = base_url + "?promocode=" + code+"&referralcode="+$scope.customerInfo.custID;
-		    return window.open("https://www.facebook.com/sharer/sharer.php?u=" + o, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Facebook"), !1
+        var o = base_url + "?promocode=" + code+"&referralcode="+$scope.customerInfo.custID;
+		//var o = base_url;
+		return window.open("https://www.facebook.com/sharer/sharer.php?u=" + o, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Facebook"), !1
 
 
     }

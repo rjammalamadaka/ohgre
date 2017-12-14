@@ -31,6 +31,12 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
 				$scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 
+            if(!$scope.rateClassCode){
+				$scope.rateClassCode = "01";
+            }
+
+
+
             PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){

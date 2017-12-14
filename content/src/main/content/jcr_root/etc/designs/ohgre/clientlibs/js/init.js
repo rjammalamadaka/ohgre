@@ -99,7 +99,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         var req={};
         req.QuoteDescription=product.QuoteDescription;
 		req.ProductDescription=product.ProductDescription;
-        req.ProductDescriptionFriendly=product.ProductDescriptionFriendly;
+        req.ProductDescriptionFriendly=product.ProductDescFriendly;
+                                      
         req.ProductCode=product.ProductCode;
         req.LdcDesc=$rootScope.ldcDesc;
 		req.FixedPricePerTherm=product.FixedPricePerTherm;
@@ -318,6 +319,16 @@ $rootScope.currentYear=new Date().getFullYear();
             metaList[i].content = location.origin+image;
         }
     }
+
+
+    $rootScope.mobilenumber=$("#mobilenumber-div").data("mobilenumber");
+
+
+    if($rootScope.hashParams && $rootScope.hashParams.rateClassCode){
+        if($rootScope.hashParams.rateClassCode.length>0)
+        $rootScope.rateClassCode=$rootScope.hashParams.rateClassCode;
+    }
+
 
 }]); 
 

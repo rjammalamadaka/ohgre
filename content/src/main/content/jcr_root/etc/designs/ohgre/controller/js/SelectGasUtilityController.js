@@ -2,13 +2,13 @@ ohgrePortal.controller('SelectGasUtilityController', ['$scope', '$rootScope', '$
 
  var portalname=$rootScope.portalname;
 
- $("input[name=location_type][value='residential']").prop("checked",true);
+ $("input[name=location_type_select][value='residential']").prop("checked",true);
 
 
     $scope.submit = function(){
 
         var ldcCode=$('#fixed-plans-button').val();
-         var locationType=$("input[name='location_type']:checked"). val();    
+         var locationType=$("input[name='location_type_select']:checked"). val();    
 
         if(ldcCode){
 		   var hashParam=encodeURIComponent("ldc="+ldcCode+'&lctype='+locationType);

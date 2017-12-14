@@ -25,7 +25,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
     }
 
 
-
+$scope.termsupdate=false;
      $rootScope.redirecttohome =function(){
 			//location.href=$rootScope.homeUrl+".html";
           jQuery("#raf-terms-popup").removeClass("show-popup");
@@ -175,7 +175,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
                             console.log(customerInfo);
                             if(customerInfo.responseStatus ==1){
 								$scope.step2=false;
-                                $scope.errorInfo="We were unable to find your account. Please try again or call 1-888-466-4427 for assistance";
+                                $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
 
                             }else if(customerInfo.responseStatus ==0){
                                 var regex = /[^a-zA-Z]/g;
@@ -188,6 +188,13 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
                                 if((customerInfo.rateClass=="01" && $scope.lastname.toUpperCase() == customerInfo.lastName.toUpperCase())||(customerInfo.rateClass=="04" && lastName.toUpperCase() == businessName.toUpperCase())){
 
                                     if(customerInfo.raftermsCondAcknowledgedInd !='Y'){
+
+                                        if(customerInfo.raftermsCondAcknowledgedDate =="1/1/1900"){
+                                            $scope.termsupdate=false;
+                                        }else{
+											$scope.termsupdate=true;
+
+                                        }
                                     jQuery('#raf-terms-popup').addClass('show-popup');
                                     updateCustomerInfoReq.custID=customerInfo.custID;
                                     updateCustomerInfoReq.account=customerInfo.account;
@@ -196,7 +203,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
                                     setProductData();
                                    }
                                 }else{
-									$scope.errorInfo="We found an account that matches the account number but not the last name. For further inquiries, please call 1-888-466-4427.";
+									$scope.errorInfo="We found an account that matches the account number but not the last name. For further inquiries, please call "+$scope.mobilenumber+".";
 
                                 }
                         	}
@@ -256,7 +263,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
                         var customerInfo=JSON.parse(data.CustomerInfoResult);
                             console.log(customerInfo);
                             if(customerInfo.responseStatus ==1){
-                                $scope.errorInfo="We were unable to find your account. Please try again or call 1-888-466-4427 for assistance";
+                                $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
                                 jQuery('#popup-spinner-wrap').hide();
                             }else if(customerInfo.responseStatus ==0){
                                 //var req={};
