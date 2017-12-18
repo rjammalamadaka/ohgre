@@ -105,10 +105,16 @@ var ohio_ng = {
       $('html').removeClass('fixed-body');
     });
 
-    $('.tooltip-trigger').on('click', function(event) {
+    $('.form-area-wrapper .tooltip-trigger').on('click', function(event) {
       event.preventDefault();
       $('.tooltip-text').toggleClass('tooltip-open');
     });
+    $('#view-raf-rewards .tooltip-trigger').on('click', function(event) {
+      event.preventDefault();
+      $('.tooltip-text').removeClass('tooltip-open');
+      $(event.target).parent('.tooltip-container').find('.tooltip-text').toggleClass('tooltip-open');
+    });
+
     $('.close-tooltip').on('click', function(event) {
       event.preventDefault();
       $('.tooltip-text').removeClass('tooltip-open');
