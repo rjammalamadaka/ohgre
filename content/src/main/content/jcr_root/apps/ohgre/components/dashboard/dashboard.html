@@ -168,10 +168,10 @@
    <div class="col-md-10 col-md-offset-1">
       <div class="foot-notes">
          <div ng-show="customerInfo.renewalProductCategory =='FIXED'">
-            <p>${properties.disclosure @ context = 'html'}</p>
+            <p>${properties.disclosurefixed @ context = 'html'}</p>
          </div>
-         <div ng-show="customerInfo.renewalProductCategory ==''">
-            <p>${properties.disclosure @ context = 'html'}</p>
+         <div ng-show="customerInfo.renewalProductCategory =='VARIABLE'">
+            <p>${properties.disclosurevariable @ context = 'html'}</p>
          </div>
       </div>
    </div>
