@@ -584,6 +584,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         $scope.continuefromdeltaskymiles=true;
 		 if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising  =="Y"){
               $scope.reviewdisplaydeltaskymiles =false;
+             $scope.reviewdisplayvisa=false;
               $scope.reviewdisplayraf =true;
          }else{
 			  $scope.reviewauthorizesubmit();
