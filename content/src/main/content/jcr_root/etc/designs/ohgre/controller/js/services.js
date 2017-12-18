@@ -82,6 +82,12 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var	url="/bin/getPromoGroupInfo?portalName="+$rootScope.portalname+"&promoCode="+promotionCode;
 		return $http.get(url,config);
     }
+
+      var getPromocodesForEnrollment =function(ldc){
+		var	url="/bin/getPromocodesForEnrollment?portalName="+$rootScope.portalname+"&LDC="+ldc;
+		return $http.get(url,config);
+    }
+
     return {
         getQuotes:getQuotes,
         getPromoCodeInfo:getPromoCodeInfo,
@@ -97,7 +103,8 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
         rafUpdateCustomerInfo:rafUpdateCustomerInfo,
         wcRequest:wcRequest,
         logout:logout,
-        getPromoCodeGroupInfo:getPromoCodeGroupInfo
+        getPromoCodeGroupInfo:getPromoCodeGroupInfo,
+        getPromocodesForEnrollment:getPromocodesForEnrollment
     }               
 }]);
 
