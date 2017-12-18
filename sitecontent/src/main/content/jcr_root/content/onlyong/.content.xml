@@ -148,7 +148,7 @@
             <APPLES
                 jcr:primaryType="nt:unstructured"
                 APPLECOH="/content/onlyong/applecoh"
-                APPLEDEO="/content/onlyong/appledeo"
+                APPLEDEO="/content/onlyong/APPLEDEO"
                 APPLEDUKE="/content/onlyong/appleduke"
                 APPLEVEDO="/content/onlyong/applevedo"
                 APPLEWGL="/content/onlyong/promo-landing-apples"
@@ -203,6 +203,9 @@
                 jcr:primaryType="nt:unstructured"
                 MCCORD="/content/onlyong/MCCORD"/>
             <mccord jcr:primaryType="nt:unstructured"/>
+            <ALLCONNECT
+                jcr:primaryType="nt:unstructured"
+                ALLCONNECT="/content/onlyong/allconnect"/>
         </oh>
     </promotions>
     <faq/>
@@ -228,4 +231,5 @@
     <appleduke/>
     <appledeo/>
     <applevedo/>
+    <allconnect/>
 </jcr:root>

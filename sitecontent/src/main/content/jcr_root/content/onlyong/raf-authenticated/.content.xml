@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-13T21:19:14.698-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-18T15:42:00.018-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-13T21:19:18.255-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -39,10 +39,11 @@
             <raf_autenticated
                 jcr:created="{Date}2017-10-15T09:16:53.996+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-13T21:19:14.691-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2017-12-18T15:42:00.012-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/raf-autenticated"
+                awardterms="&lt;p>THE MAXIMUM AWARD UNDER THE RAF PROGRAM IS $500 IN VISA REWARD CARDS PER PERSON PER &lt;g class=&quot;gr_ gr_9 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar only-ins replaceWithoutSep&quot; id=&quot;9&quot; data-gr-id=&quot;9&quot;>CALENDAR&lt;/g> YEAR&lt;g class=&quot;gr_ gr_10 gr-alert gr_tiny gr_gramm gr_inline_cards gr_run_anim Punctuation replaceWithoutSep&quot; id=&quot;10&quot; data-gr-id=&quot;10&quot;>,&lt;/g> UNLESS SPECIFICALLY AUTHORIZED BY Grand Rapids Energy IN ITS SOLE DISCRETION. This $500 limit applies to the total of all Ohio Natural Gas Visa Reward Card promotional offers received. Including but not limited to the Refer-a-Friend Program. To see the full Refer-a-Friend program terms and conditions &lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/onlyong/termsandconditions.html&quot; target=&quot;Target&quot;>click here&lt;/a>.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 benefits="&lt;h4> &lt;/h4>&#xd;&#xa;&lt;h4>Here are the benefits of the program&lt;/h4>&#xd;&#xa;&lt;ul style=&quot;list-style-position: inside;&quot;>&#xd;&#xa;&lt;li style=&quot;text-align: left;&quot;>You share the ONG experience with a friend.&lt;/li>&#xd;&#xa;&lt;li style=&quot;text-align: left;&quot;>For each friend who enrolls, you can each get a $25 Visa® Reward Card.*&lt;br />&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li style=&quot;text-align: left;&quot;>The more you share, the more you can earn!*&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;i> &lt;/i>&lt;/p>&#xd;&#xa;"
                 bodyofthankyou="If your email address is on file with us, you will receive an email when a friend enrolls with your Referral Code."
                 changeemailmsg="&lt;p>By changing your email here, you will change the email address associated with all of your ONG notifications. If you'd prefer to use a different address to send your referral emails, you can do so after clicking &amp;quot;Send Email&amp;quot; on the next screen.&lt;br />&#xd;&#xa;&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
@@ -51,7 +52,7 @@
                 facebook="/content/dam/ohgre/socialsharing/facebook@3x.png"
                 helppagelinks="&lt;p>To find out more about the Refer-a-Friend program: &lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/gre/raf-faqs.html&quot; target=&quot;_blank&quot;>Frequently Asked Questions&lt;/a>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/onlyong/termsandconditions.html&quot; target=&quot;_blank&quot;>RAF Program Terms and Conditions&lt;/a>&lt;/p>&#xd;&#xa;"
                 popupfootercontactinfo="&lt;h4>Customer Service&lt;/h4>&#xd;&#xa;&lt;p>1.888.466.4427&lt;br />&#xd;&#xa;8 a.m. – 5 p.m. ET Monday – Friday&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                popupfootercontent="&lt;p>The is a post-only message from Ohio Natural Gas. Please do not attempt to reply to this message. We would love to hear from you if you have questions. For assistance with your account, please contact us via phone or by&amp;nbsp;e-mail at customerservice@onlyong.com&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                popupfootercontent="&lt;p>The is a post-only message from Ohio Natural Gas. Please do not attempt to reply to this message. We would love to hear from you if you have questions. For assistance with your account, please contact us via phone or by e-mail at customerservice@onlyong.com&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 rafemailbody="&lt;p>Enrolling is easy. Either click the button below to enroll online, or give ONG a call at 1.888.466.4427 and provide the Referral Code and Promotion Code below. Your gas service won't be interrupted when you switch. Ohio Natural Gas experts will handle all the details for you.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 rafemailsubject="Enroll with Ohio Natural Gas and we could both get $25!"
                 raflogoinemail="/content/dam/ohgre/raf/raf-logo.png"
@@ -62,7 +63,7 @@
                 sharebyemail="&lt;h4>Share by Email&lt;/h4>&#xd;&#xa;&lt;p>Send a customized email to your friends. This email contains all the information your friends need to enroll with ONG using your Referral Code.&lt;/p>&#xd;&#xa;"
                 sharesocially="&lt;h4>Share Socially&lt;/h4>&#xd;&#xa;&lt;p>Click the icons below to share this offer with your friends through your favorite social networks. If they enroll with ONG, you could both earn a $25 Visa&lt;sup>®&lt;/sup> Reward Card.*&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 subheader="&lt;p>Tell your friends to enroll with Ohio Natural Gas by going online to &lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/onlyong/promo-raf.html&quot; target=&quot;_blank&quot;>www.onlyong.com/RAF25 &lt;/a>or calling &lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>1.888.466.4427&lt;/a>. In order for you both to be eligible for the $25 Visa&lt;sup>®&lt;/sup> Reward Card, your friend must provide Promotion Code RAF25 and your Referral Code {{customerInfo.custID}} at the time he or she enrolls.*&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                textIsRich="[true,true,true,true,true,true,true,true,true,true]"
+                textIsRich="[true,true,true,true,true,true,true,true,true,true,true]"
                 thankyouheader="Thank you for referring your friends to Ohio Natural Gas!"
                 twitter="/content/dam/ohgre/socialsharing/twitter@3x.png"/>
         </content>
