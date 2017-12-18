@@ -151,7 +151,14 @@ location.href=$rootScope.homeUrl+"/refer.html";
 
      $scope.previewEmailMobile = function(){
         var rafEmailsTextarea = $('#toemailaddress');
-        if (rafEmailsTextarea.val() !== '' && !rafEmailsTextarea.hasClass('ng-invalid')){
+        $scope.rafemailform.submited = true;
+        console.log('scroll...');
+        //window.scrollTo(0, 0);
+        $('html, body').animate({ scrollTop: $('#toemailaddress').offset().top }, 'slow');
+
+        //if (rafEmailsTextarea.val() !== '' && !rafEmailsTextarea.hasClass('ng-invalid')){
+        if($scope.rafemailform.$valid){
+
           jQuery('.raf-email-step').hide();
           jQuery('#raf-email-preview').show();
         }
@@ -161,6 +168,7 @@ location.href=$rootScope.homeUrl+"/refer.html";
         jQuery('#raf-friend-info').show();
      }
      $scope.continueRafEmailMobile = function(){
+        window.scrollTo(0, 0);
         jQuery('.raf-email-step').hide();
         jQuery('#raf-user-info').show();
      }
