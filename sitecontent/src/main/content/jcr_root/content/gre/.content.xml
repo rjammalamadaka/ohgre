@@ -175,9 +175,16 @@
             <DELTA
                 jcr:primaryType="nt:unstructured"
                 DELTA25="/content/gre/promo_landing"/>
+            <RAF
+                jcr:primaryType="nt:unstructured"
+                RAF25="/content/gre/promo-raf"/>
+            <MISEA
+                jcr:primaryType="nt:unstructured"
+                MISEA="/content/gre/misea"/>
         </gre>
     </promotions>
     <delta-faqs/>
     <skymilesterms/>
     <invalid-promocode/>
+    <misea/>
 </jcr:root>
