@@ -127,7 +127,8 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                             if(promotion.BackupPromotionCode){
 
-                                 location.href=redirectUrl+".html#isExpired=true";
+                                 //location.href=redirectUrl+".html#isExpired=true";
+                                setTimeout(function(){ window.location.href=redirectUrl+".html#isExpired=true";});
 
                                                              }else{
 location.href=$rootScope.homeUrl+"/promotion-error.html";
