@@ -7,31 +7,31 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
 
     $scope.promoCodeSubmit = function(){
-		$scope.promoform.submited = true;
+        $scope.promoform.submited = true;
         if($scope.promoform.$valid){
-        //document.cookie="promocode="+$scope.promotioncode;
+            //document.cookie="promocode="+$scope.promotioncode;
 
-        var promotionCode=$scope.promotioncode;
+            var promotionCode=$scope.promotioncode;
             if(promotionCode){
 
                 PrimeService.getPromoCodeGroupInfo(promotionCode).success(function(data, status, headers, config) {
                     console.log(data);
                     if(data && data.success){
-						var promoCodeinfo=data.promoCodeInfo;
+                        var promoCodeinfo=data.promoCodeInfo;
                         var promoinfo={};
                         promoinfo.code=promoCodeinfo.promoCode;
                         promoinfo.url=promoCodeinfo.value;
                         $scope.promoInfo=promoinfo;
-						getPromoCodeInfo(promotionCode);
+                        getPromoCodeInfo(promotionCode);
                     }else{
                         getPromoCodeInfo(promotionCode);
-						//$scope.errorInfo=data.errorMessage;
-                      // location.href=$rootScope.homeUrl+"/promotion-error.html";
+                        //$scope.errorInfo=data.errorMessage;
+                        // location.href=$rootScope.homeUrl+"/promotion-error.html";
                     }
                 }).error(function(data, status, headers, config) {
 
                 });
-               // getPromoGroups(promotionCode);
+                // getPromoGroups(promotionCode);
 
 
             }
@@ -55,83 +55,96 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
             }
             if(data && data.responseStatus =="0"){
                 if(data.LDCList && data.LDCList.length >0){
-                    var locationType=$("input[name='location_type']:checked"). val(); 
+                    var locationType=$("input[name='location_type']:checked"). val();
                     //$window.sessionStorage.setItem('promoLDC',angular.toJson(data.LDCList));
 
-					var ldc=null,promotionCode=null;
+                    var ldc=null,promotionCode=null;
                     var promotion=null;
 
                     for(var i=0;i<data.LDCList.length;i++){
                         ldc=data.LDCList[i];
                         var ldcCode=ldc.LDCCode;
-                       promotion =ldc.promotion[0];
+                        promotion =ldc.promotion[0];
 
                         if(promotion && promotion.PromotionCode){
                             if( promotion &&  promotion.RateClassCode){
                                 if(locationType=="residential" && promotion.RateClassCode=="01"){
-									$scope.rateClassCode=promotion.RateClassCode;
+                                    $scope.rateClassCode=promotion.RateClassCode;
                                 }else if(locationType=="commercial" && promotion.RateClassCode=="04"){
-									$scope.rateClassCode=promotion.RateClassCode;
+                                    $scope.rateClassCode=promotion.RateClassCode;
                                 }
 
                             }
 
                             if(!promotion.RateClassCode.length>0){
                                 if(locationType=="residential"){
-                            		data.LDCList[i].promotion[0].RateClassCode="01";
+                                    data.LDCList[i].promotion[0].RateClassCode="01";
                                     $scope.rateClassCode="01";
                                 } else{
-                           			 data.LDCList[i].promotion[0].RateClassCode="04"; 
-                                     $scope.rateClassCode="04";
+                                    data.LDCList[i].promotion[0].RateClassCode="04";
+                                    $scope.rateClassCode="04";
                                 }
 
                             }
                             if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
-                                promotionCode= promotion.BackupPromotionCode; 
+                                promotionCode= promotion.BackupPromotionCode;
                                 break;
                             }if(promotion.PromotionExpired =="N"){
-                                promotionCode=promotion.PromotionCode; 
-                                break;                              
+                                promotionCode=promotion.PromotionCode;
+                                break;
                             }
                         }
                     }
 
                     if(!$scope.rateClassCode){
-						location.href=$rootScope.homeUrl+"/invalid-promocode.html";
+                        location.href=$rootScope.homeUrl+"/invalid-promocode.html";
                         return false;
                     }
 
-                  //  var ldclist= data.LDCList[0];
-                   // var promotion=ldclist.promotion[0];
+                    //  var ldclist= data.LDCList[0];
+                    // var promotion=ldclist.promotion[0];
                     //data.locationType=locationType;
-                  /*  if(!promotion.RateClassCode.length>0){
-                        if(locationType=="residential")
-                            data.LDCList[0].promotion[0].RateClassCode="01";
-                        else
-                            data.LDCList[0].promotion[0].RateClassCode="04"; 
+                    /*  if(!promotion.RateClassCode.length>0){
+                          if(locationType=="residential")
+                              data.LDCList[0].promotion[0].RateClassCode="01";
+                          else
+                              data.LDCList[0].promotion[0].RateClassCode="04";
 
-                    }*/
+                      }*/
                     ohgre.store("promoCodeInfo",data);
+                    console.log("data="+data);
                     if(promotion.PromotionExpired =="Y" && !redirectUrl){
-
+                        console.log("inside expired loop");
                         if(promotion.BackupPromotionCode.length>0){
-                        	location.href=$rootScope.homeUrl+"/backuppromo.html";
+                            console.log("with backup promocode");
+                            location.href=$rootScope.homeUrl+"/backuppromo.html";
+
                         }else{
-							location.href=$rootScope.homeUrl+"/promotion-error.html";
+                            console.log("no backup promocode");
+                            location.href=$rootScope.homeUrl+"/promotion-error.html";
                         }
 
 
                     }else if(data.LDCList && redirectUrl){
 
+                        console.log("has a redirect for the promotion code");
+
                         if(promotion.PromotionExpired =="Y"){
+
+                            console.log("Pomotion code is expired");
+
 
                             if(promotion.BackupPromotionCode){
 
-                                 location.href=redirectUrl+".html#isExpired=true";
+                                console.log("adding hash params with the backup promotion code");
 
-                                                             }else{
-location.href=$rootScope.homeUrl+"/promotion-error.html";
-                                                             }
+                                setTimeout(function(){ window.location.href=redirectUrl+".html#isExpired=true";});
+                                console.log("done");
+
+
+                            }else{
+                                location.href=$rootScope.homeUrl+"/promotion-error.html";
+                            }
 
 
                         }else{
@@ -140,12 +153,12 @@ location.href=$rootScope.homeUrl+"/promotion-error.html";
 
 
                     }else if(data.LDCList && data.LDCList.length!=0 && !redirectUrl){
-                       // if(data.LDCList.length ==1){
+                        // if(data.LDCList.length ==1){
                         //    location.href=$rootScope.homeUrl+"/promo-general.html";
                         //}else{
-                            ohgre.removeStore("promoCodeInfo");
-                            ohgre.removeStore("promocode");
-                            location.href=$rootScope.homeUrl+"/invalid-promocode.html";
+                        ohgre.removeStore("promoCodeInfo");
+                        ohgre.removeStore("promocode");
+                        location.href=$rootScope.homeUrl+"/invalid-promocode.html";
                         //}
                     }else{
                         location.href=$rootScope.homeUrl+"/promo-general.html";
@@ -166,49 +179,49 @@ location.href=$rootScope.homeUrl+"/promotion-error.html";
     var getPromoGroups= function(promotionCode){
         OhGreService.getPromoGroups().success(function(data, status, headers, config){
             for (var property in data) {
-    			if (data.hasOwnProperty(property) && property != "jcr:primaryType") {
+                if (data.hasOwnProperty(property) && property != "jcr:primaryType") {
                     var childNode=data[property];
                     for(var childproperty in childNode){
                         if(childNode.hasOwnProperty(childproperty) && childproperty != "jcr:primaryType"){
                             var url=childNode[childproperty];
 
                             if(childproperty == promotionCode){
-							var promoinfo={};
-							promoinfo.code=childproperty;
-                            promoinfo.url=url;
-                            $scope.promoInfo=promoinfo;
+                                var promoinfo={};
+                                promoinfo.code=childproperty;
+                                promoinfo.url=url;
+                                $scope.promoInfo=promoinfo;
                                 break;
                             }
                         }
                     }
-    			}
-			}
+                }
+            }
         }).error(function (data,status, headers, config){ });
     }
 
-	var promoCodeEl = angular.element( document.querySelector('#promotioncode')),
+    var promoCodeEl = angular.element( document.querySelector('#promotioncode')),
         errorMsgWrapper = angular.element(document.querySelector('.error-message-wrapper'));
 
     $scope.$watch('promotioncode', function (newValue, oldValue, scope) {
-       if(newValue){
-		$scope.promotioncode = newValue.toUpperCase();
+        if(newValue){
+            $scope.promotioncode = newValue.toUpperCase();
 
-       }
-	}, true);
+        }
+    }, true);
 
     $scope.promoCodeFocused = function() {
-		errorMsgWrapper.addClass('error-hidden');
+        errorMsgWrapper.addClass('error-hidden');
         //$scope.placeholder = "";
     }
     $scope.promoCodeBlur = function() {
-		errorMsgWrapper.removeClass('error-hidden');
+        errorMsgWrapper.removeClass('error-hidden');
         //$scope.placeholder = "";
     }
 
     $scope.errorClicked = function() {
-		console.log('errorClicked');
+        console.log('errorClicked');
         errorMsgWrapper.addClass('error-hidden');
-		promoCodeEl.focus();
+        promoCodeEl.focus();
         //errorMsgWrapper.hide();
     }
 
