@@ -196,6 +196,8 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollment.setAuthorizationCode("internal");
 			enrollRequest.setAuthorizationLevel("3");
 			enrollment.setAuthorizationLevel("3");
+			enrollRequest.setChannelID("online");
+			enrollment.setChannelID("online");
 
 			Calendar currentCalendar = Calendar.getInstance();
 			java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
