@@ -152,9 +152,10 @@ location.href=$rootScope.homeUrl+"/refer.html";
      $scope.previewEmailMobile = function(){
         var rafEmailsTextarea = $('#toemailaddress');
         $scope.rafemailform.submited = true;
-        console.log('scroll...');
         //window.scrollTo(0, 0);
-        $('html, body').animate({ scrollTop: $('#toemailaddress').offset().top }, 'slow');
+        $("#primary-header").animate({ scrollTop: 0 }, "fast");
+        //$('html, body').animate({ scrollTop: $('#primary-header').offset().top }, 'slow');
+        console.log('scroll...');
 
         //if (rafEmailsTextarea.val() !== '' && !rafEmailsTextarea.hasClass('ng-invalid')){
         if($scope.rafemailform.$valid){
