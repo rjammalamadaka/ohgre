@@ -329,6 +329,19 @@ $rootScope.currentYear=new Date().getFullYear();
         $rootScope.rateClassCode=$rootScope.hashParams.rateClassCode;
     }
 
+   $rootScope.IsIE=function(){
+        if(navigator.userAgent.indexOf('MSIE')!==-1 || navigator.appVersion.indexOf('Trident/') > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+   if($rootScope.IsIE()){
+    $http.get(location.href,{headers:{'Cache-Control': 'no-cache'}})
+    //alert(navigator.userAgent);
+   }
 
 }]); 
 
