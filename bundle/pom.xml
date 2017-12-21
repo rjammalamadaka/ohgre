@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.macquarium.ong</groupId>
         <artifactId>ohgre</artifactId>
-        <version>1.9.2-SNAPSHOT</version>
+        <version>1.9.3-SNAPSHOT</version>
     </parent>
 
     <!-- ====================================================================== -->
@@ -213,6 +213,8 @@
                             com.day.cq.mailer,
                             org.apache.commons.mail,
                             org.osgi.framework,
+                            javax.net,
+                            javax.net.ssl,
                             javax.mail.internet,
                             javax.mail
                         </Import-Package>

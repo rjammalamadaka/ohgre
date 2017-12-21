@@ -7,7 +7,7 @@
 
     <groupId>com.macquarium.ong</groupId>
     <artifactId>ohgre</artifactId>
-    <version>1.9.2-SNAPSHOT</version>
+    <version>1.9.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ohgre - Reactor Project</name>
@@ -23,7 +23,7 @@
     <!-- ====================================================================== -->
     <properties>
         <crx.host>166.78.247.155</crx.host>
-        <crx.port>4505</crx.port>
+        <crx.port>4502</crx.port>
         <crx.username>admin</crx.username>
         <crx.password>0DmvMMkvVD1eQLaA</crx.password>
         <publish.crx.host>166.78.247.155</publish.crx.host>
