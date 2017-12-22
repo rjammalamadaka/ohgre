@@ -5,6 +5,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
   var currentYear = date.getFullYear();
   var previouserYear = currentYear - 1;
   var updateCustomerInfoReq = {};
+  var rafEmailPopup = $("#raf-email-popup > .window-wrapper").eq(0);
   $scope.years = [previouserYear, currentYear];
   $scope.giftCardByYear = {};
   $scope.sclectedYear = currentYear;
@@ -152,10 +153,7 @@ location.href=$rootScope.homeUrl+"/refer.html";
      $scope.previewEmailMobile = function(){
         var rafEmailsTextarea = $('#toemailaddress');
         $scope.rafemailform.submited = true;
-        //window.scrollTo(0, 0);
-        $("#primary-header").animate({ scrollTop: 0 }, "fast");
-        //$('html, body').animate({ scrollTop: $('#primary-header').offset().top }, 'slow');
-        console.log('scroll...');
+        $scope.scrollToRafPopupTop();
 
         //if (rafEmailsTextarea.val() !== '' && !rafEmailsTextarea.hasClass('ng-invalid')){
         if($scope.rafemailform.$valid){
@@ -167,24 +165,22 @@ location.href=$rootScope.homeUrl+"/refer.html";
      $scope.editEmailMobile = function(){
         jQuery('.raf-email-step').hide();
         jQuery('#raf-friend-info').show();
+        $scope.scrollToRafPopupTop();
      }
      $scope.continueRafEmailMobile = function(){
-        window.scrollTo(0, 0);
+        $scope.scrollToRafPopupTop();
         jQuery('.raf-email-step').hide();
         jQuery('#raf-user-info').show();
      }
-     $scope.testChange = function() {
-        console.log('testChange');
-    };
-    $scope.testBlur = function() {
-        console.log('testBlur');
-        console.log('toemailVal', $('#toemailaddress').val());
-        $scope.$apply();
-    };
+     $scope.scrollToRafPopupTop = function(){
+       rafEmailPopup.animate({ scrollTop: rafEmailPopup.offset().top}, 800);
+     }
     $scope.referToMyFriends =function(){
 
         $scope.rafMailSerrverMsg=null;
         $scope.rafemailform.submited = true;
+        $scope.scrollToRafPopupTop();
+
         if($scope.rafemailform.$valid){
 
           var requestInfo = {};
