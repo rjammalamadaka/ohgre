@@ -276,7 +276,13 @@ $scope.errorMessage=null;
 		req.LDC=$scope.ldc;
 
         req.AccountNumber=$scope.accountnumber;
-req.LdcDesc=$scope.ldcdesc;
+		req.LdcDesc=$scope.ldcdesc;
+
+        if($scope.ldc && $scope.ldc=="DUK"){
+            console.log("ssssssssssssssssss");
+            req.dukNumber=$scope.an4
+        }
+
          PrimeService.setProductData(req).success(function(data, status, headers, config){            
             console.log(data);
             location.href=$rootScope.homeUrl+'/myaccount.html';

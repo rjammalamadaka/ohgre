@@ -206,7 +206,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 
-               setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
+               setTimeout(function(){ location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
 
             // location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
              return false;
@@ -233,7 +233,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 			if(ldc == "COH"){       
 			formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
 			}else if(ldc == "DUK"){
-			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+accountNumber.substring(10,11);
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$scope.productData.dukNumber;
 			}else if(ldc == "DEO"){
 			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
 			}else if(ldc == "VED"){

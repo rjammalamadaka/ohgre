@@ -72,6 +72,7 @@ jQuery('#popup-spinner-wrap').show();
         var formattedNumber="";
         if(accountNumber){
        console.log($scope.productData.LDC);
+            console.log("Account Number" + accountNumber);
 		var ldc=$scope.productData.LDC;
    if(ldc == "COH"){
        //8331
@@ -79,7 +80,7 @@ jQuery('#popup-spinner-wrap').show();
 
         }else if(ldc == "DUK"){
             //4421
-            formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+accountNumber.substring(10,11);
+            formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$scope.productData.dukNumber;
 
         }else if(ldc == "DEO"){
 			//1444
