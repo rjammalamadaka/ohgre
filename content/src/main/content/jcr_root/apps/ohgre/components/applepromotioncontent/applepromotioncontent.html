@@ -20,6 +20,14 @@
                      <p>
                         {{product.ProductPlanDesc}}
                      </p>
+						<a href="" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
+                        <div ng-show="product.displayAccordian" class="">
+                            <ul>
+                                <li ng-repeat="text in product.ProductFinePrintText">{{text}}
+                                </li>
+    
+                            </ul>
+                        </div>
                      <ul>
                           <li ng-repeat="text in product.ProductFinePrintText">{{text}}</li>
 
