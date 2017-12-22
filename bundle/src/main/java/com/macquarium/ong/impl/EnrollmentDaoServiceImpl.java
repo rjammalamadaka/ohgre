@@ -1,35 +1,45 @@
 package com.macquarium.ong.impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Calendar;
-
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.Service;
-
 import com.macquarium.ong.CommonConfigService;
 import com.macquarium.ong.EnrollmentDaoService;
 import com.macquarium.ong.vo.Enrollment;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.sql.*;
 
 @Service
 @Component(metatype = false)
 public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
+
+	private Logger logger = LoggerFactory.getLogger(EnrollmentDaoServiceImpl.class);
 	@Reference
 	private CommonConfigService commonConfigService;
 
 	public int insertEnrollment(Enrollment enrollment) {
+		logger.info("insertEnrollment");
 		int resultGeneratedkey=0;
 		Connection connection = null;
 		try {
+
+			logger.info("111111111111111111111111111111111");
 			//Calendar currentCalendar = Calendar.getInstance();
 			// java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
+			System.setProperty("javax.net.ssl.keyStore","/home/aem/keystore");
+			System.setProperty("javax.net.ssl.keyStorePassword","bhaO6PlkkjHc2cfT");
+			System.setProperty("javax.net.ssl.trustStore","/home/aem/truststore");
+			System.setProperty("javax.net.ssl.trustStorePassword","bhaO6PlkkjHc2cfT");
+
+
+			logger.info("22222222222222222222222222222222222");
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
+
 			if (connection != null) {
+				logger.info("333333");
 				String query="insert into enrollment(custID,createdDate,apiStatus,ldc,account,premise,firstName,lasNname,businessName,mailAddress1,mailAddress2,mailCity,mailCounty,mailStateCode," +
 						"mailZipCode,mailZipPlusFour,serviceAddress1,serviceAddress2,serviceCity,serviceCounty,serviceStateCode,serviceZipCode,serviceZipPlusFour,phoneNumber,emailAddress,doNotCallInd," +
 						"doNotMailInd,emailPrefTransactionalCd,emailPrefSSEPromotionalCd,emailPrefAffiliatePromotionalCd,emailPref3rdPartyCd,emailPrefNonTransactionalCd,languageCd,mailAddressVerified," +
@@ -38,7 +48,6 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 						"bypassCreditCheckInd,soldDate,bypassCIRInd,expectedQuoteAmt,tpvRequiredInd,emailTypeCode,alternateEmailAddress,editOnlyInd,b2BCustomerInd,expressConsentInd,brokerID," +
 						"delaySendToUtilDate,renewalProductCode,renewalFixPricePerThermCd,renewalFixPricePerTherm,renewalVarPriceAddOnPerTherm,renewalCtrctDurationMonths,renewalCtrctTermDate," +
 						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag,transactionType,customerType,price,tcVersion,originalPromoCode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
 
 				PreparedStatement ps = connection.prepareStatement(query,new String[]{"id"});
 
@@ -149,9 +158,13 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 				}
 			}
 		}catch(ClassNotFoundException e){
+			logger.info("ClassNotFoundException e");
+			logger.info(e.getMessage());
 			e.printStackTrace();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
+			logger.info("SQLException e");
+			logger.info(e.getMessage());
 			e.printStackTrace();
 		}
 		return resultGeneratedkey;
