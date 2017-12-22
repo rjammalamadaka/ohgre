@@ -339,7 +339,7 @@ $rootScope.currentYear=new Date().getFullYear();
     }
 
    if($rootScope.IsIE()){
-    $http.get(location.href,{headers:{'Cache-Control': 'no-cache'}})
+    $http.get(location.href,{headers:{'Cache-Control': 'no-cache'}});
     //alert(navigator.userAgent);
    }
 
