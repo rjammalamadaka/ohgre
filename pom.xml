@@ -7,7 +7,7 @@
 
     <groupId>com.macquarium.ong</groupId>
     <artifactId>ohgre</artifactId>
-    <version>1.9.4-SNAPSHOT</version>
+    <version>1.9.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ohgre - Reactor Project</name>
