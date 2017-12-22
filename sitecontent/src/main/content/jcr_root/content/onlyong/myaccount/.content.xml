@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-15T10:07:41.441-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-12-08T16:49:33.942-06:00"
+        cq:lastModified="{Date}2017-12-20T14:26:32.953-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-20T14:26:41.492-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
@@ -21,14 +21,14 @@
             <dashboard
                 jcr:created="{Date}2017-10-27T13:52:59.264-05:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-15T10:07:41.438-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2017-12-20T14:26:32.949-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/dashboard"
                 disclosure="&lt;p>Add disclosure here. (Terms &amp;amp; Conditions in the footer)&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                disclosurefixed="&lt;p>&amp;nbsp;Fixed renewal contract disclosure (OH)&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                disclosurevariable="&lt;p>&amp;nbsp;Variable renewal contract disclosure (OH)&lt;/p>&#xd;&#xa;"
-                footernote="&lt;p>If you would like to change your information, please call &lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>1.888.466.4427.&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>We are available from 8 a.m. to 5 p.m. ET Monday-Friday.&lt;/p>&#xd;&#xa;"
+                disclosurefixed="&lt;p> Fixed renewal contract disclosure (OH)&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                disclosurevariable="&lt;p> Variable renewal contract disclosure (OH)&lt;/p>&#xd;&#xa;"
+                footernote="&lt;p>If you would like to change your information, please call&amp;nbsp;&lt;a href=&quot;tel:1-888-466-4427&quot; target=&quot;Target&quot;>1.888.466.4427.&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>We are available from 8 a.m. to 5 p.m. ET Monday through Friday.&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true,true,true]"/>
         </content>
         <image
