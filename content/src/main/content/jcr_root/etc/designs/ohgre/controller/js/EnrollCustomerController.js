@@ -203,7 +203,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$rootScope', '$ht
         }else if(ldc =="COH"){
  			accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
         }
-		$rootScope.formatedacno=accountNumber;
+		$rootScope.formatedacno=accountNumber; 
 
     }
 
@@ -668,6 +668,24 @@ $scope.reviewauthorizesubmit();
     }
     var gotNextStep= function(step,back){
        // $scope.displaystepscontainer=true;
+        if(!back){
+            if(step ==2){
+                dataLayer.push({'event':'oh-journey','step':'your-information'});
+
+            }else if(step ==3){
+					dataLayer.push({'event':'oh-journey','step':'accept-terms'});
+            }else if(step ==4){
+                dataLayer.push({'event':'oh-journey','step':'review'});
+
+            }else if(step ==5){
+                dataLayer.push({'event':'oh-journey','step':'thank-you'});
+
+            }
+        console.log("gotNextStep");
+        console.log(step);
+        console.log(step);
+        }
+
         if(!back)
         $('.steps-container').show();
 
@@ -1112,7 +1130,7 @@ $scope.reviewauthorizesubmit();
 			if(ldc == "COH"){       
 			formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
 			}else if(ldc == "DUK"){
-			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+accountNumber.substring(10,11);
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$rootScope.product.dukNumber;
 			}else if(ldc == "DEO"){
 			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
 			}else if(ldc == "VED"){
