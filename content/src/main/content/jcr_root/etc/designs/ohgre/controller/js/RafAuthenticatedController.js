@@ -163,9 +163,9 @@ location.href=$rootScope.homeUrl+"/refer.html";
         }
      }
      $scope.editEmailMobile = function(){
+        $scope.scrollToRafPopupTop();
         jQuery('.raf-email-step').hide();
         jQuery('#raf-friend-info').show();
-        $scope.scrollToRafPopupTop();
      }
      $scope.continueRafEmailMobile = function(){
         $scope.scrollToRafPopupTop();
@@ -180,6 +180,7 @@ location.href=$rootScope.homeUrl+"/refer.html";
         $scope.rafMailSerrverMsg=null;
         $scope.rafemailform.submited = true;
         $scope.scrollToRafPopupTop();
+        var rafServerErrorMsg ="Problem with mail server, Please try later."; // <a href='" + $rootScope.homeUrl + ".html'>Return home</a>" ;
 
         if($scope.rafemailform.$valid){
 
@@ -203,12 +204,12 @@ location.href=$rootScope.homeUrl+"/refer.html";
                   jQuery('#raf-terms-popup').removeClass('show-popup');
                   jQuery('#toemailaddress').val('');
                   jQuery('#raf-confirm').addClass('show-popup');
-				$scope.rafemailform.toemailaddress.$setPristine();
+				          $scope.rafemailform.toemailaddress.$setPristine();
                   $scope.toemailaddress = '';
 
               }else{
 
-                  $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+                  $scope.rafMailSerrverMsg=rafServerErrorMsg;
                   jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
                   console.log('server error');
               }
@@ -216,7 +217,7 @@ location.href=$rootScope.homeUrl+"/refer.html";
           }).error(function(data, status, headers, config){
               console.log(data);
               console.log("error");
-              $scope.rafMailSerrverMsg="Problem with mail server, Please try later";
+              $scope.rafMailSerrverMsg=rafServerErrorMsg;
               jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
               console.log('server error');
 
