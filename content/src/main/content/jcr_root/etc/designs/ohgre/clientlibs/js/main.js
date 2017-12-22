@@ -43,6 +43,7 @@ var ohio_ng = {
   init: function() {
     this.listeners();
     this.socialButtons();
+    this.disableDesktopPhoneLinks();
   },
   listeners: function() {
 
@@ -230,8 +231,28 @@ var ohio_ng = {
 		});
 
           */
-  }
+  },
 
+  disableDesktopPhoneLinks: function() {
+		var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+    
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+        {
+            //alert('IE!');
+            var Elems = [], Tags = document.querySelectorAll("a[href^='tel']");
+        
+            //Nodelist to array, so we're able to manipulate the elements
+            for (var i = 0; i < Tags.length; i++ ) {
+                Elems[ i ] = Tags[ i ];
+            }
+        
+            for(var i = 0; i < Elems.length; i++){
+                Elems[ i ].removeAttribute('href');
+            }
+        }
+
+	}
 
 }
 $(document).ready(function() {
