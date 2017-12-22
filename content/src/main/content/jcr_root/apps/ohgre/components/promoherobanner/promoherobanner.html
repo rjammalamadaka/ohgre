@@ -11,7 +11,7 @@
                   <a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
                   <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
 
-                  <span ng-show="notexpired" class="slide-title" data-sly-test="${properties.title}">${properties.title}</span>
+                  <span ng-show="notexpired" class="slide-title" data-sly-test="${properties.title @ context='html'}">${properties.title @ context='html'}</span>
 
 
                   <p ng-show="notexpired"><span>${properties.description}</span></p>
