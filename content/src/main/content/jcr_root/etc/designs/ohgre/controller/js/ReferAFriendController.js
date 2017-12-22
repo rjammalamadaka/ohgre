@@ -25,7 +25,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
     }
 
 
-$scope.termsupdate=false;
+$rootScope.termsupdate=false;
      $rootScope.redirecttohome =function(){
 			//location.href=$rootScope.homeUrl+".html";
           jQuery("#raf-terms-popup").removeClass("show-popup");
@@ -187,19 +187,19 @@ $scope.termsupdate=false;
 
                                 if((customerInfo.rateClass=="01" && $scope.lastname.toUpperCase() == customerInfo.lastName.toUpperCase())||(customerInfo.rateClass=="04" && lastName.toUpperCase() == businessName.toUpperCase())){
 
-                                    if(customerInfo.raftermsCondAcknowledgedInd !='Y'){
+                                    if(customerInfo.raftermsCondAcknowledgedInd !="Y"){
 
-                                        if(customerInfo.raftermsCondAcknowledgedDate =="1/1/1900"){
-                                            $scope.termsupdate=false;
-                                        }else{
-											$scope.termsupdate=true;
+                                        if(customerInfo.raftermsCondAcknowledgedInd =="N"){
+                                            $rootScope.termsupdate=false;
+                                        }else if (customerInfo.raftermsCondAcknowledgedInd =="R"){
+											$rootScope.termsupdate=true;
 
                                         }
                                     jQuery('#raf-terms-popup').addClass('show-popup');
                                     updateCustomerInfoReq.custID=customerInfo.custID;
                                     updateCustomerInfoReq.account=customerInfo.account;
                                     updateCustomerInfoReq.ldc=customerInfo.ldc;
-                                    } else if(customerInfo.raftermsCondAcknowledgedInd =='Y'){
+                                    } else if(customerInfo.raftermsCondAcknowledgedInd =="Y"){
                                     setProductData();
                                    }
                                 }else{
