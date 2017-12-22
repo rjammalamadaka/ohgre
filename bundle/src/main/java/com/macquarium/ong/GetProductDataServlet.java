@@ -72,6 +72,12 @@ public class GetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			if(null !=referralcode){
 				obj.put("referralcode", (String)referralcode);
 			}
+
+			Object dukNumber=session.getAttribute("dukNumber");
+			if(null !=dukNumber){
+				obj.put("dukNumber", (String)dukNumber);
+			}
+
 			logger.info("get Product Data info:"+obj.toString());
 
 		} catch (JSONException e) {
