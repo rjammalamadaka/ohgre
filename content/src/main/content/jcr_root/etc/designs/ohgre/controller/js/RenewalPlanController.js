@@ -24,10 +24,15 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
         var ResPromoCode=$("#renew-plan-select").data("respromocode");
 		var ComPromoCode=$("#renew-plan-select").data("compromocode");
-        if(req.rateClassCode =="01"){
-            PromoCode=ResPromoCode;
-        }else if(req.rateClassCode =="04"){
-            PromoCode=ComPromoCode;
+
+        if($scope.promocode && $scope.promocode.length>0){
+			PromoCode=$scope.promocode;
+        }else{
+            if(req.rateClassCode =="01"){
+                PromoCode=ResPromoCode;
+            }else if(req.rateClassCode =="04"){
+                PromoCode=ComPromoCode;
+            }
         }
       /*  if(req.PromoCode){
 
@@ -46,7 +51,22 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                         $scope.defaultProducts=data.Customer[0].Product;
 
                     }
-                    $scope.products=data.Customer[0].Product;
+					 var customer=data.Customer[0];
+					var getQuotesProductsList=[];
+console.log($rootScope.prmoProduct);
+                    for(var i=0;i<customer.Product.length;i++){
+                        if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+                            getQuotesProductsList.push(customer.Product[i]);
+
+                        }
+
+                    };
+                    $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+
+                   // $scope.products=data.Customer[0].Product;
+
+
                     updateProductFinePrint();
                     console.log($scope.products);
                 }
@@ -59,6 +79,34 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
 
     }
+
+
+    var getPromoCodeInfoForEnroll=function(ldc){
+        PrimeService.getPromocodesForEnrollment(ldc).success(function(data, status, headers, config){
+            var promotionProduct=null;
+            var products=[];
+            var enrollmentResult=JSON.parse(data.GetPromoCodesForEnrollmentResult);
+            if(enrollmentResult && enrollmentResult.responseStatus =="0"){
+			      for(var i =0;i<enrollmentResult.promotion.length;i++){
+					var promotion=enrollmentResult.promotion[i];
+                    if(promotion && promotion.promotionCode && promotion.promotionCode==$rootScope.enrollPromoCode.toUpperCase()){
+            			promotionProduct=promotion.product;
+                        break;
+                    }
+                }
+                for(var j=0;j<promotionProduct.length;j++){
+                   var product= promotionProduct[j];
+					products.push(product.productCode);
+                }
+                 $rootScope.prmoProduct=products;
+                console.log("begin watch");
+               // getQuotes($scope.productData);
+
+            }
+        }).error(function (data,status, headers, config){ });
+
+    }
+
 
 
        var getCustomerInfo=function(req){
@@ -116,7 +164,15 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
              req.LDC=data.LDC;
              $scope.ldc=data.LDC;
              getCustomerInfo(req);
-             getQuotes(data);
+             getPromoCodeInfoForEnroll(data.LDC);
+
+             if(data.rateClassCode == "01"){
+                   $rootScope.enrollPromoCode=$("#renew-plan-select").data("respromocode");
+             }else if(data.rateClassCode == "04"){
+                 $rootScope.enrollPromoCode=$("#renew-plan-select").data("compromocode");
+
+             }
+            // getQuotes(data);
 
          }else{
 			location.href=$rootScope.homeUrl+".html";
@@ -125,6 +181,19 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
      }).error(function(data, status, headers, config){
 
      });
+
+
+
+    $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
+
+        if(newValue && newValue.length>0){
+           // getQuotesForViewPlans();
+            //var promoInfo=ohgre.store("promoCodeInfo");
+            //processPromotionInfo(promoInfo,newValue);
+            console.log("watch prmoProduct");
+            getQuotes($scope.productData);
+        }
+    });
 
 
      $scope.logout=function(){
@@ -219,7 +288,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
             PrimeService.getPromoCodeInfo($scope.promocode).success(function(data, status, headers, config){
                 //$('#submit-promo-code').removeClass("inactive");
                 $scope.formButton="CLEAR";
-                jQuery('#popup-spinner-wrap').hide();
+               // jQuery('#popup-spinner-wrap').hide();
                 if(data && data.responseStatus =="0"){                    
                     console.log(data);
 
@@ -275,34 +344,40 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
                         }else  if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="Y"){
                             if(ldcinfo.promotion[0].BackupPromotionCode){
+                                 $rootScope.enrollPromoCode=ldcinfo.promotion[0].BackupPromotionCode;
                                 var req={};
                                 $scope.serverError="Unfortunately this promotion has expired but we have some great plans below"; 
-                                req.AccountNumber=$scope.productData.AccountNumber; 
+                                 getPromoCodeInfoForEnroll($scope.productData.LDC);
+                               /* req.AccountNumber=$scope.productData.AccountNumber; 
                                 req.LDC=$scope.productData.LDC;
                                 req.PromoCode=ldcinfo.promotion[0].BackupPromotionCode;
                                 req.rateClassCode=$scope.productData.rateClassCode;
-                                getQuotes(req);
+                                getQuotes(req);*/
 
                             }else{
                                  jQuery('#popup-spinner-wrap').hide();
                                 $scope.serverError="Sorry the promotion code you entered has expired"; 
                             }
                         }else if(ldcinfo && ldcinfo.promotion[0]){
-                            var req={};
+                             $rootScope.enrollPromoCode=$scope.promocode;
+                            getPromoCodeInfoForEnroll($scope.productData.LDC);
+                           /* var req={};
  								req.AccountNumber=$scope.productData.AccountNumber; 
                                 req.LDC=$scope.productData.LDC;
                                 req.PromoCode=ldcinfo.promotion[0].PromotionCode;
                                 req.rateClassCode=$scope.productData.rateClassCode;
-                                getQuotes(req);
+                                getQuotes(req);*/
 
                         }
                     }else{
-                        var req={};
+                        $rootScope.enrollPromoCode=$scope.promocode;
+                        getPromoCodeInfoForEnroll($scope.productData.LDC);
+                       /* var req={};
 						req.AccountNumber=$scope.productData.AccountNumber; 
 						req.LDC=$scope.productData.LDC;
 						req.PromoCode=$scope.promocode;
                         req.rateClassCode=$scope.productData.rateClassCode;
-						getQuotes(req);
+						getQuotes(req);*/
                     }
 
 
@@ -361,10 +436,11 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 		req.FixedPricePerTherm=$scope.selectedProduct.FixedPricePerTherm;
         req.AccountNumber=$scope.productData.AccountNumber;
         req.RateClassCode=$scope.productData.rateClassCode;
+        req.dukNumber= $scope.productData.dukNumber;
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 
-              setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
+              setTimeout(function(){ location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
 
              return false;
 
@@ -391,7 +467,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 			if(ldc == "COH"){       
 			formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
 			}else if(ldc == "DUK"){
-			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+accountNumber.substring(10,11);
+			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$scope.productData.dukNumber;
 			}else if(ldc == "DEO"){
 			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
 			}else if(ldc == "VED"){

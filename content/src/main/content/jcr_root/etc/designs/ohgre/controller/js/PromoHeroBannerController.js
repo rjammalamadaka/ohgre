@@ -1,11 +1,14 @@
 ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
 
+    jQuery('#popup-spinner-wrap').show();
+   // $rootScope.prmoProduct=[];
 
  var portalname=$rootScope.portalname;
 
      if($rootScope.hashParams.promocode){
          PrimeService.getPromoCodeInfo($rootScope.hashParams.promocode).success(function(data, status, headers, config){
+              jQuery('#popup-spinner-wrap').hide();
              var promoInfo=ohgre.store("promoCodeInfo",data);
              $rootScope.promotionInfo=true;
              if(data && data.responseStatus =="0"){
@@ -19,15 +22,32 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                  $rootScope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
 
                  if($rootScope.promotion.PromotionExpired =="Y"){
+
+                     if($rootScope.promotion.BackupPromotionCode.length>0){
                                     location.href=$rootScope.homeUrl+"/backuppromo.html";
+                     }else{
+ 									location.href=$rootScope.homeUrl+"/promotion-error.html";
+                     }
                  }
 
-                 /*else{
-                     location.href=$rootScope.homeUrl+"/promo-general.html";
-                 }*/
+                 for(var i=0;i<promoInfo.LDCList.length;i++){
+					 var ldc=promoInfo.LDCList[i];
+                     var ldcCode=ldc.LDCCode;
+                      var promotion=ldc.promotion[0];
+                     if(promotion.PromotionExpired =="N"){
+                         console.log("required ldc");
+                         //console.log(ldc);
+                         //$rootScope.enrollLdc=ldc;
+                         $rootScope.ldcForEnrollPromo=ldc;
+                              break;                              
+                      }
+
+                 }
 
              }
+
              }else if(data && data.responseStatus =="1"){
+
                  //ohgre.store("promoCodeInfo",{});
                             location.href=$rootScope.homeUrl+"/promotion-error.html";
                      }
@@ -72,7 +92,26 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                 $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
                $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
 
+
+                for(var i=0;i<promoInfo.LDCList.length;i++){
+                    var ldc=promoInfo.LDCList[i];
+                    var ldcCode=ldc.LDCCode;
+                    var promotion=ldc.promotion[0];
+                    if(promotion.PromotionExpired =="N"){
+                        $rootScope.ldcForEnrollPromo=ldc;
+                        $rootScope.enrollPromoCode=promotion.PromotionCode;
+                        break;                              
+                    }else if(promotion.PromotionExpired =="Y"){
+ 						$rootScope.ldcForEnrollPromo=ldc;
+                        $rootScope.enrollPromoCode=promotion.BackupPromotionCode;
+                        break; 
+                    }
+
+                }
+
             }
+
+          jQuery('#popup-spinner-wrap').hide();
 
      }
     $scope.heightConstant = false;
@@ -127,10 +166,49 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
   	$rootScope.notexpired=true;
   if($rootScope.hashParams.isExpired){
 	$rootScope.notexpired=false;
-
-
-
   }
+    $rootScope.getPromoCodeInfoForEnroll=function(ldc){
+        PrimeService.getPromocodesForEnrollment(ldc).success(function(data, status, headers, config){
+
+            var promotionProduct=null;
+            var products=[];
+
+            var enrollmentResult=JSON.parse(data.GetPromoCodesForEnrollmentResult);
+            if(enrollmentResult && enrollmentResult.responseStatus =="0"){
+			      for(var i =0;i<enrollmentResult.promotion.length;i++){
+					var promotion=enrollmentResult.promotion[i];
+                    if(promotion && promotion.promotionCode && promotion.promotionCode==$rootScope.enrollPromoCode){
+            			promotionProduct=promotion.product;
+                        break;
+                    }
+                }
+                for(var j=0;j<promotionProduct.length;j++){
+                   var product= promotionProduct[j];
+                   //console.log(product.productCode);
+					products.push(product.productCode);
+                }
+                 $rootScope.prmoProduct=products;
+
+            }
+
+
+
+        }).error(function (data,status, headers, config){
+
+
+        });
+
+
+    }
+
+    //enrollLdc
+    $rootScope.$watch('enrollLdc', function (newValue, oldValue, scope) {
+       if(newValue){
+		    //$scope.promotioncode = newValue.toUpperCase();
+           $rootScope.getPromoCodeInfoForEnroll($rootScope.enrollLdc.LDCCode);
+
+       }
+	}, true);
 
 }]);
 

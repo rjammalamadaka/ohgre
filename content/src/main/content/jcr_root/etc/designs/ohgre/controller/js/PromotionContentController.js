@@ -45,7 +45,25 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                      if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                           $scope.displayPlans = true;
                          $scope.Customer=$scope.Quotes.Customer;
-                         $scope.products=$scope.Customer[0].Product;
+						var customer=$scope.Customer[0];
+						var getQuotesProductsList=[];
+ console.log( $rootScope.prmoProduct);
+                          for(var i=0;i<customer.Product.length;i++){
+                              if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+								getQuotesProductsList.push(customer.Product[i]);
+
+                              }
+
+                          };
+		            $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+
+
+                       //  $scope.products=$scope.Customer[0].Product;
+
+
+
+
                          setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                      }else{
@@ -146,7 +164,20 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                      $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
-                     $scope.products=$scope.Customer[0].Product;
+
+					var customer=$scope.Customer[0];
+						var getQuotesProductsList=[];
+ 						console.log( $rootScope.prmoProduct);
+                          for(var i=0;i<customer.Product.length;i++){
+                              if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+								getQuotesProductsList.push(customer.Product[i]);
+
+                              }
+
+                          };
+		            $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+                    // $scope.products=$scope.Customer[0].Product;
                      updateProductFinePrint();
                      setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
@@ -190,6 +221,16 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
     if($rootScope.hashParams.isExpired){
         $rootScope.expired=true;
     }
+
+      $rootScope.$watch('ldcForEnrollPromo', function (newValue, oldValue, scope) {
+       if(newValue){
+		    //$scope.promotioncode = newValue.toUpperCase();
+           if($rootScope.enrollLdc && $rootScope.enrollLdc.LDCCode){
+           $rootScope.getPromoCodeInfoForEnroll($rootScope.enrollLdc.LDCCode);
+           }
+
+       }
+	}, true);
 
 }]);
 

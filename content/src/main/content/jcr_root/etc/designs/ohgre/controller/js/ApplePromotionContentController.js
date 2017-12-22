@@ -3,7 +3,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
     var portalname=$rootScope.portalname;
 
-  var processPromotionInfo=function(promoInfo){
+  var processPromotionInfo=function(promoInfo,products){
 
 
 
@@ -51,7 +51,22 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
                       if(data && data.responseStatus =="0"){
                           var customer=data.Customer[0];
-                          $scope.productList= customer.Product;
+							var getQuotesProducts=customer.Product;
+
+                          console.log( $rootScope.prmoProduct);
+							var getQuotesProductsList=[];
+
+                          for(var i=0;i<customer.Product.length;i++){
+                              if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+								getQuotesProductsList.push(customer.Product[i]);
+
+                              }
+
+                          };
+
+                           $scope.productList=getQuotesProductsList;//customer.Product;
+
+
                           updateProductFinePrint();
                           setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
                       }
@@ -68,15 +83,22 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
     }
 
 
-    $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
-         
+  /*  $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
+
         if(newValue){
 
+			//var promoInfo=ohgre.store("promoCodeInfo");
+     		//processPromotionInfo(promoInfo);
+        }
+    });*/
+
+     $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
+
+        if(newValue && newValue.length>0){
 			var promoInfo=ohgre.store("promoCodeInfo");
-     		processPromotionInfo(promoInfo);
+     		processPromotionInfo(promoInfo,newValue);
         }
     });
-
 
  if(!$rootScope.hashParams.promocode){
 
@@ -99,6 +121,7 @@ console.log("updateProductFinePrint");
 
      }
 
+
     $scope.getNumber =function(QuoteDescription){
 
         if(QuoteDescription.indexOf("CCF")>0){
@@ -113,6 +136,34 @@ console.log("updateProductFinePrint");
         $rootScope.expired=true;
     }
 
+
+    $rootScope.$watch('ldcForEnrollPromo', function (newValue, oldValue, scope) {
+       if(newValue){
+		    //$scope.promotioncode = newValue.toUpperCase();
+           $rootScope.getPromoCodeInfoForEnroll($rootScope.ldcForEnrollPromo.LDCCode);
+
+       }
+	}, true);
+
+    $scope.displayAddlInfo = function(product) {
+        console.log("Inside Function");
+        if (product != undefined) {
+
+          if (product.displayAccordian == undefined) {
+            product.displayAccordian = true;
+          } else if (product.displayAccordian) {
+            product.displayAccordian = false;
+          } else if (!product.displayAccordian) {
+            product.displayAccordian = true;
+          }
+        } else {
+          $scope.displayGuranteedAccord = $scope.displayGuranteedAccord ? false : true;
+        }
+    
+        // alert(product.displayAccordian);
+        //    $scope.displayAdditionalInfo = $scope.displayAdditionalInfo ? false : true;
+
+  	}
 
 }]);
 
