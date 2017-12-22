@@ -440,7 +440,14 @@ console.log($rootScope.prmoProduct);
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 
-              setTimeout(function(){ location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
+
+             if($rootScope.IsIE()){
+
+				setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html?fromRenewal=true"; });
+             }else{
+				setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html?fromRenewal=true"; });
+                                }
+             //setTimeout(function(){ location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
 
              return false;
 

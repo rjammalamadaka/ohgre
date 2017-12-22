@@ -114,34 +114,25 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                     ohgre.store("promoCodeInfo",data);
                     console.log("data="+data);
                     if(promotion.PromotionExpired =="Y" && !redirectUrl){
-							console.log("inside expired loop");
                         if(promotion.BackupPromotionCode.length>0){
-                            console.log("with backup promocode");
                         	location.href=$rootScope.homeUrl+"/backuppromo.html";
 
                         }else{
-                            console.log("no backup promocode");
 							location.href=$rootScope.homeUrl+"/promotion-error.html";
                         }
 
 
                     }else if(data.LDCList && redirectUrl){
 
-                        console.log("has a redirect for the promotion code");
-
                         if(promotion.PromotionExpired =="Y"){
-
-								console.log("Pomotion code is expired");
 
 
                             if(promotion.BackupPromotionCode){
 
-                                console.log("adding hash params with the backup promotion code");
 
                                 if($rootScope.IsIE()){
 
 							     setTimeout(function(){ window.location.href=redirectUrl+".html?isExpired=true";});
-                                console.log("done");
                                 }else{
 									setTimeout(function(){ window.location.href=redirectUrl+".html#isExpired=true";});
 
