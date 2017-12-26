@@ -87,6 +87,16 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			EnrollRequest enrollRequest =new EnrollRequest();
 			Enrollment enrollment =new Enrollment();
 			String LDC=getParameterInfo(jObj,"LDC");
+			String fixedPricePerTherm=getParameterInfo(jObj,"fixedPricePerTherm");
+			enrollment.setPrice(fixedPricePerTherm);
+			String rateClassCode=getParameterInfo(jObj,"rateClassCode");
+			if(rateClassCode.equals("01")){
+				enrollment.setCustomerType("Residential");
+			}else if(rateClassCode.equals("04")){
+				enrollment.setCustomerType("Commercial");
+			}
+			String tcversion=getParameterInfo(jObj,"tcversion");
+			enrollment.setTcVersion(tcversion);
 			enrollRequest.setLDC(LDC);
 			enrollment.setLdc(LDC);
 			String CustLeadSourceCode=getParameterInfo(jObj,"CustLeadSourceCode");
@@ -136,7 +146,17 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			String responseStatus=getParameterInfo(jObj,"responseStatus");
 			String responsemessage=getParameterInfo(jObj, "responseMessage");
 			String renewalContractExistsInd=getParameterInfo(jObj,"renewalContractExistsInd");
+			String existingCustomerStatus=getParameterInfo(jObj,"existingCustomerStatus");
 			if(responseStatus.equals("0")){
+				if(existingCustomerStatus.equals("Active")){
+					if(renewalContractExistsInd.equals("Y")){
+						enrollment.setTransactionType("PPC-RS");
+					}else{
+						enrollment.setTransactionType("PPC");
+					}
+				}else{
+					enrollment.setTransactionType("ReEnroll");
+				}
 				if(renewalContractExistsInd.equals("Y")){
 					enrollRequest.setActionIfContractExists("3");
 					enrollment.setActionIfContractExists("3");
@@ -147,6 +167,8 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			}else if(responseStatus.equals("1")){
 				enrollRequest.setActionIfContractExists("1");
 				enrollment.setActionIfContractExists("1");
+				enrollment.setTransactionType("Enroll");
+
 			}
 			String serviceAddress1=getParameterInfo(jObj,"serviceAddress1");
 			enrollRequest.setServiceAddress1(serviceAddress1);
@@ -235,7 +257,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			requestResponseVo.setSite(domain);
 			requestResponseDaoService.insertPrimeRequestResponse(requestResponseVo);
 			String sameProductCode=getParameterInfo(jObj,"sameProductCode");
-			String existingCustomerStatus=getParameterInfo(jObj,"existingCustomerStatus");
+
 			String emailtype="";
 			if(responseStatus.equals("0")){
 				logger.info("existing customer");
@@ -249,7 +271,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 						emailtype="RENEWCONFIRM";
 					}
 				}else{
-					logger.info("In active customer");
+					logger.info("Inactive customer");
 					emailtype="ENCONFIRM";
 				}
 			}else if(responseStatus.equals("1")){
