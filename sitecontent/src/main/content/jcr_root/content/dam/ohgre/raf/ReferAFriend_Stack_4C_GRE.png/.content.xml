@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="efe1c275-2d9a-4600-9733-208f37428ac1">
+    <jcr:content
+        cq:lastReplicated="{Date}2017-12-22T14:27:15.307-06:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:name="ReferAFriend_Stack_4C_GRE.png"
+        cq:parentPath="/content/dam/ohgre/raf"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/raf/ReferAFriend_Stack_4C_GRE.png"
+        jcr:lastModified="{Date}2017-12-27T00:08:58.341-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2017-12-27T00:08:53.679-05:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}300"
+            dam:Physicalheightininches="{Decimal}1.0633354187011719"
+            dam:Physicalwidthindpi="{Long}300"
+            dam:Physicalwidthininches="{Decimal}2.0266706943511963"
+            dam:Progressive="no"
+            dam:sha1="cb11b9544673b95c869c49a53f6e1482cbf484ba"
+            dam:size="{Long}18926"
+            dc:format="image/png"
+            dc:modified="{Date}2017-12-27T00:08:58.094-05:00"
+            jcr:lastModified="{Date}2017-12-27T00:08:58.094-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}319"
+            tiff:ImageWidth="{Long}608"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
