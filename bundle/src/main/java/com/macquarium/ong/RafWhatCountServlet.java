@@ -51,6 +51,7 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 			String emailAddress=getParameterInfo(jObj,"emailAddress");
 			String rafBody=getParameterInfo(jObj,"rafBody");
 			String custID=getParameterInfo(jObj,"custID");
+			String portalName=getParameterInfo(jObj, "portalName");
 			wcUrl=wcUrl.append("&from=");
 			wcUrl=wcUrl.append(toMailId);
 			wcUrl=wcUrl.append("&sender=");
@@ -67,6 +68,15 @@ public class RafWhatCountServlet extends SlingAllMethodsServlet {
 			wcUrl=wcUrl.append("&last=");
 			String encodedLastName = URLEncoder.encode(lastName, "UTF-8");
 			wcUrl=wcUrl.append(encodedLastName);
+			String portal=null;
+			if(portalName.endsWith("oh")){
+				portal="oh";
+			}else{
+				portal="gre";
+			}
+			wcUrl=wcUrl.append("&portal=");
+			String encodedPortalName = URLEncoder.encode(portal, "UTF-8");
+			wcUrl=wcUrl.append(encodedPortalName);
 			wcUrl=wcUrl.append("&referral=");
 			wcUrl=wcUrl.append(custID);
 			String url=wcUrl.toString();
