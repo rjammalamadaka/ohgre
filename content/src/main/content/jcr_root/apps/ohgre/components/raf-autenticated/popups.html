@@ -21,8 +21,7 @@
                 <h4>Your Friend's Information</h4>
                 <div id="ContactListCtrl">
                   <label for="toemailaddress">Friend's Email Address</label>
-                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
-                    multiple-emails></textarea>
+                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" ng-model="toemailaddress" ng-required="true" multiple-emails></textarea>
                   <!--
  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
                     ng-focus ng-touched multiple-emails></textarea>
@@ -39,7 +38,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
                   <p>Don't feel like typing? <a class="cloudsponge-launch">Use your address book</a></p>
                 </div>
                 <label for="raf-email-subject">Subject Line</label>
-                <input type="text" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
+                <input type="text" id="raf-email-subject" name="raf-email-subject" value="${properties.rafemailsubject}" disabled>
                 <label for="rafemailmessage">Add or Edit Message</label>
                 <textarea name="rafemailmessage" rows="8" cols="80" ng-model="rafemailmessage" ng-required="true" ng-focus ng-visited>
 
@@ -50,10 +49,10 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
               </div>
 
               <div class="raf-email-step-btns">
-				<!--
+                <!--
 				<button class="primary-button" ng-click="rafemailform.$valid && previewEmailMobile()">Preview Email</button>
 				-->
-			<button class="primary-button" ng-click="previewEmailMobile()">Preview Email</button>
+                <button class="primary-button" ng-click="previewEmailMobile()">Preview Email</button>
               </div>
             </div>
 
@@ -76,7 +75,8 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
               </span>
               <p class="small-text">Note: Changing this email address will not change your email address on file with us, only the sender address for this referral email.</p>
               <p><button class="primary-button" ng-click="referToMyFriends()">Refer my friends</button></p>
-              <p class="server-msg">{{rafMailSerrverMsg}}</p>
+              <p id="raf-server-error">{{rafMailSerrverMsg}} <a href="#" ng-click="returnHome()">Return Home</a></p>
+
             </div>
 
 
@@ -90,7 +90,10 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
           </div>
           <div class="raf-inline-banner">
             <div class="company-logo"><img src="${properties.companylogoinemail}"></div>
-            <div class="raf-logo"><img src="${properties.raflogoinemail}"></div>
+            <div class="raf-logo">
+              <!--<img src="${properties.raflogoinemail}">
+            -->
+          Refer Your Friends</div>
           </div>
           <div class="email-body">
             <p>{{rafemailmessage}}</p>
@@ -101,7 +104,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
                   <div class="promo-box">You will get<span>${properties.referralamount}</span> Visa Reward Card</div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                  <div class="promo-box">Your Friend will get <span>${properties.referralamount}</span> Visa Reward Card</div>
+                  <div class="promo-box">I will get <span>${properties.referralamount}</span> Visa Reward Card</div>
                 </div>
               </div>
             </div>
