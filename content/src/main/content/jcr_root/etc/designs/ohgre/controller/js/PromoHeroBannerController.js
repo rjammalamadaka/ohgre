@@ -39,6 +39,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                          //console.log(ldc);
                          //$rootScope.enrollLdc=ldc;
                          $rootScope.ldcForEnrollPromo=ldc;
+                         $rootScope.enrollPromoCode=promotion.PromotionCode;
                               break;                              
                       }
 
