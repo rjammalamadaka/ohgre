@@ -5,10 +5,10 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-12-19T11:29:46.355-06:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-19T11:29:52.446-06:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastModified="{Date}2017-12-26T23:01:39.220-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-12-22T14:18:52.378-06:00"
+        cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
         jcr:isCheckedOut="{Boolean}true"
@@ -23,6 +23,7 @@
         footernavigationlinks="[/content/onlyong,/content/onlyong]"
         mobilenumber="1-888-466-4427"
         portalname="oh"
+        tagmanagerid="GTM-56C9WRS"
         termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
         time="8 a.m. to 5 p.m. EST">
         <content
