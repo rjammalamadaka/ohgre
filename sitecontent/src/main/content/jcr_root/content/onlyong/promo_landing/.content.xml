@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-13T21:50:58.023-06:00"
+        cq:lastModified="{Date}2017-12-27T11:35:11.773-06:00"
         cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2017-12-13T21:51:02.207-06:00"
         cq:lastReplicatedBy="penny"
@@ -21,14 +21,15 @@
             <promoherobanner
                 jcr:created="{Date}2017-07-27T08:23:50.174+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-13T14:29:16.723-06:00"
+                jcr:lastModified="{Date}2017-12-27T11:35:11.767-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
-                description="&#xd;&#xa;Get {{DELTAMILES}} BONUS MILES for enrolling + earn miles for every dollar you spend on your gas bill.*"
+                description="Get {{DELTAMILES}} BONUS MILES for enrolling + earn miles for every dollar you spend on your gas bill.*"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/home/delta-image.jpg"
                 promocode="delta25"
+                textIsRich="true"
                 title="Fuel for Your Next Getaway"/>
             <promotioncontent
                 jcr:created="{Date}2017-07-27T10:17:02.253+05:30"

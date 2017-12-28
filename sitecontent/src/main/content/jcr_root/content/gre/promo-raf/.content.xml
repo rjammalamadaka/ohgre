@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-19T10:28:54.471-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2017-12-27T21:41:52.263-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-19T10:28:58.730-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -14,6 +14,7 @@
         jcr:title="Refer A Friend Promotion"
         jcr:uuid="484386e5-5c29-4120-a3b5-3515186617a7"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        sling:vanityPath="raf25"
         appid="388067291608115"
         hideInNav="true"
         ogdescription="Enroll with Grand Rapids Energy on their lowest available rates and we could each earn a $25 Visa Reward Card. It's that easy! Program Terms and conditions apply. #ad"
@@ -23,7 +24,7 @@
         ogtype="website"
         ogurl="/content/gre/promo-raf.html">
         <image
-            jcr:lastModified="{Date}2017-08-04T11:07:05.696-04:00"
+            jcr:lastModified="{Date}2017-12-27T21:41:52.258-06:00"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>

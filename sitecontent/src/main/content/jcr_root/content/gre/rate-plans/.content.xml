@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-21T12:44:36.033-06:00"
+        cq:lastModified="{Date}2017-12-27T09:15:57.869-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-07T11:53:37.050-06:00"
+        cq:lastReplicated="{Date}2017-12-27T09:16:02.842-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -21,17 +21,17 @@
             <herobaner
                 jcr:created="{Date}2017-08-16T11:17:23.463-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-05T10:09:21.011-06:00"
-                jcr:lastModifiedBy="josh"
+                jcr:lastModified="{Date}2017-12-27T09:15:57.865-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herobaner"
                 description="Our natural gas plans are designed to serve your needs."
                 imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
-                title="View All Residential Natural Gas Plans"/>
+                title="View All Natural Gas Plans"/>
             <plansdisplay_266813004
                 jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-21T12:44:36.030-06:00"
+                jcr:lastModified="{Date}2017-12-27T09:13:57.576-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/plansdisplay"

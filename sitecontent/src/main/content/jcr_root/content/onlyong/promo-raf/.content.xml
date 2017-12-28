@@ -4,7 +4,7 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-12-19T22:30:45.025-06:00"
+        cq:lastModified="{Date}2017-12-27T21:42:31.842-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-14T12:51:20.602-06:00"
         cq:lastReplicatedBy="jason01"
@@ -16,7 +16,7 @@
         jcr:title="Refer A Friend Promotion"
         jcr:uuid="0ef610f6-6697-4fe5-8fbd-f3cf36f82826"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
-        sling:vanityPath="[raf25,raf15]"
+        sling:vanityPath="raf25"
         appid="388067291608115"
         days="Monday - Friday"
         hideInNav="true"
@@ -31,7 +31,7 @@
         portalname="oh"
         time="8 a.m. to 5 p.m. EST">
         <image
-            jcr:lastModified="{Date}2017-12-19T22:30:45.020-06:00"
+            jcr:lastModified="{Date}2017-12-27T21:42:31.837-06:00"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-12-27T16:59:32.210-06:00"
+        cq:lastModifiedBy="jason01"
+        cq:lastReplicated="{Date}2017-12-27T16:56:10.700-06:00"
+        cq:lastReplicatedBy="jason01"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Site Map"
+        jcr:uuid="796378ba-bd0c-4777-b5f0-ff85bfbb14c5"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        hideInNav="true">
+        <image
+            jcr:lastModified="{Date}2017-12-27T12:09:36.213-06:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <sitemap
+                jcr:created="{Date}2017-12-27T12:12:42.729-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-27T16:59:32.207-06:00"
+                jcr:lastModifiedBy="jason01"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/sitemap"
+                righttext="&lt;h2>Sitemap&lt;/h2>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>View Rate Plans&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>What is Choice?&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Why Choose Us?&lt;/a>&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sublink&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sublink&lt;/a>&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sublink&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sublink&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>How It Works&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>About Us&lt;/a>&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sublink&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sublink&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>FAQs&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Terms of Use&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Privacy Policy&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;#&quot;>Sitemap&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                textIsRich="true"/>
+        </content>
+    </jcr:content>
+</jcr:root>
