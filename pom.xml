@@ -7,7 +7,7 @@
 
     <groupId>com.macquarium.ong</groupId>
     <artifactId>ohgre</artifactId>
-    <version>1.9.6-SNAPSHOT</version>
+    <version>1.9.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ohgre - Reactor Project</name>
@@ -85,6 +85,38 @@
                 <artifactId>acs-aem-commons-bundle</artifactId>
                 <version>3.10.0</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>fontbox</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>jempbox</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>xmpbox</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>preflight</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox-tools</artifactId>
+            </dependency>
+
 
             <dependency>
                 <groupId>biz.aQute</groupId>
