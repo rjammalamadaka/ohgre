@@ -1,5 +1,8 @@
 ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootScope', '$http', 'PrimeService', '$sce',function ($scope, $window, $rootScope, $http, PrimeService, $sce) {
 
+      var onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
+
+
   $scope.iframeurl="";
   $scope.displaystepscontainer=false;
   $scope.businessName=false;
@@ -35,7 +38,32 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   }
 
 
+  var getFormatedAccountnumberFromAccount =function(accountNumber){
 
+    var formattedNumber="";
+    if(accountNumber){
+      var ldc=$rootScope.product.LDC;
+      if(ldc == "COH"){
+        formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
+      }else if(ldc == "DUK"){
+        formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$rootScope.product.dukNumber;
+      }else if(ldc == "DEO"){
+        formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
+      }else if(ldc == "VED"){
+        formattedNumber="03-"+accountNumber.substring(0,9)+"-"+accountNumber.substring(9,16)+"-0";
+      }else if(ldc == "MCG"){
+        formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
+      }else if(ldc == "MIC"){
+        formattedNumber=accountNumber;
+      }
+      return formattedNumber;
+
+    }else{
+      return "";
+    }
+
+
+  }
 
 
   PrimeService.getProductData().success(function(data, status, headers, config){
@@ -142,7 +170,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
           console.log($rootScope.customerInfo);
           // $rootScope.account
-          $scope.formatedacno=getFormatedAccountnumber($rootScope.customerInfo.account);
+          $scope.formatedacno=getFormatedAccountnumberFromAccount($rootScope.customerInfo.account);
           $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
           $scope.existingEmail= $rootScope.customerInfo.emailAddress;
 
@@ -698,7 +726,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   var gotNextStep= function(step,back){
     // $scope.displaystepscontainer=true;
 
-     //var eventname=null;
+     var eventname=null;
       if($rootScope.portalname =='oh'){
 			eventname='oh-journey';
       }else{
@@ -706,15 +734,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       }
     if(!back){
       if(step ==2){
-       // dataLayer.push({'event':eventname,'step':'your-information'});
+       dataLayer.push({'event':'oh-journey','step':'your-information'});
 
       }else if(step ==3){
-        //dataLayer.push({'event':eventname,'step':'accept-terms'});
+        dataLayer.push({'event':'oh-journey','step':'accept-terms'});
       }else if(step ==4){
-        //dataLayer.push({'event':eventname,'step':'review'});
+        dataLayer.push({'event':'oh-journey','step':'review'});
 
       }else if(step ==5){
-       //dataLayer.push({'event':eventname,'step':'thank-you'});
+       dataLayer.push({'event':'oh-journey','step':'thank-you'});
 
       }
       console.log("gotNextStep");
@@ -945,11 +973,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   var updateenrollrequestobj=function(data){
 
-      /*if(data.PromotionCode){
-          if(onlinePromoCodes.indexOf(data.PromotionCode)=-1){
+      if(data.PromotionCode){
+          if(onlinePromoCodes.indexOf(data.PromotionCode)!=-1){
              data.PromotionCode= data.PromotionCode.concat("ONLINE");
           }
-      }*/
+      }
 
 
     if(data.LDC)
@@ -1174,32 +1202,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   }
 
-  var getFormatedAccountnumber =function(accountNumber){
 
-    var formattedNumber="";
-    if(accountNumber){
-      var ldc=$rootScope.product.LDC;
-      if(ldc == "COH"){
-        formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
-      }else if(ldc == "DUK"){
-        formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$rootScope.product.dukNumber;
-      }else if(ldc == "DEO"){
-        formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
-      }else if(ldc == "VED"){
-        formattedNumber="03-"+accountNumber.substring(0,9)+"-"+accountNumber.substring(9,16)+"-0";
-      }else if(ldc == "MCG"){
-        formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
-      }else if(ldc == "MIC"){
-        formattedNumber=accountNumber;
-      }
-      return formattedNumber;
-
-    }else{
-      return "";
-    }
-
-
-  }
 
   $scope.$watch('iframeurl', function (newValue, oldValue, scope) {
     if(newValue && newValue.length>0){
