@@ -1,7 +1,6 @@
 ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService", function ($rootScope, $compile, $http,PrimeService,OhGreService){ 
 
     var activeStates=["ENROLLMENT ACTIVE", "ENROLLMENT PENDING", "ENROLLMENT REJECTED", "ENROLLMENT SENT WAITING FOR RESPONSE", "ENROLLMENT WAITING TO BE SENT"];
-    $rootScope.onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
 
     setTimeout(function(){ 
         $('#portalbody').show();
@@ -35,7 +34,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
     }
 
      $rootScope.queryParams = {};
-    var queryParams = window.location.search && window.location.search.split("?")[1] && window.location.search.split("?")[1].split('&');
+    var queryurl=decodeURIComponent(window.location.search);
+    var queryParams = queryurl && queryurl.split("?")[1] && queryurl.split("?")[1].split('&');
     for(var i=0;i<queryParams.length;i++){
         var param = queryParams[i].split("=")
         $rootScope.queryParams[param[0]]=param[1];
