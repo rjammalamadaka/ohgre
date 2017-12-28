@@ -13,9 +13,9 @@ ohgrePortal.controller('SelectGasUtilityController', ['$scope', '$rootScope', '$
         if(ldcCode){
 		   var hashParam=encodeURIComponent("ldc="+ldcCode+'&lctype='+locationType);
             if(portalname =="oh"){
-         	location.href="/content/onlyong/rate-plans.html#"+hashParam;
+         	location.href="/content/onlyong/rate-plans.html?"+hashParam;
             }else{
-                location.href="/content/gre/rate-plans.html#"+hashParam;
+                location.href="/content/gre/rate-plans.html?"+hashParam;
             }
         }
     }
