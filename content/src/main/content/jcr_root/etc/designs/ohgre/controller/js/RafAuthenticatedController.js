@@ -9,6 +9,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
   $scope.years = [previouserYear, currentYear];
   $scope.giftCardByYear = {};
   $scope.sclectedYear = currentYear;
+  $scope.csTextArea = { text: ""}
 
   $scope.rafemailmessage = "I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
 
@@ -194,15 +195,18 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       requestInfo.tomailId = $scope.customerInfoEmailAddress;
       requestInfo.firstName = $scope.customerInfo.firstName;
       requestInfo.lastName = $scope.customerInfo.lastName;
-      requestInfo.emailAddress = $scope.toemailaddress;
+      //requestInfo.emailAddress = $scope.toemailaddress;
+      requestInfo.emailAddress = $scope.csTextArea.text;
+      //requestInfo.emailAddress = 'jason.jackson@macquarium.com';
       requestInfo.rafBody = $scope.rafemailmessage;
       requestInfo.custID = $scope.customerInfo.custID;
       requestInfo.portalName=$rootScope.portalname;
+        console.log('raf requestInfo obj',requestInfo);
 
       jQuery('#popup-spinner-wrap').addClass('show-popup').css('display', 'block');
 
       PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config) {
-        console.log(data);
+        console.log('raf prime data',data);
         console.log('raf prime success');
         //$window.scrollTo(0, 0);
         if (data && data.success) {
