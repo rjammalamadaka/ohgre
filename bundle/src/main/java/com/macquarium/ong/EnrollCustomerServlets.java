@@ -232,7 +232,10 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollment.setAgreeToTermsFlag("Y");
 			enrollment.setServiceTransferAuthFlag("Y");
 			enrollRequest.setRAFCode(RAFCode);
+			logger.info("Inserting enrollment info to data base");
 			int generatedKey=enrollmentDaoService.insertEnrollment(enrollment);
+			logger.info("Generated key after database insertion");
+			logger.info(String.valueOf(generatedKey));
 			enrollRequest.setEnrollConfirmationNumber(Integer.toString(generatedKey));
 			EnrollCustomer parameters=new EnrollCustomer();
 			parameters.setEnrollRequest(enrollRequest);
