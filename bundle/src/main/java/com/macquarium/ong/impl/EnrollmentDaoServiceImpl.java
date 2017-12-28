@@ -153,6 +153,7 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 				ps.setString(79,enrollment.getOriginalPromoCode());
 				ps.execute();
 				ResultSet rs=ps.getGeneratedKeys();
+				logger.info("Got the resultset after data insertion");
 				if(rs.next()){
 					resultGeneratedkey=rs.getInt(1);
 				}
