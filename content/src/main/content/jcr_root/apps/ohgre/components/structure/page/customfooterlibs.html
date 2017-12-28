@@ -29,40 +29,48 @@
     },
     // pass only the selected contacts to the contactListCtrl
     afterSubmitContacts: function(contacts) {
-      console.log('afterSubmitContacts');
+      console.log('afterSubmitContacts ... csText');
+
       // obtain access to the ContactListCtrl's scope
       var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
+
+      scope.csTextArea.text = jQuery('#toemailaddress').val();
+
       scope.$apply(function() {
-      //update view for mobile
-      //scope.showFriendsInfo();
-      scope.contacts = contacts;
-      //console.log(contacts);
-      var emailsArr = [];
+          //update view for mobile
+    
+          scope.contacts = contacts;
+          //console.log(contacts);
+          var emailsArr = [];
+    
+          for (var i = 0; i < contacts.length; i++) {
+            scope.emails = contacts[i].email[0].address;
+            scope.emails = UTILS.trim(scope.emails);
+            //console.log('Email:[' + scope.emails + ']');
+            emailsArr.push(scope.emails);
+          }
+    
+          var arrStr = emailsArr.join(", ");
+          //console.log(arrStr);
+          if (scope.emails) {
+            scope.emails = arrStr;
+            console.log('scope.emails', scope.emails);
+          }
+    
+          angular.element(jQuery('#toemailaddress')).triggerHandler('input');
 
-      for (var i = 0; i < contacts.length; i++) {
-        scope.emails = contacts[i].email[0].address;
-        scope.emails = UTILS.trim(scope.emails);
-        //console.log('Email:[' + scope.emails + ']');
-        emailsArr.push(scope.emails);
-      }
+                /*
+          cloudEmails = jQuery('#toemailaddress').val();
 
-      var arrStr = emailsArr.join(", ");
-      //console.log(arrStr);
-      if (scope.emails) {
-        scope.emails = arrStr;
-      }
+          var emailTextArea = document.getElementById("toemailaddress");
+          var element = angular.element(emailTextArea);
+          element.val(cloudEmails);
+          element.triggerHandler('input');
+                */
 
-      //angular.element(jQuery('#toemailaddress')).triggerHandler('input');
-      cloudEmails = jQuery('#toemailaddress').val();
-
-      var emailTextArea = document.getElementById("toemailaddress");
-      var element = angular.element(emailTextArea);
-      element.val(cloudEmails);
-      element.triggerHandler('input');
-
-      var emailPopup = document.getElementById('raf-email-popup');
-      emailPopup.classList.add('show-popup');
-      jQuery('html').addClass('fixed-body');
+          var emailPopup = document.getElementById('raf-email-popup');
+          emailPopup.classList.add('show-popup');
+          jQuery('html').addClass('fixed-body');
       });
 
 
