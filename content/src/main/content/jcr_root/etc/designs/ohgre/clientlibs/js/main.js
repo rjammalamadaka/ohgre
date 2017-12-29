@@ -61,28 +61,38 @@ var ohio_ng = {
 
     $('.download-button').on('click', function(event) {
       event.preventDefault();
-      // var pdf = new jsPDF('p', 'in', [8.5, 11]);
-      // var specialElementHandlers = {
-      //   'footer': function(element, renderer){
-      //        return true;
-      //     }
-      // };
-      // // pdf.canvas.height = 72 * 11;
-      // // pdf.canvas.width = 72 * 8.5;
-      // //pdf.fromHTML($('.customer-lookup').html(), 15, 15);
-      // pdf.fromHTML($('#order-confirmation').html(),15,15,{
-      //   'elementHandlers': specialElementHandlers
-      // });
-      //
-      // pdf.save('test.pdf');
+      //\console.log('html2pdf running...');
 
-      html2pdf($('body').get(0), {
-         margin:       0,
-         filename:     'confirmation.pdf',
-         image:        { type: 'jpeg', quality: 0.98 },
-         html2canvas:  { dpi: 192, letterRendering: true },
-         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      /*
+      var pdf = new jsPDF('p', 'in', [8.5, 11]);
+      var specialElementHandlers = {
+        'footer': function(element, renderer){
+             return true;
+          }
+      };
+      // pdf.canvas.height = 72 * 11;
+      // pdf.canvas.width = 72 * 8.5;
+      //pdf.fromHTML($('.customer-lookup').html(), 15, 15);
+      pdf.fromHTML($('#portalbody').html(),15,15,{
+        'elementHandlers': specialElementHandlers
       });
+
+      //pdf.save('test.pdf');
+      setTimeout(function(){
+      doc.save('test');
+      },2000);
+      */
+
+      //html2pdf($('body').get(0), {
+      var toPrint = document.getElementById('portalbody');
+      html2pdf(toPrint);
+      // html2pdf(toPrint, {
+      //    margin:       0,
+      //    filename:     'confirmation.pdf',
+      //    image:        { type: 'jpeg', quality: 0.98 },
+      //    html2canvas:  { dpi: 192, letterRendering: true },
+      //    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      // });
 
       // html2canvas(document.body, {
       //   onrendered: function(canvas) {
@@ -236,17 +246,17 @@ var ohio_ng = {
   disableDesktopPhoneLinks: function() {
 		var ua = window.navigator.userAgent;
         var msie = ua.indexOf("MSIE ");
-    
+
         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
         {
             //alert('IE!');
             var Elems = [], Tags = document.querySelectorAll("a[href^='tel']");
-        
+
             //Nodelist to array, so we're able to manipulate the elements
             for (var i = 0; i < Tags.length; i++ ) {
                 Elems[ i ] = Tags[ i ];
             }
-        
+
             for(var i = 0; i < Elems.length; i++){
                 Elems[ i ].removeAttribute('href');
             }
