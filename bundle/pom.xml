@@ -127,10 +127,10 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
-        </dependency>
+        </dependency>-->
 
 
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
