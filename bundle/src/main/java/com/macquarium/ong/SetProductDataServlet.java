@@ -32,6 +32,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 		try {
 			jObj = new JSONObject(sb.toString());
 			HttpSession session = request.getSession();
+			session.setMaxInactiveInterval(20*60);
 			//session.setMaxInactiveInterval(30);
 			System.out.println("in set product data");
 			String productDesc =getParameterInfo(jObj,"ProductDescription");
