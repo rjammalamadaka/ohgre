@@ -34,7 +34,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
     }
 
      $rootScope.queryParams = {};
+
     var queryurl=decodeURIComponent(window.location.search);
+        queryurl= decodeURIComponent(queryurl);
+
     var queryParams = queryurl && queryurl.split("?")[1] && queryurl.split("?")[1].split('&');
     for(var i=0;i<queryParams.length;i++){
         var param = queryParams[i].split("=")
