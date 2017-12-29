@@ -147,7 +147,7 @@ public class GetCustomerInfoServlets extends org.apache.sling.api.servlets.Sling
 		}catch(Exception e){
 			logger.info("Exception"+e.getMessage());
 			logger.error(e.getMessage());
-			logger.error(e.getMessage(), e);
+			//logger.error(e.getMessage(), e);
 		}
 		return result;
 	}
