@@ -35,7 +35,7 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promotionerrorpage"
-                callusmessage="Please call us at 1-888-466-4427 to learn about current promotions."/>
+                callusmessage="Please call us at 1.888.466.4427 to learn about current promotions."/>
         </content>
         <image
             jcr:lastModified="{Date}2017-08-13T23:18:22.786+05:30"

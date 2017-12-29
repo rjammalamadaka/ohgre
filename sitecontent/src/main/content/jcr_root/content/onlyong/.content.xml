@@ -152,7 +152,6 @@
             <APPLES
                 jcr:primaryType="nt:unstructured"
                 APPLECOH="/content/onlyong/applecoh"
-                APPLEDEO="/content/onlyong/APPLEDEO"
                 APPLEDUKE="/content/onlyong/appleduke"
                 APPLEVEDO="/content/onlyong/applevedo"
                 APPLEWGL="/content/onlyong/promo-landing-apples"
@@ -210,14 +209,16 @@
             <ALLCONNECT
                 jcr:primaryType="nt:unstructured"
                 ALLCONNECT="/content/onlyong/allconnect"/>
-            <DIRECT_x0020_MAIL
-                jcr:primaryType="nt:unstructured"
-                COMPARE1C="/content/onlyong/saveme2017/test-december27">
-                <_x0032_018/>
-            </DIRECT_x0020_MAIL>
             <APPLEMAGIC
                 jcr:primaryType="nt:unstructured"
                 APPLEMAGIC="/content/onlyong/applemagic"/>
+            <_x0032_018_1_Jan
+                jcr:primaryType="nt:unstructured"
+                COMPARE1C="/content/onlyong/compare1c"
+                COMPARE1V="/content/onlyong/compare1v"
+                SCORE1C="/content/onlyong/score1c"
+                SCORE1V="/content/onlyong/score1v"
+                SWITCH="/content/onlyong/switch"/>
         </oh>
     </promotions>
     <faq/>
@@ -250,5 +251,6 @@
     <promo-landing-apples-alt/>
     <sitemap/>
     <promo-raf1/>
-    <termsdeo/>
+    <new-terms-deo/>
+    <applecoh1/>
 </jcr:root>

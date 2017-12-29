@@ -49,5 +49,4 @@
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
     </jcr:content>
-    <test-december27/>
 </jcr:root>
