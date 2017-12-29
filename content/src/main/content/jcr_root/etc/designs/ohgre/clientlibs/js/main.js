@@ -59,6 +59,24 @@ var ohio_ng = {
 
     });
 
+    $('#download-test, .download-button').on('click', function(event) {
+
+      event.preventDefault();
+      console.log('download-test');
+      //document.getElementById('portalbody').style.overflow = 'visible';
+      //html2canvas(document.getElementById('portalbody'), {
+      //html2canvas($('#enroll-customer-container'), {
+      html2canvas($('#portalbody'), {
+          onrendered: function(canvasObj) {
+            startPrintProcess(canvasObj, 'printedPDF',function (){
+              //document.getElementById('portalbody').style.overflow = 'hidden';
+              console.log('PDF saved');
+            });
+            //save this object to the pdf
+          }
+        });
+      });
+
     $('.download-button').on('click', function(event) {
       event.preventDefault();
       //\console.log('html2pdf running...');
@@ -84,8 +102,13 @@ var ohio_ng = {
       */
 
       //html2pdf($('body').get(0), {
+
+
+      /* this works
       var toPrint = document.getElementById('portalbody');
       html2pdf(toPrint);
+*/
+
       // html2pdf(toPrint, {
       //    margin:       0,
       //    filename:     'confirmation.pdf',
@@ -280,6 +303,22 @@ $(window).scroll(function() {
   }
 
 });
+
+function startPrintProcess(canvasObj, fileName, callback) {
+  //var pdf = new jsPDF('l', 'pt', 'a4'),
+  var pdf = new jsPDF('p', 'in', [8.5, 11]),
+    pdfConf = {
+      pagesplit: false,
+      background: '#fff'
+    };
+  document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
+  pdf.addHTML(canvasObj, 0, 0, pdfConf, function() {
+    document.body.removeChild(canvasObj);
+    //pdf.addPage();
+    pdf.save(fileName + '.pdf');
+    callback();
+  });
+}
 
 
 //custmore lookup

@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:file">
     <jcr:content
-        cq:lastReplicated="{Date}2017-12-26T14:06:22.952-06:00"
+        cq:lastReplicated="{Date}2017-12-29T13:08:03.417-06:00"
         cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
         jcr:lastModifiedBy="jason jackson"
