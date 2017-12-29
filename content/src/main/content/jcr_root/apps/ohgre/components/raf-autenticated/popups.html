@@ -48,6 +48,8 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
                 <span class="input-error-message" ng-show="(rafemailform.rafemailmessage.$visited && !rafemailform.rafemailmessage.$focused) || rafemailform.submited">
                     <span class="input-error-message" ng-show="rafemailform.rafemailmessage.$error.required">Mail message is required.</span>
                 </span>
+                <p><button class="primary-button refer-friends-btn" ng-click="referToMyFriends()">Refer my friends</button></p>
+
               </div>
 
               <div class="raf-email-step-btns">
@@ -76,7 +78,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
                   <span class="input-error-message" ng-show="rafemailform.rafyouremail.$error.required">Mail Id is required.</span>
               </span>
               <p class="small-text">Note: Changing this email address will not change your email address on file with us, only the sender address for this referral email.</p>
-              <p><button class="primary-button" ng-click="referToMyFriends()">Refer my friends</button></p>
+              <p><button class="primary-button refer-friends-btn" ng-click="referToMyFriends()">Refer my friends</button></p>
               <p id="raf-server-error">{{rafMailSerrverMsg}} <a href="#" ng-click="returnHome()">Return Home</a></p>
 
             </div>
