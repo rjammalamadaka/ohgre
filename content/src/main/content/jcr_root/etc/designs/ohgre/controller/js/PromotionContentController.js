@@ -39,6 +39,8 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                       }
                   }
 
+
+
                var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+promotionCode+"&rateClassCode="+$scope.rateClassCode;
                  $http.get(url).success(function(data, status, headers, config){
                      $scope.Quotes=data;
@@ -47,7 +49,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                          $scope.Customer=$scope.Quotes.Customer;
 						var customer=$scope.Customer[0];
 						var getQuotesProductsList=[];
- console.log( $rootScope.prmoProduct);
+						 console.log( $rootScope.prmoProduct);
                           for(var i=0;i<customer.Product.length;i++){
                               if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
 								getQuotesProductsList.push(customer.Product[i]);
@@ -57,14 +59,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                           };
 		            $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
 
-
-
-                       //  $scope.products=$scope.Customer[0].Product;
-
-
-
-
-                         setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
+                        setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                      }else{
 
@@ -114,6 +109,58 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
     });
 
 
+    var getQuotesForViewPlans =function(){
+
+        var ldcCode=$('#fixed-plans-button').val();
+
+          if( $scope.promotion &&  $scope.promotion.RateClassCode){
+                $scope.rateClassCode=$scope.promotion.RateClassCode;
+            }
+
+            if(!$scope.rateClassCode){
+                $scope.rateClassCode = "01";
+            }
+
+            PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
+                $scope.Quotes=data;
+                if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
+                    $scope.displayPlans = true;
+                    $scope.Customer=$scope.Quotes.Customer;
+                    var customer=$scope.Customer[0];
+
+                    console.log( $rootScope.prmoProduct);
+                    var getQuotesProductsList=[];
+
+                    for(var i=0;i<customer.Product.length;i++){
+                        if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+                            getQuotesProductsList.push(customer.Product[i]);
+
+                        }
+
+                    };
+                    $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+                    updateProductFinePrint();
+                    setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
+
+
+                }else{
+                }
+
+            }).error(function (data,status, headers, config){    
+                console.log("error");
+            });
+
+    }
+
+      $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
+
+        if(newValue && newValue.length>0){
+            getQuotesForViewPlans();
+console.log("getQuotesForViewPlans");
+        }
+    });
+
      $scope.viewPlans =function(){
 
 		var ldcCode=$('#fixed-plans-button').val();
@@ -155,10 +202,13 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                       }
                   }
 
+            $rootScope.getPromoCodeInfoForEnroll(ldcCode);
+
            /*  if( $scope.promotion &&  $scope.promotion.RateClassCode){
 				$scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 */
+            /*
 			PrimeService.getQuotes(ldcCode,promotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
@@ -188,6 +238,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
              }).error(function (data,status, headers, config){
                  console.log("error");
              });
+             */
         }
 
     }
