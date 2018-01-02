@@ -8495,10 +8495,17 @@ div[class^="cq-colctrl-lt1-"] .card p {
     display: block !important;
   }
 }
-#raf-email-popup .server-msg {
+#raf-email-popup #raf-server-error {
+  display: none;
+}
+#raf-email-popup #raf-server-error,
+#raf-email-popup #raf-server-error a {
   color: #d0011b;
   font-style: italic;
   text-transform: uppercase;
+}
+#raf-email-popup #raf-server-error a {
+  text-decoration: underline;
 }
 #raf-email-popup footer {
   margin-top: 0;
@@ -8536,6 +8543,14 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-popup .mobile-header .raf-header img {
   margin: 0 0 1rem;
   max-width: 20rem;
+}
+#raf-email-popup #raf-email-subject {
+  font-size: 1.15rem;
+}
+@media (min-width: 992px) {
+  #raf-email-popup #raf-email-subject {
+    font-size: 1.25rem;
+  }
 }
 #raf-email-popup #raf-email-preview,
 #raf-email-popup #raf-user-info {
@@ -8580,6 +8595,9 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-popup #raf-email-preview .close-window {
   display: none;
 }
+#raf-email-popup #raf-email-preview .primary-button.inactive {
+  cursor: default;
+}
 #raf-email-popup #raf-email-preview .raf-inline-banner {
   background-color: #002f8f;
   height: 50px;
@@ -8607,8 +8625,10 @@ div[class^="cq-colctrl-lt1-"] .card p {
   max-width: 70px;
 }
 #raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo {
+  color: #fff;
+  font-size: 2rem;
   left: 145px;
-  padding: 10px 0 0 50px;
+  padding: 10px 0 0 30px;
   position: absolute;
   top: 0;
   width: auto;
@@ -8623,6 +8643,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo img {
   max-width: 160px;
+}
+@media (min-width: 992px) {
+  #raf-email-popup #raf-email-preview .raf-inline-banner .raf-logo {
+    padding-left: 50px;
+  }
 }
 @media (min-width: 992px) {
   #raf-email-popup #raf-email-preview .row > div[class^=col-]:first-child {
@@ -8724,9 +8749,16 @@ div[class^="cq-colctrl-lt1-"] .card p {
 #raf-email-form #raf-friend-info p a {
   color: #0074bf;
 }
+#raf-email-form #raf-friend-info .refer-friends-btn {
+  display: none;
+}
 @media (min-width: 992px) {
   #raf-email-form #raf-friend-info {
     border-bottom: 1px solid #e6e6e6;
+  }
+  #raf-email-form #raf-friend-info .refer-friends-btn {
+    display: block;
+    margin-top: 15px;
   }
 }
 #raf-email-form #raf-user-info {
@@ -8736,6 +8768,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
   font-size: 1rem;
   font-style: italic;
   margin: .5rem 0 3rem;
+}
+@media (min-width: 992px) {
+  #raf-email-form #raf-user-info .refer-friends-btn {
+    display: none;
+  }
 }
 #raf-email-form p:empty {
   margin: 0;
@@ -9429,20 +9466,27 @@ div.alt-col2,
   background-color: #fff;
   padding: 2rem;
   text-align: left;
-  font-size: 2.2rem;
-  line-height: 3rem;
   color: #0074bf;
   margin: -1rem 0 0 0;
+}
+.promo-headline,
+.promo-headline p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.2rem;
+  line-height: 3rem;
 }
 @media (min-width: 992px) {
   .promo-headline {
     text-align: center;
-    width: 60%;
-    padding: 0;
-    margin: 1rem auto 3rem;
+    width: 90%;
     background: none;
+  }
+  .promo-headline,
+  .promo-headline p {
     font-size: 2.8rem;
     line-height: 4rem;
+    padding: 0;
+    margin: 1rem auto 3rem;
   }
 }
 .box-with-border {
@@ -11891,6 +11935,17 @@ ul.info-links li {
 }
 #renew-plan-select .plan-detail .plan-button .strikethrough {
   text-decoration: line-through;
+}
+#confirmation-print-logos {
+  display: none;
+}
+.html2canvas-container {
+  width: 2000px !important;
+  height: 3500px !important;
+  margin-bottom: 3rem;
+}
+.html2canvas-container #confirmation-print-logos {
+  display: block;
 }
 @media screen and (min-width: 450px) {
   a[href*="tel:"] {
