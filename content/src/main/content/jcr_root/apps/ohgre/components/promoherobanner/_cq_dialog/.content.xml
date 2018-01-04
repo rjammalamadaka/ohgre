@@ -120,6 +120,11 @@
                                         name="./displaylogo"
                                         text="Display Logo"
                                         value="{Boolean}true"/>
+                                    <expirationdatemsg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldLabel="Promotion Expiration Date Message"
+                                        name="./promoexpmsg"/>
                                 </items>
                             </column>
                         </items>

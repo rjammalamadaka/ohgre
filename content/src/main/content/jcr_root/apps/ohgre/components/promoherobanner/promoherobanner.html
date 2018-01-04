@@ -16,7 +16,7 @@
 
                   <p ng-show="notexpired"><span>${properties.description}</span></p>
                   <p ng-show="!notexpired"><span class="slide-title">Unfortunately this promotion has expired.</span></p>
-                  <p ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>Hurry! Offer ends {{expdate}}</span></p>
+                      <p ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>${properties.promoexpmsg}</span></p>
                </div>
             </div>
          </div>
