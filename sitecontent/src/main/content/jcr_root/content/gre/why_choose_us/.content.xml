@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-12T17:00:38.370-06:00"
+        cq:lastModified="{Date}2018-01-03T12:41:23.711-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-12T17:00:41.421-06:00"
+        cq:lastReplicated="{Date}2018-01-03T12:41:27.264-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
@@ -30,7 +30,7 @@
             <whychooseuscontent
                 jcr:created="{Date}2017-08-06T23:39:55.712-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-12T17:00:38.365-06:00"
+                jcr:lastModified="{Date}2018-01-03T12:41:23.706-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/whychooseuscontent"
