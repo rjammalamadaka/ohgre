@@ -17,7 +17,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
          var date = new Date($scope.promotion.PromotionExpiratonDate),
                      locale = "en-us",
                      month = date.toLocaleString(locale, { month: "long" });
-         $scope.EXPIRATIONDATE=  month+" "+date.getDate()+","+date.getFullYear();
+         $scope.EXPIRATIONDATE=  month+" "+date.getDate()+", "+date.getFullYear();
 
 
     }

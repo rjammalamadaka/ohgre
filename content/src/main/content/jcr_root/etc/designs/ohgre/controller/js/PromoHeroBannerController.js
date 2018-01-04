@@ -1,4 +1,4 @@
-ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
+ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
 
     jQuery('#popup-spinner-wrap').show();
@@ -19,7 +19,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                  var date = new Date($scope.promotion.PromotionExpiratonDate),
                      locale = "en-us",
                      month = date.toLocaleString(locale, { month: "long" });
-                 $rootScope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
+                 $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
 
                  if($rootScope.promotion.PromotionExpired =="Y"){
 
@@ -89,7 +89,7 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                 var date = new Date($scope.promotion.PromotionExpiratonDate),
                 locale = "en-us",
                 month = date.toLocaleString(locale, { month: "long" });
-                $rootScope.expdate=month+" "+date.getDate()+","+date.getFullYear();
+                $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
                 $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
                $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
 
