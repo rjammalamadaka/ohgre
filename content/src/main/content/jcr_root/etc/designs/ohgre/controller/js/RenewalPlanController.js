@@ -46,11 +46,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
             if(data && data.responseStatus=="0"){
                 $scope.products={};
                 if(data.Customer && data.Customer.length>0){
-                    if(!flag){
-						flag=true;
-                        $scope.defaultProducts=data.Customer[0].Product;
 
-                    }
 					 var customer=data.Customer[0];
 					var getQuotesProductsList=[];
 console.log($rootScope.prmoProduct);
@@ -63,7 +59,11 @@ console.log($rootScope.prmoProduct);
                     };
                     $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
 
+ 					if(!flag){
+						flag=true;
+                        $scope.defaultProducts=$scope.products;
 
+                    }
                    // $scope.products=data.Customer[0].Product;
 
 
