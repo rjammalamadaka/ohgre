@@ -953,6 +953,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $scope.dsmEnrollReq.LDCAccountNumber=$scope.enrollReq.account;
         $scope.dsmEnrollReq.LDCName=$scope.enrollReq.LDC;
 
+          if($scope.promotionInfo && $scope.promotionInfo.PromotionCode){
+				 $scope.dsmEnrollReq.PromotionCode=$scope.promotionInfo.PromotionCode;
+          }
+          if($rootScope.portalname =="oh"){
+				$scope.dsmEnrollReq.portalName ="oh";
+          }else{
+				$scope.dsmEnrollReq.portalName ="gre";
+          }
+
         PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
           $scope.flag=false;
           console.log(data);
