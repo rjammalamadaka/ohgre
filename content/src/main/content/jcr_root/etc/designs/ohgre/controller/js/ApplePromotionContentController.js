@@ -53,7 +53,6 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                           var customer=data.Customer[0];
 							var getQuotesProducts=customer.Product;
 
-                          console.log( $rootScope.prmoProduct);
 							var getQuotesProductsList=[];
 
                           for(var i=0;i<customer.Product.length;i++){
@@ -110,7 +109,6 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
 var updateProductFinePrint = function() {
 
-console.log("updateProductFinePrint");
          angular.forEach($scope.productList, function(value, key) {
  				var ProductFinePrintText = value.ProductFinePrintText.split(".");
      			 var lastword = ProductFinePrintText[ProductFinePrintText.length - 1];
@@ -146,7 +144,6 @@ console.log("updateProductFinePrint");
 	}, true);
 
     $scope.displayAddlInfo = function(product) {
-        console.log("Inside Function");
         if (product != undefined) {
 
           if (product.displayAccordian == undefined) {

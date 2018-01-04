@@ -31,7 +31,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         PrimeService.getQuotes(req.LDC,PromoCode,req.rateClassCode).success(function(data, status, headers, config){
 
-            //console.log(data);
+
             if(data && data.responseStatus=="0"){
                 $scope.products={};
                 if(data.Customer && data.Customer.length>0){
@@ -42,7 +42,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
                     }
                     $scope.products=data.Customer[0].Product;
                     updateProductFinePrint();
-                    console.log($scope.products);
                 }
             }
 
@@ -133,10 +132,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         $scope.selectedProduct=product;
 
-        console.log($scope.selectedProduct.ProductDescription);
 
-		console.log($scope.customerInfo);
-		console.log($scope.productData);
 
         if($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y"){
              $('#popupwithrenewal').addClass('show-popup');
@@ -154,7 +150,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
     }
 
      $scope.displayAddlInfo = function(product){
-        console.log("Inside Function");
         if(product != undefined){
 
         	if(product.displayAccordian == undefined)
@@ -173,7 +168,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
     }
 
     $scope.showMobileAccord = function(product){
-		console.log("showMobileAccord");
 
 		if(product != undefined){
 
@@ -263,7 +257,6 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
         }else{
 			$scope.displayGuranteedAccord=true;
         }
-        console.log("showMobileAccordGuarantee");
 
     }
 

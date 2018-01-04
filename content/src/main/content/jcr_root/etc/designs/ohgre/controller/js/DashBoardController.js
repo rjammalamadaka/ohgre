@@ -16,11 +16,9 @@ jQuery('#popup-spinner-wrap').show();
 
         PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
 
-            console.log(data);
 
             $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
 
-            console.log($scope.customerInfo);
             jQuery('#popup-spinner-wrap').hide();
 
         }).error(function(data, status, headers, config){
@@ -32,7 +30,6 @@ jQuery('#popup-spinner-wrap').show();
 
      PrimeService.getProductData().success(function(data, status, headers, config){
 
-         console.log();
 
          if(!isEmpty(data)){
              $scope.productData=data;
@@ -71,8 +68,6 @@ jQuery('#popup-spinner-wrap').show();
 
         var formattedNumber="";
         if(accountNumber){
-       console.log($scope.productData.LDC);
-            console.log("Account Number" + accountNumber);
 		var ldc=$scope.productData.LDC;
    if(ldc == "COH"){
        //8331
