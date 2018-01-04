@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-13T22:27:47.023-06:00"
+        cq:lastModified="{Date}2018-01-03T11:10:57.030-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-13T14:26:44.149-06:00"
+        cq:lastReplicated="{Date}2018-01-03T11:11:01.047-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -26,13 +26,14 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-11T17:16:07.285-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-06T21:48:57.979-06:00"
+                jcr:lastModified="{Date}2018-01-03T11:10:57.025-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
-                description="Receive a $10 Visa Reward Card.*"
+                description="Come back to Ohio Natural Gas and receive a $10 Visa Reward Card.*"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/Visa/hero.jpg"
+                textIsRich="true"
                 title="Sign Up with ONG"/>
             <offerpromotionconten
                 jcr:created="{Date}2017-08-11T17:21:52.801-04:00"

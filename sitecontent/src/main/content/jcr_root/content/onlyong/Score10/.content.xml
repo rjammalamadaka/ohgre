@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-07T22:19:51.128-06:00"
+        cq:lastModified="{Date}2018-01-03T11:26:19.265-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-07T22:19:54.752-06:00"
+        cq:lastReplicated="{Date}2018-01-03T11:26:24.155-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -21,23 +21,24 @@
             <promoherobanner
                 jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-03T15:06:30.786-05:00"
-                jcr:lastModifiedBy="josh"
+                jcr:lastModified="{Date}2018-01-03T11:25:59.224-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
-                description="Hurry, this offer is limited to the first 500 enrollments received on or before 10/31/2017."
+                description="This offer is limited to the first 500 enrollments received on or before {{expdate}}."
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/home/hero-image.jpg"
                 promocode="Appale3"
-                title="Lock in the lowest fixed price in the market.*"/>
+                textIsRich="true"
+                title="&lt;p>Lock in the lowest available fixed price in the market.*&lt;/p>&#xd;&#xa;"/>
             <applepromotionconten
                 jcr:created="{Date}2017-07-28T21:26:17.785+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-07T22:19:51.125-06:00"
+                jcr:lastModified="{Date}2018-01-03T11:26:19.261-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
-                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer."
+                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. "
                 heading="For a limited time, switch to Ohio Natural Gas® and enjoy the Lowest Fixed Price in the market!"/>
         </content>
         <image

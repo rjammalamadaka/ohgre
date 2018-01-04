@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-03T13:51:09.446-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-03T13:51:11.234-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:lastRolledout="{Date}2018-01-02T16:58:12.464-06:00"
+        cq:lastRolledoutBy="penny"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSync,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="COMPARE1C"
+        jcr:uuid="31451152-927b-4217-a171-6aada0e6f230"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        hideInNav="true">
+        <content
+            cq:lastRolledout="{Date}2018-01-02T16:58:12.423-06:00"
+            cq:lastRolledoutBy="penny"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                cq:lastRolledout="{Date}2018-01-02T16:58:12.441-06:00"
+                cq:lastRolledoutBy="penny"
+                jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-02T16:58:12.432-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:mixinTypes="[cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
+                imagepath="/content/dam/ohgre/home/hero-image.jpg"
+                promocode="Appale3"
+                title="Lock in the Lowest  Available Fixed PriceƗ"/>
+            <switchpromotionconte
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2018-01-02T16:58:12.453-06:00"
+                cq:lastRolledoutBy="penny"
+                jcr:created="{Date}2017-12-19T16:16:49.022-06:00"
+                jcr:createdBy="penny"
+                jcr:lastModified="{Date}2018-01-03T13:51:09.440-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/switchpromotioncontent"
+                fineprinttext="&lt;p>* Price and Visa Reward Card offers are available to new residential customers who use 1,500 Ccf per year or less, enrolling with Ohio Natural Gas between 01/02/2018 and 01/31/2018 using applicable promotion code; Visa Reward Card offer available only for such customers enrolling online at www.onlyong.com/COMPARE1C. ONG service is available for eligible customers participating in the Ohio Choice program through Columbus Gas of Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.970.3142, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (6-Month plan: $75). Customer must have continuous active service with Ohio Natural Gas for at least 60 days to be eligible to receive the reward card. After reaching eligibility, please allow 4-6 weeks for delivery. Visa Reward Card is issued by and is the property of CenterState Bank of Florida, NA pursuant to a license from Visa U.S.A. Inc. Cannot be combined with any other offer. ƗPrice comparison claim based on PUCO Apples-to-Apples website published 6-month fixed prices as of 01/02/2018 and ONG's January 2018 direct mail price offers.&lt;/p>&#xd;&#xa;"
+                heading="Not all natural gas plans are the same... switch to Ohio Natural Gas® now! "
+                imagepath="/content/dam/ohgre/raf/GetStarted.png"
+                text="&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;h5>For a limited time, enjoy the lowest available 6-month fixed price in the market!&lt;/h5>&#xd;&#xa;&lt;p>&lt;b>A better choice.&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>You have a choice when it comes to your natural gas supplier. So why not enroll in the lowest available 6-Month fixed price in the market? This offer is only available for a limited time, so act now!&lt;/p>&#xd;&#xa;&lt;p>&lt;b>SPECIAL BONUS: Enroll online and receive a $25 Visa® Reward Card!*&amp;nbsp;&amp;nbsp;&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Switching&amp;nbsp;is easy.&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>- Locate your most recent natural gas bill.&lt;/p>&#xd;&#xa;&lt;p>- Identify your utility account number.&lt;/p>&#xd;&#xa;&lt;p>- Enroll.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>With ONG, there are NO sign-up fees and NO interruption of service.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Hurry! Offer ends&amp;nbsp;{{expirationdate}}.&amp;nbsp;&amp;nbsp;&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>Program Terms and Conditions&lt;/a>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true]"/>
+        </content>
+        <image
+            cq:lastRolledout="{Date}2018-01-02T16:58:12.463-06:00"
+            cq:lastRolledoutBy="penny"
+            jcr:lastModified="{Date}2018-01-02T16:58:12.457-06:00"
+            jcr:lastModifiedBy="ljackson"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <cq:LiveSyncConfig
+            cq:isDeep="{Boolean}true"
+            cq:master="/content/onlyong/Score1C"
+            cq:rolloutConfigs="[]"
+            jcr:primaryType="cq:LiveCopy"/>
+    </jcr:content>
+</jcr:root>

@@ -5,8 +5,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-12-28T10:24:02.863-06:00"
-        cq:lastModifiedBy="ljackson"
+        cq:lastModified="{Date}2018-01-03T10:37:55.579-06:00"
+        cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2017-12-22T14:18:52.378-06:00"
         cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
@@ -32,8 +32,8 @@
             <herocarousel
                 jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-28T10:24:02.857-06:00"
-                jcr:lastModifiedBy="ljackson"
+                jcr:lastModified="{Date}2018-01-03T10:37:55.573-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
                 iItems="[{&quot;title&quot;:&quot;Sign up today and you can earn 2\,500 bonus miles*&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your natural gas bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you could each receive a $25 Visa® Reward Card.* &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;start referring&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/refer&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;For more than 10 years\, we’ve proudly served Ohio residents with flexible plan options\, exceptional customer service and outstanding perks.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
@@ -152,6 +152,7 @@
             <APPLES
                 jcr:primaryType="nt:unstructured"
                 APPLECOH="/content/onlyong/applecoh"
+                APPLEDEO="/content/onlyong/appledeo"
                 APPLEDUKE="/content/onlyong/appleduke"
                 APPLEVEDO="/content/onlyong/applevedo"
                 APPLEWGL="/content/onlyong/promo-landing-apples"
@@ -218,8 +219,21 @@
                 COMPARE1V="/content/onlyong/compare1v"
                 SCORE1C="/content/onlyong/score1c"
                 SCORE1V="/content/onlyong/score1v"
-                SWITCH="/content/onlyong/switch"/>
+                SWITCH="/content/onlyong/switch">
+                <Score1C/>
+            </_x0032_018_1_Jan>
         </oh>
+        <_x0032_018_1_Jan
+            jcr:primaryType="nt:unstructured"
+            COMPARE1C="/content/onlyong/compare1c"
+            COMPARE1V="/content/onlyong/compare1v"
+            SAVEBIZ="/content/onlyong/savebiz"
+            SAVEME="/content/onlyong/saveme"
+            SCORE1C="/content/onlyong/score1c"
+            SCORE1V="/content/onlyong/score1v"
+            SWITCH="/content/onlyong/switch">
+            <Score1C/>
+        </_x0032_018_1_Jan>
     </promotions>
     <faq/>
     <product-configuration/>
@@ -238,8 +252,13 @@
     <cancel-contract/>
     <Delta15k/>
     <saveme2017/>
+    <savebiz/>
+    <saveme/>
     <Score10/>
     <Score1C/>
+    <COMPARE1C/>
+    <SCORE1V/>
+    <COMPARE1V/>
     <invalid-promocode/>
     <applecoh/>
     <appleduke/>
@@ -252,5 +271,4 @@
     <sitemap/>
     <promo-raf1/>
     <new-terms-deo/>
-    <applecoh1/>
 </jcr:root>

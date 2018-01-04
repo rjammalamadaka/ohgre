@@ -3,8 +3,11 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2017-12-19T15:21:15.916-06:00"
+        cq:lastModified="{Date}2018-01-03T11:41:15.941-06:00"
         cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-03T11:41:04.795-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
@@ -24,11 +27,13 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-15T09:31:31.080+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-19T15:17:59.659-06:00"
+                jcr:lastModified="{Date}2018-01-03T11:41:15.925-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                promoexpmsg="Hurry! This offer ends {{expdate}}."
+                textIsRich="true"
                 title="Switch Back And Enjoy Our Lowest Available Fixed Price Offers!"/>
             <switchpromotionconte
                 jcr:created="{Date}2017-08-15T09:49:04.299+05:30"

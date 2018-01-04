@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-27T16:52:31.047-06:00"
+        cq:lastModified="{Date}2018-01-03T11:33:37.184-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-27T16:52:35.703-06:00"
+        cq:lastReplicated="{Date}2018-01-03T11:33:41.387-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -21,18 +21,19 @@
             <promoherobanner
                 jcr:created="{Date}2017-12-09T14:45:57.469-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2017-12-21T15:58:31.713-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2018-01-03T11:33:37.179-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/apples/hero.jpg"
+                promoexpmsg="Hurry! Offer ends {{expdate}}"
                 textIsRich="true"
-                title="&lt;p>When you compare apples to apples, Ohio Natural Gas is &lt;g class=&quot;gr_ gr_5 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar multiReplace&quot; id=&quot;5&quot; data-gr-id=&quot;5&quot;>the&lt;/g> clear choice.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"/>
-            <applepromotionconten
-                jcr:created="{Date}2017-12-09T14:30:50.179-06:00"
-                jcr:createdBy="josh"
-                jcr:lastModified="{Date}2017-12-27T16:52:31.044-06:00"
+                title="&lt;p>When you compare apples to apples, Ohio Natural Gas is the clear choice.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"/>
+            <applepromotionconten_1739280015
+                jcr:created="{Date}2018-01-03T11:32:02.914-06:00"
+                jcr:createdBy="penny"
+                jcr:lastModified="{Date}2018-01-03T11:33:04.048-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
