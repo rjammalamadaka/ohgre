@@ -439,7 +439,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                 failcount=failcount+1;
 
 
-            }else if($scope.rafcode && $scope.rafcode.length>0 && failcount<1){
+            }else if($scope.rafcode && $scope.rafcode.length>0){
                 var account;
                 var ldc;
                 if($rootScope.customerInfo.responseStatus =="0"){
