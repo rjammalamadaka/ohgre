@@ -215,6 +215,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
           jQuery('#raf-terms-popup').removeClass('show-popup');
           jQuery('#toemailaddress').val('');
           jQuery('#raf-confirm').addClass('show-popup');
+          $scope.success=true;  
           $scope.rafemailform.toemailaddress.$setPristine();
           $scope.toemailaddress = '';
 
@@ -222,9 +223,10 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
           jQuery('.raf-email-step').hide();
             jQuery('#raf-friend-info').show();
         } else {
-
-          $scope.rafMailSerrverMsg = rafServerErrorMsg;
-          jQuery('#raf-server-error').show();
+			$scope.success=false;
+            jQuery('#raf-confirm').addClass('show-popup');
+          //$scope.rafMailSerrverMsg = rafServerErrorMsg;
+          //jQuery('#raf-server-error').show();
           jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
           console.log('server error');
         }
