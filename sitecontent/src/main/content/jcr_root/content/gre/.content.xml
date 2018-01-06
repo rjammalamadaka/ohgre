@@ -141,10 +141,6 @@
     <save2017/>
     <visa_offer/>
     <generic-promo/>
-    <score1co/>
-    <lowest1co/>
-    <lowest1dt/>
-    <score1dt/>
     <promotion-error/>
     <switch-back/>
     <customer_lookup/>
@@ -187,10 +183,10 @@
                 MISEA="/content/gre/misea"/>
             <_x0032_018_JAN
                 jcr:primaryType="nt:unstructured"
-                LOWEST1CO="/content/gre/lowest1co"
-                LOWEST1DT="/content/gre/lowest1dt"
-                SCORE1CO="/content/gre/score1co"
-                SCORE1DT="/content/gre/score1dt"/>
+                LOWEST1CO="/content/gre/LOWEST1CO"
+                LOWEST1DT="/content/gre/LOWEST1DT"
+                SCORE1CO="/content/gre/SCORE1CO"
+                SCORE1DT="/content/gre/SCORE1DT"/>
         </gre>
     </promotions>
     <delta-faqs/>
@@ -198,4 +194,8 @@
     <invalid-promocode/>
     <misea/>
     <sitemap/>
+    <SCORE1DT/>
+    <SCORE1CO/>
+    <LOWEST1DT/>
+    <LOWEST1CO/>
 </jcr:root>
