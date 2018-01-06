@@ -202,9 +202,13 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
   <div class="window-wrapper with-border">
     <a href="#" class="close-window" ng-click="">X</a>
     <h3 class="window-title">${properties.thankyouheader}</h3>
-    <div class="inner-window-content text-center">
-      <p ng-show="success">${properties.bodyofthankyou}</p>
-      <p ng-show="!success">${properties.bodyoffailuremsg @ context='html'}</p>
+    <div ng-show="success" class="inner-window-content text-center">
+      <p>${properties.bodyofthankyou}</p>
+      <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Home Page</a>
+    </div>
+
+	<div ng-show="!success" class="inner-window-content text-center">
+      <p>${properties.bodyoffailuremsg @ context = 'html'}</p>
       <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Home Page</a>
     </div>
   </div>
