@@ -2,50 +2,42 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-03T14:04:58.645-06:00"
+        cq:lastModified="{Date}2018-01-05T09:03:24.898-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-03T14:05:01.371-06:00"
+        cq:lastReplicated="{Date}2018-01-05T09:03:28.920-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
-        cq:lastRolledout="{Date}2018-01-03T13:44:37.403-06:00"
-        cq:lastRolledoutBy="penny"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
-        jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSync,mix:versionable]"
+        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="SCORE1CO"
-        jcr:uuid="7a11650b-aee5-42b2-b91f-72660fc611f7"
+        jcr:uuid="b85c890c-8b30-4780-a498-d8edb72b640a"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
-            cq:lastRolledout="{Date}2018-01-03T13:44:37.370-06:00"
-            cq:lastRolledoutBy="penny"
-            jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
-            <promoherobanner
-                cq:isCancelledForChildren="{Boolean}true"
-                cq:lastRolledout="{Date}2018-01-03T13:44:37.384-06:00"
-                cq:lastRolledoutBy="penny"
-                jcr:created="{Date}2017-08-13T22:26:22.223+05:30"
+            <promoherobanner_copy
+                jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-03T13:55:47.773-06:00"
+                jcr:lastModified="{Date}2018-01-05T09:03:24.893-06:00"
                 jcr:lastModifiedBy="penny"
-                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
-                promoexpmsg="Hurry! Offer ends {{expdate}}!"
+                imagepath="/content/dam/ohgre/home/hero-image.jpg"
+                promocode="Appale3"
+                promoexpmsg="Hurry! Offer expires January 31, 2018!"
                 textIsRich="true"
-                title="&lt;p>Lock in the Lowest Available Fixed Price!Ɨ&lt;/p>&#xd;&#xa;"/>
+                title="&lt;h3>Lock in the Lowest Available Fixed PriceƗ&lt;/h3>&#xd;&#xa;"/>
             <offerpromotionconten
                 cq:isCancelledForChildren="{Boolean}true"
-                cq:lastRolledout="{Date}2018-01-03T13:44:37.395-06:00"
+                cq:lastRolledout="{Date}2018-01-04T10:50:19.042-06:00"
                 cq:lastRolledoutBy="penny"
                 jcr:created="{Date}2017-08-13T22:29:48.604+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-03T14:04:58.639-06:00"
+                jcr:lastModified="{Date}2018-01-04T16:26:30.861-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
                 jcr:primaryType="nt:unstructured"
@@ -57,17 +49,9 @@
                 textIsRich="[true,true,true]"/>
         </content>
         <image
-            cq:lastRolledout="{Date}2018-01-03T13:44:37.403-06:00"
-            cq:lastRolledoutBy="penny"
-            jcr:lastModified="{Date}2018-01-03T13:44:37.397-06:00"
+            jcr:lastModified="{Date}2017-08-15T08:49:45.472+05:30"
             jcr:lastModifiedBy="admin"
-            jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
-        <cq:LiveSyncConfig
-            cq:isDeep="{Boolean}true"
-            cq:master="/content/gre/generic-promo"
-            cq:rolloutConfigs="[]"
-            jcr:primaryType="cq:LiveCopy"/>
     </jcr:content>
 </jcr:root>
