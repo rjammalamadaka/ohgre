@@ -1,6 +1,6 @@
 <section class="promo-landing" ng-controller="PromoHeroBannerController">
    <div class="container">
-       <div class="full-banner-callout"  ng-class="!${properties.displaylogo || false}? 'one-third' : 'flush'">
+       <div class="full-banner-callout" ng-class="!${properties.displaylogo || false}? 'one-third' : 'flush'">
          <div class="slide">
             <div class="slide-image" ng-class="{hT : heightConstant}" ng-style="{'background-image':'url(${properties.imagepath})'}">
 			<!--<img src="${properties.imagepath}">-->
@@ -16,6 +16,7 @@
 
                   <p ng-show="notexpired"><span>${properties.description}</span></p>
                   <p ng-show="!notexpired"><span class="slide-title">Unfortunately this promotion has expired.</span></p>
+                      
                       <p ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode"><span>Promo Code: {{promotion.PromotionCode}}</span><span>${properties.promoexpmsg}</span></p>
                </div>
             </div>
