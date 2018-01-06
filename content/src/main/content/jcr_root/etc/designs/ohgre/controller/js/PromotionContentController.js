@@ -153,6 +153,26 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
     }
 
+    $scope.displayGuranteedAccord = false;
+      $scope.displayAddlInfo = function(product) {
+        if (product != undefined) {
+    
+          if (product.displayAccordian == undefined) {
+            product.displayAccordian = true;
+          } else if (product.displayAccordian) {
+            product.displayAccordian = false;
+          } else if (!product.displayAccordian) {
+            product.displayAccordian = true;
+          }
+        } else {
+          $scope.displayGuranteedAccord = $scope.displayGuranteedAccord ? false : true;
+        }
+    
+        // alert(product.displayAccordian);
+        //    $scope.displayAdditionalInfo = $scope.displayAdditionalInfo ? false : true;
+    
+      }
+
       $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
 
         if(newValue && newValue.length>0){
