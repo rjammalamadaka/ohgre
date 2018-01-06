@@ -99,10 +99,12 @@
                     var ldcCode=ldc.LDCCode;
                     var promotion=ldc.promotion[0];
                     if(promotion.PromotionExpired =="N"){
+                        $rootScope.promotion=ldc.promotion[0];
                         $rootScope.ldcForEnrollPromo=ldc;
                         $rootScope.enrollPromoCode=promotion.PromotionCode;
                         break;                              
-                    }else if(promotion.PromotionExpired =="Y"){
+                    }else if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode){
+                         $rootScope.promotion=ldc.promotion[0];
  						$rootScope.ldcForEnrollPromo=ldc;
                         $rootScope.enrollPromoCode=promotion.BackupPromotionCode;
                         break; 
