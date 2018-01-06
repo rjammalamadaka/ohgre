@@ -47,9 +47,8 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                 $scope.products={};
                 if(data.Customer && data.Customer.length>0){
 
-					 var customer=data.Customer[0];
+					var customer=data.Customer[0];
 					var getQuotesProductsList=[];
-console.log($rootScope.prmoProduct);
                     for(var i=0;i<customer.Product.length;i++){
                         if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
                             getQuotesProductsList.push(customer.Product[i]);
@@ -172,6 +171,7 @@ console.log($rootScope.prmoProduct);
                  $rootScope.enrollPromoCode=$("#renew-plan-select").data("compromocode");
 
              }
+             getDefaultPromoctionInfo();
             // getQuotes(data);
 
          }else{
@@ -280,6 +280,7 @@ console.log($rootScope.prmoProduct);
             $scope.formButton="Apply Promo Code";
             $('#submit-promo-code').removeClass("inactive");
             $scope.promocode=null;
+            getDefaultPromoctionInfo();
        }else if($scope.renewalPlanPromo.$valid){
            $scope.renewalPlanPromo.submited = true;
 
@@ -333,6 +334,7 @@ console.log($rootScope.prmoProduct);
 
                         if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="N"){
 								$scope.showpromosuccessdmsg=true;
+                            ohgre.store("promoCodeInfo",data);
                         }
 
                         if(ldcinfo && ldcinfo.promotion[0].CustomerTypeCode=="NEW"){
@@ -383,7 +385,9 @@ console.log($rootScope.prmoProduct);
 
 
                 }else if(data && data.responseStatus =="1"){
-                    $scope.serverError="Please enter a valid Promo code";                    
+                    $scope.serverError="Please enter a valid Promo code";    
+                    jQuery('#popup-spinner-wrap').hide();
+
                 }
 
             }).error(function (data,status, headers, config){  
@@ -500,6 +504,34 @@ console.log($rootScope.prmoProduct);
         console.log("showMobileAccordGuarantee");
 
     }
+
+
+        var getDefaultPromoctionInfo =function(){
+
+			console.log("getDefaultPromoctionInfo");
+            console.log($rootScope.enrollPromoCode);
+
+            console.log($scope.productData);
+
+              var ResPromoCode=$("#renew-plan-select").data("respromocode");
+		var ComPromoCode=$("#renew-plan-select").data("compromocode");
+
+            if($scope.productData && $scope.productData.rateClassCode =="01"){
+				$rootScope.enrollPromoCode=ResPromoCode;
+            }else if($scope.productData && $scope.productData.rateClassCode =="04"){
+				$rootScope.enrollPromoCode=ComPromoCode;
+            }
+
+
+            PrimeService.getPromoCodeInfo($rootScope.enrollPromoCode).success(function(data, status, headers, config){
+				 ohgre.store("promoCodeInfo",data);
+                console.log("getDefaultPromoctionInfo success");
+console.log(data);
+
+            }).error(function(data, status, headers, config){
+
+            });
+        }
 
 }]);
 

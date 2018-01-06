@@ -106,6 +106,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
              req.LDC=data.LDC;
              getCustomerInfo(req);
              getQuotes(data);
+             getDefaultPromoctionInfo();
 
          }else{
 			location.href=$rootScope.homeUrl+".html";
@@ -259,6 +260,29 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
         }
 
     }
+
+
+
+       var getDefaultPromoctionInfo =function(){
+
+			var promocode;
+           var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+           var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
+
+           if($scope.productData && $scope.productData.rateClassCode =="01"){
+              promocode=ResPromoCode;
+           }else if($scope.productData && $scope.productData.rateClassCode =="04"){
+               promocode=ComPromoCode;
+           }
+
+
+           PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
+               ohgre.store("promoCodeInfo",data);
+
+           }).error(function(data, status, headers, config){
+
+           });
+       }
 
 
 }]);
