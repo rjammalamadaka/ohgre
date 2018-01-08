@@ -5,12 +5,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.rmi.ServerException;
 
+import com.macquarium.ong.vo.RequestResponseVo;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tempuri.quoteservice.SendRealTimeEmailRequest;
 import org.tempuri.quoteservice.SendRealTimeEmailResult;
 
@@ -23,16 +26,23 @@ import com.primesw.webservices.SendRealTimeEmailResponse;
 @SlingServlet(paths="/bin/sendRafEmail", methods = "POST", metatype=true)
 public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
 
+	private Logger logger = LoggerFactory.getLogger(SendRafEmailServlet.class);
+
 	private static final long serialVersionUID = 2598426539166789515L;
 
 	@Reference
 	private CommonConfigService commonConfigService;
+
+	@Reference
+	private RequestResponseDaoService requestResponseDaoService;
 
 	@Override
 	protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
 		JSONObject obj = new JSONObject();
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = request.getReader();
+		String referrer = request.getHeader("referer");
+		String domain=request.getServerName();
 		String str = null;
 		while ((str = br.readLine()) != null) {
 			sb.append(str);
@@ -71,10 +81,25 @@ public class SendRafEmailServlet extends org.apache.sling.api.servlets.SlingAllM
 
 			String soapRequest=handlerResolver.getRequest();
 			String soapResponse=handlerResolver.getResponse();
-			System.out.println("request");
-			System.out.println(soapRequest);
-			System.out.println("response");
-			System.out.println(soapResponse);
+			logger.info("request");
+			logger.info(soapRequest);
+			logger.info("response");
+			logger.info(soapResponse);
+
+			RequestResponseVo requestResponseVo=new RequestResponseVo();
+			//requestResponseVo.setAccnt(accountNumber);
+			requestResponseVo.setApiCall("sendRealTimeEmail");
+			//requestResponseVo.setLdc(ldc);
+			requestResponseVo.setOrderNumber("0");
+			requestResponseVo.setPage(referrer);
+			requestResponseVo.setPostXML(soapRequest);
+			requestResponseVo.setRespMessage(sendRealTimeEmailResult.getResponseMessage());
+			requestResponseVo.setRespNumb(sendRealTimeEmailResult.getResponseStatus());
+			requestResponseVo.setReturnXML(soapResponse);
+			requestResponseVo.setSite(domain);
+			requestResponseDaoService.insertPrimeRequestResponse(requestResponseVo);
+
+
 
 			obj.put("ResponseStatus", sendRealTimeEmailResult.getResponseStatus());
 			obj.put("ResponseMessage", sendRealTimeEmailResult.getResponseMessage());
