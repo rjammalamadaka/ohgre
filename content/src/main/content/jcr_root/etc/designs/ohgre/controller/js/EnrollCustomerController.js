@@ -692,8 +692,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             $scope.enrollId=data.enrollId;
           }
           console.log(enrollCustomerResult);
-          if(enrollCustomerResult.responseStatus =="1"){
-            $scope.primeErrorMessage=enrollCustomerResult.responseMessage;
+          if(enrollCustomerResult.responseStatus =="1" || enrollCustomerResult.responseStatus =="-1"){
+            //$scope.primeErrorMessage=enrollCustomerResult.responseMessage; 
+            ohgre.removeStore("promoCodeInfo");
+            //$scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
+            gotNextStep(5);
+            document.title="Confirmation Page";
+
           }else if(enrollCustomerResult.responseStatus =="0"){
             ohgre.removeStore("promoCodeInfo");
             $scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
