@@ -281,10 +281,11 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				logger.info("New customer");
 				emailtype="ENCONFIRM";
 			}
-
+logger.info("");
 			String alternateEmailAddress =getParameterInfo(jObj,"alternateEmailAddress");
 
 			SendRealTimeEmailRequest sendRealTimeEmailRequest=new SendRealTimeEmailRequest();
+			logger.info("");
 
 			sendRealTimeEmailRequest.setCustID(enrollCustomerResult.getCustID());
 			sendRealTimeEmailRequest.setEmailAddress(emailid);   //emailAddress
@@ -295,11 +296,33 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			SendRealTimeEmail sendRealTimeEmail=new SendRealTimeEmail();
 			sendRealTimeEmail.setSendRealTimeEmailRequest(sendRealTimeEmailRequest);
 			logger.info("start sendRealTimeEmail");
+			String sendrealtimerequest=handlerResolver.getRequest();
+			String sendrealtimeresponse= handlerResolver.getResponse();
 			SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
 			logger.info("end sendRealTimeEmail");
 			SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
 			logger.info("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
 			logger.info("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
+
+
+			RequestResponseVo sendRealTimeRequestResponseVo=new RequestResponseVo();
+			logger.info(account);
+			sendRealTimeRequestResponseVo.setAccnt(account);
+			sendRealTimeRequestResponseVo.setApiCall("sendRealTimeEmail");
+			sendRealTimeRequestResponseVo.setLdc(LDC);
+			sendRealTimeRequestResponseVo.setOrderNumber("0");
+			sendRealTimeRequestResponseVo.setPage(referrer);
+			sendRealTimeRequestResponseVo.setPostXML(sendrealtimerequest);
+			sendRealTimeRequestResponseVo.setRespMessage(sendRealTimeEmailResult.getResponseMessage());
+			sendRealTimeRequestResponseVo.setRespNumb(sendRealTimeEmailResult.getResponseStatus());
+			sendRealTimeRequestResponseVo.setReturnXML(sendrealtimeresponse);
+			sendRealTimeRequestResponseVo.setSite(domain);
+
+logger.info("before insert to database");
+			requestResponseDaoService.insertPrimeRequestResponse(sendRealTimeRequestResponseVo);
+
+
+		logger.info("requestresponse inserted sendrealtime");
 
 			enrollment.setCustID(enrollCustomerResult.getCustID());
 
@@ -309,7 +332,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			obj.put("enrollId", generatedKey);
 			obj.put("status", enrollCustomerResult.getResponseStatus());
 			obj.put("ResponseMessage", enrollCustomerResult.getResponseMessage());
-			if(enrollCustomerResult.getResponseStatus().equalsIgnoreCase("-1")) {
+			if(enrollCustomerResult.getResponseStatus().equalsIgnoreCase("-1") || enrollCustomerResult.getResponseStatus().equalsIgnoreCase("1")) {
 				logger.info("Send mail with prime error");
 				mailContent.put("request", soapRequest);
 				mailContent.put("response", soapResponse);
