@@ -1,12 +1,9 @@
 package com.macquarium.ong.impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Calendar;
 
+import com.macquarium.ong.DSMEnrollmentServlet;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -14,6 +11,8 @@ import org.apache.felix.scr.annotations.Service;
 import com.macquarium.ong.CommonConfigService;
 import com.macquarium.ong.SignUpDaoService;
 import com.macquarium.ong.vo.Customer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 @Component(metatype = false)
@@ -22,14 +21,23 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
     @Reference
     private CommonConfigService commonConfigService;
 
+    private Logger logger = LoggerFactory.getLogger(SignUpDaoServiceImpl.class);
+
 
     public boolean insertCustomer(Customer customer) {
         boolean result=false;
         Connection connection = null;
         try {
+
+            System.setProperty("javax.net.ssl.keyStore","/home/aem/keystore");
+            System.setProperty("javax.net.ssl.keyStorePassword","bhaO6PlkkjHc2cfT");
+            System.setProperty("javax.net.ssl.trustStore","/home/aem/truststore");
+            System.setProperty("javax.net.ssl.trustStorePassword","bhaO6PlkkjHc2cfT");
             Class.forName("com.mysql.jdbc.Driver");
+
             connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
             if (connection != null) {
+                logger.info("111111111");
                 Calendar currentCalendar = Calendar.getInstance();
                 Calendar onemonthcalendar = Calendar.getInstance();
                 onemonthcalendar.add(Calendar.MONTH, -1);
@@ -65,13 +73,36 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                 String sendemails=customer.getSpecialOffersOption();
                 if(sendemails.equals("true")){
                     preparedStmt.setBoolean(15,true) ;
+                    logger.info("2222222");
                 }else{
                     preparedStmt.setBoolean(15,false );
                 }
                 preparedStmt.setString(16,customer.getSignupType());
                 preparedStmt.execute();
                 result=true;
+
+                logger.info("checking session status");
+                String query2="SHOW SESSION STATUS LIKE 'Ssl_version'";
+                Statement statement=connection.createStatement();
+                ResultSet rs=statement.executeQuery(query2);
+                logger.info("after execution");
+                rs.next();
+                logger.info(rs.getString(1));
+                logger.info(rs.getString(2));
+
+                String query3="SHOW SESSION STATUS LIKE 'Ssl_cipher'";
+                Statement statement1=connection.createStatement();
+                ResultSet rs2=statement1.executeQuery(query3);
+                logger.info("after execution");
+                rs2.next();
+                logger.info(rs2.getString(1));
+                logger.info(rs2.getString(2));
+
+
             }
+
+
+
         } catch(ClassNotFoundException e){
             e.printStackTrace();
         }catch (SQLException e) {
@@ -102,6 +133,7 @@ public class SignUpDaoServiceImpl  implements SignUpDaoService{
                 }else{
 
                 }
+
             }
         }catch(Exception e){
         }
