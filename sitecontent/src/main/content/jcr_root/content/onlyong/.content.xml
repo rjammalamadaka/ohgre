@@ -182,7 +182,6 @@
             <SPECIALOFFER
                 jcr:primaryType="nt:unstructured"
                 CSEA="/content/onlyong/special_offer"
-                DSEA="/content/onlyong/special_offer"
                 MISEA="/content/onlyong/special_offer"
                 VSEA="/content/onlyong/special_offer"/>
             <MVR jcr:primaryType="nt:unstructured"/>
@@ -217,6 +216,7 @@
                 jcr:primaryType="nt:unstructured"
                 COMPARE1C="/content/onlyong/COMPARE1C"
                 COMPARE1V="/content/onlyong/COMPARE1V"
+                DSEA="/content/onlyong/DSEA"
                 SAVEBIZ="/content/onlyong/SAVEBIZ"
                 SAVEME="/content/onlyong/SAVEME"
                 SCORE1C="/content/onlyong/SCORE1C"
@@ -262,4 +262,5 @@
     <COMPARE1C/>
     <SAVEME/>
     <SAVEBIZ/>
+    <DSEA/>
 </jcr:root>
