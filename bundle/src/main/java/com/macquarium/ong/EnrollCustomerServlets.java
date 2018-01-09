@@ -186,6 +186,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollment.setServiceZipCode(serviceZipCode);
 			String emailid=getParameterInfo(jObj, "emailAddress");
 			String specialoffer=getParameterInfo(jObj, "specialoffer");
+			String custID=getParameterInfo(jObj, "custID");
 			if(specialoffer =="true"){
 				//enrollRequest.setEmailPrefSSEPromotionalCd("Y");
 				enrollRequest.setEmailPrefNonTransactionalCd("Y");
@@ -281,13 +282,17 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				logger.info("New customer");
 				emailtype="ENCONFIRM";
 			}
-logger.info("");
+				logger.info("");
 			String alternateEmailAddress =getParameterInfo(jObj,"alternateEmailAddress");
 
 			SendRealTimeEmailRequest sendRealTimeEmailRequest=new SendRealTimeEmailRequest();
 			logger.info("");
-
-			sendRealTimeEmailRequest.setCustID(enrollCustomerResult.getCustID());
+			if(responseStatus.equals("1")) {
+				sendRealTimeEmailRequest.setCustID(enrollCustomerResult.getCustID());
+			}
+			else if(responseStatus.equals("0")) {
+				sendRealTimeEmailRequest.setCustID(custID);
+			}
 			sendRealTimeEmailRequest.setEmailAddress(emailid);   //emailAddress
 			sendRealTimeEmailRequest.setEmailType(emailtype);
 			if(alternateEmailAddress.length()>0){
