@@ -9,6 +9,10 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
              $scope.promotion=ldc.promotion[0];
              $scope.giftCardValue=$scope.promotion.GiftCardValue; 
              $scope.GIFTCARDVALUE=Number($scope.giftCardValue);
+             var date = new Date($scope.promotion.PromotionExpiratonDate),
+                     locale = "en-us",
+                     month = date.toLocaleString(locale, { month: "long" });
+         $scope.EXPIRATIONDATE=  month+" "+date.getDate()+", "+date.getFullYear();
 
 
          }
