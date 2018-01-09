@@ -1004,6 +1004,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       $scope.enrollReq.premise=data.premise;
     if(data.premise)
       $scope.enrollReq.premise=data.premise;
+    if(data.custID)
+      $scope.enrollReq.custID=data.custID;
     if(data.firstName)
       $scope.enrollReq.firstName=data.firstName;
     if(data.lastName)
