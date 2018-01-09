@@ -12,29 +12,29 @@
         cq:parentPath="/content/dam/ohgre/termsandconditions/grandrapidsenergy"
         dam:assetState="processed"
         dam:relativePath="ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf"
-        jcr:lastModified="{Date}2018-01-08T12:30:27.353-05:00"
+        jcr:lastModified="{Date}2018-01-09T11:02:57.398-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-08T12:30:26.083-05:00"
+            dam:extracted="{Date}2018-01-09T11:02:55.655-05:00"
             dam:numPages="{Long}6"
             dam:Physicalheightininches="{Decimal}11.0"
             dam:Physicalwidthininches="{Decimal}8.5"
             dam:Producer="Microsoft® Word 2013"
-            dam:sha1="5a726549b99427b847b99b5c8d89437cc96a939e"
-            dam:size="{Long}228132"
+            dam:sha1="0407f3af5324006b266b5b467e7c06d298db3d99"
+            dam:size="{Long}228130"
             dc:format="application/pdf"
             dc:modified="{Date}2018-01-05T23:54:58.495-05:00"
-            jcr:lastModified="{Date}2018-01-08T12:30:26.519-05:00"
+            jcr:lastModified="{Date}2018-01-09T11:02:55.425-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             pdf:Producer="Microsoft® Word 2013"
             xmp:CreateDate="{Date}2017-12-05T11:53:13.000-05:00"
             xmp:CreatorTool="Microsoft® Word 2013"
-            xmp:MetadataDate="{Date}2018-01-05T23:54:58.000-05:00"
-            xmp:ModifyDate="{Date}2018-01-05T23:54:58.000-05:00"/>
+            xmp:MetadataDate="{Date}2018-01-09T11:02:55.000-05:00"
+            xmp:ModifyDate="{Date}2018-01-09T11:02:55.000-05:00"/>
         <related jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>
