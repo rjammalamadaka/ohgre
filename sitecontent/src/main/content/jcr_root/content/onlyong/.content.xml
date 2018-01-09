@@ -139,7 +139,6 @@
     <visa_offer/>
     <generic-promo/>
     <promotion-error/>
-    <switch-back/>
     <SWITCH/>
     <customer_lookup/>
     <special_offer/>
@@ -263,4 +262,5 @@
     <SAVEME/>
     <SAVEBIZ/>
     <DSEA/>
+    <switch-back/>
 </jcr:root>
