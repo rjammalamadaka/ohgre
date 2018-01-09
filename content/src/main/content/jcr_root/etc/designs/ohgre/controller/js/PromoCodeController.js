@@ -5,6 +5,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
     $scope.placeholder = "Enter Promo Code";
 
+    $scope.backUpPromoApplied=false;
 
     $scope.promoCodeSubmit = function(){
 		$scope.promoform.submited = true;
@@ -87,7 +88,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                             }
                             if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
-                                promotionCode= promotion.BackupPromotionCode; 
+                                promotionCode= promotion.BackupPromotionCode;
                                 break;
                             }if(promotion.PromotionExpired =="N"){
                                 promotionCode=promotion.PromotionCode; 
@@ -112,12 +113,20 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                     }*/
                     ohgre.store("promoCodeInfo",data);
+                    if($scope.backUpPromoApplied){
+								location.href=$rootScope.homeUrl+"/backuppromo.html";
+                        		return;
+                     }
+
                     console.log("data="+data);
                     if(promotion.PromotionExpired =="Y" && !redirectUrl){
-                        if(promotion.BackupPromotionCode.length>0){
-                        	location.href=$rootScope.homeUrl+"/backuppromo.html";
+                        if(promotion.BackupPromotionCode.length>0 && !$scope.backUpPromoApplied){
+                            $scope.backUpPromoApplied=true;
+							getPromoCodeInfo(promotion.BackupPromotionCode);
+                            return;
+                        	//location.href=$rootScope.homeUrl+"/backuppromo.html";
 
-                        }else{
+                        }else if(!$scope.backUpPromoApplied){
 							location.href=$rootScope.homeUrl+"/promotion-error.html";
                         }
 
