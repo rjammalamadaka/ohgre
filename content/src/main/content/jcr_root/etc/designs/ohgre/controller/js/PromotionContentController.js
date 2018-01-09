@@ -80,6 +80,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
 
          PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config) {
+                ohgre.store("promoCodeInfo",data);
 				processPromotionInfo(data);
 
          }).error(function(data, status, headers, config) {
