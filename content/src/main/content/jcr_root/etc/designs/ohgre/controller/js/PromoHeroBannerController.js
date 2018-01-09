@@ -6,6 +6,56 @@
 
  var portalname=$rootScope.portalname;
 
+
+     var getPromoCodeInfo =function(promocode){
+		/* PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
+
+         }).error(function (data,status, headers, config){
+
+             console.log("error");
+         });*/
+
+     }
+
+     var processStorePromoInfo=function(){
+
+  			var promoInfo=ohgre.store("promoCodeInfo");
+            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
+                var ldc=promoInfo.LDCList[0];
+                $rootScope.promotion=ldc.promotion[0];
+                $rootScope.promotionInfo=true;        
+                var date = new Date($scope.promotion.PromotionExpiratonDate),
+                locale = "en-us",
+                month = date.toLocaleString(locale, { month: "long" });
+                $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
+                $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
+               $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
+
+
+               for(var i=0;i<promoInfo.LDCList.length;i++){
+                    var ldc=promoInfo.LDCList[i];
+                    var ldcCode=ldc.LDCCode;
+                    var promotion=ldc.promotion[0];
+                    if(promotion.PromotionExpired =="N"){
+                        $rootScope.promotion=ldc.promotion[0];
+                        $rootScope.ldcForEnrollPromo=ldc;
+                        $rootScope.enrollPromoCode=promotion.PromotionCode;
+                        break;                              
+                    }else if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
+                        $rootScope.promotion=ldc.promotion[0];
+ 						$rootScope.ldcForEnrollPromo=ldc;
+                        $rootScope.enrollPromoCode=promotion.BackupPromotionCode;
+                       // getPromoCodeInfo(promotion.BackupPromotionCode);
+                        break; 
+                    }
+
+                }
+
+            }
+
+          jQuery('#popup-spinner-wrap').hide();
+     }
+
      if($rootScope.hashParams.promocode){
          PrimeService.getPromoCodeInfo($rootScope.hashParams.promocode).success(function(data, status, headers, config){
               jQuery('#popup-spinner-wrap').hide();
@@ -81,40 +131,7 @@
          });
 
      }else{
-         var promoInfo=ohgre.store("promoCodeInfo");
-            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
-                var ldc=promoInfo.LDCList[0];
-                $rootScope.promotion=ldc.promotion[0];
-                $rootScope.promotionInfo=true;        
-                var date = new Date($scope.promotion.PromotionExpiratonDate),
-                locale = "en-us",
-                month = date.toLocaleString(locale, { month: "long" });
-                $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
-                $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
-               $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
-
-
-                for(var i=0;i<promoInfo.LDCList.length;i++){
-                    var ldc=promoInfo.LDCList[i];
-                    var ldcCode=ldc.LDCCode;
-                    var promotion=ldc.promotion[0];
-                    if(promotion.PromotionExpired =="N"){
-                        $rootScope.promotion=ldc.promotion[0];
-                        $rootScope.ldcForEnrollPromo=ldc;
-                        $rootScope.enrollPromoCode=promotion.PromotionCode;
-                        break;                              
-                    }else if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode){
-                         $rootScope.promotion=ldc.promotion[0];
- 						$rootScope.ldcForEnrollPromo=ldc;
-                        $rootScope.enrollPromoCode=promotion.BackupPromotionCode;
-                        break; 
-                    }
-
-                }
-
-            }
-
-          jQuery('#popup-spinner-wrap').hide();
+			processStorePromoInfo();
 
      }
     $scope.heightConstant = false;
