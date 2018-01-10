@@ -8,12 +8,10 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
     $scope.setLdcInfo= function(mainValue,description){
 
         var ldc=mainValue;
-        console.log("setLdcInfo");
-        console.log(mainValue);
-        console.log(description);
+
 		$scope.ldc=mainValue;
         $scope.ldcdesc=description;
-         $scope.an1=null;
+        $scope.an1=null;
         $scope.an2=null;
         $scope.an3=null;
         $scope.an4=null;
@@ -59,14 +57,12 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
             $scope.an4r=true;
 
         }else if(ldc == "MCG"){
-            console.log("MCG values set");
 			$scope.an1minl="4";
 		    $scope.an2minl="3";
             $scope.an3minl="4";
             $scope.an4minl="1";
 
         }else if(ldc == "MIC"){
-             console.log("MIC values set");
             $scope.an1minl="0";
             $scope.an2minl="0";
             $scope.an3minl="0";
@@ -159,8 +155,6 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
     var getLdcInfo=function(){
         PrimeService.getLdcInfo().success(function(data, status, headers, config){
             if(data && data.responseStatus =="0"){
-                console.log("test");
-                console.log(data.LDCList);
                 $rootScope.ldcinfo=data.LDCList;
                 setTimeout(function(){ $scope.loginPopupBindClickEvent(); }, 10);
             }
@@ -215,6 +209,13 @@ $scope.errorMessage=null;
 
                 if(data){
                  $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
+
+                    if($scope.customerInfo && $scope.customerInfo.b2BCustomerInd && $scope.customerInfo.b2BCustomerInd=="Y"){
+						 $('#lastnamezipcodeerror').show(); 
+							 $scope.errorMessage="Please call us at 1.888.466.4427 to discuss plan options for your account.";
+                        return;
+                    }
+
                     if($scope.customerInfo && $scope.customerInfo.responseStatus=="0"){
 
 
@@ -229,9 +230,8 @@ $scope.errorMessage=null;
                                 jQuery("#login-popup-wrapper").removeClass("show-popup");
                                 jQuery("#login-inactive-popup").addClass("show-popup");
 
-                                console.log("inactive customer");
                             }else if($scope.customerInfo.b2BCustomerInd =="Y"){
-                                $scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                                $scope.errorMessage="Please call us at "+$rootScope.mobilenumber+" to discuss plan options for your account";
                                 $('#lastnamezipcodeerror').show();
                             }else if(($scope.lctype=="residential")&&(($scope.customerInfo.lastName.toLowerCase()!=$scope.lastName.toLowerCase()) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase()))){
                                 $scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
@@ -255,7 +255,6 @@ $scope.errorMessage=null;
 						$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
                     }
 
-                    console.log($scope.customerInfo);
                 }
 
             }).error(function(data, status, headers, config){
@@ -279,17 +278,14 @@ $scope.errorMessage=null;
 		req.LdcDesc=$scope.ldcdesc;
 
         if($scope.ldc && $scope.ldc=="DUK"){
-            console.log("ssssssssssssssssss");
             req.dukNumber=$scope.an4
         }
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){            
-            console.log(data);
             location.href=$rootScope.homeUrl+'/myaccount.html';
 
         }).error(function (data,status, headers, config){
 
-            console.log("error");
         });
 
 

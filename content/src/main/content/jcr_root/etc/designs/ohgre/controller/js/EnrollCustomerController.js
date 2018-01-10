@@ -16,6 +16,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   $scope.specialoffer=true;
   jQuery('#popup-spinner-wrap').show();
 
+     $('#b2BCustomerIndError').hide();
+
   $scope.dsmEnrollReq={};
 
 
@@ -168,7 +170,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
         updateenrollrequestobj($rootScope.customerInfo);
         if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
-          console.log($rootScope.customerInfo);
           // $rootScope.account
           $scope.formatedacno=getFormatedAccountnumberFromAccount($rootScope.customerInfo.account);
           $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
@@ -278,13 +279,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     }
     $scope.enrollCustomer =function(step){
         $('#lastnamezipcodeerror').hide();
+        $('#b2BCustomerIndError').hide();
         clearEnrollReqObject();
         getFormatedAccountNumber();
 
         $scope.formone.submited = true;
         if($scope.formone.$valid || (($rootScope.product.LDC=="MIC") && $scope.formone.lastName.$valid && $scope.formone.zipcode.$valid && $scope.formone.an4.$valid)){
             var accountnumber=null;
-            console.log($scope.formone.$valid);
             if($rootScope.product.LDC == "DUK"){
                 accountnumber=$scope.an1+$scope.an2+$scope.an3;
             }else if($rootScope.product.LDC == "VED"){
@@ -300,13 +301,17 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             req.LDC=$rootScope.product.LDC;
             jQuery('#popup-spinner-wrap').show();
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
-                // console.log(data);
                 jQuery('#popup-spinner-wrap').hide();
                 if(data && data.CustomerInfoResult){
                     $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
+
+                    if($rootScope.customerInfo && $rootScope.customerInfo.b2BCustomerInd && $rootScope.customerInfo.b2BCustomerInd=="Y"){
+						$('#b2BCustomerIndError').show();
+                        return;
+                    }
+
                     updateenrollrequestobj($rootScope.customerInfo);
                     if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
-                        console.log($rootScope.customerInfo);
                         $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
                         $scope.existingEmail= $rootScope.customerInfo.emailAddress;
                         var productInfo={};
@@ -411,7 +416,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                   */
             }).error(function (data,status, headers, config){
                 jQuery('#popup-spinner-wrap').hide();
-                console.log("error");
             });
 
 
@@ -431,7 +435,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $scope.rafErrorMessage=null;
         if($scope.formtwo.$valid){
 
-            // console.log($scope.promotionInfo.PromotionCode);
             if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<1 && (!$scope.rafcode ||$scope.rafcode=="") && $rootScope.customerInfo.responseStatus=='1'){
 
 
@@ -481,9 +484,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
 
     var hearabout=$('.dropdown-trigger .value').find('span').html();
-
-      console.log("handelsubmityourinformation");
-      console.log($rootScope.product);
 
 
     var data={};
@@ -660,11 +660,9 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     /*	$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
         PrimeService.sendRafEmail($scope.sendRafEmailReq).success(function(data, status, headers, config){
-			console.log(data);
 
         }).error(function(data, status, headers, config){
 
-                console.log(data);
         });*/
 
   }
@@ -674,7 +672,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     //$scope.formfour.submited = true;
 
     if($scope.formfour.$valid && !$scope.flag){
-      console.log("data submit to prime");
       $scope.flag=true;
 
       if($scope.showgiftcardmessage){
@@ -683,7 +680,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       }
       jQuery('#popup-spinner-wrap').show();
       PrimeService.enrollCustomer($scope.enrollReq).success(function(data, status, headers, config){
-        console.log(data);
         $scope.flag=false;
         jQuery('#popup-spinner-wrap').hide();
         if(data){
@@ -691,7 +687,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
           if(data.enrollId){
             $scope.enrollId=data.enrollId;
           }
-          console.log(enrollCustomerResult);
           if(enrollCustomerResult.responseStatus =="1" || enrollCustomerResult.responseStatus =="-1"){
             //$scope.primeErrorMessage=enrollCustomerResult.responseMessage; 
             ohgre.removeStore("promoCodeInfo");
@@ -750,9 +745,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
        dataLayer.push({'event':'oh-journey','step':'thank-you'});
 
       }
-      console.log("gotNextStep");
-      console.log(step);
-      console.log(step);
+
     }
 
     if(!back)
@@ -969,14 +962,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
         PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
           $scope.flag=false;
-          console.log(data);
           if(data.message =="Success"){
             $scope.reviewauthorizesubmit();
           }
 
         }).error(function(data, status, headers, config){
           $scope.flag=false;
-          console.log(data);
         });
 
       }
@@ -1071,7 +1062,6 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     var promoinfo=ohgre.store("promoCodeInfo");
     if(promoinfo && promoinfo.LDCList && promoinfo.LDCList.length>0 && promoinfo.LDCList[0].promotion && promoinfo.LDCList[0].promotion.length>0){
-      //console.log($rootScope.product.LDC);
       var temp=null;
       for(var i=0; i<promoinfo.LDCList.length;i++){
         if(promoinfo.LDCList[i].LDCCode ==ldc){
