@@ -21,9 +21,8 @@
                 <h4>Your Friend's Information</h4>
                 <div id="ContactListCtrl">
                   <label for="toemailaddress">Friend's Email Address</label>
-                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80"
-					placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)"
-					ng-model="toemailaddress" ng-required="true" ng-model="csTextArea.text" multiple-emails></textarea>
+                  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)" ng-model="toemailaddress" ng-required="true"
+                    ng-model="csTextArea.text" multiple-emails></textarea>
                   <!--
  <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80" ng-model="toemailaddress" ng-required="true"
                     ng-focus ng-touched multiple-emails></textarea>
@@ -97,7 +96,7 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
             <div class="raf-logo">
               <!--<img src="${properties.raflogoinemail}">
             -->
-          Refer Your Friends</div>
+              Refer Your Friends</div>
           </div>
           <div class="email-body">
             <p>{{rafemailmessage}}</p>
@@ -203,7 +202,8 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
     <a href="#" class="close-window" ng-click="">X</a>
     <h3 class="window-title">${properties.thankyouheader}</h3>
     <div class="inner-window-content text-center">
-      <p>${properties.bodyofthankyou}</p>
+      <p ng-show="success">${properties.bodyofthankyou}</p>
+      <p ng-show="!success">sample text</p>
       <a href="#" class="primary-button close-window-button" ng-click="redirectToHome()">Return to Home Page</a>
     </div>
   </div>
@@ -220,17 +220,17 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
 
       <div class="form-area-wrapper">
         <label for="new-email">Email<sup class="required">*</sup></label>
-        <input type="text" name="newemail" ng-model="customerInfo.emailAddress" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="true" ng-focus ng-visited>
+        <input type="text" name="newemail" ng-model="customerInfo.emailAddress" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="true" ng-model-options="{ updateOn: 'submit' }" ng-focus ng-visited>
 
         <span class="input-error-message" ng-show="(updateemail.newemail.$visited && !updateemail.newemail.$focused) || updateemail.submited">
-                                <span class="input-error-message" ng-show="updateemail.newemail.$error.required">Email is required.</span>
+        <span class="input-error-message" ng-show="updateemail.newemail.$error.required">Email is required.</span>
         <span class="input-error-message" ng-show="updateemail.newemail.$invalid && !updateemail.newemail.$error.required">Please enter a valid email id.</span>
 
         </span>
       </div>
       <!--</div>-->
       <div class="button-container">
-        <a href="#" class="primary-button inactive close-window-button">Cancel</a>
+        <a href="#" class="primary-button inactive close-window-button" ng-click="updateemail.newemail.$rollbackViewValue();">Cancel</a>
         <a href="#" class="primary-button" ng-click="updateEmailId()">Save and Continue</a>
       </div>
     </form>
