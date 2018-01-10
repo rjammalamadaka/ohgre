@@ -7,6 +7,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
     $scope.backUpPromoApplied=false;
 
+
     $scope.promoCodeSubmit = function(){
 		$scope.promoform.submited = true;
         if($scope.promoform.$valid){
@@ -16,7 +17,6 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
             if(promotionCode){
 
                 PrimeService.getPromoCodeGroupInfo(promotionCode).success(function(data, status, headers, config) {
-                    console.log(data);
                     if(data && data.success){
 						var promoCodeinfo=data.promoCodeInfo;
                         var promoinfo={};
@@ -62,6 +62,7 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 					var ldc=null,promotionCode=null;
                     var promotion=null;
 
+
                     for(var i=0;i<data.LDCList.length;i++){
                         ldc=data.LDCList[i];
                         var ldcCode=ldc.LDCCode;
@@ -88,7 +89,10 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
                             }
                             if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
-                                promotionCode= promotion.BackupPromotionCode;
+							    // getPromoCodeInfo(promotion.BackupPromotionCode);
+                                //data.LDCList[i].promotion[0].PromotionCode=promotion.BackupPromotionCode;
+
+                                promotionCode= promotion.BackupPromotionCode; 
                                 break;
                             }if(promotion.PromotionExpired =="N"){
                                 promotionCode=promotion.PromotionCode; 
@@ -96,6 +100,9 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                             }
                         }
                     }
+
+                    //if(flag)
+                   // getPromoCodeInfo(promotion.BackupPromotionCode);
 
                     if(!$scope.rateClassCode){
 						location.href=$rootScope.homeUrl+"/invalid-promocode.html";
@@ -114,11 +121,15 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                     }*/
                     ohgre.store("promoCodeInfo",data);
                     if($scope.backUpPromoApplied){
+
+                        if(redirectUrl){
+								window.location.href=redirectUrl+".html?isExpired=true";
+                        }else{
 								location.href=$rootScope.homeUrl+"/backuppromo.html";
+                        }
                         		return;
                      }
 
-                    console.log("data="+data);
                     if(promotion.PromotionExpired =="Y" && !redirectUrl){
                         if(promotion.BackupPromotionCode.length>0 && !$scope.backUpPromoApplied){
                             $scope.backUpPromoApplied=true;
@@ -132,6 +143,14 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
 
 
                     }else if(data.LDCList && redirectUrl){
+
+                         if(promotion.BackupPromotionCode.length>0 && !$scope.backUpPromoApplied){
+                            $scope.backUpPromoApplied=true;
+							getPromoCodeInfo(promotion.BackupPromotionCode);
+                            return;
+                        	//location.href=$rootScope.homeUrl+"/backuppromo.html";
+
+                        }
 
                         if(promotion.PromotionExpired =="Y"){
 
@@ -225,7 +244,6 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
     }
 
     $scope.errorClicked = function() {
-		console.log('errorClicked');
         errorMsgWrapper.addClass('error-hidden');
 		promoCodeEl.focus();
         //errorMsgWrapper.hide();
