@@ -49,7 +49,6 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                          $scope.Customer=$scope.Quotes.Customer;
 						var customer=$scope.Customer[0];
 						var getQuotesProductsList=[];
-						 console.log( $rootScope.prmoProduct);
                           for(var i=0;i<customer.Product.length;i++){
                               if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
 								getQuotesProductsList.push(customer.Product[i]);
@@ -68,7 +67,6 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
                  }).error(function (data,status, headers, config){
 
-                     console.log("error");
                  });
 
 
@@ -129,7 +127,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                     $scope.Customer=$scope.Quotes.Customer;
                     var customer=$scope.Customer[0];
 
-                    console.log( $rootScope.prmoProduct);
+
                     var getQuotesProductsList=[];
 
                     for(var i=0;i<customer.Product.length;i++){
@@ -149,7 +147,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                 }
 
             }).error(function (data,status, headers, config){    
-                console.log("error");
+
             });
 
     }
@@ -178,7 +176,6 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
         if(newValue && newValue.length>0){
             getQuotesForViewPlans();
-console.log("getQuotesForViewPlans");
         }
     });
 
@@ -238,7 +235,7 @@ console.log("getQuotesForViewPlans");
 
 					var customer=$scope.Customer[0];
 						var getQuotesProductsList=[];
- 						console.log( $rootScope.prmoProduct);
+
                           for(var i=0;i<customer.Product.length;i++){
                               if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
 								getQuotesProductsList.push(customer.Product[i]);
@@ -257,7 +254,7 @@ console.log("getQuotesForViewPlans");
                  }
 
              }).error(function (data,status, headers, config){
-                 console.log("error");
+
              });
              */
         }
@@ -287,7 +284,7 @@ console.log("getQuotesForViewPlans");
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
+
          });
 
     if($rootScope.hashParams.isExpired){

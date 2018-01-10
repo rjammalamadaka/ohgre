@@ -23,7 +23,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       req.AccountNumber = data.AccountNumber;
 
       PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
-        console.log(data);
         if (data && data.CustomerInfoResult) {
           var customerInfo = JSON.parse(data.CustomerInfoResult);
           if (customerInfo.responseStatus == 1) {
@@ -31,7 +30,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
           } else if (customerInfo.responseStatus == 0) {
             $scope.customerInfo = customerInfo;
-            console.log($scope.customerInfo);
             var giftCard = $scope.customerInfo.giftCard;
             updateCustomerInfoReq.custID = $scope.customerInfo.custID;
             updateCustomerInfoReq.account = $scope.customerInfo.account;
@@ -57,7 +55,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
             $scope.giftCardByYear[currentYear] = currentYearGf;
             $scope.giftCardByYear[previouserYear] = previouserYearGf;
 
-            console.log($scope.giftCardByYear);
             $scope.bindClickEvent();
 
             $scope.setProductData(currentYear);
@@ -68,7 +65,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
       }).error(function(data, status, headers, config) {
 
-        console.log("error");
       });
 
     } else {
@@ -77,7 +73,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
   }).error(function(data, status, headers, config) {
 
-    console.log(data);
 
   });
 
@@ -89,7 +84,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
   $scope.setProductData = function(year) {
 
-    console.log("product data set");
 
     var dropdosnValue = $('#raf-dropdown').find('span')[0];
     $(dropdosnValue).text(year);
@@ -121,7 +115,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
     }
 
-    console.log($scope.giftcardinfo);
   }
 
   $scope.bindClickEvent = function() {
@@ -201,16 +194,12 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       requestInfo.rafBody = $scope.rafemailmessage;
       requestInfo.custID = $scope.customerInfo.custID;
       requestInfo.portalName=$rootScope.portalname;
-        console.log('raf requestInfo obj',requestInfo);
 
       jQuery('#popup-spinner-wrap').addClass('show-popup').css('display', 'block');
 
       PrimeService.wcRequest(requestInfo).success(function(data, status, headers, config) {
-        console.log('raf prime data',data);
-        console.log('raf prime success');
         //$window.scrollTo(0, 0);
         if (data && data.success) {
-          console.log('data success');
           jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
           jQuery('#raf-terms-popup').removeClass('show-popup');
           jQuery('#toemailaddress').val('');
@@ -228,15 +217,12 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
           //$scope.rafMailSerrverMsg = rafServerErrorMsg;
           //jQuery('#raf-server-error').show();
           jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
-          console.log('server error');
         }
 
       }).error(function(data, status, headers, config) {
-        console.log(data);
-        console.log("error");
+
         $scope.rafMailSerrverMsg = rafServerErrorMsg;
         jQuery('#popup-spinner-wrap').removeClass('show-popup').css('display', 'none');
-        console.log('server error');
 
       });
     }
@@ -298,13 +284,10 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     $scope.updateemail.submited = true;
     if ($scope.updateemail.$valid) {
 
-      console.log(updateCustomerInfoReq);
       updateCustomerInfoReq.emailAddress = $scope.customerInfo.emailAddress;
-      console.log($scope.customerInfo.emailAddress);
       jQuery('#popup - spinner-wrap').show();
 
       PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config) {
-        console.log(data);
         jQuery('#popup-spinner-wrap').hide();
         if (data.ResponseStatus == 0) {
           // setProductData();
@@ -313,7 +296,6 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       }).error(function(data, status, headers, config) {
         jQuery('#popup-spinner-wrap').hide();
 
-        console.log("error");
       });
 
     }

@@ -45,7 +45,6 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
                     $scope.Customer=$scope.Quotes.Customer;
                     var customer=$scope.Customer[0];
 
-                    console.log( $rootScope.prmoProduct);
                     var getQuotesProductsList=[];
 
                     for(var i=0;i<customer.Product.length;i++){
@@ -65,7 +64,6 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
                 }
 
             }).error(function (data,status, headers, config){    
-                console.log("error");
             });
 
     }
@@ -117,13 +115,11 @@ ohgrePortal.controller('OfferPromoController', ['$scope', '$rootScope', '$http',
 
              }).error(function (data,status, headers, config){
 
-                 console.log("error");
              });
     }
 
     //"Additional Info" toggle
     $scope.displayAddlInfo = function(product) {
-        console.log("Inside Function");
         if (product != undefined) {
 
           if (product.displayAccordian == undefined) {

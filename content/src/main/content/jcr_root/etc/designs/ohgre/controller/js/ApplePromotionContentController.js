@@ -95,6 +95,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
         if(newValue && newValue.length>0){
 			var promoInfo=ohgre.store("promoCodeInfo");
+			
      		processPromotionInfo(promoInfo,newValue);
         }
     });
@@ -156,7 +157,7 @@ var updateProductFinePrint = function() {
         } else {
           $scope.displayGuranteedAccord = $scope.displayGuranteedAccord ? false : true;
         }
-    
+
         // alert(product.displayAccordian);
         //    $scope.displayAdditionalInfo = $scope.displayAdditionalInfo ? false : true;
 

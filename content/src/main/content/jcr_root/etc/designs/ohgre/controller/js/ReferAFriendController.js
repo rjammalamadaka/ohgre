@@ -8,7 +8,6 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 			event.preventDefault();
 			var obj = $(this);
 			var val = obj.html();
-            console.log(val);
 			$('.expanded-dropdown.opened').removeClass('opened');
             var dropdownButton=obj.parent().parent().parent().parent();
             var mainValue=$(this).find('span').attr('class');
@@ -90,14 +89,12 @@ $rootScope.termsupdate=false;
             $scope.an4r=true;
 
         }else if(ldc == "MCG"){
-            console.log("MCG values set");
 			$scope.an1minl="4";
 		    $scope.an2minl="3";
             $scope.an3minl="4";
             $scope.an4minl="1";
 
         }else if(ldc == "MIC"){
-             console.log("MIC values set");
             $scope.an1minl="0";
             $scope.an2minl="0";
             $scope.an3minl="0";
@@ -118,14 +115,13 @@ $rootScope.termsupdate=false;
 
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
-               console.log(data.LDCList);
              $scope.ldcinfo=data.LDCList;
              setTimeout(function(){ bindClickEvent(); }, 10);
          }
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
+
          });
 
     $scope.referafriendsubmit =function(){
@@ -169,10 +165,8 @@ $rootScope.termsupdate=false;
                 req.LDC=$scope.ldc;
 
                     PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
-                        console.log(data);
                         if(data && data.CustomerInfoResult){
                         var customerInfo=JSON.parse(data.CustomerInfoResult);
-                            console.log(customerInfo);
                             if(customerInfo.responseStatus ==1){
 								$scope.step2=false;
                                 $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
@@ -211,7 +205,7 @@ $rootScope.termsupdate=false;
 
                     }).error(function (data,status, headers, config){
 
-                        console.log("error");
+
                     });
 
         }
@@ -219,12 +213,12 @@ $rootScope.termsupdate=false;
 
     var setProductData =function(){
         PrimeService.setProductData(req).success(function(data, status, headers, config){            
-            console.log(data);
+
             location.href=$rootScope.homeUrl+'/raf-authenticated.html';
 
         }).error(function (data,status, headers, config){
 
-            console.log("error");
+
         });
 
     }
@@ -233,14 +227,14 @@ $rootScope.termsupdate=false;
         updateCustomerInfoReq.RAFTermsCondAcknowledgedInd="Y";
         jQuery('#popup-spinner-wrap').show();
         PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
-            console.log(data);
+
             jQuery('#popup-spinner-wrap').hide();
             if(data.ResponseStatus ==0){ 
             	setProductData();
             }
         }).error(function (data,status, headers, config){
 			jQuery('#popup-spinner-wrap').hide();
-            console.log("error");
+
         });
     }
     $rootScope.closeacceptrafterms =function(){
@@ -261,7 +255,7 @@ $rootScope.termsupdate=false;
         PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
             if(data && data.CustomerInfoResult){
                         var customerInfo=JSON.parse(data.CustomerInfoResult);
-                            console.log(customerInfo);
+
                             if(customerInfo.responseStatus ==1){
                                 $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
                                 jQuery('#popup-spinner-wrap').hide();
@@ -285,12 +279,12 @@ $rootScope.termsupdate=false;
                                  }else{
                                      
                                      PrimeService.setProductData(req).success(function(data, status, headers, config){            
-                                         console.log(data);
+
                                          location.href=$rootScope.homeUrl+'/raf-authenticated.html';
                                          
                                      }).error(function (data,status, headers, config){
                                          
-                                         console.log("error");
+
                                      });
                                  }
                             }
@@ -300,7 +294,7 @@ $rootScope.termsupdate=false;
 
         }).error(function (data,status, headers, config){
 			jQuery('#popup-spinner-wrap').hide();
-            console.log("error");
+
         });
 
     }

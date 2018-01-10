@@ -12,7 +12,6 @@
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
          });*/
 
      }
@@ -85,8 +84,7 @@
                      var ldcCode=ldc.LDCCode;
                       var promotion=ldc.promotion[0];
                      if(promotion.PromotionExpired =="N"){
-                         console.log("required ldc");
-                         //console.log(ldc);
+
                          //$rootScope.enrollLdc=ldc;
                          $rootScope.ldcForEnrollPromo=ldc;
                          $rootScope.enrollPromoCode=promotion.PromotionCode;
@@ -127,7 +125,7 @@
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
+
          });
 
      }else{
@@ -204,7 +202,6 @@
                 }
                 for(var j=0;j<promotionProduct.length;j++){
                    var product= promotionProduct[j];
-                   //console.log(product.productCode);
 					products.push(product.productCode);
                 }
                  $rootScope.prmoProduct=products;

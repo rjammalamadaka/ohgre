@@ -87,8 +87,6 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
         $scope.guaranteeProduct = $scope.products[key];
 
-        console.log("$scope.guaranteeProduct");
-        console.log($scope.guaranteeProduct);
 
       }
 
@@ -105,12 +103,10 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
   var url = "/bin/getLDCInfoServlet?portalName=" + portalname;
   $http.get(url).success(function(data, status, headers, config) {
     if (data && data.responseStatus == "0") {
-      //console.log(data.LDCList);
       $scope.ldcinfo = data.LDCList;
       if ($rootScope.hashParams && $rootScope.hashParams.ldc) {
         var currentLdc = $rootScope.hashParams.ldc;
         data.LDCList.forEach(function(entry) {
-          //console.log(entry.LDCCode);
           if (currentLdc == entry.LDCCode) {
             $rootScope.ldcInfo = entry;
           }
@@ -137,7 +133,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
   }).error(function(data, status, headers, config) {
 
-    console.log("error");
+
   });
 
 
@@ -219,7 +215,6 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
       currentHash = currentHash.replace(currentLocationType, locationType);
       $rootScope.hashParams.lctype = locationType;
       $rootScope.hashParams.ldc = ldcCode;
-      console.log(currentHash);
       location.hash = currentHash;
 	  jQuery('#popup-spinner-wrap').show();
 
@@ -229,7 +224,6 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
   $scope.displayGuranteedAccord = false;
   $scope.displayAddlInfo = function(product) {
-    console.log("Inside Function");
     if (product != undefined) {
 
       if (product.displayAccordian == undefined) {
@@ -249,7 +243,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
   }
 
   $scope.showMobileAccord = function(product) {
-    console.log(this);
+
 
     if (product != undefined) {
       if (product.displayMobAccord == undefined) {
@@ -269,7 +263,6 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     } else {
       $scope.displayGuranteedAccord = true;
     }
-    console.log("showMobileAccordGuarantee");
 
   }
 
@@ -281,7 +274,6 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     } else {
       $scope.displayGuranteedAccord = true;
     }
-    console.log("showMobileAccordGuarantee");
 
   }
 
@@ -298,12 +290,10 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     var url = "/content/onlyong/product-configuration/jcr:content/content/productcontentconfig.json";
     $http.get(url).success(function(data, status, headers, config) {
       if (data && data.iItems) {
-        console.log(data.iItems);
         $scope.productsInfo = data.iItems;
       }
     }).error(function(data, status, headers, config) {
 
-      console.log("error");
     });
 
   }

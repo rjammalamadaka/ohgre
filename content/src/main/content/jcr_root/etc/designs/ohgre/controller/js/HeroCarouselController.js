@@ -22,7 +22,6 @@ ohgrePortal.controller('HeroCarouselController', ['$scope', '$rootScope', '$http
 
    			 }).error(function (data,status, headers, config){
                   ohgre.store("promoCodeInfo",null);
-                 console.log("error");
              });
 
         }else if(promoPath){

@@ -50,7 +50,6 @@ ohgrePortal.controller('MovingController', ['$scope', '$rootScope', '$http','Pri
 
 		$rootScope.movingreq=req;
         PrimeService.moving(req).success(function(data, status, headers, config){
-			console.log(data);
              $scope.flag=false;
             if(data.resultCode =="0"){
 					$rootScope.movingconfirmation=true;
