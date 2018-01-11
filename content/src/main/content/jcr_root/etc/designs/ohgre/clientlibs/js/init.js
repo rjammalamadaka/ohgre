@@ -205,7 +205,6 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
          });
 
     }
