@@ -6,7 +6,7 @@
       <nav id="primary-navigation">
          <ul  role="menu" data-sly-use.topnav="navigation.js" data-sly-list="${topnav.items}">
             <li class="${item.selected && 'topnav__item--selected'}">
-                <a href="${item.page.path}.html">${item.page.title}</a> 
+                <a href="${item.page.path}.html">${item.page.navigationTitle}</a> 
             </li>
          </ul>
          <div id="contact-us-container"><span><a href="#" ng-click="footernavigation('/content/onlyong/contact-us.html')">Contact Us</a> ${inheritedPageProperties.mobilenumber}</span> &nbsp;| &nbsp;<strong>${inheritedPageProperties.time}, ${inheritedPageProperties.days}</strong></div>
