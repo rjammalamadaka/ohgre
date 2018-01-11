@@ -3,11 +3,11 @@
 
 /* HOME PAGE TEMPLATE STYLES */
 #primary-header{
-	position			: fixed;
-	width				: 100%;
-	background-color	: #fff;
-	z-index				: 9998;
-	top					: 0;
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
+	z-index	: 9998;
+	top: 0;
 
 	+ div, + section {
 	    margin-top: 14rem;
@@ -87,6 +87,7 @@
 			max-height	: 100%;
 		}
 	}
+
 	#mobile-menu{
 		position: absolute;
 		top: 8.5rem;
@@ -1116,6 +1117,16 @@ div[class^="col-"]{
 		}
 	}
 }
+.herocarousel ~ .cq-colctrl-lt1 {
+	.card {
+		min-height: 40rem;
+
+		.inner-card-content{
+			//min-height: 45rem;
+		}
+	}
+}
+
 div[class^="cq-colctrl-lt1-"]{
 	.card{
 		width: 100%;
@@ -1247,7 +1258,7 @@ div[class^="cq-colctrl-lt1-"]{
 		}
 	}
 }
-.cardpromo,.cardpromo-plans{
+.cardpromo,.cardpromo-plans,.myaccount{
 	&.parbase{
 		height: 100%;
 
@@ -3619,14 +3630,18 @@ div.alt-col2,
 				}
 			}
 			.logo-image{
-				max-width: 12rem;
-	    		margin: 2rem 0;
+				max-width: 16rem;
+	    	margin: 2rem 0;
 				float: none;
 				display: block;
 			}
 			@media (@screen-md-min){
 				//padding	: 0rem 2rem 2rem 2rem;
 				padding: 2rem 2rem 4rem 2rem;
+
+				.logo-image{
+					max-width: 12rem;
+				}
 
 				img.logo-image{
 					display: block;
@@ -3667,6 +3682,23 @@ div.alt-col2,
 			}
 		}
 	}
+}
+.promoherobanner {
+		.full-banner-callout{
+			.slide-image {
+				background: url(/content/dam/ohgre/apples/apples@3x_mobile.jpg) left top no-repeat, url(/content/dam/ohgre/apples/hero.jpg) right top no-repeat;
+				background-size: contain;
+				background-size: cover;
+    		min-height: 16rem;
+			}
+			@media (@screen-md-min){
+				.slide-image {
+					background: unset;
+					background-color: white;
+					min-height: 20rem;
+				}
+			}
+		}
 }
 .promo-landing{
 	.full-banner-callout {
@@ -4960,7 +4992,7 @@ input{
 	width: 100%;
 }
 .zipcode-container{
-	width: 60%;
+	width: 47%;
 	margin-right: 0 !important;
 }
 .input-group-wrapper{
