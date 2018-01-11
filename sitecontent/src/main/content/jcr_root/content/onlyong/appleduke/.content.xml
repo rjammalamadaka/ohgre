@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-04T13:54:47.741-06:00"
+        cq:lastModified="{Date}2018-01-11T07:15:52.137-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-04T13:54:51.716-06:00"
+        cq:lastReplicated="{Date}2018-01-11T07:15:57.198-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -33,11 +33,11 @@
             <applepromotionconten
                 jcr:created="{Date}2017-12-09T15:03:10.565-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-01-03T11:34:14.176-06:00"
+                jcr:lastModified="{Date}2018-01-11T07:15:52.133-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
-                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer"
+                description="* Rates and price plans effective 01/02/2018 to 01/31/2018. Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer"
                 heading="Choose from one of our plans to get started right away!"/>
         </content>
         <image

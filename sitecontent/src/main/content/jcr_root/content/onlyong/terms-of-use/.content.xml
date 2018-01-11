@@ -2,19 +2,23 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-03T12:02:41.648-06:00"
-        cq:lastModifiedBy="penny"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-10T22:44:08.295-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-01-03T12:02:43.875-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
+        jcr:description="See the Terms of Use page on the official website of Ohio Natural Gas®, the region's leading natural gas supplier in Ohio."
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Terms Of Use"
+        jcr:title="Terms of Use | Ohio Natural Gas®"
         jcr:uuid="bfb82942-4d35-4ad9-bafb-53ce1b5397a1"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
-        hideInNav="true">
+        hideInNav="true"
+        portalname="oh">
         <image
             jcr:lastModified="{Date}2017-08-01T19:13:56.370+05:30"
             jcr:lastModifiedBy="admin"

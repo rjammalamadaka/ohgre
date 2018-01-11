@@ -2,19 +2,23 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-03T12:19:36.092-06:00"
-        cq:lastModifiedBy="penny"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-10T22:41:01.310-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-01-03T12:19:39.672-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
+        jcr:description="What is natural gas? What is natural gas used for? See frequently asked questions and get up-to-date infomation on natural gas from Ohio Natural Gas®."
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Ohio Natural Gas FAQs"
+        jcr:title="What is Natural Gas Used For? | Get Information on Natural Gas"
         jcr:uuid="d8bcc072-4ba1-40f5-9a0e-c398cb7d1de8"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
-        hideInNav="true">
+        hideInNav="true"
+        portalname="oh">
         <image
             jcr:lastModified="{Date}2017-08-16T10:47:22.569-04:00"
             jcr:lastModifiedBy="admin"

@@ -2,7 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-03T12:00:45.710-06:00"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-11T07:24:56.095-06:00"
         cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2018-01-03T12:00:59.556-06:00"
         cq:lastReplicatedBy="penny"
@@ -11,10 +13,13 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Terms and Conditions"
+        jcr:title="Refer a Friend | Terms &amp; Conditions"
         jcr:uuid="95282fbe-cbaa-4b7a-bd82-7888699513be"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
-        hideInNav="true">
+        description="Review and accept the offical terms and conditions for the Refer a Friend natural gas rebate from Ohio Natural Gas®. Learn more."
+        hideInNav="true"
+        portalname="oh"
+        tagmanagerid="GTM-56C9WRS">
         <image
             jcr:lastModified="{Date}2017-08-04T11:06:40.604-04:00"
             jcr:lastModifiedBy="admin"

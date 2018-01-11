@@ -2,8 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-11-29T10:59:59.734-06:00"
-        cq:lastModifiedBy="penny"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-10T19:57:23.967-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-11-29T11:00:20.419-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -11,10 +13,14 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Moving Soon"
+        jcr:title="Natural Gas Service | Ohio Natural Gas Availability by Address"
         jcr:uuid="d7add4c7-71a3-4383-88c4-d2bf5c2c4578"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
-        hideInNav="true">
+        description="Moving? Take our natural gas service with you. Learn more about natural gas availability by address. Our plans are designed to serve your needs."
+        hideInNav="true"
+        metaprimarykeywords="Natural Gas Service, Natural Gas Availability by Address"
+        portalname="oh"
+        tagmanagerid="GTM-56C9WRS">
         <image
             jcr:lastModified="{Date}2017-09-22T13:24:50.069-04:00"
             jcr:lastModifiedBy="admin"

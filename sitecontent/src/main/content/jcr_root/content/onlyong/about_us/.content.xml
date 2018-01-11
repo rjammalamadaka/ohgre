@@ -2,19 +2,24 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-14T14:26:47.320-06:00"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-10T21:10:44.761-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-06T11:36:29.891-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
+        jcr:description="See why Ohio Natural Gas® is an easy choice among Ohio natural gas companies. We work to provide residents with competitive pricing and affordable rates."
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="ABOUT US"
+        jcr:title="An Easy Choice Among Ohio Natural Gas Companies | Ohio Natural Gas"
         jcr:uuid="a62c7871-ba81-4f7d-8871-e5bc667efd56"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
-        hideInNav="true">
+        description="See why Ohio Natural Gas® is an easy choice among Ohio natural gas companies. We work to provide residents with competitive pricing and affordable rates."
+        hideInNav="true"
+        portalname="oh">
         <image
             jcr:lastModified="{Date}2017-08-04T09:49:56.651-04:00"
             jcr:lastModifiedBy="admin"

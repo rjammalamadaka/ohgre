@@ -4,7 +4,7 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-12-12T13:04:35.849-06:00"
+        cq:lastModified="{Date}2018-01-10T21:04:25.485-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-12-05T15:50:59.337-06:00"
         cq:lastReplicatedBy="penny"
@@ -13,9 +13,12 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="VIEW RATE PLANS"
+        jcr:title="Ohio Natural Gas Rates | See Natural Gas Prices in Ohio"
         jcr:uuid="3ab03bf6-c319-4101-872e-6ce7e5602d7f"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        description="View Ohio Natural Gas rates and plans. Seeking the most competitive natural gas prices in Ohio? Our affordable plans are designed to serve your needs."
+        metatitle="Ohio Natural Gas Rates | See Natural Gas Prices in Ohio"
+        navTitle="VIEW RATE PLANS"
         portalname="oh">
         <content
             jcr:primaryType="nt:unstructured"
