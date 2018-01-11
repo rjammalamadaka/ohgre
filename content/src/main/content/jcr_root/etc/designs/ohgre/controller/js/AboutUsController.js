@@ -2,7 +2,7 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
 
 
 
-/*
+
 
     var promocode=$("#promocode").data("promocode");
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
@@ -68,7 +68,7 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
         }).error(function (data,status, headers, config){ });
     }
 
-    */
+
 
 }]);
 
