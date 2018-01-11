@@ -9,12 +9,12 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/dte-bitmap@2x.jpg"
-        jcr:lastModified="{Date}2018-01-11T15:07:02.621-05:00"
+        jcr:lastModified="{Date}2018-01-11T17:19:00.834-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2018-01-11T15:07:02.558-05:00"
+            dam:extracted="{Date}2018-01-11T17:19:00.539-05:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}300"
             exif:PixelYDimension="{Long}123"
-            jcr:lastModified="{Date}2018-01-11T15:07:01.984-05:00"
+            jcr:lastModified="{Date}2018-01-11T17:18:59.177-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

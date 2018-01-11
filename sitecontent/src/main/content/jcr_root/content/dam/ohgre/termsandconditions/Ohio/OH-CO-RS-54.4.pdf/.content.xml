@@ -12,29 +12,29 @@
         cq:parentPath="/content/dam/ohgre/termsandconditions/Ohio"
         dam:assetState="processed"
         dam:relativePath="ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
-        jcr:lastModified="{Date}2018-01-11T15:07:04.401-05:00"
+        jcr:lastModified="{Date}2018-01-11T17:18:57.636-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-11T15:07:03.710-05:00"
+            dam:extracted="{Date}2018-01-11T17:18:55.208-05:00"
             dam:numPages="{Long}5"
             dam:Physicalheightininches="{Decimal}11.0"
             dam:Physicalwidthininches="{Decimal}8.5"
             dam:Producer="Microsoft® Word 2013"
-            dam:sha1="c094bb1fdf75bae5df2fc36630a6cfbaf9080bf6"
-            dam:size="{Long}266493"
+            dam:sha1="59b37b870cb22cf59854129e273e367b75d98b3e"
+            dam:size="{Long}266494"
             dc:format="application/pdf"
             dc:modified="{Date}2018-01-05T23:54:56.032-05:00"
-            jcr:lastModified="{Date}2018-01-11T15:07:04.253-05:00"
+            jcr:lastModified="{Date}2018-01-11T17:18:46.307-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             pdf:Producer="Microsoft® Word 2013"
             xmp:CreateDate="{Date}2017-12-05T11:38:37.000-05:00"
             xmp:CreatorTool="Microsoft® Word 2013"
-            xmp:MetadataDate="{Date}2018-01-05T23:54:56.000-05:00"
-            xmp:ModifyDate="{Date}2018-01-05T23:54:56.000-05:00"/>
+            xmp:MetadataDate="{Date}2018-01-11T17:18:46.000-05:00"
+            xmp:ModifyDate="{Date}2018-01-11T17:18:46.000-05:00"/>
         <related jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>
