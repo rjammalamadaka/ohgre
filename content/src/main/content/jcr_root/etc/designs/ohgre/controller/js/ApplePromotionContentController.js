@@ -6,7 +6,6 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
   var processPromotionInfo=function(promoInfo,products){
 
 
-
               if(promoInfo && promoInfo.LDCList.length>0){
 
                  /* var ldc=promoInfo.LDCList[0];
