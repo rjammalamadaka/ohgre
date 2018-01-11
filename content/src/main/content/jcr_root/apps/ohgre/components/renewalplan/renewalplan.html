@@ -51,9 +51,11 @@
       </div>
     </div>
 
+
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="utility-form">
+        <p><strong>${properties.planseffectivedate}</strong></p>
           <ul class="plan-detail">
 
             <li class="accord-trigger" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0" ng-click="showMobileAccord(product)">
@@ -126,7 +128,7 @@
             </ul>
         </div>
         <div class="foot-notes">
-          <p><strong>${properties.planseffectivedate}</strong></p>
+          <!--<p><strong>${properties.planseffectivedate}</strong></p>-->
           ${properties.renewalterms @ context = 'html'}
 
 
