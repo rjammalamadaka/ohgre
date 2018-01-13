@@ -1,6 +1,6 @@
 ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootScope', '$http', 'PrimeService', '$sce',function ($scope, $window, $rootScope, $http, PrimeService, $sce) {
 
-      var onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
+ //     var onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
 
 
   $scope.iframeurl="";
@@ -14,6 +14,9 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   $scope.sendRafEmailReq={};
   $scope.confirmationButton="Back to Home page";
   $scope.specialoffer=true;
+
+    $scope.showVariablePlan=false;
+
   jQuery('#popup-spinner-wrap').show();
 
      $('#b2BCustomerIndError').hide();
@@ -74,6 +77,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       location.href=$rootScope.homeUrl+".html";
       return false;
     }
+
+      if(data.quoteDes.indexOf(2999)!=-1){
+		$scope.showVariablePlan=true;
+      }
+
     setPromotionInfoByLDC(data.LDC);
     $rootScope.product=data;
     var rateClass=$rootScope.product.rateClassCode;
@@ -339,10 +347,17 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
             updateBillingAddressInfo();
 
-                        if($rootScope.product.customerTypeCode =="NEW"){
+                        if($rootScope.product.customerTypeCode =="NEW" && existingCustomerStatus=="Active"){
+                            $('#popupalternate').addClass('show-popup');
+                        }
+
+                        else if($rootScope.product.customerTypeCode =="EXISTING" && existingCustomerStatus=="Inactive"){
+                            $('#popupalternate').addClass('show-popup');
+                        }
+                        /*else if(existingCustomerStatus=="Active"){
                             $('#popupalternate').addClass('show-popup');
 
-                        }else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode){
+                        }*/else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode){
                             $('#popupalternate').addClass('show-popup');
                             return false;
                         }else if($rootScope.product.rateClassCode =="01"){
@@ -694,7 +709,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             gotNextStep(5);
             document.title="Confirmation Page";
 
-          }else if(enrollCustomerResult.responseStatus =="0"){
+          }else if(enrollCustomerResult.responseStatus){
             ohgre.removeStore("promoCodeInfo");
             $scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
             gotNextStep(5);
@@ -978,11 +993,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   var updateenrollrequestobj=function(data){
 
-      if(data.PromotionCode){
+      /*if(data.PromotionCode){
           if(onlinePromoCodes.indexOf(data.PromotionCode)!=-1){
              data.PromotionCode= data.PromotionCode.concat("ONLINE");
           }
-      }
+      }*/
 
 
     if(data.LDC)
