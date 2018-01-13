@@ -2,6 +2,13 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
     var activeStates=["ENROLLMENT ACTIVE", "ENROLLMENT PENDING", "ENROLLMENT REJECTED", "ENROLLMENT SENT WAITING FOR RESPONSE", "ENROLLMENT WAITING TO BE SENT"];
 
+
+    var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    $rootScope.currentMonth=months[new Date().getMonth()];
+    $rootScope.currentYear=new Date().getFullYear();
+
+
     setTimeout(function(){ 
         $('#portalbody').show();
     }, 500);
@@ -229,6 +236,9 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
 
 $rootScope.currentYear=new Date().getFullYear();
+
+
+
 
     $rootScope.giftcardvalue="ddd";
 
