@@ -52,6 +52,12 @@ public class SendEmailServiceImpl implements SendEmailService {
 		String domain=mailContent.get("siteDomain");
 		try{
 			logger.info("To Mail Address :"+commonConfigService.getToMailAddress());
+			String sss=commonConfigService.getToMailAddress();
+			String list[]=sss.split(",");
+			for(String emai:list){
+				emailRecipients.add(new InternetAddress(emai));
+			}
+
 			emailRecipients.add(new InternetAddress(commonConfigService.getToMailAddress()));
 			email.setCharset("UTF-8");
 			email.setTo(emailRecipients);
