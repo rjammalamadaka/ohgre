@@ -113,7 +113,7 @@
                     </tr>
                     <tr ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
                       <td>Price Per {{customerInfo.uom}}</td>
-                      <td>{{customerInfo.renewalPricePerUnit | currency:"$":3}}</td>
+                      <td>{{customerInfo.renewalPricePerUnit | currency:"$":3}}<span ng-show="customerInfo.renewalContractTermDate == '12/31/2999 12:00:00 AM'">*</span></td>
                     </tr>
                     <tr ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
                       <td>Guaranteed Bill Plan Amount</td>
