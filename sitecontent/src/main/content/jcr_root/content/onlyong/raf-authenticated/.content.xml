@@ -4,7 +4,7 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-01-11T13:24:33.387-06:00"
+        cq:lastModified="{Date}2018-01-12T21:47:05.920-06:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-01-11T10:48:39.039-06:00"
         cq:lastReplicatedBy="penny"
@@ -26,7 +26,7 @@
         ogtitle="ONG's lowest available rate and $25!"
         ogtype="website"
         ogurl="/content/onlyong/promo-raf.html"
-        portalname="Select Portal name"
+        portalname="oh"
         tagmanagerid="GTM-56C9WRS">
         <content
             jcr:primaryType="nt:unstructured"
