@@ -1,5 +1,7 @@
 ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','$window','PrimeService','OhGreService',function ($scope, $rootScope,$http,$window,PrimeService,OhGreService) {
 
+          var onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
+
     ohgre.removeStore("promoCodeInfo");
     ohgre.removeStore("promocode");
 
@@ -13,9 +15,13 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
         if($scope.promoform.$valid){
         //document.cookie="promocode="+$scope.promotioncode;
 
-        var promotionCode=$scope.promotioncode;
-            if(promotionCode){
 
+        var promotionCode=$scope.promotioncode;
+
+            if(promotionCode){
+				if(onlinePromoCodes.indexOf(promotionCode)!=-1){
+             		promotionCode= promotionCode.concat("ONLINE");
+        					 }
                 PrimeService.getPromoCodeGroupInfo(promotionCode).success(function(data, status, headers, config) {
                     if(data && data.success){
 						var promoCodeinfo=data.promoCodeInfo;
