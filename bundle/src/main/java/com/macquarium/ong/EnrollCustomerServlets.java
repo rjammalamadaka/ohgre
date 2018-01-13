@@ -345,13 +345,7 @@ logger.info("before insert to database");
 				mailContent.put("currentPagePath", referrer);
 				mailContent.put("siteDomain", domain);
 				sendEmailService.sendEmail(mailContent);
-				RequestDispatcher requestDispatcher;
-				if(portalName.equals("oh")){
-					requestDispatcher=request.getRequestDispatcher("/content/onlyong/errors/500.html");
-				}else{
-					requestDispatcher=request.getRequestDispatcher("/content/gre/errors/500.html");
-				}
-				requestDispatcher.forward(request, response);
+
 			}
 
 			long endTime = System.currentTimeMillis();
@@ -376,8 +370,6 @@ logger.info("before insert to database");
 			} catch (Exception e1) {
 				handelCatchBlock(e1,mailContent);
 			}
-		} catch (ServletException e) {
-			handelCatchBlock(e,mailContent);
 		}
 		String jsonData = obj.toString();
 		response.getWriter().write(jsonData);
