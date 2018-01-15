@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component enabled="true" immediate="true" name="OHGRE SMTP Configuration">
+        <implementation class="com.macquarium.ong.SendEmailServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="com.macquarium.ong.SendEmailService"/>
+        </service>
+        <property name="service.description" type="String" value="OHGRE SMTP Configuration Service"/>
+        <property name="service.vendor" type="String" value="Reply"/>
+        <property name="service.pid" value="OHGRE SMTP Configuration"/>
+        <reference name="messageGatewayService" interface="com.day.cq.mailer.MessageGatewayService" cardinality="1..1" policy="static" bind="bindMessageGatewayService" unbind="unbindMessageGatewayService"/>
+    </scr:component>
     <scr:component enabled="true" immediate="true" name="OHGRE Common Configuration" modified="modified">
         <implementation class="com.macquarium.ong.impl.CommonConfigServiceImpl"/>
         <service servicefactory="false">
@@ -7,10 +17,29 @@
         <property name="service.description" type="String" value="Common Settings for OHGRE site Components and Services"/>
         <property name="service.vendor" type="String" value="Reply"/>
         <property name="prime.endpoint.url" type="String" value=""/>
+        <property name="prime.headerhandler.endpoint.url" type="String" value=""/>
+        <property name="deltaskymiles.endpoint.url" type="String" value=""/>
         <property name="mysql.connection.url" type="String" value=""/>
         <property name="data.base.username" type="String" value=""/>
         <property name="data.base.password" type="String" value=""/>
+        <property name="what.count.url" type="String" value=""/>
         <property name="service.pid" value="OHGRE Common Configuration"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.impl.EnrollmentDaoServiceImpl">
+        <implementation class="com.macquarium.ong.impl.EnrollmentDaoServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="com.macquarium.ong.EnrollmentDaoService"/>
+        </service>
+        <property name="service.pid" value="com.macquarium.ong.impl.EnrollmentDaoServiceImpl"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.impl.SignUpDaoServiceImpl">
+        <implementation class="com.macquarium.ong.impl.SignUpDaoServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="com.macquarium.ong.SignUpDaoService"/>
+        </service>
+        <property name="service.pid" value="com.macquarium.ong.impl.SignUpDaoServiceImpl"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
     </scr:component>
     <scr:component enabled="true" immediate="true" name="com.macquarium.ong.impl.filters.LoggingFilter">
         <implementation class="com.macquarium.ong.impl.filters.LoggingFilter"/>
@@ -31,6 +60,16 @@
         <property name="service.pid" value="com.macquarium.ong.CheckRAFEligibilityServlets"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
     </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.DSMEnrollmentServlet">
+        <implementation class="com.macquarium.ong.DSMEnrollmentServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/DSMEnrollment"/>
+        <property name="sling.servlet.methods" value="GET"/>
+        <property name="service.pid" value="com.macquarium.ong.DSMEnrollmentServlet"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.EnrollCustomerServlets">
         <implementation class="com.macquarium.ong.EnrollCustomerServlets"/>
         <service servicefactory="false">
@@ -40,6 +79,7 @@
         <property name="sling.servlet.methods" value="POST"/>
         <property name="service.pid" value="com.macquarium.ong.EnrollCustomerServlets"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+        <reference name="enrollmentDaoService" interface="com.macquarium.ong.EnrollmentDaoService" cardinality="1..1" policy="static" bind="bindEnrollmentDaoService" unbind="unbindEnrollmentDaoService"/>
     </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.GetCustomerInfoServlets">
         <implementation class="com.macquarium.ong.GetCustomerInfoServlets"/>
@@ -89,6 +129,16 @@
         <property name="sling.servlet.methods" value="GET"/>
         <property name="service.pid" value="com.macquarium.ong.GetQuotesServlets"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+        <reference name="sendEmailService" interface="com.macquarium.ong.SendEmailService" cardinality="1..1" policy="static" bind="bindSendEmailService" unbind="unbindSendEmailService"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.Logout">
+        <implementation class="com.macquarium.ong.Logout"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/logout"/>
+        <property name="sling.servlet.methods" value="GET"/>
+        <property name="service.pid" value="com.macquarium.ong.Logout"/>
     </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.MovingServlet">
         <implementation class="com.macquarium.ong.MovingServlet"/>
@@ -98,6 +148,37 @@
         <property name="sling.servlet.paths" value="/bin/moving"/>
         <property name="sling.servlet.methods" value="get"/>
         <property name="service.pid" value="com.macquarium.ong.MovingServlet"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+        <reference name="signUpDaoService" interface="com.macquarium.ong.SignUpDaoService" cardinality="1..1" policy="static" bind="bindSignUpDaoService" unbind="unbindSignUpDaoService"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.RafUpdateCustomerInfoServlet">
+        <implementation class="com.macquarium.ong.RafUpdateCustomerInfoServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/rafUpdateCustomerInfo"/>
+        <property name="sling.servlet.methods" value="POST"/>
+        <property name="service.pid" value="com.macquarium.ong.RafUpdateCustomerInfoServlet"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.RafWhatCountServlet">
+        <implementation class="com.macquarium.ong.RafWhatCountServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/whatCount"/>
+        <property name="sling.servlet.methods" value="POST"/>
+        <property name="service.pid" value="com.macquarium.ong.RafWhatCountServlet"/>
+        <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.macquarium.ong.SendRafEmailServlet">
+        <implementation class="com.macquarium.ong.SendRafEmailServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/bin/sendRafEmail"/>
+        <property name="sling.servlet.methods" value="POST"/>
+        <property name="service.pid" value="com.macquarium.ong.SendRafEmailServlet"/>
         <reference name="commonConfigService" interface="com.macquarium.ong.CommonConfigService" cardinality="1..1" policy="static" bind="bindCommonConfigService" unbind="unbindCommonConfigService"/>
     </scr:component>
     <scr:component enabled="true" name="com.macquarium.ong.SetProductDataServlet">

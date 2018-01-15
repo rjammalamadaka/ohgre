@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Promotions">
+        <folderThumbnail/>
+    </jcr:content>
+    <ONG_JAN_Winback_900x215_header.png/>
+    <ONG_COH_BetterChoice_1568x348.png/>
+    <ONG_Switchback_1568x348.png/>
+    <ONG_VEDO_Comparison_1568x348_x0020__x0028_1_x0029_.png/>
+    <ONG_VEDO_Comparison_1568x348.png/>
+    <ONG_VEDO_BetterChoice_1568x348base.png/>
+</jcr:root>

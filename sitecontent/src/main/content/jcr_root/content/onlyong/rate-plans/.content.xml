@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-11T15:04:59.128-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-11T15:05:44.702-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Rate Plans"
+        jcr:uuid="9a9868dc-04cf-404b-9f35-ad8d3c68aecc"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        hideInNav="true"
+        portalname="oh">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herobaner
+                jcr:created="{Date}2017-08-16T11:17:23.463-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-04T14:48:53.828-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herobaner"
+                description="Our natural gas plans are designed to serve your needs."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="View Our Natural Gas Plans"/>
+            <plansdisplay_266813004
+                jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-11T15:04:59.125-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/plansdisplay"
+                footernotes="&lt;p>ONG service is available for eligible customers participating in the choice program through your local utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
+                guranteedBillDesc=" Call us for a guaranteed and protected bill plan"
+                text="&lt;p>With ONG, choosing the natural gas plan that&amp;#39;s best for you is easy. We offer&amp;nbsp;great fixed rates and variable rates – all designed to meet your needs and backed by straightforward &lt;a href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>.&amp;nbsp;Rates and price plans effective 01/01/2018 to 01/31/2018.&lt;br>&#xa;&lt;/p>&#xa;"
+                textIsRich="true"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-01T19:15:38.751+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="11b1c65e-d715-4797-a4db-4c865217e490">
+    <jcr:content
+        cq:name="popover-2@2x.jpg"
+        cq:parentPath="/content/dam/ohgre/global"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/global/popover-2@2x.jpg"
+        jcr:lastModified="{Date}2018-01-12T23:23:31.729-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2018-01-12T23:23:27.328-05:00"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="209040467d899ad9935ff680eeb75e2c71e000bd"
+            dam:size="{Long}43438"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2018-01-05T23:54:55.011-05:00"
+            exif:ColorSpace="{Long}1"
+            exif:PixelXDimension="{Long}300"
+            exif:PixelYDimension="{Long}123"
+            jcr:lastModified="{Date}2018-01-12T23:23:31.661-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}123"
+            tiff:ImageWidth="{Long}300"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

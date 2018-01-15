@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-12T12:43:38.016-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-12T12:43:41.153-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:lockable,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Rate Plans"
+        jcr:uuid="87acb997-d2d0-468c-b749-2cd2466ce4f7"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herobaner
+                jcr:created="{Date}2017-08-16T11:17:23.463-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-27T09:15:57.865-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herobaner"
+                description="Our natural gas plans are designed to serve your needs."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="View All Natural Gas Plans"/>
+            <plansdisplay_266813004
+                jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-12T12:43:38.013-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/plansdisplay"
+                footernotes="&lt;p>GRE service is available for eligible customers participating in the Gas Customer Choice program through their local utility company. GRE rates do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.841.1541, write to Grand Rapids Energy, 400 Renaissance Center, Ste. 2600, Detroit, MI 48243 or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
+                guranteedBillDesc=" Call us for a guaranteed and protected bill plan"
+                text="&lt;p>With GRE, choosing the natural gas plan that&amp;#39;s best for you is easy. We offer fixed rate and variable rate plans – all designed to meet your needs and backed by straightforward&amp;nbsp;&amp;nbsp;&lt;a href=&quot;/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>. Rates and price plans effective 01/01/2018 to 01/31/2018.&lt;br>&#xa;&lt;/p>&#xa;"
+                textIsRich="true"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-19T09:12:41.766+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

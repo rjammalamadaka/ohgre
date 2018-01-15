@@ -13,15 +13,15 @@
                   <div class="card no-flex">
                      <div class="inner-content-wrapper highlighted-bg">
                         <div class="inner-card-content color-white">
-                           <h4 class="fs-16 no-margin fw-normal">Check out these other ways to save on energy.</h4>
+                            <h4 class="fs-16 no-margin fw-normal">${properties.blueboxheading}</h4>
                            <div class="icon-wrapper" data-sly-repeat="${whyChooseUsData.whyChooseUsDataList}">
                               <img src="${item.imagePath}">
                               <p>${item.descritpion}</p>
                            </div>
                            <div class="fs-11">
-                              For more energy saving tips, visit:
-                              <p class="fs-11"><em><a href="http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpb">
-                                 http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpb</a></em>
+                              ${properties.energysaveoptionslink}
+                              <p class="fs-11"><em><a href="${properties.energysaveoptionsurl}" target="_blank">
+                                 ${properties.energysaveoptionslinkdisplay}</a></em>
                               </p>
                            </div>
                         </div>

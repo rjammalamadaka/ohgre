@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-08T10:48:42.413-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-08T10:48:46.262-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/promolandingwithnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="DSEA"
+        jcr:uuid="314cfa5d-29ba-42ba-a422-4fff2c6b25ca"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithnavpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-08-19T19:05:36.980-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-19T19:05:56.634-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Celebrate a special offer from Ohio Natural Gas!"/>
+            <applepromotionconten
+                jcr:created="{Date}2017-08-19T19:05:45.172-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-03T11:21:25.444-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/applepromotioncontent"
+                description="* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. "
+                heading="Choose from one of our plans to get started right away!"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-21T13:14:27.282-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

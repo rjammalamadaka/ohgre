@@ -1,36 +1,45 @@
 package com.macquarium.ong.impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Calendar;
-
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.Service;
-
 import com.macquarium.ong.CommonConfigService;
 import com.macquarium.ong.EnrollmentDaoService;
 import com.macquarium.ong.vo.Enrollment;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.sql.*;
 
 @Service
 @Component(metatype = false)
 public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 
+	private Logger logger = LoggerFactory.getLogger(EnrollmentDaoServiceImpl.class);
 	@Reference
 	private CommonConfigService commonConfigService;
 
 	public int insertEnrollment(Enrollment enrollment) {
+		logger.info("insertEnrollment");
 		int resultGeneratedkey=0;
 		Connection connection = null;
 		try {
+
+			logger.info("111111111111111111111111111111111");
 			//Calendar currentCalendar = Calendar.getInstance();
 			// java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
+			System.setProperty("javax.net.ssl.keyStore","/home/aem/keystore");
+			System.setProperty("javax.net.ssl.keyStorePassword","bhaO6PlkkjHc2cfT");
+			System.setProperty("javax.net.ssl.trustStore","/home/aem/truststore");
+			System.setProperty("javax.net.ssl.trustStorePassword","bhaO6PlkkjHc2cfT");
+
+
+			logger.info("22222222222222222222222222222222222");
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
+
 			if (connection != null) {
+				logger.info("333333");
 				String query="insert into enrollment(custID,createdDate,apiStatus,ldc,account,premise,firstName,lasNname,businessName,mailAddress1,mailAddress2,mailCity,mailCounty,mailStateCode," +
 						"mailZipCode,mailZipPlusFour,serviceAddress1,serviceAddress2,serviceCity,serviceCounty,serviceStateCode,serviceZipCode,serviceZipPlusFour,phoneNumber,emailAddress,doNotCallInd," +
 						"doNotMailInd,emailPrefTransactionalCd,emailPrefSSEPromotionalCd,emailPrefAffiliatePromotionalCd,emailPref3rdPartyCd,emailPrefNonTransactionalCd,languageCd,mailAddressVerified," +
@@ -38,16 +47,16 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 						"rafCode,enrolledByUserId,authorizationCode,authorizationLevel,channelID,promotionCode,campaignID,webSiteURL,custLeadSourceCode,actionIfContractExists,preventCancelFeeifContractExists," +
 						"bypassCreditCheckInd,soldDate,bypassCIRInd,expectedQuoteAmt,tpvRequiredInd,emailTypeCode,alternateEmailAddress,editOnlyInd,b2BCustomerInd,expressConsentInd,brokerID," +
 						"delaySendToUtilDate,renewalProductCode,renewalFixPricePerThermCd,renewalFixPricePerTherm,renewalVarPriceAddOnPerTherm,renewalCtrctDurationMonths,renewalCtrctTermDate," +
-						"sourceSystemReferenceID) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag,transactionType,customerType,price,tcVersion,originalPromoCode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 				PreparedStatement ps = connection.prepareStatement(query,new String[]{"id"});
 
 				ps.setString(1,enrollment.getCustID());
 				if(null !=enrollment.getCreatedDate()){
-					ps.setString(2,enrollment.getCreatedDate().toLocaleString());
+					java.sql.Timestamp sqlDate = new java.sql.Timestamp(enrollment.getCreatedDate().getTime());
+					ps.setTimestamp(2, sqlDate);
 				}else{
-					ps.setString(2,"");
+					ps.setTimestamp(2, null);
 				}
 				ps.setInt(3, enrollment.getApiStatus());
 				ps.setString(4, enrollment.getLdc());
@@ -134,16 +143,29 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 					ps.setString(70,"");
 				}
 				ps.setString(71,enrollment.getSourceSystemReferenceID());
+				ps.setString(72,enrollment.getServiceTransferAuthFlag());
+				ps.setString(73,enrollment.getAuthorityToSwitchFlag());
+				ps.setString(74,enrollment.getAgreeToTermsFlag());
+				ps.setString(75,enrollment.getTransactionType());
+				ps.setString(76,enrollment.getCustomerType());
+				ps.setString(77,enrollment.getPrice());
+				ps.setString(78,enrollment.getTCVersion());
+				ps.setString(79,enrollment.getOriginalPromoCode());
 				ps.execute();
 				ResultSet rs=ps.getGeneratedKeys();
+				logger.info("Got the resultset after data insertion");
 				if(rs.next()){
 					resultGeneratedkey=rs.getInt(1);
 				}
 			}
 		}catch(ClassNotFoundException e){
+			logger.info("ClassNotFoundException e");
+			logger.info(e.getMessage());
 			e.printStackTrace();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
+			logger.info("SQLException e");
+			logger.info(e.getMessage());
 			e.printStackTrace();
 		}
 		return resultGeneratedkey;

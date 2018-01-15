@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-12-07T12:14:58.499-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-07T12:15:01.549-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Product Content Configurtion"
+        jcr:uuid="3abee634-f378-4926-9be7-f0a5b530b0a2"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true">
+        <image
+            jcr:lastModified="{Date}2017-08-27T21:36:22.349+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <productcontentconfig
+                jcr:created="{Date}2017-08-27T21:36:37.981+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-07T12:14:58.497-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/productcontentconfig"
+                description="[2 months]"
+                iItems="[{&quot;productcode&quot;:&quot;&quot;\,&quot;description&quot;:&quot;&quot;},{&quot;productcode&quot;:&quot;&quot;\,&quot;description&quot;:&quot;&quot;}]"
+                productcode="[cov]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

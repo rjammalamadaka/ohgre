@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-03T13:02:08.787-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-03T13:02:13.037-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Generic Non LDC Promotion"
+        jcr:uuid="9c1b185b-273d-4f0c-a051-c0cd99e68f43"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-08-13T22:26:22.223+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-02T23:47:34.138-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Grand Rapids Energy"/>
+            <offerpromotionconten
+                jcr:created="{Date}2017-08-13T22:29:48.604+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-03T13:02:08.782-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/offerpromotioncontent"
+                heading="Select your gas utility company to view your options"
+                imagepath="/content/dam/ohgre/raf/GetStarted.png"
+                text="&lt;h4>Enroll online for a Lorem ipsum&lt;/h4>&#xd;&#xa;&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi id mauris mattis, feugiat tincidunt eros semper. Curabitur eget purus sit amet nibh porttitor tempor sit amet finibus mauris. LoremipsLorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p>&#xd;&#xa;&lt;p>&lt;a title=&quot;FAQ&quot; href=&quot;/content/gre/faq.html&quot; target=&quot;_blank&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a title=&quot;Terms And Conditions&quot; href=&quot;/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf&quot; target=&quot;_blank&quot;>Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true,true]"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-15T08:49:45.472+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

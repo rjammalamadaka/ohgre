@@ -1,10 +1,16 @@
 <div class="form-wrapper">
   <div class="terms-wrapper">
-    <div class="scroll-container">
-      <p>Having trouble viewing? <a href="${properties.pdffilepath}" target="_blank">Click here</a>
+    <div class="scroll-container" ng-init="iframeurl='${properties.iframepdffilepath}'">
+<!--
+<p>Having trouble viewing? <a href="${properties.pdffilepath}" target="_blank">Click here</a>
       </p>
-      <iframe id="terms-embed" width="100%" height="100%" style="min-height: 400px;" src="https://docs.google.com/gview?url=http://stage-ohio.macquarium.com:4505/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&embedded=true"></iframe>
-    </div>
+
+      <iframe id="terms-embed" width="100%" height="100%" style="min-height: 400px;" src="${properties.iframepdffilepath}"></iframe>
+-->
+
+
+    ${properties.acceptterms @ context = 'html'}
+</div>
   </div>
   <div class="desktop-flex-container after-scrollbox">
     <div class="input-group-wrapper full-width">

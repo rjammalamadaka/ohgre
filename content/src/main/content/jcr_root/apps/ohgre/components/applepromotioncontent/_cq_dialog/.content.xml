@@ -10,7 +10,7 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <promocode
+            <ldcspecificpromo
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Apple Promotion Contetnt Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
@@ -30,12 +30,12 @@
                             <description
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textarea"
-                                fieldLabel="Description"
+                                fieldLabel="Footer Notes"
                                 name="./description"/>
                         </items>
                     </column>
                 </items>
-            </promocode>
+            </ldcspecificpromo>
         </items>
     </content>
 </jcr:root>

@@ -1,9 +1,12 @@
 ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
 
+
+
+
+
     var promocode=$("#promocode").data("promocode");
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
-               console.log(data.LDCList);
                $scope.ldcinfo=data.LDCList;
                setTimeout(function(){ $rootScope.bindClickEvent();}, 10);
          }
@@ -36,7 +39,6 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
 
              }).error(function (data,status, headers, config){
 
-                 console.log("error");
              });
 
          }
@@ -65,6 +67,8 @@ ohgrePortal.controller('AboutUsController', ['$scope', '$rootScope', '$http' ,'P
 
         }).error(function (data,status, headers, config){ });
     }
+
+
 
 }]);
 

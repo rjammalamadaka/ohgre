@@ -1,11 +1,63 @@
-ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
+ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
 
+    jQuery('#popup-spinner-wrap').show();
+   // $rootScope.prmoProduct=[];
 
  var portalname=$rootScope.portalname;
 
+
+     var getPromoCodeInfo =function(promocode){
+		/* PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
+
+         }).error(function (data,status, headers, config){
+
+         });*/
+
+     }
+
+     var processStorePromoInfo=function(){
+
+  			var promoInfo=ohgre.store("promoCodeInfo");
+            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
+                var ldc=promoInfo.LDCList[0];
+                $rootScope.promotion=ldc.promotion[0];
+                $rootScope.promotionInfo=true;        
+                var date = new Date($scope.promotion.PromotionExpiratonDate),
+                locale = "en-us",
+                month = date.toLocaleString(locale, { month: "long" });
+                $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
+                $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
+               $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
+
+
+               for(var i=0;i<promoInfo.LDCList.length;i++){
+                    var ldc=promoInfo.LDCList[i];
+                    var ldcCode=ldc.LDCCode;
+                    var promotion=ldc.promotion[0];
+                    if(promotion.PromotionExpired =="N"){
+                        $rootScope.promotion=ldc.promotion[0];
+                        $rootScope.ldcForEnrollPromo=ldc;
+                        $rootScope.enrollPromoCode=promotion.PromotionCode;
+                        break;                              
+                    }else if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
+                        $rootScope.promotion=ldc.promotion[0];
+ 						$rootScope.ldcForEnrollPromo=ldc;
+                        $rootScope.enrollPromoCode=promotion.BackupPromotionCode;
+                       // getPromoCodeInfo(promotion.BackupPromotionCode);
+                        break; 
+                    }
+
+                }
+
+            }
+
+          jQuery('#popup-spinner-wrap').hide();
+     }
+
      if($rootScope.hashParams.promocode){
          PrimeService.getPromoCodeInfo($rootScope.hashParams.promocode).success(function(data, status, headers, config){
+              jQuery('#popup-spinner-wrap').hide();
              var promoInfo=ohgre.store("promoCodeInfo",data);
              $rootScope.promotionInfo=true;
              if(data && data.responseStatus =="0"){
@@ -16,18 +68,35 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
                  var date = new Date($scope.promotion.PromotionExpiratonDate),
                      locale = "en-us",
                      month = date.toLocaleString(locale, { month: "long" });
-                 $rootScope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
+                 $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
 
                  if($rootScope.promotion.PromotionExpired =="Y"){
+
+                     if($rootScope.promotion.BackupPromotionCode.length>0){
                                     location.href=$rootScope.homeUrl+"/backuppromo.html";
+                     }else{
+ 									location.href=$rootScope.homeUrl+"/promotion-error.html";
+                     }
                  }
 
-                 /*else{
-                     location.href=$rootScope.homeUrl+"/promo-general.html";
-                 }*/
+                 for(var i=0;i<promoInfo.LDCList.length;i++){
+					 var ldc=promoInfo.LDCList[i];
+                     var ldcCode=ldc.LDCCode;
+                      var promotion=ldc.promotion[0];
+                     if(promotion.PromotionExpired =="N"){
+
+                         //$rootScope.enrollLdc=ldc;
+                         $rootScope.ldcForEnrollPromo=ldc;
+                         $rootScope.enrollPromoCode=promotion.PromotionCode;
+                              break;                              
+                      }
+
+                 }
 
              }
+
              }else if(data && data.responseStatus =="1"){
+
                  //ohgre.store("promoCodeInfo",{});
                             location.href=$rootScope.homeUrl+"/promotion-error.html";
                      }
@@ -56,23 +125,11 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
+
          });
 
      }else{
-         var promoInfo=ohgre.store("promoCodeInfo");
-            if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
-                var ldc=promoInfo.LDCList[0];
-                $rootScope.promotion=ldc.promotion[0];
-                $rootScope.promotionInfo=true;        
-                var date = new Date($scope.promotion.PromotionExpiratonDate),
-                locale = "en-us",
-                month = date.toLocaleString(locale, { month: "long" });
-                $rootScope.expdate=month+" "+date.getDate()+" ,"+date.getFullYear();
-                $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
-               $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
-
-            }
+			processStorePromoInfo();
 
      }
     $scope.heightConstant = false;
@@ -128,6 +185,47 @@ ohgrePortal.controller('PromoHeroBannerController', ['$scope', '$rootScope', '$h
   if($rootScope.hashParams.isExpired){
 	$rootScope.notexpired=false;
   }
+    $rootScope.getPromoCodeInfoForEnroll=function(ldc){
+        PrimeService.getPromocodesForEnrollment(ldc).success(function(data, status, headers, config){
+
+            var promotionProduct=null;
+            var products=[];
+
+            var enrollmentResult=JSON.parse(data.GetPromoCodesForEnrollmentResult);
+            if(enrollmentResult && enrollmentResult.responseStatus =="0"){
+			      for(var i =0;i<enrollmentResult.promotion.length;i++){
+					var promotion=enrollmentResult.promotion[i];
+                    if(promotion && promotion.promotionCode && promotion.promotionCode==$rootScope.enrollPromoCode){
+            			promotionProduct=promotion.product;
+                        break;
+                    }
+                }
+                for(var j=0;j<promotionProduct.length;j++){
+                   var product= promotionProduct[j];
+					products.push(product.productCode);
+                }
+                 $rootScope.prmoProduct=products;
+
+            }
+
+
+
+        }).error(function (data,status, headers, config){
+
+
+        });
+
+
+    }
+
+    //enrollLdc
+    $rootScope.$watch('enrollLdc', function (newValue, oldValue, scope) {
+       if(newValue){
+		    //$scope.promotioncode = newValue.toUpperCase();
+           $rootScope.getPromoCodeInfoForEnroll($rootScope.enrollLdc.LDCCode);
+
+       }
+	}, true);
 
 }]);
 

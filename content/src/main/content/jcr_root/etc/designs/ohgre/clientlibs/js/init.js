@@ -1,4 +1,14 @@
 ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService", function ($rootScope, $compile, $http,PrimeService,OhGreService){ 
+
+    var activeStates=["ENROLLMENT ACTIVE", "ENROLLMENT PENDING", "ENROLLMENT REJECTED", "ENROLLMENT SENT WAITING FOR RESPONSE", "ENROLLMENT WAITING TO BE SENT"];
+
+
+    var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    $rootScope.currentMonth=months[new Date().getMonth()];
+    $rootScope.currentYear=new Date().getFullYear();
+
+
     setTimeout(function(){ 
         $('#portalbody').show();
     }, 500);
@@ -31,7 +41,11 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
     }
 
      $rootScope.queryParams = {};
-    var queryParams = window.location.search && window.location.search.split("?")[1] && window.location.search.split("?")[1].split('&');
+
+    var queryurl=decodeURIComponent(window.location.search);
+        queryurl= decodeURIComponent(queryurl);
+
+    var queryParams = queryurl && queryurl.split("?")[1] && queryurl.split("?")[1].split('&');
     for(var i=0;i<queryParams.length;i++){
         var param = queryParams[i].split("=")
         $rootScope.queryParams[param[0]]=param[1];
@@ -52,9 +66,9 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
          if(QuoteDescription){
 
         if(QuoteDescription.indexOf("CCF")>0){
-			return("Ccf**");
+			return("Ccf");
         }else if(QuoteDescription.indexOf("MCF")>0){
-			return("Mcf**");
+			return("Mcf");
         }
          }
 
@@ -96,6 +110,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         var req={};
         req.QuoteDescription=product.QuoteDescription;
 		req.ProductDescription=product.ProductDescription;
+        req.ProductDescriptionFriendly=product.ProductDescFriendly;
+                                      
         req.ProductCode=product.ProductCode;
         req.LdcDesc=$rootScope.ldcDesc;
 		req.FixedPricePerTherm=product.FixedPricePerTherm;
@@ -119,8 +135,25 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
             if(!req.LDC){
                 if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
-                    req.LDC=promoInfo.LDCList[0].LDCCode;
-                    req.LdcDesc=promoInfo.LDCList[0].LDCDesc;
+
+ 					for(var i=0;i<promoInfo.LDCList.length;i++){
+					     ldc=promoInfo.LDCList[i];
+                         var promotion=ldc.promotion[0];
+                         if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
+ 								req.LDC=promoInfo.LDCList[i].LDCCode;
+                   				 req.LdcDesc=promoInfo.LDCList[i].LDCDesc;
+
+                              break;
+                          }if(promotion.PromotionExpired =="N"){
+								 req.LDC=promoInfo.LDCList[i].LDCCode;
+                    			req.LdcDesc=promoInfo.LDCList[i].LDCDesc;
+
+                              break;                              
+                          }
+
+                    }
+
+
                 }
             }else if(req.LDC && promoInfo && promoInfo.LDCList){
                 for(var i=0;i<promoInfo.LDCList.length;i++){
@@ -179,7 +212,6 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
          });
 
     }
@@ -204,6 +236,9 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
 
 $rootScope.currentYear=new Date().getFullYear();
+
+
+
 
     $rootScope.giftcardvalue="ddd";
 
@@ -239,79 +274,87 @@ $rootScope.currentYear=new Date().getFullYear();
         }
     }
 
-   /* var getLdcInfo=function(){
-        PrimeService.getLdcInfo().success(function(data, status, headers, config){
-            if(data && data.responseStatus =="0"){
-                console.log(data.LDCList);
-                $rootScope.ldcinfo=data.LDCList;
-                setTimeout(function(){ $rootScope.loginPopupBindClickEvent(); }, 10);
-            }
-
-
-        }).error(function(data, status, headers, config){
-
-        });
-    }
-*/
-   /* $rootScope.myAccountCheck=function(url,name){
-
-		console.log(name);
-        if(name.indexOf('Account') != -1){
-            getLdcInfo();
-            jQuery("#login-popup-wrapper").addClass("show-popup");
-
+    $rootScope.getNextDayDate =function(value){
+        if(value){
+        var date=new Date(value);
+        var dd = date.getDate()+1;
+        var mm = date.getMonth()+1; //January is 0!
+        var yyyy = date.getFullYear();
+        if(dd<10){
+            dd='0'+dd;
+        } 
+        if(mm<10){
+            mm='0'+mm;
+        } 
+        return mm+'/'+dd+'/'+yyyy;
         }else{
-
-            location.href=url+".html";
+		return "";
         }
     }
-*/
+
+      $rootScope.getCustomerStatus=function(status){
+
+        if(activeStates.indexOf(status) != -1){
+			return "Active";
+        }else{
+			return "Inactive";
+        }
+
+    }
+
+      $rootScope.commonLogout=function(){
+
+          PrimeService.logout().success(function(data, status, headers, config){
+             location.href=$rootScope.homeUrl+".html";            
+          }).error(function(data, status, headers, config){
+              
+          });
+      }
+
+
+      $rootScope.isEmpty =function(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+
+      var metaList = document.getElementsByTagName("meta");
+    for (var i = 0; i < metaList.length; i++) {
+        if (metaList[i].getAttribute("property") == "og:url") {
+            var url=metaList[i].getAttribute("content");
+            metaList[i].content = location.origin+url;
+        }
+        if (metaList[i].getAttribute("property") == "og:image") {
+            var image=metaList[i].getAttribute("content");
+            metaList[i].content = location.origin+image;
+        }
+    }
+
+
+    $rootScope.mobilenumber=$("#mobilenumber-div").data("mobilenumber");
+
+
+    if($rootScope.hashParams && $rootScope.hashParams.rateClassCode){
+        if($rootScope.hashParams.rateClassCode.length>0)
+        $rootScope.rateClassCode=$rootScope.hashParams.rateClassCode;
+    }
+
+   $rootScope.IsIE=function(){
+        if(navigator.userAgent.indexOf('MSIE')!==-1 || navigator.appVersion.indexOf('Trident/') > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+   if($rootScope.IsIE()){
+    $http.get(location.href,{headers:{'Cache-Control': 'no-cache'}});
+    //alert(navigator.userAgent);
+   }
 
 }]); 
 
-/*
-
-(function (global) {
-
-    if(window.location.pathname.indexOf('customer_lookup.html') !=-1){
-
-    if(typeof (global) === "undefined") {
-        throw new Error("window is undefined");
-    }
-
-    var _hash = "!";
-    var noBackPlease = function () {
-        global.location.href += "#";
-
-        // making sure we have the fruit available for juice (^__^)
-        global.setTimeout(function () {
-            global.location.href += "!";
-        }, 50);
-    };
-
-    global.onhashchange = function () {
-        if (global.location.hash !== _hash) {
-            global.location.hash = _hash;
-        }
-    };
-
-    global.onload = function () {            
-        noBackPlease();
-
-        // disables backspace on page except on input fields and textarea..
-        document.body.onkeydown = function (e) {
-            var elm = e.target.nodeName.toLowerCase();
-            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
-                e.preventDefault();
-            }
-            // stopping event bubbling up the DOM tree..
-            e.stopPropagation();
-        };          
-    }
-
-    }
-
-})(window);
-
-
-*/

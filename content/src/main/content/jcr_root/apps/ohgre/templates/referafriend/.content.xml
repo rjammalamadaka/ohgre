@@ -3,7 +3,7 @@
     jcr:description="RAF WithOut Navigation Template"
     jcr:primaryType="cq:Template"
     jcr:title="RAF WithOut Navigation"
-    allowedPaths="[/content(/.*)?]"
+    allowedPaths="[/content/onlyong(/.*)?,/content/gre(/.*)?]"
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"

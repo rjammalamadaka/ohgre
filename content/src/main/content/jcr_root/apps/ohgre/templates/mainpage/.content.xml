@@ -3,7 +3,7 @@
     jcr:description="Main page with header and footer template"
     jcr:primaryType="cq:Template"
     jcr:title="Main page with header and footer"
-    allowedPaths="[/content(/.*)?]"
+    allowedPaths="[/content/onlyong(/.*)?,/content/gre(/.*)?]"
     ranking="{Long}100">
     <jcr:content
         jcr:primaryType="cq:PageContent"

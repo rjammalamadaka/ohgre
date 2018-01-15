@@ -8,7 +8,6 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 			event.preventDefault();
 			var obj = $(this);
 			var val = obj.html();
-            console.log(val);
 			$('.expanded-dropdown.opened').removeClass('opened');
             var dropdownButton=obj.parent().parent().parent().parent();
             var mainValue=$(this).find('span').attr('class');
@@ -24,10 +23,22 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
     }
 
-     $rootScope.redirecttohome =function(){
 
-			location.href=$rootScope.homeUrl+".html";
+$rootScope.termsupdate=false;
+     $rootScope.redirecttohome =function(){
+			//location.href=$rootScope.homeUrl+".html";
+          jQuery("#raf-terms-popup").removeClass("show-popup");
+          jQuery("#login-inactive-popup").addClass("show-popup");
+
+
+
+
     }
+
+     $rootScope.closeDeclinePopup =function(){
+
+				jQuery("#login-inactive-popup").removeClass("show-popup");
+     }
     $scope.setLdcInfo =function(ldc,description){
 		$scope.ldc=ldc;
         $scope.ldcdesc=description;
@@ -35,6 +46,10 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
         $scope.an2=null;
         $scope.an3=null;
         $scope.an4=null;
+
+         $scope.an1r=false;
+        $scope.an3r=false;
+         $scope.an4r=false;
 
         $scope.an1required=true;
         $scope.an2required=true;
@@ -74,14 +89,12 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
             $scope.an4r=true;
 
         }else if(ldc == "MCG"){
-            console.log("MCG values set");
 			$scope.an1minl="4";
 		    $scope.an2minl="3";
             $scope.an3minl="4";
             $scope.an4minl="1";
 
         }else if(ldc == "MIC"){
-             console.log("MIC values set");
             $scope.an1minl="0";
             $scope.an2minl="0";
             $scope.an3minl="0";
@@ -91,19 +104,24 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
             $scope.an2required=false;
             $scope.an3required=false;
         }
+
+         $scope.raf.submited = false;
+         $scope.raf.lastname.$visited=false; 
+        $scope.lastname=null;
+       // $scope.raf.$setUntouched();
+        $scope.raf.$setPristine();
          $scope.$apply();
     }
 
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
-               console.log(data.LDCList);
              $scope.ldcinfo=data.LDCList;
              setTimeout(function(){ bindClickEvent(); }, 10);
          }
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
+
          });
 
     $scope.referafriendsubmit =function(){
@@ -147,13 +165,11 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
                 req.LDC=$scope.ldc;
 
                     PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
-                        console.log(data);
                         if(data && data.CustomerInfoResult){
                         var customerInfo=JSON.parse(data.CustomerInfoResult);
-                            console.log(customerInfo);
                             if(customerInfo.responseStatus ==1){
 								$scope.step2=false;
-                                $scope.errorInfo="We were unable to find your account. Please try again or call 1-888-466-4427 for assistance";
+                                $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
 
                             }else if(customerInfo.responseStatus ==0){
                                 var regex = /[^a-zA-Z]/g;
@@ -165,16 +181,23 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
                                 if((customerInfo.rateClass=="01" && $scope.lastname.toUpperCase() == customerInfo.lastName.toUpperCase())||(customerInfo.rateClass=="04" && lastName.toUpperCase() == businessName.toUpperCase())){
 
-                                    if(customerInfo.raftermsCondAcknowledgedInd !='Y'){
+                                    if(customerInfo.raftermsCondAcknowledgedInd !="Y"){
+
+                                        if(customerInfo.raftermsCondAcknowledgedInd =="N"){
+                                            $rootScope.termsupdate=false;
+                                        }else if (customerInfo.raftermsCondAcknowledgedInd =="R"){
+											$rootScope.termsupdate=true;
+
+                                        }
                                     jQuery('#raf-terms-popup').addClass('show-popup');
                                     updateCustomerInfoReq.custID=customerInfo.custID;
                                     updateCustomerInfoReq.account=customerInfo.account;
                                     updateCustomerInfoReq.ldc=customerInfo.ldc;
-                                    } else if(customerInfo.raftermsCondAcknowledgedInd =='Y'){
+                                    } else if(customerInfo.raftermsCondAcknowledgedInd =="Y"){
                                     setProductData();
                                    }
                                 }else{
-									$scope.errorInfo="We found an account that matches the account number but not the last name. For further inquiries, please call 1-888-466-4427.";
+									$scope.errorInfo="We found an account that matches the account number but not the last name. For further inquiries, please call "+$scope.mobilenumber+".";
 
                                 }
                         	}
@@ -182,7 +205,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
                     }).error(function (data,status, headers, config){
 
-                        console.log("error");
+
                     });
 
         }
@@ -190,25 +213,28 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
     var setProductData =function(){
         PrimeService.setProductData(req).success(function(data, status, headers, config){            
-            console.log(data);
+
             location.href=$rootScope.homeUrl+'/raf-authenticated.html';
 
         }).error(function (data,status, headers, config){
 
-            console.log("error");
+
         });
 
     }
 
     $rootScope.acceptrafterms =function(){
+        updateCustomerInfoReq.RAFTermsCondAcknowledgedInd="Y";
+        jQuery('#popup-spinner-wrap').show();
         PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
-            console.log(data);
+
+            jQuery('#popup-spinner-wrap').hide();
             if(data.ResponseStatus ==0){ 
             	setProductData();
             }
         }).error(function (data,status, headers, config){
+			jQuery('#popup-spinner-wrap').hide();
 
-            console.log("error");
         });
     }
     $rootScope.closeacceptrafterms =function(){
@@ -218,6 +244,60 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
     jQuery('#close-window').click(function(){
         jQuery('#raf-terms-popup').removeClass('show-popup');
     });
+
+
+    if($rootScope.hashParams && $rootScope.hashParams.refferalcode){
+		jQuery('#popup-spinner-wrap').show();
+
+        var req ={};
+        req.custId=$rootScope.hashParams.refferalcode;
+
+        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
+            if(data && data.CustomerInfoResult){
+                        var customerInfo=JSON.parse(data.CustomerInfoResult);
+
+                            if(customerInfo.responseStatus ==1){
+                                $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
+                                jQuery('#popup-spinner-wrap').hide();
+                            }else if(customerInfo.responseStatus ==0){
+                                //var req={};
+
+                                req.LDC=customerInfo.ldc;
+                                req.LdcDesc=customerInfo.ldcdesc;
+                                req.AccountNumber=customerInfo.account;
+                                req.referralcode=customerInfo.custID;
+                                req.ProductDescription=customerInfo.productDesc;
+                                req.ProductCode=customerInfo.productCode;
+
+                                 if(customerInfo.raftermsCondAcknowledgedInd !='Y'){
+									jQuery('#popup-spinner-wrap').hide();
+                                    updateCustomerInfoReq.custID=customerInfo.custID;
+                                    updateCustomerInfoReq.account=customerInfo.account;
+                                    updateCustomerInfoReq.ldc=customerInfo.ldc;
+
+                                    jQuery('#raf-terms-popup').addClass('show-popup');
+                                 }else{
+                                     
+                                     PrimeService.setProductData(req).success(function(data, status, headers, config){            
+
+                                         location.href=$rootScope.homeUrl+'/raf-authenticated.html';
+                                         
+                                     }).error(function (data,status, headers, config){
+                                         
+
+                                     });
+                                 }
+                            }
+            }else{
+				jQuery('#popup-spinner-wrap').show();
+            }
+
+        }).error(function (data,status, headers, config){
+			jQuery('#popup-spinner-wrap').hide();
+
+        });
+
+    }
 
 }]);
 

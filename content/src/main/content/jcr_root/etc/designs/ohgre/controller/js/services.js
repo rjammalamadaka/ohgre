@@ -78,6 +78,15 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
 		var url="/bin/logout?"+new Date().getTime();
 		return $http.get(url,config);
     }
+   var getPromoCodeGroupInfo =function(promotionCode){
+		var	url="/bin/getPromoGroupInfo?portalName="+$rootScope.portalname+"&promoCode="+promotionCode;
+		return $http.get(url,config);
+    }
+
+      var getPromocodesForEnrollment =function(ldc){
+		var	url="/bin/getPromocodesForEnrollment?portalName="+$rootScope.portalname+"&LDC="+ldc;
+		return $http.get(url,config);
+    }
 
     return {
         getQuotes:getQuotes,
@@ -93,7 +102,9 @@ ohgrePortal.factory('PrimeService', ['$http','$rootScope',function($http,$rootSc
         setProductData:setProductData,
         rafUpdateCustomerInfo:rafUpdateCustomerInfo,
         wcRequest:wcRequest,
-        logout:logout
+        logout:logout,
+        getPromoCodeGroupInfo:getPromoCodeGroupInfo,
+        getPromocodesForEnrollment:getPromocodesForEnrollment
     }               
 }]);
 
@@ -117,7 +128,7 @@ ohgrePortal.factory('OhGreService', ['$http','$rootScope',function($http,$rootSc
 
     return {
         getPromoGroups:getPromoGroups
-    }               
+    }              
 }]);
 
 

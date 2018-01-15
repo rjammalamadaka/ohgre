@@ -1,97 +1,108 @@
-
 <section ng-controller="OfferPromoController">
-	<div class="container">
+  <div class="container">
 
-		<span class="promo-headline" ng-show="!displayPlans && notexpired">${properties.heading}</span>
+    <span class="promo-headline" ng-show="!displayPlans && notexpired">${properties.heading}</span>
 
-        <div class="error show-error" ng-show="!notexpired">
-            <span class="promo-headline with-error">That promotion code does not appear to be active right now. If you think it was entered correctly &amp; should be valid, please call us at <strong>1-888-466-4427</strong> so that we may further assist you.</span>
-         </div>
+    <div class="error show-error" ng-show="!notexpired">
+      <span class="promo-headline with-error">Unfortunately, this promotion offer has expired, but today the promotional offers below are available for enrollment. These offers may expire at any time.</strong> so that we may further assist you.</span>
+    </div>
 
-		<div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1">
 
-			<div class="row promo-wrapper" ng-show="!displayPlans">
-				<div class="col-md-6">
-					<div class="box-with-border bg-primary-blue">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="box-inner">
-								<p><img src="${properties.imagepath}"></p>
-								<h3 class="no-margin center">${properties.description @ context='html'}</h3>
-								<span>${properties.promoheadingline1}</span>
-								<form id="promo-form">
-									<div class="dropdown-container">
-										<button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-										<div class="expanded-dropdown">
-											<ul class="dropdown-menu" role="menu">
-												<li role="menuitem" ng-repeat="x in ldcinfo">
-												<a href="#" class="select-option">
+      <div class="row promo-wrapper" ng-show="!displayPlans">
+        <div class="col-md-6">
+          <div class="box-with-border bg-primary-blue">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="box-inner">
+                <p><img src="${properties.imagepath}"></p>
+                <h3 class="no-margin center">${properties.description @ context='html'}</h3>
+                <span>${properties.promoheadingline1}</span>
+                <form id="promo-form">
+                  <div class="dropdown-container">
+                    <button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+                    <div class="expanded-dropdown">
+                      <ul class="dropdown-menu" role="menu">
+                        <li role="menuitem" ng-repeat="x in ldcinfo">
+                          <a href="#" class="select-option">
 												<span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
 												</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<button class="primary-button" ng-click="viewPlans()">view plans</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="box-with-border">
-					${properties.text @ context='html'}
-					</div>
-				</div>
-			</div>
-
-            <div class="row promo-wrapper flex-wrap" ng-show="displayPlans">
-                <div class="col-md-6" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0">
-                    <div class="box-w-arrow accord-trigger trigger-arrow">
-                        <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}}<small>per {{getNumber(product.QuoteDescription)}}</small></span>
-                        <span class="rate-plan">{{product.ProductDescFriendly}}</span>
+                        </li>
+                      </ul>
                     </div>
-                    <div class="box-with-border">
-                        <div class="box-inner">
-                        <p>
-                           {{product.ProductPlanDesc}}
-                        </p>
-                        <ul>
-                            <li>This plan requires a {{product.CtrctDurationMonths}}-month commitment.</li>
-                            <li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
-                        </ul>
-                            <form id="12-month-fixed-form">
-                                <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+                  </div>
+                  <button class="primary-button" ng-click="viewPlans()">view plans</button>
+                </form>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box-with-border">
+            ${properties.text @ context='html'}
+          </div>
+        </div>
+      </div>
 
-			<!--<div class="foot-notes">
-						<p>* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans 
+      <div class="row promo-wrapper flex-wrap" ng-show="displayPlans">
+        <div class="col-md-6" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0">
+          <div class="box-w-arrow accord-trigger trigger-arrow">
+            <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}}<small>per {{getNumber(product.QuoteDescription)}}</small></span>
+            <span class="rate-plan">{{product.ProductDescFriendly}}</span>
+          </div>
+          <div class="box-with-border">
+            <div class="box-inner">
+              <p>
+                {{product.ProductPlanDesc}}
+              </p>
+<a href="" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
+                        <div ng-show="product.displayAccordian" class="">
+                            <ul>
+                                <li ng-repeat="text in product.ProductFinePrintText">{{text}}
+                                </li>
+    
+                            </ul>
+                        </div>
+<!--
+              <ul>
+                  <li ng-repeat="text in product.ProductFinePrintText">{{text}}</li>
+              </ul>
+-->
+              <form id="12-month-fixed-form">
+                <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--<div class="foot-notes">
+						<p>* Offers are available only for new residential customers, who use 6,000 Ccf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Duke Energy Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1-888-211-8312, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans
 						(12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. Cannot be combined with any other offer.</p>
 			</div>  -->
 
-		</div>
-	</div>
+    </div>
+  </div>
 </section>
 
 <section>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="full-banner-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>
-				<div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
-			</div>
-		</div>
-	</div>
-</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="full-banner-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+
+                <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="promo-fine-print">
+                    <p>${properties.fineprinttext @ context='html'}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

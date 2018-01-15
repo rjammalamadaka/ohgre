@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:designPath="/etc/designs/gre"
+        cq:lastModified="{Date}2018-01-12T12:27:34.330-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-12T12:27:41.558-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/homepage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Grand Rapids Energy | Leading Natural Gas Company in Michigan"
+        jcr:uuid="6df982e0-2da8-4ddf-b9d2-8dab4dbf80dd"
+        sling:resourceType="/apps/ohgre/components/structure/page"
+        days="Monday - Friday"
+        errorPages="/content/gre/errors"
+        mobilenumber="1-800-841-1541"
+        portalname="gre"
+        tagmanagerid="GTM-PLVM6CR"
+        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/aaa-claim-form.pdf"
+        time="8AM - 5PM EST">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herocarousel
+                jcr:created="{Date}2017-08-21T00:30:49.455-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-12T15:41:50.718-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herocarousel"
+                iItems="[{&quot;title&quot;:&quot;Sign up today and you can earn 2\,500 bonus miles*&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your natural gas bill. &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Grand Rapids Energy® and you can each receive a $25 Visa® Reward Card.* &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/card_raf.jpg&quot;\,&quot;buttontitle&quot;:&quot;Learn More&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/refer&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Michigan’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;We're proud to serve Michigan residents.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;SIGN UP&quot;\,&quot;buttonpath&quot;:&quot;/content/gre/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                timeout="5500">
+                <cq:annotations jcr:primaryType="nt:unstructured"/>
+            </herocarousel>
+            <promocode
+                jcr:created="{Date}2017-07-23T18:42:01.956+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-22T09:19:16.550-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promocode"
+                description="&lt;p>Your special offer awaits!&lt;/p>&#xd;&#xa;"
+                heading="Have a promo code?"
+                textIsRich="true"/>
+            <colctrl
+                jcr:created="{Date}2017-07-23T18:42:46.076+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-12T12:26:54.214-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                layout="3;cq-colctrl-lt1"/>
+            <cardpromo
+                jcr:created="{Date}2017-07-23T18:43:08.192+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-12T12:27:34.323-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/gre/refer"
+                buttontitle="start referring"
+                description="Learn how you can invite friends to sign up with Grand Rapids Energy® and you can each receive a $25 Visa® Reward Card.* Terms and conditions apply.*"
+                displayLink="true"
+                heading="Refer a Friend"
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
+            <col_break15008155783250
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <myaccount
+                jcr:created="{Date}2017-11-29T20:56:07.679-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-01T16:11:18.198-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer of Grand Rapids Energy, you can manage your account online.  Log in to your account to view your current contract and make changes."
+                displayLink="true"
+                heading="Currently a GRE customer? Manage your account here."
+                imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
+                mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
+            <col_break15032896712800
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <cardpromo_plans
+                jcr:created="{Date}2017-07-23T18:43:13.617+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-06T10:50:55.849-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo-plans"
+                buttonpath="/content/gre/plans-detail"
+                description="Lock in a great 6- or 12-month fixed rate to avoid the potential for price spikes and market fluctuations!"
+                heading="Fixed Rate Plans"/>
+            <col_end15008155660770
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="end"/>
+            <signup
+                jcr:created="{Date}2017-07-23T18:46:36.241+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:54:51.450-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup"
+                description="Be the among the first to hear about our promos and special offers."/>
+            <signup_for_newslette
+                jcr:created="{Date}2017-10-09T21:37:38.598-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-12T12:26:37.985-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup-for-newsletters-popup"
+                description="Sign up to receive promotional emails from us."/>
+        </content>
+        <image jcr:primaryType="nt:unstructured">
+            <file.sftmp/>
+        </image>
+    </jcr:content>
+    <plans-detail/>
+    <what_is_choice/>
+    <why_choose_us/>
+    <about_us/>
+    <termsandconditions/>
+    <terms-of-use/>
+    <privacy-policy/>
+    <promo_landing/>
+    <promo-landing-apples/>
+    <raf-faqs/>
+    <promo-raf/>
+    <promo-general/>
+    <save2017/>
+    <visa_offer/>
+    <generic-promo/>
+    <promotion-error/>
+    <switch-back/>
+    <customer_lookup/>
+    <contact-us/>
+    <rate-plans/>
+    <special_offer/>
+    <faq/>
+    <server_down/>
+    <_x0034_04/>
+    <backuppromo/>
+    <moving/>
+    <skymiles/>
+    <raf-authenticated/>
+    <refer/>
+    <errors/>
+    <myaccount/>
+    <select-plan/>
+    <cancel-contract/>
+    <promotions jcr:primaryType="nt:unstructured">
+        <gre jcr:primaryType="nt:unstructured">
+            <BACK
+                jcr:primaryType="nt:unstructured"
+                BACKCON="/content/gre/backuppromo"
+                BACKDEOV="/content/gre/backuppromo"
+                BACKDTE="/content/gre/backuppromo"/>
+            <LOYAL
+                jcr:primaryType="nt:unstructured"
+                LOYAL2017VISA="/content/gre/visa_offer"/>
+            <UTILITY
+                jcr:primaryType="nt:unstructured"
+                UTILITYCHOICE="/content/gre/visa_offer"/>
+            <DELTA
+                jcr:primaryType="nt:unstructured"
+                DELTA25="/content/gre/promo_landing"/>
+            <RAF
+                jcr:primaryType="nt:unstructured"
+                RAF25="/content/gre/promo-raf"/>
+            <MISEA
+                jcr:primaryType="nt:unstructured"
+                MISEA="/content/gre/misea"/>
+            <_x0032_018_JAN
+                jcr:primaryType="nt:unstructured"
+                LOWEST1CO="/content/gre/LOWEST1CO"
+                LOWEST1DT="/content/gre/LOWEST1DT"
+                SCORE1CO="/content/gre/SCORE1CO"
+                SCORE1DT="/content/gre/SCORE1DT"/>
+        </gre>
+    </promotions>
+    <delta-faqs/>
+    <skymilesterms/>
+    <invalid-promocode/>
+    <misea/>
+    <sitemap/>
+    <SCORE1DT/>
+    <SCORE1CO/>
+    <LOWEST1DT/>
+    <LOWEST1CO/>
+</jcr:root>

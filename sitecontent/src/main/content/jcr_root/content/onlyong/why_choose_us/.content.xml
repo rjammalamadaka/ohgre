@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-12T16:44:57.745-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-12-12T16:24:28.693-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:description="Whether you’re choosing an Ohio natural gas supplier for the first time or switching from your utility company, here are compelling reasons to go with Ohio Natural Gas."
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Why Choose Ohio Natural Gas as Your Supplier?"
+        jcr:uuid="6fde5e43-1779-4260-a62c-dc15b5b6fdca"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        navTitle="WHY CHOOSE US?"
+        portalname="oh">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                jcr:created="{Date}2017-08-06T23:39:03.028-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-10T13:39:26.196-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="For more than 10 years, we've proudly served Ohio residents with flexible plan options, exceptional customer service and outstanding perks."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Why Choose Us?"/>
+            <whychooseuscontent
+                jcr:created="{Date}2017-08-06T23:39:55.712-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-03T11:49:21.707-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/whychooseuscontent"
+                blueboxheading="Cut Energy Usage and Save."
+                energysavelist="[{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-1.svg&quot;\,&quot;termsdescription&quot;:&quot;Getting rid of old refrigerators or freezers may save you up to $150 per year.&quot;},{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-2.svg&quot;\,&quot;termsdescription&quot;:&quot;Set your water heater thermostat to “warm”\, or 120 degrees. Turn it down more if you will be away from home.&quot;},{&quot;imagepath&quot;:&quot;/content/dam/ohgre/wcu/icon-3.svg&quot;\,&quot;termsdescription&quot;:&quot;Purchase ENERGY STAR® approved kitchen appliances that cook more efficiently.&quot;}]"
+                energysaveoptionslink="For more energy saving tips, visit:"
+                energysaveoptionslinkdisplay="http://www.puco.ohio.gov"
+                energysaveoptionsurl="http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpb"
+                heading="Whether you’re choosing a natural gas supplier for the first time or switching from your utility company, here are three solid reasons to go with Ohio Natural Gas:"
+                text="&lt;ol>&#xd;&#xa;&lt;li>&lt;p>&lt;b>We provide options.&lt;/b>&lt;br />&#xd;&#xa;Your local utility company currently only offers pricing that may change or remain the same each month. Want to lock in your rate with a fixed plan? ONG offers fixed plans and variable plans designed to suit your needs. &lt;a title=&quot;view plans&quot; href=&quot;/content/onlyong/plans-detail.html&quot; target=&quot;_blank&quot;>Find the one that’s right for you.&lt;/a>&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>&lt;b>We care about our customers.&lt;/b>&lt;br />&#xd;&#xa;Our exceptional customer service is at the ready. Call 1.888.466.4427 to speak with one of our representatives.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>&lt;b>We offer outstanding perks.&lt;/b>&lt;br />&#xd;&#xa;You can earn rewards when you refer friends to sign up for ONG. Check out the details of our &lt;a href=&quot;/content/onlyong/refer.html&quot; target=&quot;_blank&quot;>Refer-a-Friend program.&lt;/a> Also, you can earn miles with &lt;a href=&quot;/content/onlyong/promo_landing.html&quot; target=&quot;_blank&quot;>Delta&lt;/a> just for paying your natural gas bill.&lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ol>&#xd;&#xa;"
+                textIsRich="true">
+                <cq:annotations jcr:primaryType="nt:unstructured">
+                    <_x0031__1510861435045
+                        jcr:created="{Date}2017-11-16T13:43:55.047-06:00"
+                        jcr:createdBy="penny"
+                        jcr:lastModified="{Date}2017-11-16T13:43:55.047-06:00"
+                        jcr:lastModifiedBy="penny"
+                        jcr:primaryType="nt:unstructured"
+                        x="{Long}264"
+                        y="{Long}56"/>
+                </cq:annotations>
+            </whychooseuscontent>
+        </content>
+    </jcr:content>
+</jcr:root>

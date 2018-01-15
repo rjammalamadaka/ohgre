@@ -12,7 +12,7 @@
                <div class="">
                   <div class="form-area">
                      <div class="accord-trigger">
-                        <h4>Ohio Natural Gas Account Information<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+                         <h4>${properties.formheader}<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
                      </div>
                      <div class="accord-container">
                         <div class="input-group-wrapper">
@@ -47,7 +47,7 @@
                            <span class="error-message">Message for error</span>
                         </div>
                         <div class="input-group-wrapper">
-                           <label>Email and Phone Number only to be used to contact you if we encounter an issue with the information you have provided.</label>
+                           <!--<label>Email and Phone Number only to be used to contact you if we encounter an issue with the information you have provided.</label>-->
                         </div>
                      </div>
 
@@ -140,7 +140,7 @@
                         </div>
                         <!-- group -->
                         <div class="input-group-wrapper">
-                           <label>Skymiles Number<sup class="required">*</sup></label>
+                           <label>SkyMiles Number<sup class="required">*</sup></label>
                            <input name="dsmAccountNumber"  ng-model="dsmAccountNumber" ng-required="true" ng-pattern="/^\d+$/" ng-minlength=10 ng-maxlength=10 ng-focus ng-visited />
 
              			<span class="input-error-message" ng-show="(deltasignupinfo.dsmAccountNumber.$visited && !deltasignupinfo.dsmAccountNumber.$focused) || deltasignupinfo.submited">
@@ -150,7 +150,7 @@
                          <span class="input-error-message" ng-show="invaliddeltaskymilesaccountnumber" >Please enter valid Account Number.</span>
                          </span>
 
-                           <a href="https://www.delta.com/custlogin/validateUser.action" target="_blank" class="fs-11">Forgot your Skymiles Number?</a>
+                           <a href="https://www.delta.com/custlogin/validateUser.action" target="_blank" class="fs-11">Forgot your SkyMiles Number?</a>
                         </div>
                         <!-- group -->
                         <div class="input-group-wrapper">
@@ -190,5 +190,8 @@
       </div>
    </form>
 </div>
+ <div class="promo-fine-print">
+                    <p>${properties.fineprinttext @ context='html'}</p>
+        </div>
 				<!-- step-through -->
 			</div>

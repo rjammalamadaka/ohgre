@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <folderThumbnail/>
+    </jcr:content>
+    <background_angle_gray.svg/>
+    <background_angle_body.svg/>
+    <background_angle.svg/>
+    <bbb.png/>
+    <delta-logo.png/>
+    <ohio-logo.png/>
+    <ohio-logo-white.png/>
+    <phone.svg/>
+    <radio-button-off.svg/>
+    <radio-button-off-wht.svg/>
+    <radio-button-on.svg/>
+    <raf-logo.png/>
+    <triangle.svg/>
+    <icon.png/>
+    <dte-bitmap_x0040_2x.jpg/>
+    <popover-2_x0040_2x.jpg/>
+</jcr:root>

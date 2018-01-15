@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-10T21:04:25.485-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-12-05T15:50:59.337-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Ohio Natural Gas Rates | See Natural Gas Prices in Ohio"
+        jcr:uuid="3ab03bf6-c319-4101-872e-6ce7e5602d7f"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        description="View Ohio Natural Gas rates and plans. Seeking the most competitive natural gas prices in Ohio? Our affordable plans are designed to serve your needs."
+        metatitle="Ohio Natural Gas Rates | See Natural Gas Prices in Ohio"
+        navTitle="VIEW RATE PLANS"
+        portalname="oh">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herobaner
+                jcr:created="{Date}2017-07-21T07:19:44.863+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-25T14:12:09.503-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herobaner"
+                description="Our great natural gas prices are designed to serve your needs."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="View All Ohio Natural Gas Prices"/>
+            <select_gas_utility
+                jcr:created="{Date}2017-07-21T07:52:48.758+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-10T11:25:21.120-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/select-gas-utility"
+                description="&lt;p>Then, you’ll be able to view our natural gas rates and plans.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                heading="First Things First. Find Your Gas Utility."
+                textIsRich="true"/>
+            <promocode
+                jcr:created="{Date}2017-07-21T07:45:29.013+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-25T14:19:47.201-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promocode"
+                backGroundColor="rgba(0,85,142,1.00)"
+                description="&lt;p>Your special offer awaits!&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                heading="Have a Promo Code?"
+                textIsRich="true"/>
+            <colctrl
+                jcr:created="{Date}2017-07-21T07:46:06.392+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-10T11:22:50.382-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                layout="2;cq-colctrl-lt0"/>
+            <cardpromo
+                jcr:created="{Date}2017-07-21T07:46:20.203+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-12T13:04:35.843-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/onlyong/refer"
+                buttontitle="start referring"
+                description="Learn how you can invite friends to sign up with Ohio Natural Gas® and each receive a $25 Visa® Reward Card. Terms and conditions apply.* "
+                displayLink="true"
+                heading="Refer-a-Friend"
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
+            <col_break15006033724370
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <myaccount
+                jcr:created="{Date}2017-12-09T18:26:10.013-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-09T18:27:33.144-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer of Ohio Natural Gas, you can manage your account online.  Log in to your account to view your current contract and make changes."
+                displayLink="true"
+                heading="Currently an ONG customer?  Manage your account here."
+                imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
+                mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
+            <col_end15006033663930
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="end"/>
+            <signup
+                jcr:created="{Date}2017-07-21T07:47:04.834+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-25T15:11:10.299-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup"
+                description="Sign up to receive new promo codes from us."/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-01T19:14:45.453+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

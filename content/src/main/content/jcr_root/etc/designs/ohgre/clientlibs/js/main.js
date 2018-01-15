@@ -1,100 +1,224 @@
 var buttonClick = false;
+
+UTILS = {
+    trim: function(str) {
+        try {
+            str = UTILS.ltrim( str );
+            str = UTILS.rtrim( str );
+            return str;
+        } catch(ex) {
+            console.log('UTIL.trim exception: ' + ex);
+        }
+    },
+    rtrim: function( str ) {
+        try {
+            str = str.replace(/\s+$/g,'');
+            return str;
+        } catch(ex) {
+            console.log('UTIL.rtrim exception: ' + ex);
+        }
+    },
+    ltrim: function(str) {
+        try {
+            str = str.replace(/^\s+/g,'');
+            return str;
+        } catch(ex) {
+            console.log('UTIL.ltrim exception: ' + ex);
+        }
+    },
+    isMobileDevice: function() {
+        var isMobileDevice = false;
+        isMobileDevice = $(window).width() < 1024 ? true : false;
+        return isMobileDevice;
+    },
+    preventBodyScroll: function() {
+      $('html').addClass('fixed-body');
+    },
+    allowBodyScroll: function() {
+      $('html').removeClass('fixed-body');
+    },
+};
+
 var ohio_ng = {
-	init : function(){
-		this.listeners();
-        this.socialButtons();
-	},
-	listeners : function(){
+  init: function() {
+    this.listeners();
+    this.socialButtons();
+    this.disableDesktopPhoneLinks();
+  },
+  listeners: function() {
 
-         $('.print-button').on('click',function(event){
-			event.preventDefault();
-             window.print();
-          });
+    $('.print-button').on('click', function(event) {
+      event.preventDefault();
+      window.print();
+    });
 
-        $('.trigger-popup').on('click',function(event){
-			event.preventDefault();
-         $('.popup-wrapper').addClass('show-popup');
-         $('body').addClass('fixed-body');
+    $('.trigger-popup').on('click', function(event) {
+      event.preventDefault();
+      $('.popup-wrapper').addClass('show-popup');
+      $('html').addClass('fixed-body');
 
+    });
+
+    $('#download-test, .download-button').on('click', function(event) {
+
+      event.preventDefault();
+      console.log('download-test');
+      //document.getElementById('portalbody').style.overflow = 'visible';
+      //html2canvas(document.getElementById('portalbody'), {
+      //html2canvas($('#enroll-customer-container'), {
+      html2canvas($('#portalbody'), {
+          onrendered: function(canvasObj) {
+            startPrintProcess(canvasObj, 'printedPDF',function (){
+              //document.getElementById('portalbody').style.overflow = 'hidden';
+              console.log('PDF saved');
+            });
+            //save this object to the pdf
+          }
+        });
       });
 
-   /*   $('.popup-wrapper,#close-window').on('click',function(event){
+    $('.download-button').on('click', function(event) {
+      event.preventDefault();
+      //\console.log('html2pdf running...');
+
+      /*
+      var pdf = new jsPDF('p', 'in', [8.5, 11]);
+      var specialElementHandlers = {
+        'footer': function(element, renderer){
+             return true;
+          }
+      };
+      // pdf.canvas.height = 72 * 11;
+      // pdf.canvas.width = 72 * 8.5;
+      //pdf.fromHTML($('.customer-lookup').html(), 15, 15);
+      pdf.fromHTML($('#portalbody').html(),15,15,{
+        'elementHandlers': specialElementHandlers
+      });
+
+      //pdf.save('test.pdf');
+      setTimeout(function(){
+      doc.save('test');
+      },2000);
+      */
+
+      //html2pdf($('body').get(0), {
+
+
+      /* this works
+      var toPrint = document.getElementById('portalbody');
+      html2pdf(toPrint);
+*/
+
+      // html2pdf(toPrint, {
+      //    margin:       0,
+      //    filename:     'confirmation.pdf',
+      //    image:        { type: 'jpeg', quality: 0.98 },
+      //    html2canvas:  { dpi: 192, letterRendering: true },
+      //    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      // });
+
+      // html2canvas(document.body, {
+      //   onrendered: function(canvas) {
+      //     var contentDataURL = canvas.toDataURL('image/png')
+      //     var pdf = new jsPDF()
+      //     pdf.addImage(contentDataURL, 'JPEG', 20, 20)
+      //     pdf.save('form.pdf')
+      //   }
+      // })
+    });
+
+    /*   $('.popup-wrapper,#close-window').on('click',function(event){
 			event.preventDefault();
          $('.popup-wrapper').removeClass('show-popup');
       });
       */
 
-         $('.close-window').on('click',function(event){
-			event.preventDefault();
-         $('.popup-wrapper').removeClass('show-popup');
-             $('body').removeClass('fixed-body');
-      });
+    $('.close-window, .close-window-button').on('click', function(event) {
+      event.preventDefault();
+      $('.popup-wrapper').removeClass('show-popup');
+      $('html').removeClass('fixed-body');
+    });
 
+    $('.form-area-wrapper .tooltip-trigger').on('click', function(event) {
+      event.preventDefault();
+      $('.tooltip-text').toggleClass('tooltip-open');
+    });
+    $('#view-raf-rewards .tooltip-trigger').on('click', function(event) {
+      event.preventDefault();
+      $('.tooltip-text').removeClass('tooltip-open');
+      $(event.target).parent('.tooltip-container').find('.tooltip-text').toggleClass('tooltip-open');
+    });
 
-		$('.dropdown-trigger').on('click',function(event){
-			/*event.preventDefault();
+    $('.close-tooltip').on('click', function(event) {
+      event.preventDefault();
+      $('.tooltip-text').removeClass('tooltip-open');
+      console.log('close tooltip');
+    });
+
+    $('.dropdown-trigger').on('click', function(event) {
+      /*event.preventDefault();
 			var obj = $(this);
 			obj.parent().find('.expanded-dropdown').toggleClass('opened');
 
 */
 
-            event.preventDefault();
-			var obj = $(this);
-			obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
-			setTimeout(function(){
-				buttonClick = buttonClick ? false : true;
-			},500);
+      event.preventDefault();
+      var obj = $(this);
+      obj.parent().toggleClass('dropdown-showing').find('.expanded-dropdown').toggleClass('opened');
+      setTimeout(function() {
+        buttonClick = buttonClick ? false : true;
+      }, 500);
 
 
-		});
-		$('.select-option').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var val = obj.html();
-            console.log(val);
-			$('.expanded-dropdown.opened').removeClass('opened');
-            var dropdownButton=obj.parent().parent().parent().parent();
-            var mainValue=$(this).find('span').attr('class');
-            //console.log(mainValue);
-            // $(this).attr("value",mainValue);
+    });
+    $('.select-option').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      var val = obj.html();
+      console.log(val);
+      $('.expanded-dropdown.opened').removeClass('opened');
+      var dropdownButton = obj.parent().parent().parent().parent();
+      var mainValue = $(this).find('span').attr('class');
+      //console.log(mainValue);
+      // $(this).attr("value",mainValue);
 
-			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
-             $('#fixed-plans-button').val(mainValue);
+      $(dropdownButton).find('.dropdown-trigger .value').html(val).addClass('dropdown-updated');
+      $('#fixed-plans-button').val(mainValue);
 
-		});
-		$('.accord-trigger').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			obj.toggleClass('accord-expanded');
-		});
-		$('#mobile-menu').on('click',function(event){
-			event.preventDefault();
-			$(this).toggleClass('menu-open');
-			$('#primary-navigation').toggleClass('expaned-menu');
-		});
-        $('.toggle-button').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var toggleDirection = obj.data('toggle');
-			console.log(toggleDirection);
-			$('.active-link').removeClass('active-link');
-			obj.addClass('active-link');
-			if(toggleDirection == 'show-all'){
-				$('.accord-trigger').addClass('accord-expanded');
-			}else{
-				$('.accord-trigger').removeClass('accord-expanded');
-			}
-		});
+    });
+    $('.accord-trigger').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      obj.toggleClass('accord-expanded');
+    });
+    $('#mobile-menu').on('click', function(event) {
+      event.preventDefault();
+      $(this).toggleClass('menu-open');
+      $('#primary-navigation').toggleClass('expanded-menu');
+    });
+    $('.toggle-button').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      var toggleDirection = obj.data('toggle');
+      console.log(toggleDirection);
+      $('.active-link').removeClass('active-link');
+      obj.addClass('active-link');
+      if (toggleDirection == 'show-all') {
+        $('.accord-trigger').addClass('accord-expanded');
+      } else {
+        $('.accord-trigger').removeClass('accord-expanded');
+      }
+    });
 
-        $('body').on('click',function(event){
-			if(buttonClick){
-				if($('.dropdown-container').hasClass('dropdown-showing')){
-					buttonClick = false;
-					$('.expanded-dropdown').removeClass('opened');
-					$('.dropdown-container').removeClass('dropdown-showing');
-				}
-			}
-		});
+    $('body').on('click', function(event) {
+      if (buttonClick) {
+        if ($('.dropdown-container').hasClass('dropdown-showing')) {
+          buttonClick = false;
+          $('.expanded-dropdown').removeClass('opened');
+          $('.dropdown-container').removeClass('dropdown-showing');
+        }
+      }
+    });
 
 
     /*    $('#same-billing').on('change',function(event){
@@ -117,9 +241,9 @@ var ohio_ng = {
 		});*/
 
 
-	},
-      socialButtons: function(){
-		/*function outBoundTracking(o) {
+  },
+  socialButtons: function() {
+    /*function outBoundTracking(o) {
 		    "function" == typeof ga ? (console.log("tracking"), ga("send", "event", {
 		        eventCategory: "RAF_Share",
 		        eventAction: o,
@@ -140,25 +264,61 @@ var ohio_ng = {
 		});
 
           */
+  },
+
+  disableDesktopPhoneLinks: function() {
+		var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+        {
+            //alert('IE!');
+            var Elems = [], Tags = document.querySelectorAll("a[href^='tel']");
+
+            //Nodelist to array, so we're able to manipulate the elements
+            for (var i = 0; i < Tags.length; i++ ) {
+                Elems[ i ] = Tags[ i ];
+            }
+
+            for(var i = 0; i < Elems.length; i++){
+                Elems[ i ].removeAttribute('href');
+            }
+        }
+
 	}
 
-
 }
-$(document).ready(function(){
-	ohio_ng.init();
+$(document).ready(function() {
+  ohio_ng.init();
 });
 
-$(window).scroll(function(){
-	var sTop = $(window).scrollTop();
-	var menu_bar = $('#primary-header');
+$(window).scroll(function() {
+  var sTop = $(window).scrollTop();
+  var menu_bar = $('#primary-header');
 
-		if(sTop >= 20){
-			menu_bar.addClass('sticky');
-		}else{
-			menu_bar.removeClass('sticky');
-		}
+  if (sTop >= 20) {
+    menu_bar.addClass('sticky');
+  } else {
+    menu_bar.removeClass('sticky');
+  }
 
 });
+
+function startPrintProcess(canvasObj, fileName, callback) {
+  //var pdf = new jsPDF('l', 'pt', 'a4'),
+  var pdf = new jsPDF('p', 'in', [8.5, 11]),
+    pdfConf = {
+      pagesplit: false,
+      background: '#fff'
+    };
+  document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
+  pdf.addHTML(canvasObj, 0, 0, pdfConf, function() {
+    document.body.removeChild(canvasObj);
+    //pdf.addPage();
+    pdf.save(fileName + '.pdf');
+    callback();
+  });
+}
 
 
 //custmore lookup

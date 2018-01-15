@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-11T15:17:27.961-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-11T15:17:32.924-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Select Plan"
+        jcr:uuid="681abf10-4260-4dfd-8b41-8993633486be"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <renewalplan
+                jcr:created="{Date}2017-10-30T21:50:22.114-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-11T15:17:27.958-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/renewalplan"
+                commercialpromocode="RENEWALCOMGRE"
+                planseffectivedate="Rates and Price Plans effective 01/01/2018 to 01/31/2018."
+                renewalterms="&lt;p>GRE service is available for eligible customers participating in the Gas Customer Choice program through their local utility company. GRE rates do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.841.1541, write to Grand Rapids Energy, 400 Renaissance Center, Ste. 2600, Detroit, MI 48243 or visit this site. Early termination charges apply for fixed price plans. Enrollment eligibility, price plan availability and actual customer service charge, deposit requirement, and price per therm is subject to GRE&amp;#39;s credit and payment policies. See grandrapidsenergy.com for price plans and customer service charge ranges. All price plans are subject to&amp;nbsp;GRE&amp;#39;s terms and conditions of service.&amp;nbsp;GRE reserves the right to change or limit the availability of certain price plans.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                residentailpromocode="RENEWALRESGRE"
+                textIsRich="[true,true]"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-10-30T23:17:57.254-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

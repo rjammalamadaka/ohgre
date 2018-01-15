@@ -17,7 +17,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
          var date = new Date($scope.promotion.PromotionExpiratonDate),
                      locale = "en-us",
                      month = date.toLocaleString(locale, { month: "long" });
-         $scope.EXPIRATIONDATE=  month+" "+date.getDate()+" ,"+date.getFullYear();
+         $scope.EXPIRATIONDATE=  month+" "+date.getDate()+", "+date.getFullYear();
 
 
     }
@@ -29,14 +29,36 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 				$scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 
-               var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+$scope.promotion.PromotionCode+"&rateClassCode="+$scope.rateClassCode;
+             var promotionCode=null;
+                  if($scope.promotion && $scope.promotion.PromotionCode){
+                      if($scope.promotion.PromotionExpired =="Y"){
+                          promotionCode= $scope.promotion.BackupPromotionCode; 
+                      }else{
+                          promotionCode=$scope.promotion.PromotionCode; 
+
+                      }
+                  }
+
+
+
+               var url="/bin/getQuotes?portalName="+portalname+"&ldcCode="+$rootScope.hashParams.ldc+"&promotionCode="+promotionCode+"&rateClassCode="+$scope.rateClassCode;
                  $http.get(url).success(function(data, status, headers, config){
                      $scope.Quotes=data;
                      if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                           $scope.displayPlans = true;
                          $scope.Customer=$scope.Quotes.Customer;
-                         $scope.products=$scope.Customer[0].Product;
-                         setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
+						var customer=$scope.Customer[0];
+						var getQuotesProductsList=[];
+                          for(var i=0;i<customer.Product.length;i++){
+                              if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+								getQuotesProductsList.push(customer.Product[i]);
+
+                              }
+
+                          };
+		            $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+                        setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                      }else{
 
@@ -45,7 +67,6 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
                  }).error(function (data,status, headers, config){
 
-                     console.log("error");
                  });
 
 
@@ -53,14 +74,110 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
     }
 
+    var getBackupPromoCodeInfo=function(promocode){
+
+
+         PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config) {
+                ohgre.store("promoCodeInfo",data);
+				processPromotionInfo(data);
+
+         }).error(function(data, status, headers, config) {
+
+        });
+    }
      $rootScope.$watch('promotionInfo', function (newValue, oldValue, scope) {
           if(newValue){
 
-			var promoInfo=ohgre.store("promoCodeInfo");
-     		processPromotionInfo(promoInfo);
+              var promoInfo=ohgre.store("promoCodeInfo");
+
+              if($rootScope.hashParams.isExpired){
+                     if(promoInfo.LDCList.length>0){
+                            var ldc=promoInfo.LDCList[0];
+                            var promotion=ldc.promotion[0];
+                         if(promotion.BackupPromotionCode){
+							getBackupPromoCodeInfo(promotion.BackupPromotionCode);
+                         }else{
+							processPromotionInfo(promoInfo);
+                         }
+                     }
+
+              }else{
+     				processPromotionInfo(promoInfo);
+              }
         }
     });
 
+
+    var getQuotesForViewPlans =function(){
+
+        var ldcCode=$('#fixed-plans-button').val();
+
+          if( $scope.promotion &&  $scope.promotion.RateClassCode){
+                $scope.rateClassCode=$scope.promotion.RateClassCode;
+            }
+
+            if(!$scope.rateClassCode){
+                $scope.rateClassCode = "01";
+            }
+
+            PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
+                $scope.Quotes=data;
+                if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
+                    $scope.displayPlans = true;
+                    $scope.Customer=$scope.Quotes.Customer;
+                    var customer=$scope.Customer[0];
+
+
+                    var getQuotesProductsList=[];
+
+                    for(var i=0;i<customer.Product.length;i++){
+                        if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+                            getQuotesProductsList.push(customer.Product[i]);
+
+                        }
+
+                    };
+                    $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+                    updateProductFinePrint();
+                    setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
+
+
+                }else{
+                }
+
+            }).error(function (data,status, headers, config){    
+
+            });
+
+    }
+
+    $scope.displayGuranteedAccord = false;
+      $scope.displayAddlInfo = function(product) {
+        if (product != undefined) {
+    
+          if (product.displayAccordian == undefined) {
+            product.displayAccordian = true;
+          } else if (product.displayAccordian) {
+            product.displayAccordian = false;
+          } else if (!product.displayAccordian) {
+            product.displayAccordian = true;
+          }
+        } else {
+          $scope.displayGuranteedAccord = $scope.displayGuranteedAccord ? false : true;
+        }
+    
+        // alert(product.displayAccordian);
+        //    $scope.displayAdditionalInfo = $scope.displayAdditionalInfo ? false : true;
+    
+      }
+
+      $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
+
+        if(newValue && newValue.length>0){
+            getQuotesForViewPlans();
+        }
+    });
 
      $scope.viewPlans =function(){
 
@@ -78,7 +195,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                           var locationType=promoInfo.locationType;
                             if(locationType=="residential"){
 								$scope.rateClassCode="01";
-                            }else{
+                            }else if(locationType=="commercial"){
 								$scope.rateClassCode="04";	
                             }
                         }
@@ -86,18 +203,50 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                     }
                 }
 
+
+                if($scope.rateClassCode.length ==0){
+					$scope.rateClassCode="01";
+                }
+
             }
+
+ 				var promotionCode=null;
+                  if($scope.promotion && $scope.promotion.PromotionCode){
+                      if($scope.promotion.PromotionExpired =="Y"){
+                          promotionCode= $scope.promotion.BackupPromotionCode; 
+                      }else{
+                          promotionCode=$scope.promotion.PromotionCode; 
+
+                      }
+                  }
+
+            $rootScope.getPromoCodeInfoForEnroll(ldcCode);
 
            /*  if( $scope.promotion &&  $scope.promotion.RateClassCode){
 				$scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 */
-			PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
+            /*
+			PrimeService.getQuotes(ldcCode,promotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                  $scope.Quotes=data;
                  if($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length>0){
                      $scope.displayPlans = true;
                      $scope.Customer=$scope.Quotes.Customer;
-                     $scope.products=$scope.Customer[0].Product;
+
+					var customer=$scope.Customer[0];
+						var getQuotesProductsList=[];
+
+                          for(var i=0;i<customer.Product.length;i++){
+                              if($rootScope.prmoProduct.indexOf(customer.Product[i].ProductCode) !=-1){
+								getQuotesProductsList.push(customer.Product[i]);
+
+                              }
+
+                          };
+		            $scope.products=getQuotesProductsList;//$scope.Customer[0].Product;
+
+                    // $scope.products=$scope.Customer[0].Product;
+                     updateProductFinePrint();
                      setTimeout(function(){ $rootScope.bindAccordian(); }, 10);
 
                  }else{
@@ -105,11 +254,27 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                  }
 
              }).error(function (data,status, headers, config){
-                 console.log("error");
+
              });
+             */
         }
 
     }
+
+     var updateProductFinePrint = function() {
+
+         angular.forEach($scope.products, function(value, key) {
+ 				var ProductFinePrintText = value.ProductFinePrintText.split(".");
+     			 var lastword = ProductFinePrintText[ProductFinePrintText.length - 1];
+      				if (!(lastword.length > 1))
+        		ProductFinePrintText.pop();
+      		$scope.products[key].ProductFinePrintText = ProductFinePrintText;
+         });
+
+     }
+
+
+
 
      PrimeService.getLdcInfo().success(function(data, status, headers, config){
          if(data && data.responseStatus =="0"){
@@ -119,9 +284,22 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
          }).error(function (data,status, headers, config){
 
-             console.log("error");
+
          });
 
+    if($rootScope.hashParams.isExpired){
+        $rootScope.expired=true;
+    }
+
+      $rootScope.$watch('ldcForEnrollPromo', function (newValue, oldValue, scope) {
+       if(newValue){
+		    //$scope.promotioncode = newValue.toUpperCase();
+           if($rootScope.enrollLdc && $rootScope.enrollLdc.LDCCode){
+           $rootScope.getPromoCodeInfoForEnroll($rootScope.enrollLdc.LDCCode);
+           }
+
+       }
+	}, true);
 
 }]);
 

@@ -10,7 +10,7 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <signup
+            <plandisplay
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Plans Display Component Configuration"
                 sling:resourceType="granite/ui/components/foundation/section">
@@ -38,10 +38,82 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textarea"
                                 fieldLabel="Guranteed Bill Description"
                                 name="./guranteedBillDesc"/>
+                            <footernotes
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Footer Notes"
+                                name="./footernotes"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-">
+                                        <hiddenHeaderConfig
+                                            jcr:primaryType="nt:unstructured"
+                                            hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                            hiddenHeaderEditingCSS="coral-RichText-hiddenHeader--editing"/>
+                                    </table>
+                                    <backGroundColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/ohgre/components/colorpicker"
+                                        fieldLabel="Color Picker"
+                                        name="./backGroundColor"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                            </popovers>
+                                        </inline>
+                                        <dialogFullScreen
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,lists#unordered,lists#ordered,lists#outdent,lists#indent,links#modifylink,links#unlink,table#createoredit,#paraformat,image#imageProps]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                            </popovers>
+                                        </dialogFullScreen>
+                                        <tableEditOptions
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                    </cui>
+                                </uiSettings>
+                            </footernotes>
                         </items>
                     </column>
                 </items>
-            </signup>
+            </plandisplay>
         </items>
     </content>
 </jcr:root>

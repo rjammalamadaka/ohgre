@@ -15,17 +15,27 @@
             <td>Account Type:</td>
             <td>{{customerInfo.rateClassDesc}}</td>
          </tr>
-         <tr>
-            <td>Gas Utility Account Number:</td>
-            <td>{{formatedacno}}</td>
-         </tr>
+         <tr ng-if="product.LDC !='MIC'">
+			<td>Gas Utility Account Number:</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+        <tr ng-if="product.LDC =='MIC'">
+			<td>Gas Service Pod ID</td>
+			<td>{{formatedacno}}</td>
+		</tr>
          <tr>
             <td>Service Address:</td>
             <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
          </tr>
-         <tr>
+         <tr ng-show="(customerInfo.ldc !=='MIC' && customerInfo.ldc !=='MCG')">
             <td>Ohio Natural Gas Account Status:</td>
-            <td>{{customerInfo.accountStatus}}</td>
+           <td> {{getCustomerStatus(customerInfo.accountStatus)}}</td>
+
+         </tr>
+         <tr ng-show="(customerInfo.ldc =='MIC' || customerInfo.ldc =='MCG')">
+            <td>Grand Rapids Energy Account Status:</td>
+           <td> {{getCustomerStatus(customerInfo.accountStatus)}}</td>
+
          </tr>
       </table>
       <div class="button-container">
@@ -50,8 +60,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+						 <tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -73,7 +87,7 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Current Plan</h4>
+										<h4>Current Contract</h4>
 										<span class="plan-selected">{{customerInfo.productDesc}}</span>
                                         <small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
 									</div>
@@ -89,8 +103,8 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Selected New Plan</h4>
-										<span class="plan-selected">{{product.productDesc}}</span>
+										<h4>Selected New Contract</h4>
+										<span class="plan-selected">{{product.productDescFriendly}}</span>
 										<small>{{product.ldcDesc}}</small>
 									</div>
 									<div class="plan-button">
@@ -118,7 +132,7 @@
 <div class="popup-wrapper" id="popupalternate">
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please choose from one of our many other plans for the best deal!</h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -128,8 +142,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+						<tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -149,7 +167,7 @@
 								<div class="plan-info gray-text">
 									<div class="inner-content">
 										<h4>Selected Plan</h4>
-										<span class="plan-selected">{{product.productDesc}}</span>
+										<span class="plan-selected">{{product.productDescFriendly}}</span>
 										 <small>{{product.ldcDesc}}</small>
 									</div>
 									<div class="plan-button">
@@ -171,7 +189,7 @@
 	<div class="popup-wrapper" id="popupwithrenewal">
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-			<h6>Your current contract is about to expire. The plan you selected can begin when your current contract ends. If you want to start your selected plan earlier, please call 1-888-466-4427 to discuss your options.</h6>
+			<h6>Your current contract is about to expire. The plan you selected can begin after your current contract ends. If you want to start your selected plan earlier, please call ${inheritedPageProperties.mobilenumber} to discuss your options.</h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -181,8 +199,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+							<tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -195,15 +217,26 @@
 				<ul class="plan-detail">
 					<li>
 						<div class="flex-container">
-							<div class="plan-price gray">
-								$4.970<span>per MCF</span>
+							<div class="plan-price gray" ng-show="!gbplandisplay">
+                            <div class="price" ng-show="customerInfo.renewalContractExistsInd=='N'">
+                                {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+                             <div class="price" ng-show="customerInfo.renewalContractExistsInd=='Y'">
+                                {{customerInfo.renewalPricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+							</div>
+                            <div class="plan-price gray" ng-show="gbplandisplay">
+                                {{gbplandescription | currency:"$":2}}<span>per Month</span>
 							</div>
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Current Plan</h4>
-										<span class="plan-selected">{{customerInfo.productDesc}}</span>
-										<small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<h4>Renewal Contract</h4>
+										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDescFriendly}}</span>
+                                        <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDescFriendly}}</span>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
+
 									</div>
 								</div>
 							</div>
@@ -217,12 +250,12 @@
 							<div class="plan-info-wrapper">
 								<div class="plan-info">
 									<div class="inner-content">
-										<h4>Selected New Plan</h4>
-										<span class="plan-selected">{{product.productDesc}}</span>
+										<h4>Selected New Contract</h4>
+										<span class="plan-selected">{{product.productDescFriendly}}</span>
 										<small>{{product.ldcDesc}}</small>
 									</div>
 									<div class="plan-button">
-										<a href="#" class="primary-button" ng-click="popuprenewalcontinue()">select, &amp; continue</a>
+										<a href="#" class="primary-button" ng-click="popuprenewalcontinue()">select &amp; continue</a>
 									</div>
 								</div>
 							</div>
@@ -241,7 +274,7 @@
 <div class="popup-wrapper" id="popupalternatenoteligible">
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please chose from one of our many other plans for the best deal!</h6>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please choose from one of our many other plans for the best deal!</h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -251,8 +284,12 @@
 				            <td>Name on Gas Utility Account:</td>
 				            <td>{{customerInfo.customerName}}</td>
 				         </tr>
-							<tr>
+						 <tr ng-if="product.LDC !='MIC'">
 				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
 				            <td>{{formatedacno}}</td>
 				         </tr>
 				         <tr>
@@ -290,7 +327,7 @@
 								<div class="plan-info gray-text">
 									<div class="inner-content">
 										<h4>Selected Plan</h4>
-										<b class="plan-selected gray-text">{{product.productDesc}}</b>
+										<b class="plan-selected gray-text">{{product.productDescFriendly}}</b>
 										<small>{{product.ldcDesc}}</small>
 									</div>
 									<div class="plan-button">

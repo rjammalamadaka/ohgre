@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-12T12:59:53.143-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-10T21:34:23.037-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/homepage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="My Account"
+        jcr:uuid="354db744-3c61-4c07-9d71-980a3eb0bc15"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <dashboard
+                jcr:created="{Date}2017-10-27T13:52:59.264-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-12T12:59:53.140-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/dashboard"
+                disclosurevariable="&lt;p>*Published price is the Variable Plan standard rate. Variable rate may change or stay the same each month based on market conditions.&lt;/p>&#xd;&#xa;"
+                footernote="&lt;p>If you would like to change your information, please call&lt;a href=&quot;tel:1.888.466.4427&quot; target=&quot;Target&quot;> 1.800.841.1541.&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>We are available from 8 a.m. to 5 p.m. ET, Monday through Friday.&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true,true,true]"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-10-27T21:25:33.516-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>
