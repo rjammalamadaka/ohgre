@@ -1,4 +1,3 @@
-
 ohgrePortal.directive('ngFocus', [function() {
   var FOCUS_CLASS = "ng-focused";
   return {
@@ -8,10 +7,14 @@ ohgrePortal.directive('ngFocus', [function() {
       ctrl.$focused = false;
       element.bind('focus', function(evt) {
         element.addClass(FOCUS_CLASS);
-        scope.$apply(function() {ctrl.$focused = true;});
+        scope.$apply(function() {
+          ctrl.$focused = true;
+        });
       }).bind('blur', function(evt) {
         element.removeClass(FOCUS_CLASS);
-        scope.$apply(function() {ctrl.$focused = false;});
+        scope.$apply(function() {
+          ctrl.$focused = false;
+        });
       });
     }
   }
@@ -19,7 +22,7 @@ ohgrePortal.directive('ngFocus', [function() {
 
 
 ohgrePortal.directive('ngVisited', [function() {
-  var VISITED_CLASS ="ng-visited";
+  var VISITED_CLASS = "ng-visited";
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -27,18 +30,20 @@ ohgrePortal.directive('ngVisited', [function() {
       ctrl.$focused = false;
       element.bind('focus', function(evt) {
         element.addClass(VISITED_CLASS);
-        scope.$apply(function() {ctrl.$visited = true;});
+        scope.$apply(function() {
+          ctrl.$visited = true;
+        });
       });
     }
   }
 }]);
 ohgrePortal.directive('restrictTo', function() {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attrs) {
-            var re = RegExp(attrs.restrictTo);
-            var exclude = [8,13,9,46,38,40,37,39];
-           /*
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      var re = RegExp(attrs.restrictTo);
+      var exclude = [8, 13, 9, 46, 38, 40, 37, 39];
+      /*
             element[0].addEventListener('keydown', function(event) {
 
                 if (!(event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
@@ -49,9 +54,9 @@ ohgrePortal.directive('restrictTo', function() {
 
             });
             */
-			element[0].addEventListener('input', function(event) {
-                var reg = /^\d+$/;
-                 /*
+      element[0].addEventListener('input', function(event) {
+        var reg = /^\d+$/;
+        /*
                 var userInput = event.data.length;
 
 				console.log('data length', userInput);
@@ -71,50 +76,50 @@ ohgrePortal.directive('restrictTo', function() {
 
                 }
                 */
-            });
+      });
 
 
-        }
     }
+  }
 });
-ohgrePortal.directive('multipleEmails', function () {
-    return {
-        require: 'ngModel',
-        restrict: 'A',
-        link: function(scope, element, attrs, ctrl) {
+ohgrePortal.directive('multipleEmails', function() {
+  return {
+    require: 'ngModel',
+    restrict: 'A',
+    link: function(scope, element, attrs, ctrl) {
 
-            ctrl.$parsers.unshift(function(viewValue) {
-                console.log('multipleEmails');
-                console.log('viewValue', viewValue);
+      ctrl.$parsers.unshift(function(viewValue) {
+        console.log('multipleEmails');
+        console.log('viewValue', viewValue);
 
-                var emails = viewValue.split(',');
-                // loop that checks every email, returns undefined if one of them fails.
-                //var re = /\S+@\S+\.\S+/;
-                var re = /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))){2,6}$/i;
+        var emails = viewValue.split(',');
+        // loop that checks every email, returns undefined if one of them fails.
+        //var re = /\S+@\S+\.\S+/;
+        var re = /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))){2,6}$/i;
 
 
-                // angular.foreach(emails, function() {
-                var validityArr = emails.map(function(str){
-                    return re.test(str.trim());
-                }); // sample return is [true, true, true, false, false, false]
-                var atLeastOneInvalid = false;
-                angular.forEach(validityArr, function(value) {
-                    if(value === false)
-                        atLeastOneInvalid = true;
-                });
-                if(!atLeastOneInvalid) {
-                    // ^ all I need is to call the angular email checker here, I think.
-                    ctrl.$setValidity('multipleEmails', true);
-                    return viewValue;
-                } else {
-                    ctrl.$setValidity('multipleEmails', false);
-                    return undefined;
-                }
+        // angular.foreach(emails, function() {
+        var validityArr = emails.map(function(str) {
+          return re.test(str.trim());
+        }); // sample return is [true, true, true, false, false, false]
+        var atLeastOneInvalid = false;
+        angular.forEach(validityArr, function(value) {
+          if (value === false)
+            atLeastOneInvalid = true;
+        });
+        if (!atLeastOneInvalid) {
+          // ^ all I need is to call the angular email checker here, I think.
+          ctrl.$setValidity('multipleEmails', true);
+          return viewValue;
+        } else {
+          ctrl.$setValidity('multipleEmails', false);
+          return undefined;
+        }
 
-                // })
-            });
+        // })
+      });
 
-			/*
+      /*
             ctrl.$parsers.unshift(checkEmails);
       		ctrl.$formatters.unshift(checkEmails);
 
@@ -123,7 +128,7 @@ ohgrePortal.directive('multipleEmails', function () {
                      var emails = viewValue.split(',');
                     // loop that checks every email, returns undefined if one of them fails.
                     var re = /\S+@\S+\.\S+/;
-    
+
                     // angular.foreach(emails, function() {
                     var validityArr = emails.map(function(str){
                         return re.test(str.trim());
@@ -145,105 +150,148 @@ ohgrePortal.directive('multipleEmails', function () {
                 console.log('checkEmails');
             }
             */
-        }
-    };
+    }
+  };
 })
-ohgrePortal.directive('numbersOnly', function(){
-   return {
-     require: 'ngModel',
-     link: function(scope, element, attrs, modelCtrl) {
-       modelCtrl.$parsers.push(function (inputValue) {
-           // this next if is necessary for when using ng-required on your input. 
-           // In such cases, when a letter is typed first, this parser will be called
-           // again, and the 2nd time, the value will be undefined
-           if (inputValue == undefined) return '' 
-           var transformedInput = inputValue.replace(/[^0-9]/g, ''); 
-           if (transformedInput!=inputValue) {
-              modelCtrl.$setViewValue(transformedInput);
-              modelCtrl.$render();
-           }         
+ohgrePortal.directive('numbersOnly', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, modelCtrl) {
+      modelCtrl.$parsers.push(function(inputValue) {
+        // this next if is necessary for when using ng-required on your input.
+        // In such cases, when a letter is typed first, this parser will be called
+        // again, and the 2nd time, the value will be undefined
+        //console.log('inputValue', inputValue);
+        if (inputValue == undefined) return ''
+        var transformedInput = inputValue.replace(/[^0-9]/g, '');
+        if (transformedInput != inputValue) {
+          modelCtrl.$setViewValue(transformedInput);
+          modelCtrl.$render();
+        }
 
-           return transformedInput;         
-       });
+        return transformedInput;
+      });
 
-         element[0].addEventListener('input', function(event) {
-                var reg = /^\d+$/;
+      element[0].addEventListener('input', function(event) {
+        var reg = /^\d+$/;
 
-                var userInput;
+        var userInput;
 
+        if (event.data) {
+          console.log('event.data', event.data);
+          userInput = event.data.length;
+          console.log('data length', userInput);
+          if (!reg.test(event.data)) {
 
-                 if(event.data){
-                     userInput = event.data.length;
-                     console.log('data length', userInput);
-                     if(!reg.test(event.data)){
+            var isnum = /^\d+$/.test(event.data);
 
-                    var isnum = /^\d+$/.test(event.data);
-    
-                        if(!isnum) {
-                        }
-    
-                        $(element[0]).val(
-                            function(index, value){
-                                return value.substr(0, value.length - 1);
-                        })
-    
-                    }
-                 }
+            if (!isnum) {}
 
+            $(element[0]).val(
+              function(index, value) {
+                return value.substr(0, value.length - 1);
+              })
+          }
+        }
+      });
+    }
+  };
+});
+ohgrePortal.directive('noNumbers', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, modelCtrl) {
+      modelCtrl.$parsers.push(function(inputValue) {
+        /*
+        // this next if is necessary for when using ng-required on your input.
+        // In such cases, when a letter is typed first, this parser will be called
+        // again, and the 2nd time, the value will be undefined
+        //console.log('inputValue', inputValue);
+        if (inputValue == undefined) return ''
+        var transformedInput = inputValue.replace(/[^0-9]/g, '');
+        if (transformedInput != inputValue) {
+          modelCtrl.$setViewValue(transformedInput);
+          modelCtrl.$render();
+        }
 
-            });
+        return transformedInput;
+        */
+      });
 
-     }
-   };
+      element[0].addEventListener('input', function(event) {
+        var reg = /^\d+$/;
+
+        var userInput;
+
+        if (event.data) {
+          console.log('event.data', event.data);
+          userInput = event.data.length;
+          console.log('data length', userInput);
+          if (reg.test(event.data)) {
+            console.log('we got a number...');
+            
+            var isnum = /^\d+$/.test(event.data);
+
+            if (!isnum) {}
+
+            $(element[0]).val(
+              function(index, value) {
+                return value.substr(0, value.length - 1);
+              })
+          }
+        }
+      });
+    }
+  };
 });
 ohgrePortal.directive('moveFocus', function() {
-    function getCaretPosition(elem) {
-      // Internet Explorer Caret Position
-      if (document.selection && document.selection.createRange) {
-        var range = document.selection.createRange();
-        var bookmark = range.getBookmark();
-        return bookmark.charCodeAt(2) - 2;
-      }
-
-      // Firefox Caret Position
-      return elem.setSelectionRange && elem.selectionStart;
+  function getCaretPosition(elem) {
+    // Internet Explorer Caret Position
+    if (document.selection && document.selection.createRange) {
+      var range = document.selection.createRange();
+      var bookmark = range.getBookmark();
+      return bookmark.charCodeAt(2) - 2;
     }
 
-    return {
-      restrict: 'A',
-      link: function(scope, elem, attr) {
-        var tabindex = parseInt(attr.tabindex);
-        var maxlength = parseInt(attr.maxlength);
-          console.log(attr);
+    // Firefox Caret Position
+    return elem.setSelectionRange && elem.selectionStart;
+  }
 
-        elem.on('input, keydown', function(e) {
-            maxlength = parseInt(attr.maxlength);
-            tabindex = parseInt(attr.tabindex);
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attr) {
+      var tabindex = parseInt(attr.tabindex);
+      var maxlength = parseInt(attr.maxlength);
+      console.log(attr);
 
-          var val = elem.val(),
-              cp, 
-              code = e.which || e.keyCode;
+      elem.on('input, keydown', function(e) {
+        maxlength = parseInt(attr.maxlength);
+        tabindex = parseInt(attr.tabindex);
 
-            console.log('val.length', val.length);
-            console.log('maxlength', maxlength);
-            console.log('tabindex', tabindex);
+        var val = elem.val(),
+          cp,
+          code = e.which || e.keyCode;
 
-          if (val.length === maxlength && [8, 37, 38, 39, 40, 46].indexOf(code) === -1) {
+        console.log('val.length', val.length);
+        console.log('maxlength', maxlength);
+        console.log('tabindex', tabindex);
 
-            var next = document.querySelectorAll('#input' + (tabindex + 1));
-            next.length && next[0].focus();
-            return;
-          }
+        if (val.length === maxlength && [8, 37, 38, 39, 40, 46].indexOf(code) === -1) {
 
-          cp = getCaretPosition(this);
-          if ((cp === 0 && code === 46) || (cp === 1 && code === 8)) {
-            var prev = document.querySelectorAll('#input' + (tabindex - 1));
-            e.preventDefault();
-            elem.val(val.substring(1));
-            prev.length && prev[0].focus();
-            return;
-          }
-        });
-      }
-    };
-  });
+          var next = document.querySelectorAll('#input' + (tabindex + 1));
+          next.length && next[0].focus();
+          return;
+        }
+
+        cp = getCaretPosition(this);
+        if ((cp === 0 && code === 46) || (cp === 1 && code === 8)) {
+          var prev = document.querySelectorAll('#input' + (tabindex - 1));
+          e.preventDefault();
+          elem.val(val.substring(1));
+          prev.length && prev[0].focus();
+          return;
+        }
+      });
+    }
+  };
+});
