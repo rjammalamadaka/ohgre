@@ -6991,8 +6991,42 @@ input.alt-radio1:checked {
     margin-left: 1.5rem;
   }
 }
-.herocarousel ~ .cq-colctrl-lt1 .card {
-  min-height: 40rem;
+.herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content {
+  padding: .5rem 1.5rem 0;
+}
+.herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-title {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-hero {
+  min-height: 10rem;
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  .herocarousel ~ .cq-colctrl-lt1 .card {
+    min-height: 40rem;
+  }
+  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-title {
+    font-size: 2.5rem;
+    line-height: 3.3rem;
+  }
+  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-hero {
+    min-height: 10rem;
+    height: 100%;
+  }
+  .herocarousel ~ .cq-colctrl-lt1 .card .inner-content-wrapper {
+    min-height: 30rem;
+    height: 100%;
+  }
+  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content {
+    min-height: 30rem;
+  }
+}
+@media (min-width: 1200px) {
+  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-title {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
 }
 div[class^="cq-colctrl-lt1-"] .card {
   width: 100%;
@@ -9339,6 +9373,7 @@ div.alt-col2,
     background: unset;
     background-color: white;
     min-height: 20rem;
+    background-size: contain;
   }
 }
 .promo-landing .full-banner-callout p {

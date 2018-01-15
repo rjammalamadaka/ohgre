@@ -1119,10 +1119,48 @@ div[class^="col-"]{
 }
 .herocarousel ~ .cq-colctrl-lt1 {
 	.card {
-		min-height: 40rem;
 
 		.inner-card-content{
-			//min-height: 45rem;
+			padding: .5rem 1.5rem 0;
+
+			.card-title{
+				font-size: 2rem;
+				line-height: 3rem;
+			}
+			.card-hero {
+				min-height: 10rem;
+				overflow: hidden;
+			}
+		}
+
+		@media (@screen-md-min){
+			min-height: 40rem;
+			.inner-card-content{
+				.card-title{
+					font-size: 2.5rem;
+					line-height: 3.3rem;
+				}
+				.card-hero {
+					min-height: 10rem;
+					height: 100%;
+				}
+			}
+			.inner-content-wrapper{
+				min-height: 30rem;
+				height: 100%;
+			}
+
+			.inner-card-content{
+				min-height: 30rem;
+			}
+		}
+		@media (@screen-lg-min){
+			.inner-card-content{
+				.card-title{
+					font-size: 3rem;
+					line-height: 3.6rem;
+				}
+			}
 		}
 	}
 }
@@ -3696,6 +3734,7 @@ div.alt-col2,
 					background: unset;
 					background-color: white;
 					min-height: 20rem;
+					background-size: contain;
 				}
 			}
 		}
