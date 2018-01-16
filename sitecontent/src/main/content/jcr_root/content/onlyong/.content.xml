@@ -162,7 +162,11 @@
                 APPLEWGL="/content/onlyong/promo-landing-apples"
                 BUSINESSMVR="/content/onlyong/promo-landing-apples"
                 CHOICE12C="/content/onlyong/promo-landing-apples"
-                MVRSPECIAL="/content/onlyong/promo-landing-apples"/>
+                COHTERMS="/content/onlyong/COHTERMS"
+                DEOTERMS="/content/onlyong/DEOTERMS"
+                DUKETERMS="/content/onlyong/DUKETERMS"
+                MVRSPECIAL="/content/onlyong/promo-landing-apples"
+                VEDOTERMS="/content/onlyong/VEDOTERMS"/>
             <RAF
                 jcr:primaryType="nt:unstructured"
                 RAF25="/content/onlyong/promo-raf"
@@ -228,6 +232,7 @@
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
                 SAVEBIZ="/content/onlyong/SAVEBIZ"
+                SAVEBIZONLINE="/content/onlyong/SAVEBIZ"
                 SAVEME="/content/onlyong/SAVEME"
                 SCORE1C="/content/onlyong/SCORE1C"
                 SCORE1CONLINE="/content/onlyong/SCORE1C"
@@ -287,4 +292,8 @@
     <SCORE3V/>
     <_x0031_0FIX2018/>
     <_x0031_0MONTHFIX2018/>
+    <DEOTERMS/>
+    <DUKETERMS/>
+    <VEDOTERMS/>
+    <COHTERMS/>
 </jcr:root>
