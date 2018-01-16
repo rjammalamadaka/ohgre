@@ -54,7 +54,7 @@
             <div class="col-md-6" ng-repeat="product in productList" ng-if="product.FixedPricePerTherm > 0">
                <div class="box-w-arrow accord-trigger trigger-arrow">
                   <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}} <small>per {{getNumber(product.QuoteDescription)}}</small></span>
-                  <span class="rate-plan">{{product.ProductDescription}}</span>
+                  <span class="rate-plan">{{product.ProductDescFriendly}}</span>
                </div>
                <div class="box-with-border promo-plan-description">
                   <div class="box-inner">
