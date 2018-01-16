@@ -192,12 +192,15 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         req.QuoteDescription=$scope.selectedProduct.QuoteDescription;
 		req.ProductDescription=$scope.selectedProduct.ProductDescription;
+        req.ProductDescriptionFriendly=$scope.selectedProduct.ProductDescFriendly;                                      
         req.ProductCode=$scope.selectedProduct.ProductCode;
         req.LdcDesc= $scope.productData.ldcDesc;
         req.LDC= $scope.productData.LDC;
 		req.FixedPricePerTherm=$scope.selectedProduct.FixedPricePerTherm;
         req.AccountNumber=$scope.productData.AccountNumber;
         req.RateClassCode=$scope.productData.rateClassCode;
+        req.dukNumber= $scope.productData.dukNumber;
+
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 

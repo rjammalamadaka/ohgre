@@ -449,6 +449,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
         req.QuoteDescription=$scope.selectedProduct.QuoteDescription;
 		req.ProductDescription=$scope.selectedProduct.ProductDescription;
+        req.ProductDescriptionFriendly=$scope.selectedProduct.ProductDescFriendly;                                      
         req.ProductCode=$scope.selectedProduct.ProductCode;
         req.LdcDesc= $scope.productData.ldcDesc;
         req.LDC= $scope.productData.LDC;
