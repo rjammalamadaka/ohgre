@@ -45,10 +45,18 @@
             <span ng-show="product.LDC !='MIC' && (formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required)">Account Number is required.</span>
             <span ng-show="(!(formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required) && (formone.an1.$error.maxlength || formone.an1.$error.minlength || formone.an2.$error.maxlength || formone.an2.$error.minlength || formone.an3.$error.maxlength || formone.an3.$error.minlength || formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
         </span>
-        <span class="error-message" ng-show="(formone.an1.$dirty && product.LDC =='MIC' && formone.an4.$invalid || (formone.submited))">
+        <span class="error-message" ng-show="(formone.an1.$dirty && product.LDC =='MIC' && formone.an4.$invalid)">
             <span ng-show="product.LDC =='MIC' && ( formone.an4.$error.required)">Account Number is required.</span>
             <span ng-show="(!(formone.an4.$error.required) && (formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
         </span>
+
+        <span class="error-message" ng-show="(formone.an4.$dirty && product.LDC =='MIC' && formone.an4.$invalid && formone.submited)">
+        
+            <span ng-show="(!(formone.an4.$error.required) && (formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
+        </span>
+
+
+
       </div>
       <div class="lastname-container form-area-wrapper">
         <div class="form-area">

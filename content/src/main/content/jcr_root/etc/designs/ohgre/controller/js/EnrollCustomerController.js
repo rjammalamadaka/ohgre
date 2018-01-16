@@ -15,6 +15,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   $scope.confirmationButton="Back to Home page";
   $scope.specialoffer=true;
 
+    $scope.displayReferalForm=false;
+
     $scope.showVariablePlan=false;
 
   jQuery('#popup-spinner-wrap').show();
@@ -78,7 +80,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       return false;
     }
 
-      if(data.quoteDes.indexOf(2999)!=-1){
+      if(data.priceChangeFrequency=="D"){
 		$scope.showVariablePlan=true;
       }
 
@@ -339,6 +341,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                             }else{
                                 $scope.specialoffer=false;
                             }
+                        }else{
+$scope.displayReferalForm=true;
                         }
             productInfo.existingCustomerStatus=existingCustomerStatus;
             updateenrollrequestobj(productInfo);
@@ -399,6 +403,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
               $('.steps-container > div:nth-child('+step+')').addClass('active-step');*/
 
                     }else if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="1"){
+                        $scope.displayReferalForm=true;
                         $rootScope.showexistingcustomer=false;
                         var accountNumberInfo={};
                         if($scope.unformatedaccountnumber){
@@ -466,14 +471,19 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                 }
                 PrimeService.checkRafEligibility($scope.rafcode,account,ldc).success(function(data, status, headers, config){
                     if(data.responseStatus == "0"){
-                        if(data.rafInfo.AwardEligible =="Y"){
+                        if(data.rafInfo.AwardIneligibleReason !=="1"){
               $scope.validPromocode=true;
               handelsubmityourinformation();
             }else{
               failcount=failcount+1;
-              $scope.validPromocode=false;
+                if(failcount<=1){
+              $scope.validPromocode=false; 
               //$scope.primeErrorMessage="RAF code is not valid";
               $scope.rafErrorMessage="RAF code is not valid";
+                }else{
+                    $scope.validPromocode=true;
+					handelsubmityourinformation();
+                }
             }
           }else{
             failcount=failcount+1;
@@ -1223,6 +1233,21 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   }
 
+
+    $scope.getDisplayPromocode = function(promocode){
+        if(promocode){
+			var index=promocode.indexOf("ONLINE");
+            if(index != -1){
+			return promocode.substr(0,index);
+            }else{
+				return promocode;
+            }
+        }else{ return "";
+
+        }
+
+
+    }
 
 
   $scope.$watch('iframeurl', function (newValue, oldValue, scope) {

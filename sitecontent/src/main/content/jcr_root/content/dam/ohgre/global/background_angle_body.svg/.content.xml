@@ -6,16 +6,16 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/global/background_angle_body.svg"
-        jcr:lastModified="{Date}2018-01-12T23:23:31.304-05:00"
+        jcr:lastModified="{Date}2018-01-16T09:32:27.825-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-12T23:23:31.239-05:00"
+            dam:extracted="{Date}2018-01-16T09:32:27.769-05:00"
             dam:sha1="c29b8e46aac0473c45828a7e82bcf582e2dec6b2"
             dam:size="{Long}225"
             dc:format="image/svg+xml"
             dc:modified="{Date}2017-07-28T12:19:17.214-04:00"
-            jcr:lastModified="{Date}2018-01-12T23:23:29.726-05:00"
+            jcr:lastModified="{Date}2018-01-16T09:32:26.391-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>

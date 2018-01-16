@@ -110,11 +110,11 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         var req={};
         req.QuoteDescription=product.QuoteDescription;
 		req.ProductDescription=product.ProductDescription;
-        req.ProductDescriptionFriendly=product.ProductDescFriendly;
-                                      
+        req.ProductDescriptionFriendly=product.ProductDescFriendly;                                      
         req.ProductCode=product.ProductCode;
         req.LdcDesc=$rootScope.ldcDesc;
 		req.FixedPricePerTherm=product.FixedPricePerTherm;
+        req.PriceChangeFrequency=product.PriceChangeFrequency;
 
 		var ldc=null;
         var ldcbutton=$('#fixed-plans-button');

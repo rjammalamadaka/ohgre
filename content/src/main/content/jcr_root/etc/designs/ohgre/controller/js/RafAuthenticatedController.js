@@ -273,8 +273,12 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
          t=encodeURIComponent(t);
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 */
-    var o = "$25 for you %26 $25 for me. Enroll on " + site + "'s lowest available rate with promo code RAF25! Terms apply. %23ad",
-      t = "url=" + base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID + "&r=1&text=" + o;
+    var o = "$25 for you %26 $25 for me. Enroll on " + site + "'";
+      	o += (/Ohio/.test(site)) ? '' : 's';
+        o += " lowest available rate with promo code RAF25! Terms apply. %23ad";
+    	console.log('o', o);
+
+    var t = "url=" + base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID + "&r=1&text=" + o;
     return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 
   }
