@@ -10,7 +10,10 @@
           </div>
           <div class="selected-plan current-plan flex-container">
             <div class="selected-price" ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
-              <span class="price ng-binding">{{customerInfo.pricePerUnit | currency:"$":3}}</span>
+              <span class="price ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">{{customerInfo.pricePerUnit | currency:"$":3}}</span>
+              <span class="price ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.renewalPricePerUnit | currency:"$":3}}</span>
+
+
               <small class="ng-binding">per {{customerInfo.uom}}</small>
             </div>
             <div class="selected-price" ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
@@ -18,12 +21,19 @@
               <small class="ng-binding">per Month</small>
             </div>
             <div class="selected-info">
-              <span class="selected-plan-tag">Current Contract</span>
-              <h5 class="ng-binding">{{customerInfo.productDescFriendly}}</h5>
-              <span class="utility-name">
-                                    {{productData.ldcDesc}}<br>
+              <span class="selected-plan-tag" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">Current Contract</span>
+              <span class="selected-plan-tag" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">Renewal Contract</span>
+              <h5 class="ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">{{customerInfo.productDescFriendly}}</h5>
+              <h5 class="ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.renewalProductDescFriendly}}</h5>
 
-									<span ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}} </span></span>
+              <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">
+                 {{productData.ldcDesc}}<br>
+			  <span ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}} </span></span>
+
+              <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">
+                 {{productData.ldcDesc}}<br>
+			  <span ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">{{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}} </span></span>
+
             </div>
           </div>
         </div>
