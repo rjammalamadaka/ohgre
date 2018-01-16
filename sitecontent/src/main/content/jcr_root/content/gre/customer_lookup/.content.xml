@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-15T11:09:31.836-06:00"
+        cq:lastModified="{Date}2018-01-16T15:22:17.336-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2017-12-27T09:41:50.686-06:00"
+        cq:lastReplicated="{Date}2018-01-16T15:22:23.640-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/enrollpage"
@@ -21,7 +21,7 @@
             <enroll_customer
                 jcr:created="{Date}2017-08-17T08:23:33.475+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-15T11:09:31.827-06:00"
+                jcr:lastModified="{Date}2018-01-16T15:22:17.328-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/enroll-customer"
@@ -35,7 +35,7 @@
                 donthaveskymilesnumdesc="&lt;p>If you do not have your Delta SkyMiles Number with you, you may enter it later. You have 10 business days from the date of enrollment to provide us with your SkyMiles number. Visit www.grandrapidsenergy.com/skymiles to provide your SkyMiles number. If you’d prefer to enroll by phone, call GRE toll-free at &lt;a>1.800.841.1541&lt;/a> and mention that you would like to enroll in GRE’s Delta SkyMiles program. &lt;/p>&#xd;&#xa;"
                 footernote="&lt;p>You may rescind your enrollment without penalty within 7 business days of the postmark date of your written agreement by contacting the utility by phone or in writing. If any of the information above is not correct or you have additional questions, please call Grand Rapids Energy at 1.800.841.1541 and reference the Confirmation Number shown above.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 header="Earn Miles Just for Paying Your Gas Bill!"
-                headercontent="&lt;h4>Welcome to Grand Rapids Energy!&lt;/h4>&#xd;&#xa;&lt;p>Please check the account number you entered below. If it is incorrect, please go back and re-enter.&lt;/p>&#xd;&#xa;"
+                headercontent="&lt;h4>Welcome to Grand Rapids Energy!&lt;/h4>&#xd;&#xa;&lt;p>Please check the account number you entered below. If it&amp;#39;s incorrect, please go back and re-enter.&lt;/p>&#xd;&#xa;"
                 headerdesc="&lt;p>Grand Rapids Energy is excited to be a Delta SkyMiles partner and the only gas supplier in Michigan with whom you can earn miles just for paying your natural gas bill.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 howitworks="&lt;h3>How It Works&lt;/h3>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Customers will earn TWO miles for every dollar spent on their GRE supplier natural gas charges (excluding sales tax and one-time charges)!&lt;/li>&#xd;&#xa;&lt;li>And, if you are a Delta SkyMiles® Medallion® member, Delta will award an additional mile for each dollar spent as described above!&lt;/li>&#xd;&#xa;&lt;li>It’s easy to start participating. Simply enter your GRE account and SkyMiles member information below. If you’d prefer to enroll by phone, call GRE toll-free at &lt;a href=&quot;tel:1-888-211-8312&quot; target=&quot;Target&quot;>1.800.841.1541&lt;/a> and mention that you would like to enroll in GRE's Delta SkyMiles program. Please have your SkyMiles account number handy when you call.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/delta-faqs.html&quot; target=&quot;_blank&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/skymilesterms.html&quot; target=&quot;_blank&quot;>Delta Program Terms &amp;amp; Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://www.delta.com/profile/enrolllanding.action?mkcpgn=DP_ALL_DRCT_ALL_SP_150915_PRTNER17&quot; target=&quot;_blank&quot;>Join Delta Skymiles &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
                 iframepdffilepath="https://docs.google.com/gview?url=http://stage-ohio.macquarium.com:4505/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf&amp;embedded=true"
