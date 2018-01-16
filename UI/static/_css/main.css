@@ -8763,6 +8763,10 @@ div.alt-col2,
   padding-left: 1.5rem;
 }
 /* PROMO LANDING STYLES */
+.promo-content .radio-btn-container {
+  margin: 0 0 15px;
+  padding-bottom: 10px;
+}
 .full-banner-callout .slide .inner-slide-content {
   padding: 2rem;
   background-color: #002f8f;
