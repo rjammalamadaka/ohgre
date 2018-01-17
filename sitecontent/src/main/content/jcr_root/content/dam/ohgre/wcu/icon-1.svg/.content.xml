@@ -9,17 +9,17 @@
         cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="ohgre/wcu/icon-1.svg"
-        jcr:lastModified="{Date}2018-01-16T09:32:34.337-05:00"
+        jcr:lastModified="{Date}2018-01-17T00:28:39.720-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-16T09:32:34.161-05:00"
+            dam:extracted="{Date}2018-01-17T00:28:39.605-05:00"
             dam:sha1="7bef91bdd630ad3c08b3cde5689e42ebfb69e6de"
             dam:size="{Long}2044"
             dc:format="image/svg+xml"
             dc:modified="{Date}2017-08-08T21:37:00.218+05:30"
-            jcr:lastModified="{Date}2018-01-16T09:32:31.310-05:00"
+            jcr:lastModified="{Date}2018-01-17T00:28:37.277-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"/>
