@@ -94,7 +94,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
         if(newValue && newValue.length>0){
 			var promoInfo=ohgre.store("promoCodeInfo");
-			
+
      		processPromotionInfo(promoInfo,newValue);
         }
     });
