@@ -202,6 +202,20 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
         }
 
+
+
+         var locationType=$("input[name='location_type']:checked").val();
+        if(locationType){
+                    if(locationType=="residential"){
+					req.RateClassCode="01";
+                    }else if(locationType=="commercial"){
+					req.RateClassCode="04";
+
+                    }
+        }
+
+
+
         if($rootScope.hashParams && $rootScope.hashParams.referralcode){
 			req.referralcode=$rootScope.hashParams.referralcode;
         }
@@ -307,7 +321,7 @@ $rootScope.currentYear=new Date().getFullYear();
           PrimeService.logout().success(function(data, status, headers, config){
              location.href=$rootScope.homeUrl+".html";            
           }).error(function(data, status, headers, config){
-              
+
           });
       }
 

@@ -5,6 +5,23 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 	 $scope.displayPlans =false;
 
 
+    if($rootScope.hashParams && $rootScope.hashParams.rateClassCode){
+
+        if($rootScope.hashParams.rateClassCode =="01"){
+
+             $("input[name=location_type][value='residential']").prop("checked", true);
+
+        }else if($rootScope.hashParams.rateClassCode =="04"){
+
+              $("input[name=location_type][value='commercial']").prop("checked", true);
+
+        }
+
+
+
+
+
+    }
 
     var processPromotionInfo=function(promoInfo){
 
@@ -112,13 +129,13 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
 
         var ldcCode=$('#fixed-plans-button').val();
 
-          if( $scope.promotion &&  $scope.promotion.RateClassCode){
+        /*  if( $scope.promotion &&  $scope.promotion.RateClassCode){
                 $scope.rateClassCode=$scope.promotion.RateClassCode;
             }
 
             if(!$scope.rateClassCode){
                 $scope.rateClassCode = "01";
-            }
+            }*/
 
             PrimeService.getQuotes(ldcCode,$scope.promotion.PromotionCode,$scope.rateClassCode).success(function(data, status, headers, config){
                 $scope.Quotes=data;
@@ -155,7 +172,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
     $scope.displayGuranteedAccord = false;
       $scope.displayAddlInfo = function(product) {
         if (product != undefined) {
-    
+
           if (product.displayAccordian == undefined) {
             product.displayAccordian = true;
           } else if (product.displayAccordian) {
@@ -166,10 +183,10 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
         } else {
           $scope.displayGuranteedAccord = $scope.displayGuranteedAccord ? false : true;
         }
-    
+
         // alert(product.displayAccordian);
         //    $scope.displayAdditionalInfo = $scope.displayAdditionalInfo ? false : true;
-    
+
       }
 
       $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
@@ -182,11 +199,20 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
      $scope.viewPlans =function(){
 
 		var ldcCode=$('#fixed-plans-button').val();
+
+                  var locationType=$("input[name='location_type']:checked"). val(); 
+                    if(locationType=="residential"){
+					$scope.rateClassCode="01";
+                    }else if(locationType=="commercial"){
+					$scope.rateClassCode="04";
+
+                    }
+
         if(ldcCode){
 
             if($scope.ldcInfo && $scope.ldcInfo.LDCList && $scope.ldcInfo.LDCList.length>0){
 
-                for(var i=0;i<$scope.ldcInfo.LDCList.length;i++){
+              /*  for(var i=0;i<$scope.ldcInfo.LDCList.length;i++){
                     if(ldcCode==$scope.ldcInfo.LDCList[i].LDCCode){
 
 						$scope.rateClassCode=$scope.ldcInfo.LDCList[i].promotion[0].RateClassCode;
@@ -201,12 +227,12 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
                         }
                         break;
                     }
-                }
+                }*/
 
 
-                if($scope.rateClassCode.length ==0){
-					$scope.rateClassCode="01";
-                }
+                //if($scope.rateClassCode.length ==0){
+
+               // }
 
             }
 
