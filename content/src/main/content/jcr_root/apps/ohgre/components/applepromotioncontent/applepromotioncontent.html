@@ -42,7 +42,7 @@
       </div>
    </div>
 </section>
-<section>
+<section ng-controller="ApplePromotionContentController">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
@@ -51,7 +51,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>
-                <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | Promo code required - {{promotion.PromotionCode}}</span></div>
+                <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | Promo code required - {{getDisplayPromocode(promotion.PromotionCode)}}</span></div>
 			</div>
 		</div>
 	</div>
