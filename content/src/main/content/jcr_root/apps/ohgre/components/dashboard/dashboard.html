@@ -73,11 +73,11 @@
                     </tr>
                     <tr>
                       <td>Effective Date</td>
-                      <td>{{getOnlyDate(customerInfo.contractStartDate)}}</td>
+                      <td ng-show="(customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE')">{{getOnlyDate(customerInfo.contractStartDate)}}</td>
                     </tr>
                     <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
                       <td>Expiration Date</td>
-                      <td>{{getOnlyDate(customerInfo.contractTermDate)}}</td>
+                      <td ng-show="(customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE')">{{getOnlyDate(customerInfo.contractTermDate)}}</td>
                     </tr>
                     <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
                       <td>Early Termination Charge</td>
@@ -91,6 +91,10 @@
               </div>
               <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt !== '0.0000')">
                   <p>If you would like to start a new contract or cancel this contract today, you will be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination fee.</b></p>
+              </div>
+
+              <div class="box-with-border alert-box" ng-show="(customerInfo.accountStatus !=='ENROLLMENT PENDING' && customerInfo.accountStatus !=='ENROLLMENT ACTIVE')">
+                  <p>Your effective date will be provided by your utility.  Once provided, your effective date will be added to your account.</p>
               </div>
 
                   <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt == '0.0000')">
