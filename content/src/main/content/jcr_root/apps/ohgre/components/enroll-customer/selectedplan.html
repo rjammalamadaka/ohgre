@@ -22,7 +22,7 @@
 						<h5 ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDescFriendly}}</h5>
                         <h5 ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDescFriendly}}</h5>
 
-						<span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br>{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</span>
+						<span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br><span ng-show="(customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && (customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE'))">{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</span></span>
              		    <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br>{{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</span>
 
                         <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}</span>

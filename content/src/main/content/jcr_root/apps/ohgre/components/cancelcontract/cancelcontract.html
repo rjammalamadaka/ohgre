@@ -18,11 +18,11 @@
                   </tr>
                   <tr>
                     <td>Effective Date</td>
-                    <td>{{getOnlyDate(customerInfo.contractStartDate)}}</td>
+                    <td ng-show="(customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE')">{{getOnlyDate(customerInfo.contractStartDate)}}</td>
                   </tr>
                   <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
                     <td>Expiration Date</td>
-                    <td>{{getOnlyDate(customerInfo.contractTermDate)}}</td>
+                    <td ng-show="(customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE')">{{getOnlyDate(customerInfo.contractTermDate)}}</td>
                   </tr>
                   <tr></tr>
                 </tbody>
@@ -47,9 +47,14 @@
             </div>
           </div>
         </div>
+
+        <div class="box-with-border alert-box" ng-show="(customerInfo.accountStatus !=='ENROLLMENT PENDING' && customerInfo.accountStatus !=='ENROLLMENT ACTIVE')">
+                  <p>Your effective date will be provided by your utility.  Once provided, your effective date will be added to your account.</p>
+        </div>
+		&nbsp;
         <div class="box-with-border alert-box alert-alt1">
 		<h5>Cancel Service</h5>
-<p>If you would like to terminate service now or end service when your plan expires, please call ${inheritedPageProperties.mobilenumber} so we can provide you with pertinent details. We are available from 8 a.m. to 5 p.m. ET Monday through Friday.</p>
+		<p>If you would like to terminate service now or end service when your plan expires, please call ${inheritedPageProperties.mobilenumber} so we can provide you with pertinent details. We are available from 8 a.m. to 5 p.m. ET Monday through Friday.</p>
           <h5>Let’s keep our relationship BURNING!</h5>
           <p>We would love to continue being your natural gas supplier. Please reconsider and stay with your current plan or select one of these great offers.</p>
           <div ng-show="productData.LDC =='COH'">
