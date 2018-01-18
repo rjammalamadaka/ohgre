@@ -265,7 +265,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     // var base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
     var base_url = window.location.origin + $rootScope.homeUrl + "/promo-raf.html";
 
-    var site = (/ong/.test(window.location.href)) ? 'Ohio Natural Gas' : 'Grand Rapids Energy';
+    var site = (/ong/.test(window.location.href)) ? 0 : 1;
 
     //var base_url = window.location.origin+$rootScope.homeUrl+"/promo-raf.html";
     /* var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
@@ -273,10 +273,16 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
          t=encodeURIComponent(t);
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 */
-    var o = "$25 for you %26 $25 for me. Enroll on " + site + "'";
-      	o += (/Ohio/.test(site)) ? '' : 's';
-        o += " lowest available rate with promo code RAF25! Terms apply. %23ad";
-    	console.log('o', o);
+    var o = "$25 for you %26 $25 for me. Enroll ";
+
+      if(site === 0){
+          o += "on Ohio Natural Gas' lowest available rate with promo code RAF25!";
+      }
+      else {
+		o += "with Grand Rapids Energy and we can earn a Visa Reward Card!"
+      }
+      
+      o += " Terms apply. %23ad";
 
     var t = "url=" + base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID + "&r=1&text=" + o;
     return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
