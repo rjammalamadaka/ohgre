@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-16T10:46:15.993-06:00"
+        cq:lastModified="{Date}2018-01-17T11:30:18.871-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-16T10:46:20.556-06:00"
+        cq:lastReplicated="{Date}2018-01-17T11:30:24.302-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -46,11 +46,13 @@
             <applepromotionconten
                 jcr:created="{Date}2017-12-27T11:05:15.327-06:00"
                 jcr:createdBy="penny"
-                jcr:lastModified="{Date}2018-01-16T10:46:15.989-06:00"
+                jcr:lastModified="{Date}2018-01-17T11:30:18.868-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
-                description="*Rates and price plans effective 01/01/2018 to 01/31/2018. Offers are available only for new residential customers who use 150 Mcf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Dominion East Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75, Winter Fixed / 6-month plan: $75). Cannot be combined with any other offer. "/>
+                description="&lt;p>*Rates and price plans effective 01/01/2018 to 01/31/2018. Offers are available only for new residential customers who use 150 Mcf per year or less, using applicable promotion code. ONG service is available for eligible customers participating in the Energy Choice program through Dominion East Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges will apply for residential fixed price plans (12-month plan: $150/$75; 6-month plan: $75). Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;"
+                heading="Choose from one of our plans to get started right away!*"
+                textIsRich="true"/>
         </content>
         <image
             jcr:lastModified="{Date}2017-12-27T16:18:56.101-06:00"

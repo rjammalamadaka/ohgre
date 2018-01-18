@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2018-01-03T12:58:18.149-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-11T16:14:08.787-06:00"
+        cq:lastReplicated="{Date}2018-01-17T15:14:07.550-06:00"
         cq:lastReplicatedBy="jason01"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -17,10 +17,10 @@
         sling:vanityPath="raf25"
         appid="388067291608115"
         hideInNav="true"
-        ogdescription="Enroll with Grand Rapids Energy on their lowest available rates with promo code RAF25 and we could each earn a $25 Visa Reward Card. It's that easy! Program Terms and conditions apply. #ad"
+        ogdescription="Enroll with Grand Rapids Energy and we could each earn a $25 Visa Reward Card. It’s that easy! Program terms and conditions apply. #ad "
         ogimage="/content/dam/ohgre/raf/gre_social_image.png"
         ogsitename="GRE Refer-A-Friend"
-        ogtitle="GRE's lowest available rate and $25!"
+        ogtitle="$25 for you and $25 for me!"
         ogtype="website"
         ogurl="/content/gre/promo-raf.html">
         <image
