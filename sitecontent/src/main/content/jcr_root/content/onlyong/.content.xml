@@ -5,9 +5,9 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-01-11T08:50:37.549-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-01-10T09:49:01.468-06:00"
+        cq:lastModified="{Date}2018-01-18T12:10:00.344-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-18T12:10:06.269-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
@@ -82,17 +82,15 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
-            <myaccount
-                jcr:created="{Date}2017-11-29T20:49:54.217-06:00"
+            <cardpromo
+                jcr:created="{Date}2018-01-18T11:41:28.517-06:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-05T15:50:22.895-06:00"
+                jcr:lastModified="{Date}2018-01-18T12:10:00.338-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/myaccount"
-                buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer of Ohio Natural Gas, you can manage your account online.  Log in to your account to view your current contract and make changes."
-                displayLink="true"
-                heading="Currently an ONG customer?  Manage your account here."
+                sling:resourceType="ohgre/components/cardpromo"
+                description="If you're a current customer and you have questions about your account, please call us at 1.888.466.4427. Our customer service representatives are happy to help."
+                heading="Have Questions?"
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
                 mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
             <col_break15010028026211
