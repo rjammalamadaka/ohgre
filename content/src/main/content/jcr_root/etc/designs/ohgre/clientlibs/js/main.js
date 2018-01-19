@@ -187,6 +187,7 @@ var ohio_ng = {
 
     });
     $('.accord-trigger').on('click', function(event) {
+       console.log('main accordion');
       event.preventDefault();
       var obj = $(this);
       obj.toggleClass('accord-expanded');

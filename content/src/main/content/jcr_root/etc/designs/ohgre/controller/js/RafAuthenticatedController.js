@@ -281,7 +281,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       else {
 		o += "with Grand Rapids Energy and we can earn a Visa Reward Card!"
       }
-      
+
       o += " Terms apply. %23ad";
 
     var t = "url=" + base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID + "&r=1&text=" + o;
