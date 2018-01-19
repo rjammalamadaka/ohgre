@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy | Leading Natural Gas Company in Michigan"
-        jcr:uuid="6df982e0-2da8-4ddf-b9d2-8dab4dbf80dd"
+        jcr:uuid="5928fd54-e8ca-4972-b9e6-55d33d61e07b"
         sling:resourceType="/apps/ohgre/components/structure/page"
         days="Monday - Friday"
         errorPages="/content/gre/errors"

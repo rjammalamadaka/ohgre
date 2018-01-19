@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Apple Promotion"
-        jcr:uuid="8b3fe0aa-99d0-4f09-929f-a024b25b67bf"
+        jcr:uuid="e39b4714-ceb9-403c-a722-15fec4466d76"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
