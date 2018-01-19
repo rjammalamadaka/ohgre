@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="sling:OrderedFolder">
     <jcr:content
+        cq:lastReplicated="{Date}2018-01-18T17:04:17.057-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="nt:unstructured"
         jcr:title="Promotions">
         <folderThumbnail/>
@@ -16,4 +20,5 @@
     <GRE_DTE_BetterChoice_1568x348base.png/>
     <GRE_CON_GenAcq_1568x348base.png/>
     <GRE_DTE_GenAcq_1568x348base.png/>
+    <ONG_Switchback_1568x348base.png/>
 </jcr:root>
