@@ -27,7 +27,7 @@
                 sling:resourceType="ohgre/components/dashboard"
                 disclosure="&lt;p>Add disclosure here. (Terms &amp;amp; Conditions in the footer)&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 disclosurefixed="&lt;p> &lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                disclosurevariable="&lt;p>*Published price is the Variable Plan standard rate. Variable rate may change or stay the same each month based on market conditions.&lt;/p>&#xd;&#xa;"
+                disclosurevariable="&lt;p>*Published price is ONG's current Variable Plan standard rate. Variable rate may change or stay the same each month based on market conditions.&lt;/p>&#xd;&#xa;"
                 footernote="&lt;p>If you would like to change your information, please call &lt;a href=&quot;tel:1.888.466.4427&quot; target=&quot;Target&quot;>1.888.466.4427.&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>We are available from 8 a.m. to 5 p.m. ET Monday through Friday.&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true,true,true]"/>
         </content>

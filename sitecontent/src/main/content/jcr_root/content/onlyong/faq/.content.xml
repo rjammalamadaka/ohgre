@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="What is Natural Gas Used For? | Get Information on Natural Gas"
-        jcr:uuid="d8bcc072-4ba1-40f5-9a0e-c398cb7d1de8"
+        jcr:uuid="4cb2925d-8253-4269-b13d-4123b1cf78a3"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true"
         portalname="oh">

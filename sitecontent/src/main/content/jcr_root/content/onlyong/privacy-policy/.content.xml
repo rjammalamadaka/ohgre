@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Privacy Policy | Ohio Natural Gas®"
-        jcr:uuid="9176b16b-6afc-4c93-86d0-ebd7beda71f8"
+        jcr:uuid="89e6cc42-60a1-49a4-833a-740b1b7a1fe4"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true"
         portalname="oh">

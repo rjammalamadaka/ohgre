@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="RAF FAQs"
-        jcr:uuid="a574030f-4fa5-42b0-a1d8-daad845ff989"
+        jcr:uuid="8f95a07c-0e7b-4230-bb42-f77566b87478"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

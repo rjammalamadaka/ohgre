@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer a Friend | Terms &amp; Conditions"
-        jcr:uuid="95282fbe-cbaa-4b7a-bd82-7888699513be"
+        jcr:uuid="7c56eeaa-f6ec-47da-ad79-d16c1af99599"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         description="Review and accept the offical terms and conditions for the Refer a Friend natural gas rebate from Ohio Natural Gas®. Learn more."
         hideInNav="true"

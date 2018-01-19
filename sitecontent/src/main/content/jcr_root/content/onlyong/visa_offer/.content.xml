@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Visa Offer"
-        jcr:uuid="d0f6d43f-b5fc-4487-8aa8-895db72a4c42"
+        jcr:uuid="61a057a7-1c89-4f16-b2fe-cf950c025a6d"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <image

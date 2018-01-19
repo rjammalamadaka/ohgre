@@ -3,9 +3,9 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-01-17T13:08:35.211-06:00"
+        cq:lastModified="{Date}2018-01-18T17:05:49.110-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-17T13:08:38.465-06:00"
+        cq:lastReplicated="{Date}2018-01-18T17:05:53.851-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithnav"
@@ -27,11 +27,11 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-15T09:31:31.080+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-09T10:50:16.399-06:00"
+                jcr:lastModified="{Date}2018-01-18T17:05:49.106-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
-                imagepath="/content/dam/ohgre/promotions/ONG_Switchback_1568x348.png"
+                imagepath="/content/dam/ohgre/promotions/ONG_Switchback_1568x348base.png"
                 promoexpmsg="Hurry! This offer ends {{expdate}}."
                 textIsRich="true"/>
             <switchpromotionconte

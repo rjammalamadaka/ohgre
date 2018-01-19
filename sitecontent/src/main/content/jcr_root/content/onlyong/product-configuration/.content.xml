@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Product Content Configurtion"
-        jcr:uuid="3abee634-f378-4926-9be7-f0a5b530b0a2"
+        jcr:uuid="6df0c1c9-4fb0-40ef-bd64-358f17431615"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

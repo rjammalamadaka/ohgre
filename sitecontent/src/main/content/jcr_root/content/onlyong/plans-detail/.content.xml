@@ -87,7 +87,7 @@
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
-                description="If you're a current customer and you have questions about your account, please call us at 1.888.466.4427. Our customer service representatives are happy to help."
+                description="If you're a current customer and have questions about your account, please call us at 1.888.466.4427. Our customer service representatives are happy to help."
                 heading="Have Questions?"
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
                 mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
