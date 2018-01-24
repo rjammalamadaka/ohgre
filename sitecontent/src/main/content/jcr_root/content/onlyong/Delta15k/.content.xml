@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="DELTA15K"
-        jcr:uuid="4f419d76-777e-4b7c-a4d7-2dc9c9683a28"
+        jcr:uuid="49469293-2d7f-4a70-9074-8f0f400fb613"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

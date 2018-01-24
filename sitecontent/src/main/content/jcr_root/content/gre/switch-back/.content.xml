@@ -13,7 +13,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Switch Back"
-        jcr:uuid="488588d3-6b83-4566-b93e-784d8ea683b5"
+        jcr:uuid="cf272f4d-e666-4b9f-8631-698442db8a22"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithnavpage"
         hideInNav="true">
         <image

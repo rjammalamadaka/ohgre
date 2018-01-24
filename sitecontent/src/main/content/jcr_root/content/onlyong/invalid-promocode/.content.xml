@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-12-27T13:02:32.002-06:00"
-        cq:lastModifiedBy="josh"
+        cq:lastModified="{Date}2018-01-23T13:10:26.474-06:00"
+        cq:lastModifiedBy="jason01"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
@@ -18,12 +18,13 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-13T22:54:07.994+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-09T00:42:07.060-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2018-01-23T13:10:26.469-06:00"
+                jcr:lastModifiedBy="jason01"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/apples/hero.jpg"
+                imagepath="/content/dam/ohgre/apples/OHGRE_mobile_hero.jpg"
+                textIsRich="true"
                 title="We are unable to find this promotion code."/>
             <promotionerrorpage
                 jcr:created="{Date}2017-12-09T22:56:47.091-06:00"

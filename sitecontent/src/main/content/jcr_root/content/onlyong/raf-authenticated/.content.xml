@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer a Friend Authenticated | Ohio Natural Gas®"
-        jcr:uuid="215fb538-c948-4a56-8387-d8da396d04ca"
+        jcr:uuid="699542d7-5e62-4122-bbb3-01048b2cc5cb"
         sling:resourceType="/apps/ohgre/components/structure/referafriend"
         appid="388067291608116"
         description="Tell your friends to enroll with Ohio Natural Gas. with our Refer a Friend rebate program, you both can earn a $25 Visa® Rewards Card."

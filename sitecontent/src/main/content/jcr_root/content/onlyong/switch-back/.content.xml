@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="SWITCH BACK"
-        jcr:uuid="6102fb77-9b42-4f01-a0d4-1c7748f3a005"
+        jcr:uuid="18ac7f2c-c7af-4538-ab75-e483acdf193c"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

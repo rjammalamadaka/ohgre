@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Rate Plans"
-        jcr:uuid="7c806404-4cc3-4d22-9e2c-cc42c3936038"
+        jcr:uuid="9a9868dc-04cf-404b-9f35-ad8d3c68aecc"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true"
         portalname="oh">

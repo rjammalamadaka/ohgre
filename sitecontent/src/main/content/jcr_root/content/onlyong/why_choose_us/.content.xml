@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Why Choose Ohio Natural Gas as Your Supplier?"
-        jcr:uuid="ef54dcf1-3007-41e5-aa34-70119aa39fd7"
+        jcr:uuid="6fde5e43-1779-4260-a62c-dc15b5b6fdca"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         navTitle="WHY CHOOSE US?"
         portalname="oh">

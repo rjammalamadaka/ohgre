@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Terms of Use | Ohio Natural Gas®"
-        jcr:uuid="556bf30f-325b-4594-aabb-28f447c351d7"
+        jcr:uuid="bfb82942-4d35-4ad9-bafb-53ce1b5397a1"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true"
         portalname="oh">
