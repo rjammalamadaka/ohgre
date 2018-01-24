@@ -50,7 +50,7 @@
 	<div class="popup-wrapper" id="popupetc"> <!-- Early Termination charge-->
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination fee.</span></h6>
+          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination charge.</span></h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -108,7 +108,7 @@
 										<small>{{product.ldcDesc}}</small>
 									</div>
 									<div class="plan-button">
-										<a href="#" class="primary-button" ng-click="enrollselectandcontinue()">YES, PAY TERMINATION FEE</a>
+										<a href="#" class="primary-button" ng-click="enrollselectandcontinue()">YES, PAY TERMINATION CHARGE</a>
 									</div>
 
 

@@ -1,10 +1,16 @@
 <div class="form-wrapper inverted-checkbox confirmation-wrapper" id="order-confirmation">
   <div class="mobile-padding">
-    <h3 class="subhead-color">Confirmation Number # {{enrollId}}</h3>
+      <h3 class="subhead-color">Confirmation Number # {{enrollId}} - {{currentMonth}} {{currentDate}}, {{currentYear}}</h3>
   </div>
   <div class="box-with-border confirmation-header">
     <div>
       ${properties.confirmationcontent @ context='html'}
+    </div>
+    <div ng-show="customerInfo.responseStatus == '1'">
+      ${properties.newcustomer @ context='html'}
+    </div>
+    <div ng-show="customerInfo.responseStatus == '0'">
+      ${properties.existingcustomer @ context='html'}
     </div>
     <div ng-show="deltaskymilesaccountnumberprovidelater">
       ${properties.deltaconfirmationcontent @ context='html'}
