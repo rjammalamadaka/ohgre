@@ -5,14 +5,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="dd9f5f2e-57c4-489e-833d-b96de0bf85b0">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-09T13:04:26.166-06:00"
+        cq:lastReplicated="{Date}2018-01-22T14:44:45.635-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="delta-image.jpg"
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/delta-image.jpg"
-        jcr:lastModified="{Date}2018-01-19T15:31:19.732-05:00"
+        jcr:lastModified="{Date}2018-01-23T22:16:10.580-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1383"
             exif:PixelYDimension="{Long}549"
-            jcr:lastModified="{Date}2018-01-19T15:31:19.643-05:00"
+            jcr:lastModified="{Date}2018-01-23T22:16:10.455-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/ONG_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/ONG_logos/ohio-logo-white.png"
-        jcr:lastModified="{Date}2018-01-19T15:31:23.658-05:00"
+        jcr:lastModified="{Date}2018-01-23T22:16:17.375-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}15431"
             dc:format="image/png"
             dc:modified="{Date}2017-08-12T21:13:27.266+05:30"
-            jcr:lastModified="{Date}2018-01-19T15:31:23.602-05:00"
+            jcr:lastModified="{Date}2018-01-23T22:16:17.262-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

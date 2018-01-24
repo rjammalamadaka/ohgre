@@ -5,36 +5,36 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="16dc9585-6a7b-405e-b8c1-73826a4416d3">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-08T15:08:10.050-06:00"
+        cq:lastReplicated="{Date}2018-01-22T13:39:45.987-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="OH-CO-RS-54.4.pdf"
         cq:parentPath="/content/dam/ohgre/termsandconditions/Ohio"
         dam:assetState="processed"
         dam:relativePath="ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
-        jcr:lastModified="{Date}2018-01-19T15:31:18.511-05:00"
+        jcr:lastModified="{Date}2018-01-23T22:16:07.120-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-07T21:28:04.590-06:00"
+            dam:extracted="{Date}2018-01-22T13:34:03.082-06:00"
             dam:numPages="{Long}5"
             dam:Physicalheightininches="{Decimal}11.0"
             dam:Physicalwidthininches="{Decimal}8.5"
             dam:Producer="Microsoft® Word 2013"
-            dam:sha1="50c84e07b387425502cc89f05486af4f58e7367e"
-            dam:size="{Long}266493"
+            dam:sha1="254efbcfd995f504ea3c9cf543e8a0ba072bf12c"
+            dam:size="{Long}266495"
             dc:format="application/pdf"
             dc:modified="{Date}2018-01-05T23:54:56.032-05:00"
-            jcr:lastModified="{Date}2018-01-19T15:31:14.117-05:00"
+            jcr:lastModified="{Date}2018-01-23T22:15:53.894-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             pdf:Producer="Microsoft® Word 2013"
             xmp:CreateDate="{Date}2017-12-05T11:38:37.000-05:00"
             xmp:CreatorTool="Microsoft® Word 2013"
-            xmp:MetadataDate="{Date}2018-01-19T15:31:14.000-05:00"
-            xmp:ModifyDate="{Date}2018-01-19T15:31:14.000-05:00"/>
+            xmp:MetadataDate="{Date}2018-01-23T22:15:54.000-05:00"
+            xmp:ModifyDate="{Date}2018-01-23T22:15:54.000-05:00"/>
         <related jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/Gre_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/Gre_logos/GRE_Logo_Footer.png"
-        jcr:lastModified="{Date}2018-01-19T15:31:24.427-05:00"
+        jcr:lastModified="{Date}2018-01-23T22:16:18.743-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}22356"
             dc:format="image/png"
             dc:modified="{Date}2017-08-18T07:46:27.762+05:30"
-            jcr:lastModified="{Date}2018-01-19T15:31:24.365-05:00"
+            jcr:lastModified="{Date}2018-01-23T22:16:18.525-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
