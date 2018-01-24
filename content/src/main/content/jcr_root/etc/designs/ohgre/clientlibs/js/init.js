@@ -7,6 +7,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
 
   $rootScope.currentMonth = months[new Date().getMonth()];
   $rootScope.currentYear = new Date().getFullYear();
+  $rootScope.currentDate = new Date().getDate();
 
 
   setTimeout(function() {
