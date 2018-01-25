@@ -35,3 +35,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.css @ categories='ohgre.clientlibs.controler'}"/>
 
 <link rel="stylesheet" href="/etc/designs/ohgre/clientlibs/css/print.css" media="print">
+<style>
+.full-banner-callout.flush{
+	overflow: hidden;
+}
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+	.full-banner-callout.flush .mobile-slide-image {
+		min-height: 14rem;
+    }
+}
+@media only screen and (min-device-width: 375px) {
+    .full-banner-callout.flush .mobile-slide-image {
+        min-height: 15.5rem;
+        background-position: top center;
+    }
+}
+.full-banner-callout.flush .tablet-slide-image {
+	margin-left: -18%;
+    min-height: 30rem;
+}
+
+</style>
