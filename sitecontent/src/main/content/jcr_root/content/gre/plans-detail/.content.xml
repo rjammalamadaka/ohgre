@@ -4,8 +4,8 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-01-22T14:45:53.844-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-01-25T00:58:37.704-05:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-01-22T14:46:10.413-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -83,15 +83,17 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
-            <cardpromo_117553345
-                jcr:created="{Date}2018-01-18T11:49:29.350-06:00"
+            <myaccount
+                jcr:created="{Date}2018-01-25T00:57:52.150-05:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-22T14:45:53.837-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-01-25T00:58:37.701-05:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/cardpromo"
-                description="If you're already a customer with Grand Rapids Energy and you have questions about your account, please call us. Our customer service representatives are happy to help.&#xd;&#xa;"
-                heading="Current Customers? Call 1.800.841.1541 for Assistance"
+                sling:resourceType="ohgre/components/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer with Grand Rapids Energy, you can manage your account online. Log into your account to view your current contract and make changes."
+                displayLink="true"
+                heading="Currently a GRE customer? Manage your account here."
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
                 mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
             <col_end15006033663930
