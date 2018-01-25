@@ -33,6 +33,12 @@
                                         fieldLabel="Image Path"
                                         name="./imagepath"
                                         rootPath="/content/dam/ohgre"/>
+                                    <mobileimagepath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Mobile Image Path"
+                                        name="./mobileimagepath"
+                                        rootPath="/content/dam/ohgre"/>
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
