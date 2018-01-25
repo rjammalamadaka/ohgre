@@ -313,8 +313,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
   $rootScope.getCustomerStatus = function(status) {
 
     if (activeStates.indexOf(status) != -1) {
+        $rootScope.customerStatus="Active";
       return "Active";
     } else {
+         $rootScope.customerStatus="Inactive";
       return "Inactive";
     }
 
@@ -377,5 +379,17 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
     });
     //alert(navigator.userAgent);
   }
+
+    $rootScope.getESTTimeFormat=function(){
+        var date=new Date(),
+        hour = date.getHours(),
+        minute = date.getMinutes(),
+        second = date.getSeconds(),
+        hourFormatted = hour % 12 || 12, 
+        minuteFormatted = minute < 10 ? '0' + minute : minute,
+        morning = hour < 12 ? "am" : "pm";
+
+        return $rootScope.currentMonth+" "+$rootScope.currentDate +", "+$rootScope.currentYear+" / "+hourFormatted + ":" +minuteFormatted + morning+" EST";
+    }
 
 }]);
