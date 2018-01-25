@@ -96,7 +96,7 @@
           <span class="checkmark-wrapper">
       <span class="checkmark"></span>
           </span>
-          <span class="after-checkbox">I have previously viewed and agreed to the terms and conditions of service.</span>
+          <span class="after-checkbox">${properties.termsacceptance2 @ context = 'html'}</span>
         </div>
         <hr />
         <h4>Review and Authorize</h4>
@@ -120,7 +120,7 @@
       <div class="button-container">
         <div class="print-container">
           <a href="#" class="print-button">Print</a>
-          <a href="#" class="download-button" download>Download</a>
+          <a href="#" class="download-button" download>Save</a>
         </div>
         <a href="#" class="primary-button next-button" ng-click="gotoHomePage()">{{confirmationButton}}</a>
       </div>
