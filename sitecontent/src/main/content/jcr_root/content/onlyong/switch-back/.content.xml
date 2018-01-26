@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-19T08:13:24.640-06:00"
+        cq:lastModified="{Date}2018-01-25T05:38:31.877-06:00"
         cq:lastModifiedBy="jason01"
         cq:lastReplicated="{Date}2018-01-19T13:03:12.337-06:00"
         cq:lastReplicatedBy="admin"
@@ -21,12 +21,13 @@
             <promoherobanner
                 jcr:created="{Date}2018-01-09T10:52:23.874-06:00"
                 jcr:createdBy="penny"
-                jcr:lastModified="{Date}2018-01-19T08:13:24.636-06:00"
+                jcr:lastModified="{Date}2018-01-25T05:38:31.872-06:00"
                 jcr:lastModifiedBy="jason01"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/promotions/ONG_Switchback_1568x348base.png"
+                mobileimagepath="/content/dam/ohgre/promotions/OHGRE_mobile_hero_test.jpg"
                 promoexpmsg="Hurry! Offer ends {{expdate}}!"
                 textIsRich="true"/>
             <switchpromotionconte

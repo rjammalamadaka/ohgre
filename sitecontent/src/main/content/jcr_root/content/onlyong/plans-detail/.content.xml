@@ -4,9 +4,9 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-01-25T00:59:50.350-05:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-01-18T13:17:59.501-06:00"
+        cq:lastModified="{Date}2018-01-24T09:50:36.830-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-24T09:50:46.398-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -81,10 +81,10 @@
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
             <myaccount
-                jcr:created="{Date}2018-01-25T00:59:09.851-05:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-25T00:59:50.346-05:00"
-                jcr:lastModifiedBy="admin"
+                jcr:created="{Date}2018-01-24T09:49:14.515-06:00"
+                jcr:createdBy="penny"
+                jcr:lastModified="{Date}2018-01-24T09:50:36.823-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/myaccount"
                 buttontitle="VIEW MY ACCOUNT"

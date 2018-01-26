@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-17T11:28:44.598-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-01-25T04:43:44.346-06:00"
+        cq:lastModifiedBy="jason01"
         cq:lastReplicated="{Date}2018-01-17T11:28:48.543-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -21,12 +21,13 @@
             <promoherobanner
                 jcr:created="{Date}2017-12-09T15:05:40.033-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-01-04T13:55:08.912-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-01-25T04:43:44.341-06:00"
+                jcr:lastModifiedBy="jason01"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/apples/hero.jpg"
+                imagepath="[/content/dam/ohgre/apples/hero.jpg]"
+                mobileimagepath="/content/dam/ohgre/apples/apples_mobile.jpg"
                 textIsRich="true"
                 title="When you compare apples to apples, Ohio Natural Gas is the clear choice."/>
             <applepromotionconten
