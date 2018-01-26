@@ -6,6 +6,8 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
     $scope.formButton="Apply Promo Code";
      $scope.guaranteeProductDisplay=false;
 
+    $scope.showVariablePlan=false;
+
       function isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
@@ -423,6 +425,12 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
     }
 
     $scope.planSelectRenewal =function(product){
+
+        $scope.showVariablePlan=false;
+
+         if(product.PriceChangeFrequency=="D"){
+			$scope.showVariablePlan=true;
+         }
 
         $scope.selectedProduct=product;
         $scope.test=product;

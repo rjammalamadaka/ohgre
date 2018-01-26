@@ -4,6 +4,8 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     $scope.guaranteeProductDisplay=false;
 
+    $scope.showVariablePlan=false;
+
       function isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
@@ -131,9 +133,11 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         $scope.planSelectRenewal =function(product){
 
-        $scope.selectedProduct=product;
-
-
+            $scope.showVariablePlan=false;
+           if(product.PriceChangeFrequency=="D"){
+			$scope.showVariablePlan=true;
+      		}
+              $scope.selectedProduct=product;
 
         if($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y"){
              $('#popupwithrenewal').addClass('show-popup');
