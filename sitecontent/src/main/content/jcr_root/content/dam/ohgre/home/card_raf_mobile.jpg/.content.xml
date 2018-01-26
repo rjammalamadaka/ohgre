@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_raf_mobile.jpg"
-        jcr:lastModified="{Date}2018-01-23T22:16:12.906-05:00"
+        jcr:lastModified="{Date}2018-01-26T00:42:40.650-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}248"
             exif:PixelYDimension="{Long}195"
-            jcr:lastModified="{Date}2018-01-23T22:16:02.824-05:00"
+            jcr:lastModified="{Date}2018-01-26T00:42:34.888-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

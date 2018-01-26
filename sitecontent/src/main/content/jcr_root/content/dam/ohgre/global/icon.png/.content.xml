@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/icon.png"
-        jcr:lastModified="{Date}2018-01-23T22:16:10.438-05:00"
+        jcr:lastModified="{Date}2018-01-26T00:42:35.938-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}15824"
             dc:format="image/png"
             dc:modified="{Date}2017-09-11T02:37:55.617-04:00"
-            jcr:lastModified="{Date}2018-01-23T22:16:06.314-05:00"
+            jcr:lastModified="{Date}2018-01-26T00:42:05.246-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

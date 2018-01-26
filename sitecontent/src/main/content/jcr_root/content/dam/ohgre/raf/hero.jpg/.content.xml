@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/hero.jpg"
-        jcr:lastModified="{Date}2018-01-23T22:16:12.319-05:00"
+        jcr:lastModified="{Date}2018-01-26T00:42:39.583-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1368"
             exif:PixelYDimension="{Long}584"
-            jcr:lastModified="{Date}2018-01-23T22:16:05.839-05:00"
+            jcr:lastModified="{Date}2018-01-26T00:42:36.801-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

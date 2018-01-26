@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_moving_mobile.jpg"
-        jcr:lastModified="{Date}2018-01-23T22:16:07.972-05:00"
+        jcr:lastModified="{Date}2018-01-26T00:42:29.190-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}222"
             exif:PixelYDimension="{Long}195"
-            jcr:lastModified="{Date}2018-01-23T22:16:07.208-05:00"
+            jcr:lastModified="{Date}2018-01-26T00:42:06.946-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
