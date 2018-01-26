@@ -42,14 +42,15 @@
         </div>
         <div class="selected-info">
             <span class="selected-plan-tag" ng-show="!showcurrentplan">Selected Contract</span>
-            <span class="selected-plan-tag" ng-show="showcurrentplan">Selected New Contract <span ng-show="!showearlyterminationfee" class="plan-addl-info">Start at end of Current Contract</span><span ng-show="showearlyterminationfee">-Starts Tomorrow </span></span>
+            <span class="selected-plan-tag" ng-show="showcurrentplan" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">Selected New Contract <span ng-show="!showearlyterminationfee" class="plan-addl-info">To be processed by ONG the next business day.</span><span ng-show="showearlyterminationfee">To be processed by ONG the next business day.</span></span>
+            <span class="selected-plan-tag" ng-show="showcurrentplan" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">Selected New Contract <span ng-show="!showearlyterminationfee" class="plan-addl-info">To be processed by GRE the next business day.</span><span ng-show="showearlyterminationfee">To be processed by GRE the next business day.</span></span>
 
 
             <h5>{{product.productDescFriendly}}</h5>
             <span class="utility-name">{{product.ldcDesc}}</span>
             <span class="utility-name" ng-show="showVariablePlan"> Price shown for {{currentMonth}} {{currentYear}}</span>
-            <span class="utility-name error-text">Early Termination Charges Apply.</span>
-            <span class="utility-name error-text">Please see T&Cs for applicable charges</span>
+            <span class="utility-name error-text" ng-hide="showVariablePlan">Early Termination Charges Apply.</span>
+            <span class="utility-name error-text" ng-hide="showVariablePlan">Please see T&Cs for applicable charges</span>
 
 
         </div>

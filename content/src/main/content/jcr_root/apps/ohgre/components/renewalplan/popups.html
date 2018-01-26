@@ -53,8 +53,9 @@
                                         <h4>Selected New Contract</h4> 
 										<span class="plan-selected">{{selectedProduct.ProductDescFriendly}}</span>
 										<small>{{customerInfo.ldcdesc}}</small>
-                                        <small class="error-text">Early Termination Charges Apply.</small>
-                                        <small class="error-text">Please see T&Cs for applicable charges</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges</small>
 									</div>
 									<div class="plan-button">
 										<a href="#" class="primary-button" ng-click="continueenroll()">YES, PAY TERMINATION CHARGE</a>
@@ -141,8 +142,9 @@
                                         <h4>Selected New Contract</h4>
 										<span class="plan-selected">{{selectedProduct.ProductDescFriendly}}</span>
 										<small>{{customerInfo.ldcDesc}}</small>
-                                        <small class="error-text">Early Termination Charges Apply.</small>
-                                        <small class="error-text">Please see T&Cs for applicable charges</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges</small>
 									</div>
 									<div class="plan-button">
 										<a href="#" class="primary-button" ng-click="continueenroll()">select &amp; continue</a>
