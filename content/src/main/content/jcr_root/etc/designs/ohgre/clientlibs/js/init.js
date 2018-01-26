@@ -381,15 +381,27 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
   }
 
     $rootScope.getESTTimeFormat=function(){
-        var date=new Date(),
+
+        var d=new Date();
+        var localOffset = d.getTimezoneOffset() * 60000;
+        var localTime = d.getTime();
+        var utc = localTime + localOffset;
+        centralOffset=-6;
+        utc=utc+(-6*3600000);
+       // var utcTime=new Date(utc);
+
+        var date=new Date(utc),
         hour = date.getHours(),
         minute = date.getMinutes(),
         second = date.getSeconds(),
         hourFormatted = hour % 12 || 12, 
         minuteFormatted = minute < 10 ? '0' + minute : minute,
-        morning = hour < 12 ? "am" : "pm";
+        morning = hour < 12 ? " a.m." : " p.m.";
+        currentmonth=months[date.getMonth()];
+        currentdate=date.getDate();
+        currentyear=date.getFullYear();
 
-        return $rootScope.currentMonth+" "+$rootScope.currentDate +", "+$rootScope.currentYear+" / "+hourFormatted + ":" +minuteFormatted + morning+" EST";
+        return currentmonth+" "+currentdate +", "+currentyear+" / "+hourFormatted + ":" +minuteFormatted + morning+" CT";
     }
 
 }]);
