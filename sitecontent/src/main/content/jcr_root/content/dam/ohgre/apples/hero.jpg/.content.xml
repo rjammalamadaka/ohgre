@@ -5,14 +5,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="d1d25fc8-383a-49bd-9f04-9f2cd6148b52">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-11T07:15:57.198-06:00"
+        cq:lastReplicated="{Date}2018-01-26T09:32:17.370-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="hero.jpg"
         cq:parentPath="/content/dam/ohgre/apples"
         dam:assetState="processed"
         dam:relativePath="ohgre/apples/hero.jpg"
-        jcr:lastModified="{Date}2018-01-26T00:42:36.161-05:00"
+        jcr:lastModified="{Date}2018-01-26T23:32:16.657-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1467"
             exif:PixelYDimension="{Long}570"
-            jcr:lastModified="{Date}2018-01-26T00:42:36.064-05:00"
+            jcr:lastModified="{Date}2018-01-26T23:32:16.064-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

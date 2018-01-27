@@ -9,7 +9,7 @@
         cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_COH_SCORE1C_768x300.png"
-        jcr:lastModified="{Date}2018-01-25T13:29:50.950-06:00"
+        jcr:lastModified="{Date}2018-01-26T23:32:33.571-05:00"
         jcr:lastModifiedBy="penny"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

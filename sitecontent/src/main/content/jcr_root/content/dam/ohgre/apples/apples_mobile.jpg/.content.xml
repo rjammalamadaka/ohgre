@@ -4,10 +4,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="152206e6-15c6-486f-b3b7-62212df8c11f">
     <jcr:content
+        cq:lastReplicated="{Date}2018-01-26T09:32:17.370-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="ohgre/apples/apples_mobile.jpg"
-        jcr:lastModified="{Date}2018-01-26T00:42:36.509-05:00"
+        jcr:lastModified="{Date}2018-01-26T23:32:12.738-05:00"
         jcr:lastModifiedBy="jason01"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
