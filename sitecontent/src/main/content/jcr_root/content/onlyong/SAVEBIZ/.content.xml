@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-17T13:55:04.163-06:00"
+        cq:lastModified="{Date}2018-01-26T14:32:50.566-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-17T13:55:07.586-06:00"
+        cq:lastReplicated="{Date}2018-01-26T14:32:52.346-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -32,11 +32,11 @@
             <offerpromotionconten
                 jcr:created="{Date}2017-08-08T00:55:59.249-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-17T13:55:04.159-06:00"
+                jcr:lastModified="{Date}2018-01-26T14:32:50.563-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/offerpromotioncontent"
-                fineprinttext="&lt;p>*Price offers are available to&amp;nbsp;new commercial customers enrolling with Ohio Natural Gas between 01/02/2018 and 01/31/2018&amp;nbsp;using applicable promotion code. ONG service is available for eligible customers participating in the Ohio choice program through their natural gas utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or &lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>click here&lt;/a>. Early termination charges&amp;nbsp;apply for&amp;nbsp;commercial&amp;nbsp;fixed price plans (12-Month plan: $300/$150). Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;"
+                fineprinttext="&lt;p>*Price offers are available to&amp;nbsp;new commercial customers enrolling with Ohio Natural Gas between 01/02/2018 and 01/31/2018&amp;nbsp;using applicable promotion code. ONG service is available for eligible customers participating in the Ohio choice program through their natural gas utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or &lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>click here&lt;/a>. Early Termination Charges&amp;nbsp;apply for&amp;nbsp;commercial&amp;nbsp;fixed price plans (12-Month plan: $300/$150). Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;"
                 imagepath="/content/dam/ohgre/raf/GetStarted.png"
                 text="&lt;h2>CHOOSE FROM OUR LOWEST RATES AVAILABLE.*&lt;br />&#xd;&#xa;&lt;/h2>&#xd;&#xa;&lt;p>We know you have options when it comes to your natural gas provider. We received your request to cancel service. We hear you loud and clear.&lt;/p>&#xd;&#xa;&lt;p>We really want to continue being your natural gas provider. To prove it, we want to offer you our lowest rates available!&lt;/p>&#xd;&#xa;&lt;p>Come back to Ohio Natural Gas and take advantage of our lowest 6- or 12-month fixed rate plans for the duration of your contract ‐ guaranteed!&lt;/p>&#xd;&#xa;&lt;h3>Easy Sign Up&lt;/h3>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>There will be &lt;b>no service interruption&lt;/b>. Our experts ensure a seamless transition.&lt;/li>&#xd;&#xa;&lt;li>Your utility will continue to deliver your gas, send you one monthly bill and respond to service calls.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h2>Hurry! This offer ends January 31, 2018.&lt;/h2>&#xd;&#xa;&lt;p>&lt;a title=&quot;FAQ&quot; href=&quot;/content/onlyong/faq.html&quot; target=&quot;_blank&quot;>Frequently Asked Questions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a title=&quot;Terms And Conditions&quot; href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>Program Terms and Conditions &amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true,true]"/>

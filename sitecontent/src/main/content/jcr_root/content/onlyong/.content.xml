@@ -219,10 +219,6 @@
                 APPLEMAGIC="/content/onlyong/applemagic"/>
             <_x0032_018_1_Jan
                 jcr:primaryType="nt:unstructured"
-                _x0031_0FIX2018="/content/onlyong/10FIX2018"
-                _x0031_0FIX2018ONLINE="/content/onlyong/10FIX2018"
-                _x0031_0MONTHFIX2018="/content/onlyong/10MONTHFIX2018"
-                _x0031_0MONTHFIX2018ONLINE="/content/onlyong/10MONTHFIX2018"
                 COMPARE1C="/content/onlyong/COMPARE1C"
                 COMPARE1CONLINE="/content/onlyong/COMPARE1C"
                 COMPARE1V="/content/onlyong/COMPARE1V"
@@ -232,12 +228,16 @@
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
+                LOWEST2D="/content/onlyong/LOWEST2D"
+                LOWEST2DONLINE="/content/onlyong/LOWEST2D"
                 SAVEBIZ="/content/onlyong/SAVEBIZ"
                 SAVEME="/content/onlyong/SAVEME"
                 SCORE1C="/content/onlyong/SCORE1C"
                 SCORE1CONLINE="/content/onlyong/SCORE1C"
                 SCORE1V="/content/onlyong/SCORE1V"
                 SCORE1VONLINE="/content/onlyong/SCORE1V"
+                SCORE2D="/content/onlyong/SCORE2D"
+                SCORE2DONLINE="/content/onlyong/SCORE2D"
                 SCORE3C="/content/onlyong/SCORE3C"
                 SCORE3CONLINE="/content/onlyong/SCORE3C"
                 SCORE3V="/content/onlyong/SCORE3V"
@@ -290,10 +290,10 @@
     <COMPARE3V/>
     <DELTA15K/>
     <SCORE3V/>
-    <_x0031_0FIX2018/>
-    <_x0031_0MONTHFIX2018/>
     <DEOTERMS/>
     <DUKETERMS/>
     <VEDOTERMS/>
     <COHTERMS/>
+    <SCORE2D/>
+    <LOWEST2D/>
 </jcr:root>
