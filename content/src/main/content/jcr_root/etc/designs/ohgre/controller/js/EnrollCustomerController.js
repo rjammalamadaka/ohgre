@@ -17,7 +17,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     $scope.displayReferalForm=false;
 
-    $scope.showVariablePlan=false;
+    $rootScope.showVariablePlan=false;
 
   jQuery('#popup-spinner-wrap').show();
 
@@ -81,7 +81,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     }
 
       if(data.priceChangeFrequency=="D"){
-		$scope.showVariablePlan=true;
+		$rootScope.showVariablePlan=true;
       }
 
     setPromotionInfoByLDC(data.LDC);
@@ -150,7 +150,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       $rootScope.showcurrentplan=true;
       var promoCodeInfo=ohgre.store("promoCodeInfo");
       if(promoCodeInfo && !isEmpty(promoCodeInfo)){
-        $scope.showpromocodeconfirmation=true;
+          if($rootScope.product.isDefaultPromoCode=="false")
+           $scope.showpromocodeconfirmation=true;
       }
       $scope.confirmationButton="Back to My Account";
 
@@ -741,6 +742,7 @@ $scope.displayReferalForm=true;
 
     if(step ==2 || step ==3){
       if($scope.promotionInfo && $scope.promotionInfo.PromotionCode){
+          if($rootScope.product.isDefaultPromoCode=="false")
         $scope.showpromocodeconfirmation=true;
       }
     }else{

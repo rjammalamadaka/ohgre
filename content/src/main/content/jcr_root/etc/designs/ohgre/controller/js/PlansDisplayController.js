@@ -9,16 +9,16 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
   }
 
 
-    var isEmpty=function(obj) {
-        for(var key in obj) {
-            if(obj.hasOwnProperty(key))
-                return false;
-        }
-        return true;
+  var isEmpty = function(obj) {
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key))
+        return false;
     }
+    return true;
+  }
 
 
-     jQuery('#popup-spinner-wrap').show();
+  jQuery('#popup-spinner-wrap').show();
 
   $scope.displayPlans = true;
 
@@ -46,32 +46,32 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
     $http.get(url).success(function(data, status, headers, config) {
       //goToByScroll();
-           jQuery('#popup-spinner-wrap').hide();
-        if(!isEmpty(data)){
+      jQuery('#popup-spinner-wrap').hide();
+      if (!isEmpty(data)) {
 
-              $scope.Quotes = data;
-              if ($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length > 0) {
-                $scope.Customer = $scope.Quotes.Customer;
-                $scope.products = $scope.Customer[0].Product;
-                updateProductFinePrint();
-                //$window.sessionStorage.setItem('products', angular.toJson($scope.products));
-                $scope.displayPlans = true;
-                setTimeout(function() {
-                  $rootScope.bindAccordian();
-                }, 10);
-              }
-
-        }else{
-            location.href=$rootScope.homeUrl+"/errors/500.html";
+        $scope.Quotes = data;
+        if ($scope.Quotes && $scope.Quotes.Customer && $scope.Quotes.Customer.length > 0) {
+          $scope.Customer = $scope.Quotes.Customer;
+          $scope.products = $scope.Customer[0].Product;
+          updateProductFinePrint();
+          //$window.sessionStorage.setItem('products', angular.toJson($scope.products));
+          $scope.displayPlans = true;
+          setTimeout(function() {
+            $rootScope.bindAccordian();
+          }, 10);
         }
+
+      } else {
+        location.href = $rootScope.homeUrl + "/errors/500.html";
+      }
 
     }).error(function(data, status, headers, config) {
-   		jQuery('#popup-spinner-wrap').hide();
- 		if(status == 404){
-                location.href=$rootScope.homeUrl+"/errors/404.html";
-        }else{
-                location.href=$rootScope.homeUrl+"/errors/500.html";
-        }
+      jQuery('#popup-spinner-wrap').hide();
+      if (status == 404) {
+        location.href = $rootScope.homeUrl + "/errors/404.html";
+      } else {
+        location.href = $rootScope.homeUrl + "/errors/500.html";
+      }
     });
 
   }
@@ -216,7 +216,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
       $rootScope.hashParams.lctype = locationType;
       $rootScope.hashParams.ldc = ldcCode;
       location.hash = currentHash;
-	  jQuery('#popup-spinner-wrap').show();
+      jQuery('#popup-spinner-wrap').show();
 
       getQuotes(ldcCode);
     }
@@ -267,7 +267,7 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
   }
 
   $scope.showDeskAccordGuarantee = function() {
-
+    consoloe.log($scope.displayGuranteedAccord);
 
     if ($scope.displayGuranteedAccord) {
       $scope.displayGuranteedAccord = false;
@@ -304,12 +304,11 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     if ($scope.productsInfo && $scope.productsInfo.length > 0) {
       for (var i = 0; i < $scope.productsInfo.length; i++) {
 
- 		var product =null;
-          try{
-         product = JSON.parse($scope.productsInfo[i]);
-          }catch(e){
-          }
-        if (product && product.productcode &&  product.productcode == productCode) {
+        var product = null;
+        try {
+          product = JSON.parse($scope.productsInfo[i]);
+        } catch (e) {}
+        if (product && product.productcode && product.productcode == productCode) {
           smallDesc = product.description;
           break;
         }

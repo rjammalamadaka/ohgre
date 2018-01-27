@@ -205,7 +205,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
         req.RateClassCode=$scope.productData.rateClassCode;
         req.dukNumber= $scope.productData.dukNumber;
         req.PriceChangeFrequency=$scope.selectedProduct.PriceChangeFrequency;
-
+        req.isDefaultPromoCode=true;
 
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
