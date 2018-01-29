@@ -404,4 +404,19 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
         return currentmonth+" "+currentdate +", "+currentyear+" / "+hourFormatted + ":" +minuteFormatted + morning+" CT";
     }
 
+    var getDateFormat=function(date){
+        var month=date.getMonth()+1;
+        var day=date.getDate();
+        var year=date.getFullYear();
+        if(month<10){month='0'+month};
+        if(day<10){day='0'+day};
+        return month+'/'+day+'/'+year;
+    }
+    var date = new Date();
+    var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+    var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0); 
+    $rootScope.currentMonthFirstDay=getDateFormat(firstDay);
+    $rootScope.currentMonthLastDay=getDateFormat(lastDay); 
+
+
 }]);
