@@ -1,7 +1,7 @@
 	<div class="popup-wrapper" id="popupetc"> <!-- Early Termination charge-->
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination charge.</span></h6>
+          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} Early Termination Charge.</span></h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -55,7 +55,7 @@
 										<small>{{customerInfo.ldcdesc}}</small>
                                         <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
                                         <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
-                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
 									</div>
 									<div class="plan-button">
 										<a href="#" class="primary-button" ng-click="continueenroll()">YES, PAY TERMINATION CHARGE</a>
@@ -144,7 +144,7 @@
 										<small>{{customerInfo.ldcDesc}}</small>
                                         <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
                                         <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
-                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
 									</div>
 									<div class="plan-button">
 										<a href="#" class="primary-button" ng-click="continueenroll()">select &amp; continue</a>
