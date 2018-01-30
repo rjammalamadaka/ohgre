@@ -6,8 +6,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-01-24T12:41:09.702-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-01-28T22:09:54.124-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-01-24T09:47:55.614-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -47,13 +47,13 @@
             <promocode
                 jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-10T11:14:10.273-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-01-28T22:09:54.119-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promocode"
                 backGroundColor="rgba(0,116,191,1.00)"
-                description="&lt;p>Your special offer awaits!&lt;/p>&#xd;&#xa;"
-                heading="Have a Promo Code?"
+                description="&lt;p>Your special offer awaits!&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                heading="Have a Promo Code? "
                 textIsRich="true">
                 <cq:annotations jcr:primaryType="nt:unstructured"/>
             </promocode>
