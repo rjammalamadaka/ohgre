@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_offer1_mobile.jpg"
-        jcr:lastModified="{Date}2018-01-28T23:18:29.362-05:00"
+        jcr:lastModified="{Date}2018-01-29T20:39:02.066-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}282"
             exif:PixelYDimension="{Long}195"
-            jcr:lastModified="{Date}2018-01-28T23:18:29.213-05:00"
+            jcr:lastModified="{Date}2018-01-29T20:39:01.944-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
