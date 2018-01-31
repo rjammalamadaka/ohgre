@@ -29,7 +29,7 @@
             <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate == '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}</span>
             <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalFixVarProductCd == 'V')"> Price shown for {{currentMonth}} {{currentYear}}</span>
 
-            <span class="error-text block" ng-show="showearlyterminationfee">Early Termination Charge of {{customerInfo.earlyTermChargeAmt | currency:"$":0}} .</span>
+            <span class="error-text block" ng-show="showearlyterminationfee">Early termination charge of {{customerInfo.earlyTermChargeAmt | currency:"$":0}}.</span>
 
         </div>
     </div>
@@ -49,7 +49,7 @@
             <h5>{{product.productDescFriendly}}</h5>
             <span class="utility-name">{{product.ldcDesc}}</span>
             <span class="utility-name" ng-show="showVariablePlan"> Price shown for {{currentMonth}} {{currentYear}}</span>
-            <span class="utility-name error-text" ng-hide="showVariablePlan">Early Termination Charges Apply.</span>
+            <span class="utility-name error-text" ng-hide="showVariablePlan">Early termination charges Apply.</span>
             <span class="utility-name error-text" ng-hide="showVariablePlan">Please see T&Cs for applicable charges.</span>
 
 
