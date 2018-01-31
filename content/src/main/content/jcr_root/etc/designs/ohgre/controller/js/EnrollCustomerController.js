@@ -254,7 +254,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   // Validating if the User Entered name is matching with business name in Prime response
     var validateCommercialName = function(businessName){
-
+     if($rootScope.customerInfo.rateClass =="01")
+         return false;
     var regex = /[^a-zA-Z]/g;
     var businessName = businessName.replace(regex,"");
     // businessName = businessName.substring(0, 5);
@@ -268,14 +269,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
         if(userEnteredName.length ==5){
             if(businessName.indexOf(userEnteredName) !== -1){
-                return false;
-            }
-            else{
                 return true;
             }
-        }
-        else{
+            else{
+                return false;
+            }
+        }else{
+            if(businessName ==userEnteredName)
             return true;
+            return false;
         }
 
     }
@@ -352,17 +354,13 @@ $scope.displayReferalForm=true;
 
             updateBillingAddressInfo();
 
-                        if($rootScope.product.customerTypeCode =="NEW" && existingCustomerStatus=="Active"){
+                        if($rootScope.product.customerTypeCode =="NEW" && existingCustomerStatus=="Active" && ($rootScope.customerInfo.serviceZipCode.toLowerCase() == $scope.zipcode.toLowerCase()) && (($rootScope.customerInfo.lastName.toLowerCase() ==$scope.lastName.toLowerCase()) || (validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())))){
                             $('#popupalternate').addClass('show-popup');
                         }
 
-                        else if($rootScope.product.customerTypeCode =="EXISTING" && existingCustomerStatus=="Inactive"){
+                        else if($rootScope.product.customerTypeCode =="EXISTING" && existingCustomerStatus=="Inactive" && ($rootScope.customerInfo.serviceZipCode.toLowerCase() == $scope.zipcode.toLowerCase()) && (($rootScope.customerInfo.lastName.toLowerCase() ==$scope.lastName.toLowerCase()) || (validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())))){
                             $('#popupalternate').addClass('show-popup');
-                        }
-                        /*else if(existingCustomerStatus=="Active"){
-                            $('#popupalternate').addClass('show-popup');
-
-                        }*/else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode){
+                        }else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode && ($rootScope.customerInfo.serviceZipCode.toLowerCase() == $scope.zipcode.toLowerCase()) && (($rootScope.customerInfo.lastName.toLowerCase() ==$scope.lastName.toLowerCase()) || (validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())))){
                             $('#popupalternate').addClass('show-popup');
                             return false;
                         }else if($rootScope.product.rateClassCode =="01"){
