@@ -27,6 +27,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
 
   var hashUrl = window.location.hash;
   hashUrl = decodeURIComponent(hashUrl);
+  hashUrl=decodeURIComponent(hashUrl);
+  hashUrl=decodeURIComponent(hashUrl);
   var hashParams = hashUrl && hashUrl.split("#")[1] && hashUrl.split("#")[1].split('&');
   for (var i = 0; i < hashParams.length; i++) {
     var param = hashParams[i].split("=")
@@ -45,6 +47,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
 
   var queryurl = decodeURIComponent(window.location.search);
   queryurl = decodeURIComponent(queryurl);
+  queryurl=decodeURIComponent(queryurl);
+  queryurl=decodeURIComponent(queryurl);
 
   var queryParams = queryurl && queryurl.split("?")[1] && queryurl.split("?")[1].split('&');
   for (var i = 0; i < queryParams.length; i++) {
