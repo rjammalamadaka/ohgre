@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/OHGRE_mobile_hero_test.jpg"
-        jcr:lastModified="{Date}2018-01-29T20:39:13.138-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:39.368-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,10 +29,10 @@
             dc:creator="[Jason Jackson]"
             dc:creator_xmpArrayType="rdf:Seq"
             dc:format="image/jpeg"
-            dc:modified="{Date}2018-01-29T20:39:11.726-05:00"
+            dc:modified="{Date}2018-01-31T00:21:27.531-05:00"
             exif:PixelXDimension="{Long}768"
             exif:PixelYDimension="{Long}300"
-            jcr:lastModified="{Date}2018-01-29T20:39:11.726-05:00"
+            jcr:lastModified="{Date}2018-01-31T00:21:27.530-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

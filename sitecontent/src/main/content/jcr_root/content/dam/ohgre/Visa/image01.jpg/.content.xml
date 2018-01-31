@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/Visa"
         dam:assetState="processed"
         dam:relativePath="ohgre/Visa/image01.jpg"
-        jcr:lastModified="{Date}2018-01-29T20:39:18.222-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:43.394-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}776"
             exif:PixelYDimension="{Long}483"
-            jcr:lastModified="{Date}2018-01-29T20:39:18.158-05:00"
+            jcr:lastModified="{Date}2018-01-31T00:21:43.140-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

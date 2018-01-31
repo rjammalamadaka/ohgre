@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/apples"
         dam:assetState="processed"
         dam:relativePath="ohgre/apples/hero.jpg"
-        jcr:lastModified="{Date}2018-01-29T20:39:09.620-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:26.140-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1467"
             exif:PixelYDimension="{Long}570"
-            jcr:lastModified="{Date}2018-01-29T20:39:09.394-05:00"
+            jcr:lastModified="{Date}2018-01-31T00:21:26.022-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

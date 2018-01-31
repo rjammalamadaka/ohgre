@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/ong_social_image.png"
-        jcr:lastModified="{Date}2018-01-29T20:38:48.785-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:14.728-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}201252"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:45.398-05:00"
-            jcr:lastModified="{Date}2018-01-29T20:38:47.016-05:00"
+            jcr:lastModified="{Date}2018-01-31T00:21:13.287-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

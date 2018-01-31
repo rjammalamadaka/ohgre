@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/GRE_DTE_BetterChoice_1568x348base.png"
-        jcr:lastModified="{Date}2018-01-29T20:39:18.630-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:46.283-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}36760"
             dc:format="image/png"
             dc:modified="{Date}2018-01-19T15:31:24.456-05:00"
-            jcr:lastModified="{Date}2018-01-29T20:39:17.783-05:00"
+            jcr:lastModified="{Date}2018-01-31T00:21:42.177-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

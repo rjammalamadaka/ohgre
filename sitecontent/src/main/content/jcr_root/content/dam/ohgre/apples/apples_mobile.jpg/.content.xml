@@ -9,7 +9,7 @@
         cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="ohgre/apples/apples_mobile.jpg"
-        jcr:lastModified="{Date}2018-01-29T20:39:02.910-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:24.196-05:00"
         jcr:lastModifiedBy="jason01"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

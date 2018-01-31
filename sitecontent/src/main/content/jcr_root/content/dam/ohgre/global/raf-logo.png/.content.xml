@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/raf-logo.png"
-        jcr:lastModified="{Date}2018-01-29T20:39:05.395-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:26.169-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

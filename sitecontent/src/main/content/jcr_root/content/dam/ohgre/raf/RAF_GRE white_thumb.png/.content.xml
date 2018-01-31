@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/RAF_GRE white_thumb.png"
-        jcr:lastModified="{Date}2018-01-29T20:39:07.492-05:00"
+        jcr:lastModified="{Date}2018-01-31T00:21:28.486-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}13692"
             dc:format="image/png"
             dc:modified="{Date}2017-11-09T14:16:46.182-06:00"
-            jcr:lastModified="{Date}2018-01-29T20:38:58.037-05:00"
+            jcr:lastModified="{Date}2018-01-31T00:21:21.705-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
