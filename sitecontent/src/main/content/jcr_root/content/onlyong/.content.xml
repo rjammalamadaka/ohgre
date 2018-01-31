@@ -8,7 +8,7 @@
         cq:designPath="/etc/designs/ohgre"
         cq:lastModified="{Date}2018-01-28T22:09:54.124-06:00"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-01-24T09:47:55.614-06:00"
+        cq:lastReplicated="{Date}2018-01-30T10:23:51.917-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"

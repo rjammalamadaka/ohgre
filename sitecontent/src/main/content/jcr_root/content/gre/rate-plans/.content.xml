@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-29T19:30:11.938-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-01-26T14:43:36.737-06:00"
+        cq:lastModified="{Date}2018-01-30T11:25:13.450-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-30T11:25:14.767-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -31,11 +31,11 @@
             <plansdisplay_266813004
                 jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-29T19:30:11.935-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2018-01-30T11:25:13.447-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/plansdisplay"
-                footernotes="&lt;p>GRE service is available for eligible customers participating in the Gas Customer Choice program through their local utility company. GRE rates do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.841.1541, write to Grand Rapids Energy, 400 Renaissance Center, Ste. 2600, Detroit, MI 48243 or visit this site. Early Termination Charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
+                footernotes="&lt;p>GRE service is available for eligible customers participating in the Gas Customer Choice program through their natural gas utility company. GRE rates do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.841.1541, write to Grand Rapids Energy, 400 Renaissance Center, Ste. 2600, Detroit, MI 48243 or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
                 guranteedBillDesc=" Call us for a guaranteed and protected bill plan"
                 text="&lt;p>With GRE, choosing the natural gas plan that&amp;#39;s best for you is easy. We offer fixed rate and variable rate plans – all designed to meet your needs and backed by straightforward&amp;nbsp;&amp;nbsp;&lt;a href=&quot;/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>. Rates and price plans effective&amp;nbsp;{{currentMonthFirstDay}} to {{currentMonthLastDay}}.&lt;br>&#xa;&lt;/p>&#xa;"
                 textIsRich="true"/>
