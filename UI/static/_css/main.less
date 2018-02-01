@@ -5536,15 +5536,23 @@ input{
 		}
 		.plan-info-wrapper {
 			.plan-button {
-				@media (@screen-md-min){
-						width: 40%;
-				}
+
 				.primary-button {
 					font-size: 1.4rem;
 					padding: 0 1rem;
 					margin: 1rem 0;
 				}
 			}
+		}
+		@media (@screen-md-min){
+				.plan-button {
+						width: 40%;
+				}
+				.button-container {
+					.primary-button {
+						width: 30%;
+					}
+				}
 		}
 	}
 }

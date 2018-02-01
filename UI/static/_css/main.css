@@ -11023,15 +11023,18 @@ input {
 .popup-wrapper#popupwithrenewal .button-container .cancel-button {
   margin: 0;
 }
-@media (min-width: 992px) {
-  .popup-wrapper#popupwithrenewal .plan-info-wrapper .plan-button {
-    width: 40%;
-  }
-}
 .popup-wrapper#popupwithrenewal .plan-info-wrapper .plan-button .primary-button {
   font-size: 1.4rem;
   padding: 0 1rem;
   margin: 1rem 0;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupwithrenewal .plan-button {
+    width: 40%;
+  }
+  .popup-wrapper#popupwithrenewal .button-container .primary-button {
+    width: 30%;
+  }
 }
 #popup-spinner-wrap {
   z-index: 100000;
