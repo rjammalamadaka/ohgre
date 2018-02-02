@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/Rates"
         dam:assetState="processed"
         dam:relativePath="ohgre/Rates/gbp-seal.png"
-        jcr:lastModified="{Date}2018-01-31T00:21:25.706-05:00"
+        jcr:lastModified="{Date}2018-02-01T23:21:05.034-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}50916"
             dc:format="image/png"
             dc:modified="{Date}2017-07-21T12:05:37.918-05:00"
-            jcr:lastModified="{Date}2018-01-31T00:21:25.566-05:00"
+            jcr:lastModified="{Date}2018-02-01T23:21:04.927-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

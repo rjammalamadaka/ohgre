@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_moving.jpg"
-        jcr:lastModified="{Date}2018-01-31T00:21:25.967-05:00"
+        jcr:lastModified="{Date}2018-02-01T23:21:05.338-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}603"
             exif:PixelYDimension="{Long}209"
-            jcr:lastModified="{Date}2018-01-31T00:21:25.770-05:00"
+            jcr:lastModified="{Date}2018-02-01T23:21:05.199-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

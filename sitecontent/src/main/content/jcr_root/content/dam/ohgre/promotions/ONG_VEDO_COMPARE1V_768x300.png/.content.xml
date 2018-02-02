@@ -9,7 +9,7 @@
         cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_VEDO_COMPARE1V_768x300.png"
-        jcr:lastModified="{Date}2018-01-31T00:21:30.056-05:00"
+        jcr:lastModified="{Date}2018-02-01T23:21:09.751-05:00"
         jcr:lastModifiedBy="penny"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

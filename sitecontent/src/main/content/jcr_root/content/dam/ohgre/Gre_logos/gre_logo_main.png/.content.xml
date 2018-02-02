@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/Gre_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/Gre_logos/gre_logo_main.png"
-        jcr:lastModified="{Date}2018-01-31T00:21:31.504-05:00"
+        jcr:lastModified="{Date}2018-02-01T23:21:16.258-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -25,11 +25,11 @@
             dam:Physicalwidthindpi="{Long}-1"
             dam:Physicalwidthininches="{Decimal}-1.0"
             dam:Progressive="no"
-            dam:sha1="db8e7c5eb4b7bae76869b3c9d3bebde583950818"
+            dam:sha1="ef3c9dc215f66d72e4c7c4d7db571e242b10afd4"
             dam:size="{Long}13146"
             dc:format="image/png"
             dc:modified="{Date}2017-08-08T21:36:58.179+05:30"
-            jcr:lastModified="{Date}2018-01-22T13:34:14.077-06:00"
+            jcr:lastModified="{Date}2018-02-01T23:21:15.938-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
