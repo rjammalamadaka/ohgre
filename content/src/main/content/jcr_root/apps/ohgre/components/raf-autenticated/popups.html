@@ -18,9 +18,9 @@
           <form id="raf-email-form" name="rafemailform" novalidate>
             <div class="raf-email-step" id="raf-friend-info" data-emailbody='${properties.emailbodyplaceholder}'>
               <div class="step-content">
-                <h4>Your Friend's Information</h4>
+                <h4>Your Friends' Information</h4>
                 <div id="ContactListCtrl">
-                  <label for="toemailaddress">Friend's Email Address</label>
+                  <label for="toemailaddress">Friends' Email Address</label>
                   <textarea name="toemailaddress" id="toemailaddress" class="cloudsponge-contacts" rows="8" cols="80"
 					placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe@domain.com,bobsmith@domain.com)"
 					ng-model="toemailaddress" ng-required="true" ng-model="csTextArea.text" multiple-emails></textarea>
@@ -34,7 +34,7 @@ placeholder="Enter up to 25 email addresses separated by a comma. (i.e.  johndoe
 rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visited></textarea>
 -->
                   <span class="input-error-message" ng-show="(rafemailform.toemailaddress.$visited && !rafemailform.toemailaddress.$focused) || rafemailform.submited || (rafemailform.toemailaddress.$touched && rafemailform.toemailaddress.$invalid)">
-                    <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friend's emails are required.</span>
+                    <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.required">Friends' emails are required.</span>
                   <span class="input-error-message" ng-show="rafemailform.toemailaddress.$error.multipleEmails">Valid friend email(s) are required</span>
                   </span>
                   <p>Don't feel like typing? <a class="cloudsponge-launch">Use your address book</a></p>

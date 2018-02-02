@@ -90,7 +90,7 @@
 
               </div>
               <div class="box-with-border alert-box" ng-show="(customerInfo.renewalContractExistsInd =='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && customerInfo.earlyTermChargeAmt !== '0.0000')">
-                  <p>If you would like to start a new contract or cancel this contract today, you will be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} Early Termination Charge.</b></p>
+                  <p>If you would like to start a new contract or cancel this contract today, you will be charged a <b>{{customerInfo.earlyTermChargeAmt | currency :"$":0}} early termination charge.</b></p>
               </div>
 
               <div class="box-with-border alert-box" ng-show="(customerInfo.accountStatus !=='ENROLLMENT PENDING' && customerInfo.accountStatus !=='ENROLLMENT ACTIVE')">
@@ -142,7 +142,7 @@
               </div>
 
              <div class="box-with-border alert-box" ng-show="customerInfo.contractTermDate == '12/31/2999 12:00:00 AM'">
-                <p>You can change your contract at any time with no Early Termination Charge</p>
+                <p>You can change your contract at any time with no early termination charge</p>
               </div>
 
               <div class="buttons">
