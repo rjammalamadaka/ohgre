@@ -6991,43 +6991,6 @@ input.alt-radio1:checked {
     margin-left: 1.5rem;
   }
 }
-.herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content {
-  padding: .5rem 1.5rem 0;
-}
-.herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-title {
-  font-size: 2rem;
-  line-height: 3rem;
-}
-.herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-hero {
-  min-height: 10rem;
-  overflow: hidden;
-}
-@media (min-width: 992px) {
-  .herocarousel ~ .cq-colctrl-lt1 .card {
-    min-height: 40rem;
-  }
-  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-title {
-    font-size: 2.5rem;
-    line-height: 3.3rem;
-  }
-  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-hero {
-    min-height: 10rem;
-    height: 100%;
-  }
-  .herocarousel ~ .cq-colctrl-lt1 .card .inner-content-wrapper {
-    min-height: 30rem;
-    height: 100%;
-  }
-  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content {
-    min-height: 30rem;
-  }
-}
-@media (min-width: 1200px) {
-  .herocarousel ~ .cq-colctrl-lt1 .card .inner-card-content .card-title {
-    font-size: 3rem;
-    line-height: 3.6rem;
-  }
-}
 div[class^="cq-colctrl-lt1-"] .card {
   width: 100%;
   position: relative;
@@ -7188,18 +7151,15 @@ div[class^="cq-colctrl-lt1-"] .card p {
   }
 }
 .cardpromo.parbase,
-.cardpromo-plans.parbase,
-.myaccount.parbase {
+.cardpromo-plans.parbase {
   height: 100%;
 }
 .cardpromo.parbase .inner-card-content,
-.cardpromo-plans.parbase .inner-card-content,
-.myaccount.parbase .inner-card-content {
+.cardpromo-plans.parbase .inner-card-content {
   height: 100%;
 }
 .cardpromo.parbase .inner-card-content .promo-link,
-.cardpromo-plans.parbase .inner-card-content .promo-link,
-.myaccount.parbase .inner-card-content .promo-link {
+.cardpromo-plans.parbase .inner-card-content .promo-link {
   bottom: 2.5rem;
   position: absolute;
   text-transform: uppercase;
@@ -7244,7 +7204,6 @@ div[class^="cq-colctrl-lt1-"] .card p {
     display: flex !important;
     margin-bottom: 0;
     border: 1px solid #bfbfbf;
-    -webkit-flex-direction: column;
     flex-direction: column;
   }
   .card.no-flex {
@@ -9318,7 +9277,7 @@ div.alt-col2,
   line-height: 2.5rem;
 }
 .full-banner-callout .slide .inner-slide-content .logo-image {
-  max-width: 16rem;
+  max-width: 12rem;
   margin: 2rem 0;
   float: none;
   display: block;
@@ -9326,9 +9285,6 @@ div.alt-col2,
 @media (min-width: 992px) {
   .full-banner-callout .slide .inner-slide-content {
     padding: 2rem 2rem 4rem 2rem;
-  }
-  .full-banner-callout .slide .inner-slide-content .logo-image {
-    max-width: 12rem;
   }
   .full-banner-callout .slide .inner-slide-content img.logo-image {
     display: block;
@@ -9360,20 +9316,6 @@ div.alt-col2,
   .full-banner-callout.raf .inner-slide-content {
     padding: 0 8rem 2rem;
     width: 60%;
-  }
-}
-.promoherobanner .full-banner-callout .slide-image {
-  background: url(/content/dam/ohgre/apples/apples@3x_mobile.jpg) left top no-repeat, url(/content/dam/ohgre/apples/hero.jpg) right top no-repeat;
-  background-size: contain;
-  background-size: cover;
-  min-height: 16rem;
-}
-@media (min-width: 992px) {
-  .promoherobanner .full-banner-callout .slide-image {
-    background: unset;
-    background-color: white;
-    min-height: 20rem;
-    background-size: contain;
   }
 }
 .promo-landing .full-banner-callout p {
@@ -10540,7 +10482,7 @@ input {
   width: 100%;
 }
 .zipcode-container {
-  width: 47%;
+  width: 60%;
   margin-right: 0 !important;
 }
 .input-group-wrapper {
@@ -11081,6 +11023,19 @@ input {
 }
 .popup-wrapper#popupwithrenewal .button-container .cancel-button {
   margin: 0;
+}
+.popup-wrapper#popupwithrenewal .plan-info-wrapper .plan-button .primary-button {
+  font-size: 1.4rem;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupwithrenewal .plan-button {
+    width: 40%;
+  }
+  .popup-wrapper#popupwithrenewal .button-container .primary-button {
+    width: 30%;
+  }
 }
 #popup-spinner-wrap {
   z-index: 100000;
