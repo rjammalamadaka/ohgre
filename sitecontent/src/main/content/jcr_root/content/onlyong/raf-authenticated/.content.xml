@@ -4,8 +4,8 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-01-12T21:47:05.920-06:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2018-02-02T09:01:25.393-06:00"
+        cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2018-01-11T10:48:39.039-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -44,8 +44,8 @@
             <raf_autenticated
                 jcr:created="{Date}2017-10-15T09:16:53.996+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-11T13:24:33.381-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2018-02-02T09:01:25.384-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/raf-autenticated"
                 awardterms="&lt;p>THE MAXIMUM AWARD UNDER THE RAF PROGRAM IS $500 IN VISA REWARD CARDS PER PERSON PER CALENDAR YEAR, UNLESS SPECIFICALLY AUTHORIZED BY Ohio Natural Gas IN ITS SOLE DISCRETION. This $500 limit applies to the total of all Ohio Natural Gas Visa Reward Card promotional offers received, including but not limited to the Refer-a-Friend Program. To see the full Refer-a-Friend program terms and conditions &lt;a href=&quot;/content/onlyong/termsandconditions.html&quot; target=&quot;_blank&quot;>click here&lt;/a>.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
