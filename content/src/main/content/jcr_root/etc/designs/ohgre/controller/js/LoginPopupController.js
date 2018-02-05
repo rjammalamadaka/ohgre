@@ -8,6 +8,16 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
     $scope.setLdcInfo= function(mainValue,description){
 
         var ldc=mainValue;
+        $scope.lastName=null;
+        $scope.zipcode=null;
+        $('#lastnamezipcodeerror').hide();
+        $scope.errorMessage=null;
+
+        $scope.loginform.submited = false;
+
+
+        $scope.loginform.$setPristine();
+
 
 		$scope.ldc=mainValue;
         $scope.ldcdesc=description;
