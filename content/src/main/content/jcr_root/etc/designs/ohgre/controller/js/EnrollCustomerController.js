@@ -371,7 +371,7 @@ $scope.displayReferalForm=true;
                                 $('#popupconfirm').addClass('show-popup');
                             }
                         }else if($rootScope.product.rateClassCode =="04"){
-                            if((validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
+                            if((!validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                                 $('#lastnamezipcodeerror').show();
                                 return false;
                             }else{
@@ -637,7 +637,7 @@ $scope.displayReferalForm=true;
 
     if($scope.formfour.$valid && !$scope.flag){
 
-      if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
+     /* if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
         $scope.reviewdisplay=false;
         $scope.reviewdisplaydeltaskymiles =true;
       }else if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
@@ -649,7 +649,9 @@ $scope.displayReferalForm=true;
       }else{
         $scope.reviewauthorizesubmit();
       }
+      */
 
+      $scope.reviewauthorizesubmit();
       $scope.scrollToPageTop();
     }
 
