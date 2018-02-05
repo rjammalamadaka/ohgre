@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/ONG_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/ONG_logos/ONG_Delta_Logos_PMS300-BLK.png"
-        jcr:lastModified="{Date}2018-02-01T23:21:23.765-05:00"
+        jcr:lastModified="{Date}2018-02-04T23:14:04.204-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}6850"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:58.652-05:00"
-            jcr:lastModified="{Date}2018-02-01T23:21:15.251-05:00"
+            jcr:lastModified="{Date}2018-02-04T23:13:58.082-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

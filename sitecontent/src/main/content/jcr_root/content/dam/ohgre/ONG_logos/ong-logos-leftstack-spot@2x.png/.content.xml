@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/ONG_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png"
-        jcr:lastModified="{Date}2018-02-01T23:21:23.086-05:00"
+        jcr:lastModified="{Date}2018-02-04T23:14:03.414-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}10773"
             dc:format="image/png"
             dc:modified="{Date}2017-11-09T14:16:45.173-06:00"
-            jcr:lastModified="{Date}2018-02-01T23:21:10.637-05:00"
+            jcr:lastModified="{Date}2018-02-04T23:13:55.338-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
