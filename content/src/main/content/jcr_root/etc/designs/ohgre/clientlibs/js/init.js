@@ -1,8 +1,8 @@
-ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService", function ($rootScope, $compile, $http,PrimeService,OhGreService){ 
+ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService", function ($rootScope, $compile, $http,PrimeService,OhGreService){
 
     var activeStates=["ENROLLMENT ACTIVE", "ENROLLMENT PENDING", "ENROLLMENT REJECTED", "ENROLLMENT SENT WAITING FOR RESPONSE", "ENROLLMENT WAITING TO BE SENT"];
 
-    setTimeout(function(){ 
+    setTimeout(function(){
         $('#portalbody').show();
     }, 500);
 
@@ -65,7 +65,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         }
          }
 
-    } 
+    }
 
 
 
@@ -104,7 +104,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
         req.QuoteDescription=product.QuoteDescription;
 		req.ProductDescription=product.ProductDescription;
         req.ProductDescriptionFriendly=product.ProductDescFriendly;
-                                      
+
         req.ProductCode=product.ProductCode;
         req.LdcDesc=$rootScope.ldcDesc;
 		req.FixedPricePerTherm=product.FixedPricePerTherm;
@@ -141,7 +141,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 								 req.LDC=promoInfo.LDCList[i].LDCCode;
                     			req.LdcDesc=promoInfo.LDCList[i].LDCDesc;
 
-                              break;                              
+                              break;
                           }
 
                     }
@@ -169,7 +169,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
                 }
 
             if(promoInfo.LDCList[0].promotion[0].RateClassCode.length>0){
-			req.RateClassCode=promoInfo.LDCList[0].promotion[0].RateClassCode;	
+			req.RateClassCode=promoInfo.LDCList[0].promotion[0].RateClassCode;
             }else{
 				req.RateClassCode="01";
             }
@@ -183,7 +183,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
                 }
             }
             if($rootScope.hashParams && $rootScope.hashParams.ldc){
-               var ldcType=$("input[name='location_type']:checked"). val(); 
+               var ldcType=$("input[name='location_type']:checked"). val();
                 if(ldcType=="residential"){
 					req.RateClassCode ="01";
                 }else if(ldcType =="commercial"){
@@ -201,7 +201,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
 
          $http.post(url, req ,config).success(function(data, status, headers, config){
 
-				location.href=$rootScope.homeUrl+"/customer_lookup.html"; 
+				location.href=$rootScope.homeUrl+"/customer_lookup.html";
 
          }).error(function (data,status, headers, config){
 
@@ -211,12 +211,10 @@ ohgrePortal.run(['$rootScope', '$compile', '$http','PrimeService',"OhGreService"
     }
 
     $rootScope.footernavigation= function(url){
-        if(portalname == "oh"){
-            location.href=url;
-        }else{
-			url=url.replace("onlyong","gre");
-            location.href=url;
-        }
+      if(portalname !== "oh"){
+          url=url.replace("onlyong","gre");
+      }
+      window.open(url), '_blank', 'height=100%,width=100%';
     }
 
     $rootScope.bindAccordian =function(){
@@ -255,10 +253,10 @@ $rootScope.currentYear=new Date().getFullYear();
         var yyyy = date.getFullYear();
         if(dd<10){
             dd='0'+dd;
-        } 
+        }
         if(mm<10){
             mm='0'+mm;
-        } 
+        }
         return mm+'/'+dd+'/'+yyyy;
         }else{
 		return "";
@@ -273,10 +271,10 @@ $rootScope.currentYear=new Date().getFullYear();
         var yyyy = date.getFullYear();
         if(dd<10){
             dd='0'+dd;
-        } 
+        }
         if(mm<10){
             mm='0'+mm;
-        } 
+        }
         return mm+'/'+dd+'/'+yyyy;
         }else{
 		return "";
@@ -296,9 +294,9 @@ $rootScope.currentYear=new Date().getFullYear();
       $rootScope.commonLogout=function(){
 
           PrimeService.logout().success(function(data, status, headers, config){
-             location.href=$rootScope.homeUrl+".html";            
+             location.href=$rootScope.homeUrl+".html";
           }).error(function(data, status, headers, config){
-              
+
           });
       }
 
@@ -347,5 +345,4 @@ $rootScope.currentYear=new Date().getFullYear();
     //alert(navigator.userAgent);
    }
 
-}]); 
-
+}]);
