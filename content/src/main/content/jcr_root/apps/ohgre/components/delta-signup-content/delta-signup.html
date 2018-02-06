@@ -1,204 +1,204 @@
 <div id="promo-page-wrapper" ng-show="!deltaconfirmation">
-    <div class="form-wrapper active-form">
-        <div class="intro-wrapper">
+	<div class="form-wrapper active-form">
+		<div class="intro-wrapper">
 
-            ${properties.header @ context='html'}
+			${properties.header @ context='html'}
 
-        </div>
-        <form name="deltasignupinfo" id="delta-signup-info" class="form mt-2 desktop-only" novalidate>
-            <div class="desktop-flex-container">
-                <div class="two-vert-cols mr-2 desktop-only">
-                    <div class="form-element full-width bg-white">
-                        <div class="">
-                            <div class="form-area">
-                                <div class="accord-trigger">
-                                    <h4>${properties.formheader}<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
-                                </div>
-                                <div class="accord-container">
-                                    <div class="input-group-wrapper">
-                                        <label for="first-name">First Name<sup class="required">*</sup></label>
-                                        <input type="text" name="firstName" ng-model="firstName" ng-required="true" ng-focus ng-visited>
-                                        <span class="error-message">Message for error</span>
-                                        <span class="input-error-message" ng-show="(deltasignupinfo.firstName.$visited && !deltasignupinfo.firstName.$focused) || deltasignupinfo.submited">
+		</div>
+		<form name="deltasignupinfo" id="delta-signup-info" class="form mt-2 desktop-only" novalidate>
+			<div class="desktop-flex-container">
+				<div class="two-vert-cols mr-2 desktop-only">
+					<div class="form-element full-width bg-white">
+						<div class="">
+							<div class="form-area">
+								<div class="accord-trigger">
+									<h4>${properties.formheader}<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+								</div>
+								<div class="accord-container">
+									<div class="input-group-wrapper">
+										<label for="first-name">First Name<sup class="required">*</sup></label>
+										<input type="text" name="firstName" ng-model="firstName" ng-required="true" ng-focus ng-visited>
+										<span class="error-message">Message for error</span>
+										<span class="input-error-message" ng-show="(deltasignupinfo.firstName.$visited && !deltasignupinfo.firstName.$focused) || deltasignupinfo.submited">
 									 <span class="input-error-message" ng-show="deltasignupinfo.firstName.$error.required">First Name is required.</span>
 										</span>
 
-                                    </div>
-                                    <div class="input-group-wrapper">
-                                        <label for="last-name">Last Name<sup class="required">*</sup></label>
-                                        <input type="text" name="lastName" ng-model="lastName" ng-required="true" ng-focus ng-visited>
-                                        <span class="error-message">Message for error</span>
-                                        <span class="input-error-message" ng-show="(deltasignupinfo.lastName.$visited && !deltasignupinfo.lastName.$focused) || deltasignupinfo.submited">
+									</div>
+									<div class="input-group-wrapper">
+										<label for="last-name">Last Name<sup class="required">*</sup></label>
+										<input type="text" name="lastName" ng-model="lastName" ng-required="true" ng-focus ng-visited>
+										<span class="error-message">Message for error</span>
+										<span class="input-error-message" ng-show="(deltasignupinfo.lastName.$visited && !deltasignupinfo.lastName.$focused) || deltasignupinfo.submited">
 									 <span class="input-error-message" ng-show="deltasignupinfo.lastName.$error.required">Last Name is required.</span>
 										</span>
-                                    </div>
-                                    <div class="input-group-wrapper">
-                                        <label for="email-address">Email<sup class="required">*</sup></label>
-                                        <input type="text" name="emailaddress" ng-model="emailaddress" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="true" ng-focus ng-visited>
-                                        <span class="error-message">Message for error</span>
-                                        <span class="input-error-message" ng-show="(deltasignupinfo.emailaddress.$visited && !deltasignupinfo.emailaddress.$focused) || deltasignupinfo.submited">
+									</div>
+									<div class="input-group-wrapper">
+										<label for="email-address">Email<sup class="required">*</sup></label>
+										<input type="text" name="emailaddress" ng-model="emailaddress" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="true" ng-focus ng-visited>
+										<span class="error-message">Message for error</span>
+										<span class="input-error-message" ng-show="(deltasignupinfo.emailaddress.$visited && !deltasignupinfo.emailaddress.$focused) || deltasignupinfo.submited">
 				<span class="input-error-message" ng-show="deltasignupinfo.emailaddress.$error.required">Email id is required.</span>
 										<span class="input-error-message" ng-show="deltasignupinfo.emailaddress.$invalid && !deltasignupinfo.emailaddress.$error.required">Please enter valid email id.</span>
 
-                                    </div>
-                                    <div class="input-group-wrapper">
-                                        <label for="phone-number">Phone Number</label>
-                                        <input type="text" name="phonenumber" id="phonenumber" ng-blur="phoneformatchange(phoneNumber)" ng-model="phoneNumber" placeholder="(_ _ _) - _ _ _ - _ _ _ _" data-ng-pattern="/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/" ng-required="true" ng-focus ng-visited>
-                                        <span class="error-message">Message for error</span>
-                                    </div>
-                                    <div class="input-group-wrapper">
-                                        <!--<label>Email and Phone Number only to be used to contact you if we encounter an issue with the information you have provided.</label>-->
-                                    </div>
-                                </div>
+									</div>
+									<div class="input-group-wrapper">
+										<label for="phone-number">Phone Number</label>
+										<input type="text" name="phonenumber" id="phonenumber" ng-blur="phoneformatchange(phoneNumber)" ng-model="phoneNumber" placeholder="(_ _ _) - _ _ _ - _ _ _ _" data-ng-pattern="/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/" ng-required="true" ng-focus ng-visited>
+										<span class="error-message">Message for error</span>
+									</div>
+									<div class="input-group-wrapper">
+										<!--<label>Email and Phone Number only to be used to contact you if we encounter an issue with the information you have provided.</label>-->
+									</div>
+								</div>
 
-                                <!-- end form area -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- new element -->
-                    <div class="form-element full-width bg-white">
-                        <div class="">
-                            <div class="form-area">
-                                <div class="accord-trigger">
-                                    <h4>Your Gas Utility Account Information
-                                        <span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+								<!-- end form area -->
+							</div>
+						</div>
+					</div>
+					<!-- new element -->
+					<div class="form-element full-width bg-white">
+						<div class="">
+							<div class="form-area">
+								<div class="accord-trigger">
+									<h4>Your Gas Utility Account Information
+									<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
 
-                                </div>
-                                <div class="accord-container">
-                                    <div class="input-group-wrapper">
-                                        <label>Your Gas Utility</label>
-                                        <div class="dropdown-container">
-                                            <button class="dropdown-trigger"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-                                            <div class="expanded-dropdown">
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li role="menuitem" ng-repeat="x in ldcinfo">
-                                                        <a href="#" class="select-option">
-                                                            <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <span class="input-error-message" ng-show="deltasignupinfo.$submitted && !ldc">
+								</div>
+								<div class="accord-container">
+									<div class="input-group-wrapper">
+										<label>Your Gas Utility</label>
+										<div class="dropdown-container">
+											<button class="dropdown-trigger"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+											<div class="expanded-dropdown">
+												<ul class="dropdown-menu" role="menu">
+													<li role="menuitem" ng-repeat="x in ldcinfo">
+														<a href="#" class="select-option">
+																			<span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
+																			</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<span class="input-error-message" ng-show="deltasignupinfo.$submitted && !ldc">
 												Gas Utility is required.
 										</span>
 
-                                    </div>
-                                    <!-- group -->
-                                    <div class="input-group-wrapper" ng-show="ldc">
-                                        <div class="form-area-wrapper">
-                                            <label for="account-number" ng-if="ldc !='MIC'">Gas Utility Account Number</label>
-                                            <label for="account-number" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
+									</div>
+									<!-- group -->
+									<div class="input-group-wrapper" ng-show="ldc">
+										<div class="form-area-wrapper">
+											<label for="account-number" ng-if="ldc !='MIC'">Gas Utility Account Number</label>
+											<label for="account-number" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
 
-                                            <div class="form-area multiple-input no-padding">
-                                                <div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
-                                                    <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required numbers-only>
-                                                </div>
-                                                <div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
-                                                    <input type="text" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required numbers-only>
-                                                </div>
-                                                <div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
-                                                    <input type="text" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required numbers-only>
-                                                </div>
-                                                <div class="input-container" data-size={{an4minl}}>
-                                                    <input type="text" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required numbers-only>
-                                                </div>
-                                            </div>
-                                            <span class="input-error-message" ng-show="(deltasignupinfo.an1.$dirty && ldc !='MIC' && (deltasignupinfo.an1.$invalid || deltasignupinfo.an2.$invalid || deltasignupinfo.an3.$invalid || deltasignupinfo.an4.$invalid)) || (deltasignupinfo.submited)">
+											<div class="form-area multiple-input no-padding">
+												<div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
+													<input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required numbers-only>
+												</div>
+												<div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
+													<input type="text" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required numbers-only>
+												</div>
+												<div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
+													<input type="text" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required numbers-only>
+												</div>
+												<div class="input-container" data-size={{an4minl}}>
+													<input type="text" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required numbers-only>
+												</div>
+											</div>
+											<span class="input-error-message" ng-show="(deltasignupinfo.an1.$dirty && ldc !='MIC' && (deltasignupinfo.an1.$invalid || deltasignupinfo.an2.$invalid || deltasignupinfo.an3.$invalid || deltasignupinfo.an4.$invalid)) || (deltasignupinfo.submited)">
 												<span ng-show="ldc !='MIC' && (deltasignupinfo.an1.$error.required || deltasignupinfo.an2.$error.required || deltasignupinfo.an3.$error.required || deltasignupinfo.an4.$error.required)">Account Number is required.</span>
 											<span ng-show="(!(deltasignupinfo.an1.$error.required || deltasignupinfo.an2.$error.required || deltasignupinfo.an3.$error.required || deltasignupinfo.an4.$error.required) && (deltasignupinfo.an1.$error.maxlength || deltasignupinfo.an1.$error.minlength || deltasignupinfo.an2.$error.maxlength || deltasignupinfo.an2.$error.minlength || deltasignupinfo.an3.$error.maxlength || deltasignupinfo.an3.$error.minlength || deltasignupinfo.an4.$error.maxlength || deltasignupinfo.an4.$error.minlength))">Account Number should be valid .</span>
 											</span>
-                                            <span style="color:red" ng-show="(deltasignupinfo.an1.$dirty && ldc =='MIC' && deltasignupinfo.an4.$invalid || (deltasignupinfo.submited))">
+											<span style="color:red" ng-show="(deltasignupinfo.an1.$dirty && ldc =='MIC' && deltasignupinfo.an4.$invalid || (deltasignupinfo.submited))">
 												<span ng-show="ldc =='MIC' && ( deltasignupinfo.an4.$error.required)">Account Number is required.</span>
 											<span ng-show="(!(deltasignupinfo.an4.$error.required) && (deltasignupinfo.an4.$error.maxlength || deltasignupinfo.an4.$error.minlength))">Account Number should be valid .</span>
 											</span>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end accordion container -->
-                                <!-- group -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- new element -->
-                    <div class="form-element full-width bg-white">
-                        <div class="">
-                            <div class="form-area">
-                                <div class="accord-trigger">
-                                    <h4>${properties.deltaformheading}<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
-                                </div>
-                                <div class="accord-container">
-                                    <div class="input-group-wrapper">
-                                        <label>First Name<sup class="required">*</sup></label>
-                                        <input name="dsmFirsName" ng-model="dsmFirsName" type="text" ng-required="true" ng-focus ng-visited />
+										</div>
+									</div>
+								</div>
+								<!-- end accordion container -->
+								<!-- group -->
+							</div>
+						</div>
+					</div>
+					<!-- new element -->
+					<div class="form-element full-width bg-white">
+						<div class="">
+							<div class="form-area">
+								<div class="accord-trigger">
+									<h4>${properties.deltaformheading}<span class="error-message block no-margin">Required<sup class="required">*</sup></span></h4>
+								</div>
+								<div class="accord-container">
+									<div class="input-group-wrapper">
+										<label>First Name<sup class="required">*</sup></label>
+										<input name="dsmFirsName" ng-model="dsmFirsName" type="text" ng-required="true" ng-focus ng-visited />
 
-                                        <span class="input-error-message" ng-show="(deltasignupinfo.dsmFirsName.$visited && !deltasignupinfo.dsmFirsName.$focused) || deltasignupinfo.submited">
+										<span class="input-error-message" ng-show="(deltasignupinfo.dsmFirsName.$visited && !deltasignupinfo.dsmFirsName.$focused) || deltasignupinfo.submited">
 									 <span class="input-error-message" ng-show="deltasignupinfo.dsmFirsName.$error.required">First Name is required.</span>
 										</span>
-                                    </div>
-                                    <!-- group -->
-                                    <div class="input-group-wrapper">
-                                        <label>Last Name<sup class="required">*</sup></label>
-                                        <input name="dsmLastName" ng-model="dsmLastName" type="text" ng-required="true" ng-focus ng-visited />
-                                        <span class="input-error-message" ng-show="(deltasignupinfo.dsmLastName.$visited && !deltasignupinfo.dsmLastName.$focused) || deltasignupinfo.submited">
+									</div>
+									<!-- group -->
+									<div class="input-group-wrapper">
+										<label>Last Name<sup class="required">*</sup></label>
+										<input name="dsmLastName" ng-model="dsmLastName" type="text" ng-required="true" ng-focus ng-visited />
+										<span class="input-error-message" ng-show="(deltasignupinfo.dsmLastName.$visited && !deltasignupinfo.dsmLastName.$focused) || deltasignupinfo.submited">
 									 <span class="input-error-message" ng-show="deltasignupinfo.dsmLastName.$error.required">Last Name is required.</span>
 										</span>
-                                    </div>
-                                    <!-- group -->
-                                    <div class="input-group-wrapper">
-                                        <label>SkyMiles Number<sup class="required">*</sup></label>
-                                        <input name="dsmAccountNumber" ng-model="dsmAccountNumber" ng-required="true" ng-pattern="/^\d+$/" ng-minlength=10 ng-maxlength=10 ng-focus ng-visited />
+									</div>
+									<!-- group -->
+									<div class="input-group-wrapper">
+										<label>SkyMiles Number<sup class="required">*</sup></label>
+										<input name="dsmAccountNumber" ng-model="dsmAccountNumber" ng-required="true" ng-pattern="/^\d+$/" ng-minlength=10 ng-maxlength=10 ng-focus ng-visited />
 
-                                        <span class="input-error-message" ng-show="(deltasignupinfo.dsmAccountNumber.$visited && !deltasignupinfo.dsmAccountNumber.$focused) || deltasignupinfo.submited">
+										<span class="input-error-message" ng-show="(deltasignupinfo.dsmAccountNumber.$visited && !deltasignupinfo.dsmAccountNumber.$focused) || deltasignupinfo.submited">
 									 <span class="input-error-message" ng-show="deltasignupinfo.dsmAccountNumber.$error.required">Account Number is required.</span>
 										<span class="input-error-message" ng-show="(deltasignupinfo.dsmAccountNumber.$error.maxlength || deltasignupinfo.dsmAccountNumber.$error.minlength) && !deltasignupinfo.dsmAccountNumber.$error.pattern">Please enter valid Account Number</span>
 										<span class="input-error-message" ng-show="deltasignupinfo.dsmAccountNumber.$error.pattern">Please enter valid Account Number.</span>
 										<span class="input-error-message" ng-show="invaliddeltaskymilesaccountnumber">Please enter valid Account Number.</span>
 										</span>
 
-                                        <a href="https://www.delta.com/custlogin/validateUser.action" target="_blank" class="fs-11">Forgot your SkyMiles Number?</a>
-                                    </div>
-                                    <!-- group -->
-                                    <div class="input-group-wrapper">
-                                        <button class="primary-button inactive" ng-click="dsmEnrollSubmit()">Submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of column -->
-                </div>
-                <!-- new column element -->
-                <div class="two-vert-cols">
-                    <div class="form-element full-width mb-3 switch-to desktop-only">
-                        <div class="new-customer-container">
-                            <div class="form-area">
-                                ${properties.sidecontent @ context='html'}
+										<a href="https://www.delta.com/custlogin/validateUser.action" target="_blank" class="fs-11">Forgot your SkyMiles Number?</a>
+									</div>
+									<!-- group -->
+									<div class="input-group-wrapper">
+										<button class="primary-button inactive" ng-click="dsmEnrollSubmit()">Submit</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end of column -->
+				</div>
+				<!-- new column element -->
+				<div class="two-vert-cols">
+					<div class="form-element full-width mb-3 switch-to desktop-only">
+						<div class="new-customer-container">
+							<div class="form-area">
+								${properties.sidecontent @ context='html'}
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-element full-width no-border no-padding ">
-                        <div class="card center">
-                            <div class="card-hero">
-                                <img src="${properties.imagepath}" alt="">
-                            </div>
-                            <div class="inner-content-wrapper highlighted-bg">
-                                <div class="inner-card-content">
-                                    <h2 class="card-title">${properties.viewplansheader}</h2>
-                                    <p>${properties.viewplanssubhead}</p>
-                                    <button class="primary-button" ng-click="viewPlansDeltaSignup('${properties.deltapromocode}','${properties.promotionpath}')">view our plans</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="promo-fine-print">
-        <p>${properties.fineprinttext @ context='html'}</p>
-    </div>
-    <!-- step-through -->
+							</div>
+						</div>
+					</div>
+					<div class="form-element full-width no-border no-padding ">
+						<div class="card center">
+							<div class="card-hero">
+								<img src="${properties.imagepath}" alt="">
+							</div>
+							<div class="inner-content-wrapper highlighted-bg">
+								<div class="inner-card-content">
+									<h2 class="card-title">${properties.viewplansheader}</h2>
+									<p>${properties.viewplanssubhead}</p>
+									<button class="primary-button" ng-click="viewPlansDeltaSignup('${properties.deltapromocode}','${properties.promotionpath}')">view our plans</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="promo-fine-print">
+		<p>${properties.fineprinttext @ context='html'}</p>
+	</div>
+	<!-- step-through -->
 </div>
