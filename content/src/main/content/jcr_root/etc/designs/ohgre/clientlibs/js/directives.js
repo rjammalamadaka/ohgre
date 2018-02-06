@@ -229,7 +229,7 @@ ohgrePortal.directive('noNumbers', function() {
           console.log('data length', userInput);
           if (reg.test(event.data)) {
             console.log('we got a number...');
-            
+
             var isnum = /^\d+$/.test(event.data);
 
             if (!isnum) {}
@@ -294,4 +294,34 @@ ohgrePortal.directive('moveFocus', function() {
       });
     }
   };
+});
+
+ohgrePortal.directive('autoNext', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attr, form) {
+            var tabindex = parseInt(attr.tabindex);
+            var maxLength = parseInt(attr.maxlength);
+
+            element.on('keypress', function(e) {
+                //if (element.val().length > maxLength-1) {
+                if (element.val().length == element.attr('maxlength')) {
+                    console.log('equal');
+                    var next = angular.element(document.body).find('[tabindex=' + (tabindex+1) + ']');
+
+                    console.log('next.disabled', next);
+
+                    if (next.length > 0) {
+                        next.focus();
+                        return next.triggerHandler('keypress', { which: e.which});
+                    }
+                    else  {
+                        return false;
+                    }
+                }
+                return true;
+            });
+
+        }
+    }
 });

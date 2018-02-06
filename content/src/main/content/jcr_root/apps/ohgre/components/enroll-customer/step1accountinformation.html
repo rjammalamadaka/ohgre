@@ -12,30 +12,30 @@
             <span class="tooltip-trigger">?</span>
             <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
               <a href="#" class="close-tooltip">X</a>
-            <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we’re asking you to provide, please call 
+            <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we’re asking you to provide, please call
               <a href="tel:1-888-466-4427">1-888-466-4427</a> so we may help.</p>
             </span>
             <span class="tooltip-text" ng-class="ldc =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
 	             <a href="#" class="close-tooltip">X</a>
                  <img class="dte-tooltip-image" src="/content/dam/ohgre/global/dte-bitmap@2x.jpg"/>
                  <img class="gre-tooltip-image" src="/content/dam/ohgre/global/popover-2@2x.jpg"/>
-                 <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we're asking you to provide, please call 
+                 <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we're asking you to provide, please call
               <a href="tel:1-800-841-1541">1.800.841.1541</a> so we may help.</p>
              </span>
 
           </span>
         <div class="form-area multiple-input">
           <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
-            <input type="text" pattern="[0-9]*" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only>
+            <input type="text" pattern="[0-9]*" tabindex="1" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only auto-next>
           </div>
           <div class="input-container" data-size={{an2minl}} ng-show="product.LDC !='MIC'">
-            <input type="text" pattern="[0-9]*" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required numbers-only>
+            <input type="text" pattern="[0-9]*" tabindex="2" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required numbers-only auto-next>
           </div>
           <div class="input-container" data-size={{an3minl}} ng-show="product.LDC !='MIC'">
-            <input type="text" pattern="[0-9]*" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" required numbers-only>
+            <input type="text" pattern="[0-9]*" tabindex="3" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" required numbers-only auto-next>
           </div>
           <div class="input-container" data-size={{an4minl}}>
-            <input type="text" pattern="[0-9]*" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required numbers-only>
+            <input type="text" pattern="[0-9]*" tabindex="4" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required numbers-only auto-next>
           </div>
         </div>
         <span class="error-message" ng-show="(formone.an1.$dirty && product.LDC !='MIC' && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)">
@@ -51,7 +51,7 @@
         <div class="form-area">
           <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
           <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
-          <input type="text" name="lastName" ng-model="lastName" required/>
+          <input type="text" name="lastName" tabindex="5" ng-model="lastName" no-numbers required/>
           <span class="error-message" ng-show="(formone.lastName.$dirty && (formone.lastName.$invalid)) || (formone.submited)">
                <span ng-show="formone.lastName.$error.required">Last Name is required.</span>
           </span>
