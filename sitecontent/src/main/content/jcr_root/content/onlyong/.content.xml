@@ -219,6 +219,7 @@
                 APPLEMAGIC="/content/onlyong/applemagic"/>
             <_x0032_018_1_Jan
                 jcr:primaryType="nt:unstructured"
+                APPLEDEO10M="/content/onlyong/APPLEDEO10M"
                 COMPARE1C="/content/onlyong/COMPARE1C"
                 COMPARE1CONLINE="/content/onlyong/COMPARE1C"
                 COMPARE1V="/content/onlyong/COMPARE1V"
@@ -296,4 +297,5 @@
     <COHTERMS/>
     <SCORE2D/>
     <LOWEST2D/>
+    <APPLEDEO10M/>
 </jcr:root>
