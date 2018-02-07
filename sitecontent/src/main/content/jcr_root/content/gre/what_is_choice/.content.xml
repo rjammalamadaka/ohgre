@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WHAT IS CHOICE?"
-        jcr:uuid="59c565df-aff6-4097-9635-fa47be931e85"
+        jcr:uuid="57ad259e-9da1-4247-b15b-8158a0899ce9"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         navTitle="WHAT IS CHOICE?"
         portalname="gre">

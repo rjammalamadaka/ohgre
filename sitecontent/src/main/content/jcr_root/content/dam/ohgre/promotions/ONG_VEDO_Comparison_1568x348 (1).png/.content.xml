@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_VEDO_Comparison_1568x348 (1).png"
-        jcr:lastModified="{Date}2018-02-05T22:36:55.154-05:00"
+        jcr:lastModified="{Date}2018-02-06T21:29:59.154-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}135087"
             dc:format="image/png"
             dc:modified="{Date}2018-01-19T15:31:24.951-05:00"
-            jcr:lastModified="{Date}2018-02-05T22:36:55.101-05:00"
+            jcr:lastModified="{Date}2018-02-06T21:29:59.002-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

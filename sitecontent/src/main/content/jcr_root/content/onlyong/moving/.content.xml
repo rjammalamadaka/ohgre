@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Natural Gas Service | Ohio Natural Gas Availability by Address"
-        jcr:uuid="d7add4c7-71a3-4383-88c4-d2bf5c2c4578"
+        jcr:uuid="a64b707f-55e7-45fa-b865-a5742058a897"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         description="Moving? Take our natural gas service with you. Learn more about natural gas availability by address. Our plans are designed to serve your needs."
         hideInNav="true"

@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="404"
-        jcr:uuid="0d2df676-e295-40f8-ac27-5eb3a7d2659e"
+        jcr:uuid="b8c0b470-f059-4d5b-9a79-d89f9154634c"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

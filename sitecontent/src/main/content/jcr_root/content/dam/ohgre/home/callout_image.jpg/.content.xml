@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/callout_image.jpg"
-        jcr:lastModified="{Date}2018-02-05T22:36:44.349-05:00"
+        jcr:lastModified="{Date}2018-02-06T21:29:43.590-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}614"
             exif:PixelYDimension="{Long}254"
-            jcr:lastModified="{Date}2018-02-05T22:36:41.580-05:00"
+            jcr:lastModified="{Date}2018-02-06T21:29:40.538-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

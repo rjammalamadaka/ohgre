@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/popover-2@2x.jpg"
-        jcr:lastModified="{Date}2018-02-05T22:36:50.983-05:00"
+        jcr:lastModified="{Date}2018-02-06T21:29:51.273-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}300"
             exif:PixelYDimension="{Long}123"
-            jcr:lastModified="{Date}2018-02-05T22:36:49.990-05:00"
+            jcr:lastModified="{Date}2018-02-06T21:29:48.646-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

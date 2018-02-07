@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Moving Soon"
-        jcr:uuid="3836071e-caea-4bd6-8d7c-b8e7ec36f479"
+        jcr:uuid="179392a9-1e86-48bf-aedd-b84102cd6e08"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

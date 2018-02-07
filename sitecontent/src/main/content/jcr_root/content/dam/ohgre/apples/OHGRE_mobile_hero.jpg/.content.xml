@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/apples"
         dam:assetState="processed"
         dam:relativePath="ohgre/apples/OHGRE_mobile_hero.jpg"
-        jcr:lastModified="{Date}2018-02-05T22:36:47.457-05:00"
+        jcr:lastModified="{Date}2018-02-06T21:30:04.423-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,10 +29,10 @@
             dc:creator="[Jason Jackson]"
             dc:creator_xmpArrayType="rdf:Seq"
             dc:format="image/jpeg"
-            dc:modified="{Date}2018-02-05T22:36:45.268-05:00"
+            dc:modified="{Date}2018-02-06T21:29:57.396-05:00"
             exif:PixelXDimension="{Long}768"
             exif:PixelYDimension="{Long}300"
-            jcr:lastModified="{Date}2018-02-05T22:36:45.268-05:00"
+            jcr:lastModified="{Date}2018-02-06T21:29:57.396-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

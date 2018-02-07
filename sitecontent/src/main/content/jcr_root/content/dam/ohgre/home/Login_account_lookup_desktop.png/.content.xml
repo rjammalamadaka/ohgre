@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/Login_account_lookup_desktop.png"
-        jcr:lastModified="{Date}2018-02-05T22:36:47.170-05:00"
+        jcr:lastModified="{Date}2018-02-06T21:29:45.225-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}403370"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:47.100-05:00"
-            jcr:lastModified="{Date}2018-02-05T22:36:42.847-05:00"
+            jcr:lastModified="{Date}2018-02-06T21:29:41.879-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

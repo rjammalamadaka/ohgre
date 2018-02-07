@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:lockable,mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer A Friend Authenticated"
-        jcr:uuid="ed753dbd-98a5-4111-b491-34909749b4bb"
+        jcr:uuid="5f8cc616-f4da-408c-8545-88f2ee0975a0"
         sling:resourceType="/apps/ohgre/components/structure/referafriend"
         appid="388067291608116"
         hideInNav="true"

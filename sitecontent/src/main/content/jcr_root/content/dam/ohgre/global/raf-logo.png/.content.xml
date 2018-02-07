@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/raf-logo.png"
-        jcr:lastModified="{Date}2018-02-05T22:36:49.793-05:00"
+        jcr:lastModified="{Date}2018-02-06T21:29:47.649-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}15114"
             dc:format="image/png"
             dc:modified="{Date}2017-07-28T12:19:19.667-04:00"
-            jcr:lastModified="{Date}2018-02-05T22:36:43.996-05:00"
+            jcr:lastModified="{Date}2018-02-06T21:29:43.764-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
