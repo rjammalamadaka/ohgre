@@ -5,14 +5,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="efe1c275-2d9a-4600-9733-208f37428ac1">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-11T10:34:23.845-06:00"
+        cq:lastReplicated="{Date}2018-02-07T10:41:36.044-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="ReferAFriend_Stack_4C_GRE.png"
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/ReferAFriend_Stack_4C_GRE.png"
-        jcr:lastModified="{Date}2018-02-06T21:29:56.452-05:00"
+        jcr:lastModified="{Date}2018-02-07T13:29:29.655-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}18926"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:48.645-05:00"
-            jcr:lastModified="{Date}2018-02-06T21:29:56.227-05:00"
+            jcr:lastModified="{Date}2018-02-07T13:29:29.456-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
