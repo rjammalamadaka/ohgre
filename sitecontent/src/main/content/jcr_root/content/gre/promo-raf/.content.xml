@@ -41,7 +41,7 @@
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/raf/hero.jpg"
                 textIsRich="true"
-                title="&lt;p>Sign up with Grand Rapids Energy&lt;sup>® &lt;/sup>and we could both receive a {{giftCardValue | currency:&amp;quot;$&amp;quot;:0}} Visa&lt;sup>®&lt;/sup> Reward Card.*&lt;/p>&#xd;&#xa;"/>
+                title="&lt;p>Sign up with Grand Rapids Energy&lt;sup>® &lt;/sup>and we could both receive a {{GIFTCARDVALUE | currency:&amp;quot;$&amp;quot;:0}} Visa&lt;sup>®&lt;/sup> Reward Card.*&lt;/p>&#xd;&#xa;"/>
             <offerpromotionconten
                 jcr:created="{Date}2017-08-03T20:59:52.234-04:00"
                 jcr:createdBy="admin"
