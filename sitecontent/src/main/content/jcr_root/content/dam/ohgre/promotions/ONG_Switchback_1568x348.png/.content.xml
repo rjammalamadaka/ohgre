@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_Switchback_1568x348.png"
-        jcr:lastModified="{Date}2018-02-07T13:29:39.123-05:00"
+        jcr:lastModified="{Date}2018-02-07T23:00:14.130-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}266611"
             dc:format="image/png"
             dc:modified="{Date}2018-01-19T15:31:23.717-05:00"
-            jcr:lastModified="{Date}2018-02-07T13:29:39.015-05:00"
+            jcr:lastModified="{Date}2018-02-07T23:00:14.005-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

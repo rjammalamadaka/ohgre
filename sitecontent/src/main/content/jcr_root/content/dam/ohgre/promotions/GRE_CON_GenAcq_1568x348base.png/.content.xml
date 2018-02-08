@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/GRE_CON_GenAcq_1568x348base.png"
-        jcr:lastModified="{Date}2018-02-07T13:29:38.571-05:00"
+        jcr:lastModified="{Date}2018-02-07T23:00:13.457-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}299839"
             dc:format="image/png"
             dc:modified="{Date}2018-01-19T15:31:23.336-05:00"
-            jcr:lastModified="{Date}2018-02-07T13:29:38.488-05:00"
+            jcr:lastModified="{Date}2018-02-07T23:00:13.354-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

@@ -16,7 +16,7 @@
         dam:copiedAt="{Date}2017-07-25T17:02:06.808-05:00"
         dam:parentAssetID="cabdbf13-6ecb-478e-9c8f-967fec2e76d1"
         dam:relativePath="ohgre/home/hero-image.jpg"
-        jcr:lastModified="{Date}2018-02-07T13:29:28.908-05:00"
+        jcr:lastModified="{Date}2018-02-07T22:59:52.522-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

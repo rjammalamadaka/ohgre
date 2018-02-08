@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Maintenance"
-        jcr:uuid="edff2e5b-3b7b-48b6-868b-cab4da095fa4"
+        jcr:uuid="a7b83f10-5557-41d1-8316-76b961ef7a6c"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

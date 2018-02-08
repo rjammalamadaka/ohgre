@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WHY CHOOSE US?"
-        jcr:uuid="9b04a13f-a942-49cf-931c-e3dda1da2910"
+        jcr:uuid="b3c0d260-f1c4-483f-965b-9aafd71706d2"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         navTitle="WHY CHOOSE US?"
         portalname="gre">

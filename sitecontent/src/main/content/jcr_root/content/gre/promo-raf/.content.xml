@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Refer A Friend Promotion"
-        jcr:uuid="4b37c2ed-0952-482d-9bed-120e27e4c257"
+        jcr:uuid="484386e5-5c29-4120-a3b5-3515186617a7"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         sling:vanityPath="raf25"
         appid="388067291608115"
@@ -41,7 +41,7 @@
                 displaylogo="true"
                 imagepath="/content/dam/ohgre/raf/hero.jpg"
                 textIsRich="true"
-                title="&lt;p>Sign up with Grand Rapids Energy&lt;sup>® &lt;/sup>and we could both receive a {{GIFTCARDVALUE | currency:&amp;quot;$&amp;quot;:0}} Visa&lt;sup>®&lt;/sup> Reward Card.*&lt;/p>&#xd;&#xa;"/>
+                title="&lt;p>Sign up with Grand Rapids Energy&lt;sup>® &lt;/sup>and we could both receive a {{giftCardValue | currency:&amp;quot;$&amp;quot;:0}} Visa&lt;sup>®&lt;/sup> Reward Card.*&lt;/p>&#xd;&#xa;"/>
             <offerpromotionconten
                 jcr:created="{Date}2017-08-03T20:59:52.234-04:00"
                 jcr:createdBy="admin"
