@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="An Easy Choice Among Ohio Natural Gas Companies | Ohio Natural Gas"
-        jcr:uuid="88216d86-b918-4587-987c-ffd4c2c14cd6"
+        jcr:uuid="a62c7871-ba81-4f7d-8871-e5bc667efd56"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         description="See why Ohio Natural Gas® is an easy choice among Ohio natural gas companies. We work to provide residents with competitive pricing and affordable rates."
         hideInNav="true"

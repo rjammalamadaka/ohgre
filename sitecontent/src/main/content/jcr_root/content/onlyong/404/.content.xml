@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="404"
-        jcr:uuid="51533a04-79dd-4c9e-84df-dfbc7f1ec859"
+        jcr:uuid="70b5226a-6d05-46dd-aafc-3753b2f2a049"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true"
         portalname="oh">

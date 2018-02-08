@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/card_raf_mobile.jpg"
-        jcr:lastModified="{Date}2018-02-07T13:29:34.781-05:00"
+        jcr:lastModified="{Date}2018-02-07T23:00:09.911-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

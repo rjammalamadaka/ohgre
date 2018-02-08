@@ -15,7 +15,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Choosing a Natural Gas Provider in Ohio | Switch to Ohio Natural Gas"
-        jcr:uuid="eb78bd93-256b-4a1d-b003-771ae0fd2af9"
+        jcr:uuid="a3a2bb8f-fe35-46e0-a878-f7daf9b48eef"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         navTitle="WHAT IS CHOICE?"
         portalname="oh">

@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/socialsharing"
         dam:assetState="processed"
         dam:relativePath="ohgre/socialsharing/twitter@3x.png"
-        jcr:lastModified="{Date}2018-02-07T13:29:38.624-05:00"
+        jcr:lastModified="{Date}2018-02-07T23:00:15.044-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}9870"
             dc:format="image/png"
             dc:modified="{Date}2017-10-15T08:35:46.777+05:30"
-            jcr:lastModified="{Date}2018-02-07T13:29:37.003-05:00"
+            jcr:lastModified="{Date}2018-02-07T23:00:11.080-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

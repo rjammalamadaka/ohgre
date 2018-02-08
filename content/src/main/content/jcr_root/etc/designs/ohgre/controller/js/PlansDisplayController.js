@@ -191,6 +191,10 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
 
   }
 
+    $('input[type=radio][name=location_type]').change(function() {
+          $scope.getPlans();
+    });
+
 
   $scope.getPlans = function() {
 
