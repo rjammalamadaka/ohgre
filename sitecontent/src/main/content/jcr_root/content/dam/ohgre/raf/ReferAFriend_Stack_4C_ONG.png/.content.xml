@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/ReferAFriend_Stack_4C_ONG.png"
-        jcr:lastModified="{Date}2018-02-07T23:00:09.899-05:00"
+        jcr:lastModified="{Date}2018-02-08T13:43:47.307-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}20630"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:51.384-05:00"
-            jcr:lastModified="{Date}2018-02-07T22:59:59.640-05:00"
+            jcr:lastModified="{Date}2018-02-08T13:43:43.837-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

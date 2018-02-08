@@ -334,4 +334,20 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
     }
   }, true);
 
+    $scope.getDisplayPromocode = function(promocode){
+        if(promocode){
+			var index=promocode.indexOf("ONLINE");
+            if(index != -1){
+			return promocode.substr(0,index);
+            }else{
+				return promocode;
+            }
+        }else{ return "";
+
+        }
+
+
+    }
+
+
 }]);

@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/Visa"
         dam:assetState="processed"
         dam:relativePath="ohgre/Visa/hero.jpg"
-        jcr:lastModified="{Date}2018-02-07T23:00:10.165-05:00"
+        jcr:lastModified="{Date}2018-02-08T13:43:47.935-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

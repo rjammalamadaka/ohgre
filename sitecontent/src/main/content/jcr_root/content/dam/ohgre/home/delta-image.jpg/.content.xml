@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/delta-image.jpg"
-        jcr:lastModified="{Date}2018-02-07T23:00:02.491-05:00"
+        jcr:lastModified="{Date}2018-02-08T13:43:45.393-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1383"
             exif:PixelYDimension="{Long}549"
-            jcr:lastModified="{Date}2018-02-07T22:59:58.761-05:00"
+            jcr:lastModified="{Date}2018-02-08T13:43:43.623-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

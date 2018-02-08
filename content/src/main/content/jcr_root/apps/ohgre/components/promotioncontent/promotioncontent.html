@@ -97,7 +97,7 @@
     </div>
   </div>
 
-  <section>
+  <section ng-controller="PromotionContentController">
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -105,7 +105,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                  <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
+                  <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | Promo code required - {{getDisplayPromocode(promotion.PromotionCode)}}</span></div>
                 </div>
               </div>
             </div>

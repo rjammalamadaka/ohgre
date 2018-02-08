@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Customer Lookup"
-        jcr:uuid="bf3fd662-5ca1-4a61-8f70-61ee3555fd98"
+        jcr:uuid="5beebe74-e85c-408f-afae-fb4d0141e31b"
         sling:resourceType="/apps/ohgre/components/structure/enrollpage"
         hideInNav="true">
         <content

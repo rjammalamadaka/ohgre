@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/socialsharing"
         dam:assetState="processed"
         dam:relativePath="ohgre/socialsharing/facebook@3x.png"
-        jcr:lastModified="{Date}2018-02-07T23:00:13.963-05:00"
+        jcr:lastModified="{Date}2018-02-08T13:43:50.287-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}8994"
             dc:format="image/png"
             dc:modified="{Date}2017-10-15T08:35:46.594+05:30"
-            jcr:lastModified="{Date}2018-02-07T23:00:09.949-05:00"
+            jcr:lastModified="{Date}2018-02-08T13:43:48.273-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

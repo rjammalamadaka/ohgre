@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:mixinTypes="[mix:referenceable]"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
     jcr:primaryType="dam:Asset"
     jcr:uuid="07ce2c47-e971-4287-ae8b-9f2ca7787af6">
     <jcr:content
         cq:lastReplicated="{Date}2018-01-25T13:32:34.344-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
+        cq:name="ONG_VEDO_COMPARE1V_768x300.png"
+        cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_VEDO_COMPARE1V_768x300.png"
-        jcr:lastModified="{Date}2018-02-07T23:00:10.419-05:00"
-        jcr:lastModifiedBy="penny"
+        jcr:lastModified="{Date}2018-02-08T13:43:51.718-05:00"
+        jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -25,9 +28,12 @@
             dam:Physicalwidthindpi="{Long}-1"
             dam:Physicalwidthininches="{Decimal}-1.0"
             dam:Progressive="no"
-            dam:sha1="3f45e40ac97d43a84f20ba5907913cf992c59690"
+            dam:sha1="1342d9d1a93a4308f8a35a97c931d7f09fc4811e"
             dam:size="{Long}74006"
             dc:format="image/png"
+            dc:modified="{Date}2018-02-08T13:43:51.633-05:00"
+            jcr:lastModified="{Date}2018-02-08T13:43:51.632-05:00"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             tiff:ImageLength="{Long}300"
