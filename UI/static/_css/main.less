@@ -1665,6 +1665,13 @@ div[class^="cq-colctrl-lt1-"]{
 					width: 100%;
 				}
 			}
+			&.faq {
+				@media (@screen-lg-min){
+					.slide-image {
+						//background-size: contain;
+					}
+				}
+			}
 		}
 	}
 	@media (@screen-lg-min){
@@ -5095,15 +5102,19 @@ input{
 		// width: auto;
 	}
 }
-.required {
+.required,
+.required-message,
+.error-message {
 	color: @red;
+}
+.required-message,
+.error-message {
+	font-size: 1.3rem;
+	font-style: italic;
 }
 .error-message{
 	display: none;
-	font-size: 1.3rem;
 	margin-bottom: 1rem;
-	color: @red;
-	font-style: italic;
 }
 .has-error{
 	.error-message,&.error-message{
@@ -5129,46 +5140,6 @@ input{
 	&:last-child{
 		margin-right: 0;
 	}
-	/*
-	&[data-size="10"]{
-		width: 30%;
-		min-width: 13rem;
-	}
-	&[data-size="9"]{
-		width: 28%;
-		min-width: 12rem;
-	}
-	&[data-size="8"]{
-		width: 11rem;
-	}
-	&[data-size="7"]{
-		width: 23%;
-		max-width: 10rem;
-	}
-	&[data-size="6"]{
-		width: 20%;
-		max-width: 9rem;
-	}
-	&[data-size="5"]{
-		width: 18%;
-		max-width: 9rem;
-	}
-	&[data-size="4"]{
-		width: 16%;
-		max-width: 7.5rem;
-	}
-	&[data-size="3"]{
-		width: 13%;
-		max-width: 7rem;
-	}
-	&[data-size="2"]{
-		width: 10%;
-		max-width: 6rem;
-	}
-	&[data-size="1"]{
-		width: 16%;
-		max-width: 5rem;
-	}*/
 	&[data-size]{
 		max-width: 100%;
 	}
