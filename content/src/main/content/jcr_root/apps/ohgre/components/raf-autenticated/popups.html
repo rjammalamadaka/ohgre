@@ -139,8 +139,12 @@ rows="8" cols="80" ng-model="toemailaddress" ng-required="true" ng-focus ng-visi
             <div class="container">
               <div class="row">
                 <div class="col-md-3">
+               <a href="#" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png" alt="Grand Rapids Energy"></a>
+
                   <img src="/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png" alt="Ohio Natural Gas Logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
-                  <img src="/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png" alt="Grand Rapids Energy" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+
+
+
                 </div>
                 <div class="col-md-9">
                   ${properties.popupfootercontactinfo @ context = 'html'}
