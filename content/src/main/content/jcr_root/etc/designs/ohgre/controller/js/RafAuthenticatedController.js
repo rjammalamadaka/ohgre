@@ -276,7 +276,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     var o = "$25 for you %26 $25 for me. Enroll ";
 
       if(site === 0){
-          o += "on Ohio Natural Gas' lowest available rate with promo code RAF25!";
+          o += "on Ohio Natural Gas lowest available fixed rates with promo code RAF25!";
       }
       else {
 		o += "with Grand Rapids Energy and we can earn a Visa Reward Card!"
