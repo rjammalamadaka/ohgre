@@ -51,7 +51,7 @@
         <div class="form-area">
           <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
           <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
-          <input type="text" name="lastName" tabindex="5" ng-model="lastName" no-numbers required/>
+          <input type="text" name="lastName" tabindex="5" ng-model="lastName" required/>
           <span class="error-message" ng-show="(formone.lastName.$dirty && (formone.lastName.$invalid)) || (formone.submited)">
                <span ng-show="formone.lastName.$error.required">Last Name is required.</span>
           </span>
@@ -60,7 +60,7 @@
       <div class="zipcode-container form-area-wrapper">
         <div class="form-area">
           <label for="zipcode">Your Zip Code</label>
-          <input type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only/>
+          <input  tabindex="6" type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only/>
           <span class="error-message" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)">
                <span ng-show="formone.zipcode.$error.required">Zip Code is required.</span>
                <span ng-show="formone.zipcode.$error.pattern">Please enter valid Zip code.</span>
@@ -69,6 +69,6 @@
         </div>
       </div>
     </div>
-    <button class="primary-button next-button" data-next=2 ng-click="enrollCustomer(2)">Next</button>
+    <button class="primary-button next-button" tabindex="7" data-next=2 ng-click="enrollCustomer(2)">Next</button>
   </form>
 </div>
