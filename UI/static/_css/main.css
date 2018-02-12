@@ -5997,6 +5997,9 @@ div[class^="col-"] {
 #primary-header .contact-us-container a {
   text-transform: none;
 }
+#primary-header .contact-us-container a[href*="tel:"] {
+  color: #ff6008;
+}
 #primary-header .contact-us-container strong {
   display: block;
 }
