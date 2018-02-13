@@ -282,7 +282,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				logger.info("New customer");
 				emailtype="ENCONFIRM";
 			}
-				logger.info("");
+			logger.info("");
 			String alternateEmailAddress =getParameterInfo(jObj,"alternateEmailAddress");
 
 			SendRealTimeEmailRequest sendRealTimeEmailRequest=new SendRealTimeEmailRequest();
@@ -303,31 +303,43 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			logger.info("start sendRealTimeEmail");
 			String sendrealtimerequest=handlerResolver.getRequest();
 			String sendrealtimeresponse= handlerResolver.getResponse();
-			SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
-			logger.info("end sendRealTimeEmail");
-			SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
-			logger.info("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
-			logger.info("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
+			String sendRealTimeResponseMessage = "";
+			try{
+				SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
+				logger.info("end sendRealTimeEmail");
+
+				SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
+				sendRealTimeResponseMessage=sendRealTimeEmailResult.getResponseMessage();
+				logger.info("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
+				logger.info("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
+				RequestResponseVo sendRealTimeRequestResponseVo=new RequestResponseVo();
+				logger.info(account);
+				sendRealTimeRequestResponseVo.setAccnt(account);
+				sendRealTimeRequestResponseVo.setApiCall("sendRealTimeEmail");
+				sendRealTimeRequestResponseVo.setLdc(LDC);
+				sendRealTimeRequestResponseVo.setOrderNumber("0");
+				sendRealTimeRequestResponseVo.setPage(referrer);
+				sendRealTimeRequestResponseVo.setPostXML(sendrealtimerequest);
+				sendRealTimeRequestResponseVo.setRespMessage(sendRealTimeEmailResult.getResponseMessage());
+				sendRealTimeRequestResponseVo.setRespNumb(sendRealTimeEmailResult.getResponseStatus());
+				sendRealTimeRequestResponseVo.setReturnXML(sendrealtimeresponse);
+				sendRealTimeRequestResponseVo.setSite(domain);
+
+				logger.info("before insert to database");
+				requestResponseDaoService.insertPrimeRequestResponse(sendRealTimeRequestResponseVo);
 
 
-			RequestResponseVo sendRealTimeRequestResponseVo=new RequestResponseVo();
-			logger.info(account);
-			sendRealTimeRequestResponseVo.setAccnt(account);
-			sendRealTimeRequestResponseVo.setApiCall("sendRealTimeEmail");
-			sendRealTimeRequestResponseVo.setLdc(LDC);
-			sendRealTimeRequestResponseVo.setOrderNumber("0");
-			sendRealTimeRequestResponseVo.setPage(referrer);
-			sendRealTimeRequestResponseVo.setPostXML(sendrealtimerequest);
-			sendRealTimeRequestResponseVo.setRespMessage(sendRealTimeEmailResult.getResponseMessage());
-			sendRealTimeRequestResponseVo.setRespNumb(sendRealTimeEmailResult.getResponseStatus());
-			sendRealTimeRequestResponseVo.setReturnXML(sendrealtimeresponse);
-			sendRealTimeRequestResponseVo.setSite(domain);
+				logger.info("requestresponse inserted sendrealtime");
 
-logger.info("before insert to database");
-			requestResponseDaoService.insertPrimeRequestResponse(sendRealTimeRequestResponseVo);
+			}catch(Exception e){
+				mailContent.put("request", sendrealtimerequest);
+				mailContent.put("response", sendrealtimeresponse);
+				mailContent.put("responseMessage", sendRealTimeResponseMessage);
+				mailContent.put("currentPagePath", referrer);
+				mailContent.put("siteDomain", domain);
+				handelCatchBlock(e,mailContent);
+			}
 
-
-		logger.info("requestresponse inserted sendrealtime");
 
 			enrollment.setCustID(enrollCustomerResult.getCustID());
 
