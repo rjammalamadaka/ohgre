@@ -317,7 +317,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				sendRealTimeRequestResponseVo.setAccnt(account);
 				sendRealTimeRequestResponseVo.setApiCall("sendRealTimeEmail");
 				sendRealTimeRequestResponseVo.setLdc(LDC);
-				sendRealTimeRequestResponseVo.setOrderNumber("0");
+				sendRealTimeRequestResponseVo.setOrderNumber(Integer.toString(generatedKey));
 				sendRealTimeRequestResponseVo.setPage(referrer);
 				sendRealTimeRequestResponseVo.setPostXML(sendrealtimerequest);
 				sendRealTimeRequestResponseVo.setRespMessage(sendRealTimeEmailResult.getResponseMessage());
