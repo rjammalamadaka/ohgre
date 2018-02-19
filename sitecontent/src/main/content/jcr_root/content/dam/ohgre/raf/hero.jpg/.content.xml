@@ -5,14 +5,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="931503d7-0d17-4e9c-9634-cb1940435cd4">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-22T14:52:07.592-06:00"
+        cq:lastReplicated="{Date}2018-02-09T14:11:32.330-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="hero.jpg"
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/hero.jpg"
-        jcr:lastModified="{Date}2018-02-08T13:43:46.705-05:00"
+        jcr:lastModified="{Date}2018-02-19T06:58:58.432-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

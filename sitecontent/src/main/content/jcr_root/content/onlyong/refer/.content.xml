@@ -4,12 +4,13 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-02-12T13:13:18.902-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-02-16T08:35:02.222-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-02-12T13:13:36.418-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
+        jcr:description="Get &quot;Refer a Friend&quot; natural gas rebates with Ohio Natural Gas® and take advantage of rewards, promotions, and unique natural gas rebates. Learn more."
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
@@ -27,6 +28,7 @@
         ogtitle="ONG's lowest available fixed rates and $25!&quot;"
         ogtype="website"
         ogurl="/content/onlyong/promo-raf.html"
+        pageTitle="Natural Gas Rebate Program | Refer a Friend Natural Gas Rebates"
         portalname="oh"
         tagmanagerid="GTM-56C9WRS">
         <content

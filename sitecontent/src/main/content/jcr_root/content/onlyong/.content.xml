@@ -5,13 +5,13 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-02-14T11:54:20.293-06:00"
+        cq:lastModified="{Date}2018-02-16T12:42:48.291-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-30T10:23:51.917-06:00"
+        cq:lastReplicated="{Date}2018-02-16T12:42:52.622-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
-        jcr:description="Ohio Natural Gas description"
+        jcr:description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
@@ -27,6 +27,7 @@
         metaprimarykeywords="Ohio Natural Gas, Natural Gas, Gas Company Ohio, Natural Gas Company"
         metatitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         mobilenumber="1-888-466-4427"
+        pageTitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         portalname="oh"
         tagmanagerid="GTM-56C9WRS"
         termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
@@ -85,12 +86,12 @@
             <myaccount
                 jcr:created="{Date}2018-01-24T09:41:26.378-06:00"
                 jcr:createdBy="penny"
-                jcr:lastModified="{Date}2018-01-24T12:41:09.695-06:00"
+                jcr:lastModified="{Date}2018-02-16T12:42:48.283-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/myaccount"
                 buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer with Ohio Natural Gas, you can manage your account online. Log into your account to view your current contract and make changes."
+                description="If you are currently a customer with Ohio Natural Gas, you can manage your account online. Log in to your account to view your current contract and make changes."
                 displayLink="true"
                 heading="Currently an ONG customer? Manage your account here."
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
@@ -306,4 +307,5 @@
     <LOWEST3V/>
     <ENROLL3C/>
     <NEWHOME2018/>
+    <WINTEN/>
 </jcr:root>

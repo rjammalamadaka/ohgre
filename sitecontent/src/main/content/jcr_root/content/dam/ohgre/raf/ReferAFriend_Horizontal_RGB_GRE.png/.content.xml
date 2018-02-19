@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/ReferAFriend_Horizontal_RGB_GRE.png"
-        jcr:lastModified="{Date}2018-02-08T13:43:40.541-05:00"
+        jcr:lastModified="{Date}2018-02-19T06:58:54.407-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -31,7 +31,7 @@
             exif:ColorSpace="{Long}65535"
             exif:PixelXDimension="{Long}826"
             exif:PixelYDimension="{Long}193"
-            jcr:lastModified="{Date}2018-02-08T13:43:40.445-05:00"
+            jcr:lastModified="{Date}2018-02-19T06:58:54.255-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

@@ -9,7 +9,7 @@
         cq:parentPath="/content/dam/ohgre/Gre_logos"
         dam:assetState="processed"
         dam:relativePath="ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png"
-        jcr:lastModified="{Date}2018-02-08T13:43:52.579-05:00"
+        jcr:lastModified="{Date}2018-02-19T06:59:05.307-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -29,7 +29,7 @@
             dam:size="{Long}8155"
             dc:format="image/png"
             dc:modified="{Date}2017-11-09T14:17:03.778-06:00"
-            jcr:lastModified="{Date}2018-02-08T13:43:52.500-05:00"
+            jcr:lastModified="{Date}2018-02-19T06:59:05.230-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
