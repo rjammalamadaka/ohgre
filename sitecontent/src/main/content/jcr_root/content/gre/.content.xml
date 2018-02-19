@@ -22,7 +22,7 @@
         mobilenumber="1-800-841-1541"
         portalname="gre"
         tagmanagerid="GTM-PLVM6CR"
-        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/aaa-claim-form.pdf"
+        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf"
         time="8AM - 5PM EST">
         <content
             jcr:primaryType="nt:unstructured"
