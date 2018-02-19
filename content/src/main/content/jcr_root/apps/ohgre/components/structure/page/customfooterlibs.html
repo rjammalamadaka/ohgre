@@ -1,29 +1,12 @@
-<!-- 
-<script src="/etc/designs/ohgre/clientlibs/js/jspdf.min.js"></script>
-
-<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-
--->
-
-
 <script src="/etc/designs/ohgre/clientlibs/js/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.min.js"></script>
 
-<!-- 
-<script src="/etc/designs/ohgre/clientlibs/js/html2pdf.min.js"></script>
-
-<script src="/etc/designs/ohgre/clientlibs/js/html2pdf.bundle.082.min.js"></script>
--->
 <script src="/etc/designs/ohgre/clientlibs/js/cloudsponge.js"></script>
 <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
 
 
 <script>
-
+  var contactsTextBoxValue = '';
   window.csPageOptions = {
     sources: ["yahoo", "outlook", "icloud", "aol", "linkedin"],
     selectionLimit: 25,
@@ -36,6 +19,8 @@
     beforeDisplayContacts: function(contacts, b, c) {
       // obtain access to the ContactListCtrl's scope
       var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
+      contactsTextBoxValue = jQuery('#toemailaddress').val();
+      console.log('beforeDisplayContacts > contactsTextBoxValue ', contactsTextBoxValue);
       scope.$apply(function() {
         scope.fullAddressbook = contacts;
       });
@@ -43,33 +28,37 @@
     // pass only the selected contacts to the contactListCtrl
     afterSubmitContacts: function(contacts) {
       console.log('afterSubmitContacts ... csText');
-
+      //console.log('raf email textbox values', jQuery('#toemailaddress').val());
       // obtain access to the ContactListCtrl's scope
       var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
+      var csContacts = jQuery('#toemailaddress').val();
+      if(contactsTextBoxValue !== '') {
+        jQuery('#toemailaddress').val(contactsTextBoxValue + ',' + csContacts);
+      }
 
       scope.csTextArea.text = jQuery('#toemailaddress').val();
 
       scope.$apply(function() {
           //update view for mobile
-    
+
           scope.contacts = contacts;
           //console.log(contacts);
           var emailsArr = [];
-    
+
           for (var i = 0; i < contacts.length; i++) {
             scope.emails = contacts[i].email[0].address;
             scope.emails = UTILS.trim(scope.emails);
             //console.log('Email:[' + scope.emails + ']');
             emailsArr.push(scope.emails);
           }
-    
+
           var arrStr = emailsArr.join(", ");
           //console.log(arrStr);
           if (scope.emails) {
             scope.emails = arrStr;
             console.log('scope.emails', scope.emails);
           }
-    
+
           angular.element(jQuery('#toemailaddress')).triggerHandler('input');
 
                 /*
@@ -89,20 +78,7 @@
 
     }
   };
-/**/
-   /*
-  // Asynchronously include the widget library.
 
-    (function(u) {
-      var d = document,
-        s = 'script',
-        a = d.createElement(s),
-        m = d.getElementsByTagName(s)[0];
-      a.async = 1;
-      a.src = u;
-      m.parentNode.insertBefore(a, m);
-    })('//api.cloudsponge.com/widget/55f173bada0d361f7c04f1c435d61d6708d1b174.js');
- */
 </script>
 
 <meta name=viewport content="width=device-width, initial-scale=1">
