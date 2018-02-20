@@ -264,7 +264,7 @@
               <label class="checkbox">
                      <input type="checkbox" id="authorization-checkbox" name="authorization" ng-model="authorization" ng-required="true" ng-focus ng-visited>
                      </label>
-              <span class="special-offer"><label for="authorization-checkbox">I am the utility account holder or a person that has legal authorization to make decisions for this account.</label></span>
+              <span class="special-offer"><label for="authorization-checkbox">${properties.authorizationcontent}</label></span>
 
               <span class="input-error-message" ng-show="(formtwo.authorization.$visited && !formtwo.authorization.$focused) || formtwo.submited">
                 <span class="input-error-message" ng-show="formtwo.authorization.$error.required">*Checkbox required in order to continue.</span>
