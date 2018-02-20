@@ -16,6 +16,7 @@
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
+            jcr:mixinTypes="[]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
             <promoherobanner_copy
@@ -48,6 +49,7 @@
         <image
             jcr:lastModified="{Date}2017-08-15T08:49:28.111+05:30"
             jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[]"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
     </jcr:content>

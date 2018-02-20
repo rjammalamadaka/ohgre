@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Promotion Error"
-        jcr:uuid="8fd30dc1-fb0f-48d2-9f47-5a87aeddcf28"
+        jcr:uuid="83ed920a-e149-448f-b3bd-150ed8c6de77"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

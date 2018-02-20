@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Terms and Conditions"
-        jcr:uuid="23313c7b-516e-428c-a0fd-ba5d26f03169"
+        jcr:uuid="56ad356d-5a77-48ae-9832-da832b0b1827"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

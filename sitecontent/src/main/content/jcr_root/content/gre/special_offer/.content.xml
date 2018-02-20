@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Special Offer"
-        jcr:uuid="394e9bd9-90e5-4589-8bb0-a6e2a72d9262"
+        jcr:uuid="66347e3f-12bf-424c-8faa-61fb7fbc1bda"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithnavpage"
         hideInNav="true">
         <content
