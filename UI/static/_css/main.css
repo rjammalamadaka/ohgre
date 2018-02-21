@@ -11017,6 +11017,20 @@ input {
     padding: 0;
   }
 }
+.popup-wrapper#popupconfirm .button-container .plain {
+  background-color: #fff;
+  border: 1px solid #ff6008;
+  color: #ff6008;
+  min-width: 15rem;
+  margin-right: 1rem;
+  padding: 0;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupconfirm .button-container .plain {
+    padding: 0;
+  }
+}
 .popup-wrapper#popupwithrenewal .button-container {
   padding: 1rem 0;
 }
