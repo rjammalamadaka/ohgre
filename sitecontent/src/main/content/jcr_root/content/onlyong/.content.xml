@@ -229,6 +229,7 @@
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
+                EMAILTEN="/content/onlyong/EMAILTEN"
                 ENROLL3C="/content/onlyong/ENROLL3C"
                 ENROLL3CONLINE="/content/onlyong/ENROLL3C"
                 LOWEST2D="/content/onlyong/LOWEST2D"
@@ -250,7 +251,8 @@
                 SCORE3V="/content/onlyong/SCORE3V"
                 SCORE3VONLINE="/content/onlyong/SCORE3V"
                 SWITCH="/content/onlyong/SWITCH"
-                SWITCHONLINE="/content/onlyong/SWITCH">
+                SWITCHONLINE="/content/onlyong/SWITCH"
+                WINTEN="/content/onlyong/WINTEN">
                 <Score1C/>
             </_x0032_018_1_Jan>
         </oh>
@@ -308,4 +310,5 @@
     <ENROLL3C/>
     <NEWHOME2018/>
     <WINTEN/>
+    <EMAILTEN/>
 </jcr:root>

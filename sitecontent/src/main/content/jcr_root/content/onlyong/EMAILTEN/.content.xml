@@ -2,17 +2,17 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-02-16T15:23:54.022-06:00"
+        cq:lastModified="{Date}2018-02-20T13:33:15.803-06:00"
         cq:lastModifiedBy="josh"
-        cq:lastReplicated="{Date}2018-02-20T13:28:21.610-06:00"
+        cq:lastReplicated="{Date}2018-02-20T14:42:07.770-06:00"
         cq:lastReplicatedBy="josh"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="WINTEN"
-        jcr:uuid="18b49ed5-2e4a-4662-8186-d38dc6c2ec77"
+        jcr:title="EMAILTEN"
+        jcr:uuid="d17c376b-d555-47a3-ac91-3d188ff5baa9"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
         <content
             jcr:primaryType="nt:unstructured"
