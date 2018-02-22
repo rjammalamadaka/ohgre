@@ -949,6 +949,8 @@ $scope.displayReferalForm=true;
   $scope.phoneformatchange =function(number){
 
     var phonenumber=$("#phonenumber").val();
+      phonenumber=phonenumber.replace(/ /g,'');
+
     phonenumber=phonenumber.replace("(","").replace(")","").replace(" ","").replace("-","");
     if(phonenumber && phonenumber.indexOf('-') ==-1 && phonenumber.length>3){
       var formatedNumber="("+phonenumber.substring(0,3)+") "+phonenumber.substring(3,6)+"-"+phonenumber.substring(6);
