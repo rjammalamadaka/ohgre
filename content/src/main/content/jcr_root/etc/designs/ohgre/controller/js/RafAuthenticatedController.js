@@ -14,6 +14,56 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
   $scope.rafemailmessage = "I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
 
   $scope.rafemailmessage = jQuery('#raf-friend-info').data('emailbody');
+
+
+    var getCustomerInfo=function(req){
+        
+        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
+            if (data && data.CustomerInfoResult) {
+                var customerInfo = JSON.parse(data.CustomerInfoResult);
+                if (customerInfo.responseStatus == 1) {
+                    
+                    
+                } else if (customerInfo.responseStatus == 0) {
+                    $scope.customerInfo = customerInfo;
+                    var giftCard = $scope.customerInfo.giftCard;
+                    updateCustomerInfoReq.custID = $scope.customerInfo.custID;
+                    updateCustomerInfoReq.account = $scope.customerInfo.account;
+                    updateCustomerInfoReq.ldc = $scope.customerInfo.ldc;
+                    $scope.customerInfoEmailAddress = $scope.customerInfo.emailAddress;
+                    var currentYearGf = [];
+                    var previouserYearGf = [];
+                    giftCard.forEach(function(entry) {
+                        var date = new Date(entry.giftCardCreateDate);
+                        var year = date.getFullYear();
+                        // if($scope.years.indexOf(year) != -1){
+                        //$scope.giftCardByYear[year]=entry;
+                        if (year == currentYear) {
+                            currentYearGf.push(entry);
+                            //$scope.giftCardByYear[currentYear]=entry;
+                        } else if (year == previouserYear) {
+                            previouserYearGf.push(entry);
+                            //$scope.giftCardByYear[previouserYear]=entry;
+                        }
+                        // }
+                    });
+                    
+                    $scope.giftCardByYear[currentYear] = currentYearGf;
+                    $scope.giftCardByYear[previouserYear] = previouserYearGf;
+                    
+                    $scope.bindClickEvent();
+                    
+                    $scope.setProductData(currentYear);
+                }
+            } else {
+                location.href = $rootScope.homeUrl + "/refer.html";
+            }
+            
+        }).error(function(data, status, headers, config) {
+            
+        });
+
+    }  
   PrimeService.getProductData().success(function(data, status, headers, config) {
 
     if (!($rootScope.isEmpty(data))) {
@@ -21,52 +71,11 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       req.LDC = data.LDC;
       $rootScope.ldc = data.LDC;
       req.AccountNumber = data.AccountNumber;
-
-      PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
-        if (data && data.CustomerInfoResult) {
-          var customerInfo = JSON.parse(data.CustomerInfoResult);
-          if (customerInfo.responseStatus == 1) {
-
-
-          } else if (customerInfo.responseStatus == 0) {
-            $scope.customerInfo = customerInfo;
-            var giftCard = $scope.customerInfo.giftCard;
-            updateCustomerInfoReq.custID = $scope.customerInfo.custID;
-            updateCustomerInfoReq.account = $scope.customerInfo.account;
-            updateCustomerInfoReq.ldc = $scope.customerInfo.ldc;
-            $scope.customerInfoEmailAddress = $scope.customerInfo.emailAddress;
-            var currentYearGf = [];
-            var previouserYearGf = [];
-            giftCard.forEach(function(entry) {
-              var date = new Date(entry.giftCardCreateDate);
-              var year = date.getFullYear();
-              // if($scope.years.indexOf(year) != -1){
-              //$scope.giftCardByYear[year]=entry;
-              if (year == currentYear) {
-                currentYearGf.push(entry);
-                //$scope.giftCardByYear[currentYear]=entry;
-              } else if (year == previouserYear) {
-                previouserYearGf.push(entry);
-                //$scope.giftCardByYear[previouserYear]=entry;
-              }
-              // }
-            });
-
-            $scope.giftCardByYear[currentYear] = currentYearGf;
-            $scope.giftCardByYear[previouserYear] = previouserYearGf;
-
-            $scope.bindClickEvent();
-
-            $scope.setProductData(currentYear);
-          }
-        } else {
-          location.href = $rootScope.homeUrl + "/refer.html";
+        if(!data.AccountNumber || !data.LDC){
+			location.href = $rootScope.homeUrl + "/refer.html";
+        }else{
+			getCustomerInfo(req);
         }
-
-      }).error(function(data, status, headers, config) {
-
-      });
-
     } else {
       location.href = $rootScope.homeUrl + "/refer.html";
     }
