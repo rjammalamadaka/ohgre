@@ -38,6 +38,13 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
         });
       $scope.EXPIRATIONDATE = month + " " + date.getDate() + ", " + date.getFullYear();
 
+        if (!($rootScope.hashParams && $rootScope.hashParams.rateClassCode)) {
+           var rateClassCode= $scope.promotion.RateClassCode
+            if(rateClassCode =="01")
+ 			$("input[name=location_type][value='residential']").prop("checked", true);
+            else if(rateClassCode == "04")
+              $("input[name=location_type][value='commercial']").prop("checked", true);
+        }
 
     }
 
