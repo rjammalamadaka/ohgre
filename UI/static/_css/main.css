@@ -7275,6 +7275,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
     display: block;
     position: relative;
     z-index: 2;
+    max-height: 123px;
   }
   .card .card-hero img {
     height: auto;
@@ -9693,6 +9694,9 @@ div.alt-col2,
 }
 .box-with-border ol li {
   margin-bottom: .5rem;
+}
+.promo-wrapper img[src=""] {
+  display: none;
 }
 .promo-wrapper > div {
   padding: 0;
