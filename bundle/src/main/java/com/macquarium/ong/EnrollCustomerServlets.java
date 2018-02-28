@@ -301,15 +301,18 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			SendRealTimeEmail sendRealTimeEmail=new SendRealTimeEmail();
 			sendRealTimeEmail.setSendRealTimeEmailRequest(sendRealTimeEmailRequest);
 			logger.info("start sendRealTimeEmail");
-			String sendrealtimerequest=handlerResolver.getRequest();
-			String sendrealtimeresponse= handlerResolver.getResponse();
+
 			String sendRealTimeResponseMessage = "";
+			String sendrealtimerequest="";
+			String sendrealtimeresponse="";
 			try{
 				SendRealTimeEmailResponse sendRealTimeEmailResponse= quoteServiceSoap.sendRealTimeEmail(sendRealTimeEmail);
 				logger.info("end sendRealTimeEmail");
 
 				SendRealTimeEmailResult sendRealTimeEmailResult=sendRealTimeEmailResponse.getSendRealTimeEmailResult();
 				sendRealTimeResponseMessage=sendRealTimeEmailResult.getResponseMessage();
+				sendrealtimerequest=handlerResolver.getRequest();
+				sendrealtimeresponse= handlerResolver.getResponse();
 				logger.info("getResponseStatus: "+sendRealTimeEmailResult.getResponseStatus());
 				logger.info("getResponseMessage "+sendRealTimeEmailResult.getResponseMessage());
 				RequestResponseVo sendRealTimeRequestResponseVo=new RequestResponseVo();
