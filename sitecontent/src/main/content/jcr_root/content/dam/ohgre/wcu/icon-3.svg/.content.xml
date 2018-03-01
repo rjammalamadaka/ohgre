@@ -4,17 +4,17 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="9a74abdc-306d-4de9-a026-e3b65ba3d21b">
     <jcr:content
-        cq:lastReplicated="{Date}2018-02-06T13:30:29.940-06:00"
+        cq:lastReplicated="{Date}2018-02-12T14:09:51.542-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="ohgre/wcu/icon-3.svg"
-        jcr:lastModified="{Date}2018-02-08T13:43:49.330-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:44.333-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-22T13:34:03.711-06:00"
+            dam:extracted="{Date}2018-02-09T12:52:56.232-06:00"
             dam:sha1="ca351a4d6eaab7241a758d4e2e108230c43d7406"
             dam:size="{Long}1925"
             dc:format="image/svg+xml"

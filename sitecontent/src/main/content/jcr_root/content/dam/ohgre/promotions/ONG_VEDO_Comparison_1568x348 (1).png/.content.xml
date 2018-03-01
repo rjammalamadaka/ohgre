@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_VEDO_Comparison_1568x348 (1).png"
-        jcr:lastModified="{Date}2018-02-08T13:43:53.094-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:48.854-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}135087"
             dc:format="image/png"
             dc:modified="{Date}2018-01-19T15:31:24.951-05:00"
-            jcr:lastModified="{Date}2018-02-08T13:43:53.015-05:00"
+            jcr:lastModified="{Date}2018-02-28T23:27:48.799-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

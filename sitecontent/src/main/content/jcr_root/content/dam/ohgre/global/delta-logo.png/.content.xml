@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/delta-logo.png"
-        jcr:lastModified="{Date}2018-02-19T06:58:55.447-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:38.885-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}12268"
             dc:format="image/png"
             dc:modified="{Date}2017-07-28T12:19:16.019-04:00"
-            jcr:lastModified="{Date}2018-02-19T06:58:55.360-05:00"
+            jcr:lastModified="{Date}2018-02-28T23:27:38.803-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

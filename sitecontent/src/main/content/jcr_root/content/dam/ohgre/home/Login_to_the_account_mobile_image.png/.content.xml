@@ -5,14 +5,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="78b3a8ec-bcc7-4f19-ae84-153a4c907414">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-22T14:44:45.635-06:00"
+        cq:lastReplicated="{Date}2018-02-16T12:38:34.420-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="Login_to_the_account_mobile_image.png"
         cq:parentPath="/content/dam/ohgre/home"
         dam:assetState="processed"
         dam:relativePath="ohgre/home/Login_to_the_account_mobile_image.png"
-        jcr:lastModified="{Date}2018-02-08T13:43:46.598-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:40.943-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}219512"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:55.761-05:00"
-            jcr:lastModified="{Date}2018-02-08T13:43:46.464-05:00"
+            jcr:lastModified="{Date}2018-02-28T23:27:40.860-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

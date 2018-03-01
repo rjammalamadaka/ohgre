@@ -6,11 +6,11 @@
     <jcr:content
         dam:assetState="processed"
         dam:relativePath="ohgre/ONG_logos/favicon.ico"
-        jcr:lastModified="{Date}2018-02-08T13:43:51.565-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:46.864-05:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
-            dam:extracted="{Date}2018-01-22T13:34:08.977-06:00"
+            dam:extracted="{Date}2018-02-09T12:52:45.343-06:00"
             dam:sha1="eff3102208095a3810457877bef230cf33a72886"
             dam:size="{Long}1150"
             dc:format="image/x-icon"

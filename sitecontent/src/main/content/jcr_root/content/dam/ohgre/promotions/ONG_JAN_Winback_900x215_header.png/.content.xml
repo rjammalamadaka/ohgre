@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/ONG_JAN_Winback_900x215_header.png"
-        jcr:lastModified="{Date}2018-02-08T13:43:49.146-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:44.506-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}33800"
             dc:format="image/png"
             dc:modified="{Date}2018-01-05T23:54:57.969-05:00"
-            jcr:lastModified="{Date}2018-02-08T13:43:49.047-05:00"
+            jcr:lastModified="{Date}2018-02-28T23:27:44.431-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

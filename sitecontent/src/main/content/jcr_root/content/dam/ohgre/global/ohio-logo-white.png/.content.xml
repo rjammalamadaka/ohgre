@@ -12,7 +12,7 @@
         cq:parentPath="/content/dam/ohgre/global"
         dam:assetState="processed"
         dam:relativePath="ohgre/global/ohio-logo-white.png"
-        jcr:lastModified="{Date}2018-02-19T06:58:57.290-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:40.955-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">

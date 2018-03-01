@@ -5,14 +5,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="83fb25c9-3557-4c79-9eee-2acf316b3186">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-25T14:59:40.074-06:00"
+        cq:lastReplicated="{Date}2018-02-14T12:24:47.712-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="GRE_CON_GenAcq_1568x348base.png"
         cq:parentPath="/content/dam/ohgre/promotions"
         dam:assetState="processed"
         dam:relativePath="ohgre/promotions/GRE_CON_GenAcq_1568x348base.png"
-        jcr:lastModified="{Date}2018-02-08T13:43:49.936-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:45.152-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
@@ -33,7 +33,7 @@
             dam:size="{Long}299839"
             dc:format="image/png"
             dc:modified="{Date}2018-01-19T15:31:23.336-05:00"
-            jcr:lastModified="{Date}2018-02-08T13:43:49.876-05:00"
+            jcr:lastModified="{Date}2018-02-28T23:27:45.098-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
