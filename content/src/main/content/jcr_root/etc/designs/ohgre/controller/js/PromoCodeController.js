@@ -107,33 +107,25 @@ ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','
                         }
                     }
 
-                    //if(flag)
-                   // getPromoCodeInfo(promotion.BackupPromotionCode);
-
                     if(!$scope.rateClassCode){
 						location.href=$rootScope.homeUrl+"/invalid-promocode.html";
                         return false;
                     }
 
-                  //  var ldclist= data.LDCList[0];
-                   // var promotion=ldclist.promotion[0];
-                    //data.locationType=locationType;
-                  /*  if(!promotion.RateClassCode.length>0){
-                        if(locationType=="residential")
-                            data.LDCList[0].promotion[0].RateClassCode="01";
-                        else
-                            data.LDCList[0].promotion[0].RateClassCode="04"; 
-
-                    }*/
                     ohgre.store("promoCodeInfo",data);
                     if($scope.backUpPromoApplied){
 
-                        if(redirectUrl){
-								window.location.href=redirectUrl+".html?isExpired=true";
-                        }else{
+                        if(data.LDCList.length>1){
+                            if(redirectUrl){
+                                window.location.href=redirectUrl+".html?isExpired=true";
+                            }else{
 								location.href=$rootScope.homeUrl+"/backuppromo.html";
+                            }
+
+                        }else{
+							location.href=$rootScope.homeUrl+"/backuppromo.html";
                         }
-                        		return;
+                   		return;
                      }
 
                     if(promotion.PromotionExpired =="Y" && !redirectUrl){
