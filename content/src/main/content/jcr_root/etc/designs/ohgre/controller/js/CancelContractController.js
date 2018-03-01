@@ -4,6 +4,8 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     $scope.guaranteeProductDisplay=false;
 
+    $scope.showVariablePlan=false;
+
       function isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
@@ -15,19 +17,32 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     var flag=false;
 
+    var getDefaultPromoCodeByRateClassCode =function(rateClassCode){
+
+         var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+        var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
+        if(rateClassCode =="01"){
+			return ResPromoCode;
+        }else if(rateClassCode =="04"){
+			return ComPromoCode;
+        }
+    }
 
     var getQuotes=function(req){
 		var PromoCode=null;
-        var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+       /* var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
         var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
         if(req.rateClassCode =="01"){
 			PromoCode=ResPromoCode;
         }else if(req.rateClassCode =="04"){
 			PromoCode=ComPromoCode;
         }
+        */
        /* if(req.PromoCode){            
             PromoCode=req.PromoCode;
         }*/
+
+        PromoCode =getDefaultPromoCodeByRateClassCode(req.rateClassCode);
 
         PrimeService.getQuotes(req.LDC,PromoCode,req.rateClassCode).success(function(data, status, headers, config){
 
@@ -40,8 +55,20 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
                         $scope.defaultProducts=data.Customer[0].Product;
 
                     }
-                    $scope.products=data.Customer[0].Product;
-                    updateProductFinePrint();
+
+                    var productInfo=data.Customer[0].Product;
+
+                    var productsList=[];
+
+                    for(var i=0;i<productInfo.length;i++){
+
+                        if($rootScope.prmoProduct.indexOf(productInfo[i].ProductCode) !=-1){
+								productsList.push(productInfo[i]);
+                        }
+                    }
+
+                  $scope.products=productsList;
+                  updateProductFinePrint();
                 }
             }
 
@@ -93,6 +120,80 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
     }
 
 
+    var getPromoCodeInfoForEnroll=function(ldc){
+        PrimeService.getPromocodesForEnrollment(ldc).success(function(data, status, headers, config){
+            var promotionProduct=null;
+            var products=[];
+
+            var defaultPromoCode=getDefaultPromoCodeByRateClassCode($scope.productData.rateClassCode);
+
+            var enrollmentResult=JSON.parse(data.GetPromoCodesForEnrollmentResult);
+            if(enrollmentResult && enrollmentResult.responseStatus =="0"){
+			      for(var i =0;i<enrollmentResult.promotion.length;i++){
+					var promotion=enrollmentResult.promotion[i];
+                    if(promotion && promotion.promotionCode && promotion.promotionCode==defaultPromoCode.toUpperCase()){
+            			promotionProduct=promotion.product;
+                        break;
+                    }
+                }
+                if(promotionProduct && promotionProduct.length>0)
+                for(var j=0;j<promotionProduct.length;j++){
+                   var product= promotionProduct[j];
+					products.push(product.productCode);
+                }
+                 $rootScope.prmoProduct=products;
+               // getQuotes($scope.productData);
+
+            }
+        }).error(function (data,status, headers, config){ });
+
+    }
+
+    var ProcessPromotionInformation =function(ldcinfo){
+        getQuotes($scope.productData);
+
+    }
+    var getPromocodeInfo=function(){
+         var defaultPromoCode=getDefaultPromoCodeByRateClassCode($scope.productData.rateClassCode);
+
+         PrimeService.getPromoCodeInfo(defaultPromoCode).success(function(data, status, headers, config){
+
+              ohgre.store("promoCodeInfo",data);
+               if(data.LDCList.length>0){
+						var ldcinfo=null;
+
+                        for(var i=0;i<data.LDCList.length;i++){
+							var temp=data.LDCList[i];
+                            if(temp.LDCCode ==  $scope.productData.LDC){
+                                ldcinfo=temp;
+								break;
+                            }
+                        }
+						ProcessPromotionInformation(ldcinfo);
+
+                    }
+
+
+          }).error(function(data, status, headers, config){
+
+          });
+
+
+    }
+
+     $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
+
+        if(newValue && newValue.length>0){
+           // getQuotesForViewPlans();
+            getPromocodeInfo();
+
+            //var promoInfo=ohgre.store("promoCodeInfo");
+            //processPromotionInfo(promoInfo,newValue);
+            //getQuotes($scope.productData);
+        }
+    });
+
+
      PrimeService.getProductData().success(function(data, status, headers, config){
 
 
@@ -105,8 +206,9 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
              req.AccountNumber=data.AccountNumber; 
              req.LDC=data.LDC;
              getCustomerInfo(req);
-             getQuotes(data);
-             getDefaultPromoctionInfo();
+             //getQuotes(data);
+            // getDefaultPromoctionInfo();
+             getPromoCodeInfoForEnroll(data.LDC);
 
          }else{
 			location.href=$rootScope.homeUrl+".html";
@@ -131,9 +233,11 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         $scope.planSelectRenewal =function(product){
 
-        $scope.selectedProduct=product;
-
-
+            $scope.showVariablePlan=false;
+           if(product.PriceChangeFrequency=="D"){
+			$scope.showVariablePlan=true;
+      		}
+              $scope.selectedProduct=product;
 
         if($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y"){
              $('#popupwithrenewal').addClass('show-popup');
@@ -192,12 +296,17 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
         req.QuoteDescription=$scope.selectedProduct.QuoteDescription;
 		req.ProductDescription=$scope.selectedProduct.ProductDescription;
+        req.ProductDescriptionFriendly=$scope.selectedProduct.ProductDescFriendly;                                      
         req.ProductCode=$scope.selectedProduct.ProductCode;
         req.LdcDesc= $scope.productData.ldcDesc;
         req.LDC= $scope.productData.LDC;
 		req.FixedPricePerTherm=$scope.selectedProduct.FixedPricePerTherm;
         req.AccountNumber=$scope.productData.AccountNumber;
         req.RateClassCode=$scope.productData.rateClassCode;
+        req.dukNumber= $scope.productData.dukNumber;
+        req.PriceChangeFrequency=$scope.selectedProduct.PriceChangeFrequency;
+        req.isDefaultPromoCode=true;
+
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 

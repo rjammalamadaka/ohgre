@@ -1,44 +1,4 @@
 var buttonClick = false;
-
-UTILS = {
-    trim: function(str) {
-        try {
-            str = UTILS.ltrim( str );
-            str = UTILS.rtrim( str );
-            return str;
-        } catch(ex) {
-            console.log('UTIL.trim exception: ' + ex);
-        }
-    },
-    rtrim: function( str ) {
-        try {
-            str = str.replace(/\s+$/g,'');
-            return str;
-        } catch(ex) {
-            console.log('UTIL.rtrim exception: ' + ex);
-        }
-    },
-    ltrim: function(str) {
-        try {
-            str = str.replace(/^\s+/g,'');
-            return str;
-        } catch(ex) {
-            console.log('UTIL.ltrim exception: ' + ex);
-        }
-    },
-    isMobileDevice: function() {
-        var isMobileDevice = false;
-        isMobileDevice = $(window).width() < 1024 ? true : false;
-        return isMobileDevice;
-    },
-    preventBodyScroll: function() {
-      $('body').addClass('fixed-body');
-    },
-    allowBodyScroll: function() {
-      $('body').removeClass('fixed-body');
-    },
-};
-
 var ohio_ng = {
   init: function() {
     this.listeners();
@@ -70,15 +30,6 @@ var ohio_ng = {
       $('body').removeClass('fixed-body');
     });
 
-    $('.tooltip-trigger').on('click', function(event) {
-      event.preventDefault();
-      $('.tooltip-text').toggleClass('tooltip-open');
-    });
-    $('.close-tooltip').on('click', function(event) {
-      event.preventDefault();
-      $('.tooltip-text').removeClass('tooltip-open');
-      console.log('close tooltip');
-    });
 
     $('.dropdown-trigger').on('click', function(event) {
       /*event.preventDefault();

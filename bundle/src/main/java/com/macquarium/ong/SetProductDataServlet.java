@@ -40,6 +40,7 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String quoteDes = getParameterInfo(jObj,"QuoteDescription");//jObj.getString("QuoteDescription");
 			String productCode=getParameterInfo(jObj,"ProductCode");//jObj.getString("ProductCode");
 			String fixedPricePerTherm=getParameterInfo(jObj,"FixedPricePerTherm");//jObj.getString("FixedPricePerTherm");
+			String priceChangeFrequency=getParameterInfo(jObj,"PriceChangeFrequency");//jObj.getString("FixedPricePerTherm");
 			String customerTypeCode=getParameterInfo(jObj,"CustomerTypeCode");//jObj.getString("CustomerTypeCode");
 			String rateClassCode=getParameterInfo(jObj,"RateClassCode");//jObj.getString("RateClassCode");
 			String LDC=getParameterInfo(jObj,"LDC");//jObj.getString("LDC");
@@ -47,6 +48,8 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			String accountNumber=getParameterInfo(jObj,"AccountNumber");//jObj.getString("AccountNumber");
 			String referralcode=getParameterInfo(jObj,"referralcode");
 			String dukNumber=getParameterInfo(jObj,"dukNumber");
+			String isDefaultPromoCode=getParameterInfo(jObj,"isDefaultPromoCode");
+
 			System.out.println("productDesc:" +productDesc);
 			session.setAttribute("ProductDescription", productDesc);
 			session.setAttribute("ProductDescriptionFriendly", productDescFriendly);
@@ -54,12 +57,16 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			session.setAttribute("ProductCode", productCode);
 			session.setAttribute("LDC",LDC);
 			session.setAttribute("FixedPricePerTherm",fixedPricePerTherm);
+			session.setAttribute("PriceChangeFrequency", priceChangeFrequency);
 			session.setAttribute("LdcDesc",ldcDesc);
 			session.setAttribute("CustomerTypeCode",customerTypeCode);
 			session.setAttribute("RateClassCode",rateClassCode);
 			session.setAttribute("AccountNumber",accountNumber);
 			session.setAttribute("referralcode",referralcode);
 			session.setAttribute("dukNumber",dukNumber);
+			session.setAttribute("isDefaultPromoCode",isDefaultPromoCode);
+
+
 			JSONObject sessionData=new JSONObject();
 			sessionData.put("prodcutDescription",productDesc);
 			sessionData.put("productDescriptionFriendly",productDescFriendly);
@@ -67,12 +74,14 @@ public class SetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			sessionData.put("quoteDesc",quoteDes);
 			sessionData.put("LDC",LDC);
 			sessionData.put("fixedPricePerTherm",fixedPricePerTherm);
+			sessionData.put("priceChangeFrequency",priceChangeFrequency);
 			sessionData.put("ldcDesc",ldcDesc);
 			sessionData.put("customerTypeCode",customerTypeCode);
 			sessionData.put("rateClassCode",rateClassCode);
 			sessionData.put("AccountNumber",accountNumber);
 			sessionData.put("referralcode",referralcode);
 			sessionData.put("dukNumber",dukNumber);
+			sessionData.put("isDefaultPromoCode",isDefaultPromoCode);
 			obj.put("sessionData",sessionData);
 			obj.put("resultCode", "0");
 			obj.put("resultMessage", "success");

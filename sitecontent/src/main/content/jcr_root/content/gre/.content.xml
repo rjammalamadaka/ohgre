@@ -5,9 +5,9 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2018-01-12T12:27:34.330-06:00"
+        cq:lastModified="{Date}2018-02-16T12:41:28.478-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-12T12:27:41.558-06:00"
+        cq:lastReplicated="{Date}2018-02-16T12:41:31.053-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
@@ -22,7 +22,7 @@
         mobilenumber="1-800-841-1541"
         portalname="gre"
         tagmanagerid="GTM-PLVM6CR"
-        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/aaa-claim-form.pdf"
+        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf"
         time="8AM - 5PM EST">
         <content
             jcr:primaryType="nt:unstructured"
@@ -59,13 +59,13 @@
             <cardpromo
                 jcr:created="{Date}2017-07-23T18:43:08.192+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-12T12:27:34.323-06:00"
+                jcr:lastModified="{Date}2018-02-16T12:38:27.788-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
                 buttonpath="/content/gre/refer"
                 buttontitle="start referring"
-                description="Learn how you can invite friends to sign up with Grand Rapids Energy® and you can each receive a $25 Visa® Reward Card.* Terms and conditions apply.*"
+                description="Learn how you can invite friends to sign up with Grand Rapids Energy® and you can each receive a $25 Visa® Reward Card. Terms and conditions apply.*"
                 displayLink="true"
                 heading="Refer a Friend"
                 imagepath="/content/dam/ohgre/home/card_raf.jpg"
@@ -75,14 +75,14 @@
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
             <myaccount
-                jcr:created="{Date}2017-11-29T20:56:07.679-06:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-01T16:11:18.198-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:created="{Date}2018-01-24T10:37:35.790-06:00"
+                jcr:createdBy="penny"
+                jcr:lastModified="{Date}2018-02-16T12:41:28.470-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/myaccount"
                 buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer of Grand Rapids Energy, you can manage your account online.  Log in to your account to view your current contract and make changes."
+                description="If you are currently a customer with Grand Rapids Energy, you can manage your account online. Log in to your account to view your current contract and make changes."
                 displayLink="true"
                 heading="Currently a GRE customer? Manage your account here."
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
@@ -183,10 +183,22 @@
                 MISEA="/content/gre/misea"/>
             <_x0032_018_JAN
                 jcr:primaryType="nt:unstructured"
-                LOWEST1CO="/content/gre/LOWEST1CO"
-                LOWEST1DT="/content/gre/LOWEST1DT"
-                SCORE1CO="/content/gre/SCORE1CO"
-                SCORE1DT="/content/gre/SCORE1DT"/>
+                LOWEST3CON="/content/gre/LOWEST3CON"
+                LOWEST3CONONLINE="/content/gre/LOWEST3CON"
+                LOWEST3DT="/content/gre/LOWEST3DT"
+                LOWEST3DTONLINE="/content/gre/LOWEST3DT"
+                LOWESTCO="/content/gre/LOWESTCO"
+                LOWESTCOONLINE="/content/gre/LOWESTCO"
+                LOWESTDT="/content/gre/LOWESTDT"
+                LOWESTDTONLINE="/content/gre/LOWESTDT"
+                SCORE3CON="/content/gre/SCORE3CON"
+                SCORE3CONONLINE="/content/gre/SCORE3CON"
+                SCORE3DT="/content/gre/SCORE3DT"
+                SCORE3DTONLINE="/content/gre/SCORE3DT"
+                SCORECO="/content/gre/SCORECO"
+                SCORECOONLINE="/content/gre/SCORECO"
+                SCOREDT="/content/gre/SCOREDT"
+                SCOREDTONLINE="/content/gre/SCOREDT"/>
         </gre>
     </promotions>
     <delta-faqs/>
@@ -194,8 +206,12 @@
     <invalid-promocode/>
     <misea/>
     <sitemap/>
-    <SCORE1DT/>
-    <SCORE1CO/>
-    <LOWEST1DT/>
-    <LOWEST1CO/>
+    <SCORECO/>
+    <SCOREDT/>
+    <LOWESTCO/>
+    <LOWESTDT/>
+    <LOWEST3CON/>
+    <LOWEST3DT/>
+    <SCORE3CON/>
+    <SCORE3DT/>
 </jcr:root>

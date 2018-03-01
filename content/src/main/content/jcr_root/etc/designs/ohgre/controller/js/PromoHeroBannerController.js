@@ -15,7 +15,14 @@
          });*/
 
      }
+     var getBackupPromocodeInfo=function(promocode){
+         PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
+				ohgre.store("promoCodeInfo",data);
+                location.href=$rootScope.homeUrl+"/backuppromo.html";
+         }).error(function(data, status, headers, config){
 
+         });
+     }
      var processStorePromoInfo=function(){
 
   			var promoInfo=ohgre.store("promoCodeInfo");
@@ -73,9 +80,13 @@
                  if($rootScope.promotion.PromotionExpired =="Y"){
 
                      if($rootScope.promotion.BackupPromotionCode.length>0){
-                                    location.href=$rootScope.homeUrl+"/backuppromo.html";
+                         getBackupPromocodeInfo($rootScope.promotion.BackupPromotionCode);
+                         /*promoInfo.LDCList[0].promotion[0].PromotionCode=$rootScope.promotion.BackupPromotionCode;
+                         ohgre.store("promoCodeInfo",promoInfo);
+                         location.href=$rootScope.homeUrl+"/backuppromo.html";
+                         */
                      }else{
- 									location.href=$rootScope.homeUrl+"/promotion-error.html";
+ 						location.href=$rootScope.homeUrl+"/promotion-error.html";
                      }
                  }
 
@@ -97,33 +108,10 @@
 
              }else if(data && data.responseStatus =="1"){
 
-                 //ohgre.store("promoCodeInfo",{});
                             location.href=$rootScope.homeUrl+"/promotion-error.html";
                      }
 
-  /*if(data.LDCList && data.LDCList.length >0){
-							//$window.sessionStorage.setItem('promoLDC',angular.toJson(data.LDCList));
-                            var ldclist= data.LDCList[0];
-                             var promotion=ldclist.promotion[0];
-                             ohgre.store("promoCodeInfo",data);
-                             if(promotion.PromotionExpired =="Y"){
-                                    location.href=$rootScope.homeUrl+"/backuppromo.html";
-                             }else if(data.LDCList && redirectUrl){
-                                    location.href=redirectUrl+".html";
-                            }else if(data.LDCList && data.LDCList.length!=0 && !redirectUrl){
-                                if(data.LDCList.length ==1){
-                                    location.href=$rootScope.homeUrl+"/promo-general.html";
-                                }else{
-                                    location.href=$rootScope.homeUrl+"/generic-promo.html";
-                                }
-                            }else{
-                                location.href=$rootScope.homeUrl+"/promo-general.html";
-                            }
-                         }*/
-
-
-
-         }).error(function (data,status, headers, config){
+          }).error(function (data,status, headers, config){
 
 
          });
@@ -135,9 +123,9 @@
     $scope.heightConstant = false;
     $scope.displayPromocode = true;
 
-    if(location.pathname.indexOf("404")>0 || location.pathname.indexOf("maintenance")>0 || location.pathname.indexOf("500")>0)
+    if(location.pathname.indexOf("404")>0 || location.pathname.indexOf("backuppromo")>0 || location.pathname.indexOf("maintenance")>0 || location.pathname.indexOf("500")>0)
     {
-		$scope.heightConstant = true;
+		//$scope.heightConstant = true;
         $scope.displayPromocode = false;
     }
 
@@ -226,6 +214,22 @@
 
        }
 	}, true);
+
+
+    $scope.getDisplayPromocode = function(promocode){
+        if(promocode){
+			var index=promocode.indexOf("ONLINE");
+            if(index != -1){
+			return promocode.substr(0,index);
+            }else{
+				return promocode;
+            }
+        }else{ return "";
+
+        }
+
+
+    }
 
 }]);
 

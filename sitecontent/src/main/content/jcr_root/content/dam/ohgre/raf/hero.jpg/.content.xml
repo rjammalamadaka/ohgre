@@ -5,20 +5,20 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="931503d7-0d17-4e9c-9634-cb1940435cd4">
     <jcr:content
-        cq:lastReplicated="{Date}2018-01-10T09:49:01.468-06:00"
+        cq:lastReplicated="{Date}2018-02-09T14:11:32.330-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:name="hero.jpg"
         cq:parentPath="/content/dam/ohgre/raf"
         dam:assetState="processed"
         dam:relativePath="ohgre/raf/hero.jpg"
-        jcr:lastModified="{Date}2018-01-12T23:23:32.061-05:00"
+        jcr:lastModified="{Date}2018-02-28T23:27:41.588-05:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2018-01-12T23:23:31.774-05:00"
+            dam:extracted="{Date}2018-02-09T12:52:37.418-06:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -35,7 +35,7 @@
             exif:ColorSpace="{Long}1"
             exif:PixelXDimension="{Long}1368"
             exif:PixelYDimension="{Long}584"
-            jcr:lastModified="{Date}2018-01-12T23:23:27.848-05:00"
+            jcr:lastModified="{Date}2018-02-28T23:27:40.735-05:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"

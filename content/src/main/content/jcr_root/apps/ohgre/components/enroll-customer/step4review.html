@@ -73,7 +73,7 @@
 					 <span class="checkmark-wrapper">
                         <span class="checkmark"></span>
                     </span>
-					<span class="after-checkbox"><label for="terms-and-conditions">I have previously viewed and agreed to the terms and conditions of service.</label></span>
+					<span class="after-checkbox"><label for="terms-and-conditions">${properties.termsaccepted @ context = 'html'}</label></span>
 					</div>
 					<hr />
 					<h4>Review and Authorize</h4>
@@ -81,7 +81,7 @@
 					<label class="checkbox">
 					<input type="checkbox" name="reviewauthorize" id="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
 					</label>
-					<span class="after-checkbox"><label for="reviewauthorize">${properties.reviewandauthorize}</label></span> <br>
+					<span class="after-checkbox"><label for="reviewauthorize">${properties.reviewandauthorize}<span ng-show=" (customerStatus == 'Inactive' || customerInfo.responseStatus == '1') ">${properties.newcustomerterms}</span></label></span> <br>
 
 					<span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
 					<span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span>

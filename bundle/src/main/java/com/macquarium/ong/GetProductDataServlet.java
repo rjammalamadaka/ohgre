@@ -47,6 +47,14 @@ public class GetProductDataServlet extends org.apache.sling.api.servlets.SlingAl
 			if(null !=fixedPricePerTherm){
 				obj.put("fixedPricePerTherm", (String)fixedPricePerTherm);
 			}
+			Object priceChangeFrequency=session.getAttribute("PriceChangeFrequency");
+			if(null !=fixedPricePerTherm){
+				obj.put("priceChangeFrequency", (String)priceChangeFrequency);
+			}
+			Object isDefaultPromoCode=session.getAttribute("isDefaultPromoCode");
+			if(null !=fixedPricePerTherm){
+				obj.put("isDefaultPromoCode", (String)isDefaultPromoCode);
+			}
 
 			Object LDC=session.getAttribute("LDC");
 			if(null !=LDC){

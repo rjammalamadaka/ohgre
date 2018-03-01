@@ -14,6 +14,56 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
   $scope.rafemailmessage = "I'm very happy with service from Ohio Natural Gas, and I think you will be too. If you sign up with them using the promotion codes below, we can both get $25 credit towards our bill. Not bad, huh?"
 
   $scope.rafemailmessage = jQuery('#raf-friend-info').data('emailbody');
+
+
+    var getCustomerInfo=function(req){
+        
+        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
+            if (data && data.CustomerInfoResult) {
+                var customerInfo = JSON.parse(data.CustomerInfoResult);
+                if (customerInfo.responseStatus == 1) {
+                    
+                    
+                } else if (customerInfo.responseStatus == 0) {
+                    $scope.customerInfo = customerInfo;
+                    var giftCard = $scope.customerInfo.giftCard;
+                    updateCustomerInfoReq.custID = $scope.customerInfo.custID;
+                    updateCustomerInfoReq.account = $scope.customerInfo.account;
+                    updateCustomerInfoReq.ldc = $scope.customerInfo.ldc;
+                    $scope.customerInfoEmailAddress = $scope.customerInfo.emailAddress;
+                    var currentYearGf = [];
+                    var previouserYearGf = [];
+                    giftCard.forEach(function(entry) {
+                        var date = new Date(entry.giftCardCreateDate);
+                        var year = date.getFullYear();
+                        // if($scope.years.indexOf(year) != -1){
+                        //$scope.giftCardByYear[year]=entry;
+                        if (year == currentYear) {
+                            currentYearGf.push(entry);
+                            //$scope.giftCardByYear[currentYear]=entry;
+                        } else if (year == previouserYear) {
+                            previouserYearGf.push(entry);
+                            //$scope.giftCardByYear[previouserYear]=entry;
+                        }
+                        // }
+                    });
+                    
+                    $scope.giftCardByYear[currentYear] = currentYearGf;
+                    $scope.giftCardByYear[previouserYear] = previouserYearGf;
+                    
+                    $scope.bindClickEvent();
+                    
+                    $scope.setProductData(currentYear);
+                }
+            } else {
+                location.href = $rootScope.homeUrl + "/refer.html";
+            }
+            
+        }).error(function(data, status, headers, config) {
+            
+        });
+
+    }  
   PrimeService.getProductData().success(function(data, status, headers, config) {
 
     if (!($rootScope.isEmpty(data))) {
@@ -21,52 +71,11 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
       req.LDC = data.LDC;
       $rootScope.ldc = data.LDC;
       req.AccountNumber = data.AccountNumber;
-
-      PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
-        if (data && data.CustomerInfoResult) {
-          var customerInfo = JSON.parse(data.CustomerInfoResult);
-          if (customerInfo.responseStatus == 1) {
-
-
-          } else if (customerInfo.responseStatus == 0) {
-            $scope.customerInfo = customerInfo;
-            var giftCard = $scope.customerInfo.giftCard;
-            updateCustomerInfoReq.custID = $scope.customerInfo.custID;
-            updateCustomerInfoReq.account = $scope.customerInfo.account;
-            updateCustomerInfoReq.ldc = $scope.customerInfo.ldc;
-            $scope.customerInfoEmailAddress = $scope.customerInfo.emailAddress;
-            var currentYearGf = [];
-            var previouserYearGf = [];
-            giftCard.forEach(function(entry) {
-              var date = new Date(entry.giftCardCreateDate);
-              var year = date.getFullYear();
-              // if($scope.years.indexOf(year) != -1){
-              //$scope.giftCardByYear[year]=entry;
-              if (year == currentYear) {
-                currentYearGf.push(entry);
-                //$scope.giftCardByYear[currentYear]=entry;
-              } else if (year == previouserYear) {
-                previouserYearGf.push(entry);
-                //$scope.giftCardByYear[previouserYear]=entry;
-              }
-              // }
-            });
-
-            $scope.giftCardByYear[currentYear] = currentYearGf;
-            $scope.giftCardByYear[previouserYear] = previouserYearGf;
-
-            $scope.bindClickEvent();
-
-            $scope.setProductData(currentYear);
-          }
-        } else {
-          location.href = $rootScope.homeUrl + "/refer.html";
+        if(!data.AccountNumber || !data.LDC){
+			location.href = $rootScope.homeUrl + "/refer.html";
+        }else{
+			getCustomerInfo(req);
         }
-
-      }).error(function(data, status, headers, config) {
-
-      });
-
     } else {
       location.href = $rootScope.homeUrl + "/refer.html";
     }
@@ -265,7 +274,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
     // var base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
     var base_url = window.location.origin + $rootScope.homeUrl + "/promo-raf.html";
 
-    var site = (/ong/.test(window.location.href)) ? 'Ohio Natural Gas' : 'Grand Rapids Energy';
+    var site = (/ong/.test(window.location.href)) ? 0 : 1;
 
     //var base_url = window.location.origin+$rootScope.homeUrl+"/promo-raf.html";
     /* var o = "$25 for you %26 $25 for me. Enroll with Ohio Natural Gas on their lowest available rates! Terms apply. %23ad",
@@ -273,8 +282,18 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
          t=encodeURIComponent(t);
 		    return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 */
-    var o = "$25 for you %26 $25 for me. Enroll on " + site + "'s lowest available rate with promo code RAF25! Terms apply. %23ad",
-      t = "url=" + base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID + "&r=1&text=" + o;
+    var o = "$25 for you %26 $25 for me. Enroll ";
+
+      if(site === 0){
+          o += "on Ohio Natural Gas lowest available fixed rates with promo code RAF25!";
+      }
+      else {
+		o += "with Grand Rapids Energy and we can earn a Visa Reward Card!"
+      }
+
+      o += " Terms apply. %23ad";
+
+    var t = "url=" + base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID + "&r=1&text=" + o;
     return window.open("https://twitter.com/intent/tweet?" + t, "pop", "width=600, height=400, scrollbars=no"), outBoundTracking("Twitter"), !1
 
   }

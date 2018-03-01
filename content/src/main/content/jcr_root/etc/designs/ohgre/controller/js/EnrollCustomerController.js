@@ -15,7 +15,9 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   $scope.confirmationButton="Back to Home page";
   $scope.specialoffer=true;
 
-    $scope.showVariablePlan=false;
+    $scope.displayReferalForm=false;
+
+    $rootScope.showVariablePlan=false;
 
   jQuery('#popup-spinner-wrap').show();
 
@@ -78,8 +80,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       return false;
     }
 
-      if(data.quoteDes.indexOf(2999)!=-1){
-		$scope.showVariablePlan=true;
+      if(data.priceChangeFrequency=="D"){
+		$rootScope.showVariablePlan=true;
       }
 
     setPromotionInfoByLDC(data.LDC);
@@ -148,7 +150,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       $rootScope.showcurrentplan=true;
       var promoCodeInfo=ohgre.store("promoCodeInfo");
       if(promoCodeInfo && !isEmpty(promoCodeInfo)){
-        $scope.showpromocodeconfirmation=true;
+          if($rootScope.product.isDefaultPromoCode=="false")
+           $scope.showpromocodeconfirmation=true;
       }
       $scope.confirmationButton="Back to My Account";
 
@@ -251,7 +254,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   // Validating if the User Entered name is matching with business name in Prime response
     var validateCommercialName = function(businessName){
-
+     if($rootScope.customerInfo.rateClass =="01")
+         return false;
     var regex = /[^a-zA-Z]/g;
     var businessName = businessName.replace(regex,"");
     // businessName = businessName.substring(0, 5);
@@ -265,14 +269,15 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
         if(userEnteredName.length ==5){
             if(businessName.indexOf(userEnteredName) !== -1){
-                return false;
-            }
-            else{
                 return true;
             }
-        }
-        else{
+            else{
+                return false;
+            }
+        }else{
+            if(businessName ==userEnteredName)
             return true;
+            return false;
         }
 
     }
@@ -339,6 +344,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                             }else{
                                 $scope.specialoffer=false;
                             }
+                        }else{
+$scope.displayReferalForm=true;
                         }
             productInfo.existingCustomerStatus=existingCustomerStatus;
             updateenrollrequestobj(productInfo);
@@ -347,17 +354,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
             updateBillingAddressInfo();
 
-                        if($rootScope.product.customerTypeCode =="NEW" && existingCustomerStatus=="Active"){
+                        if($rootScope.product.customerTypeCode =="NEW" && existingCustomerStatus=="Active" && ($rootScope.customerInfo.serviceZipCode.toLowerCase() == $scope.zipcode.toLowerCase()) && (($rootScope.customerInfo.lastName.toLowerCase() ==$scope.lastName.toLowerCase()) || (validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())))){
                             $('#popupalternate').addClass('show-popup');
                         }
 
-                        else if($rootScope.product.customerTypeCode =="EXISTING" && existingCustomerStatus=="Inactive"){
+                        else if($rootScope.product.customerTypeCode =="EXISTING" && existingCustomerStatus=="Inactive" && ($rootScope.customerInfo.serviceZipCode.toLowerCase() == $scope.zipcode.toLowerCase()) && (($rootScope.customerInfo.lastName.toLowerCase() ==$scope.lastName.toLowerCase()) || (validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())))){
                             $('#popupalternate').addClass('show-popup');
-                        }
-                        /*else if(existingCustomerStatus=="Active"){
-                            $('#popupalternate').addClass('show-popup');
-
-                        }*/else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode){
+                        }else if(accountnumber == $rootScope.customerInfo.account && $rootScope.customerInfo.rateClass != $rootScope.product.rateClassCode && ($rootScope.customerInfo.serviceZipCode.toLowerCase() == $scope.zipcode.toLowerCase()) && (($rootScope.customerInfo.lastName.toLowerCase() ==$scope.lastName.toLowerCase()) || (validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())))){
                             $('#popupalternate').addClass('show-popup');
                             return false;
                         }else if($rootScope.product.rateClassCode =="01"){
@@ -368,7 +371,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                                 $('#popupconfirm').addClass('show-popup');
                             }
                         }else if($rootScope.product.rateClassCode =="04"){
-                            if((validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
+                            if((!validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                                 $('#lastnamezipcodeerror').show();
                                 return false;
                             }else{
@@ -399,6 +402,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
               $('.steps-container > div:nth-child('+step+')').addClass('active-step');*/
 
                     }else if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="1"){
+                        $scope.displayReferalForm=true;
                         $rootScope.showexistingcustomer=false;
                         var accountNumberInfo={};
                         if($scope.unformatedaccountnumber){
@@ -453,7 +457,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             if($scope.promotionInfo && $scope.promotionInfo.PromotionCode && $scope.promotionInfo.PromotionCode.indexOf('RAF')!= -1 && failcount<1 && (!$scope.rafcode ||$scope.rafcode=="") && $rootScope.customerInfo.responseStatus=='1'){
 
 
-                $scope.rafErrorMessage="Please enter your friend's referal code";
+                $scope.rafErrorMessage="Please enter your friend's referral code";
                 failcount=failcount+1;
 
 
@@ -466,14 +470,19 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                 }
                 PrimeService.checkRafEligibility($scope.rafcode,account,ldc).success(function(data, status, headers, config){
                     if(data.responseStatus == "0"){
-                        if(data.rafInfo.AwardEligible =="Y"){
+                        if(data.rafInfo.AwardIneligibleReason !=="1"){
               $scope.validPromocode=true;
               handelsubmityourinformation();
             }else{
               failcount=failcount+1;
-              $scope.validPromocode=false;
+                if(failcount<=1){
+              $scope.validPromocode=false; 
               //$scope.primeErrorMessage="RAF code is not valid";
               $scope.rafErrorMessage="RAF code is not valid";
+                }else{
+                    $scope.validPromocode=true;
+					handelsubmityourinformation();
+                }
             }
           }else{
             failcount=failcount+1;
@@ -628,7 +637,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     if($scope.formfour.$valid && !$scope.flag){
 
-      if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
+     /* if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
         $scope.reviewdisplay=false;
         $scope.reviewdisplaydeltaskymiles =true;
       }else if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
@@ -640,7 +649,9 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
       }else{
         $scope.reviewauthorizesubmit();
       }
+      */
 
+      $scope.reviewauthorizesubmit();
       $scope.scrollToPageTop();
     }
 
@@ -731,6 +742,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     if(step ==2 || step ==3){
       if($scope.promotionInfo && $scope.promotionInfo.PromotionCode){
+          if($rootScope.product.isDefaultPromoCode=="false")
         $scope.showpromocodeconfirmation=true;
       }
     }else{
@@ -937,6 +949,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
   $scope.phoneformatchange =function(number){
 
     var phonenumber=$("#phonenumber").val();
+      phonenumber=phonenumber.replace(/ /g,'');
+
     phonenumber=phonenumber.replace("(","").replace(")","").replace(" ","").replace("-","");
     if(phonenumber && phonenumber.indexOf('-') ==-1 && phonenumber.length>3){
       var formatedNumber="("+phonenumber.substring(0,3)+") "+phonenumber.substring(3,6)+"-"+phonenumber.substring(6);
@@ -1223,6 +1237,21 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
   }
 
+
+    $scope.getDisplayPromocode = function(promocode){
+        if(promocode){
+			var index=promocode.indexOf("ONLINE");
+            if(index != -1){
+			return promocode.substr(0,index);
+            }else{
+				return promocode;
+            }
+        }else{ return "";
+
+        }
+
+
+    }
 
 
   $scope.$watch('iframeurl', function (newValue, oldValue, scope) {

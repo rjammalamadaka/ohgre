@@ -6,6 +6,10 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
     $scope.formButton="Apply Promo Code";
      $scope.guaranteeProductDisplay=false;
 
+    $scope.defaultPromo=true;
+
+    $scope.showVariablePlan=false;
+
       function isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
@@ -293,6 +297,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 								getPromocodeInfo(ldcinfo.promotion[0].BackupPromotionCode);
                                 return false;                    
                             }else{
+
  								$scope.showmsg=false;
                             }
 
@@ -321,6 +326,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
                         if(ldcinfo && ldcinfo.promotion[0].PromotionExpired=="N"){
 								$scope.showpromosuccessdmsg=true;
+                                 $scope.defaultPromo=false;
                             	ohgre.store("promoCodeInfo",data);
                         }
 
@@ -352,6 +358,8 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                             if(isBackUpPromo){
  								  $scope.showpromosuccessdmsg=false;
 								  $scope.showgiftcardmsg=false;
+                                $scope.defaultPromo=false;
+
                             }
 
         $scope.appliedpromocode=ldcinfo.promotion[0].PromotionCode;
@@ -371,6 +379,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
             $scope.formButton="Apply Promo Code";
             $('#submit-promo-code').removeClass("inactive");
             $scope.promocode=null;
+            $scope.defaultPromo=true;
             getDefaultPromoctionInfo();
        }else if($scope.renewalPlanPromo.$valid){
            $scope.renewalPlanPromo.submited = true;
@@ -381,7 +390,9 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                 //$('#submit-promo-code').removeClass("inactive");
                 $scope.formButton="CLEAR";
                // jQuery('#popup-spinner-wrap').hide();
-                if(data && data.responseStatus =="0"){                    
+                if(data && data.responseStatus =="0"){
+
+
 
                     if(data.LDCList.length>0){
 						var ldcinfo=null;
@@ -424,6 +435,12 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
     $scope.planSelectRenewal =function(product){
 
+        $scope.showVariablePlan=false;
+
+         if(product.PriceChangeFrequency=="D"){
+			$scope.showVariablePlan=true;
+         }
+
         $scope.selectedProduct=product;
         $scope.test=product;
 
@@ -449,6 +466,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
 
         req.QuoteDescription=$scope.selectedProduct.QuoteDescription;
 		req.ProductDescription=$scope.selectedProduct.ProductDescription;
+        req.ProductDescriptionFriendly=$scope.selectedProduct.ProductDescFriendly;                                      
         req.ProductCode=$scope.selectedProduct.ProductCode;
         req.LdcDesc= $scope.productData.ldcDesc;
         req.LDC= $scope.productData.LDC;
@@ -456,6 +474,9 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
         req.AccountNumber=$scope.productData.AccountNumber;
         req.RateClassCode=$scope.productData.rateClassCode;
         req.dukNumber= $scope.productData.dukNumber;
+        req.PriceChangeFrequency=$scope.selectedProduct.PriceChangeFrequency;
+        req.isDefaultPromoCode=$scope.defaultPromo;
+
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){  
 

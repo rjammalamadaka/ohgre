@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-11T15:08:41.524-06:00"
+        cq:lastModified="{Date}2018-01-30T16:19:13.012-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-11T15:08:44.428-06:00"
+        cq:lastReplicated="{Date}2018-01-30T16:19:15.814-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -26,14 +26,14 @@
             <cancelcontract
                 jcr:created="{Date}2017-11-01T14:32:51.159-05:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-11T15:08:41.520-06:00"
+                jcr:lastModified="{Date}2018-01-30T16:19:13.008-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cancelcontract"
-                cancelterms="&lt;p>ONG service is available for eligible customers participating in the choice program through your local utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
+                cancelterms="&lt;p>ONG service is available for eligible customers participating in the applicable Ohio choice program through their natural gas utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
                 commercialpromocode="CANCELCOMONG"
-                planseffectivedate="Rates and price plans effective 01/01/2018 to 01/31/2018."
-                residentailpromocode="CANCELCOMONG"
+                planseffectivedate="Rates and price plans effective {{currentMonthFirstDay}} to {{currentMonthLastDay}}."
+                residentailpromocode="CANCELRESONG"
                 textIsRich="[true,true,true,true,true,true,true,true]"/>
         </content>
     </jcr:content>

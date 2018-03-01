@@ -77,10 +77,15 @@
             <span ng-show="ldc !='MIC' && (loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required)">Account Number is required.</span>
             <span ng-show="(!(loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required) && (loginform.an1.$error.maxlength || loginform.an1.$error.minlength || loginform.an2.$error.maxlength || loginform.an2.$error.minlength || loginform.an3.$error.maxlength || loginform.an3.$error.minlength || loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
             </span>
-            <span class="error-message" ng-show="(loginform.an1.$dirty && ldc =='MIC' && loginform.an4.$invalid || (loginform.submited))">
+            <span class="error-message" ng-show="(loginform.an1.$dirty && ldc =='MIC' && loginform.an4.$invalid)">
             <span ng-show="ldc =='MIC' && ( loginform.an4.$error.required)">Account Number is required.</span>
             <span ng-show="(!(loginform.an4.$error.required) && (loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid.</span>
             </span>
+
+          <span class="error-message" ng-show="(loginform.an4.$dirty && ldc=='MIC' && loginform.an4.$invalid && loginform.submited)">
+
+            <span ng-show="(!(loginform.an4.$error.required) && (loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
+          </span>
           </div>
         </div>
 

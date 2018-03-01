@@ -36,7 +36,12 @@ jQuery('#popup-spinner-wrap').show();
              var req={};
              req.AccountNumber=data.AccountNumber; 
              req.LDC=data.LDC;
-             getCustomerInfo(req);
+             if(!data.AccountNumber || !data.LDC){
+				location.href=$rootScope.homeUrl+".html";
+             }else{
+ 				getCustomerInfo(req);
+             }
+
          }else{
 			location.href=$rootScope.homeUrl+".html";
 

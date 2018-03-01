@@ -1,3 +1,9 @@
+<style>
+.full-banner-callout.flush .tablet-slide-image {
+	margin-left: -70%;
+    min-height: 25rem;
+}
+</style>
 <section ng-controller="OfferPromoController">
    <div class="container">
       <span class="promo-headline" ng-show="!displayPlans">${properties.heading}</span>
@@ -68,7 +74,7 @@
       </div>
    </div>
 </section>
-<section>
+<section ng-controller="OfferPromoController">
    <div class="container">
       <div class="row">
          <div class="col-md-10 col-md-offset-1 no-padding-left">
@@ -77,7 +83,7 @@
                   <div class="row">
                      <div class="col-md-8 col-md-offset-2">
                         <div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>
-                        <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
+                        <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | Promo code required - {{getDisplayPromocode(promotion.PromotionCode)}}</span></div>
                      </div>
                   </div>
                </div>

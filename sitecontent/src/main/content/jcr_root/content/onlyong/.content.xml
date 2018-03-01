@@ -5,13 +5,13 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-01-11T08:50:37.549-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-01-10T09:49:01.468-06:00"
+        cq:lastModified="{Date}2018-02-16T12:42:48.291-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-02-16T12:42:52.622-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
-        jcr:description="Ohio Natural Gas description"
+        jcr:description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
@@ -27,6 +27,7 @@
         metaprimarykeywords="Ohio Natural Gas, Natural Gas, Gas Company Ohio, Natural Gas Company"
         metatitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         mobilenumber="1-888-466-4427"
+        pageTitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         portalname="oh"
         tagmanagerid="GTM-56C9WRS"
         termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
@@ -37,7 +38,7 @@
             <herocarousel
                 jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-10T09:47:19.993-06:00"
+                jcr:lastModified="{Date}2018-02-14T11:54:20.287-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
@@ -46,13 +47,13 @@
             <promocode
                 jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-11-10T11:14:10.273-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-01-28T22:09:54.119-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promocode"
                 backGroundColor="rgba(0,116,191,1.00)"
-                description="&lt;p>Your special offer awaits!&lt;/p>&#xd;&#xa;"
-                heading="Have a Promo Code?"
+                description="&lt;p>Your special offer awaits!&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                heading="Have a Promo Code? "
                 textIsRich="true">
                 <cq:annotations jcr:primaryType="nt:unstructured"/>
             </promocode>
@@ -83,16 +84,16 @@
                 sling:resourceType="ohgre/components/colctrl"
                 controlType="break"/>
             <myaccount
-                jcr:created="{Date}2017-11-29T20:49:54.217-06:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-05T15:50:22.895-06:00"
+                jcr:created="{Date}2018-01-24T09:41:26.378-06:00"
+                jcr:createdBy="penny"
+                jcr:lastModified="{Date}2018-02-16T12:42:48.283-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/myaccount"
                 buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer of Ohio Natural Gas, you can manage your account online.  Log in to your account to view your current contract and make changes."
+                description="If you are currently a customer with Ohio Natural Gas, you can manage your account online. Log in to your account to view your current contract and make changes."
                 displayLink="true"
-                heading="Currently an ONG customer?  Manage your account here."
+                heading="Currently an ONG customer? Manage your account here."
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
                 mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
             <col_break15010028026211
@@ -162,7 +163,11 @@
                 APPLEWGL="/content/onlyong/promo-landing-apples"
                 BUSINESSMVR="/content/onlyong/promo-landing-apples"
                 CHOICE12C="/content/onlyong/promo-landing-apples"
-                MVRSPECIAL="/content/onlyong/promo-landing-apples"/>
+                COHTERMS="/content/onlyong/COHTERMS"
+                DEOTERMS="/content/onlyong/DEOTERMS"
+                DUKETERMS="/content/onlyong/DUKETERMS"
+                MVRSPECIAL="/content/onlyong/promo-landing-apples"
+                VEDOTERMS="/content/onlyong/VEDOTERMS"/>
             <RAF
                 jcr:primaryType="nt:unstructured"
                 RAF25="/content/onlyong/promo-raf"
@@ -188,7 +193,7 @@
             <SWITCH
                 jcr:primaryType="nt:unstructured"
                 SWITCH="/content/onlyong/switch-back"
-                SWITCHONLINE="/content/onlyong/visa_offer"/>
+                SWITCHONLINE="/content/onlyong/switch-back"/>
             <UTILITY
                 jcr:primaryType="nt:unstructured"
                 UTILITYCHOICE="/content/onlyong/visa_offer"/>
@@ -214,10 +219,7 @@
                 APPLEMAGIC="/content/onlyong/applemagic"/>
             <_x0032_018_1_Jan
                 jcr:primaryType="nt:unstructured"
-                _x0031_0FIX2018="/content/onlyong/10FIX2018"
-                _x0031_0FIX2018ONLINE="/content/onlyong/10FIX2018"
-                _x0031_0MONTHFIX2018="/content/onlyong/10MONTHFIX2018"
-                _x0031_0MONTHFIX2018ONLINE="/content/onlyong/10MONTHFIX2018"
+                APPLEDEO10M="/content/onlyong/APPLEDEO10M"
                 COMPARE1C="/content/onlyong/COMPARE1C"
                 COMPARE1CONLINE="/content/onlyong/COMPARE1C"
                 COMPARE1V="/content/onlyong/COMPARE1V"
@@ -227,18 +229,30 @@
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
+                EMAILTEN="/content/onlyong/EMAILTEN"
+                ENROLL3C="/content/onlyong/ENROLL3C"
+                ENROLL3CONLINE="/content/onlyong/ENROLL3C"
+                LOWEST2D="/content/onlyong/LOWEST2D"
+                LOWEST2DONLINE="/content/onlyong/LOWEST2D"
+                LOWEST3V="/content/onlyong/LOWEST3V"
+                LOWEST3VONLINE="/content/onlyong/LOWEST3V"
+                NEWHOME2018="/content/onlyong/NEWHOME2018"
+                NEWHOME2018ONLINE="/content/onlyong/NEWHOME2018"
                 SAVEBIZ="/content/onlyong/SAVEBIZ"
                 SAVEME="/content/onlyong/SAVEME"
                 SCORE1C="/content/onlyong/SCORE1C"
                 SCORE1CONLINE="/content/onlyong/SCORE1C"
                 SCORE1V="/content/onlyong/SCORE1V"
                 SCORE1VONLINE="/content/onlyong/SCORE1V"
+                SCORE2D="/content/onlyong/SCORE2D"
+                SCORE2DONLINE="/content/onlyong/SCORE2D"
                 SCORE3C="/content/onlyong/SCORE3C"
                 SCORE3CONLINE="/content/onlyong/SCORE3C"
                 SCORE3V="/content/onlyong/SCORE3V"
                 SCORE3VONLINE="/content/onlyong/SCORE3V"
                 SWITCH="/content/onlyong/SWITCH"
-                SWITCHONLINE="/content/onlyong/SWITCH">
+                SWITCHONLINE="/content/onlyong/SWITCH"
+                WINTEN="/content/onlyong/WINTEN">
                 <Score1C/>
             </_x0032_018_1_Jan>
         </oh>
@@ -285,6 +299,16 @@
     <COMPARE3V/>
     <DELTA15K/>
     <SCORE3V/>
-    <_x0031_0FIX2018/>
-    <_x0031_0MONTHFIX2018/>
+    <DEOTERMS/>
+    <DUKETERMS/>
+    <VEDOTERMS/>
+    <COHTERMS/>
+    <SCORE2D/>
+    <LOWEST2D/>
+    <APPLEDEO10M/>
+    <LOWEST3V/>
+    <ENROLL3C/>
+    <NEWHOME2018/>
+    <WINTEN/>
+    <EMAILTEN/>
 </jcr:root>

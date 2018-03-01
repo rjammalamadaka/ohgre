@@ -1,4 +1,3 @@
-/* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -102,7 +101,6 @@
        url('../fonts/roboto-slab-v7-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/roboto-slab-v7-latin-700.svg#RobotoSlab') format('svg'); /* Legacy iOS */
 }
-
 /* COLORS */
 @primary_color			: #0074bf; /* blue */
 @highlight_color     : #0075c2; /* another blue */
@@ -141,26 +139,6 @@
 }
 html{
 	font-size	: 62.5%;
-
-	&.fixed-body {
-		height: 100%;
-		overflow: hidden;
-
-		body{
-			height: 100%;
-			overflow: hidden;
-		}
-
-		.popup-wrapper{
-			 position: fixed;
-			 top: 0;
-			 left: 0;
-			 right: 0;
-			 bottom: 0;
-			 overflow-y: scroll;
-			 -webkit-overflow-scrolling: touch;
-		}
-	}
 }
 body{
 	background-color	: #fff;
@@ -176,7 +154,9 @@ body{
 	 	overflow: visible;
 	 	background-position	: -8vw 6vw;
 	 }
-
+	 &.fixed-body {
+		 overflow: hidden;
+	 }
 }
 img{
 	max-width: 100%;
@@ -654,7 +634,7 @@ input[type="text"] {
 
 		&:before{
 			position: absolute;
-			top: 0rem;
+			top: .1rem;
 			left: 0;
 			height: 100%;
 			width: 100%;
@@ -782,7 +762,6 @@ input[type="text"] {
 				padding		: .3rem 3rem;
 				line-height	: 3rem;
 				color		: @font_color;
-				text-decoration: none;
 			}
 
 			border-bottom	: 1px solid @border_color;

@@ -30,6 +30,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                       if(promotion && promotion.PromotionCode){
                            if( promotion &&  promotion.RateClassCode){
                               $scope.rateClassCode=promotion.RateClassCode;
+                              $scope.giftCardValue=$scope.promotion.GiftCardValue;
                           }
                           if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
                               promotionCode= promotion.BackupPromotionCode; 
@@ -94,7 +95,7 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
 
         if(newValue && newValue.length>0){
 			var promoInfo=ohgre.store("promoCodeInfo");
-			
+
      		processPromotionInfo(promoInfo,newValue);
         }
     });
@@ -161,6 +162,23 @@ var updateProductFinePrint = function() {
         //    $scope.displayAdditionalInfo = $scope.displayAdditionalInfo ? false : true;
 
   	}
+
+
+
+    $scope.getDisplayPromocode = function(promocode){
+        if(promocode){
+			var index=promocode.indexOf("ONLINE");
+            if(index != -1){
+			return promocode.substr(0,index);
+            }else{
+				return promocode;
+            }
+        }else{ return "";
+
+        }
+
+
+    }
 
 }]);
 

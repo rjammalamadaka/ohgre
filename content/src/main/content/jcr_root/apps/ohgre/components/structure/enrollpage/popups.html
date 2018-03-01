@@ -50,7 +50,7 @@
 	<div class="popup-wrapper" id="popupetc"> <!-- Early Termination charge-->
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination fee.</span></h6>
+          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination charge.</span></h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -106,9 +106,12 @@
 										<h4>Selected New Contract</h4>
 										<span class="plan-selected">{{product.productDescFriendly}}</span>
 										<small>{{product.ldcDesc}}</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
 									</div>
 									<div class="plan-button">
-										<a href="#" class="primary-button" ng-click="enrollselectandcontinue()">YES, PAY TERMINATION FEE</a>
+										<a href="#" class="primary-button" ng-click="enrollselectandcontinue()">YES, PAY TERMINATION CHARGE</a>
 									</div>
 
 
@@ -132,7 +135,7 @@
 <div class="popup-wrapper" id="popupalternate">
 		<div class="window-wrapper with-border">
 	      <a href="#" class="close-window">X</a>
-			<h6><span class="error-text block fs-15">You are not eligible for the plan and promotion you have selected. </span>Please choose from one of our many other plans for the best deal!</h6>
+			<h6><span class="error-text block fs-15">You are not eligible for the plan/promotion you have selected. </span>Please choose from one of our many other plans.</h6>
 			<div class="inner-window-content">
 				<div class="row">
 					<div class="col-md-9">
@@ -169,9 +172,13 @@
 										<h4>Selected Plan</h4>
 										<span class="plan-selected">{{product.productDescFriendly}}</span>
 										 <small>{{product.ldcDesc}}</small>
+                                         <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                         <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                         <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
+									</div>
 									</div>
 									<div class="plan-button">
-										<span class="error-text bold">Not eligible for this plan.</span>
+										<span class="error-text bold">Not eligible for this offer.</span>
 									</div>
 								</div>
 							</div>
@@ -253,6 +260,10 @@
 										<h4>Selected New Contract</h4>
 										<span class="plan-selected">{{product.productDescFriendly}}</span>
 										<small>{{product.ldcDesc}}</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
+									</div>
 									</div>
 									<div class="plan-button">
 										<a href="#" class="primary-button" ng-click="popuprenewalcontinue()">select &amp; continue</a>
@@ -329,6 +340,9 @@
 										<h4>Selected Plan</h4>
 										<b class="plan-selected gray-text">{{product.productDescFriendly}}</b>
 										<small>{{product.ldcDesc}}</small>
+                                        <small class="error-text">Early Termination Charges Apply.</small>
+                                        <small class="error-text">Please see T&Cs for applicable charges.</small>
+									</div>
 									</div>
 									<div class="plan-button">
 										<span class="bold error-text">Not eligible for this plan.</span>

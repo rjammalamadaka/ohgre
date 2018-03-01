@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-03T12:37:56.797-06:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-03T12:37:59.589-06:00"
+        cq:lastModified="{Date}2018-01-19T14:08:58.693-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2018-01-19T14:04:57.582-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
@@ -26,8 +26,8 @@
             <sitemap
                 jcr:created="{Date}2017-12-27T12:12:42.729-06:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-03T12:37:56.794-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-01-19T14:08:58.690-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/sitemap"
                 righttext="&lt;h2>Sitemap&lt;/h2>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/plans-detail.html&quot; target=&quot;_blank&quot;>View Rate Plans&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/what_is_choice.html&quot; target=&quot;_blank&quot;>What is Choice?&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/why_choose_us.html&quot; target=&quot;_blank&quot;>Why Choose Us?&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/about_us.html&quot; target=&quot;_blank&quot;>About Us&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/faq.html&quot; target=&quot;_blank&quot;>FAQs&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/terms-of-use.html&quot; target=&quot;_blank&quot;>Terms of Use&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;/content/onlyong/privacy-policy.html&quot; target=&quot;_blank&quot;>Privacy Policy&lt;/a>&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/onlyong/contact-us.html&quot; target=&quot;_blank&quot;>Contact Us&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
