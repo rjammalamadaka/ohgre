@@ -106,7 +106,11 @@ $scope.dsmEnrollSubmit =function(){
                  $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
                  $scope.dsmEnrollReq.dsmPhone=$scope.phoneNumber;
                  $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
-                                  if($scope.ldc =="MIC"){
+                 if($scope.ldc == "DUK"){
+					$scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3;
+                 }else if($scope.ldc == "VED"){
+                   $scope.dsmEnrollReq.LDCAccountNumber=$scope.an2+$scope.an3;
+                }else if($scope.ldc =="MIC"){
                  	$scope.dsmEnrollReq.LDCAccountNumber=$scope.an4;
                  }else{
 					$scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
@@ -126,7 +130,7 @@ $scope.dsmEnrollSubmit =function(){
 
     }
 }
-    
+
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
         if(data && data.responseStatus =="0"){
 
@@ -134,9 +138,9 @@ $scope.dsmEnrollSubmit =function(){
 			$scope.ldcinfo=data.LDCList;
             setTimeout(function(){ $scope.bindClickEvent(); }, 10);
         }
-        
+
     }).error(function (data,status, headers, config){
-        
+
     });
 
 
