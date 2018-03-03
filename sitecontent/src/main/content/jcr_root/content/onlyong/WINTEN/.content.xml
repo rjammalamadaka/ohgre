@@ -2,17 +2,17 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-02-16T15:23:54.022-06:00"
-        cq:lastModifiedBy="josh"
-        cq:lastReplicated="{Date}2018-02-20T13:28:21.610-06:00"
-        cq:lastReplicatedBy="josh"
+        cq:lastModified="{Date}2018-03-02T09:30:41.700-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-03-01T15:16:03.203-06:00"
+        cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WINTEN"
-        jcr:uuid="18b49ed5-2e4a-4662-8186-d38dc6c2ec77"
+        jcr:uuid="e5bf7bd1-9b3c-4f19-aaec-378b4daeb0cd"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
         <content
             jcr:primaryType="nt:unstructured"
@@ -20,22 +20,23 @@
             <promoherobanner
                 jcr:created="{Date}2018-02-16T14:33:11.647-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-02-16T14:50:32.284-06:00"
-                jcr:lastModifiedBy="josh"
+                jcr:lastModified="{Date}2018-03-02T09:30:41.696-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2D_1568x348base.png"
-                mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2D_768x300.png"
+                imagepath="/content/dam/ohgre/promotions/ONG_Switchback_1568x348.png"
+                mobileimagepath="/content/dam/ohgre/promotions/ONG_Switchback_768x300.png"
+                promoexpmsg="Hurry! Offer ends {{currentMonthLastDay}}!"
                 textIsRich="true"/>
             <applepromotionconten
                 jcr:created="{Date}2018-02-16T14:36:59.212-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-02-16T15:23:54.018-06:00"
-                jcr:lastModifiedBy="josh"
+                jcr:lastModified="{Date}2018-03-01T15:12:21.848-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/applepromotioncontent"
-                description="&lt;p>*Price and Visa Reward Card offers are available to new residential customers who use 150Mcf per year or less, enrolling with Ohio Natural Gas between 03/01/2018 to 03/31/2018 using applicable promotion code; Visa Reward Card offer available only for such customers enrolling online at www.onlyong.com/SCORE2D. ONG service is available for eligible customers participating in the Energy Choice program through Dominion East Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.654.2579, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges apply for residential fixed price plans (10-Month plan: $125/S75). Customer must have continuous active service with Ohio Natural Gas for at least 60 days to be eligible to receive the reward card. After reaching eligibility, please allow 4-6 weeks for delivery. Visa Reward Card is issued by and is the property of CenterState Bank of Florida, NA pursuant to a license from Visa U.S.A. Inc. Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;&lt;p>ƗPrice comparison claim based on PUCO Apples-to-Apples website published fixed prices as of 03/01/2018 and ONG&amp;#39;s March 2018 10-month email fixed price offer.&lt;/p>&#xd;&#xa;"
+                description="&lt;p>*Price and Visa Reward Card offers are available to new residential customers who use 150 Mcf per year or less, enrolling with Ohio Natural Gas between 03/01/2018 and 03/31/2018 using applicable promotion code; Visa Reward Card offer available only for such customers enrolling online at www.onlyong.com/WINTEN. ONG service is available for eligible customers participating in the Energy Choice program through Dominion East Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.654.2579, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit onlyong.com. Early termination charges apply for residential fixed price plans (10-Month plan: $125/S75). Customer must have continuous active service with Ohio Natural Gas for at least 60 days to be eligible to receive the reward card. After reaching eligibility, please allow 4-6 weeks for delivery. Visa Reward Card is issued by and is the property of CenterState Bank of Florida, NA pursuant to a license from Visa U.S.A. Inc.&amp;nbsp; All trademarks noted herein are held by their respective owners.&amp;nbsp; Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;&lt;p>ƗPrice comparison claim based on PUCO Apples-to-Apples website published fixed prices as of 03/01/2018 and ONG&amp;#39;s March 2018 10-month email fixed price offer.&lt;/p>&#xd;&#xa;"
                 heading="Special Bonus: Enroll online and receive a {{giftCardValue | currency:&quot;$&quot;:0}} Visa® Reward Card!*"
                 textIsRich="true"/>
         </content>
