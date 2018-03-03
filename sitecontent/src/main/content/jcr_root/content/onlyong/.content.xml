@@ -1,126 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="cq:Page">
+          jcr:primaryType="cq:Page">
     <jcr:content
-        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
-        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-02-01T13:59:02.036-06:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-30T10:23:51.917-06:00"
-        cq:lastReplicatedBy="penny"
-        cq:lastReplicationAction="Activate"
-        cq:template="/apps/ohgre/templates/homepage"
-        jcr:description="Ohio Natural Gas description"
-        jcr:isCheckedOut="{Boolean}true"
-        jcr:mixinTypes="[mix:versionable]"
-        jcr:primaryType="cq:PageContent"
-        jcr:title="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
-        jcr:uuid="583a6d75-57b8-42e9-b773-1bd3e4ebe96b"
-        sling:resourceType="/apps/ohgre/components/structure/page"
-        companyinfolinks="[/content/onlyong,/content/onlyong]"
-        days="Monday - Friday"
-        description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
-        errorPages="/content/onlyong/errors"
-        footernavigationlinks="[/content/onlyong,/content/onlyong]"
-        metakeyword="avinash"
-        metaprimarykeywords="Ohio Natural Gas, Natural Gas, Gas Company Ohio, Natural Gas Company"
-        metatitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
-        mobilenumber="1-888-466-4427"
-        portalname="oh"
-        tagmanagerid="GTM-56C9WRS"
-        termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
-        time="8 a.m. to 5 p.m. EST">
+            cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+            cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+            cq:designPath="/etc/designs/ohgre"
+            cq:lastModified="{Date}2018-03-01T13:50:54.143-06:00"
+            cq:lastModifiedBy="penny"
+            cq:lastReplicated="{Date}2018-03-01T13:50:57.587-06:00"
+            cq:lastReplicatedBy="penny"
+            cq:lastReplicationAction="Activate"
+            cq:template="/apps/ohgre/templates/homepage"
+            jcr:description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
+            jcr:isCheckedOut="{Boolean}true"
+            jcr:mixinTypes="[mix:versionable]"
+            jcr:primaryType="cq:PageContent"
+            jcr:title="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
+            jcr:uuid="12cc571e-0cf5-47b7-8f6b-4d2a90a1d1c2"
+            sling:resourceType="/apps/ohgre/components/structure/page"
+            companyinfolinks="[/content/onlyong,/content/onlyong]"
+            days="Monday - Friday"
+            description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
+            errorPages="/content/onlyong/errors"
+            footernavigationlinks="[/content/onlyong,/content/onlyong]"
+            metakeyword="avinash"
+            metaprimarykeywords="Ohio Natural Gas, Natural Gas, Gas Company Ohio, Natural Gas Company"
+            metatitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
+            mobilenumber="1-888-466-4427"
+            pageTitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
+            portalname="oh"
+            tagmanagerid="GTM-56C9WRS"
+            termsandconditions="/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf"
+            time="8 a.m. to 5 p.m. EST">
         <content
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/parsys">
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/parsys">
             <herocarousel
-                jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-02-01T13:59:02.029-06:00"
-                jcr:lastModifiedBy="penny"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/herocarousel"
-                iItems="[{&quot;title&quot;:&quot;Sign up today and you can earn 2\,500 bonus miles*&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your natural gas bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA25&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you can each receive a $25 Visa® Reward Card.* &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;start referring&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/refer&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;For more than 10 years\, we’ve proudly served Ohio residents with flexible plan options\, exceptional customer service and outstanding perks.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
-                timeout="5500"/>
+                    jcr:created="{Date}2017-07-15T14:02:20.882+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-03-01T13:50:54.137-06:00"
+                    jcr:lastModifiedBy="penny"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/herocarousel"
+                    iItems="[{&quot;title&quot;:&quot;Sign up today and you can earn 15\,000 bonus miles*&quot;\,&quot;description&quot;:&quot;Plus\, earn miles every time you pay your natural gas bill.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/delta-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;see offer&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/promo_landing&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;DELTA15K&quot;},{&quot;title&quot;:&quot;Refer a Friend&quot;\,&quot;description&quot;:&quot;Invite friends to sign up with Ohio Natural Gas® and you can each receive a $25 Visa® Reward Card.* &quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/raf/hero.jpg&quot;\,&quot;buttontitle&quot;:&quot;start referring&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/refer&quot;\,&quot;smalldescription&quot;:&quot;*Terms and conditions apply.&quot;\,&quot;promocode&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Ohio’s Natural Choice for Natural Gas&quot;\,&quot;description&quot;:&quot;For more than 10 years\, we’ve proudly served Ohio residents with flexible plan options\, exceptional customer service and outstanding perks.&quot;\,&quot;imagepath&quot;:&quot;/content/dam/ohgre/home/hero-image.jpg&quot;\,&quot;buttontitle&quot;:&quot;sign up&quot;\,&quot;buttonpath&quot;:&quot;/content/onlyong/plans-detail&quot;\,&quot;smalldescription&quot;:&quot;&quot;\,&quot;promocode&quot;:&quot;&quot;}]"
+                    timeout="5500"/>
             <promocode
-                jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-28T22:09:54.119-06:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/promocode"
-                backGroundColor="rgba(0,116,191,1.00)"
-                description="&lt;p>Your special offer awaits!&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                heading="Have a Promo Code? "
-                textIsRich="true">
+                    jcr:created="{Date}2017-07-15T14:01:25.469+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-01-28T22:09:54.119-06:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/promocode"
+                    backGroundColor="rgba(0,116,191,1.00)"
+                    description="&lt;p>Your special offer awaits!&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                    heading="Have a Promo Code? "
+                    textIsRich="true">
                 <cq:annotations jcr:primaryType="nt:unstructured"/>
             </promocode>
             <colctrl_545067701
-                jcr:created="{Date}2017-07-25T13:13:15.145-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-07-25T13:13:22.618-04:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/colctrl"
-                layout="3;cq-colctrl-lt1"/>
+                    jcr:created="{Date}2017-07-25T13:13:15.145-04:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-25T13:13:22.618-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/colctrl"
+                    layout="3;cq-colctrl-lt1"/>
             <cardpromo_578718825
-                jcr:created="{Date}2017-07-25T13:13:29.748-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-10T09:46:50.402-06:00"
-                jcr:lastModifiedBy="penny"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/cardpromo"
-                buttonpath="/content/onlyong/refer"
-                buttontitle="start referring"
-                description="Learn how you can invite friends to sign up with Ohio Natural Gas® and can each receive a $25 Visa® Reward Card. Terms and conditions apply.*"
-                displayLink="true"
-                heading="Refer a Friend"
-                imagepath="/content/dam/ohgre/home/card_raf.jpg"
-                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
+                    jcr:created="{Date}2017-07-25T13:13:29.748-04:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2018-01-10T09:46:50.402-06:00"
+                    jcr:lastModifiedBy="penny"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/cardpromo"
+                    buttonpath="/content/onlyong/refer"
+                    buttontitle="start referring"
+                    description="Learn how you can invite friends to sign up with Ohio Natural Gas® and can each receive a $25 Visa® Reward Card. Terms and conditions apply.*"
+                    displayLink="true"
+                    heading="Refer a Friend"
+                    imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                    mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
             <col_break15010028026200
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/colctrl"
-                controlType="break"/>
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/colctrl"
+                    controlType="break"/>
             <myaccount
-                jcr:created="{Date}2018-01-24T09:41:26.378-06:00"
-                jcr:createdBy="penny"
-                jcr:lastModified="{Date}2018-01-24T12:41:09.695-06:00"
-                jcr:lastModifiedBy="penny"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/myaccount"
-                buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer with Ohio Natural Gas, you can manage your account online. Log into your account to view your current contract and make changes."
-                displayLink="true"
-                heading="Currently an ONG customer? Manage your account here."
-                imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
-                mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
+                    jcr:created="{Date}2018-01-24T09:41:26.378-06:00"
+                    jcr:createdBy="penny"
+                    jcr:lastModified="{Date}2018-02-16T12:42:48.283-06:00"
+                    jcr:lastModifiedBy="penny"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/myaccount"
+                    buttontitle="VIEW MY ACCOUNT"
+                    description="If you are currently a customer with Ohio Natural Gas, you can manage your account online. Log in to your account to view your current contract and make changes."
+                    displayLink="true"
+                    heading="Currently an ONG customer? Manage your account here."
+                    imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
+                    mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
             <col_break15010028026211
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/colctrl"
-                controlType="break"/>
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/colctrl"
+                    controlType="break"/>
             <cardpromo_plans
-                jcr:created="{Date}2017-07-25T13:13:33.058-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-04T13:42:57.893-06:00"
-                jcr:lastModifiedBy="penny"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/cardpromo-plans"
-                buttonpath="/content/onlyong/plans-detail"
-                description="Lock in a 6- or 12-month fixed rate to avoid the potential for price spikes and market fluctuations!"
-                heading="View Rate Plans"/>
+                    jcr:created="{Date}2017-07-25T13:13:33.058-04:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-12-04T13:42:57.893-06:00"
+                    jcr:lastModifiedBy="penny"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/cardpromo-plans"
+                    buttonpath="/content/onlyong/plans-detail"
+                    description="Lock in a 6- or 12-month fixed rate to avoid the potential for price spikes and market fluctuations!"
+                    heading="View Rate Plans"/>
             <col_end15010027951470
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/colctrl"
-                controlType="end"/>
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/colctrl"
+                    controlType="end"/>
             <signup_for_newslette
-                jcr:created="{Date}2017-10-09T21:36:27.570-04:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-12-04T13:40:02.523-06:00"
-                jcr:lastModifiedBy="penny"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ohgre/components/signup-for-newsletters-popup"
-                description="Sign up to receive promotional emails from us."/>
+                    jcr:created="{Date}2017-10-09T21:36:27.570-04:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-12-04T13:40:02.523-06:00"
+                    jcr:lastModifiedBy="penny"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ohgre/components/signup-for-newsletters-popup"
+                    description="Sign up to receive promotional emails from us."/>
         </content>
     </jcr:content>
     <plans-detail/>
@@ -148,102 +149,113 @@
     <customer_lookup/>
     <special_offer/>
     <promotions
-        jcr:primaryType="nt:unstructured"
-        MCCORD="/content/onlyong/MCCORD.html">
-        <oh
             jcr:primaryType="nt:unstructured"
-            APPLEDEO="/content/onlyong/termsdeo">
+            MCCORD="/content/onlyong/MCCORD.html">
+        <oh
+                jcr:primaryType="nt:unstructured"
+                APPLEDEO="/content/onlyong/termsdeo">
             <APPLES
-                jcr:primaryType="nt:unstructured"
-                APPLECOH="/content/onlyong/applecoh"
-                APPLEDEO="/content/onlyong/appledeo"
-                APPLEDUKE="/content/onlyong/appleduke"
-                APPLEVEDO="/content/onlyong/applevedo"
-                APPLEWGL="/content/onlyong/promo-landing-apples"
-                BUSINESSMVR="/content/onlyong/promo-landing-apples"
-                CHOICE12C="/content/onlyong/promo-landing-apples"
-                COHTERMS="/content/onlyong/COHTERMS"
-                DEOTERMS="/content/onlyong/DEOTERMS"
-                DUKETERMS="/content/onlyong/DUKETERMS"
-                MVRSPECIAL="/content/onlyong/promo-landing-apples"
-                VEDOTERMS="/content/onlyong/VEDOTERMS"/>
+                    jcr:primaryType="nt:unstructured"
+                    APPLECOH="/content/onlyong/applecoh"
+                    APPLEDEO="/content/onlyong/appledeo"
+                    APPLEDUKE="/content/onlyong/appleduke"
+                    APPLEVEDO="/content/onlyong/applevedo"
+                    APPLEWGL="/content/onlyong/promo-landing-apples"
+                    BUSINESSMVR="/content/onlyong/promo-landing-apples"
+                    CHOICE12C="/content/onlyong/promo-landing-apples"
+                    COHTERMS="/content/onlyong/COHTERMS"
+                    DEOTERMS="/content/onlyong/DEOTERMS"
+                    DUKETERMS="/content/onlyong/DUKETERMS"
+                    MVRSPECIAL="/content/onlyong/promo-landing-apples"
+                    VEDOTERMS="/content/onlyong/VEDOTERMS"/>
             <RAF
-                jcr:primaryType="nt:unstructured"
-                RAF25="/content/onlyong/promo-raf"
-                RAF50="/content/onlyong/promo-raf"/>
+                    jcr:primaryType="nt:unstructured"
+                    RAF25="/content/onlyong/promo-raf"
+                    RAF50="/content/onlyong/promo-raf"/>
             <BACKUP
-                jcr:primaryType="nt:unstructured"
-                BACKCOH="/content/onlyong/backuppromo"
-                BACKCOHV="/content/onlyong/backuppromo"
-                BACKCON="/content/onlyong/backuppromo"
-                BACKCONV="/content/onlyong/backuppromo"
-                BACKDEO="/content/onlyong/backuppromo"
-                BACKDEOV="/content/onlyong/backuppromo"
-                BACKDTE="/content/onlyong/backuppromo"
-                BACKDTEV="/content/onlyong/backuppromo"
-                BACKVEDO="/content/onlyong/backuppromo"
-                BACKVEDOV="/content/onlyong/backuppromo"/>
+                    jcr:primaryType="nt:unstructured"
+                    BACKCOH="/content/onlyong/backuppromo"
+                    BACKCOHV="/content/onlyong/backuppromo"
+                    BACKCON="/content/onlyong/backuppromo"
+                    BACKCONV="/content/onlyong/backuppromo"
+                    BACKDEO="/content/onlyong/backuppromo"
+                    BACKDEOV="/content/onlyong/backuppromo"
+                    BACKDTE="/content/onlyong/backuppromo"
+                    BACKDTEV="/content/onlyong/backuppromo"
+                    BACKVEDO="/content/onlyong/backuppromo"
+                    BACKVEDOV="/content/onlyong/backuppromo"/>
             <SPECIALOFFER
-                jcr:primaryType="nt:unstructured"
-                CSEA="/content/onlyong/special_offer"
-                MISEA="/content/onlyong/special_offer"
-                VSEA="/content/onlyong/special_offer"/>
+                    jcr:primaryType="nt:unstructured"
+                    CSEA="/content/onlyong/special_offer"
+                    MISEA="/content/onlyong/special_offer"
+                    VSEA="/content/onlyong/special_offer"/>
             <MVR jcr:primaryType="nt:unstructured"/>
             <SWITCH
-                jcr:primaryType="nt:unstructured"
-                SWITCH="/content/onlyong/switch-back"
-                SWITCHONLINE="/content/onlyong/switch-back"/>
+                    jcr:primaryType="nt:unstructured"
+                    SWITCH="/content/onlyong/switch-back"
+                    SWITCHONLINE="/content/onlyong/switch-back"/>
             <UTILITY
-                jcr:primaryType="nt:unstructured"
-                UTILITYCHOICE="/content/onlyong/visa_offer"/>
+                    jcr:primaryType="nt:unstructured"
+                    UTILITYCHOICE="/content/onlyong/visa_offer"/>
             <VISA
-                jcr:primaryType="nt:unstructured"
-                OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
+                    jcr:primaryType="nt:unstructured"
+                    OHIO_x0020_VISA="/content/onlyong/visa_offer"/>
             <DELTA
-                jcr:primaryType="nt:unstructured"
-                DELTA10K="/content/onlyong/promo_landing"
-                DELTA15K="/content/onlyong/promo_landing"
-                DELTA25="/content/onlyong/promo_landing"
-                DELTA5K="/content/onlyong/promo_landing"
-                DELTANOMILES="/content/onlyong/promo_landing"/>
+                    jcr:primaryType="nt:unstructured"
+                    DELTA10K="/content/onlyong/promo_landing"
+                    DELTA15K="/content/onlyong/DELTA15K"
+                    DELTA15KE="/content/onlyong/DELTA15KE"
+                    DELTA25="/content/onlyong/promo_landing"
+                    DELTA5K="/content/onlyong/promo_landing"
+                    DELTANOMILES="/content/onlyong/promo_landing"/>
             <MCCORD
-                jcr:primaryType="nt:unstructured"
-                MCCORD="/content/onlyong/MCCORD"/>
+                    jcr:primaryType="nt:unstructured"
+                    MCCORD="/content/onlyong/MCCORD"/>
             <mccord jcr:primaryType="nt:unstructured"/>
             <ALLCONNECT
-                jcr:primaryType="nt:unstructured"
-                ALLCONNECT="/content/onlyong/allconnect"/>
+                    jcr:primaryType="nt:unstructured"
+                    ALLCONNECT="/content/onlyong/allconnect"/>
             <APPLEMAGIC
-                jcr:primaryType="nt:unstructured"
-                APPLEMAGIC="/content/onlyong/applemagic"/>
+                    jcr:primaryType="nt:unstructured"
+                    APPLEMAGIC="/content/onlyong/applemagic"/>
             <_x0032_018_1_Jan
-                jcr:primaryType="nt:unstructured"
-                APPLEDEO10M="/content/onlyong/APPLEDEO10M"
-                COMPARE1C="/content/onlyong/COMPARE1C"
-                COMPARE1CONLINE="/content/onlyong/COMPARE1C"
-                COMPARE1V="/content/onlyong/COMPARE1V"
-                COMPARE1VONLINE="/content/onlyong/COMPARE1V"
-                COMPARE3V="/content/onlyong/COMPARE3V"
-                COMPARE3VONLINE="/content/onlyong/COMPARE3V"
-                DELTA15K="/content/onlyong/DELTA15K"
-                DELTA15KONLINE="/content/onlyong/DELTA15K"
-                DSEA="/content/onlyong/DSEA"
-                LOWEST2D="/content/onlyong/LOWEST2D"
-                LOWEST2DONLINE="/content/onlyong/LOWEST2D"
-                SAVEBIZ="/content/onlyong/SAVEBIZ"
-                SAVEME="/content/onlyong/SAVEME"
-                SCORE1C="/content/onlyong/SCORE1C"
-                SCORE1CONLINE="/content/onlyong/SCORE1C"
-                SCORE1V="/content/onlyong/SCORE1V"
-                SCORE1VONLINE="/content/onlyong/SCORE1V"
-                SCORE2D="/content/onlyong/SCORE2D"
-                SCORE2DONLINE="/content/onlyong/SCORE2D"
-                SCORE3C="/content/onlyong/SCORE3C"
-                SCORE3CONLINE="/content/onlyong/SCORE3C"
-                SCORE3V="/content/onlyong/SCORE3V"
-                SCORE3VONLINE="/content/onlyong/SCORE3V"
-                SWITCH="/content/onlyong/SWITCH"
-                SWITCHONLINE="/content/onlyong/SWITCH">
+                    jcr:primaryType="nt:unstructured"
+                    APPLEDEO10M="/content/onlyong/APPLEDEO10M"
+                    COMPARE1C="/content/onlyong/COMPARE1C"
+                    COMPARE1CONLINE="/content/onlyong/COMPARE1C"
+                    COMPARE1V="/content/onlyong/COMPARE1V"
+                    COMPARE1VONLINE="/content/onlyong/COMPARE1V"
+                    COMPARE3V="/content/onlyong/COMPARE3V"
+                    COMPARE3VONLINE="/content/onlyong/COMPARE3V"
+                    DELTA15K="/content/onlyong/DELTA15K"
+                    DELTA15KONLINE="/content/onlyong/DELTA15K"
+                    DSEA="/content/onlyong/DSEA"
+                    EMAILTEN="/content/onlyong/EMAILTEN"
+                    EMAILTENONLINE="/content/onlyong/EMAILTEN"
+                    ENROLL3C="/content/onlyong/ENROLL3C"
+                    ENROLL3CONLINE="/content/onlyong/ENROLL3C"
+                    LOWEST2D="/content/onlyong/LOWEST2D"
+                    LOWEST2DONLINE="/content/onlyong/LOWEST2D"
+                    LOWEST3V="/content/onlyong/LOWEST3V"
+                    LOWEST3VONLINE="/content/onlyong/LOWEST3V"
+                    NEWHOME2018="/content/onlyong/NEWHOME2018"
+                    NEWHOME2018ONLINE="/content/onlyong/NEWHOME2018"
+                    SAVEBIZ="/content/onlyong/SAVEBIZ"
+                    SAVEME="/content/onlyong/SAVEME"
+                    SCORE1C="/content/onlyong/SCORE1C"
+                    SCORE1CONLINE="/content/onlyong/SCORE1C"
+                    SCORE1V="/content/onlyong/SCORE1V"
+                    SCORE1VONLINE="/content/onlyong/SCORE1V"
+                    SCORE2D="/content/onlyong/SCORE2D"
+                    SCORE2DONLINE="/content/onlyong/SCORE2D"
+                    SCORE3C="/content/onlyong/SCORE3C"
+                    SCORE3CONLINE="/content/onlyong/SCORE3C"
+                    SCORE3V="/content/onlyong/SCORE3V"
+                    SCORE3VONLINE="/content/onlyong/SCORE3V"
+                    SWITCH="/content/onlyong/SWITCH"
+                    SWITCHONLINE="/content/onlyong/SWITCH"
+                    WINTEN="/content/onlyong/WINTEN"
+                    WINTENONLINE="/content/onlyong/WINTEN">
                 <Score1C/>
             </_x0032_018_1_Jan>
         </oh>
@@ -297,4 +309,10 @@
     <SCORE2D/>
     <LOWEST2D/>
     <APPLEDEO10M/>
+    <LOWEST3V/>
+    <ENROLL3C/>
+    <NEWHOME2018/>
+    <WINTEN/>
+    <EMAILTEN/>
+    <DELTA15KE/>
 </jcr:root>
