@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="BackUp Promo"
-        jcr:uuid="e23a2f61-77ba-495b-9723-0dec22bec103"
+        jcr:uuid="8f40f458-ae62-4698-9623-69e50c25fb3c"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true"
         mobilenumber="1.888.466.4427"

@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-02-02T12:46:01.190-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-02-28T21:07:42.138-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-02-02T12:46:04.089-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -13,7 +13,9 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="AppleVEDO Promotion"
         jcr:uuid="c2fb1124-e9e4-4dd0-8c18-86732cfef282"
+        sling:redirect="true"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        sling:vanityPath="appleken"
         hideInNav="true">
         <content
             jcr:primaryType="nt:unstructured"
@@ -21,8 +23,8 @@
             <promoherobanner
                 jcr:created="{Date}2017-12-09T15:09:07.159-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-01-04T13:56:57.907-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-02-28T21:07:42.134-06:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
@@ -41,8 +43,8 @@
                 textIsRich="true"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-12-11T09:35:49.728-06:00"
-            jcr:lastModifiedBy="josh"
+            jcr:lastModified="{Date}2018-02-27T15:35:21.924-06:00"
+            jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
     </jcr:content>

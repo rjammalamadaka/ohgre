@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-02-02T12:48:44.066-06:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-02-27T15:33:05.322-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-02-02T12:48:46.964-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -13,7 +13,9 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="AppleDEO Promotion"
         jcr:uuid="0ac7483b-ba30-4a99-8ea0-e6f2b26ff65d"
+        sling:redirect="true"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        sling:vanityPath="appledeo"
         hideInNav="true">
         <content
             jcr:primaryType="nt:unstructured"
@@ -42,8 +44,8 @@
                 textIsRich="true"/>
         </content>
         <image
-            jcr:lastModified="{Date}2017-12-14T08:36:48.914-06:00"
-            jcr:lastModifiedBy="josh"
+            jcr:lastModified="{Date}2018-02-27T15:33:05.319-06:00"
+            jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
     </jcr:content>
