@@ -3668,10 +3668,35 @@ div.alt-col2,
 		}
 	}
 }
+#primary-header{
+	&.promo-header {
+		+ div, + section {
+		    margin-top: 8rem;
+
+		    @media (@screen-md-min){
+		    	margin-top: 0;
+		    }
+		}
+
+		@media (@screen-md-min){
+			display: none;
+		}
+	}
+
+}
 .promo-landing{
 	.full-banner-callout {
 		p {
 			width: 100%;
+		}
+		.inner-slide-content{
+			.logo-image {
+				display: none;
+
+				@media (@screen-md-min){
+					display: block;
+				}
+			}
 		}
 	}
 }
