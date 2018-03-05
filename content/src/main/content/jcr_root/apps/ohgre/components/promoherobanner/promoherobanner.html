@@ -1,3 +1,11 @@
+<header id="primary-header" class="promo-header" data-portalname="${inheritedPageProperties.portalname}">
+   <div class="container">
+      <a href="/content/onlyong.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img src="/content/dam/ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png" alt="Ohio Natural Gas Logo"></a>
+      <a href="/content/gre.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png" alt="Grand Rapids Energy Logo"></a>
+
+   </div>
+</header>
+
 <section class="promo-landing" ng-controller="PromoHeroBannerController">
    <div class="container" ng-init="mobileImg = '${properties.mobileimagepath}'">
        <div class="full-banner-callout" ng-class="!${properties.displaylogo || false}? 'one-third' : 'flush'">
@@ -23,7 +31,7 @@
 
                   <p ng-show="notexpired"><span>${properties.description}</span></p>
                   <p ng-show="!notexpired"><span class="slide-title">Unfortunately this promotion has expired.</span></p>
-                      
+
                       <p>
                           <span  ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode">Promo Code: {{getDisplayPromocode(promotion.PromotionCode)}}</span>
                           <span>${properties.promoexpmsg}</span>

@@ -2,8 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-02-28T12:24:28.805-06:00"
-        cq:lastModifiedBy="penny"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-03-01T14:02:53.719-06:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-02-28T12:24:55.469-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -14,7 +16,9 @@
         jcr:title="SCORE2D"
         jcr:uuid="f44134ba-246b-4349-8ba0-6657666a8b3a"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
-        hideInNav="true">
+        sling:vanityPath="testing"
+        hideInNav="true"
+        portalname="Select Portal name">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">

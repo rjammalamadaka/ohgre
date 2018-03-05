@@ -9318,8 +9318,31 @@ div.alt-col2,
     width: 60%;
   }
 }
+#primary-header.promo-header + div,
+#primary-header.promo-header + section {
+  margin-top: 8rem;
+}
+@media (min-width: 992px) {
+  #primary-header.promo-header + div,
+  #primary-header.promo-header + section {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  #primary-header.promo-header {
+    display: none;
+  }
+}
 .promo-landing .full-banner-callout p {
   width: 100%;
+}
+.promo-landing .full-banner-callout .inner-slide-content .logo-image {
+  display: none;
+}
+@media (min-width: 992px) {
+  .promo-landing .full-banner-callout .inner-slide-content .logo-image {
+    display: block;
+  }
 }
 .promo-fine-print {
   font-size: 1.2rem;
