@@ -5,9 +5,9 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2018-01-24T23:57:10.183-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-01-24T10:40:18.736-06:00"
+        cq:lastModified="{Date}2018-02-16T12:41:28.478-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-02-16T12:41:31.053-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/homepage"
@@ -22,7 +22,7 @@
         mobilenumber="1-800-841-1541"
         portalname="gre"
         tagmanagerid="GTM-PLVM6CR"
-        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/aaa-claim-form.pdf"
+        termsandconditions="/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf"
         time="8AM - 5PM EST">
         <content
             jcr:primaryType="nt:unstructured"
@@ -59,13 +59,13 @@
             <cardpromo
                 jcr:created="{Date}2017-07-23T18:43:08.192+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-12T12:27:34.323-06:00"
+                jcr:lastModified="{Date}2018-02-16T12:38:27.788-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/cardpromo"
                 buttonpath="/content/gre/refer"
                 buttontitle="start referring"
-                description="Learn how you can invite friends to sign up with Grand Rapids Energy® and you can each receive a $25 Visa® Reward Card.* Terms and conditions apply.*"
+                description="Learn how you can invite friends to sign up with Grand Rapids Energy® and you can each receive a $25 Visa® Reward Card. Terms and conditions apply.*"
                 displayLink="true"
                 heading="Refer a Friend"
                 imagepath="/content/dam/ohgre/home/card_raf.jpg"
@@ -77,12 +77,12 @@
             <myaccount
                 jcr:created="{Date}2018-01-24T10:37:35.790-06:00"
                 jcr:createdBy="penny"
-                jcr:lastModified="{Date}2018-01-24T23:57:10.159-06:00"
-                jcr:lastModifiedBy="admin"
+                jcr:lastModified="{Date}2018-02-16T12:41:28.470-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/myaccount"
                 buttontitle="VIEW MY ACCOUNT"
-                description="If you are currently a customer with Grand Rapids Energy, you can manage your account online. Log into your account to view your current contract and make changes."
+                description="If you are currently a customer with Grand Rapids Energy, you can manage your account online. Log in to your account to view your current contract and make changes."
                 displayLink="true"
                 heading="Currently a GRE customer? Manage your account here."
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
@@ -174,6 +174,8 @@
                 UTILITYCHOICE="/content/gre/visa_offer"/>
             <DELTA
                 jcr:primaryType="nt:unstructured"
+                DELTA15K="/content/onlyong/DELTA15K"
+                DELTA15KE="/content/onlyong/DELTA15KE"
                 DELTA25="/content/gre/promo_landing"/>
             <RAF
                 jcr:primaryType="nt:unstructured"
@@ -214,4 +216,6 @@
     <LOWEST3DT/>
     <SCORE3CON/>
     <SCORE3DT/>
+    <DELTA15KE/>
+    <DELTA15K/>
 </jcr:root>

@@ -221,6 +221,10 @@
             <_x0032_018_1_Jan
                 jcr:primaryType="nt:unstructured"
                 APPLEDEO10M="/content/onlyong/APPLEDEO10M"
+                CHOICE3V="/content/onlyong/CHOICE3V"
+                CHOICE3VONLINE="/content/onlyong/CHOICE3V"
+                CHOICE4C="/content/onlyong/CHOICE4C"
+                CHOICE4CONLINE="/content/onlyong/CHOICE4C"
                 COMPARE1C="/content/onlyong/COMPARE1C"
                 COMPARE1CONLINE="/content/onlyong/COMPARE1C"
                 COMPARE1V="/content/onlyong/COMPARE1V"
@@ -238,8 +242,8 @@
                 LOWEST2DONLINE="/content/onlyong/LOWEST2D"
                 LOWEST3V="/content/onlyong/LOWEST3V"
                 LOWEST3VONLINE="/content/onlyong/LOWEST3V"
-                NEWHOME2018="/content/onlyong/NEWHOME2018"
-                NEWHOME2018ONLINE="/content/onlyong/NEWHOME2018"
+                NEWHOME18="/content/onlyong/NEWHOME18"
+                NEWHOME18ONLINE="/content/onlyong/NEWHOME18"
                 SAVEBIZ="/content/onlyong/SAVEBIZ"
                 SAVEME="/content/onlyong/SAVEME"
                 SCORE1C="/content/onlyong/SCORE1C"
@@ -311,8 +315,10 @@
     <APPLEDEO10M/>
     <LOWEST3V/>
     <ENROLL3C/>
-    <NEWHOME2018/>
     <WINTEN/>
     <EMAILTEN/>
     <DELTA15KE/>
+    <NEWHOME18/>
+    <CHOICE4C/>
+    <CHOICE3V/>
 </jcr:root>

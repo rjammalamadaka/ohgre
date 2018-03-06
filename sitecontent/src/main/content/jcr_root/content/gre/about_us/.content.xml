@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-01-03T12:42:03.394-06:00"
+        cq:lastModified="{Date}2018-03-05T16:44:17.698-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-03T12:42:10.198-06:00"
+        cq:lastReplicated="{Date}2018-03-05T16:44:07.440-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
@@ -36,17 +36,17 @@
             <about_us
                 jcr:created="{Date}2017-08-04T10:15:26.571-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-03T12:42:03.390-06:00"
+                jcr:lastModified="{Date}2018-03-05T16:43:57.610-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/about-us"
-                description="&lt;h5>&lt;b>Grand Rapids Energy®&lt;/b>&amp;nbsp;is a part of the SouthStar Energy Services® multistate family.&lt;/h5>&#xd;&#xa;&lt;p>Grand Rapids Energy is part of SouthStar Energy Services. SouthStar is owned by Southern Company Gas&lt;sup>TM&lt;/sup>, a wholly owned subsidiary of The Southern Company (NYSE: SO). Headquartered in Atlanta, SouthStar is proud to serve more than half a million residential, business, large commercial and industrial (LCI), and CNG customers in numerous retail energy markets across the United States. You may also know us by one of our other&amp;nbsp;trade names:&amp;nbsp;Georgia Natural Gas&lt;sup>®&lt;/sup>, Ohio Natural Gas&lt;sup>®&lt;/sup>, Florida Natural Gas&lt;sup>®&lt;/sup>, Maryland Energy&lt;sup>®&lt;/sup>,&amp;nbsp;New York Natural Gas&lt;sup>SM&lt;/sup>,&amp;nbsp;New Jersey Energy&lt;sup>®&lt;/sup>,&amp;nbsp;Virginia Retail Energy&lt;sup>SM&lt;/sup>, Illinois Energy&lt;sup>SM&lt;/sup>&amp;nbsp;or Illinois Energy Solutions&lt;sup>SM&lt;/sup>.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;h5>SouthStar serves more than half a million customers.&lt;/h5>&#xd;&#xa;&lt;p>For&amp;nbsp;more than&amp;nbsp;20 years, SouthStar has built on the expertise of its parent company, Southern Company Gas. A history of solid financial performance and stability, as well as sophisticated in-house financial trading and risk management, has placed SouthStar in a position of leadership.&lt;/p>&#xd;&#xa;"
+                description="&lt;h5>&lt;b>Grand Rapids Energy®&lt;/b>&amp;nbsp;is&amp;nbsp;part of the SouthStar Energy Services® multistate family.&lt;/h5>&#xd;&#xa;&lt;p>Grand Rapids Energy is part of SouthStar Energy Services. SouthStar is owned by Southern Company Gas&lt;sup>TM&lt;/sup>, a wholly owned subsidiary of The Southern Company (NYSE: SO). Headquartered in Atlanta, SouthStar is proud to serve more than half a million residential, business, large commercial and industrial (LCI), and CNG customers in numerous retail energy markets across the United States. You may also know us by one of our other&amp;nbsp;trade names:&amp;nbsp;Georgia Natural Gas&lt;sup>®&lt;/sup>, Ohio Natural Gas&lt;sup>®&lt;/sup>, Florida Natural Gas&lt;sup>®&lt;/sup>, Maryland Energy&lt;sup>®&lt;/sup>,&amp;nbsp;New York Natural Gas&lt;sup>SM&lt;/sup>,&amp;nbsp;New Jersey Energy&lt;sup>®&lt;/sup>,&amp;nbsp;Illinois Energy&lt;sup>SM&lt;/sup>&amp;nbsp;or Illinois Energy Solutions&lt;sup>SM&lt;/sup>.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;h5>SouthStar serves more than half a million customers.&lt;/h5>&#xd;&#xa;&lt;p>For&amp;nbsp;more than&amp;nbsp;20 years, SouthStar has built on the expertise of its parent company, Southern Company Gas. A history of solid financial performance and stability, as well as sophisticated in-house financial trading and risk management, has placed SouthStar in a position of leadership.&lt;/p>&#xd;&#xa;"
                 imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
                 righttext="&lt;h3>View Rate Plans&lt;/h3>&#xd;&#xa;&lt;p>Lock in a 6- or 12-month fixed rate to avoid the potential for price spikes and market fluctuations!&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true]">
                 <content
-                    jcr:lastModified="{Date}2017-12-14T14:17:20.886-06:00"
-                    jcr:lastModifiedBy="admin"
+                    jcr:lastModified="{Date}2018-03-05T16:44:17.695-06:00"
+                    jcr:lastModifiedBy="penny"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="ohgre/components/cardpromo-plans"
                     description="Lock in a great 6- or 12-month fixed rate to avoid the potential for price spikes and market fluctuations!"

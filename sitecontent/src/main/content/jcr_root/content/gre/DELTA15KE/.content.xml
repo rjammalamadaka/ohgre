@@ -2,17 +2,17 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-02-16T16:11:47.964-06:00"
+        cq:lastModified="{Date}2018-03-05T15:35:18.465-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-02-16T16:12:13.980-06:00"
+        cq:lastReplicated="{Date}2018-03-05T15:35:23.807-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Delta Promotion"
-        jcr:uuid="f272b662-2559-4a3d-8ec5-6f36f7b98a67"
+        jcr:title="DELTA15KE"
+        jcr:uuid="57e214d6-dcb8-41d9-bc01-47eaa4f12602"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content
