@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-03-02T15:01:06.412-06:00"
+        cq:lastModified="{Date}2018-03-06T09:01:31.897-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-03-02T15:01:12.403-06:00"
+        cq:lastReplicated="{Date}2018-03-06T09:01:35.062-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="NEWHOME2018"
-        jcr:uuid="66e480b1-e0ff-4c3c-9254-24846d562589"
+        jcr:uuid="fc38c7d2-46d6-4a74-bf13-6d97ad4e1c89"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

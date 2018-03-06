@@ -242,8 +242,8 @@
                 LOWEST2DONLINE="/content/onlyong/LOWEST2D"
                 LOWEST3V="/content/onlyong/LOWEST3V"
                 LOWEST3VONLINE="/content/onlyong/LOWEST3V"
-                NEWHOME18="/content/onlyong/NEWHOME18"
-                NEWHOME18ONLINE="/content/onlyong/NEWHOME18"
+                NEWHOME2018="/content/onlyong/NEWHOME2018"
+                NEWHOME2018ONLINE="/content/onlyong/NEWHOME2018"
                 SAVEBIZ="/content/onlyong/SAVEBIZ"
                 SAVEME="/content/onlyong/SAVEME"
                 SCORE1C="/content/onlyong/SCORE1C"
@@ -321,4 +321,5 @@
     <NEWHOME18/>
     <CHOICE4C/>
     <CHOICE3V/>
+    <NEWHOME2018/>
 </jcr:root>
