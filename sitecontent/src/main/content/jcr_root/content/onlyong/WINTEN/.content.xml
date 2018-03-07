@@ -4,9 +4,9 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-03-05T20:13:54.098-06:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2018-03-05T11:54:56.240-06:00"
+        cq:lastModified="{Date}2018-03-06T13:32:43.292-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-03-06T13:32:51.743-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -23,13 +23,13 @@
             <promoherobanner
                 jcr:created="{Date}2018-02-16T14:33:11.647-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-03-05T12:08:11.883-06:00"
+                jcr:lastModified="{Date}2018-03-06T13:32:43.288-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2D_LTO_1568x348base.png"
-                mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2D_LTO_768x300.png"
+                imagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_1568x348base.png"
+                mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_768x300.png"
                 promoexpmsg="Hurry! Offer ends {{currentMonthLastDay}}!"
                 textIsRich="true"/>
             <applepromotionconten
