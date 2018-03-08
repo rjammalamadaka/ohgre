@@ -335,6 +335,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				logger.info("requestresponse inserted sendrealtime");
 
 			}catch(Exception e){
+				logger.info("In catch block......... for sendrealtime");
 				mailContent.put("request", sendrealtimerequest);
 				mailContent.put("response", sendrealtimeresponse);
 				mailContent.put("responseMessage", sendRealTimeResponseMessage);
@@ -374,15 +375,19 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				obj.put("resultMessage", "systemError");
 				obj.put("errorDescription", e.getMessage());
 			}catch(Exception e3){
+				logger.info("In catch block Malformed handle");
 				handelCatchBlock(e3,mailContent);
 			}
 		}	catch (JSONException e) {
+			logger.info("In catch block JSONException handle");
 			handelCatchBlock(e,mailContent);
 			try {
 				obj.put("resultCode", "1");
 				obj.put("resultMessage", "systemError");
 				obj.put("errorDescription", e.getMessage());
 			} catch (Exception e1) {
+				logger.info("In catch block Exception handle");
+
 				handelCatchBlock(e1,mailContent);
 			}
 		}
