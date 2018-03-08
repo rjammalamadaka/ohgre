@@ -1,6 +1,6 @@
 ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','$window','PrimeService','OhGreService',function ($scope, $rootScope,$http,$window,PrimeService,OhGreService) {
 
-          var onlinePromoCodes=["SCORE3C","ENROLL3C","NEWHOME18","EMAILTEN","WINTEN","SCORE3V","LOWEST3V","SWITCH","WINBACK"];
+          var onlinePromoCodes=["SCORE3C","ENROLL3C","NEWHOME2018","EMAILTEN","WINTEN","SCORE3V","LOWEST3V","SWITCH","WINBACK","CHOICE3V"];
 
     ohgre.removeStore("promoCodeInfo");
     ohgre.removeStore("promocode");
