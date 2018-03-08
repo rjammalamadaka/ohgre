@@ -46,6 +46,8 @@
                         $rootScope.promotion=ldc.promotion[0];
                         $rootScope.ldcForEnrollPromo=ldc;
                         $rootScope.enrollPromoCode=promotion.PromotionCode;
+                        $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
+
                         break;                              
                     }else if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
                         $rootScope.promotion=ldc.promotion[0];
@@ -76,7 +78,8 @@
                      locale = "en-us",
                      month = date.toLocaleString(locale, { month: "long" });
                  $rootScope.expdate=month+" "+date.getDate()+", "+date.getFullYear();
-
+               $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
+               $scope.GIFTCARDVALUE=$scope.promotion.GiftCardValue;
                  if($rootScope.promotion.PromotionExpired =="Y"){
 
                      if($rootScope.promotion.BackupPromotionCode.length>0){

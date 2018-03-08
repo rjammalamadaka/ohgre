@@ -28,9 +28,10 @@ ohgrePortal.controller('ApplePromotionContentController', ['$scope', '$rootScope
                       var promotion=ldc.promotion[0];
 
                       if(promotion && promotion.PromotionCode){
+                           $scope.giftCardValue=$scope.promotion.GiftCardValue;
                            if( promotion &&  promotion.RateClassCode){
                               $scope.rateClassCode=promotion.RateClassCode;
-                              $scope.giftCardValue=$scope.promotion.GiftCardValue;
+
                           }
                           if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
                               promotionCode= promotion.BackupPromotionCode; 
