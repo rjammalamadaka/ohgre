@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-03-02T09:34:03.215-06:00"
+        cq:lastModified="{Date}2018-03-05T09:13:33.917-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-03-02T09:34:06.096-06:00"
+        cq:lastReplicated="{Date}2018-03-05T09:13:40.065-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -20,13 +20,13 @@
             <promoherobanner
                 jcr:created="{Date}2018-02-16T14:33:11.647-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-03-01T11:37:31.526-06:00"
-                jcr:lastModifiedBy="josh"
+                jcr:lastModified="{Date}2018-03-05T09:13:33.912-06:00"
+                jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2D_1568x348base.png"
-                mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2D_768x300.png"
+                imagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2Dspecial_1568x348base.png"
+                mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SCORE2Dspecial_768x300.png"
                 promoexpmsg="Hurry! Offer ends {{currentMonthLastDay}}!"
                 textIsRich="true"/>
             <applepromotionconten

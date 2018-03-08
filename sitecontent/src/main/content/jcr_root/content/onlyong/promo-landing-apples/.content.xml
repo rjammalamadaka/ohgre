@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Apple Promotion"
-        jcr:uuid="ef2042d5-50e2-4416-b2e0-c8f26ade00ca"
+        jcr:uuid="987fd863-687a-448b-a2b6-32bca0d2584a"
         sling:redirect="true"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         sling:vanityPath="[onlyong.com/appledeo,onlyong.com/applecoh]"

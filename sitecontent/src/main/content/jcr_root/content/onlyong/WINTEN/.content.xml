@@ -2,9 +2,11 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-03-02T09:30:41.700-06:00"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-03-06T13:32:43.292-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-03-01T15:16:03.203-06:00"
+        cq:lastReplicated="{Date}2018-03-06T13:32:51.743-06:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -12,21 +14,22 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WINTEN"
-        jcr:uuid="18b49ed5-2e4a-4662-8186-d38dc6c2ec77"
-        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
+        jcr:uuid="e5bf7bd1-9b3c-4f19-aaec-378b4daeb0cd"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        portalname="oh">
         <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
             <promoherobanner
                 jcr:created="{Date}2018-02-16T14:33:11.647-06:00"
                 jcr:createdBy="josh"
-                jcr:lastModified="{Date}2018-03-02T09:30:41.696-06:00"
+                jcr:lastModified="{Date}2018-03-06T13:32:43.288-06:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/promotions/ONG_Switchback_1568x348.png"
-                mobileimagepath="/content/dam/ohgre/promotions/ONG_Switchback_768x300.png"
+                imagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_1568x348base.png"
+                mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_768x300.png"
                 promoexpmsg="Hurry! Offer ends {{currentMonthLastDay}}!"
                 textIsRich="true"/>
             <applepromotionconten

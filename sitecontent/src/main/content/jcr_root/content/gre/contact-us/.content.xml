@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Contact Us"
-        jcr:uuid="4dd3f611-d696-412e-a335-4750ecd7f117"
+        jcr:uuid="0ffa9410-54c2-4ad3-829a-75bc32514882"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <content

@@ -16,7 +16,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
-        jcr:uuid="12cc571e-0cf5-47b7-8f6b-4d2a90a1d1c2"
+        jcr:uuid="583a6d75-57b8-42e9-b773-1bd3e4ebe96b"
         sling:resourceType="/apps/ohgre/components/structure/page"
         companyinfolinks="[/content/onlyong,/content/onlyong]"
         days="Monday - Friday"
@@ -221,6 +221,10 @@
             <_x0032_018_1_Jan
                 jcr:primaryType="nt:unstructured"
                 APPLEDEO10M="/content/onlyong/APPLEDEO10M"
+                CHOICE3V="/content/onlyong/CHOICE3V"
+                CHOICE3VONLINE="/content/onlyong/CHOICE3V"
+                CHOICE4C="/content/onlyong/CHOICE4C"
+                CHOICE4CONLINE="/content/onlyong/CHOICE4C"
                 COMPARE1C="/content/onlyong/COMPARE1C"
                 COMPARE1CONLINE="/content/onlyong/COMPARE1C"
                 COMPARE1V="/content/onlyong/COMPARE1V"
@@ -311,8 +315,11 @@
     <APPLEDEO10M/>
     <LOWEST3V/>
     <ENROLL3C/>
-    <NEWHOME2018/>
     <WINTEN/>
     <EMAILTEN/>
     <DELTA15KE/>
+    <NEWHOME18/>
+    <CHOICE4C/>
+    <CHOICE3V/>
+    <NEWHOME2018/>
 </jcr:root>
