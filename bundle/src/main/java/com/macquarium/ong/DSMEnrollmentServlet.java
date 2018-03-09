@@ -215,7 +215,7 @@ public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAll
         soapBodyElem1.addTextNode(dSMEnrollment.getFirstName());
         soapBodyElem2.addTextNode(dSMEnrollment.getLastName());
         soapBodyElem3.addTextNode(dSMEnrollment.getDsmEmail());
-        soapBodyElem4.addTextNode(dSMEnrollment.getFirstName());
+        soapBodyElem4.addTextNode(dSMEnrollment.getDsmFirstName());
         soapBodyElem5.addTextNode(dSMEnrollment.getDsmLastName());
         soapBodyElem6.addTextNode(dSMEnrollment.getDsmAccountNumber());
         soapBodyElem7.addTextNode(dSMEnrollment.getDsmPhone());
