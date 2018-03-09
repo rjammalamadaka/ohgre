@@ -28,7 +28,7 @@ public class DSMEnrollmentdaoServiceImpl implements DSMEnrollmentdaoService {
 	public boolean insertDSMEnrollmentInfo(DSMEnrollment dsmEnrollment) {
 		boolean result=false;
 		logger.info("insert dsm enrollment info");
-System.out.println("dsm enroll to db");
+		System.out.println("dsm enroll to db");
 		Connection connection = null;
 		try {
 			logger.info("insertion started");
@@ -37,26 +37,27 @@ System.out.println("dsm enroll to db");
 			connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
 			if (connection != null) {
 				logger.info("after connection object");
+				logger.info(dsmEnrollment.getRequestString());
 				String query="insert into delta_offer (ldc_name,ldc_account_number,website_id,delta_sm_account,delta_sm_fname,delta_sm_lname,email,phone,enroll_date,ong_fname,ong_lname,promocode)values(?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement preparedStmt = connection.prepareStatement(query);
-                preparedStmt.setString(1, dsmEnrollment.getLDCName());
-                preparedStmt.setString(2, dsmEnrollment.getLDCAccountNumber());
-                preparedStmt.setString(3, dsmEnrollment.getPortalName());
-                preparedStmt.setString(4, dsmEnrollment.getDsmAccountNumber());
-                preparedStmt.setString(5, dsmEnrollment.getDsmFirstName());
-                preparedStmt.setString(6, dsmEnrollment.getDsmLastName());
-                preparedStmt.setString(7, dsmEnrollment.getDsmEmail());
-                preparedStmt.setString(8, dsmEnrollment.getDsmPhone());
-                Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-                preparedStmt.setTimestamp(9, currentTimestamp);	
-                preparedStmt.setString(10, dsmEnrollment.getFirstName());
-                preparedStmt.setString(11, dsmEnrollment.getLastName());
-                preparedStmt.setString(12, dsmEnrollment.getPromotionCode());
-                logger.info("before execution");
+				preparedStmt.setString(1, dsmEnrollment.getLDCName());
+				preparedStmt.setString(2, dsmEnrollment.getLDCAccountNumber());
+				preparedStmt.setString(3, dsmEnrollment.getPortalName());
+				preparedStmt.setString(4, dsmEnrollment.getDsmAccountNumber());
+				preparedStmt.setString(5, dsmEnrollment.getDsmFirstName());
+				preparedStmt.setString(6, dsmEnrollment.getDsmLastName());
+				preparedStmt.setString(7, dsmEnrollment.getDsmEmail());
+				preparedStmt.setString(8, dsmEnrollment.getDsmPhone());
+				Timestamp currentTimestamp = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+				preparedStmt.setTimestamp(9, currentTimestamp);
+				preparedStmt.setString(10, dsmEnrollment.getFirstName());
+				preparedStmt.setString(11, dsmEnrollment.getLastName());
+				preparedStmt.setString(12, dsmEnrollment.getPromotionCode());
+				logger.info("before execution");
 
 				preparedStmt.execute();
-                logger.info("after execution");
-                result=true;
+				logger.info("after execution");
+				result=true;
 			}
 		}catch(ClassNotFoundException e){
 

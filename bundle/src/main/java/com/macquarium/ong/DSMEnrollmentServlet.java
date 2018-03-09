@@ -1,6 +1,7 @@
 package com.macquarium.ong;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.rmi.ServerException;
 import java.util.Iterator;
@@ -22,11 +23,12 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.macquarium.ong.vo.DSMEnrollment;
 import com.macquarium.ong.vo.DSMEnrollmentRes;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.macquarium.ong.vo.RequestResponseVo;
 
 @SlingServlet(paths="/bin/DSMEnrollment", methods = "GET", metatype=true)
 public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
@@ -43,6 +45,9 @@ public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAll
 
     @Reference
     private DSMEnrollmentdaoService dsmEnrollmentdaoService;
+
+    @Reference
+    private RequestResponseDaoService requestResponseDaoService;
 
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
@@ -64,6 +69,8 @@ public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAll
         }
         JSONObject jObj = null;
         try {
+            String referrer = request.getHeader("referer");
+            String domain=request.getServerName();
             jObj = new JSONObject(sb.toString());
             DSMEnrollment dSMEnrollment=new DSMEnrollment();
             dSMEnrollment.setFirstName(getParameterInfo(jObj,"firstName"));
@@ -81,11 +88,29 @@ public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAll
             String soapAction = "http://tempuri.org/IService/DSMEnrollment";
             DSMEnrollmentRes dSMEnrollmentRes= callSoapWebService(soapEndpointUrl, soapAction,dSMEnrollment);
             String dsmStatus=dSMEnrollmentRes.getStatus();
-         String message=   dSMEnrollmentRes.getMessage();
+            String message=   dSMEnrollmentRes.getMessage();
             logger.info("got the status");
             logger.info(dsmStatus);
+            RequestResponseVo requestResponseVo=new RequestResponseVo();
+            requestResponseVo.setAccnt(dSMEnrollment.getLDCAccountNumber());
+            requestResponseVo.setApiCall("DSMEnrollment");
+            requestResponseVo.setLdc(dSMEnrollment.getLDCName());
+            requestResponseVo.setOrderNumber("0");
+            requestResponseVo.setPage(referrer);
+            requestResponseVo.setPostXML(dSMEnrollmentRes.getRequest());
+            requestResponseVo.setRespMessage(dSMEnrollmentRes.getMessage());
+            requestResponseVo.setRespNumb(dSMEnrollmentRes.getStatus());
+            requestResponseVo.setReturnXML(dSMEnrollmentRes.getResponse());
+            requestResponseVo.setSite(domain);
+            logger.info("before inserting request and response info");
+            requestResponseDaoService.insertPrimeRequestResponse(requestResponseVo);
+            logger.info("after inserting request and response info");
+
             if(message.equals("Success")){
                 logger.info("status true");
+                logger.info("inserting DSMEnrollmentInfo in to database");
+                dSMEnrollment.setRequestString(dSMEnrollmentRes.getRequest());
+                dSMEnrollment.setResponseString(dSMEnrollmentRes.getResponse());
                 dsmEnrollmentdaoService.insertDSMEnrollmentInfo(dSMEnrollment);
             }
             obj.put("message", message);
@@ -100,14 +125,32 @@ public class DSMEnrollmentServlet extends org.apache.sling.api.servlets.SlingAll
     private DSMEnrollmentRes callSoapWebService(String soapEndpointUrl, String soapAction,DSMEnrollment dSMEnrollment) {
         DSMEnrollmentRes dSMEnrollmentRes=new DSMEnrollmentRes();
         try {
+
+            logger.info("DSMEnrollmentServlet->callSoapWebService ");
             SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
             SOAPConnection soapConnection = soapConnectionFactory.createConnection();
-            SOAPMessage soapResponse = soapConnection.call(createSOAPRequest(soapAction,dSMEnrollment), soapEndpointUrl);
-            soapResponse.writeTo(System.out);
+            SOAPMessage soapRequest=createSOAPRequest(soapAction,dSMEnrollment);
+            SOAPMessage soapResponse = soapConnection.call(soapRequest, soapEndpointUrl);
+
+            ByteArrayOutputStream requestOut = new ByteArrayOutputStream();
+            soapRequest.writeTo(requestOut);
+            String requestString = new String(requestOut.toByteArray());
+            logger.info("Request info");
+            logger.info(requestString);
+            dSMEnrollmentRes.setRequest(requestString);
+
+            ByteArrayOutputStream responseOut = new ByteArrayOutputStream();
+            soapResponse.writeTo(responseOut);
+            String responseString = new String(responseOut.toByteArray());
+            logger.info("Response info");
+            logger.info(responseString);
+            dSMEnrollmentRes.setResponse(responseString);
+
+
             SOAPPart soapPart = soapResponse.getSOAPPart();
             SOAPEnvelope envelope = soapPart.getEnvelope();
             SOAPBody soapBody = envelope.getBody();
-            System.out.println();
+
             Iterator iterator=  soapBody.getChildElements();
             SOAPElement DSMEnrollmentResponse=null;
             while(iterator.hasNext()){
