@@ -263,25 +263,17 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			String sameProductCode=getParameterInfo(jObj,"sameProductCode");
 
 			String emailtype="";
+
 			if(responseStatus.equals("0")){
-				logger.info("existing customer");
-				if(existingCustomerStatus.equals("Active")){
-					logger.info("active customer");
-					if(sameProductCode.equals("Y")){
-						logger.info("customer with same plan");
-						emailtype="PPCCONFIRM";
-					}else{
-						logger.info("customer with different plan");
-						emailtype="RENEWCONFIRM";
-					}
-				}else{
-					logger.info("Inactive customer");
-					emailtype="ENCONFIRM";
+				if(renewalContractExistsInd.equals("Y")){
+					emailtype="RENEWCONFIRM";
+				}else if(renewalContractExistsInd.equals("N")){
+					emailtype="PPCCONFIRM";
 				}
 			}else if(responseStatus.equals("1")){
-				logger.info("New customer");
-				emailtype="ENCONFIRM";
+				emailtype="PPCCONFIRM";
 			}
+
 			logger.info("");
 			String alternateEmailAddress =getParameterInfo(jObj,"alternateEmailAddress");
 
