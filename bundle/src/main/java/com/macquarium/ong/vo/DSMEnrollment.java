@@ -12,6 +12,9 @@ public class DSMEnrollment {
 	String LDCName;
 	String portalName;
 	String promotionCode;
+	String requestString;
+	String responseString;
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -79,4 +82,15 @@ public class DSMEnrollment {
 		this.promotionCode = promotionCode;
 	}
 
+	public String getRequestString() {
+		return requestString;
+	}
+
+	public void setRequestString(String requestString) {
+		this.requestString = requestString;
+	}
+
+	public void setResponseString(String responseString) {
+		this.responseString = responseString;
+	}
 }
