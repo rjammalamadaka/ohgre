@@ -2,7 +2,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     //     var onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
 
-    var restrictedProductCodes=['COE','COF','DOE','DOF','VEE','VEF'];
+
     $scope.iframeurl="";
     $scope.displaystepscontainer=false;
     $scope.businessName=false;
@@ -321,12 +321,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                 if(data && data.CustomerInfoResult){
                     $rootScope.customerInfo=JSON.parse(data.CustomerInfoResult);
                     console.log($rootScope.customerInfo.productCode);
-                    if($rootScope.customerInfo && $rootScope.customerInfo.productCode){
-                        if(restrictedProductCodes.indexOf($rootScope.customerInfo.productCode)!= -1){
-                            $('#productCodeError').show();
-                            return;
-                        }
-                    }
+
                     if($rootScope.customerInfo && $rootScope.customerInfo.b2BCustomerInd && $rootScope.customerInfo.b2BCustomerInd=="Y"){
                         $('#b2BCustomerIndError').show();
                         return;
