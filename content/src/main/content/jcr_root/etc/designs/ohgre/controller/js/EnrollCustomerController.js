@@ -1088,7 +1088,8 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             $scope.enrollReq.fixedPricePerTherm=data.fixedPricePerTherm;
         if(data.tcversion)
             $scope.enrollReq.tcversion=data.tcversion;
-
+        if(data.OriginalPromoCode)
+            $scope.enrollReq.originalPromoCode=data.OriginalPromoCode;
     }
 
     var setPromotionInfoByLDC =function(ldc){
@@ -1105,6 +1106,9 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             }
             //var data= promoinfo.LDCList[0].promotion[0];
             var data=temp;
+            if(promoinfo.LDCList[0].OriginalPromoCode && promoinfo.LDCList[0].OriginalPromoCode.length>0){
+                data.OriginalPromoCode=promoinfo.LDCList[0].OriginalPromoCode;
+            }
             $scope.promotionInfo=data;
             updateenrollrequestobj(data);
         }
