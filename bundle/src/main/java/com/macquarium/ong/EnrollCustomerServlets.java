@@ -170,6 +170,11 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				enrollment.setTransactionType("Enroll");
 
 			}
+
+			String originalPromoCode=getParameterInfo(jObj,"originalPromoCode");
+			if(originalPromoCode.length()>0){
+				enrollment.setOriginalPromoCode(originalPromoCode);
+			}
 			String serviceAddress1=getParameterInfo(jObj,"serviceAddress1");
 			enrollRequest.setServiceAddress1(serviceAddress1);
 			enrollment.setServiceAddress1(serviceAddress1);
@@ -421,3 +426,4 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 		sendEmailService.sendExceptionEmail(mailContent);
 	}
 }
+
