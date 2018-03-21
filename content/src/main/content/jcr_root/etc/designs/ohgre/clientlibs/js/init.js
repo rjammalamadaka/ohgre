@@ -2,6 +2,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
 
     var activeStates = ["ENROLLMENT ACTIVE", "ENROLLMENT PENDING", "ENROLLMENT REJECTED", "ENROLLMENT SENT WAITING FOR RESPONSE", "ENROLLMENT WAITING TO BE SENT"];
 
+    var restrictedProductCodes=['COE','COF','DOE','DOF','VEE','VEF'];
 
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -329,6 +330,15 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
     }
 
     $rootScope.getCustomerStatus = function(status) {
+
+        if($rootScope.customerInfo && $rootScope.customerInfo.productCode){
+            if(restrictedProductCodes.indexOf($rootScope.customerInfo.productCode)!= -1){
+                // $scope.enrollReq.existingCustomerStatus="Inactive";
+                //existingCustomerStatus="Inactive";
+                return "Inactive";
+            }
+        }
+
 
         if (activeStates.indexOf(status) != -1) {
             $rootScope.customerStatus="Active";
