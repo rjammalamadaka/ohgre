@@ -18,7 +18,7 @@
         jcr:uuid="9329483c-8913-4219-94f2-cfd1ef22bcda"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithnavpage"
         hideInNav="true"
-        portalname="oh">
+        portalname="Select Portal name">
         <image
             cq:lastRolledout="{Date}2018-01-04T10:44:15.524-06:00"
             cq:lastRolledoutBy="penny"
