@@ -252,12 +252,11 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
     }
 
     $rootScope.footernavigation = function(url) {
-        if (portalname == "oh") {
-            location.href = url;
-        } else {
-            url = url.replace("onlyong", "gre");
-            location.href = url;
-        }
+      if(portalname !== "oh"){
+        url=url.replace("onlyong","gre");
+      }
+      window.open(url), '_blank', 'height=100%,width=100%';
+
     }
 
     $rootScope.bindAccordian = function() {
