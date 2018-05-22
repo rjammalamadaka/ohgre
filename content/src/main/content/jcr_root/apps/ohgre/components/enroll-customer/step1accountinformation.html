@@ -1,58 +1,91 @@
 <div class="form-wrapper active-form account-lookup">
-   <form name="formone" id="formone" novalidate>
-      <span class="error-message" id="lastnamezipcodeerror"> 
-          <div ng-show="!businessName">We found an account that matches the account number but not the ZIP code or last name. For further inquiries, please call 1-888-466-4427. </div>
-          <div ng-show="businessName">We found an account that matches the account number but not the ZIP code or Business name. For further inquiries, please call 1-888-466-4427. </div>
+    <form name="formone" id="formone" novalidate>
+    <span class="error-message" id="lastnamezipcodeerror">
+          <div ng-show="!businessName">We found an account that matches the account number but not the ZIP code or last name. For further inquiries, please call ${inheritedPageProperties.mobilenumber}. </div>
+          <div ng-show="businessName">We found an account that matches the account number but not the ZIP code or Business name. For further inquiries, please call ${inheritedPageProperties.mobilenumber}. </div>
       </span>
-      <div class="desktop-flex-container">
-         <div class="form-area-wrapper"  ng-class="product.LDC =='MIC' ? 'mic-account-container' : ''">
-            <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
-            <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
-            <div class="form-area multiple-input">
-               <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
-                  <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required>
-               </div>
-               <div class="input-container" data-size={{an2minl}} ng-show="product.LDC !='MIC'">
-                  <input type="text" name="an2"  ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required>
-               </div>
-               <div class="input-container" data-size={{an3minl}} ng-show="product.LDC !='MIC'">
-                  <input type="text" name="an3"  ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl"  maxlength={{an3minl}} ng-readonly="an3r" required>
-               </div>
-               <div class="input-container" data-size={{an4minl}}>
-                  <input type="text" name="an4"  ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl"  maxlength={{an4minl}} ng-readonly="an4r" required>
-               </div>
-            </div>
-            <span style="color:red" ng-show="(formone.an1.$dirty && product.LDC !='MIC' && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)">
+        <span class="error-message" id="b2BCustomerIndError">
+          <div>Please call us at ${inheritedPageProperties.mobilenumber} to discuss plan options for your account</div>
+          </span>
+        <span class="error-message" id="productCodeError">
+          <div>SCO ERROR</div>
+      </span>
+        <div class="desktop-flex-container">
+            <div class="form-area-wrapper" ng-class="product.LDC =='MIC' ? 'mic-account-container' : ''">
+                <label for="lastname" ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+                <label for="lastname" ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
+                <span id="tooltip-account">
+            <span class="tooltip-trigger">?</span>
+            <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+              <a href="#" class="close-tooltip">X</a>
+            <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we’re asking you to provide, please call 
+              <a href="tel:1-888-466-4427">1-888-466-4427</a> so we may help.</p>
+            </span>
+            <span class="tooltip-text" ng-class="product.LDC =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+	             <a href="#" class="close-tooltip">X</a>
+                 <img  class="dte-tooltip-image" src="/content/dam/ohgre/global/dte-bitmap@2x.jpg"/>
+                 <img class="gre-tooltip-image" src="/content/dam/ohgre/global/popover-2@2x.jpg"/>
+                 <p style="line-height:1.5;" ng-if="product.LDC =='MCG'">Please be sure to enter your Account Number which is located on your natural gas bill. If your account number does not match what we are requesting for you to provide, please call
+              <a href="tel:1-800-841-1541">1.800.841.1541</a> so that we may help.
+                </p>
+                 <p ng-if="product.LDC !='MCG'">Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we're asking you to provide, please call
+              <a href="tel:1-800-841-1541">1.800.841.1541</a> so we may help.</p>
+             </span>
+
+          </span>
+                <div class="form-area multiple-input">
+                    <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
+                        <input type="text" pattern="[0-9]*" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only>
+                    </div>
+                    <div class="input-container" data-size={{an2minl}} ng-show="product.LDC !='MIC'">
+                        <input type="text" pattern="[0-9]*" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required numbers-only>
+                    </div>
+                    <div class="input-container" data-size={{an3minl}} ng-show="product.LDC !='MIC'">
+                        <input type="text" pattern="[0-9]*" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" required numbers-only>
+                    </div>
+                    <div class="input-container" data-size={{an4minl}}>
+                        <input type="text" pattern="[0-9]*" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required numbers-only>
+                    </div>
+                </div>
+                <span class="error-message" ng-show="(formone.an1.$dirty && product.LDC !='MIC' && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)">
             <span ng-show="product.LDC !='MIC' && (formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required)">Account Number is required.</span>
             <span ng-show="(!(formone.an1.$error.required || formone.an2.$error.required || formone.an3.$error.required || formone.an4.$error.required) && (formone.an1.$error.maxlength || formone.an1.$error.minlength || formone.an2.$error.maxlength || formone.an2.$error.minlength || formone.an3.$error.maxlength || formone.an3.$error.minlength || formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
-            </span>
-            <span style="color:red" ng-show="(formone.an1.$dirty && product.LDC =='MIC' && formone.an4.$invalid || (formone.submited))">
+        </span>
+                <span class="error-message" ng-show="(formone.an1.$dirty && product.LDC =='MIC' && formone.an4.$invalid)">
             <span ng-show="product.LDC =='MIC' && ( formone.an4.$error.required)">Account Number is required.</span>
             <span ng-show="(!(formone.an4.$error.required) && (formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
-            </span>
-         </div>
-         <div class="lastname-container form-area-wrapper">
-            <div class="form-area">
-               <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
-               <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
-               <input type="text" name="lastName"  ng-model="lastName" required/>
-               <span style="color:red" ng-show="(formone.lastName.$dirty && (formone.lastName.$invalid)) || (formone.submited)">
-               <span ng-show="formone.lastName.$error.required">Last Name is required.</span>
-               </span>
+        </span>
+
+                <span class="error-message" ng-show="(formone.an4.$dirty && product.LDC =='MIC' && formone.an4.$invalid && formone.submited)">
+        
+            <span ng-show="(!(formone.an4.$error.required) && (formone.an4.$error.maxlength || formone.an4.$error.minlength))">Account Number should be valid .</span>
+        </span>
+
+
+
             </div>
-         </div>
-         <div class="zipcode-container form-area-wrapper">
-            <div class="form-area">
-               <label for="zipcode">Your Zip Code</label>
-               <input type="text" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required/>
-               <span style="color:red" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)">
+            <div class="lastname-container form-area-wrapper">
+                <div class="form-area">
+                    <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
+                    <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
+                    <input type="text" name="lastName" ng-model="lastName" required/>
+                    <span class="error-message" ng-show="(formone.lastName.$dirty && (formone.lastName.$invalid)) || (formone.submited)">
+               <span ng-show="formone.lastName.$error.required">Last Name is required.</span>
+          </span>
+                </div>
+            </div>
+            <div class="zipcode-container form-area-wrapper">
+                <div class="form-area">
+                    <label for="zipcode">Your Zip Code</label>
+                    <input type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only/>
+                    <span class="error-message" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)">
                <span ng-show="formone.zipcode.$error.required">Zip Code is required.</span>
                <span ng-show="formone.zipcode.$error.pattern">Please enter valid Zip code.</span>
                <span ng-show="formone.zipcode.$invalid && !formone.zipcode.$error.pattern && !formone.zipcode.$error.required">Zip code is not valid.</span>
-               </span>
+          </span>
+                </div>
             </div>
-         </div>
-      </div>
-      <button class="primary-button next-button" data-next=2 ng-click="enrollCustomer(2)">Next</button>
-   </form> 
+        </div>
+        <button class="primary-button next-button" data-next=2 ng-click="enrollCustomer(2)">Next</button>
+    </form>
 </div>

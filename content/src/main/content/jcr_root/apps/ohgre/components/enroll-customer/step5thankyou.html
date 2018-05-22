@@ -1,124 +1,129 @@
-<div class="form-wrapper inverted-checkbox confirmation-wrapper">
+<div class="form-wrapper inverted-checkbox confirmation-wrapper" id="order-confirmation">
   <div class="mobile-padding">
-                <h3 class="subhead-color">Confirmation Number # {{enrollId}}</h3>
-</div>
-<div class="box-with-border confirmation-header">
+      <h3 class="subhead-color">Confirmation Number # {{enrollId}} - {{getESTTimeFormat()}}</h3>
+  </div>
+  <div class="box-with-border confirmation-header">
+    <div>
+      ${properties.confirmationcontent @ context='html'}
+    </div>
+    <div ng-show=" (customerStatus == 'Inactive' || customerInfo.responseStatus == '1') ">
+      ${properties.newcustomer @ context='html'}
+    </div>
+    <div ng-show="customerStatus == 'Active'">
+      ${properties.existingcustomer @ context='html'}
+    </div>
+    <div ng-show="deltaskymilesaccountnumberprovidelater">
+      ${properties.deltaconfirmationcontent @ context='html'}
+    </div>
+  </div>
+<div class="html2pdf__page-break"></div>
+  <div class="desktop-flex-container confirmation-info">
+    <div class="information-block box-with-border gray-box">
+      <div class="form-area">
+        <h4>Your Information</h4>
+           <label ng-if="product.LDC !='MIC'">Gas Utility Account Number</label>
+     <label ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
 
-<!--  continuefromdeltaskymiles -->
+        <strong>{{formatedacno}}</strong>
+        <div class="input-group-wrapper" ng-show="enrollReq.firstName">
+          <label>Name on Gas Utility Account</label>
+          <strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
+        </div>
+        <div class="input-group-wrapper" ng-show="businessName">
+          <label>Company Name</label>
+          <strong>{{enrollReq.businessName}}</strong>
+        </div>
 
-${properties.confirmationcontent @ context='html'}
-
-<p ng-show="deltaskymilesaccountnumberprovidelater">
-    ${properties.deltaconfirmationcontent @ context='html'}
-</p>
-
-</div>
-<div class="desktop-flex-container confirmation-info">
-<div class="information-block box-with-border gray-box">
-<div class="form-area">
- <h4>Your Information</h4>
- <label>Gas Service Pod ID</label>
- <strong>{{formatedacno}}</strong>
- <div class="input-group-wrapper" ng-show="enrollReq.firstName">
-    <label>Name on Gas Utility Account</label>
-    <strong>{{enrollReq.firstName}} {{enrollReq.lastName}}</strong>
- </div>
- <div class="input-group-wrapper" ng-show="businessName">
-    <label>Company Name</label>
-    <strong>{{enrollReq.businessName}}</strong>
- </div>
-
- <div class="input-group-wrapper">
-    <label>Email</label>
-    <strong>{{enrollReq.emailAddress}}</strong>
- </div>
- <div class="input-group-wrapper">
-    <label>Phone Number</label>
-    <strong>{{enrollReq.phoneNumber}}</strong>
- </div>
- <div class="input-group-wrapper">
-    <label>How Did You Hear About us?</label>
-    <strong>{{enrollReq.CustLeadSourceCode}}</strong>
- </div>
- <div class="input-group-wrapper" ng-show="validPromocode">
-    <label>Friend's Referral Code</label>
-    <strong>{{enrollReq.RAFCode}}</strong>
- </div>
- <div class="input-group-wrapper mt-3">
- <!--
+        <div class="input-group-wrapper">
+          <label>Email</label>
+          <strong>{{enrollReq.emailAddress}}</strong>
+        </div>
+        <div class="input-group-wrapper">
+          <label>Phone Number</label>
+          <strong>{{enrollReq.phoneNumber}}</strong>
+        </div>
+        <div class="input-group-wrapper">
+          <label>How Did You Hear About us?</label>
+          <strong>{{enrollReq.CustLeadSourceCode}}</strong>
+        </div>
+        <div class="input-group-wrapper" ng-show="validPromocode">
+          <label>Friend's Referral Code</label>
+          <strong>{{enrollReq.RAFCode}}</strong>
+        </div>
+        <div class="input-group-wrapper mt-3">
+          <!--
     <label class="checkbox">
        <input type="checkbox" name="email-offers"  ng-model="specialoffer" disabled="disabled"/>
     </label>
     -->
-<span class="checkmark-wrapper">
+          <!--<span class="checkmark-wrapper">
       <span class="checkmark"></span>
-    </span>
-    <span class="after-checkbox">${properties.thankyouacceptspecialoffer}</span>
- </div>
-</div>
-</div>
-<div class="confirmation-block">
-<div class="box-with-border gray-box">
- <div class="desktop-flex-container">
-    <div class="col-md-5 no-padding">
-       <h4>Service Address</h4>
-       <strong>{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
+          </span>
+          <span class="after-checkbox">${properties.thankyouacceptspecialoffer}</span>-->
+        </div>
+      </div>
     </div>
-    <div class="col-md-5 no-padding">
-       <h4>Billing Address</h4>
-       <strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
-    </div>
- </div>
- <hr />
- <div class="input-group-wrapper">
-  <!--
+    <div class="confirmation-block">
+      <div class="box-with-border gray-box">
+        <div class="desktop-flex-container">
+          <div class="col-md-5 no-padding">
+            <h4>Service Address</h4>
+            <strong>{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
+          </div>
+          <div class="col-md-5 no-padding">
+            <h4>Billing Address</h4>
+            <strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+          </div>
+        </div>
+        <hr />
+        <div class="input-group-wrapper">
+          <!--
     <label class="checkbox">
        <input type="checkbox" name="autorized-user" value="yes" checked disabled="disabled"/>
     </label>
     -->
-    <span class="checkmark-wrapper">
+          <span class="checkmark-wrapper">
       <span class="checkmark"></span>
-    </span>
-    <span class="after-checkbox">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</span>
- </div>
- <div class="input-group-wrapper">
-  <!--
+          </span>
+          <span class="after-checkbox">I have previously certified that I am legally authorized to make decisions regarding natural gas service on this account.</span>
+        </div>
+        <div class="input-group-wrapper">
+          <!--
     <label class="checkbox">
        <input type="checkbox" name="terms-and-conditions" value="yes" checked disabled="disabled"/>
     </label>
     -->
-    <span class="checkmark-wrapper">
+          <span class="checkmark-wrapper">
       <span class="checkmark"></span>
-    </span>
-    <span class="after-checkbox">I have previously viewed and agreed to the terms and conditions of service.</span>
- </div>
- <hr />
- <h4>Review and Authorize</h4>
- <div class="input-group-wrapper mt-2">
-  <!--
+          </span>
+          <span class="after-checkbox">${properties.termsacceptance2 @ context = 'html'}</span>
+        </div>
+        <hr />
+        <h4>Review and Authorize</h4>
+        <div class="input-group-wrapper mt-2">
+          <!--
     <label class="checkbox">
        <input type="checkbox" name="supplier-process" value="yes" checked disabled="disabled"/>
     </label>
     -->
-    <span class="checkmark-wrapper">
+          <span class="checkmark-wrapper">
       <span class="checkmark"></span>
-    </span>
-    <span class="after-checkbox">${properties.thankyoureviewandauthorize}</span>
- </div>
-</div>
-<div class="footnote-box">
- <div class="mobile-padding">
- You may rescind your enrollment without penalty within 7 business days of the postmark date of that letter by contacting the utility by phone or in writing. If any of the information above is not correct or you have additional questions, please call Ohio Natural Gas at 1-888-466-4427 and reference the Order Number shown above.
- </div>
-</div>
-<div class="button-container">
- <div class="print-container">
-    <a href="#" class="print-button">Print</a>
-    <a href="#">Download</a>
- </div>
- <a href="#" class="primary-button next-button" ng-click="gotoHomePage()">Back To Home Page</a>
-</div>
-</div>
-</div>
-
+          </span>
+          <span class="after-checkbox">${properties.thankyoureviewandauthorize}</span>
+        </div>
+      </div>
+      <div class="footnote-box">
+        <div class="mobile-padding">
+          ${properties.footernote @ context = 'html'}
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="print-container">
+          <a href="#" class="print-button">Print</a>
+          <a href="#" class="download-button" download>Save</a>
+        </div>
+        <a href="#" class="primary-button next-button" ng-click="gotoHomePage()">{{confirmationButton}}</a>
+      </div>
+    </div>
+  </div>
 </div>

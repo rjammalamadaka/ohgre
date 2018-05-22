@@ -31,12 +31,12 @@
 				<label>Friend's Referral Code</label>
 				<strong>{{enrollReq.RAFCode}}</strong>
 				</div>
-				<div class="input-group-wrapper mt-3">
+				<!--<div class="input-group-wrapper mt-3">
 				<label class="checkbox">
 				<input type="checkbox" name="email-offers" ng-model="specialoffer" disabled="disabled" />
 				</label>
 				<span class="after-checkbox">${properties.acceptspecialoffer}</span>
-				</div>
+				</div>-->
 				</div>
 			</div>
 			<div class="confirmation-block">
@@ -48,7 +48,8 @@
 						</div>
 						<div class="col-md-5 no-padding">
 						<h4>Billing Address</h4>
-						<strong>{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+						<strong ng-show="!samebilling">{{enrollReq.mailAddress1}} {{enrollReq.mailAddress2}} <br /> {{enrollReq.mailCity}}, {{enrollReq.mailStateCode}} {{enrollReq.mailZipCode}}</strong>
+                        <strong ng-show="samebilling">{{enrollReq.serviceAddress1}} {{enrollReq.serviceAddress2}} <br /> {{enrollReq.serviceCity}}, {{enrollReq.serviceStateCode}} {{enrollReq.serviceZipCode}}</strong>
 						</div>
 					</div>
 					<hr />
@@ -72,7 +73,7 @@
 					 <span class="checkmark-wrapper">
                         <span class="checkmark"></span>
                     </span>
-					<span class="after-checkbox"><label for="terms-and-conditions">I have previously viewed and agreed to the terms and conditions of service.</label></span>
+					<span class="after-checkbox"><label for="terms-and-conditions">${properties.termsaccepted @ context = 'html'}</label></span>
 					</div>
 					<hr />
 					<h4>Review and Authorize</h4>
@@ -80,7 +81,7 @@
 					<label class="checkbox">
 					<input type="checkbox" name="reviewauthorize" id="reviewauthorize" ng-model="reviewauthorize" ng-required="true" ng-focus ng-visited />
 					</label>
-					<span class="after-checkbox"><label for="reviewauthorize">${properties.reviewandauthorize}</label></span> <br>
+					<span class="after-checkbox"><label for="reviewauthorize">${properties.reviewandauthorize}<span ng-show=" (customerStatus == 'Inactive' || customerInfo.responseStatus == '1') ">${properties.newcustomerterms}</span></label></span> <br>
 
 					<span class="input-error-message" ng-show="(formfour.reviewauthorize.$visited && !formfour.reviewauthorize.$focused) || formfour.submited">
 					<span class="input-error-message" ng-show="formfour.reviewauthorize.$error.required">Please accept Review and Authorize</span>
@@ -97,8 +98,148 @@
 	<!-- step-through -->
 	</form>
 
-       <sly data-sly-include="step4deltaskymiles.html"></sly>
-      <sly data-sly-include="step4visa.html"></sly>
-      <sly data-sly-include="step4raf.html"></sly>
+                        <!-- start step4deltaskymiles -->
+  <div class="intro-wrapper" ng-show="reviewdisplaydeltaskymiles">
+      <h3>${properties.header}</h3>
+      <p>
+          ${properties.headerdesc @ context = 'html'}
+          </p>
+   </div>
+   <div id="delta-customer-info" class="form mt-2 desktop-only" ng-show="reviewdisplaydeltaskymiles">
+      <div class="desktop-flex-container">
+         <div class="div-container">
+            <div class="box-with-border bg-primary-blue has-image">
+                <img src="${properties.deltaimagepath}">
+               <div class="box-inner">
+                  <h3>Delta Skymiles Member Information<em class="block">Required*</em></h3>
+                  <form name="deltaskymiles" novalidate>
+                     <label for="first-name">First Name*</label>
+                     <input type="text" name="dsmFirstName" ng-model="dsmFirstName"  ng-required="true" ng-focus ng-visited>
+
+                <span class="input-error-message" ng-show="(deltaskymiles.dsmFirstName.$visited && !deltaskymiles.dsmFirstName.$focused) || deltaskymiles.submited">
+                         <span class="input-error-message" ng-show="deltaskymiles.dsmFirstName.$error.required">First Name is required.</span> 
+                         </span>
+
+                     <label for="last-name">Last Name*</label>
+                     <input type="text" name="dsmLastName" ng-model="dsmLastName" ng-required="true" ng-focus ng-visited>
+                             <span class="input-error-message" ng-show="(deltaskymiles.dsmLastName.$visited && !deltaskymiles.dsmLastName.$focused) || deltaskymiles.submited">
+                         <span class="input-error-message" ng-show="deltaskymiles.dsmLastName.$error.required">Last Name is required.</span> 
+                         </span>
+
+                     <label for="first-name">Skymiles Account#*</label>
+                     <input type="text" name="dsmAccountNumber"  ng-model="dsmAccountNumber" ng-required="true" ng-pattern="/^\d+$/" ng-minlength=10 ng-maxlength=10 ng-focus ng-visited>
+
+             			<span class="input-error-message" ng-show="(deltaskymiles.dsmAccountNumber.$visited && !deltaskymiles.dsmAccountNumber.$focused) || deltaskymiles.submited">
+                         <span class="input-error-message" ng-show="deltaskymiles.dsmAccountNumber.$error.required">Account Number is required.</span> 
+                         <span class="input-error-message" ng-show="(deltaskymiles.dsmAccountNumber.$error.maxlength || deltaskymiles.dsmAccountNumber.$error.minlength) && !deltaskymiles.dsmAccountNumber.$error.pattern">Please enter valid Account Number</span> 
+                          <span class="input-error-message" ng-show="deltaskymiles.dsmAccountNumber.$error.pattern">Please enter valid Account Number.</span> 
+                         <span class="input-error-message" ng-show="invaliddeltaskymilesaccountnumber" >Please enter valid Account Number.</span>
+                         </span>
+                     <a href="https://www.delta.com/custlogin/validateUser.action" target="_blank">Forgot your Skymiles Number?</a>
+                     <button class="primary-button inactive no-padding" ng-click="dsmEnrollSubmit()">continue with skymiles number</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- new element -->
+         <div class="two-vert-cols">
+            <div class="form-element">
+               <div class="new-customer-container">
+                  <div class="form-area">
+
+         			${properties.howitworks @ context = 'html'}
+
+
+                  </div>
+               </div>
+            </div>
+
+            <div class="form-element">
+               <div class="new-customer-container">
+                  <div class="form-area">
+             <h3>${properties.donthaveskymilesnum}</h3>
+                     <div>
+                     ${properties.donthaveskymilesnumdesc @ context = 'html'}
+                         </div>
+                     <a href="#" class="primary-button" ng-click="continuedeltaskymiles('fromdelta')">I WILL PROVIDE MY SKYMILES NUMBER LATER</a>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+${properties.deltaofferterms @ context = 'html'}
+                         </div>
+
+                          <!-- end step4deltaskymiles -->
+
+
+
+                          <!-- start step4visa -->
+
+   <div id="visa-customer-info" class="form" ng-show="reviewdisplayvisa">
+      <div class="desktop-flex-container">
+         <div class="form-element">
+             <img src="${properties.visaimagepath}"/>
+         </div>
+         <div class="form-element content-container">
+            <h3>${properties.visaofferheading}</h3>
+
+            <div>
+		${properties.offersubheading @ context = 'html'}
+            </div>
+
+            <div class="link-wrapper visible-md visible-lg visible-xl">
+               <a href="#" class="primary-button block mb-2" ng-click="continuedeltaskymiles()">Continue</a>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footnote" ng-show="reviewdisplayvisa">
+      <div class="link-wrapper visible-xs visible-sm">
+              <a href="#" class="primary-button inactive block" ng-click="continuedeltaskymiles()">Continue</a>
+      </div>
+      ${properties.offerterms @ context = 'html'}
+   </div>
+
+                         <!-- end step4visa -->
+
+
+                         <!-- start step4visa -->
+
+   <div id="visa-customer-info" class="form" ng-show="reviewdisplayraf">
+      <div class="desktop-flex-container">
+         <div class="form-element">
+             <img src="${properties.rafimagepath}" />
+         </div>
+         <div class="form-element content-container">
+            <h3>${properties.rafofferheading}</h3>
+           <div>
+           ${properties.rafoffersubheading @ context = 'html'}
+           </div>
+            <div class="link-wrapper visible-md visible-lg visible-xl">
+               <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
+               <a href="#" class="primary-button inactive block" ng-click="reviewauthorizesubmit()">NO THANKS, I’M NOT INTERESTED</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footnote" ng-show="reviewdisplayraf">
+      <div class="link-wrapper visible-xs visible-sm">
+         <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
+         <a href="#" class="primary-button inactive block" ng-click="reviewauthorizesubmit()">NO THANKS, I’M NOT INTERESTED</a>
+      </div>
+     ${properties.rafofferterms @ context = 'html'}
+   </div>
+
+                         <!-- end step4visa -->
+
+
+
+
+
+
+
 
 </div>

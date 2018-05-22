@@ -29,6 +29,10 @@ public class Logout extends org.apache.sling.api.servlets.SlingAllMethodsServlet
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 catch (Exception e){
+			 System.out.println("got error"+e.getMessage());
+			 e.printStackTrace();
+		 }
 		 String jsonData = obj.toString();
          response.getWriter().write(jsonData);
 	 

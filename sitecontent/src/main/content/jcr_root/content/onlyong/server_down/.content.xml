@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-12-07T22:08:56.437-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-07T22:09:02.684-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Server Down"
+        jcr:uuid="48c8a8cc-b888-4d74-93ba-2e40d4985799"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-09-06T21:13:47.925-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-02T23:51:04.831-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Page Not Found"/>
+            <pagenotfound
+                jcr:created="{Date}2017-09-10T22:23:51.925-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-07T22:08:56.434-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/pagenotfound"
+                heading="&lt;h2>The system is down.&lt;/h2>&lt;p>Please call &lt;span class=&quot;color-orange&quot;>1.888.466.4427&lt;/span> for assistance&lt;/p>"
+                textIsRich="true"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-09-07T00:26:05.458-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/ohgre"
+        cq:lastModified="{Date}2018-02-02T14:12:32.897-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-03T13:03:44.803-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/promolandingwithnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Switch Back"
+        jcr:uuid="488588d3-6b83-4566-b93e-784d8ea683b5"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithnavpage"
+        hideInNav="true">
+        <image
+            jcr:lastModified="{Date}2017-08-16T10:47:14.755-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-08-15T09:31:31.080+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-15T09:36:52.666+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Switch Back And Enjoy Our Lowest Fixed Price Offers!"/>
+            <switchpromotionconte
+                jcr:created="{Date}2017-08-15T09:49:04.299+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-02T14:12:32.893-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/switchpromotioncontent"
+                description="&lt;p>To take advantage of one of these great offers, select your utility.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                fineprinttext="&lt;p>*GRE service is available for eligible residential customers participating in the gas Customer Choice program through DTE Gas Company and Consumers Energy. GRE prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.841.1541, write to Grand Rapids Energy, 120 N. Washington Square, Ste. 805, Lansing, MI 48933 or visit grandrapidsenergy.com. Early termination charges apply for residential fixed price plans (12-Month plan: $50/$25, 6-Month plan: $25).&lt;/p>&#xd;&#xa;"
+                heading="Choose from two great fixed rate plans!"
+                imagepath="/content/dam/ohgre/raf/GetStarted.png"
+                text="&lt;h5>Come back to Grand Rapids Energy for a low 6- or 12-month fixed rate that won’t change for the duration of your contract - guaranteed!&lt;/h5>&#xd;&#xa;&lt;p>&lt;b>Hurry - offer ends {{expirationdate}}!&lt;/b>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>We know you have a choice when it comes to your natural gas supplier, but when was the last time you shopped around for a better rate? Now is a great time to see what Grand Rapids Energy has to offer because we’d love to have you back as a customer. To prove it, we’ve got two great offers just for you.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>How much are you paying for natural gas?&lt;/b>&lt;/p>&#xd;&#xa;&lt;h5>Easy Sign Up.&lt;/h5>&#xd;&#xa;&lt;p>- There will be no service interruption. Our experts ensure a seamless transition.&lt;/p>&#xd;&#xa;&lt;p>- Your utility will continue to deliver your gas, send you one monthly bill and respond to service calls.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

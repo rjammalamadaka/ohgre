@@ -5067,7 +5067,6 @@ button.list-group-item-danger.active:focus {
     display: none !important;
   }
 }
-/* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -5183,23 +5182,6 @@ button.list-group-item-danger.active:focus {
 html {
   font-size: 62.5%;
 }
-html.fixed-body {
-  height: 100%;
-  overflow: hidden;
-}
-html.fixed-body body {
-  height: 100%;
-  overflow: hidden;
-}
-html.fixed-body .popup-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
 body {
   background-color: #fff;
   font-family: 'Roboto Slab', serif;
@@ -5215,6 +5197,9 @@ body {
     overflow: visible;
     background-position: -8vw 6vw;
   }
+}
+body.fixed-body {
+  overflow: hidden;
 }
 img {
   max-width: 100%;
@@ -5698,7 +5683,7 @@ input[type="text"] {
 }
 .checkbox input[type=checkbox]:before {
   position: absolute;
-  top: 0rem;
+  top: .1rem;
   left: 0;
   height: 100%;
   width: 100%;
@@ -5828,7 +5813,6 @@ input[type="text"] {
   padding: .3rem 3rem;
   line-height: 3rem;
   color: #757575;
-  text-decoration: none;
 }
 .dropdown-container .dropdown-menu > li:last-child {
   border-bottom: none;
@@ -7291,6 +7275,7 @@ div[class^="cq-colctrl-lt1-"] .card p {
     display: block;
     position: relative;
     z-index: 2;
+    max-height: 123px;
   }
   .card .card-hero img {
     height: auto;
@@ -9710,6 +9695,9 @@ div.alt-col2,
 .box-with-border ol li {
   margin-bottom: .5rem;
 }
+.promo-wrapper img[src=""] {
+  display: none;
+}
 .promo-wrapper > div {
   padding: 0;
 }
@@ -11033,11 +11021,38 @@ input {
     padding: 0;
   }
 }
+.popup-wrapper#popupconfirm .button-container .plain {
+  background-color: #fff;
+  border: 1px solid #ff6008;
+  color: #ff6008;
+  min-width: 15rem;
+  margin-right: 1rem;
+  padding: 0;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupconfirm .button-container .plain {
+    padding: 0;
+  }
+}
 .popup-wrapper#popupwithrenewal .button-container {
   padding: 1rem 0;
 }
 .popup-wrapper#popupwithrenewal .button-container .cancel-button {
   margin: 0;
+}
+.popup-wrapper#popupwithrenewal .plan-info-wrapper .plan-button .primary-button {
+  font-size: 1.4rem;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+@media (min-width: 992px) {
+  .popup-wrapper#popupwithrenewal .plan-button {
+    width: 40%;
+  }
+  .popup-wrapper#popupwithrenewal .button-container .primary-button {
+    width: 30%;
+  }
 }
 #popup-spinner-wrap {
   z-index: 100000;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="fa8f0b59-8ac6-4a54-b529-75e9cac64aa5">
+    <jcr:content
+        cq:lastReplicated="{Date}2018-02-16T15:16:25.703-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:name="gre_social_image.png"
+        cq:parentPath="/content/dam/ohgre/raf"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/raf/gre_social_image.png"
+        jcr:lastModified="{Date}2018-04-04T13:16:19.911-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:Comments="XML:com.adobe.xmp: &lt;?xpacket begin=&quot;﻿&quot; id=&quot;W5M0MpCehiHzreSzNTczkc9d&quot;?> &lt;x:xmpmeta xmlns:x=&quot;adobe:ns:meta/&quot; x:xmptk=&quot;Adobe XMP Core 5.6-c137 1.000000, 0000/00/00-00:00:00        &quot;>  &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;>   &lt;rdf:Description rdf:about=&quot;&quot;     xmlns:ns1=&quot;http://www.day.com/dam/1.0&quot;     xmlns:tiff=&quot;http://ns.adobe.com/tiff/1.0/&quot;     xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;    ns1:Physicalheightininches=&quot;-1.0&quot;    ns1:Physicalwidthininches=&quot;-1.0&quot;    ns1:Fileformat=&quot;PNG&quot;    ns1:Progressive=&quot;no&quot;    ns1:extracted=&quot;2018-01-07T21:28:01.731-06:00&quot;    ns1:Bitsperpixel=&quot;32&quot;    ns1:MIMEtype=&quot;image/png&quot;    ns1:Comments=&quot;XML:com.adobe.xmp: &amp;lt;?xpacket begin=&amp;quot;﻿&amp;quot; id=&amp;quot;W5M0MpCehiHzreSzNTczkc9d&amp;quot;?&amp;gt;&amp;#xA;&amp;lt;x:xmpmeta xmlns:x=&amp;quot;adobe:ns:meta/&amp;quot; x:xmptk=&amp;quot;Adobe XMP Core 5.6-c137 1.000000, 0000/00/00-00:00:00        &amp;quot;&amp;gt;&amp;#xA; &amp;lt;rdf:RDF xmlns:rdf=&amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;quot;&amp;gt;&amp;#xA;  &amp;lt;rdf:Description rdf:about=&amp;quot;&amp;quot;&amp;#xA;    xmlns:ns1=&amp;quot;http://www.day.com/dam/1.0&amp;quot;&amp;#xA;    xmlns:tiff=&amp;quot;http://ns.adobe.com/tiff/1.0/&amp;quot;&amp;#xA;    xmlns:dc=&amp;quot;http://purl.org/dc/elements/1.1/&amp;quot;&amp;#xA;   ns1:Physicalheightininches=&amp;quot;-1.0&amp;quot;&amp;#xA;   ns1:Physicalwidthininches=&amp;quot;-1.0&amp;quot;&amp;#xA;   ns1:Fileformat=&amp;quot;PNG&amp;quot;&amp;#xA;   ns1:Progressive=&amp;quot;no&amp;quot;&amp;#xA;   ns1:extracted=&amp;quot;2017-12-12T15:36:12.261-06:00&amp;quot;&amp;#xA;   ns1:Bitsperpixel=&amp;quot;32&amp;quot;&amp;#xA;   ns1:MIMEtype=&amp;quot;image/png&amp;quot;&amp;#xA;   ns1:Comments=&amp;quot;XML:com.adobe.xmp: &amp;amp;lt;x:xmpmeta xmlns:x=&amp;amp;quot;adobe:ns:meta/&amp;amp;quot; x:xmptk=&amp;amp;quot;XMP Core 5.4.0&amp;amp;quot;&amp;amp;gt;&amp;amp;#xA;   &amp;amp;lt;rdf:RDF xmlns:rdf=&amp;amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;amp;quot;&amp;amp;gt;&amp;amp;#xA;      &amp;amp;lt;rdf:Description rdf:about=&amp;amp;quot;&amp;amp;quot;&amp;amp;#xA;            xmlns:tiff=&amp;amp;quot;http://ns.adobe.com/tiff/1.0/&amp;amp;quot;&amp;amp;gt;&amp;amp;#xA;         &amp;amp;lt;tiff:Orientation&amp;amp;gt;1&amp;amp;lt;/tiff:Orientation&amp;amp;gt;&amp;amp;#xA;      &amp;amp;lt;/rdf:Description&amp;amp;gt;&amp;amp;#xA;   &amp;amp;lt;/rdf:RDF&amp;amp;gt;&amp;amp;#xA;&amp;amp;lt;/x:xmpmeta&amp;amp;gt;&amp;amp;#xA;&amp;amp;#xA;&amp;quot;&amp;#xA;   ns1:Physicalwidthindpi=&amp;quot;-1&amp;quot;&amp;#xA;   ns1:Physicalheightindpi=&amp;quot;-1&amp;quot;&amp;#xA;   ns1:Numberofimages=&amp;quot;1&amp;quot;&amp;#xA;   ns1:Numberoftextualcomments=&amp;quot;1&amp;quot;&amp;#xA;   ns1:sha1=&amp;quot;8abafa09e3d0ed55bd56379c4ca0131459a8018a&amp;quot;&amp;#xA;   ns1:size=&amp;quot;264202&amp;quot;&amp;#xA;   tiff:ImageLength=&amp;quot;393&amp;quot;&amp;#xA;   tiff:Orientation=&amp;quot;1&amp;quot;&amp;#xA;   tiff:ImageWidth=&amp;quot;700&amp;quot;&amp;#xA;   dc:format=&amp;quot;image/png&amp;quot;&amp;#xA;   dc:modified=&amp;quot;2018-01-05T23:54:45.804-05:00&amp;quot;/&amp;gt;&amp;#xA; &amp;lt;/rdf:RDF&amp;gt;&amp;#xA;&amp;lt;/x:xmpmeta&amp;gt;&amp;#xA;&amp;lt;?xpacket end=&amp;quot;r&amp;quot;?&amp;gt;&amp;#xA;&quot;    ns1:Physicalwidthindpi=&quot;-1&quot;    ns1:Physicalheightindpi=&quot;-1&quot;    ns1:Numberofimages=&quot;1&quot;    ns1:Numberoftextualcomments=&quot;1&quot;    ns1:sha1=&quot;c065e67b85eb5f08343512d6d5cc08a635dd47b6&quot;    ns1:size=&quot;265391&quot;    tiff:ImageLength=&quot;393&quot;    tiff:Orientation=&quot;1&quot;    tiff:ImageWidth=&quot;700&quot;    dc:format=&quot;image/png&quot;    dc:modified=&quot;2018-01-05T23:54:45.804-05:00&quot;/>  &lt;/rdf:RDF> &lt;/x:xmpmeta> &lt;?xpacket end=&quot;r&quot;?> "
+            dam:extracted="{Date}2018-04-04T13:16:18.851-04:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="972267d0764568a5308c79240eb76bf68e952d48"
+            dam:size="{Long}269081"
+            dc:format="image/png"
+            dc:modified="{Date}2018-01-05T23:54:45.804-05:00"
+            jcr:lastModified="{Date}2018-04-04T13:16:16.290-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}393"
+            tiff:ImageWidth="{Long}700"
+            tiff:Orientation="{Long}1"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

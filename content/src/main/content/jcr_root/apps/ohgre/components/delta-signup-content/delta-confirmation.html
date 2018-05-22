@@ -11,7 +11,7 @@
                 <div class="form-element no-border no-padding">
                   <div class="moving-customer-container">
                     <div class="form-area">
-                      <h4>Ohio Natural Gas Account Information</h4>
+                        <h4>${properties.infoheader}</h4>
                       <div class="form-area">
                         <div class="input-group-wrapper">
                           <label>Name</label>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="input-group-wrapper">
                           <label>Phone Number</label>
-                          <strong>{{dsmPhone}}</strong>
+                          <strong>{{phoneNumber}}</strong>
                         </div>
                         <p class="footnote">Email and Phone Number only to be used to contact you if we encounter an issue with the information you have provided.</p>
                       </div>
@@ -46,13 +46,13 @@
                 </div>
               </div>
               <div class="box-with-border information-block">
-                <h4>Delta Skymiles Member Information</h4>
+                <h4>Delta SkyMiles Member Information</h4>
                 <div class="input-group-wrapper">
                   <label>Name</label>
                   <strong>{{dsmFirsName}} {{dsmLastName}}</strong>
                 </div>
                 <div class="input-group-wrapper">
-                  <label>Skymiles Number</label>
+                  <label>SkyMiles Number</label>
                   <strong>{{dsmAccountNumber}}</strong>
                 </div>
               </div>
@@ -66,5 +66,8 @@
 
             <a href="#" class="primary-button" ng-click="backtohome()">Back to Home Page</a>
           </div>
+        </div>
+        <div class="promo-fine-print">
+                    <p>${properties.fineprinttext @ context='html'}</p>
         </div>
       </div>

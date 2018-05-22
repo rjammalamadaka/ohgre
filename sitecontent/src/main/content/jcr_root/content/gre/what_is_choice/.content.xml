@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-03-05T16:48:01.733-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-03-05T16:48:04.570-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="WHAT IS CHOICE?"
+        jcr:uuid="57ad259e-9da1-4247-b15b-8158a0899ce9"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        navTitle="WHAT IS CHOICE?"
+        portalname="gre">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                jcr:created="{Date}2017-08-03T15:30:38.679-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-22T11:15:54.165-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="It means you have the power to choose your natural gas provider under the state's customer choice program."
+                imagepath="/content/dam/ohgre/home/hero-image.jpg"
+                title="What is Choice?"/>
+            <wiccontent
+                jcr:created="{Date}2017-08-03T16:40:22.135-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-03-05T16:48:01.728-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/wiccontent"
+                description="&lt;p>So why choose a higher rate for natural gas when you could get the same natural gas at a&amp;nbsp;&lt;b style=&quot;font-size: 0.8125rem;&quot;>lower rate?&lt;/b>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>Luckily for you, this is possible because in Ohio you can choose your natural gas supplier!&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Huh? What does that mean exactly?&lt;/b>&lt;br>&#xd;&#xa;It means you can purchase natural gas from a company (hint hint, Ohio Natural Gas) who may be offering a lower price than your current utility. Compare rates with Ohio Natural Gas and go with the lowest to save big on your natural gas bill!&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Why is ONG so great?&lt;/b>&lt;br>&#xd;&#xa;We offer flexible plan options, exceptional customer service and outstanding perks.&lt;/p>&#xd;&#xa;&lt;p>Plus, when you lock in your natural gas price for the next 6 or 12 months with ONG you can avoid price spikes and fluctuations. You don’t have this option with your regulated utility company, but you do with us! And there are no sign-up fees.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Is switching to ONG difficult?&lt;/b>&lt;br>&#xd;&#xa;Not a bit. We handle all the details with NO interruption to your service. Switch in just 3 easy steps.&lt;/p>&#xd;&#xa;"
+                heading="Would you choose a $10 car wash when you couls get the EXACT same car wash for $5?"
+                leftboxdescription="&lt;p>&lt;b>What does Choice mean?&lt;/b>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>In Michigan, natural gas customers may choose an alternative gas suppli&lt;span>er under the state's gas customer choice program. That means you can purchase natural gas from a company like Grand Rapids Energy that may be offering a lower natural gas rate than your current rate. Compare rates with Grand Rapids Energy and you'll see why we're the natural choice.&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Why is GRE so great?&lt;/b>&lt;br />&#xd;&#xa;We offer &lt;a href=&quot;/content/gre/plans-detail.html&quot; target=&quot;_blank&quot;>flexible plan options&lt;/a>, exceptional customer service and outstanding perks.&lt;/p>&#xd;&#xa;&lt;p>Plus, when you lock in your natural gas price for the next 6 or 12 months with GRE you can avoid the potential for price spikes and fluctuations. &lt;b>You don’t currently have this option with your regulated utility company, but you do with us!&lt;/b> And there are no sign-up fees.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Is switching to GRE difficult?&lt;/b>&lt;br />&#xd;&#xa;Not a bit. We handle all the details with NO interruption to your service. See the box to the right to see how you can switch in 3 easy steps.&lt;/p>&#xd;&#xa;&lt;p>For information about natural gas competition in Michigan, visit the &lt;a href=&quot;http://www.michigan.gov/mpsc&quot; target=&quot;_blank&quot;>Michigan Public Services Commission&lt;/a>.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                note="Note: Your gas utility will continue to distribute gas to your location, send you your bill, check for gas leaks and respond to emergencies."
+                rightbottomboxtext="&lt;p>&lt;b>Have Questions?&lt;/b>&lt;br />&#xd;&#xa;Check out our &lt;a title=&quot;none&quot; href=&quot;/content/gre/faq.html&quot; target=&quot;_blank&quot;>FAQs&lt;/a> or call &lt;b>1.800.841.1541&lt;/b> to speak with one of our customer service representatives. &lt;a href=&quot;/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf&quot; target=&quot;_blank&quot;>Click here&lt;/a> to view our terms and conditions.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                rightsidepoint1="Select Your current gas utility – we serve customers enrolled in DTE Gas Company and Consumers Energy choice programs."
+                rightsidepoint2="Let us know if the property is Commercial or Residential"
+                rightsidepoint3="&lt;p>Choose one of our plans and complete the sign-up process. Get started by &lt;a href=&quot;/content/gre/plans-detail.html&quot; target=&quot;_blank&quot;>clicking here&lt;/a> or calling toll-free 1.800.841.1541, from 8 a.m. to 5 p.m. ET Monday through Friday.&lt;/p>&#xd;&#xa;"
+                righttopheading="Switch to GRE in 3 Easy Steps"
+                textIsRich="[true,true,true,true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

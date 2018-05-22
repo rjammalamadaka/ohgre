@@ -1,10 +1,16 @@
 <div class="form-wrapper">
   <div class="terms-wrapper">
-    <div class="scroll-container">
-      <p>Having trouble viewing? <a href="${properties.pdffilepath}" target="_blank">Click here</a>
+    <div class="scroll-container" ng-init="iframeurl='${properties.iframepdffilepath}'">
+<!--
+<p>Having trouble viewing? <a href="${properties.pdffilepath}" target="_blank">Click here</a>
       </p>
-      <iframe id="terms-embed" width="100%" height="100%" style="min-height: 400px;" src="https://docs.google.com/gview?url=http://stage-ohio.macquarium.com:4505/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&embedded=true"></iframe>
-    </div>
+
+      <iframe id="terms-embed" width="100%" height="100%" style="min-height: 400px;" src="${properties.iframepdffilepath}"></iframe>
+-->
+
+
+    ${properties.acceptterms @ context = 'html'}
+</div>
   </div>
   <div class="desktop-flex-container after-scrollbox">
     <div class="input-group-wrapper full-width">
@@ -12,15 +18,17 @@
         <label class="checkbox">
             <input type="checkbox" name="agreeterms" id="agreeterms" ng-model="agreeterms" ng-required="true" ng-focus ng-visited>
         </label>
-        <span class="after-checkbox"><label for="agreeterms">I hereby agree to these <a href="#" class="color-primary display-inline" ng-click="acceptterms('${properties.pdffilepath}')">terms and conditions</a>.</label></span><br>
-        <span class="input-error-message" ng-show="(formthree.agreeterms.$visited && !formthree.agreeterms.$focused) || formthree.submited">
+        <!--<span class="after-checkbox"><label for="agreeterms">I hereby agree to these <a href="#" class="color-primary display-inline" ng-click="acceptterms('${properties.pdffilepath}')">terms and conditions</a>.</label></span><br>-->
+<span class="after-checkbox"><label for="agreeterms">${properties.checkboxmsg @ context = 'html'}</label></span><br>
+
+		<span class="input-error-message" ng-show="(formthree.agreeterms.$visited && !formthree.agreeterms.$focused) || formthree.submited">
             <span class="input-error-message" ng-show="formthree.agreeterms.$error.required">You must agree to terms and conditions to process your enrollment</span>
         </span>
       </form>
     </div>
     <div class="print-wrapper">
       <a href="#" ng-click="acceptterms('${properties.pdffilepath}')">Print</a>
-      <a href="${properties.pdffilepath}" download>Download</a>
+      <a href="${properties.pdffilepath}" target="_blank" download>Save</a>
     </div>
   </div>
   <div class="button-container">

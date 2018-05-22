@@ -1,0 +1,177 @@
+	<div class="popup-wrapper" id="popupetc"> <!-- Early Termination charge-->
+		<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+          <h6>Your contract is not close to ending. If you would like to start your selected new plan today, you will need to pay a <span class="error-text fs-15">{{customerInfo.earlyTermChargeAmt | currency : '$': 0}} early termination charge.</span></h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				            <td>{{getFormatedAccountnumber(customerInfo.account)}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray" ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
+                                {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+							</div>
+                            <div class="plan-price gray" ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+                                {{customerInfo.contractPrice | currency:"$":2}}<span>per Month</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Current Contract</h4>
+										<span class="plan-selected">{{customerInfo.productDescFriendly}}</span>
+                                        <small>{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex-container">
+							<div class="plan-price">
+								{{selectedProduct.FixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(selectedProduct.QuoteDescription)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+                                        <h4>Selected New Contract</h4> 
+										<span class="plan-selected">{{selectedProduct.ProductDescFriendly}}</span>
+										<small>{{customerInfo.ldcdesc}}</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
+									</div>
+									<div class="plan-button">
+										<a href="#" class="primary-button" ng-click="continueenroll()">YES, PAY TERMINATION CHARGE</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+					</ul>
+					&nbsp;
+					<p><strong>${properties.planseffectivedate}</strong></p>
+
+                    <div class="button-container">
+                        <a href="#" class="primary-button" ng-click="redirecttodashboard()">Cancel</a>
+                        </div>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
+
+
+
+	<div class="popup-wrapper" id="popupwithrenewal">
+		<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+			<h6>Your current contract is about to expire. The plan you selected can begin after your current contract ends. If you want to start your selected plan earlier, please call ${inheritedPageProperties.mobilenumber} to discuss your options.</h6>
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr>
+				            <td>Gas Utility Account Number:</td>
+				             <td>{{getFormatedAccountnumber(customerInfo.account)}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray" ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
+                                <div class="price" ng-show="customerInfo.renewalContractExistsInd=='N'">
+                                {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+                             <div class="price" ng-show="customerInfo.renewalContractExistsInd=='Y'">
+                                {{customerInfo.renewalPricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+							</div>
+                            <div class="plan-price gray" ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+                                {{customerInfo.contractPrice | currency:"$":2}}<span>per Month</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>Renewal Contract</h4>
+										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDescFriendly}}</span>
+                                        <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDescFriendly}}</span>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex-container">
+							<div class="plan-price">
+								{{selectedProduct.FixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(selectedProduct.QuoteDescription)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+                                        <h4>Selected New Contract</h4>
+										<span class="plan-selected">{{selectedProduct.ProductDescFriendly}}</span>
+										<small>{{customerInfo.ldcDesc}}</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Early Termination Charges Apply.</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">Please see T&Cs for applicable charges.</small>
+									</div>
+									<div class="plan-button">
+										<a href="#" class="primary-button" ng-click="continueenroll()">select &amp; continue</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+                &nbsp;
+                <p><strong>${properties.planseffectivedate}</strong></p>
+				<div class="button-container">
+					<a href="#" class="primary-button" ng-click="redirecttodashboard()">Cancel</a>
+				</div>
+				<!-- end inner content -->
+			</div>
+	   </div>
+	</div>
+
+
+       <div class="popup-wrapper" id="logout-popup">
+    <div class="window-wrapper">
+      <a href="#" class="close-window" ng-click="cancellogout()">X</a>
+      <span class="window-title">Are you sure you want to log out?</span>
+      <div class="button-container">
+        <a href="#" class="primary-button inactive close-window-button" ng-click="cancellogout()">Cancel</a>
+        <a href="#" class="primary-button" ng-click="confirmlogout()">Logout</a>
+      </div>
+    </div>
+  </div>

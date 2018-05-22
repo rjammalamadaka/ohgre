@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-02-16T15:16:14.504-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-02-16T15:16:39.218-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Refer A Friend Promotion"
+        jcr:uuid="4b37c2ed-0952-482d-9bed-120e27e4c257"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        sling:vanityPath="raf25"
+        appid="388067291608115"
+        hideInNav="true"
+        ogdescription="Enroll with Grand Rapids Energy and we could each earn a $25 Visa Reward Card. It’s that easy! Program terms and conditions apply. #ad "
+        ogimage="/content/dam/ohgre/raf/gre_social_image.png"
+        ogsitename="GRE Refer-A-Friend"
+        ogtitle="$25 for you and $25 for me!"
+        ogtype="website"
+        ogurl="/content/gre/promo-raf.html">
+        <image
+            jcr:lastModified="{Date}2017-12-27T21:41:52.258-06:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-08-03T20:56:38.175-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-16T12:03:38.502-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
+                imagepath="/content/dam/ohgre/raf/hero.jpg"
+                textIsRich="true"
+                title="&lt;p>Sign up with Grand Rapids Energy&lt;sup>® &lt;/sup>and we could both receive a {{GIFTCARDVALUE | currency:&amp;quot;$&amp;quot;:0}} Visa&lt;sup>®&lt;/sup> Reward Card.*&lt;/p>&#xa;"/>
+            <offerpromotionconten
+                jcr:created="{Date}2017-08-03T20:59:52.234-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-02-16T15:16:14.500-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/offerpromotioncontent"
+                fineprinttext="&lt;p>* Subject to the Refer-a-Friend Program (&amp;quot;RAF Program&amp;quot;) rules and terms and conditions available&amp;nbsp;&lt;a href=&quot;https://test-www.grandrapidsenergy.com/termsandconditions.html&quot;>here.&lt;/a>&amp;nbsp; Qualified new residential/commercial customers who use a promotion code through this RAF Program to enroll in an eligible GRE price plan (each a “Referee”) may earn a $25 Visa Reward Card by: (i) enrolling in an eligible GRE price plan, (ii) providing the RAF Program promotion code at enrollment (and may enter their referrer’s unique Referral Code at that time), and (iii) reaching 60 days of continuous active service with GRE on such eligible price plan. Allow 4-6 weeks for delivery. Maximum award: $500 in Visa Reward Cards per person / calendar year for all GRE Visa Reward Card promotional offers. Offer valid for qualifying enrollments processed by GRE between 12/1/2017 and 6/30/2018. RAF Referees cannot combine this offer with any other offer but may provide the Referrer’s unique Referral Code when enrolling using another GRE promotional offer. If Referee provides their referrer’s unique referral code at the time of enrollment, their referrer may be eligible to receive the applicable then-current RAF Program award for referrers. The Visa Reward Card is issued by and is the property of CenterState Bank of Florida, NA pursuant to a license from Visa U.S.A. Inc. and is subject to the issuer’s terms and conditions. Reward Cards will not have cash access and can be used everywhere Visa debit cards are accepted. All trademarks noted herein are held by their respective owners.&lt;/p>&#xd;&#xa;"
+                heading="Your friend is a Grand Rapids Energy® customer and thinks you should be too!"
+                imagepath="/content/dam/ohgre/raf/GetStarted.png"
+                text="&lt;h4>Why GRE? GRE offers flexible plan options, exceptional customer service and outstanding perks. And when you enroll with GRE with your promotion code and your friend's Referral Code, you both could receive a &lt;b>{{giftCardValue | currency:&amp;quot;$&amp;quot;:0}} Visa&lt;sup>®&lt;/sup> Reward Card!*&lt;/b>&lt;/h4>&#xd;&#xa;&lt;h4>Switching to Grand Rapids Energy&lt;sup>®&lt;/sup> is easy! One call to us and we'll handle all of the details.&lt;/h4>&#xd;&#xa;&lt;p>&lt;a href=&quot;/content/gre/raf-faqs.html&quot; target=&quot;_blank&quot;>Frequently Asked Questions&amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;http://dev-ohio.macquarium.com:4502/content/gre/termsandconditions.html&quot; target=&quot;_blank&quot;>RAF Program Terms And Conditions&amp;gt;&lt;/a>&lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;"
+                textIsRich="[true,true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

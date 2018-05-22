@@ -1,11 +1,15 @@
-<style>
+ <style>
 
     #primary-header{
 		z-index: 1 !important;
 }
     </style>
 <section ng-controller="EnrollCustomerController">
-	<div class="container">
+	<div class="container" id="enroll-customer-container">
+	<div id="confirmation-print-logos">
+      <a href="/content/onlyong.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img src="/content/dam/ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png" alt="Ohio Natural Gas Logo"></a>
+      <a href="/content/gre.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png" alt="Grand Rapids Energy Logo"></a>
+		</div>
 		<div class="box-with-border customer-lookup" ng-hide="!product">
 
 		    <sly data-sly-include="selectedplan.html"></sly>

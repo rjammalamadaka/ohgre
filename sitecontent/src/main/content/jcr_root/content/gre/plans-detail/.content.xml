@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-02-16T12:41:54.688-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-02-16T12:41:59.496-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="View Rate Plans"
+        jcr:uuid="b417e320-7354-4b44-8bec-68722620ed82"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        navTitle="View Rate Plans"
+        portalname="gre">
+        <image
+            jcr:lastModified="{Date}2017-08-19T09:08:49.647+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <herobaner
+                jcr:created="{Date}2017-07-21T07:19:44.863+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-22T11:31:27.029-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/herobaner"
+                description="Our natural gas prices are designed to serve your needs."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="View All Michigan Natural Gas Rates and Plans"/>
+            <select_gas_utility
+                jcr:created="{Date}2017-07-21T07:52:48.758+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-12T11:25:32.152-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/select-gas-utility"
+                description="&lt;p>Then, you'll be able to view our natural gas rates and plans.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                heading="First Things First. Find Your Gas Utility."
+                textIsRich="true"/>
+            <promocode
+                jcr:created="{Date}2017-07-21T07:45:29.013+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-22T11:07:11.781-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promocode"
+                backGroundColor="rgba(0,85,142,1.00)"
+                description="&lt;p>Your special offer awaits!&lt;/p>&#xd;&#xa;"
+                heading="Have a Promo Code?"
+                textIsRich="true"/>
+            <colctrl
+                jcr:created="{Date}2017-07-21T07:46:06.392+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-21T07:46:12.435+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                layout="2;cq-colctrl-lt0"/>
+            <cardpromo
+                jcr:created="{Date}2017-07-21T07:46:20.203+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-12T12:54:32.222-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/cardpromo"
+                buttonpath="/content/gre/refer"
+                buttontitle="Start Referring"
+                description="Learn how you can invite friends to sign up with Grand Rapids Energy® and each receive a Visa® Reward Card. Terms and conditions apply.*"
+                displayLink="true"
+                heading="Refer-a-Friend"
+                imagepath="/content/dam/ohgre/home/card_raf.jpg"
+                mobileimagepath="/content/dam/ohgre/home/card_raf_mobile.jpg"/>
+            <col_break15006033724370
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="break"/>
+            <myaccount
+                jcr:created="{Date}2018-01-24T10:41:18.850-06:00"
+                jcr:createdBy="penny"
+                jcr:lastModified="{Date}2018-02-16T12:41:54.681-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/myaccount"
+                buttontitle="VIEW MY ACCOUNT"
+                description="If you are currently a customer with Grand Rapids Energy, you can manage your account online. Log in to your account to view your current contract and make changes."
+                displayLink="true"
+                heading="Currently a GRE customer? Manage your account here."
+                imagepath="/content/dam/ohgre/home/Login_account_lookup_desktop.png"
+                mobileimagepath="/content/dam/ohgre/home/Login_to_the_account_mobile_image.png"/>
+            <col_end15006033663930
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/colctrl"
+                controlType="end"/>
+            <signup
+                jcr:created="{Date}2017-07-21T07:47:04.834+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-08-30T12:58:00.981-05:00"
+                jcr:lastModifiedBy="rebecka.wilson"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/signup"
+                description="Be the among the first to hear about our promos and special offers."/>
+        </content>
+    </jcr:content>
+</jcr:root>

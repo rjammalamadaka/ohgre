@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="c28ad041-9934-4ab3-abb8-56c2ef5459af">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="ohgre/global/radio-button-on.svg"
+        jcr:lastModified="{Date}2018-04-04T13:16:22.957-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:extracted="{Date}2018-04-04T13:16:15.278-04:00"
+            dam:sha1="badc95e0cf0d402f9f4701475ebec4013fc06565"
+            dam:size="{Long}309"
+            dc:format="image/svg+xml"
+            dc:modified="{Date}2017-07-28T12:19:17.165-04:00"
+            jcr:lastModified="{Date}2018-04-04T13:16:22.957-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

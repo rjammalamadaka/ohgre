@@ -1,0 +1,179 @@
+<div class="popup-wrapper" id="login-popup-wrapper">
+  <div class="window-wrapper" id="login-popup">
+    <a href="#" class="close-window" ng-click="closeLoginPopup()">X</a>
+    <span class="window-title">Enter Your Information Below to Renew or Change Your Plan</span>
+
+    <span class="error-message" id="lastnamezipcodeerror">
+      {{errorMessage}}
+      </span>
+
+
+    <div class="form-section radio-wrapper">
+
+      <div class="radio-container">
+        <input type="radio" name="location_type" value="residential" id="location-residential" checked>
+      </div>
+      <label for="location-residential">Residential</label>
+
+      <div class="radio-container">
+        <input type="radio" name="location_type" value="commercial" id="location-commercial">
+      </div>
+      <label for="location-commercial">Commercial</label>
+    </div>
+    <div class="dropdown-container">
+      <button class="dropdown-trigger"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+      <div class="expanded-dropdown">
+        <ul class="dropdown-menu" role="menu">
+
+          <li role="menuitem" ng-repeat="x in ldcinfo">
+            <a href="#" class="select-option">
+          <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
+          </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <form id="loginform" class="form" ng-show="ldc" name="loginform" novalidate>
+      <div class="desktop-flex-container" id="login-account-info">
+        <div class="form-area-wrapper" ng-class="ldc =='MIC' ? 'mic-account-container' : ''">
+          <label for="lastname" ng-if="ldc !='MIC'">Gas Utility Account Number</label>
+          <label for="lastname" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
+          <span id="tooltip-account">
+            <span class="tooltip-trigger">?</span>
+            <span class="tooltip-text oh-tooltip" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+              <a href="#" class="close-tooltip">X</a>
+            <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we’re asking you to provide, please call 
+              <a href="tel:1-888-466-4427">1-888-466-4427</a> so we may help.</p>
+            </span>
+            <span class="tooltip-text" ng-class="ldc =='MCG' ? 'dte-tooltip' : 'gre-tooltip'" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+	             <a href="#" class="close-tooltip">X</a>
+                 <img class="dte-tooltip-image" src="/content/dam/ohgre/global/dte-bitmap@2x.jpg"/>
+                 <img class="gre-tooltip-image" src="/content/dam/ohgre/global/popover-2@2x.jpg"/>
+                 <p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn't match what we're asking you to provide, please call 
+              <a href="tel:1-800-841-1541">1.800.841.1541</a> so we may help.</p>
+             </span>
+
+          </span>
+
+          <div class="form-area multiple-input">
+            <div class="input-container" data-size={{an1minl}} ng-show="ldc !='MIC'">
+              <input type="text" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only>
+            </div>
+            <div class="input-container" data-size={{an2minl}} ng-show="ldc !='MIC'">
+              <input type="text" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required numbers-only>
+            </div>
+            <div class="input-container" data-size={{an3minl}} ng-show="ldc !='MIC'">
+              <input type="text" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" required numbers-only>
+            </div>
+            <div class="input-container" data-size={{an4minl}}>
+              <input type="text" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required numbers-only>
+            </div>
+
+          </div>
+			<div>
+ 			<span class="error-message" ng-show="(loginform.an1.$dirty && ldc !='MIC' && (loginform.an1.$invalid || loginform.an2.$invalid || loginform.an3.$invalid || loginform.an4.$invalid)) || (loginform.submited)">
+            <span ng-show="ldc !='MIC' && (loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required)">Account Number is required.</span>
+            <span ng-show="(!(loginform.an1.$error.required || loginform.an2.$error.required || loginform.an3.$error.required || loginform.an4.$error.required) && (loginform.an1.$error.maxlength || loginform.an1.$error.minlength || loginform.an2.$error.maxlength || loginform.an2.$error.minlength || loginform.an3.$error.maxlength || loginform.an3.$error.minlength || loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
+            </span>
+            <span class="error-message" ng-show="(loginform.an1.$dirty && ldc =='MIC' && loginform.an4.$invalid)">
+            <span ng-show="ldc =='MIC' && ( loginform.an4.$error.required)">Account Number is required.</span>
+            <span ng-show="(!(loginform.an4.$error.required) && (loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid.</span>
+            </span>
+
+          <span class="error-message" ng-show="(loginform.an4.$dirty && ldc=='MIC' && loginform.an4.$invalid && loginform.submited)">
+
+            <span ng-show="(!(loginform.an4.$error.required) && (loginform.an4.$error.maxlength || loginform.an4.$error.minlength))">Account Number should be valid .</span>
+          </span>
+          </div>
+        </div>
+
+        <div class="lastname-container form-area-wrapper">
+          <div class="form-area">
+            <label for="lastname" ng-if="ldc !='MIC'">{{lctype =='residential' ? "Last Name" : "Business Name"}} on Gas Utility Account</label>
+            <label for="lastname" ng-if="ldc =='MIC'">{{lctype =='residential' ? "Last Name" : "Business Name"}} on Gas Utility Account</label>
+            <input type="text" name="lastName" ng-model="lastName" ng-required=true>
+
+            <span class="error-message" ng-show="(loginform.lastName.$dirty && (loginform.lastName.$invalid)) || (loginform.submited)">
+             <span ng-show="loginform.lastName.$error.required">Last Name is required.</span>
+            </span>
+
+          </div>
+        </div>
+        <div class="zipcode-container form-area-wrapper">
+          <div class="form-area">
+            <label for="zipcode">Your Zip Code</label>
+            <input type="text" name="zipcode" ng-model="zipcode" ng-minlength="5" ng-maxlength="5" maxlength="5" ng-required=true numbers-only>
+            <span class="error-message" ng-show="(loginform.zipcode.$dirty && (loginform.zipcode.$invalid)) || (loginform.submited)">
+              <span ng-show="loginform.zipcode.$error.required">Zip Code is required.</span>
+              <span ng-show="loginform.zipcode.$error.pattern">Please enter valid Zip code.</span>
+              <span ng-show="loginform.zipcode.$invalid && !loginform.zipcode.$error.pattern && !loginform.zipcode.$error.required">Zip code is not valid.</span>
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="button-container">
+      <a href="#" class="primary-button inactive" ng-click="closeLoginPopup()">Cancel</a>
+      <a href="#" class="primary-button" ng-click="loginSubmit()">Submit</a>
+    </div>
+  </div>
+</div>
+
+<div class="popup-wrapper" id="popupconfirm">
+  <div class="window-wrapper">
+    <a href="#" class="close-window">X</a>
+    <span class="window-title">Please Confirm Your Account</span>
+    <table class="table-wrapper">
+      <tr>
+        <td>Name on Gas Utility Account:</td>
+        <td>{{customerInfo.customerName}}</td>
+      </tr>
+      <tr>
+        <td>Gas Utility:</td>
+        <td>{{customerInfo.ldcdesc}} </td>
+      </tr>
+      <tr>
+        <td>Account Type:</td>
+        <td>{{customerInfo.rateClassDesc}}</td>
+      </tr>
+      <tr ng-if="customerInfo.ldc !='MIC'">
+			<td>Gas Utility Account Number:</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+        <tr ng-if="customerInfo.ldc =='MIC'">
+			<td>Gas Service Pod ID</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+      <tr>
+        <td>Service Address:</td>
+        <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+      </tr>
+      <tr ng-show="(customerInfo.ldc !=='MIC' && customerInfo.ldc !=='MCG')">
+            <td>Ohio Natural Gas Account Status:</td>
+            <td>{{getCustomerStatus(customerInfo.accountStatus)}}</td>
+      </tr>
+      <tr ng-show="(customerInfo.ldc =='MIC' || customerInfo.ldc =='MCG')">
+          <td>Grand Rapids Energy Account Status:</td>
+          <td>{{getCustomerStatus(customerInfo.accountStatus)}}</td>
+      </tr>
+    </table>
+    <div class="button-container">
+      <a href="#" class="primary-button plain" ng-click="closeConfirm()">Try Again</a>
+      <a href="#" class="primary-button" ng-click="confirmLogin()">Confirm</a>
+    </div>
+  </div>
+</div>
+
+<div class="popup-wrapper" id="login-inactive-popup">
+  <div class="window-wrapper">
+    <a href="#" class="close-window" ng-click="closeandreload()">X</a>
+    <span class="window-title">Your account is inactive</span>
+    <p>You have to select a plan to continue enrollment</p>
+    <p><a href="#" class="primary-button" ng-click="closeInactive()">Shop for Plans</a></p>
+
+  </div>
+</div>

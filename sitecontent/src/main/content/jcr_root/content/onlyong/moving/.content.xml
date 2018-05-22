@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-10T19:57:23.967-06:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-11-29T11:00:20.419-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Natural Gas Service | Ohio Natural Gas Availability by Address"
+        jcr:uuid="a64b707f-55e7-45fa-b865-a5742058a897"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        description="Moving? Take our natural gas service with you. Learn more about natural gas availability by address. Our plans are designed to serve your needs."
+        hideInNav="true"
+        metaprimarykeywords="Natural Gas Service, Natural Gas Availability by Address"
+        portalname="oh"
+        tagmanagerid="GTM-56C9WRS">
+        <image
+            jcr:lastModified="{Date}2017-09-22T13:24:50.069-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                jcr:created="{Date}2017-09-22T13:39:09.679-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-10-08T18:33:16.171-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="Take our natural gas service with you. Our natural gas service plans are designed to serve your needs."
+                imagepath="/content/dam/ohgre/moving/moving_banner.png"
+                title="Moving?"/>
+            <moving_content
+                jcr:created="{Date}2017-09-22T13:25:04.824-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-11-29T10:59:59.729-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/moving-content"
+                confirmationpageheader="Thank you for considering Ohio Natural Gas."
+                confirmationpagesubhead="Your information has been submitted successfully!"
+                header="&lt;h4>Moving can be stressful. That's why we make it easy to sign up for natural gas service with Ohio Natural Gas.&lt;/h4>&#xd;&#xa;&lt;p>Before you move into your new residence, call your local gas utility to establish your natural gas service. If you’re not sure who supplies the natural gas service for your new address, ask your Realtor, apartment manager or previous owners. &lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                sidecontent="&lt;h5>In Ohio, the choices are:&lt;/h5>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Columbia Gas of Ohio&lt;/li>&#xd;&#xa;&lt;li>Dominion Energy Ohio&lt;/li>&#xd;&#xa;&lt;li>Duke Energy Ohio&lt;/li>&#xd;&#xa;&lt;li>Vectren Energy Delivery&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Once you have your gas utility account number, you can sign up for natural gas service online with Ohio Natural Gas to lock in a great fixed rate.&lt;/p>&#xd;&#xa;&lt;p>Natural gas consumers in the state of Ohio may choose their natural gas&amp;nbsp;supplier under the state&amp;#39;s Energy Choice Ohio program.&lt;/p>&#xd;&#xa;&lt;h5>WHAT IS CHOICE?&lt;/h5>&#xd;&#xa;&lt;p>In Ohio, it means you have the power to choose your natural gas supplier, which means you could get a lower rate!&lt;/p>&#xd;&#xa;&lt;p>Just as you shop for&amp;nbsp;products and services, you may also be able to shop for natural gas service. Energy customers from large manufacturers to residential homeowners can shop for natural gas from a diverse group of competetive suppliers certified by the Public Utilities Commision of Ohio (PUCO). As more suppliers are offering their services in your area, you can choose the natural gas service company that gives you the best rates and natural gas service.&lt;/p>&#xd;&#xa;&lt;p>Compare rates with Ohio Natural Gas and go with the lowest to save on your natural gas bill!&lt;/p>&#xd;&#xa;&lt;p>For information on the status of natural gas competition in Ohio, visit&amp;nbsp;&lt;a href=&quot;http://www.puco.ohio.gov/be-informed/consumer-topics/energy-and-water-conservation-tips/#sthash.OmKqD7xz.dpbs&quot; target=&quot;_blank&quot;>the Public Utilities Commission of Ohio.&lt;/a>&lt;/p>&#xd;&#xa;"
+                specialoffer="Yes, Ohio Natural Gas may send me information about special offers from ONG and its marketing partners."
+                textIsRich="[true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

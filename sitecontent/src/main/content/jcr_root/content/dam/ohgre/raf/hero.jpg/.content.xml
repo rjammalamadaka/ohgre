@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="931503d7-0d17-4e9c-9634-cb1940435cd4">
+    <jcr:content
+        cq:lastReplicated="{Date}2018-04-03T08:45:33.944-05:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:name="hero.jpg"
+        cq:parentPath="/content/dam/ohgre/raf"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/raf/hero.jpg"
+        jcr:lastModified="{Date}2018-04-04T13:16:27.643-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2018-04-04T13:16:26.759-04:00"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}-1"
+            dam:Physicalheightininches="{Decimal}-1.0"
+            dam:Physicalwidthindpi="{Long}-1"
+            dam:Physicalwidthininches="{Decimal}-1.0"
+            dam:Progressive="no"
+            dam:sha1="5230eca396f912a17772cb82d3c3c054cf703d9b"
+            dam:size="{Long}646979"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2017-07-28T12:19:20.761-04:00"
+            exif:ColorSpace="{Long}1"
+            exif:PixelXDimension="{Long}1368"
+            exif:PixelYDimension="{Long}584"
+            jcr:lastModified="{Date}2018-04-04T13:16:21.453-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}584"
+            tiff:ImageWidth="{Long}1368"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

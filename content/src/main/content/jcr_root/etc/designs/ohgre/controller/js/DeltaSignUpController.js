@@ -4,7 +4,6 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
 
 
     $scope.setLdcInfo =function(mainValue,description){
-		console.log(mainValue);
         $scope.ldc=mainValue;
         $scope.ldcDesc=description;
         $scope.an1=null;
@@ -48,14 +47,12 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
             $scope.an4r=true;
 
         }else if(mainValue == "MCG"){
-            console.log("MCG values set");
 			$scope.an1minl="4";
 		    $scope.an2minl="3";
             $scope.an3minl="4";
             $scope.an4minl="1";
 
         }else if(mainValue == "MIC"){
-             console.log("MIC values set");
             $scope.an1minl="0";
             $scope.an2minl="0";
             $scope.an3minl="0";
@@ -74,7 +71,6 @@ ohgrePortal.controller('DeltaSignUpController', ['$scope', '$rootScope', '$http'
 			event.preventDefault();
 			var obj = $(this);
 			var val = obj.html();
-            console.log(val);
 			$('.expanded-dropdown.opened').removeClass('opened');
             var dropdownButton=obj.parent().parent().parent().parent();
             var mainValue=$(this).find('span').attr('class');
@@ -110,7 +106,11 @@ $scope.dsmEnrollSubmit =function(){
                  $scope.dsmEnrollReq.dsmlastName=$scope.dsmLastName;
                  $scope.dsmEnrollReq.dsmPhone=$scope.phoneNumber;
                  $scope.dsmEnrollReq.dsmAccountNumber=$scope.dsmAccountNumber;
-                                  if($scope.ldc =="MIC"){
+                 if($scope.ldc == "DUK"){
+					$scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3;
+                 }else if($scope.ldc == "VED"){
+                   $scope.dsmEnrollReq.LDCAccountNumber=$scope.an2+$scope.an3;
+                }else if($scope.ldc =="MIC"){
                  	$scope.dsmEnrollReq.LDCAccountNumber=$scope.an4;
                  }else{
 					$scope.dsmEnrollReq.LDCAccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
@@ -125,13 +125,12 @@ $scope.dsmEnrollSubmit =function(){
                     }
                 }).error(function(data, status, headers, config){
                     $scope.flag=false;
-                    console.log(data);
                 });
              }
 
     }
 }
-    
+
     PrimeService.getLdcInfo().success(function(data, status, headers, config){
         if(data && data.responseStatus =="0"){
 
@@ -139,10 +138,9 @@ $scope.dsmEnrollSubmit =function(){
 			$scope.ldcinfo=data.LDCList;
             setTimeout(function(){ $scope.bindClickEvent(); }, 10);
         }
-        
+
     }).error(function (data,status, headers, config){
-        
-        console.log("error");
+
     });
 
 
@@ -182,7 +180,7 @@ $scope.dsmEnrollSubmit =function(){
        if (sknum.match(regex)) {
            integerCheck = 1;
        }
-       
+
        if(integerCheck > 0) {
            if(smn.length < 10) {
                smnStatus = 2;
@@ -201,7 +199,7 @@ $scope.dsmEnrollSubmit =function(){
                
                smn01 = getSingleDigit(smn01);
                smn03 = getSingleDigit(smn03);
-               smn05 = getSingleDigit(smn05);
+               smn05 = getSingleDigit(smn05); 
                smn07 = getSingleDigit(smn07);
                smn09 = getSingleDigit(smn09);
                
@@ -261,14 +259,9 @@ $scope.dsmEnrollSubmit =function(){
         
     }).error(function (data,status, headers, config){
         ohgre.store("promoCodeInfo",null);
-        console.log("error");
     });
     }
 
-    /*
 
-
-
-        */
 
 }]);

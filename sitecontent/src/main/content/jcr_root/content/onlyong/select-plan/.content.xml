@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-30T16:17:35.654-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-30T16:17:39.093-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Renewal Contract"
+        jcr:uuid="6109f472-3e18-46cf-82e3-47807da414eb"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <renewalplan
+                jcr:created="{Date}2017-10-30T21:50:22.114-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-30T16:17:35.650-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/renewalplan"
+                commercialpromocode="RENEWALCOMONG"
+                giftcardmessage="&lt;p>You will receive a {{GIFTCARDVALUE | currency : '$': 0}} VISA gift card if you have continuous active service with Ohio Natural Gas for at least 60 days.&lt;/p>&#xd;&#xa;"
+                planseffectivedate="Rates and price plans effective from {{currentMonthFirstDay}} to {{currentMonthLastDay}}."
+                promocode="RAF25"
+                renewalterms="&lt;p>ONG service is available for eligible customers participating in the applicable&amp;nbsp;Ohio choice program through their natural gas utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
+                residentailpromocode="RENEWALRESONG"
+                textIsRich="[true,true]"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-10-30T23:17:57.254-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

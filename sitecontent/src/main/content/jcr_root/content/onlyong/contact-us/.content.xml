@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2018-01-19T14:01:31.066-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-01-19T14:03:32.763-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:description="When customers in Ohio are searching &quot;natural gas company near me,&quot; Ohio Natural Gas is the natural choice. See ONG contact number and information."
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Contact Number &amp; Information | Ohio Natural Gas®"
+        jcr:uuid="30e2f377-90a5-4b18-afed-643fa1aac5eb"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true"
+        portalname="oh">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                jcr:created="{Date}2017-08-12T21:28:19.166+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-05T14:47:10.449-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="If you have questions or concerns about Ohio Natural Gas, please contact us by choosing the method that's best for you."
+                imagepath="/content/dam/ohgre/Rates/hero-image.jpg"
+                title="Contact Us"/>
+            <contact_us
+                jcr:created="{Date}2017-08-04T13:22:31.062-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-19T14:01:31.062-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/contact-us"
+                description1="&lt;p>&lt;b>Mailing Address:&lt;/b>&lt;br />&#xd;&#xa;PO BOX 14657&lt;br />&#xd;&#xa;Cleveland, OH 44114&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br />&#xd;&#xa;toll-free &lt;a href=&quot;tel:18884664427&quot; target=&quot;Target&quot;>1.888.466.4427&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;mailto:customerservice@onlyong.com?Subject=Ohio Natural gas&quot; target=&quot;_top&quot;>customerservice@onlyong.com&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Note:&lt;/b>&lt;br />&#xd;&#xa;&lt;i>Please use the above contact information if you have questions about your ONG service. If you have billing questions, please contact your utility directly. The number is on your natural gas bill.&lt;/i>&lt;/p>&#xd;&#xa;"
+                description2="&lt;p>&lt;b>Gary Blank&lt;/b>&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br />&#xd;&#xa;&lt;a href=&quot;tel:4046854105&quot;>1.630.718.2910&lt;/a> &lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;br />&#xd;&#xa;&lt;a title=&quot;Gary Blank&quot; href=&quot;mailto:gary.blank@southstarenergy.com&quot; target=&quot;_top&quot;>gary.blank@southstarenergy.com&lt;/a>&lt;/p>&#xd;&#xa;"
+                description3="&lt;p>&lt;b>Anne Webb&lt;/b>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Phone:&lt;/b>&lt;br>&#xd;&#xa;&lt;a href=&quot;tel:4046854105&quot; target=&quot;Target&quot;>1.404.685.4105&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Email:&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>&lt;a title=&quot;Anne Webb&quot; href=&quot;mailto:anne.webb@southstarenergy.com&quot; target=&quot;_top&quot;>anne.webb@southstarenergy.com&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                heading1="ONG Customer Service"
+                heading2="Aggregation Programs/Large Commercial &amp; Industrial Contracts"
+                heading3="Sales Agency Opportunities"
+                textIsRich="[true,true,true]"/>
+        </content>
+    </jcr:content>
+</jcr:root>

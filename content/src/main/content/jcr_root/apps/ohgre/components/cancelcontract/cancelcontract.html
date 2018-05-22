@@ -1,0 +1,163 @@
+<section ng-controller="CancelContractController">
+  <div class="container page-wrapper cancel-renew-page" id="cancel-plan-wrapper" data-respromocode="${properties.residentailpromocode || 'delta25'}" data-compromocode="${properties.commercialpromocode || 'delta25'}">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="intro-wrapper">
+          <span class="user-greeting" ng-show="customerInfo.rateClass =='01'">Welcome, {{customerInfo.firstName}}. <a href="#" ng-click="logout()">Logout</a></span>
+          <span class="user-greeting" ng-show="customerInfo.rateClass =='04'">Welcome, {{customerInfo.businessName}}. <a href="#" ng-click="logout()">Logout</a></span>
+        </div>
+        <div class="box-with-border" id="cancel-current-plan">
+          <h4>Your Current Contract</h4>
+          <div class="desktop-flex-container">
+            <div class="plan-info-col">
+              <table class="table-wrapper account-info-table">
+                <tbody>
+                  <tr>
+                    <td>Plan Name</td>
+                    <td>{{customerInfo.productDescFriendly}}</td>
+                  </tr>
+                  <tr>
+                    <td>Effective Date</td>
+                    <td ng-show="(customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE')">{{getOnlyDate(customerInfo.contractStartDate)}}</td>
+                  </tr>
+                  <tr ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">
+                    <td>Expiration Date</td>
+                    <td ng-show="(customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE')">{{getOnlyDate(customerInfo.contractTermDate)}}</td>
+                  </tr>
+                  <tr></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="plan-info-col">
+              <table class="table-wrapper account-info-table">
+                <tbody>
+                  <tr ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
+                    <td>Price Per {{customerInfo.uom}}</td>
+                    <td>{{customerInfo.pricePerUnit | currency:"$":3}}</td>
+                  </tr>
+                  <tr ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+                    <td>Guaranteed Bill Plan Amount</td>
+                    <td>{{customerInfo.contractPrice | currency:"$":2}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-with-border alert-box" ng-show="(customerInfo.accountStatus !=='ENROLLMENT PENDING' && customerInfo.accountStatus !=='ENROLLMENT ACTIVE')">
+                  <p>Your effective date will be provided by your utility.  Once provided, your effective date will be added to your account.</p>
+        </div>
+		&nbsp;
+        <div class="box-with-border alert-box alert-alt1">
+		<h5>Cancel Service</h5>
+		<p>If you would like to terminate service now or end service when your plan expires, please call ${inheritedPageProperties.mobilenumber} so we can provide you with pertinent details. We are available from 8 a.m. to 5 p.m. ET Monday through Friday.</p>
+          <h5>Let’s keep our relationship BURNING!</h5>
+          <p>We would love to continue being your natural gas supplier. Please reconsider and stay with your current plan or select one of these great offers.</p>
+          <div ng-show="productData.LDC =='COH'">
+            ${properties.cohcontent @ context='html'}
+          </div>
+          <div ng-show="productData.LDC =='VED'">
+            ${properties.vedcontent @ context='html'}
+          </div>
+          <div ng-show="productData.LDC =='DEO'">
+            ${properties.deocontent @ context='html'}
+          </div>
+          <div ng-show="productData.LDC =='DUK'">
+            ${properties.dukcontent @ context='html'}
+          </div>
+          <div ng-show="productData.LDC =='MCG'">
+            ${properties.mcgcontent @ context='html'}
+          </div>
+          <div ng-show="productData.LDC =='MIC'">
+            ${properties.miccontent @ context='html'}
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="utility-form">
+        <p><strong>${properties.planseffectivedate}</strong></p>
+          <ul class="plan-detail">
+            <li class="accord-trigger" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0" ng-click="showMobileAccord(product)">
+              <div class="flex-container">
+                <div class="plan-price">
+                  {{product.FixedPricePerTherm | currency:"$":3}}<span>per {{customerInfo.uom}}</span>
+                </div>
+                <div class="plan-info-wrapper">
+                  <div class="plan-info">
+                    <div class="inner-content">
+                      <h4>{{product.ProductDescFriendly}}</h4>
+                      <small></small>
+                      <p class="desktop-content">{{product.ProductPlanDesc}}</p>
+                    </div>
+                    <div class="plan-button">
+                      <a href="#" class="primary-button" ng-click="planSelectRenewal(product)">Select Plan</a>
+                    </div>
+                    <a href="" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
+                    <div ng-show="product.displayAccordian" class="">
+                      <ul>
+                        <li ng-repeat="finePrintText in product.ProductFinePrintText">{{finePrintText}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class=" mobile-content" ng-show="product.displayMobAccord">
+                <p>{{product.ProductPlanDesc}}</p>
+                  <ul>
+                    <li ng-repeat="finePrintText in product.ProductFinePrintText">{{finePrintText}}
+                    </li>
+                  </ul>
+                  <div class="">
+                    <button class="primary-button" ng-click="planSelectRenewal(product)">Select Plan</button>
+                  </div>
+              </div>
+            </li>
+
+            <li class="accord-trigger gbp" ng-show="guaranteeProductDisplay" ng-click="showMobileAccordGuarantee()">
+              <div class="flex-container">
+                <div class="plan-price">
+                  <img src="/content/dam/ohgre/Rates/gbp-seal.png">
+                </div>
+                <div class="plan-info-wrapper">
+                  <div class="plan-info">
+                    <div class="inner-content">
+                      <h4>{{guaranteeProduct.ProductDescFriendly}}</h4>
+                      <p class="desktop-content">{{guaranteeProduct.QuoteDescription}}</p>
+                    </div>
+                    <div class="plan-button">
+                      <span><strong>CALL US FOR A CUSTOM QUOTE ${inheritedPageProperties.mobilenumber}</strong></span>
+                    </div>
+                    <a href="" ng-click="showDeskAccordGuarantee()" class="accord-trigger"><span ng-hide="displayGuranteedAccord">+</span><span ng-show="displayGuranteedAccord">-</span>Additional Information</a>
+                    <div ng-show="displayGuranteedAccord" class="">
+                      <p>{{guaranteeProduct.ProductDescFriendly}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h3 class="cancel-msg">${properties.cancelmsg @ context = 'html'}</h3>
+        <div class="foot-notes">
+          <!--<p><strong>${properties.planseffectivedate}</strong></p>-->
+          <p>${properties.cancelterms @ context = 'html'}</p>
+        </div>
+      </div>
+    </div>
+    <sly data-sly-include="popups.html"></sly>
+</section>

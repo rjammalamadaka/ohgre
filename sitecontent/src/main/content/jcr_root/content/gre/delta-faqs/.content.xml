@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-03-06T15:42:11.976-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2018-03-06T15:42:14.509-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/helppage"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSync,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Delta FAQs"
+        jcr:uuid="f58ab646-7292-452e-bf3c-c54cd825a765"
+        sling:resourceType="/apps/ohgre/components/structure/helppage"
+        hideInNav="true">
+        <image
+            cq:lastRolledout="{Date}2017-12-05T14:03:55.136-06:00"
+            cq:lastRolledoutBy="penny"
+            jcr:lastModified="{Date}2017-12-05T14:03:55.130-06:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            cq:lastRolledout="{Date}2017-12-05T14:03:55.141-06:00"
+            cq:lastRolledoutBy="penny"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <staticherobanner
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2017-12-05T14:03:55.155-06:00"
+                cq:lastRolledoutBy="penny"
+                jcr:created="{Date}2017-08-16T11:02:21.919-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-05T14:16:25.994-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/staticherobanner"
+                description="If you have questions, we have answers."
+                imagepath="/content/dam/ohgre/home/delta-image.jpg"
+                title="Delta SkyMiles FAQs"/>
+            <terms_landing
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2017-12-05T14:03:55.165-06:00"
+                cq:lastRolledoutBy="penny"
+                jcr:created="{Date}2017-08-10T11:02:36.493-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-03-06T15:42:11.969-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/terms-landing"
+                heading="FAQs"
+                termslist="[{&quot;termstitle&quot;:&quot;Who can earn miles as part of the SkyMiles partnership between Grand Rapids Energy and Delta?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>GRE&amp;nbsp;customers in good standing who are on any of GRE&amp;#39;s published residential or commercial price plans and are also SkyMiles Members are eligible to start earning miles.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;How many miles will I earn?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>You will be awarded two miles for every dollar of GRE supplier gas charges on your monthly bill (excluding sales tax and one-time charges such as late fees). Plus\, if you are a Delta SkyMiles Medallion&lt;sup>®&lt;/sup> Member\, Delta will apply an additional mile for every eligible dollar.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;When will my miles be posted to my Delta SkyMiles account?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Bonus miles will be awarded after 30 days of continuous active gas service with GRE. Ongoing/monthly miles will be posted for customers in the DTE territory up to 4 weeks after each monthly bill date or for customers in the Consumers Energy territory\, up to 6 weeks after each monthly bill due date\, provided in each case you remain in good standing in the SkyMiles program.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;true&quot;},{&quot;termstitle&quot;:&quot;I am not a Delta SkyMiles Member. How do I become a Delta SkyMiles Member so I may start earning miles as a GRE customer? &quot;\,&quot;termsdescription&quot;:&quot;&lt;p>It&amp;#39;s easy to sign up for Delta SkyMiles. Simply visit &lt;a href=\\&quot;/content/gre/skymiles.html\\&quot; target=\\&quot;_blank\\&quot;>delta.com/skymiles&lt;/a>.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;I have multiple GRE Accounts. May I earn miles for each GRE account?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Yes. Simply fill out the form above for each of your&amp;nbsp;GRE accounts. You may elect to have each of your&amp;nbsp;GRE accounts distributed to a single or multiple SkyMiles accounts as you wish.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;May I direct the miles that I earn through GRE to someone's SkyMiles account other than my own? &quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Yes. Simply enter the SkyMiles Member name and account information above\, or call&amp;nbsp;GRE Customer Care toll-free at 1.800.841.1541.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;Do the miles earned through Grand Rapids Energy count toward Medallion status as Medallion® Qualification Miles (MQMs)?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Unfortunately\, they do not.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;How can I check my Delta SkyMiles account balance?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Visit &lt;a href=\\&quot;http://www.delta.com/skymiles\\&quot; target=\\&quot;_blank\\&quot;>delta.com/skymiles&lt;/a> to check your balance.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;If my GRE miles are not posting to my SkyMiles account who do I contact? &quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Please contact us at 1.800.841.1541 and we will check on the status. However\, if you have recently signed up\, please keep in mind that bonus miles will be awarded after 30 days of continuous active gas service and it may take up to 4 weeks after each monthly bill date for customers in the DTE territory and up to 6 weeks after each monthly bill due date for customers in the Consumers Energy territory before ongoing/monthly miles start posting to your SkyMiles account\, provided in each case you remain in good standing in the SkyMiles program.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;},{&quot;termstitle&quot;:&quot;I have a question not listed here. Whom can I contact?&quot;\,&quot;termsdescription&quot;:&quot;&lt;p>Call&amp;nbsp;GRE Customer Care toll-free at 1.800.841.1541\, or email us at &lt;a href=\\&quot;mailto:DeltaQuestions@grandrapidsenergy.com\\&quot; target=\\&quot;_top\\&quot;>DeltaQuestions@grandrapidsenergy.com&lt;/a>.&lt;/p>\\n&quot;\,&quot;textIsRich&quot;:&quot;&quot;}]"
+                textIsRich="true"/>
+        </content>
+        <cq:LiveSyncConfig
+            cq:isDeep="{Boolean}false"
+            cq:master="/content/onlyong/raf-faqs"
+            cq:rolloutConfigs="[]"
+            jcr:primaryType="cq:LiveCopy"/>
+    </jcr:content>
+</jcr:root>

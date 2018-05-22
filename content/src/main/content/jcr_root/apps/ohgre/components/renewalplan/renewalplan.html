@@ -1,0 +1,156 @@
+<section ng-controller="RenewalPlanController">
+
+  <div class="container page-wrapper" id="renew-plan-select" data-respromocode="${properties.residentailpromocode || ''}" data-compromocode="${properties.commercialpromocode || ''}">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="desktop-flex-container select-header">
+          <div class="intro-wrapper">
+            <span class="user-greeting" ng-show="customerInfo.rateClass =='01'">Welcome, {{customerInfo.firstName}}. <a href="#" ng-click="logout()">Logout</a></span>
+            <span class="user-greeting" ng-show="customerInfo.rateClass =='04'">Welcome, {{customerInfo.businessName}}. <a href="#" ng-click="logout()">Logout</a></span>
+          </div>
+          <div class="selected-plan current-plan flex-container">
+            <div class="selected-price" ng-show="(customerInfo.productCode !=='COJ' && customerInfo.productCode !=='COK')">
+              <span class="price ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">{{customerInfo.pricePerUnit | currency:"$":3}}</span>
+              <span class="price ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.renewalPricePerUnit | currency:"$":3}}</span>
+
+
+              <small class="ng-binding">per {{customerInfo.uom}}</small>
+            </div>
+            <div class="selected-price" ng-show="(customerInfo.productCode =='COJ' || customerInfo.productCode =='COK')">
+              <span class="price ng-binding">{{customerInfo.contractPrice | currency:"$":2}}</span>
+              <small class="ng-binding">per Month</small>
+            </div>
+            <div class="selected-info">
+              <span class="selected-plan-tag" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">Current Contract</span>
+              <span class="selected-plan-tag" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">Renewal Contract</span>
+              <h5 class="ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">{{customerInfo.productDescFriendly}}</h5>
+              <h5 class="ng-binding" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.renewalProductDescFriendly}}</h5>
+
+              <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd =='N' || customerInfo.contractTermDate == '12/31/2999 12:00:00 AM')">
+                 {{productData.ldcDesc}}<br>
+			  <span ng-show="(customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM' && (customerInfo.accountStatus =='ENROLLMENT PENDING' || customerInfo.accountStatus =='ENROLLMENT ACTIVE'))">{{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}} </span></span>
+
+              <span class="utility-name" ng-show="(customerInfo.renewalContractExistsInd =='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">
+                 {{productData.ldcDesc}}<br>
+			  <span ng-show="customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM'">{{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}} </span></span>
+
+            </div>
+          </div>
+        </div>
+        <div class="promocode-entry">
+          <h3>Please select a new plan or enter your promo code:</h3>
+          <form name="renewalPlanPromo" id="renewalPlanPromo" novalidate>
+            <label for="promocode">If you have a promo code, enter it here.</label>
+            <input type="text" name="promocode" ng-model="promocode" id="promo-code" />
+
+            <button id="submit-promo-code" name="submit" type="submit" class="primary-button active" ng-click="submitPromoCode()" value="Apply Promo Code">{{formButton}}</button>
+
+          </form>
+          <span class="input-error-message" ng-show="renewalPlanPromo.submited">
+                                    <span class="input-error-message" ng-show="renewalPlanPromo.promocode.$error.required">Promo code is required.</span>
+          </span>
+
+
+          <span ng-show="serverError" class="input-error-message" >{{serverError}}</span>
+
+          <div class="promocode-message" >
+            <p ng-show="showpromosuccessdmsg">Your Promo Code <em>{{appliedpromocode}}</em> has been successfully applied.</p>
+           <div ng-show="showgiftcardmsg"> <p>${properties.giftcardmessage @ context = 'html'}</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="utility-form">
+        <p><strong>${properties.planseffectivedate}</strong></p>
+          <ul class="plan-detail">
+
+            <li class="accord-trigger" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0" ng-click="showMobileAccord(product)">
+              <div class="flex-container">
+                <div class="plan-price">
+                  {{product.FixedPricePerTherm | currency:"$":3}}<span>per {{customerInfo.uom}}</span>
+                </div>
+                <div class="plan-info-wrapper">
+                  <div class="plan-info">
+                    <div class="inner-content">
+                      <h4>{{product.ProductDescFriendly}}</h4>
+                      <small></small>
+                      <p class="desktop-content">{{product.ProductPlanDesc}}</p>
+                    </div>
+                    <div class="plan-button">
+                      <a href="#" class="primary-button" ng-click="planSelectRenewal(product)">Select Plan</a>
+                    </div>
+                    <a href="" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
+                    <div ng-show="product.displayAccordian" class="">
+                      <ul>
+                        <li ng-repeat="finePrintText in product.ProductFinePrintText">{{finePrintText}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class=" mobile-content" ng-show="product.displayMobAccord">
+                <p>{{product.ProductPlanDesc}}</p>
+                  <ul>
+                    <li ng-repeat="finePrintText in product.ProductFinePrintText">{{finePrintText}}
+                    </li>
+
+                  </ul>
+                  <div class="">
+                    <!--<a href="#" class="primary-button">Select Plan</a>-->
+                    <button class="primary-button" ng-click="planSelectRenewal(product)">Select Plan</button>
+                  </div>
+              </div>
+            </li>
+
+
+            <li class="accord-trigger gbp" ng-show="guaranteeProductDisplay" ng-click="showMobileAccordGuarantee()">
+              <div class="flex-container">
+                <div class="plan-price">
+                  <img src="/content/dam/ohgre/Rates/gbp-seal.png">
+                </div>
+                <div class="plan-info-wrapper">
+                  <div class="plan-info">
+                    <div class="inner-content">
+                      <h4>{{guaranteeProduct.ProductDescFriendly}}</h4>
+                      <p class="desktop-content">{{guaranteeProduct.QuoteDescription}}</p>
+                    </div>
+                    <div class="plan-button">
+                      <span><strong>CALL US FOR A CUSTOM QUOTE ${inheritedPageProperties.mobilenumber}</strong></span>
+                    </div>
+                    <a href="" ng-click="showDeskAccordGuarantee()" class="accord-trigger"><span ng-hide="displayGuranteedAccord">+</span><span ng-show="displayGuranteedAccord">-</span>Additional Information</a>
+                    <div ng-show="displayGuranteedAccord" class="">
+                      <p>{{guaranteeProduct.ProductDescFriendly}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+
+
+
+
+            </ul>
+        </div>
+        <div class="foot-notes">
+          <!--<p><strong>${properties.planseffectivedate}</strong></p>-->
+          ${properties.renewalterms @ context = 'html'}
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <sly data-sly-include="popups.html"></sly>
+
+</section>

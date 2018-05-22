@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-04T16:21:17.577-06:00"
+        cq:lastModifiedBy="penny"
+        cq:lastReplicated="{Date}2017-12-12T13:42:17.162-06:00"
+        cq:lastReplicatedBy="penny"
+        cq:lastReplicationAction="Activate"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Generic LDC Promotion"
+        jcr:uuid="2ea4e62e-c431-4b97-8707-b57f098820be"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
+        hideInNav="true">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <promoherobanner
+                jcr:created="{Date}2017-07-28T21:24:29.438+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-04T16:21:17.568-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/promoherobanner"
+                displaylogo="true"
+                imagepath="/content/dam/ohgre/apples/hero.jpg"
+                promocode="Appale3"
+                promoexpmsg="Hurry! Offer ends January 31, 2018!"
+                textIsRich="true"
+                title="&lt;p>Lock in the Lowest Available Fixed PriceƗ&lt;/p>&#xd;&#xa;"/>
+            <applepromotionconten
+                jcr:created="{Date}2017-07-28T21:26:17.785+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-12-12T13:42:14.062-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/applepromotioncontent"
+                description="*GRE service is available for eligible residential customers participating in the gas Customer Choice program through DTE Gas Company and Consumers Energy. GRE prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.841.1541, write to Grand Rapids Energy, 120 N. Washington Square, Ste. 805, Lansing, MI 48933 or visit grandrapidsenergy.com. Early termination charges apply for residential fixed price plans (12-Month plan: $50/$25, 6-Month plan: $25)."
+                heading="Choose from one of our plans to get started right away!"/>
+        </content>
+        <image
+            jcr:lastModified="{Date}2017-08-15T08:49:28.111+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

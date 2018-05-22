@@ -1,88 +1,120 @@
-<section ng-controller="PromotionContentController">
-   <div class="container">
-      <span class="promo-headline" >${properties.heading}</span>
-      <div class="col-md-10 col-md-offset-1">
-         <div class="row promo-wrapper"  ng-show="!displayPlans">
-            <div class="col-md-5">
-               <div class="box-w-arrow">
-                  <img src="${properties.imagepath}">
-                  <span>${properties.promoheadingline1}</span>
-                  <span>${properties.promoheadingline2}</span>
-               </div>
-               <div class="box-with-border">
-                  <div class="box-inner">
-                     ${properties.description @ context='html'}
-                     <form id="promo-form">
-                        <div class="dropdown-container">
-                           <button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
-                           <div class="expanded-dropdown">
-                              <ul class="dropdown-menu" role="menu">
-                                 <li role="menuitem" ng-repeat="x in ldcinfo">
-                                    <a href="#" class="select-option">
+<style>
+	.promo-content .radio-btn-container {
+		margin: 0 0 15px;
+    	padding-bottom: 10px;
+    }
+
+	.promo-content .radio-btn-container label {
+		font-size: 1.7rem;
+	}
+</style>
+<section ng-controller="PromotionContentController" class="promo-content">
+  <div class="container">
+    <span class="promo-headline" ng-show="!expired">${properties.heading}</span>
+
+    <div class="error show-error" ng-show="expired">
+      <span class="promo-headline with-error">Unfortunately, this promotion offer has expired, but today the promotional offers below are available for enrollment. These offers may expire at any time.</span>
+    </div>
+
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row promo-wrapper" ng-show="!displayPlans">
+        <div class="col-md-5">
+          <div class="box-w-arrow">
+            <img src="${properties.imagepath}">
+            <span>${properties.promoheadingline1}</span>
+            <span>${properties.promoheadingline2}</span>
+          </div>
+          <div class="box-with-border">
+            <div class="box-inner">
+              ${properties.description @ context='html'}
+              <form id="promo-form">
+                <div class="form-section radio-btn-container">
+                  <div class="radio-container">
+                    <input type="radio" name="location_type" value="residential" id="promo-location-residential" class="" checked="">
+                  </div>
+                  <label for="promo-location-residential">Residential</label>
+
+                  <div class="radio-container">
+                    <input type="radio" name="location_type" value="commercial" id="promo-location-commercial" class="">
+                  </div>
+                  <label for="promo-location-commercial">Commercial</label>
+                </div>
+                <div class="dropdown-container">
+                  <button class="dropdown-trigger" id="fixed-plans-button"><span class="value">Select Your Gas Utility</span> <span class="fa fa-angle-down carret"></span></button>
+                  <div class="expanded-dropdown">
+                    <ul class="dropdown-menu" role="menu">
+                      <li role="menuitem" ng-repeat="x in ldcinfo">
+                        <a href="#" class="select-option">
                                     <span class='{{x.LDCCode}}'>{{x.LDCDesc}}</span>
                                     </a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                        <button class="primary-button" ng-click="viewPlans()">view plans</button>
-                     </form>
+                      </li>
+                    </ul>
                   </div>
-               </div>
-            </div>
-            <div class="col-md-7">
-               <div class="box-with-border">
-                  ${properties.text @ context='html'}
-               </div>
-            </div>
-         </div>
-
-            <div class="row promo-wrapper flex-wrap" ng-show="displayPlans">
-                <div class="col-md-6" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0">
-                    <div class="box-w-arrow accord-trigger trigger-arrow">
-                        <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}}<small>per {{getNumber(product.QuoteDescription)}}</small></span>
-                        <span class="rate-plan">{{product.ProductDescFriendly}}</span>
-                    </div>
-                    <div class="box-with-border">
-                        <div class="box-inner">
-                        <p>
-                           {{product.ProductPlanDesc}}
-                        </p>
-                        <ul>
-                            <li>This plan requires a {{product.CtrctDurationMonths}}-month commitment.</li>
-                            <li>Early termination charges apply for fixed price plans ({{product.EarlyTermChargeAmt | number:0 | currency:"$":0}}).</li>
-                        </ul>
-                            <form id="12-month-fixed-form">
-                                <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
-
+                <button class="primary-button" ng-click="viewPlans()">view plans</button>
+              </form>
             </div>
-
-
-
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="box-with-border">
+            ${properties.text @ context='html'}
+          </div>
+        </div>
       </div>
-   </div>
+      <div class="row promo-wrapper flex-wrap" ng-show="displayPlans">
+        <div class="col-md-6" ng-repeat="product in products" ng-if="product.FixedPricePerTherm > 0">
+          <div class="box-w-arrow accord-trigger trigger-arrow">
+            <span class="price-ccf">{{product.FixedPricePerTherm | currency:"$":3}}<small>per {{getNumber(product.QuoteDescription)}}</small></span>
+            <span class="rate-plan">{{product.ProductDescFriendly}}</span>
+          </div>
+          <div class="box-with-border promo-plan-description">
+            <div class="box-inner">
+              <p>
+                {{product.ProductPlanDesc}}
+              </p>
+              <a href="#" ng-click="displayAddlInfo(product)" class="accord-trigger"><span ng-hide="product.displayAccordian">+</span><span ng-show="product.displayAccordian">-</span>Additional Information</a>
+              <div ng-show="product.displayAccordian" class="">
+                <ul>
+                  <li ng-repeat="text in product.ProductFinePrintText">{{text}}
+                  </li>
 
+                </ul>
+              </div>
+              <!--
+                     <ul>
+                     	<li ng-repeat="text in product.ProductFinePrintText">{{text}}</li>
+                     </ul>
+                      <form id="12-month-fixed-form">
+                     -->
+              <form class="fixed-form12-month">
+                <button class="primary-button" ng-click="planSelect(product)">Select Plan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section ng-controller="PromotionContentController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="full-banner-light">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | Promo code required - {{getDisplayPromocode(promotion.PromotionCode)}}</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="promo-fine-print">
+            <p>${properties.fineprinttext @ context='html'}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
-
-<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="full-banner-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="icon"><img src="/etc/designs/ohgre/clientlibs/_img/global/phone.svg"></div>
-				<div class="content"><span>PREFER TO CALL? ${inheritedPageProperties.mobilenumber} | ${inheritedPageProperties.days} ${inheritedPageProperties.time}</span></div>
-			</div>
-		</div>
-	</div>
-</div>
-				</div>
-			</div>
-		</div>
-	</section>

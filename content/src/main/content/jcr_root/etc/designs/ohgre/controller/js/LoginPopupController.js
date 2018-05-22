@@ -2,17 +2,26 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
 
 
 
-    $scope.lctype="residential";
+    $rootScope.lctype="residential";
+
 
     $scope.setLdcInfo= function(mainValue,description){
 
         var ldc=mainValue;
-        console.log("setLdcInfo");
-        console.log(mainValue);
-        console.log(description);
+        $scope.lastName=null;
+        $scope.zipcode=null;
+        $('#lastnamezipcodeerror').hide();
+        $scope.errorMessage=null;
+
+        $scope.loginform.submited = false;
+
+
+        $scope.loginform.$setPristine();
+
+
 		$scope.ldc=mainValue;
         $scope.ldcdesc=description;
-         $scope.an1=null;
+        $scope.an1=null;
         $scope.an2=null;
         $scope.an3=null;
         $scope.an4=null;
@@ -58,14 +67,12 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
             $scope.an4r=true;
 
         }else if(ldc == "MCG"){
-            console.log("MCG values set");
 			$scope.an1minl="4";
 		    $scope.an2minl="3";
             $scope.an3minl="4";
             $scope.an4minl="1";
 
         }else if(ldc == "MIC"){
-             console.log("MIC values set");
             $scope.an1minl="0";
             $scope.an2minl="0";
             $scope.an3minl="0";
@@ -152,12 +159,12 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
 
     $scope.closeLoginPopup=function(){
 			jQuery("#login-popup-wrapper").removeClass("show-popup");
+        location.reload(true);
     }
 
     var getLdcInfo=function(){
         PrimeService.getLdcInfo().success(function(data, status, headers, config){
             if(data && data.responseStatus =="0"){
-                console.log(data.LDCList);
                 $rootScope.ldcinfo=data.LDCList;
                 setTimeout(function(){ $scope.loginPopupBindClickEvent(); }, 10);
             }
@@ -168,10 +175,10 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
         });
     }
     $scope.showLoginPopup= function(){
-
-		     getLdcInfo();
-            jQuery("#login-popup-wrapper").addClass("show-popup");
-
+		//event.preventDefault();
+        getLdcInfo();
+        jQuery("#login-popup-wrapper").addClass("show-popup");
+		UTILS.preventBodyScroll();
     }
 
     $scope.closeConfirm =function(){
@@ -182,6 +189,9 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
 
     $scope.loginSubmit =function(){
 $scope.errorMessage=null;
+
+        $('#lastnamezipcodeerror').hide(); 
+
 	    $scope.loginform.submited = true;
         if($scope.loginform.$valid || (($scope.ldc=="MIC") && $scope.loginform.lastName.$valid && $scope.loginform.zipcode.$valid && $scope.loginform.an4.$valid)){
             //$scope.lctype
@@ -204,24 +214,57 @@ $scope.errorMessage=null;
             var req={};
             req.AccountNumber=$scope.accountnumber; 
             req.LDC=$scope.ldc;
+
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
 
                 if(data){
                  $scope.customerInfo=JSON.parse(data.CustomerInfoResult);
-                    if($scope.customerInfo && $scope.customerInfo.responseStatus=="0"){
-						//if($scope.lctype =="residential" && $scope.customerInfo.lastName !=)
-                        if(($scope.lctype=="residential")&&(($scope.customerInfo.lastName.toLowerCase()!=$scope.lastName.toLowerCase()) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase()))){
-							$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
-                        }else if(($scope.lctype=="commercial")&&(validateCommercialName($scope.customerInfo.businessName.toLowerCase())) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
-							$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
-                        }else{
-							jQuery("#login-popup-wrapper").removeClass("show-popup");
-                        	jQuery("#popupconfirm").addClass("show-popup");
-                        }
 
+                    if($scope.customerInfo && $scope.customerInfo.b2BCustomerInd && $scope.customerInfo.b2BCustomerInd=="Y"){
+						 $('#lastnamezipcodeerror').show(); 
+							 $scope.errorMessage="Please call us at 1.888.466.4427 to discuss plan options for your account.";
+                        return;
                     }
 
-                    console.log($scope.customerInfo);
+                    if($scope.customerInfo && $scope.customerInfo.responseStatus=="0"){
+
+
+						//if($scope.lctype =="residential" && $scope.customerInfo.lastName !=)
+                        var accountStatus=$rootScope.getCustomerStatus($scope.customerInfo.accountStatus);
+
+                        if(($scope.customerInfo.rateClass == "01" && $scope.lctype=="residential") || ($scope.customerInfo.rateClass == "04" && $scope.lctype=="commercial")){
+
+
+
+                            if(accountStatus =="Inactive"){
+                                jQuery("#login-popup-wrapper").removeClass("show-popup");
+                                jQuery("#login-inactive-popup").addClass("show-popup");
+
+                            }else if($scope.customerInfo.b2BCustomerInd =="Y"){
+                                $scope.errorMessage="Please call us at "+$rootScope.mobilenumber+" to discuss plan options for your account";
+                                $('#lastnamezipcodeerror').show();
+                            }else if(($scope.lctype=="residential")&&(($scope.customerInfo.lastName.toLowerCase()!=$scope.lastName.toLowerCase()) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase()))){
+                                $scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                                $('#lastnamezipcodeerror').show();
+                            }else if(($scope.lctype=="commercial")&&(validateCommercialName($scope.customerInfo.businessName.toLowerCase())) || ($scope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
+                                $scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                                $('#lastnamezipcodeerror').show();
+                            }else{
+                                jQuery("#login-popup-wrapper").removeClass("show-popup");
+                                jQuery("#popupconfirm").addClass("show-popup");
+                            }
+
+                        }else{
+							 $('#lastnamezipcodeerror').show(); 
+							 $scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                        }
+
+                    }else{
+
+                        $('#lastnamezipcodeerror').show(); 
+						$scope.errorMessage="We could not locate your account. Please check to make sure you have entered your information correctly below.";
+                    }
+
                 }
 
             }).error(function(data, status, headers, config){
@@ -242,20 +285,32 @@ $scope.errorMessage=null;
 		req.LDC=$scope.ldc;
 
         req.AccountNumber=$scope.accountnumber;
+		req.LdcDesc=$scope.ldcdesc;
+
+        if($scope.ldc && $scope.ldc=="DUK"){
+            req.dukNumber=$scope.an4
+        }
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){            
-            console.log(data);
             location.href=$rootScope.homeUrl+'/myaccount.html';
 
         }).error(function (data,status, headers, config){
 
-            console.log("error");
         });
 
 
     }
 
+    $scope.closeInactive =function(){
+		jQuery("#login-inactive-popup").removeClass("show-popup");
+      	 //location.reload(true);
 
+		location.href=$rootScope.homeUrl+"/rate-plans.html#ldc="+$scope.ldc+'&lctype='+$scope.lctype;
+    }
 
+    $scope.closeandreload = function(){
+            jQuery("#login-inactive-popup").removeClass("show-popup");
+             location.reload(true);
+    }
 }]);
 

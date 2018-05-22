@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-01-12T12:39:49.782-06:00"
+        cq:lastModifiedBy="penny"
+        cq:template="/apps/ohgre/templates/mainpage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Site Map"
+        sling:resourceType="/apps/ohgre/components/structure/mainpage"
+        hideInNav="true">
+        <image
+            jcr:lastModified="{Date}2017-12-27T12:10:04.875-06:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <sitemap
+                jcr:created="{Date}2017-12-27T12:13:27.020-06:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-01-12T12:39:49.779-06:00"
+                jcr:lastModifiedBy="penny"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/sitemap"
+                textIsRich="true"/>
+        </content>
+    </jcr:content>
+</jcr:root>

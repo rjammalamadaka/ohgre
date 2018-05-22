@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="af0430ab-f71b-48bd-a89a-da068c0dfd0b">
+    <jcr:content
+        cq:name="OHGRE_mobile_hero_test.jpg"
+        cq:parentPath="/content/dam/ohgre/promotions"
+        dam:assetState="processed"
+        dam:relativePath="ohgre/promotions/OHGRE_mobile_hero_test.jpg"
+        jcr:lastModified="{Date}2018-04-04T13:16:36.580-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}24"
+            dam:extracted="{Date}2018-04-04T13:16:36.404-04:00"
+            dam:Fileformat="JPEG"
+            dam:MIMEtype="image/jpeg"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}96"
+            dam:Physicalheightininches="{Decimal}3.125"
+            dam:Physicalwidthindpi="{Long}96"
+            dam:Physicalwidthininches="{Decimal}8.0"
+            dam:Progressive="no"
+            dam:sha1="f1ece2c0b7eac1ca52e2805b3d8ffa18bc4b2be1"
+            dam:size="{Long}12833"
+            dc:creator="[Jason Jackson]"
+            dc:creator_xmpArrayType="rdf:Seq"
+            dc:format="image/jpeg"
+            dc:modified="{Date}2018-04-04T13:16:28.853-04:00"
+            exif:PixelXDimension="{Long}768"
+            exif:PixelYDimension="{Long}300"
+            jcr:lastModified="{Date}2018-04-04T13:16:28.853-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}300"
+            tiff:ImageWidth="{Long}768"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:XResolution="96/1"
+            tiff:YResolution="96/1"
+            xmp:CreatorTool="Canva"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

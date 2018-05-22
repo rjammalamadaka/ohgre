@@ -150,7 +150,7 @@
                               <div class="input-group-wrapper">
                                     <label for="address-zip">Zip<sup class="required">*</sup></label>
                                     <span class="error-message">Error message copy goes here</span>
-                                    <input type="text" name="addresszip" ng-model="addresszip" id="addresszip" maxlength="5" ng-required="true" ng-focus ng-visited>
+                                    <input type="text" pattern="[0-9]* name="addresszip" ng-model="addresszip" id="addresszip" maxlength="5" ng-required="true" ng-focus ng-visited numbers-only>
                                   <span class="input-error-message" ng-show="(movingform.addresszip.$visited && !movingform.addresszip.$focused) || movingform.submited">
                                   <span class="input-error-message" ng-show="movingform.addresszip.$error.required">Zip is required.</span> 
                                   </span> 

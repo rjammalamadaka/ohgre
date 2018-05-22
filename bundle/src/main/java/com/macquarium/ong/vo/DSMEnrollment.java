@@ -2,14 +2,19 @@ package com.macquarium.ong.vo;
 
 public class DSMEnrollment {
 	String firstName;
-	 String lastName;
-	 String dsmEmail;
-	 String dsmFirstName;
-	 String dsmLastName;
-	 String dsmAccountNumber;
-	 String dsmPhone;
-	 String LDCAccountNumber;
-	 String LDCName;
+	String lastName;
+	String dsmEmail;
+	String dsmFirstName;
+	String dsmLastName;
+	String dsmAccountNumber;
+	String dsmPhone;
+	String LDCAccountNumber;
+	String LDCName;
+	String portalName;
+	String promotionCode;
+	String requestString;
+	String responseString;
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -63,5 +68,29 @@ public class DSMEnrollment {
 	}
 	public void setLDCName(String lDCName) {
 		LDCName = lDCName;
+	}
+	public String getPortalName() {
+		return portalName;
+	}
+	public void setPortalName(String portalName) {
+		this.portalName = portalName;
+	}
+	public String getPromotionCode() {
+		return promotionCode;
+	}
+	public void setPromotionCode(String promotionCode) {
+		this.promotionCode = promotionCode;
+	}
+
+	public String getRequestString() {
+		return requestString;
+	}
+
+	public void setRequestString(String requestString) {
+		this.requestString = requestString;
+	}
+
+	public void setResponseString(String responseString) {
+		this.responseString = responseString;
 	}
 }

@@ -75,6 +75,16 @@ public class Enrollment {
     private String renewalCtrctDurationMonths;
     private Date renewalCtrctTermDate;
     private String sourceSystemReferenceID;
+    private String customerType;
+    private String originalPromoCode;
+    private String price;
+    private String transactionType;
+    private String tcVersion;
+
+
+    private String serviceTransferAuthFlag;
+    private String authorityToSwitchFlag;
+    private String agreeToTermsFlag;
 
     public String getId() {
         return id;
@@ -650,5 +660,69 @@ public class Enrollment {
 
     public void setSourceSystemReferenceID(String sourceSystemReferenceID) {
         this.sourceSystemReferenceID = sourceSystemReferenceID;
+    }
+    
+    public String getServiceTransferAuthFlag() {
+        return serviceTransferAuthFlag;
+    }
+
+    public void setServiceTransferAuthFlag(String serviceTransferAuthFlag) {
+        this.serviceTransferAuthFlag = serviceTransferAuthFlag;
+    }
+
+    public String getAuthorityToSwitchFlag() {
+        return authorityToSwitchFlag;
+    }
+
+    public void setAuthorityToSwitchFlag(String authorityToSwitchFlag) {
+        this.authorityToSwitchFlag = authorityToSwitchFlag;
+    }
+
+    public String getAgreeToTermsFlag() {
+        return agreeToTermsFlag;
+    }
+
+    public void setAgreeToTermsFlag(String agreeToTermsFlag) {
+        this.agreeToTermsFlag = agreeToTermsFlag;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
+    }
+
+    public String getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public String getOriginalPromoCode() {
+        return originalPromoCode;
+    }
+
+    public void setOriginalPromoCode(String customerType) {
+        this.originalPromoCode = customerType;
+    }
+
+    public String getTCVersion() {
+        return tcVersion;
+    }
+
+    public void setTcVersion(String customerType) {
+        this.tcVersion = customerType;
     }
 }

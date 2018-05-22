@@ -20,10 +20,17 @@
     <head data-sly-call="${head.head @ page = page}"></head>
     <body ng-app="ohgre-portal" id="portalbody" style="display: none;">
         <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVNV9HM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+
+ <iframe src="https://www.googletagmanager.com/ns.html?id=${inheritedPageProperties.tagmanagerid}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
+    <div id="mobilenumber-div" data-mobilenumber="${inheritedPageProperties.mobilenumber}"></div>
+    <div id="tagmanagerid-div" data-tagmanagerid="${inheritedPageProperties.tagmanagerid}"></div>
         <sly data-sly-include="body.socialmedia_begin.html"></sly>
+
         <sly data-sly-include="body.html"></sly>
         <sly data-sly-call="${footer.footer @ page = page}"></sly>
         <sly data-sly-include="body.socialmedia_end.html"></sly>

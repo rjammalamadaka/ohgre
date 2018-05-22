@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <card_offer1.jpg/>
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <folderThumbnail/>
+    </jcr:content>
+    <card_plans.jpg/>
+    <card_raf.jpg/>
+    <card_moving.jpg/>
+    <delta-image.jpg/>
+    <card_moving_mobile.jpg/>
+    <callout_image.jpg/>
+    <card_offer2_mobile.jpg/>
+    <card_offer2.jpg/>
+    <card_offer1_mobile.jpg/>
+    <card_plans_mobile.jpg/>
+    <card_raf_mobile.jpg/>
+    <hero-image.jpg/>
+    <Login_account_lookup_desktop.png/>
+    <Login_to_the_account_mobile_image.png/>
+    <hero-image1.jpg/>
+    <delta-747-in-flight_desktop.jpg/>
+</jcr:root>

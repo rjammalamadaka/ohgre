@@ -1,4 +1,9 @@
 package com.macquarium.ong;
+import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Set;
+import java.util.TimeZone;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPEnvelope;
@@ -7,26 +12,47 @@ import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Set;
-import java.util.TimeZone;
 
+import org.apache.felix.scr.annotations.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+@Component
 public class HeaderHandler implements SOAPHandler<SOAPMessageContext> {
 
 	private static final long serialVersionUID = 1L;
-	
+
+	private Logger logger = LoggerFactory.getLogger(HeaderHandler.class);
+	 String endPointUrl=null;
+	 String soapRequest;
+	 String soapResponse;
+	 public HeaderHandler(){
+		 super();
+	 }
+	 public String getSoapRequest() {
+		return soapRequest;
+	}
+	public void setSoapRequest(String soapRequest) {
+		this.soapRequest = soapRequest;
+	}
+	public String getSoapResponse() {
+		return soapResponse;
+	}
+	public void setSoapResponse(String soapResponse) {
+		this.soapResponse = soapResponse;
+	}
+	public HeaderHandler(String endPointUrl){
+		 super();
+		 this.endPointUrl=endPointUrl;
+	 }
 public boolean handleMessage(SOAPMessageContext smc) {
 
-	
 	System.out.println("handleMessage method >>>>>>");
     Boolean outboundProperty = (Boolean) smc.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
-
     if (outboundProperty.booleanValue()) {
         SOAPMessage message = smc.getMessage();
-        try {         
-            SOAPEnvelope envelope = smc.getMessage().getSOAPPart().getEnvelope();           
+        try {
+            SOAPEnvelope envelope = smc.getMessage().getSOAPPart().getEnvelope();
             envelope.addNamespaceDeclaration("xsi", "http://www.w3.org/2001/XMLSchema-instance");
             envelope.addNamespaceDeclaration("xsd", "http://www.w3.org/2001/XMLSchema");
             envelope.addNamespaceDeclaration("wsa", "http://schemas.xmlsoap.org/ws/2004/08/addressing");
@@ -35,17 +61,17 @@ public boolean handleMessage(SOAPMessageContext smc) {
             if(envelope.getHeader()!=null) {
             	System.out.println("envelope header not null");
                 envelope.getHeader().detachNode();
-            }           
-            SOAPHeader header = envelope.addHeader();            
+            }
+            SOAPHeader header = envelope.addHeader();
             SOAPElement actionElement= header.addChildElement("Action", "wsa");
             actionElement.addTextNode("http://primesw.com/webservices/GetQuotes");
             SOAPElement messageElement= header.addChildElement("MessageID", "wsa");
             messageElement.addTextNode("urn:uuid:SSE-Kellen-OPPC");
             SOAPElement replyToElement= header.addChildElement("ReplyTo", "wsa");
             SOAPElement childReplyToElement=replyToElement.addChildElement("Address","wsa");
-            childReplyToElement.addTextNode("http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous");            
+            childReplyToElement.addTextNode("http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous");
             SOAPElement toElement= header.addChildElement("To","wsa");
-            toElement.addTextNode("https://test.prime.southstarenergy.com/Prime2/webservices/quoteservice.asmx");
+            toElement.addTextNode(endPointUrl);
             SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
             long HOUR = 3600*1000;
             dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -53,7 +79,7 @@ public boolean handleMessage(SOAPMessageContext smc) {
             Date currentDate=new Date();
             Date afterHour = new Date(currentDate.getTime() + 1 * HOUR);
             Date beforeHour = new Date(currentDate.getTime() - 1 * HOUR);
-            
+
             SOAPElement timeStampElement =security.addChildElement("Timestamp","wsu");
             timeStampElement.setAttribute("wsu:Id", "Timestamp-0b79048e-85dc-4d52-8280-057ae2960f24");
             SOAPElement createdElement=timeStampElement.addChildElement("Created","wsu");
@@ -70,7 +96,10 @@ public boolean handleMessage(SOAPMessageContext smc) {
            password.addTextNode("x");
            SOAPElement created = usernameToken.addChildElement("Created", "wsu");
            created.addTextNode(dateFormatGmt.format(beforeHour)+"Z");
-           message.writeTo(System.out);
+           ByteArrayOutputStream out = new ByteArrayOutputStream();
+           message.writeTo(out);
+           String soapRequest = new String(out.toByteArray());
+           setSoapRequest(soapRequest);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -78,23 +107,18 @@ public boolean handleMessage(SOAPMessageContext smc) {
     } else {
         try {
 
-            //This handler does nothing with the response from the Web Service so
-            //we just print out the SOAP message.
             SOAPMessage message = smc.getMessage();
-            message.writeTo(System.out);
-            System.out.println("");
-
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            message.writeTo(out);
+            soapResponse = new String(out.toByteArray());
         } catch (Exception ex) {
             ex.printStackTrace();
-        } 
+        }
     }
-
-
     return outboundProperty;
-
 }
 
-public Set getHeaders() {   
+public Set getHeaders() {
     return null;
 }
 
