@@ -35,16 +35,16 @@
           </span>
                 <div class="form-area multiple-input">
                     <div class="input-container" data-size={{an1minl}} ng-show="product.LDC !='MIC'">
-                        <input type="text" pattern="[0-9]*" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only>
+                        <input type="text" tabindex="1" pattern="[0-9]*" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" required numbers-only auto-next>
                     </div>
                     <div class="input-container" data-size={{an2minl}} ng-show="product.LDC !='MIC'">
-                        <input type="text" pattern="[0-9]*" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required numbers-only>
+                        <input type="text" tabindex="2" pattern="[0-9]*" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false required numbers-only auto-next>
                     </div>
                     <div class="input-container" data-size={{an3minl}} ng-show="product.LDC !='MIC'">
-                        <input type="text" pattern="[0-9]*" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" required numbers-only>
+                        <input type="text" tabindex="3" pattern="[0-9]*" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" required numbers-only auto-next>
                     </div>
                     <div class="input-container" data-size={{an4minl}}>
-                        <input type="text" pattern="[0-9]*" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required numbers-only>
+                        <input type="text" tabindex="4" pattern="[0-9]*" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" required numbers-only auto-next>
                     </div>
                 </div>
                 <span class="error-message" ng-show="(formone.an1.$dirty && product.LDC !='MIC' && (formone.an1.$invalid || formone.an2.$invalid || formone.an3.$invalid || formone.an4.$invalid)) || (formone.submited)">
