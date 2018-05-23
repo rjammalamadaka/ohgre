@@ -274,12 +274,14 @@
         </div>
       </div>
     </div>
+
+    <span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
+
+    <div class="button-container row">
+      <button class="primary-button next-button" data-next=3 ng-click="submityourinformation()">Next</button>
+      <button class="primary-button prev-button" ng-click="gotoPreviousStep(1)">Previous</button>
+    </div>
   </form>
 
-  <span class="input-error-message" ng-show="primeErrorMessage">{{primeErrorMessage}}</span>
 
-  <div class="button-container row">
-    <button class="primary-button next-button" data-next=3 ng-click="submityourinformation()">Next</button>
-    <button class="primary-button prev-button" ng-click="gotoPreviousStep(1)">Previous</button>
-  </div>
 </div>
