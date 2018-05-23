@@ -136,7 +136,7 @@ var ohio_ng = {
     $('.close-window, .close-window-button').on('click', function(event) {
       event.preventDefault();
       $('.popup-wrapper').removeClass('show-popup');
-      $('html').removeClass('fixed-body');
+      $('html, body').removeClass('fixed-body');
     });
 
     $('.form-area-wrapper .tooltip-trigger').on('click', function(event) {

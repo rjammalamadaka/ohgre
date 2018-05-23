@@ -17,13 +17,13 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
 
     var getCustomerInfo=function(req){
-        
+
         PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
             if (data && data.CustomerInfoResult) {
                 var customerInfo = JSON.parse(data.CustomerInfoResult);
                 if (customerInfo.responseStatus == 1) {
-                    
-                    
+
+
                 } else if (customerInfo.responseStatus == 0) {
                     $scope.customerInfo = customerInfo;
                     var giftCard = $scope.customerInfo.giftCard;
@@ -47,23 +47,23 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
                         }
                         // }
                     });
-                    
+
                     $scope.giftCardByYear[currentYear] = currentYearGf;
                     $scope.giftCardByYear[previouserYear] = previouserYearGf;
-                    
+
                     $scope.bindClickEvent();
-                    
+
                     $scope.setProductData(currentYear);
                 }
             } else {
                 location.href = $rootScope.homeUrl + "/refer.html";
             }
-            
+
         }).error(function(data, status, headers, config) {
-            
+
         });
 
-    }  
+    }
   PrimeService.getProductData().success(function(data, status, headers, config) {
 
     if (!($rootScope.isEmpty(data))) {
@@ -153,7 +153,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
   $scope.rafauthenticated = function() {
     $scope.customerInfoEmailAddress = $scope.customerInfo.emailAddress;
     jQuery('#raf-email-popup').addClass('show-popup');
-    jQuery('html').addClass('fixed-body');
+    jQuery('body').addClass('fixed-body');
     //UTILS.preventBodyScroll();
   }
 
@@ -213,7 +213,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
           jQuery('#raf-terms-popup').removeClass('show-popup');
           jQuery('#toemailaddress').val('');
           jQuery('#raf-confirm').addClass('show-popup');
-          $scope.success=true;  
+          $scope.success=true;
           $scope.rafemailform.toemailaddress.$setPristine();
           $scope.toemailaddress = '';
 
