@@ -306,8 +306,8 @@ ohgrePortal.directive('autoNext', function() {
         link: function(scope, element, attr, form) {
             var tabindex = parseInt(attr.tabindex);
             var maxLength = parseInt(attr.maxlength);
-
-            element.on('keypress', function(e) {
+            //keypress
+            element.on('keyup', function(e) {
                 //if (element.val().length > maxLength-1) {
                 if (element.val().length == element.attr('maxlength')) {
                     console.log('equal');
@@ -317,7 +317,7 @@ ohgrePortal.directive('autoNext', function() {
 
                     if (next.length > 0) {
                         next.focus();
-                        return next.triggerHandler('keypress', { which: e.which});
+                        return next.triggerHandler('keyup', { which: e.which});
                     }
                     else  {
                         return false;
