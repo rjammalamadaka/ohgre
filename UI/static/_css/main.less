@@ -219,6 +219,14 @@
 				span {
 					color: #f2f2f2;
 				}
+				a {
+					&:first-of-type{
+						display: block;
+					}
+					&.contact-phone{
+						color: @accent_color;
+					}
+				}
 			}
 		}
 	}
@@ -281,7 +289,9 @@
 		}
 	}
 }
-
+.contact-phone {
+	color: @accent_color;
+}
 footer {
 	padding: 0.5rem 0 1rem;
 	margin-top: 1rem;
@@ -3215,7 +3225,9 @@ div[class^="cq-colctrl-lt1-"] {
 
 		.primary-button {
 			&.inactive {
+				color: #fff;
 				cursor: default;
+				text-decoration: none;
 			}
 		}
 

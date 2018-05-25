@@ -1,18 +1,18 @@
-<header id="primary-header"  data-portalname="${inheritedPageProperties.portalname}">
-   <div class="container">
-      <div class="visible-xs visible-sm contact-us-container"><span><a href="#" ng-click="footernavigation('/content/onlyong/contact-us.html')">Contact Us</a> <a href="tel:${inheritedPageProperties.mobilenumber}"> ${inheritedPageProperties.mobilenumber}</a></span> <strong>${inheritedPageProperties.time}, ${inheritedPageProperties.days}</strong></div>
-      <a href="/content/onlyong.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img src="/content/dam/ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png" alt="Ohio Natural Gas Logo"></a>
-      <a href="/content/gre.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png" alt="Grand Rapids Energy Logo"></a>
-      <nav id="primary-navigation">
-         <ul  role="menu" data-sly-use.topnav="navigation.js" data-sly-list="${topnav.items}">
-            <li class="${item.selected && 'topnav__item--selected'}">
-                <a href="${item.page.path}.html">${item.page.navigationTitle}</a> 
-            </li>
-         </ul>
-         <div id="contact-us-container"><span><a href="#" ng-click="footernavigation('/content/onlyong/contact-us.html')">Contact Us</a> ${inheritedPageProperties.mobilenumber}</span> &nbsp;| &nbsp;<strong>${inheritedPageProperties.time}, ${inheritedPageProperties.days}</strong></div>
-      </nav>
-      <a href="#" id="mobile-menu" class="visible-xs visible-sm"><span>menu</span></a>
-   </div>
+<header id="primary-header" data-portalname="${inheritedPageProperties.portalname}">
+  <div class="container">
+    <div class="visible-xs visible-sm contact-us-container"><span><a href="#" ng-click="footernavigation('/content/onlyong/contact-us.html')">Contact Us</a> <a href="tel:${inheritedPageProperties.mobilenumber}"> ${inheritedPageProperties.mobilenumber}</a></span> <strong>${inheritedPageProperties.time}, ${inheritedPageProperties.days}</strong></div>
+    <a href="/content/onlyong.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img src="/content/dam/ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png" alt="Ohio Natural Gas Logo"></a>
+    <a href="/content/gre.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png" alt="Grand Rapids Energy Logo"></a>
+    <nav id="primary-navigation">
+      <ul role="menu" data-sly-use.topnav="navigation.js" data-sly-list="${topnav.items}">
+        <li class="${item.selected && 'topnav__item--selected'}">
+          <a href="${item.page.path}.html">${item.page.navigationTitle}</a>
+        </li>
+      </ul>
+      <div id="contact-us-container"><span><a href="#" ng-click="footernavigation('/content/onlyong/contact-us.html')">Contact Us</a> <a href="tel:${inheritedPageProperties.mobilenumber}" class="contact-phone">${inheritedPageProperties.mobilenumber}</a></span> &nbsp;| &nbsp;<strong>${inheritedPageProperties.time}, ${inheritedPageProperties.days}</strong></div>
+    </nav>
+    <a href="#" id="mobile-menu" class="visible-xs visible-sm"><span>menu</span></a>
+  </div>
 </header>
 
 
