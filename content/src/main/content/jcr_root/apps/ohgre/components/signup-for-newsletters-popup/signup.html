@@ -88,7 +88,7 @@
               <div class="input-group-wrapper">
                 <label for="address-state">State</label>
                 <span class="error-message">Error message copy goes here</span>
-                <input type="text" name="addressstate" ng-model="addressstate" id="addressstate" ng-required="!email" ng-focus ng-visited />
+                <input type="text" name="addressstate" ng-model="addressstate" id="addressstate" ng-required="!email" ng-focus ng-visited ng-pattern="/^[a-zA-Z\s]*$/" />
                 <span class="input-error-message" ng-show="(movingform.addressstate.$visited && !movingform.addressstate.$focused) || movingform.submited">
                 <span class="input-error-message" ng-show="movingform.addressstate.$error.required">State is required.</span>
                 </span>

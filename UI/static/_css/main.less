@@ -1806,9 +1806,17 @@ div[class^="cq-colctrl-lt1-"] {
 				}
 			}
 			&.faq {
-				@media (@screen-lg-min){
-					.slide-image {
-						//background-size: contain;
+				&.raf-faq {
+					@media (@screen-md-min){
+						.slide-image {
+							background-size: contain;
+							height: 100%;
+						}
+					}
+					@media (@screen-lg-min){
+						.slide-image {
+							background-size: 77%;
+						}
 					}
 				}
 			}

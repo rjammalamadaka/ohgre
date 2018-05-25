@@ -7539,6 +7539,17 @@ div[class^="cq-colctrl-lt1-"] .card p {
     background-position: top right;
   }
 }
+@media (min-width: 992px) and (min-width: 992px) {
+  .full-banner-callout.one-third.faq.raf-faq .slide-image {
+    background-size: contain;
+    height: 100%;
+  }
+}
+@media (min-width: 992px) and (min-width: 1200px) {
+  .full-banner-callout.one-third.faq.raf-faq .slide-image {
+    background-size: 77%;
+  }
+}
 @media (min-width: 1200px) {
   .full-banner-callout .slide-content {
     top: 0;

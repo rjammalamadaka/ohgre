@@ -1,12 +1,26 @@
 <script src="/etc/designs/ohgre/clientlibs/js/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.min.js"></script>
 
-
+<!--
 <script src="/etc/designs/ohgre/clientlibs/js/cloudsponge.js"></script>
+-->
 <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
 
 
 <script>
+  // Asynchronously include the widget library.
+
+    (function(u) {
+      var d = document,
+        s = 'script',
+        a = d.createElement(s),
+        m = d.getElementsByTagName(s)[0];
+      a.async = 1;
+      a.src = u;
+      m.parentNode.insertBefore(a, m);
+    })('//api.cloudsponge.com/widget/55f173bada0d361f7c04f1c435d61d6708d1b174.js');
+
+
   var contactsTextBoxValue = '';
 
   window.csPageOptions = {
@@ -21,6 +35,9 @@
     beforeDisplayContacts: function(contacts, b, c) {
       // obtain access to the ContactListCtrl's scope
       var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
+      contactsTextBoxValue = jQuery('#toemailaddress').val();
+      console.log('beforeDisplayContacts > contactsTextBoxValue ', contactsTextBoxValue);
+
       scope.$apply(function() {
         scope.fullAddressbook = contacts;
       });
@@ -31,9 +48,13 @@
 
       // obtain access to the ContactListCtrl's scope
       var scope = angular.element(document.getElementById('ContactListCtrl')).scope();
-      contactsTextBoxValue = jQuery('#toemailaddress').val();
-      console.log('beforeDisplayContacts > contactsTextBoxValue ', contactsTextBoxValue);
+      var csContacts = jQuery('#toemailaddress').val();
 
+      if(contactsTextBoxValue !== '') {
+        jQuery('#toemailaddress').val(contactsTextBoxValue + ',' + csContacts);
+      }
+
+      console.log('beforeDisplayContacts > contactsTextBoxValue ', contactsTextBoxValue);
 
       scope.csTextArea.text = jQuery('#toemailaddress').val();
 
