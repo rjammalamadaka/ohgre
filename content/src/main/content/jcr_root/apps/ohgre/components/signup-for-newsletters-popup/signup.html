@@ -1,44 +1,45 @@
 
-<div class="popup-wrapper" id="popup1"  ng-controller="SignupPopupController">
-   <div id="signup-form" class="window-wrapper with-border">
-      <a href="#" id="close-window">X</a>
-      <div class="inner-window-content">
-         <span class="window-title align-left">Sign up for offers</span>
-         <p>
-            Please enter email address or mailing service address
-         </p>
-         <form id="offer-signup-form" name="movingform" id="movingform" novalidate>
-            <div class="input-group-wrapper">
-               <label for="first-name">First Name<sup class="required">*</sup></label>
-               <span class="error-message">Error message copy goes here</span>
-               <input type="text" name="firstname" ng-model="firstname" ng-required="true" ng-focus ng-visited>
-               <span class="input-error-message" ng-show="(movingform.firstname.$visited && !movingform.firstName.$focused) || movingform.submited">
+<div class="popup-wrapper" id="popup1" ng-controller="SignupPopupController">
+  <div id="signup-form" class="window-wrapper with-border">
+    <a href="#" id="close-window">X</a>
+    <div class="inner-window-content">
+      <span class="window-title align-left">Sign up for offers</span>
+      <p>
+        Please enter email address or mailing service address
+      </p>
+      <span class="required-message">Required<sup>*</sup></span>
+      <form id="offer-signup-form" name="movingform" id="movingform" novalidate>
+        <div class="input-group-wrapper">
+          <label for="first-name">First Name<sup class="required">*</sup></label>
+          <span class="error-message">Error message copy goes here</span>
+          <input type="text" name="firstname" ng-model="firstname" ng-required="true" ng-focus ng-visited>
+          <span class="input-error-message" ng-show="(movingform.firstname.$visited && !movingform.firstName.$focused) || movingform.submited">
                <span class="input-error-message" ng-show="movingform.firstname.$error.required">First Name is required.</span>
-               </span>
-            </div>
-            <!--<input type="text" name="first-name" id="first-name" />-->
-            <div class="input-group-wrapper">
-               <label for="last-name">Last Name<sup class="required">*</sup></label>
-               <span class="error-message">Error message copy goes here</span>
-               <input type="text" name="lastname" ng-model="lastname" ng-required="true" ng-focus ng-visited>
-               <span class="input-error-message" ng-show="(movingform.lastname.$visited && !movingform.lastname.$focused) || movingform.submited">
+          </span>
+        </div>
+        <!--<input type="text" name="first-name" id="first-name" />-->
+        <div class="input-group-wrapper">
+          <label for="last-name">Last Name<sup class="required">*</sup></label>
+          <span class="error-message">Error message copy goes here</span>
+          <input type="text" name="lastname" ng-model="lastname" ng-required="true" ng-focus ng-visited>
+          <span class="input-error-message" ng-show="(movingform.lastname.$visited && !movingform.lastname.$focused) || movingform.submited">
                <span class="input-error-message" ng-show="movingform.lastname.$error.required">Last Name is required.</span>
-               </span>
-            </div>
-            <!--<label>Last Name<sup class="required">*</sup></label>
+          </span>
+        </div>
+        <!--<label>Last Name<sup class="required">*</sup></label>
                <input type="text" name="last-name" id="last-name" />-->
-            <!--<label>Email</label>
+        <!--<label>Email</label>
                <input type="text" name="email" id="email" />-->
-            <div class="input-group-wrapper">
-               <label for="email">Email<sup class="required"></sup></label>
-               <span class="error-message">Error message copy goes here</span>
-               <input type="text" name="email" ng-model="email" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="!(addressone && addresscity && addressstate && addresszip)" ng-focus ng-visited>
-               <span class="input-error-message" ng-show="(movingform.email.$visited && !movingform.email.$focused) || movingform.submited">
+        <div class="input-group-wrapper">
+          <label for="email">Email<sup class="required">*</sup></label>
+          <span class="error-message">Error message copy goes here</span>
+          <input type="text" name="email" ng-model="email" data-ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" ng-required="!(addressone && addresscity && addressstate && addresszip)" ng-focus ng-visited>
+          <span class="input-error-message" ng-show="(movingform.email.$visited && !movingform.email.$focused) || movingform.submited">
                <span class="input-error-message" ng-show="movingform.email.$error.required">Email is required.</span>
-               <span class="input-error-message" ng-show="movingform.email.$invalid && !movingform.email.$error.required">Please enter valid email id.</span>
-               </span>
-            </div>
-            <!--<input type="text" name="address-1" id="address-1" />
+          <span class="input-error-message" ng-show="movingform.email.$invalid && !movingform.email.$error.required">Please enter valid email id.</span>
+          </span>
+        </div>
+        <!--<input type="text" name="address-1" id="address-1" />
                <input type="text" name="address-2" />
                <div class="row address-fields">
                	<div class="col-md-6 col-sm-6">
@@ -60,42 +61,42 @@
                		</div>
                	</div>
                </div>-->
-            <div class="billing-address">
-               <div class="input-group-wrapper">
-                  <label for="billing-address-one">Street Address</label>
-                  <span class="error-message">Error message copy goes here</span>
-                  <input type="text" name="addressone" ng-model="addressone" id="addressone" ng-required="!email" ng-focus ng-visited>
-                  <span class="input-error-message" ng-show="(movingform.addressone.$visited && !movingform.addressone.$focused) || movingform.submited">
+        <div class="billing-address">
+          <div class="input-group-wrapper">
+            <label for="billing-address-one">Street Address</label>
+            <span class="error-message">Error message copy goes here</span>
+            <input type="text" name="addressone" ng-model="addressone" id="addressone" ng-required="!email" ng-focus ng-visited>
+            <span class="input-error-message" ng-show="(movingform.addressone.$visited && !movingform.addressone.$focused) || movingform.submited">
                   <span class="input-error-message" ng-show="movingform.addressone.$error.required">Address1 is required.</span>
-                  </span>
-               </div>
-               <div class="input-group-wrapper">
-                  <input type="text" name="addresstwo" id="addresstwo" ng-model="addresstwo">
-               </div>
-               <div class="row address-fields">
-                  <div class="col-md-6 col-sm-6">
-                     <div class="input-group-wrapper">
-                        <label for="address-city">City</label>
-                        <span class="error-message">Error message copy goes here</span>
-                        <input type="text" name="addresscity" ng-model="addresscity" id="addresscity" ng-required="!email" ng-focus ng-visited>
-                        <span class="input-error-message" ng-show="(movingform.addresscity.$visited && !movingform.addresscity.$focused) || movingform.submited">
+            </span>
+          </div>
+          <div class="input-group-wrapper">
+            <input type="text" name="addresstwo" id="addresstwo" ng-model="addresstwo">
+          </div>
+          <div class="row address-fields">
+            <div class="col-md-6 col-sm-6">
+              <div class="input-group-wrapper">
+                <label for="address-city">City</label>
+                <span class="error-message">Error message copy goes here</span>
+                <input type="text" name="addresscity" ng-model="addresscity" id="addresscity" ng-required="!email" ng-focus ng-visited>
+                <span class="input-error-message" ng-show="(movingform.addresscity.$visited && !movingform.addresscity.$focused) || movingform.submited">
                         <span class="input-error-message" ng-show="movingform.addresscity.$error.required">City is required.</span>
-                        </span>
-                     </div>
-                  </div>
-                  <div class="col-md-2 col-sm-2">
-                     <div class="input-group-wrapper">
-                        <label for="address-state">State</label>
-                        <span class="error-message">Error message copy goes here</span>
-                        <input type="text" name="addressstate" ng-model="addressstate" id="addressstate" ng-required="!email" ng-focus ng-visited />
-                        <span class="input-error-message" ng-show="(movingform.addressstate.$visited && !movingform.addressstate.$focused) || movingform.submited">
-                        <span class="input-error-message" ng-show="movingform.addressstate.$error.required">State is required.</span>
-                        </span>
-                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                     <div class="input-group-wrapper">
-                        <label for="address-zip">Zip</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <div class="input-group-wrapper">
+                <label for="address-state">State</label>
+                <span class="error-message">Error message copy goes here</span>
+                <input type="text" name="addressstate" ng-model="addressstate" id="addressstate" ng-required="!email" ng-focus ng-visited />
+                <span class="input-error-message" ng-show="(movingform.addressstate.$visited && !movingform.addressstate.$focused) || movingform.submited">
+                <span class="input-error-message" ng-show="movingform.addressstate.$error.required">State is required.</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="input-group-wrapper">
+                <label for="address-zip">Zip Code</label>
                         <span class="error-message">Error message copy goes here</span>
                         <input type="text" name="addresszip" ng-model="addresszip" id="addresszip" maxlength="5" ng-required="!email" ng-focus ng-visited numbers-only>
                         <span class="input-error-message" ng-show="(movingform.addresszip.$visited && !movingform.addresszip.$focused) || movingform.submited">
@@ -105,12 +106,13 @@
                   </div>
                </div>
       </div>
+      <div class="button-container">
+      <a href="#" class="primary-button inactive close-window-button">cancel</a>
+      <a href="#" class="primary-button submit-button" ng-click="signupfornewsletter()">Sign Up</a>
+      </div>
+      </form>
    </div>
-   <div class="button-container">
-   <a href="#" class="primary-button inactive close-window-button">cancel</a>
-   <a href="#" class="primary-button submit-button" ng-click="signupfornewsletter()">Sign Up</a>
-   </div>
-   </form>
+
    <!-- end inner content -->
 </div>
 </div>
