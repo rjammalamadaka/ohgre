@@ -254,7 +254,7 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
     $rootScope.footernavigation = function(url) {
       if(portalname !== "oh"){
         url=url.replace("onlyong","gre");
-      }
+        }
       window.open(url), '_blank', 'height=100%,width=100%';
 
     }
@@ -492,6 +492,8 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
 
     }
 
+    $rootScope.resstdpromocode = $("#resstdpromocode-div").data("resstdpromocode");
+    $rootScope.commstdpromocode = $("#commstdpromocode-div").data("commstdpromocode");
 
 
 }]);

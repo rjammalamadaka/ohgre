@@ -192,7 +192,29 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
   }
 
     $('input[type=radio][name=location_type]').change(function() {
-          $scope.getPlans();
+
+        ohgre.removeStore("promoCodeInfo");
+        ohgre.removeStore("promocode");
+        var standardpromocode=null;
+        var locationType=$("input[name='location_type']:checked").val();
+
+            if(locationType=="residential" && $rootScope.resstdpromocode){
+                    standardpromocode=$rootScope.resstdpromocode;
+            }else if(locationType=="commercial" &&  $rootScope.commstdpromocode){
+                standardpromocode= $rootScope.commstdpromocode;
+            }
+
+        if(standardpromocode && standardpromocode.length>0){
+             PrimeService.getPromoCodeInfo(standardpromocode).success(function(data, status, headers, config) {
+                 data.standardpromocode=true;
+                 ohgre.store("promoCodeInfo",data); 
+                 $scope.getPlans();
+             }).error(function (data,status, headers, config){
+
+             }); 
+        }else{
+            $scope.getPlans();
+        }
     });
 
 

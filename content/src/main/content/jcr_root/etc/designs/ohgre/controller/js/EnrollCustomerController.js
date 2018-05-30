@@ -14,6 +14,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     $scope.sendRafEmailReq={};
     $scope.confirmationButton="Back to Home page";
     $scope.specialoffer=true;
+    $scope.displaythankyou=false;
 
     $scope.displayReferalForm=false;
 
@@ -326,7 +327,13 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                         $('#b2BCustomerIndError').show();
                         return;
                     }
-
+                     var promoCodeInfo=ohgre.store("promoCodeInfo");
+                    if(promoCodeInfo && !isEmpty(promoCodeInfo)){
+                        $scope.showpromocodeconfirmation=true;
+                        if(promoCodeInfo && promoCodeInfo.standardpromocode){
+							$scope.showpromocodeconfirmation=false;
+                        }
+                    }
                     updateenrollrequestobj($rootScope.customerInfo);
                     if($rootScope.customerInfo && $rootScope.customerInfo.responseStatus =="0"){
                         $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
@@ -370,6 +377,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                         }else if($rootScope.product.rateClassCode =="01"){
                             if(($rootScope.customerInfo.lastName.toLowerCase() !=$scope.lastName.toLowerCase()) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                                 $('#lastnamezipcodeerror').show();
+                                $scope.showpromocodeconfirmation=false;
                                 return false;
                             }else{
                                 $('#popupconfirm').addClass('show-popup');
@@ -377,6 +385,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                         }else if($rootScope.product.rateClassCode =="04"){
                             if((!validateCommercialName($rootScope.customerInfo.businessName.toLowerCase())) || ($rootScope.customerInfo.serviceZipCode.toLowerCase() != $scope.zipcode.toLowerCase())){
                                 $('#lastnamezipcodeerror').show();
+                                $scope.showpromocodeconfirmation=false;
                                 return false;
                             }else{
                                 $('#popupconfirm').addClass('show-popup');
@@ -668,12 +677,18 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         }
 
         $scope.continuefromdeltaskymiles=true;
-        if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising  =="Y"){
+       /* if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising  =="Y"){
             $scope.reviewdisplaydeltaskymiles =false;
             $scope.reviewdisplayvisa=false;
             $scope.reviewdisplayraf =true;
         }else{
             $scope.reviewauthorizesubmit();
+        }*/
+
+        if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplaydeltaskymiles =false;
+            $scope.reviewdisplayvisa =true;
         }
 
     }
@@ -686,14 +701,21 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         }
         $scope.enrollReq.emailTypeCode="RAFGEN";
 
-        $scope.reviewauthorizesubmit();
 
-        /*	$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
+       // $scope.reviewauthorizesubmit();
+
+        	$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
             PrimeService.sendRafEmail($scope.sendRafEmailReq).success(function(data, status, headers, config){
+
+                if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
+                    $scope.reviewdisplay=false;
+                    $scope.reviewdisplayraf =false;
+                    $scope.reviewdisplaydeltaskymiles =true;
+                }
 
             }).error(function(data, status, headers, config){
 
-            });*/
+            });
 
     }
     $scope.reviewauthorizesubmit =function(){
@@ -721,14 +743,25 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                         //$scope.primeErrorMessage=enrollCustomerResult.responseMessage;
                         ohgre.removeStore("promoCodeInfo");
                         //$scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
+                        $scope.displaythankyou=true;
                         gotNextStep(5);
                         document.title="Confirmation Page";
 
                     }else if(enrollCustomerResult.responseStatus){
-                        ohgre.removeStore("promoCodeInfo");
+
                         $scope.sendRafEmailReq.custID=enrollCustomerResult.custID;
-                        gotNextStep(5);
-                        document.title="Confirmation Page";
+                        if($scope.promotionInfo && ($scope.promotionInfo.DSMEligible =="Y" || $scope.promotionInfo.GiftCardEligible =="Y" || $scope.promotionInfo.RAFAdvertising =="Y")){
+                            $scope.displaythankyou=true;
+ 						     gotNextStep(5);
+                             document.title="Confirmation Page";
+                             $scope.continuePromotions=true; 
+                             $scope.confirmationButton="Continue";
+                        }else{
+                            $scope.displaythankyou=true;
+                            ohgre.removeStore("promoCodeInfo");
+                        	gotNextStep(5);
+                        	document.title="Confirmation Page";
+                        }
                     }
                 }
                 $scope.scrollToPageTop();
@@ -996,7 +1029,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                 PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
                     $scope.flag=false;
                     if(data.message =="Success"){
-                        $scope.reviewauthorizesubmit();
+                        //$scope.reviewauthorizesubmit();
+                        if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+                            $scope.reviewdisplay=false;
+                            $scope.reviewdisplaydeltaskymiles =false;
+                            $scope.reviewdisplayvisa =true;
+                        }
                     }
 
                 }).error(function(data, status, headers, config){
@@ -1130,18 +1168,33 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
           updateenrollrequestobj(data);
       }
   */
+    var continuePromotions=function(){
+
+        if($scope.promotionInfo && $scope.promotionInfo.RAFAdvertising =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplayraf =true;
+        }else if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplaydeltaskymiles =true;
+        }else if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplayvisa =true;
+        }
+    }
     $scope.gotoHomePage = function(){
         //location.href=$rootScope.homeUrl+".html";
-        if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){
-
-            location.href=$rootScope.homeUrl+"/myaccount.html";
+        if($scope.continuePromotions){
+            console.log("continue promotions");
+            $scope.displaythankyou=false;
+            continuePromotions();
 
         }else{
-
-            location.href=$rootScope.homeUrl+".html";
+            if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){    
+                location.href=$rootScope.homeUrl+"/myaccount.html";    
+            }else{    
+                location.href=$rootScope.homeUrl+".html";
+            }
         }
-
-
     }
 
     var clearEnrollReqObject =function(){
