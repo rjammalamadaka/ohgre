@@ -153,6 +153,53 @@ ohgrePortal.directive('multipleEmails', function() {
     }
   };
 })
+ohgrePortal.directive('lettersOnly', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, modelCtrl) {
+      modelCtrl.$parsers.push(function(inputValue) {
+        // this next if is necessary for when using ng-required on your input.
+        // In such cases, when a letter is typed first, this parser will be called
+        // again, and the 2nd time, the value will be undefined
+        if (inputValue == undefined) return ''
+        console.log('inputValue', inputValue);
+        var transformedInput = inputValue.replace(/^[a-zA-Z ]+$/, '');
+        if (transformedInput != inputValue) {
+          modelCtrl.$setViewValue(transformedInput);
+          modelCtrl.$render();
+        }
+
+        return transformedInput;
+      });
+
+      // element[0].addEventListener('input', function(event) {
+      //   var reg = /^\d+$/;
+      //
+      //   var userInput;
+      //
+      //   if (event.data) {
+      //     userInput = event.data.length;
+      //     if (!reg.test(event.data)) {
+      //
+      //       var isnum = /^\d+$/.test(event.data);
+      //
+      //       if (!isnum) {}
+      //
+      //       $(element[0]).val(
+      //         function(index, value) {
+      //           return value.substr(0, value.length - 1);
+      //         })
+      //
+      //     }
+      //   }
+      //
+      // });
+
+
+    }
+  };
+});
+
 ohgrePortal.directive('numbersOnly', function() {
   return {
     require: 'ngModel',

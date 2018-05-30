@@ -2866,7 +2866,13 @@ div[class^="cq-colctrl-lt1-"] {
 		padding: 1rem 0;
 
 		a {
-			width: 35%;
+			width: 47%;
+			text-align: center;
+			padding: 0;
+
+			@media (@screen-md-min) {
+				width: 35%;
+			}
 		}
 	}
 
@@ -3428,7 +3434,12 @@ div[class^="cq-colctrl-lt1-"] {
 		}
 
 		.refer-friends-btn {
+			background-color: #9bb2c1;
 			display: none;
+
+			&:hover {
+				background-color: @accent_color;
+			}
 		}
 		@media (@screen-md-min) {
 			border-bottom: 1px solid #e6e6e6;

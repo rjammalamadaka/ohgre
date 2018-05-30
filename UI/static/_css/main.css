@@ -5813,6 +5813,8 @@ input[type="text"] {
   padding: .3rem 3rem;
   line-height: 3rem;
   color: #757575;
+  font-weight: 500;
+  text-decoration: none;
 }
 .dropdown-container .dropdown-menu > li:last-child {
   border-bottom: none;
@@ -8408,7 +8410,14 @@ div[class^="cq-colctrl-lt1-"] .card p {
   padding: 1rem 0;
 }
 #raf-terms-popup .button-container a {
-  width: 35%;
+  width: 47%;
+  text-align: center;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  #raf-terms-popup .button-container a {
+    width: 35%;
+  }
 }
 #raf-terms-popup .scroll-container {
   font-family: 'Roboto', sans-serif;
@@ -8854,7 +8863,11 @@ div[class^="cq-colctrl-lt1-"] .card p {
   color: #0074bf;
 }
 #raf-email-form #raf-friend-info .refer-friends-btn {
+  background-color: #9bb2c1;
   display: none;
+}
+#raf-email-form #raf-friend-info .refer-friends-btn:hover {
+  background-color: #ff6008;
 }
 @media (min-width: 992px) {
   #raf-email-form #raf-friend-info {
