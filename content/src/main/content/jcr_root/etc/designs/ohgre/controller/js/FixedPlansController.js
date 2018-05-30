@@ -1,15 +1,41 @@
 ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http','PrimeService',function ($scope, $rootScope,$http,PrimeService) {
 
  var portalname=$rootScope.portalname;
-
+    ohgre.removeStore("promoCodeInfo");
+    ohgre.removeStore("promocode");
+    var standardpromocode=null;
     $scope.viewplans = function(){
-        var ldcCode=$('#fixed-plans-button').val();
-        if(ldcCode){
-            if(portalname =="oh"){
-         	location.href="/content/onlyong/rate-plans.html#ldc="+ldcCode;
-            }else{
-                location.href="/content/gre/rate-plans.html#ldc="+ldcCode;
+
+
+            if( $rootScope.resstdpromocode){
+               standardpromocode=$rootScope.resstdpromocode;
             }
+       
+
+        if(standardpromocode && standardpromocode.length>0){
+             PrimeService.getPromoCodeInfo(standardpromocode).success(function(data, status, headers, config) {
+                 data.standardpromocode=true;
+                 ohgre.store("promoCodeInfo",data);
+                 var ldcCode=$('#fixed-plans-button').val();
+                 if(ldcCode){
+                     if(portalname =="oh"){
+                         location.href="/content/onlyong/rate-plans.html#ldc="+ldcCode;
+                     }else{
+                         location.href="/content/gre/rate-plans.html#ldc="+ldcCode;
+                     }
+                 }
+            }).error(function (data,status, headers, config){
+                
+            });
+        }else{
+              var ldcCode=$('#fixed-plans-button').val();
+                 if(ldcCode){
+                     if(portalname =="oh"){
+                         location.href="/content/onlyong/rate-plans.html#ldc="+ldcCode;
+                     }else{
+                         location.href="/content/gre/rate-plans.html#ldc="+ldcCode;
+                     }
+                 }
         }
     }
 
