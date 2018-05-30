@@ -199,6 +199,26 @@ ohgrePortal.directive('lettersOnly', function() {
     }
   };
 });
+ohgrePortal.directive('noSpecials', function() {
+  return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function(scope, elem, attrs, ngModel) {
+          ngModel.$parsers.push(function(viewValue) {
+            var reg = /^[^`~!@#$%\^&*()_+={}|[\]\\:;"<>?,/1-9]*$/;
+            // if view values matches regexp, update model value
+            if (viewValue.match(reg)) {
+              return viewValue;
+            }
+            // keep the model value as it is
+            var transformedValue = ngModel.$modelValue;
+            ngModel.$setViewValue(transformedValue);
+            ngModel.$render();
+            return transformedValue;
+          });
+      }
+  };
+});
 
 ohgrePortal.directive('numbersOnly', function() {
   return {
