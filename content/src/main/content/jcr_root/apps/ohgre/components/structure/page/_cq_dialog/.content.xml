@@ -719,6 +719,16 @@
                                                 value="gre"/>
                                         </items>
                                     </portalname>
+                                    <resstdpromocode
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Residential Standard Promo Code"
+                                        name="./resstdpromocode"/>
+                                    <commstdpromocode
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Commercial Standard Promo Code"
+                                        name="./commstdpromocode"/>
                                     <tagmanagerid
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
