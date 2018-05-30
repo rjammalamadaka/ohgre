@@ -43,10 +43,39 @@ ohgrePortal.directive('restrictTo', function() {
     link: function(scope, element, attrs) {
       var re = RegExp(attrs.restrictTo);
       var exclude = [8, 13, 9, 46, 38, 40, 37, 39];
+      /*
+            element[0].addEventListener('keydown', function(event) {
 
+                if (!(event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
+                    if(exclude.indexOf(event.keyCode) < 0) {
+						event.preventDefault();
+                    }
+                }
+
+            });
+            */
       element[0].addEventListener('input', function(event) {
         var reg = /^\d+$/;
+        /*
+                var userInput = event.data.length;
 
+				console.log('data length', userInput);
+
+
+                if(!reg.test(event.data)){
+
+                    var isnum = /^\d+$/.test(event.data);
+
+                    if(!isnum) {
+                    }
+
+					$(element[0]).val(
+                        function(index, value){
+                            return value.substr(0, value.length - 1);
+                    })
+
+                }
+                */
       });
 
 
@@ -170,26 +199,7 @@ ohgrePortal.directive('lettersOnly', function() {
     }
   };
 });
-ohgrePortal.directive('noSpecials', function() {
-  return {
-      restrict: 'A',
-      require: 'ngModel',
-      link: function(scope, elem, attrs, ngModel) {
-          ngModel.$parsers.push(function(viewValue) {
-            var reg = /^[^`~!@#$%\^&*()_+={}|[\]\\:;"<>?,/1-9]*$/;
-            // if view values matches regexp, update model value
-            if (viewValue.match(reg)) {
-              return viewValue;
-            }
-            // keep the model value as it is
-            var transformedValue = ngModel.$modelValue;
-            ngModel.$setViewValue(transformedValue);
-            ngModel.$render();
-            return transformedValue;
-          });
-      }
-  };
-});
+
 ohgrePortal.directive('numbersOnly', function() {
   return {
     require: 'ngModel',
