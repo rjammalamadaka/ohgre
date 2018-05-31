@@ -10232,6 +10232,14 @@ div.alt-col2 {
 }
 .confirmation-info .box-with-border .checkmark-wrapper .checkmark {
   margin: 0.2rem 2rem 0 0.5rem;
+  background-image: url(../_img/global/blue-check.png);
+  height: 10px;
+  width: 10px;
+  background-repeat: no-repeat;
+}
+.confirmation-info .box-with-border .checkmark-wrapper .checkmark:after {
+  height: 0;
+  width: 0;
 }
 .confirmation-info .box-with-border .checkmark-wrapper + .after-checkbox {
   width: 85%;
