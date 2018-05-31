@@ -16,12 +16,9 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
       $("input[name=location_type][value='commercial']").prop("checked", true);
 
     }
-
-
-
-
-
   }
+
+  $scope.hasIntroImg = ($('#promo-intro-img').attr('src') == '') ? 0 : 1;
 
   var processPromotionInfo = function(promoInfo) {
 
