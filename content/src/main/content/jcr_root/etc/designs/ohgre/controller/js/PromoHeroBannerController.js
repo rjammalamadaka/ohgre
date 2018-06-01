@@ -4,8 +4,9 @@
     jQuery('#popup-spinner-wrap').show();
    // $rootScope.prmoProduct=[];
 
- var portalname=$rootScope.portalname;
-
+    var portalname=$rootScope.portalname;
+    console.log('header length', $('#primary-header > .container').length);
+    $scope.hasEmptyHeader = ($('#primary-header > .container').length === 0) ? 1 : 0;
 
      var getPromoCodeInfo =function(promocode){
 		/* PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
@@ -29,7 +30,7 @@
             if(promoInfo && promoInfo.LDCList && promoInfo.LDCList.length>0){
                 var ldc=promoInfo.LDCList[0];
                 $rootScope.promotion=ldc.promotion[0];
-                $rootScope.promotionInfo=true;        
+                $rootScope.promotionInfo=true;
                 var date = new Date($scope.promotion.PromotionExpiratonDate),
                 locale = "en-us",
                 month = date.toLocaleString(locale, { month: "long" });
@@ -48,13 +49,13 @@
                         $rootScope.enrollPromoCode=promotion.PromotionCode;
                         $scope.DELTAMILES=$scope.promotion.DSMAwardMiles;
 
-                        break;                              
+                        break;
                     }else if(promotion.PromotionExpired =="Y" && promotion.BackupPromotionCode.length>0){
                         $rootScope.promotion=ldc.promotion[0];
  						$rootScope.ldcForEnrollPromo=ldc;
                         $rootScope.enrollPromoCode=promotion.BackupPromotionCode;
                        // getPromoCodeInfo(promotion.BackupPromotionCode);
-                        break; 
+                        break;
                     }
 
                 }
@@ -102,7 +103,7 @@
                          //$rootScope.enrollLdc=ldc;
                          $rootScope.ldcForEnrollPromo=ldc;
                          $rootScope.enrollPromoCode=promotion.PromotionCode;
-                              break;                              
+                              break;
                       }
 
                  }
@@ -235,4 +236,3 @@
     }
 
 }]);
-

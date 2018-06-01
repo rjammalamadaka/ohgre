@@ -19,6 +19,7 @@ ohgrePortal.controller('PromotionContentController', ['$scope', '$rootScope', '$
   }
 
   $scope.hasIntroImg = ($('#promo-intro-img').attr('src') === undefined) ? 0 : 1;
+  //$scope.hasEmptyHeader = ($('#primary-header > .container').attr('src') === 0) ? 0 : 1;
 
   var processPromotionInfo = function(promoInfo) {
 
