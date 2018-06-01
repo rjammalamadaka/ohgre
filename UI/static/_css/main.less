@@ -49,6 +49,10 @@
 		a {
 			color: @font_color;
 			text-decoration: none;
+
+			&.contact-phone {
+				color: @accent_color;
+			}
 		}
 
 		span {
@@ -322,6 +326,11 @@ footer {
 		margin-bottom: 0.5rem;
 		@media (@screen-md-min) {
 			margin-bottom: 0;
+		}
+	}
+	a {
+		&:hover {
+			color: #fff;
 		}
 	}
 
@@ -4604,6 +4613,13 @@ div.alt-col2 {
 		}
 	}
 }
+.promo-content {
+	.promo-wrapper {
+		@media all and (-ms-high-contrast:none) {
+     *::-ms-backdrop, .box-w-arrow{ padding-bottom: 7rem; } /* IE11 */
+   }
+	}
+}
 @media (@screen-md-min) {
 	.visa-landing.full-banner-callout {
 		.slide-content {
@@ -5034,6 +5050,7 @@ div.alt-col2 {
 				background-repeat: no-repeat;
 
 				&:after {
+					border: none;
 					height: 0;
 					width: 0;
 				}

@@ -5990,6 +5990,12 @@ div[class^="col-"] {
   color: #757575;
   text-decoration: none;
 }
+#primary-header #contact-us-container a.contact-phone,
+#promo-header #contact-us-container a.contact-phone,
+#primary-header .contact-us-container a.contact-phone,
+#promo-header .contact-us-container a.contact-phone {
+  color: #ff6008;
+}
 #primary-header #contact-us-container span,
 #promo-header #contact-us-container span,
 #primary-header .contact-us-container span,
@@ -6275,6 +6281,9 @@ footer span {
   footer span {
     margin-bottom: 0;
   }
+}
+footer a:hover {
+  color: #fff;
 }
 footer img {
   max-width: 100%;
@@ -9887,6 +9896,15 @@ div.alt-col2 {
 .box-w-arrow.no-arrow:after {
   display: none;
 }
+@media all and (-ms-high-contrast: none) {
+  .promo-content .promo-wrapper {
+    /* IE11 */
+  }
+  .promo-content .promo-wrapper *::-ms-backdrop,
+  .promo-content .promo-wrapper .box-w-arrow {
+    padding-bottom: 7rem;
+  }
+}
 @media (min-width: 992px) {
   .visa-landing.full-banner-callout .slide-content {
     width: 60%;
@@ -10238,6 +10256,7 @@ div.alt-col2 {
   background-repeat: no-repeat;
 }
 .confirmation-info .box-with-border .checkmark-wrapper .checkmark:after {
+  border: none;
   height: 0;
   width: 0;
 }
