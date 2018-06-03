@@ -45,6 +45,18 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     @Property(value="", label="To Mail Address", description="To Mail Address", cardinality=0)
     private static final String TO_MAIL_ADDRESS="to.mail.address";
 
+    @Property(value="STDRESONG", label="Oh standard residential promocode", description="Oh standard residential promocode", cardinality=0)
+    private static final String OH_STANDARD_RESIDENTIAL_PROMOCODE="oh.standard.residential.promocode";
+
+    @Property(value="STDCOMONG", label="Oh standard commercial promocode", description="Oh standard commercial promocode", cardinality=0)
+    private static final String OH_STANDARD_COMMERCIAL_PROMOCODE="oh.standard.commercial.promocode";
+
+    @Property(value="STDRESGRE", label="Gre standard residential promocode", description="Gre standard residential promocode", cardinality=0)
+    private static final String GRE_STANDARD_RESIDENTIAL_PROMOCODE="gre.standard.residential.promocode";
+
+    @Property(value="STDCOMGRE", label="Gre standard commercial promocode", description="Gre standard commercial promocode", cardinality=0)
+    private static final String GRE_STANDARD_COMMERCIAL_PROMOCODE="gre.standard.commercial.promocode";
+
     private String primeEndPoint=PRIME_ENDPOINT_URL;
     private String mySqlConnectionUrl=MY_SQL_CONNECTION_URL;
     private String dataBaseUsername=DATA_BASE_USERNAME;
@@ -52,6 +64,10 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     private String deltaSkyMilesEndPoint=DELTA_SKY_MILES_ENDPOINT_URL;
     private String whatCountsUrl=WHAT_COUNT_URL;
     private String toMailAddress = TO_MAIL_ADDRESS;
+    private String ohStandardResPromo=OH_STANDARD_RESIDENTIAL_PROMOCODE;
+    private String ohStandardComPromo=OH_STANDARD_COMMERCIAL_PROMOCODE;
+    private String greStandardResPromo=GRE_STANDARD_RESIDENTIAL_PROMOCODE;
+    private String greStandardComPromo=GRE_STANDARD_COMMERCIAL_PROMOCODE;
 
 
     public String getPrimeEndPoint() { return primeEndPoint; }
@@ -73,6 +89,18 @@ public class CommonConfigServiceImpl implements CommonConfigService {
     public String getToMailAddress() {
         return toMailAddress;
     }
+    public String getOhStandardResPromo(){
+        return ohStandardResPromo;
+    }
+    public String getOhStandardComPromo(){
+        return ohStandardComPromo;
+    }
+    public String getGreStandardResPromo(){
+        return greStandardResPromo;
+    }
+    public String getGreStandardComPromo(){
+        return greStandardComPromo;
+    }
 
     protected void activate(ComponentContext context) {
         setup(context);
@@ -89,6 +117,11 @@ public class CommonConfigServiceImpl implements CommonConfigService {
         deltaSkyMilesEndPoint=PropertiesUtil.toString(properties.get(DELTA_SKY_MILES_ENDPOINT_URL),"");
         whatCountsUrl=PropertiesUtil.toString(properties.get(WHAT_COUNT_URL),"");
         toMailAddress = PropertiesUtil.toString(properties.get(TO_MAIL_ADDRESS),"");
+        ohStandardResPromo=PropertiesUtil.toString(properties.get(OH_STANDARD_RESIDENTIAL_PROMOCODE),"");
+        ohStandardComPromo=PropertiesUtil.toString(properties.get(OH_STANDARD_COMMERCIAL_PROMOCODE),"");
+        greStandardResPromo=PropertiesUtil.toString(properties.get(GRE_STANDARD_RESIDENTIAL_PROMOCODE),"");
+        greStandardComPromo=PropertiesUtil.toString(properties.get(GRE_STANDARD_COMMERCIAL_PROMOCODE),"");
+
     }
 
     @Modified
@@ -101,6 +134,10 @@ public class CommonConfigServiceImpl implements CommonConfigService {
         deltaSkyMilesEndPoint=PropertiesUtil.toString(properties.get(DELTA_SKY_MILES_ENDPOINT_URL),"");
         whatCountsUrl=PropertiesUtil.toString(properties.get(WHAT_COUNT_URL),"");
         toMailAddress = PropertiesUtil.toString(properties.get(TO_MAIL_ADDRESS),"");
+        ohStandardResPromo=PropertiesUtil.toString(properties.get(OH_STANDARD_RESIDENTIAL_PROMOCODE),"");
+        ohStandardComPromo=PropertiesUtil.toString(properties.get(OH_STANDARD_COMMERCIAL_PROMOCODE),"");
+        greStandardResPromo=PropertiesUtil.toString(properties.get(GRE_STANDARD_RESIDENTIAL_PROMOCODE),"");
+        greStandardComPromo=PropertiesUtil.toString(properties.get(GRE_STANDARD_COMMERCIAL_PROMOCODE),"");
     }
 
 }
