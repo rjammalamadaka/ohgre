@@ -1,7 +1,10 @@
 ohgrePortal.controller('PromoCodeController', ['$scope', '$rootScope', '$http','$window','PrimeService','OhGreService',function ($scope, $rootScope,$http,$window,PrimeService,OhGreService) {
 
-    var onlinePromoCodes=["SCORE3C","ENROLL3C","NEWHOME18","EMAILTEN","WINTEN","SCORE3V","LOWEST3V","SWITCH","WINBACK","CHOICE4C", "CHOICE3V"];
-
+var onlinePromoCodes=null;
+   var onlinepromocodesList = $("#onlinepromocodes-div").data("onlinepromocodes");
+   if(onlinepromocodesList && onlinepromocodesList.length>0){
+   		onlinePromoCodes=onlinepromocodesList.split(',');
+   }
     ohgre.removeStore("promoCodeInfo");
     ohgre.removeStore("promocode");
 
