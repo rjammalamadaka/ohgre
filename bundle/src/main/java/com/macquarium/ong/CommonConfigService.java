@@ -11,6 +11,10 @@ public interface CommonConfigService {
     public String getDataBasePassword();
     public String getWhatCountsUrl();
     public String getToMailAddress();
+    public String getOhStandardResPromo();
+    public String getOhStandardComPromo();
+    public String getGreStandardResPromo();
+    public String getGreStandardComPromo();
 
 
 }
