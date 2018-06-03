@@ -495,5 +495,18 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
     $rootScope.resstdpromocode = $("#resstdpromocode-div").data("resstdpromocode");
     $rootScope.commstdpromocode = $("#commstdpromocode-div").data("commstdpromocode");
 
+    if(!$rootScope.resstdpromocode || $rootScope.resstdpromocode.length==0){
+        if(portalname =="oh")
+         $rootScope.resstdpromocode=$("#stdpromocodes").data("ohstdrespromo");
+         else if(portalname =="gre")
+         $rootScope.resstdpromocode=$("#stdpromocodes").data("grestdrespromo");
+    }
+     if(!$rootScope.commstdpromocode || $rootScope.commstdpromocode.length==0){
+        if(portalname =="oh")
+         $rootScope.commstdpromocode=$("#stdpromocodes").data("ohstdcompromo");
+         else if(portalname =="gre")
+         $rootScope.commstdpromocode=$("#stdpromocodes").data("grestdcompromo");
+    }
+
 
 }]);
