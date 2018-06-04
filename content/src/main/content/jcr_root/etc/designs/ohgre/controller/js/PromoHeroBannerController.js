@@ -5,7 +5,6 @@
    // $rootScope.prmoProduct=[];
 
     var portalname=$rootScope.portalname;
-    console.log('header length', $('#primary-header > .container').length);
     $scope.hasEmptyHeader = ($('#primary-header > .container').length === 0) ? 1 : 0;
 
      var getPromoCodeInfo =function(promocode){
