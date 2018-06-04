@@ -1,44 +1,46 @@
-<header id="promo-header" class="promo-header" data-portalname="${inheritedPageProperties.portalname}" ng-show="!hasEmptyHeader">
-   <div class="container">
+<div ng-controller="PromoHeroBannerController">
+  <header id="promo-header" class="promo-header" data-portalname="${inheritedPageProperties.portalname}" ng-show="hasEmptyHeader">
+    <div class="container">
       <a href="/content/onlyong.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img src="/content/dam/ohgre/ONG_logos/ong-logos-leftstack-spot@2x.png" alt="Ohio Natural Gas Logo"></a>
       <a href="/content/gre.html" id="primary-logo" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img src="/content/dam/ohgre/Gre_logos/gre-logos-leftstack-spot@2x.png" alt="Grand Rapids Energy Logo"></a>
 
-   </div>
-</header>
+    </div>
+  </header>
 
-<section class="promo-landing" ng-controller="PromoHeroBannerController">
-   <div class="container" ng-init="mobileImg = '${properties.mobileimagepath}'">
-       <div class="full-banner-callout" ng-class="!${properties.displaylogo || false}? 'one-third' : 'flush'">
-         <div class="slide">
-            <div class="slide-image visible-lg visible-md" ng-class="{hT : heightConstant}" ng-style="{'background-image':'url(${properties.imagepath})'}">
-			<!--<img src="${properties.imagepath}">-->
-			</div>
+  <section class="promo-landing">
+    <div class="container" ng-init="mobileImg = '${properties.mobileimagepath}'">
+      <div class="full-banner-callout" ng-class="!${properties.displaylogo || false}? 'one-third' : 'flush'">
+        <div class="slide">
+          <div class="slide-image visible-lg visible-md" ng-class="{hT : heightConstant}" ng-style="{'background-image':'url(${properties.imagepath})'}">
+            <!--<img src="${properties.imagepath}">-->
+          </div>
 
- 			<div ng-if="mobileImg" class="slide-image visible-xs mobile-slide-image" ng-style="{'background-image':'url(${properties.mobileimagepath})'}">
-			</div>
-            <div ng-if="!mobileImg" class="slide-image visible-xs mobile-slide-image global-slide-image" ng-style="{'background-image':'url(${properties.imagepath})'}">
-			</div>
-            <div class="slide-image visible-sm tablet-slide-image" ng-style="{'background-image':'url(${properties.imagepath})'}">
-			</div>
-            <div class="slide-content" ng-class="{hT : heightConstant}" >
-               <div class="inner-slide-content clearfix">
-                  <a href="/content/onlyong.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
-                  <a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
-                  <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}"/>
+          <div ng-if="mobileImg" class="slide-image visible-xs mobile-slide-image" ng-style="{'background-image':'url(${properties.mobileimagepath})'}">
+          </div>
+          <div ng-if="!mobileImg" class="slide-image visible-xs mobile-slide-image global-slide-image" ng-style="{'background-image':'url(${properties.imagepath})'}">
+          </div>
+          <div class="slide-image visible-sm tablet-slide-image" ng-style="{'background-image':'url(${properties.imagepath})'}">
+          </div>
+          <div class="slide-content" ng-class="{hT : heightConstant}">
+            <div class="inner-slide-content clearfix">
+              <a href="/content/onlyong.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'oh'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
+              <a href="/content/gre.html" class="logo-image" data-sly-test="${inheritedPageProperties.portalname == 'gre'}"><img ng-hide="!${properties.displaylogo || false}" src="${inheritedPageProperties.portalname == 'gre' ? '/content/dam/ohgre/Gre_logos/gre-logos-footer_leftstack-spot@3x.png': '/etc/designs/ohgre/clientlibs/_img/global/ohio-logo-white.png'}"></a>
+              <img class="faq" data-sly-test="${properties.logopath}" src="${properties.logopath}" />
 
-                  <span ng-show="notexpired" class="slide-title" data-sly-test="${properties.title @ context='html'}">${properties.title @ context='html'}</span>
+              <span ng-show="notexpired" class="slide-title" data-sly-test="${properties.title @ context='html'}">${properties.title @ context='html'}</span>
 
 
-                  <p ng-show="notexpired"><span>${properties.description}</span></p>
-                  <p ng-show="!notexpired"><span class="slide-title">Unfortunately this promotion has expired.</span></p>
+              <p ng-show="notexpired"><span>${properties.description}</span></p>
+              <p ng-show="!notexpired"><span class="slide-title">Unfortunately this promotion has expired.</span></p>
 
-                      <p>
-                          <span  ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode">Promo Code: {{getDisplayPromocode(promotion.PromotionCode)}}</span>
-                          <span>${properties.promoexpmsg}</span>
-                      </p>
-               </div>
+              <p>
+                <span ng-show="promotion.PromotionExpired !== 'Y' && promotion.PromotionCode && displayPromocode">Promo Code: {{getDisplayPromocode(promotion.PromotionCode)}}</span>
+                <span>${properties.promoexpmsg}</span>
+              </p>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-   </div>
-</section>
+    </div>
+  </section>
+</div>
