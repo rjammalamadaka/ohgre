@@ -16,6 +16,7 @@ ohgrePortal.controller('FixedPlansController', ['$scope', '$rootScope', '$http',
              PrimeService.getPromoCodeInfo(standardpromocode).success(function(data, status, headers, config) {
                  data.standardpromocode=true;
                  ohgre.store("promoCodeInfo",data);
+                 ohgre.store("promocode",standardpromocode);
                  var ldcCode=$('#fixed-plans-button').val();
                  if(ldcCode){
                      if(portalname =="oh"){

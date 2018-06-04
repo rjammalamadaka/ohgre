@@ -22,6 +22,7 @@ var standardpromocode=null;
             PrimeService.getPromoCodeInfo(standardpromocode).success(function(data, status, headers, config) {
                  data.standardpromocode=true;
                  ohgre.store("promoCodeInfo",data); 
+                ohgre.store("promocode",standardpromocode);
                 if(ldcCode){
                     var hashParam=encodeURIComponent("ldc="+ldcCode+'&lctype='+locationType);
                     if(portalname =="oh"){

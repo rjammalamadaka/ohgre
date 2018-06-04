@@ -33,6 +33,9 @@ ohgrePortal.controller('PlansDisplayController', ['$scope', '$rootScope', '$http
     //$window.sessionStorage.setItem('lcType', locationType);
 
     var promotionCode = $scope.promotionCode;
+      if(!promotionCode){
+			promotionCode=ohgre.store("promocode");
+      }
     var url = "/bin/getQuotes?portalName=" + portalname;
     if (ldcCode) {
       url = url + "&ldcCode=" + ldcCode;
