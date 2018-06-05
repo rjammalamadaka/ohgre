@@ -228,6 +228,8 @@
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
+                EMAIL25="/content/onlyong/EMAIL25"
+                EMAIL25ONLINE="/content/onlyong/EMAIL25"
                 EMAILTEN="/content/onlyong/EMAILTEN"
                 EMAILTENONLINE="/content/onlyong/EMAILTEN"
                 ENROLL3C="/content/onlyong/ENROLL3C"
@@ -252,6 +254,8 @@
                 SCORE3VONLINE="/content/onlyong/SCORE3V"
                 SWITCH="/content/onlyong/SWITCH"
                 SWITCHONLINE="/content/onlyong/SWITCH"
+                WIN25="/content/onlyong/WIN25"
+                WIN25ONLINE="/content/onlyong/WIN25"
                 WINTEN="/content/onlyong/WINTEN"
                 WINTENONLINE="/content/onlyong/WINTEN">
                 <Score1C/>
@@ -297,4 +301,6 @@
     <CHOICE4C/>
     <CHOICE3V/>
     <NEWHOME2018/>
+    <EMAIL25/>
+    <WIN25/>
 </jcr:root>
