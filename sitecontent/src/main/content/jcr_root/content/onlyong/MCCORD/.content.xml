@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="MCCORD"
-        jcr:uuid="e63e7707-29d5-4789-a22d-226c338b0891"
+        jcr:uuid="ea9760e6-e42e-4059-9feb-491a28de718b"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

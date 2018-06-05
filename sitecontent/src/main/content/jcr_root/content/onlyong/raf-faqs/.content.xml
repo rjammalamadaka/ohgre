@@ -4,15 +4,15 @@
     <jcr:content
         cq:lastModified="{Date}2018-02-07T10:45:08.967-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-02-07T10:45:16.395-06:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastReplicated="{Date}2018-05-14T17:34:18.190-04:00"
+        cq:lastReplicatedBy="psfalcon"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/helppage"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="RAF FAQs"
-        jcr:uuid="8f95a07c-0e7b-4230-bb42-f77566b87478"
+        jcr:uuid="a574030f-4fa5-42b0-a1d8-daad845ff989"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

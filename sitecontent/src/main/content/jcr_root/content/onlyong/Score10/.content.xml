@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Score10"
-        jcr:uuid="f9af2b38-6ef1-40c4-b878-c64ca97216d1"
+        jcr:uuid="f3e074da-8e00-42f1-b564-3df11ef5f54e"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

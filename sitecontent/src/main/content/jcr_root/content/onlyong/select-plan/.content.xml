@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Renewal Contract"
-        jcr:uuid="6109f472-3e18-46cf-82e3-47807da414eb"
+        jcr:uuid="e078e2c0-8068-4373-bca9-4e7e4293b967"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true">
         <content

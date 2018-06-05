@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="WINTEN"
-        jcr:uuid="e5bf7bd1-9b3c-4f19-aaec-378b4daeb0cd"
+        jcr:uuid="18b49ed5-2e4a-4662-8186-d38dc6c2ec77"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         portalname="oh">
         <content

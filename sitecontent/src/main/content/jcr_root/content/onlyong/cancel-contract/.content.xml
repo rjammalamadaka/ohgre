@@ -4,15 +4,15 @@
     <jcr:content
         cq:lastModified="{Date}2018-01-30T16:19:13.012-06:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-30T16:19:15.814-06:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastReplicated="{Date}2018-05-14T17:32:33.925-04:00"
+        cq:lastReplicatedBy="psfalcon"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Cancel Contract"
-        jcr:uuid="3c023c7c-2f6a-4592-931b-f6f3022ac04d"
+        jcr:uuid="11a1b845-c7dd-4d0b-8e62-c28a437214cc"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true">
         <image

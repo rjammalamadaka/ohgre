@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="NEWHOME2018"
-        jcr:uuid="fc38c7d2-46d6-4a74-bf13-6d97ad4e1c89"
+        jcr:uuid="66e480b1-e0ff-4c3c-9254-24846d562589"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

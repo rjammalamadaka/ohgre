@@ -3,51 +3,72 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-06-01T13:23:48.402-05:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-05-29T16:46:30.273-05:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastModified="{Date}2018-06-01T14:55:33.881-04:00"
+        cq:lastModifiedBy="psfalcon"
+        cq:lastReplicated="{Date}2018-06-01T14:56:20.006-04:00"
+        cq:lastReplicatedBy="psfalcon"
         cq:lastReplicationAction="Activate"
+        cq:lastRolledout="{Date}2018-06-01T14:47:37.163-04:00"
+        cq:lastRolledoutBy="psfalcon"
         cq:template="/apps/ohgre/templates/promolandingwithnav"
         jcr:isCheckedOut="{Boolean}true"
-        jcr:mixinTypes="[mix:versionable]"
+        jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSync,mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="EMAIL25"
-        jcr:uuid="a6f4d433-e583-40d9-ae00-2e885c9e6865"
+        jcr:uuid="0256f154-1dc8-433c-b558-0ff2593289f4"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithnavpage"
         hideInNav="true">
         <image
-            jcr:lastModified="{Date}2017-08-16T10:47:14.755-04:00"
+            cq:lastRolledout="{Date}2018-06-01T14:47:37.099-04:00"
+            cq:lastRolledoutBy="psfalcon"
+            jcr:lastModified="{Date}2018-06-01T14:47:37.093-04:00"
             jcr:lastModifiedBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             imageRotate="0"/>
         <content
+            cq:lastRolledout="{Date}2018-06-01T14:47:37.105-04:00"
+            cq:lastRolledoutBy="psfalcon"
+            jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/parsys">
             <promoherobanner
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2018-06-01T14:47:37.137-04:00"
+                cq:lastRolledoutBy="psfalcon"
                 jcr:created="{Date}2017-08-15T09:31:31.080+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-06-01T13:18:15.938-05:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-06-01T14:55:33.876-04:00"
+                jcr:lastModifiedBy="psfalcon"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 imagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_1568x348base.png"
                 mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_768x300.png"
-                promoexpmsg="Hurry! This offer ends {{currentmonthlastday}}."
+                promoexpmsg="Hurry! This offer ends {{expdate}}."
                 textIsRich="true"/>
             <switchpromotionconte
+                cq:isCancelledForChildren="{Boolean}true"
+                cq:lastRolledout="{Date}2018-06-01T14:47:37.162-04:00"
+                cq:lastRolledoutBy="psfalcon"
                 jcr:created="{Date}2017-08-15T09:49:04.299+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-06-01T13:23:48.391-05:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-06-01T14:54:42.919-04:00"
+                jcr:lastModifiedBy="psfalcon"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/switchpromotioncontent"
                 description="&lt;p>To take advantage of one of these great offers, select your utility.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
-                fineprinttext="&lt;p>* Price and Visa Reward Card offers are available to new residential customers who use 150 Mcf per year or less, enrolling with Ohio Natural Gas between {{currentmonthfirstday}} and {{currentmonthlastday}} using applicable promotion code; Visa Reward Card offer available only for such customers enrolling online at www.onlyong.com/EMAIL25. ONG service is available for eligible customers participating in the Ohio choice program through Dominion East Ohio, Columbia Gas of Ohio, Duke Energy of Ohio and Vectren Energy Delivery of Ohio.  ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.654.2579, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit www.onlyong.com. Early termination charges apply for residential fixed price plans (12-Month plan: $150/$75, 6-Month plan: $75). Customer must have continuous active service with Ohio Natural Gas for at least 60 days to be eligible to receive the reward card. After reaching eligibility, please allow 4-6 weeks for delivery. Visa Reward Card is issued by and is the property of CenterState Bank of Florida, NA pursuant to a license from Visa U.S.A. Inc. Cannot be combined with any other offer.&lt;/p>&#xd;&#xa;"
+                fineprinttext="&lt;p>* Price and Visa Reward Card offers are available to new residential customers who use 150 Mcf per year or less, enrolling with Ohio Natural Gas between {{currentmonthfirstday}} and {{currentmonthlastday}} using applicable promotion code; Visa Reward Card offer available only for such customers enrolling online at www.onlyong.com/EMAIL25. ONG service is available for eligible customers participating in the Ohio choice program through Dominion East Ohio, Columbia Gas of Ohio, Duke Energy of Ohio and Vectren Energy Delivery of Ohio. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.800.654.2579, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit www.onlyong.com. Early termination charges apply for residential fixed price plans (12-Month plan: $150/$75, 6-Month plan: $75). Customer must have continuous active service with Ohio Natural Gas for at least 60 days to be eligible to receive the reward card. After reaching eligibility, please allow 4-6 weeks for delivery. Visa Reward Card is issued by and is the property of CenterState Bank of Florida, NA pursuant to a license from Visa U.S.A. Inc. Cannot be combined with any other offer.&lt;br />&#xd;&#xa;&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 heading="Come back to ONG® for a GREAT LOW RATE and enjoy this limited time offer!"
                 imagepath="/content/dam/ohgre/raf/GetStarted.png"
-                text="&lt;h5>We know you have a choice when it comes to your natural gas provider, and we'd love to have you back at ONG. That's why we are offering you &lt;b>a great low rate with a simple and hassle-free process. Plus, a special bonus when you enroll online.&lt;/b>&lt;/h5>&#xd;&#xa;&lt;h5>Come back to Ohio Natural Gas® for a low 6- or 12-month fixed rate that won’t change for the duration of your contract - guaranteed!&lt;/h5>&#xd;&#xa;&lt;h5>&lt;p>&lt;b>Switching back is easy! Here's how it works.&lt;/b>&lt;/p>&#xd;&#xa;&lt;/h5>&#xd;&#xa;&lt;p>- Locate your gas utility account number- it's on your bill.&lt;/p>&#xd;&#xa;&lt;p>- Select one of the plan offers and enroll. &lt;/p>&#xd;&#xa;&lt;p>- &lt;b>Special bonus: &lt;/b>Enroll online and receive a $25 Visa® Reward Card.*  &lt;/p>&#xd;&#xa;&lt;p>Your gas service won't be interrupted when you switch. Ohio Natural Gas experts will handle all of the details for you.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>Hurry! This offer only lasts until {{currentmonthlastday}}!&lt;/b>&lt;/p>&#xd;&#xa;&lt;p>Give us a call at 1.800.210.7431 for any questions or concerns you may have. &lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;"
+                text="&lt;p>&lt;b>&lt;br>&#xd;&#xa;We know you have a choice when it comes to your natural gas provider, and we&amp;#39;d love to have you back at ONG. That&amp;#39;s why we are offering you&amp;nbsp;a&amp;nbsp;great low rate with a simple and hassle-free process. Plus, a special bonus when you enroll online.&lt;/b>&lt;/p>&#xd;&#xa;&lt;h5>Come back to Ohio Natural Gas® for a low 6- or 12-month fixed rate that won’t change for the duration of your contract - guaranteed!&lt;/h5>&#xd;&#xa;&lt;h5>&lt;p>Switching back is easy! Here&amp;#39;s how it works.&lt;/p>&#xd;&#xa;&lt;/h5>&#xd;&#xa;&lt;p>- Locate your gas utility account number- it&amp;#39;s on your bill.&lt;/p>&#xd;&#xa;&lt;p>-&amp;nbsp;Select one of the plan offers and enroll.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>-&amp;nbsp;Special bonus:&amp;nbsp;Enroll online and receive a&amp;nbsp;$25 Visa® Reward Card.*&amp;nbsp;&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Your gas service won&amp;#39;t be interrupted when you switch. Ohio Natural Gas experts will handle all of the details for you.&lt;/p>&#xd;&#xa;&lt;p>&lt;b>&lt;br>&#xd;&#xa;Hurry! This offer only lasts until {{currentmonthlastday}}!&lt;br>&#xd;&#xa; &lt;br>&#xd;&#xa; &lt;br>&#xd;&#xa; &lt;/b>&lt;/p>&#xd;&#xa;"
                 textIsRich="[true,true]"/>
         </content>
+        <cq:LiveSyncConfig
+            cq:isDeep="{Boolean}true"
+            cq:master="/content/onlyong/WIN25"
+            cq:rolloutConfigs="[]"
+            jcr:primaryType="cq:LiveCopy"/>
     </jcr:content>
 </jcr:root>

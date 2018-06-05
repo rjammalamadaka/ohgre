@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Save2017"
-        jcr:uuid="a622f338-10b0-4f11-a05f-8820fa9a90b7"
+        jcr:uuid="ac14e58b-289f-4181-8d13-678b138fbfef"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

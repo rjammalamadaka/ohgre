@@ -4,17 +4,17 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2018-01-30T16:16:16.687-06:00"
-        cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-01-30T16:16:20.003-06:00"
-        cq:lastReplicatedBy="penny"
+        cq:lastModified="{Date}2018-05-14T17:40:02.898-04:00"
+        cq:lastModifiedBy="psfalcon"
+        cq:lastReplicated="{Date}2018-05-14T17:41:08.355-04:00"
+        cq:lastReplicatedBy="psfalcon"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/mainpage"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Rate Plans"
-        jcr:uuid="7c806404-4cc3-4d22-9e2c-cc42c3936038"
+        jcr:uuid="9a9868dc-04cf-404b-9f35-ad8d3c68aecc"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         hideInNav="true"
         portalname="oh">
@@ -34,13 +34,13 @@
             <plansdisplay_266813004
                 jcr:created="{Date}2017-07-23T08:24:02.492+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-01-30T16:16:16.684-06:00"
-                jcr:lastModifiedBy="penny"
+                jcr:lastModified="{Date}2018-05-14T17:40:02.896-04:00"
+                jcr:lastModifiedBy="psfalcon"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/plansdisplay"
                 footernotes="&lt;p>ONG service is available for eligible customers participating in the applicable Ohio choice program through their natural gas utility company. ONG prices do not include taxes or local utility charges. For more information regarding terms and conditions, call 1.888.466.4427, write to Ohio Natural Gas, P.O. Box 14657, Cleveland, OH 44114, or visit this site. Early termination charges apply for fixed price plans.&lt;/p>&#xd;&#xa;"
                 guranteedBillDesc=" Call us for a guaranteed and protected bill plan"
-                text="&lt;p>With ONG, choosing the natural gas plan that&amp;#39;s best for you is easy. We offer&amp;nbsp;great fixed rates and variable rates – all designed to meet your needs and backed by straightforward &lt;a href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.4.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>.&amp;nbsp;Rates and price plans effective&amp;nbsp;{{currentMonthFirstDay}}&amp;nbsp;to {{currentMonthLastDay}}.&lt;br>&#xa;&lt;br>&#xa;&lt;/p>&#xa;"
+                text="&lt;p>With ONG, choosing the natural gas plan that&amp;#39;s best for you is easy. We offer&amp;nbsp;great fixed rates and variable rates – all designed to meet your needs and backed by straightforward &lt;a href=&quot;/content/dam/ohgre/termsandconditions/Ohio/OH-CO-RS-54.5.pdf&quot; target=&quot;_blank&quot;>terms and conditions&lt;/a>.&amp;nbsp;Rates and price plans effective&amp;nbsp;{{currentMonthFirstDay}}&amp;nbsp;to {{currentMonthLastDay}}.&lt;br>&#xa;&lt;br>&#xa;&lt;/p>&#xa;"
                 textIsRich="true"/>
         </content>
         <image
