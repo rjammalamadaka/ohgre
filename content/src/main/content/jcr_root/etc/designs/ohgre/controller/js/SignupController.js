@@ -9,7 +9,8 @@ ohgrePortal.controller('SignupController', ['$scope', '$rootScope', '$http', 'Pr
       $rootScope.email = $scope.email;
 
       jQuery('#popup1').addClass("show-popup");
-      $('html').addClass('fixed-body');
+      //$('html').addClass('fixed-body');
+      UTILS.preventBodyScroll();
     }
 
   }
@@ -17,7 +18,8 @@ ohgrePortal.controller('SignupController', ['$scope', '$rootScope', '$http', 'Pr
   $('#close-window, .close-window-button').on('click', function(event) {
     event.preventDefault();
     jQuery('#popup1').removeClass("show-popup");
-    $('html').removeClass('fixed-body');
+    //$('html').removeClass('fixed-body');
+    UTILS.allowBodyScroll();
 
   });
 

@@ -32,10 +32,10 @@ UTILS = {
         return isMobileDevice;
     },
     preventBodyScroll: function() {
-      $('html').addClass('fixed-body');
+      $('html, body').addClass('fixed-body');
     },
     allowBodyScroll: function() {
-      $('html').removeClass('fixed-body');
+      $('html, body').removeClass('fixed-body');
     },
 };
 
