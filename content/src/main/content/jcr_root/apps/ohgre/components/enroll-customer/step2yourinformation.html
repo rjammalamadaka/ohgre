@@ -151,7 +151,7 @@
               <div class="col-md-6 col-sm-6">
                 <div class="input-group-wrapper">
                   <label for="address-city">City<sup class="required">*</sup></label>
-                  <input type="text" name="addresscity" id="addresscity" ng-model="customerInfo.serviceCity" ng-required="true" ng-focus ng-visited>
+                  <input type="text" name="addresscity" id="addresscity" ng-model="customerInfo.serviceCity" ng-required="true" ng-focus ng-visited no-specials>
                   <span class="input-error-message" ng-show="formtwo.submited">
 							<span class="input-error-message" ng-show="formtwo.addresscity.$error.required">City is required.</span>
                   </span>
@@ -204,7 +204,7 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="input-group-wrapper">
                     <label for="billing-address-city">City<sup class="required">*</sup></label>
-                    <input type="text" name="billingaddresscity" id="billingaddresscity" ng-model="billingaddresscity" ng-required="!samebilling" ng-focus ng-visited>
+                    <input type="text" name="billingaddresscity" id="billingaddresscity" ng-model="billingaddresscity" ng-required="!samebilling" ng-focus ng-visited no-specials>
                     <span class="input-error-message" ng-show="formtwo.submited">
                                     <span class="input-error-message" ng-show="formtwo.billingaddresscity.$error.required">City is required.</span>
                     </span>
