@@ -46,7 +46,7 @@
                 imagepath="/content/dam/ohgre/promotions/ONG_Visa_1568x348_header_JUN.png"
                 mobileimagepath="/content/dam/ohgre/promotions/ONG_Visa_header_768x300_JUN.png"
                 promoexpmsg="Hurry! This offer ends {{expdate}}."
-                title="WIN25"
+                title="Come back to us!"
                 textIsRich="true"/>
             <switchpromotionconte
                 cq:isCancelledForChildren="{Boolean}true"

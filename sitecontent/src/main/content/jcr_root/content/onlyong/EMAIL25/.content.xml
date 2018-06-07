@@ -46,7 +46,7 @@
                 imagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_1568x348base.png"
                 mobileimagepath="/content/dam/ohgre/promotions/ONG_DEO_SWITCH_768x300.png"
                 promoexpmsg="Hurry! This offer ends {{expdate}}."
-                title="EMAIL25"
+                title="Come back to us!"
                 textIsRich="true"/>
             <switchpromotionconte
                 cq:isCancelledForChildren="{Boolean}true"
