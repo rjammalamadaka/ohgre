@@ -5179,6 +5179,10 @@ button.list-group-item-danger.active:focus {
 * a {
   color: #ff6008;
 }
+html.fixed-body,
+body.fixed-body {
+  overflow: hidden;
+}
 html {
   font-size: 62.5%;
 }
@@ -5197,9 +5201,6 @@ body {
     overflow: visible;
     background-position: -8vw 6vw;
   }
-}
-body.fixed-body {
-  overflow: hidden;
 }
 img {
   max-width: 100%;
@@ -5933,6 +5934,11 @@ div[class^="col-"] {
   }
 }
 /* HOME PAGE TEMPLATE STYLES */
+body.fixed-body #main-wrapper {
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
 #primary-header,
 #promo-header {
   position: fixed;
@@ -11003,6 +11009,9 @@ input {
   z-index: 10000;
   display: none;
   font-size: 1.6rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  min-height: 100%;
 }
 .popup-wrapper.show-popup {
   display: block;

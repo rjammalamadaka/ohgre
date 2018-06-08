@@ -137,6 +137,11 @@
 		color			: @accent_color;
 	}
 }
+html, body {
+  &.fixed-body {
+    overflow: hidden;
+  }
+}
 html{
 	font-size	: 62.5%;
 }
@@ -153,9 +158,6 @@ body{
 	 @media (@screen-md-min){
 	 	overflow: visible;
 	 	background-position	: -8vw 6vw;
-	 }
-	 &.fixed-body {
-		 overflow: hidden;
 	 }
 }
 img{

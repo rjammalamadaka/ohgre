@@ -1,6 +1,16 @@
 @import url(bootstrap.less);
 @import url(_globals.less);
 /* HOME PAGE TEMPLATE STYLES */
+body {
+  &.fixed-body{
+    #main-wrapper {
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+    }
+  }
+}
+
 #primary-header,
 #promo-header
  {
@@ -295,9 +305,11 @@
 		}
 	}
 }
+
 .contact-phone {
 	color: @accent_color;
 }
+
 footer {
 	padding: 0.5rem 0 1rem;
 	margin-top: 1rem;
@@ -655,6 +667,7 @@ input.alt-radio1 {
 		}
 	}
 }
+
 /* SLIDERS */
 .accord-trigger {
 	&.trigger-arrow {
@@ -5923,6 +5936,9 @@ input {
 	z-index: 10000;
 	display: none;
 	font-size: 1.6rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  min-height: 100%;
 
 	&.show-popup {
 		display: block;

@@ -14,28 +14,31 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <!DOCTYPE HTML>
-<html data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page" lang="${page.language}"
-      data-sly-use.head="head.html"
-      data-sly-use.footer="footer.html">
-    <head data-sly-call="${head.head @ page = page}"></head>
-    <body ng-app="ohgre-portal" id="portalbody" style="display: none;">
-        <!-- Google Tag Manager (noscript) -->
-<noscript>
+<html data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page" lang="${page.language}" data-sly-use.head="head.html" data-sly-use.footer="footer.html">
+
+<head data-sly-call="${head.head @ page = page}"></head>
+
+<body ng-app="ohgre-portal" id="portalbody" style="display: none;">
+  <div id="main-wrapper">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
 
  <iframe src="https://www.googletagmanager.com/ns.html?id=${inheritedPageProperties.tagmanagerid}"
 height="0" width="0" style="display:none;visibility:hidden"></iframe>
 
 </noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) -->
     <div id="mobilenumber-div" data-mobilenumber="${inheritedPageProperties.mobilenumber}"></div>
     <div id="tagmanagerid-div" data-tagmanagerid="${inheritedPageProperties.tagmanagerid}"></div>
-     <div id="resstdpromocode-div" data-resstdpromocode="${inheritedPageProperties.resstdpromocode}"></div>
-      <div id="commstdpromocode-div" data-commstdpromocode="${inheritedPageProperties.commstdpromocode}"></div>
-      <div id="onlinepromocodes-div" data-onlinepromocodes="${inheritedPageProperties.onlinepromocodes}"></div>
-        <sly data-sly-include="body.socialmedia_begin.html"></sly>
+    <div id="resstdpromocode-div" data-resstdpromocode="${inheritedPageProperties.resstdpromocode}"></div>
+    <div id="commstdpromocode-div" data-commstdpromocode="${inheritedPageProperties.commstdpromocode}"></div>
+    <div id="onlinepromocodes-div" data-onlinepromocodes="${inheritedPageProperties.onlinepromocodes}"></div>
+    <sly data-sly-include="body.socialmedia_begin.html"></sly>
 
-        <sly data-sly-include="body.html"></sly>
-        <sly data-sly-call="${footer.footer @ page = page}"></sly>
-        <sly data-sly-include="body.socialmedia_end.html"></sly>
-    </body>
+    <sly data-sly-include="body.html"></sly>
+    <sly data-sly-call="${footer.footer @ page = page}"></sly>
+    <sly data-sly-include="body.socialmedia_end.html"></sly>
+  </div>
+</body>
+
 </html>

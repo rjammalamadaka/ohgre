@@ -110,6 +110,10 @@
 * a {
   color: #ff6008;
 }
+html.fixed-body,
+body.fixed-body {
+  overflow: hidden;
+}
 html {
   font-size: 62.5%;
 }
@@ -128,9 +132,6 @@ body {
     overflow: visible;
     background-position: -8vw 6vw;
   }
-}
-body.fixed-body {
-  overflow: hidden;
 }
 img {
   max-width: 100%;
