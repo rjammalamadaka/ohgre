@@ -5934,6 +5934,9 @@ div[class^="col-"] {
   }
 }
 /* HOME PAGE TEMPLATE STYLES */
+body.fixed-body {
+  position: fixed;
+}
 body.fixed-body #main-wrapper {
   overflow: hidden;
   height: 100vh;
@@ -12206,4 +12209,11 @@ ul.info-links li {
   border: solid #0077c2;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
 }
