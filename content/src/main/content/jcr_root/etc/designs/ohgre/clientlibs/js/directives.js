@@ -89,8 +89,8 @@ ohgrePortal.directive('multipleEmails', function() {
     link: function(scope, element, attrs, ctrl) {
 
       ctrl.$parsers.unshift(function(viewValue) {
-        console.log('multipleEmails');
-        console.log('viewValue', viewValue);
+        // console.log('multipleEmails');
+        // console.log('viewValue', viewValue);
 
         var emails = viewValue.split(',');
         // loop that checks every email, returns undefined if one of them fails.
