@@ -22,8 +22,10 @@ var onlinePromoCodes=null;
             var promotionCode=$scope.promotioncode;
 
             if(promotionCode){
-                if(onlinePromoCodes.indexOf(promotionCode)!=-1){
-                    promotionCode= promotionCode.concat("ONLINE");
+                if(onlinePromoCodes!=null && onlinePromoCodes!='') {
+                    if (onlinePromoCodes.indexOf(promotionCode) != -1) {
+                        promotionCode = promotionCode.concat("ONLINE");
+                    }
                 }
                 PrimeService.getPromoCodeGroupInfo(promotionCode).success(function(data, status, headers, config) {
                     if(data && data.success){
