@@ -204,10 +204,12 @@ ohgrePortal.directive('noSpecials', function() {
       restrict: 'A',
       require: 'ngModel',
       link: function(scope, elem, attrs, ngModel) {
+
           ngModel.$parsers.push(function(viewValue) {
+            console.log('viewValue', viewValue);
             var reg = /^[^`~!@#$%\^&*()_+={}|[\]\\:;"<>?,/1-9]*$/;
             // if view values matches regexp, update model value
-            if (viewValue.match(reg)) {
+            if (viewValue != null && viewValue.match(reg)) {
               return viewValue;
             }
             // keep the model value as it is
