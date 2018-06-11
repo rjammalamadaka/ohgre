@@ -11339,6 +11339,10 @@ input {
     font-size: 2.4rem;
   }
 }
+#step-through .terms-wrapper h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
 #step-through .after-scrollbox {
   padding: 0 2rem 2rem;
   width: 100%;
