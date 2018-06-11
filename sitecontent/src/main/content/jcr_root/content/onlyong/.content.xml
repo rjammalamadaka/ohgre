@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
+    <saveme2017/>
+    <save2017/>
+    <test/>
+    <allconnect/>
+    <cancel-contract/>
+    <MCCORD/>
+    <generic-promo/>
+    <COMPARE1V/>
+    <COMPARE1C/>
+    <promo-raf1/>
+    <promo-landing-apples-alt/>
+    <Score10/>
+    <new-terms-deo/>
+    <promo-landing-apples/>
+    <visa_offer/>
+    <promo-general/>
+    <errors/>
+    <_x0031_0FIX2018/>
+    <applemagic/>
+    <DSEA/>
+    <SCORE1V/>
+    <special_offer/>
+    <SCORE1C/>
+    <_x0031_0MONTHFIX2018/>
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-04-04T09:34:48.519-05:00"
-        cq:lastModifiedBy="penny"
+        cq:lastModified="{Date}2018-06-10T23:47:52.487-04:00"
+        cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-04-03T08:45:33.944-05:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -16,8 +40,9 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
-        jcr:uuid="583a6d75-57b8-42e9-b773-1bd3e4ebe96b"
+        jcr:uuid="12cc571e-0cf5-47b7-8f6b-4d2a90a1d1c2"
         sling:resourceType="/apps/ohgre/components/structure/page"
+        commstdpromocode="STDCOMONG"
         companyinfolinks="[/content/onlyong,/content/onlyong]"
         days="Monday - Friday"
         description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
@@ -27,6 +52,7 @@
         metaprimarykeywords="Ohio Natural Gas, Natural Gas, Gas Company Ohio, Natural Gas Company"
         metatitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         mobilenumber="1-888-466-4427"
+        onlinepromocodes="[SCORE3C,ENROLL3C,NEWHOME18,EMAILTEN,WINTEN,SCORE3V,LOWEST3V,SWITCH,WINBACK,CHOICE4C,CHOICE3V,EMAIL25,WIN25]"
         pageTitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         portalname="oh"
         tagmanagerid="GTM-56C9WRS"
@@ -165,7 +191,7 @@
             <RAF
                 jcr:primaryType="nt:unstructured"
                 RAF25="/content/onlyong/promo-raf"
-                RAF50="/content/onlyong/promo-raf"/>
+                RAF50="/content/onlyong/RAF50"/>
             <BACKUP
                 jcr:primaryType="nt:unstructured"
                 BACKCOH="/content/onlyong/backuppromo"
@@ -228,6 +254,8 @@
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
+                EMAIL25="/content/onlyong/EMAIL25"
+                EMAIL25ONLINE="/content/onlyong/EMAIL25"
                 EMAILTEN="/content/onlyong/EMAILTEN"
                 EMAILTENONLINE="/content/onlyong/EMAILTEN"
                 ENROLL3C="/content/onlyong/ENROLL3C"
@@ -252,6 +280,8 @@
                 SCORE3VONLINE="/content/onlyong/SCORE3V"
                 SWITCH="/content/onlyong/SWITCH"
                 SWITCHONLINE="/content/onlyong/SWITCH"
+                WIN25="/content/onlyong/WIN25"
+                WIN25ONLINE="/content/onlyong/WIN25"
                 WINTEN="/content/onlyong/WINTEN"
                 WINTENONLINE="/content/onlyong/WINTEN">
                 <Score1C/>
@@ -297,4 +327,7 @@
     <CHOICE4C/>
     <CHOICE3V/>
     <NEWHOME2018/>
+    <EMAIL25/>
+    <WIN25/>
+    <RAF50/>
 </jcr:root>
