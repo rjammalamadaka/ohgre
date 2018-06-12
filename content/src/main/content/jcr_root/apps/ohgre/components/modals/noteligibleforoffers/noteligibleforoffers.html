@@ -1,0 +1,57 @@
+<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+          ${properties.text @ context='html'}
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">${properties.yourinformation}</span>
+						<table class="table-wrapper">
+				         <tr>
+                             <td>${properties.nameongasaccountnumber}</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+						<tr ng-if="product.LDC !='MIC'">
+                            <td>${properties.utilityaccountnumber}</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>${properties.servicepodid}</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+				         <tr>
+				            <td>${properties.serviceaddress}</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray gray-text">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info gray-text">
+									<div class="inner-content">
+										<h4>${properties.selectedplan}</h4>
+										<span class="plan-selected">{{product.productDescFriendly}}</span>
+										 <small>{{product.ldcDesc}}</small>
+                                         <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                         <small ng-hide="showVariablePlan" class="error-text">${properties.earlyterminationcharges}</small>
+                                             <small ng-hide="showVariablePlan" class="error-text">${properties.tcapplicablecharges}</small>
+									</div>
+									</div>
+									<div class="plan-button">
+										<span class="error-text bold">${properties.noteligibleoffer}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+                                             <a href="#" class="primary-button" ng-click="enrollselectalternateplans()">${properties.shopforplans}</a>
+					</li>
+				</ul>
+
+				<!-- end inner content -->
+			</div>
+	   </div>
