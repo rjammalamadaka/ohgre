@@ -8499,13 +8499,13 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-terms-popup .scroll-container {
   font-family: 'Roboto', sans-serif;
-  height: 45rem;
+  height: 37rem;
   overflow: auto;
   padding-right: 2rem;
 }
 @media (min-width: 568px) {
   #raf-terms-popup .scroll-container {
-    height: 20rem;
+    height: 15rem;
   }
 }
 @media (min-width: 992px) {
