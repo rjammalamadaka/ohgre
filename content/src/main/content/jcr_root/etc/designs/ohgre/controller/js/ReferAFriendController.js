@@ -1,151 +1,164 @@
-ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http' ,'PrimeService','OhGreService',function ($scope, $rootScope,$http,PrimeService,OhGreService) {
+ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http', 'PrimeService', 'OhGreService', function($scope, $rootScope, $http, PrimeService, OhGreService) {
 
-    $scope.step2=false;
+  $scope.step2 = false;
 
-    var updateCustomerInfoReq={};
-    var bindClickEvent =function(){
-      $('.select-option').on('click',function(event){
-			event.preventDefault();
-			var obj = $(this);
-			var val = obj.html();
-			$('.expanded-dropdown.opened').removeClass('opened');
-            var dropdownButton=obj.parent().parent().parent().parent();
-            var mainValue=$(this).find('span').attr('class');
-          var description=$(this).find('span').text();
-			 $(dropdownButton).find('.dropdown-trigger .value').html(val);
-             $scope.setLdcInfo(mainValue,description);
-             $('#fixed-plans-button').val(mainValue);
+  var updateCustomerInfoReq = {};
+  var bindClickEvent = function() {
+    $('.select-option').on('click', function(event) {
+      event.preventDefault();
+      var obj = $(this);
+      var val = obj.html();
+      $('.expanded-dropdown.opened').removeClass('opened');
+      var dropdownButton = obj.parent().parent().parent().parent();
+      var mainValue = $(this).find('span').attr('class');
+      var description = $(this).find('span').text();
+      $(dropdownButton).find('.dropdown-trigger .value').html(val);
+      $scope.setLdcInfo(mainValue, description);
+      $('#fixed-plans-button').val(mainValue);
 
-          $scope.errorInfo=null;
-          $scope.$apply();
+      $scope.errorInfo = null;
+      $scope.$apply();
 
-		});
+    });
 
+  }
+
+  var togglePopup = function(p) {
+    var popupObj = $(p);
+    if(popupObj.hasClass('show-popup')) {
+      UTILS.allowBodyScroll();
+    }
+    else {
+      UTILS.preventBodyScroll();
+    }
+    popupObj.toggleClass('show-popup')
+  }
+
+  jQuery('.terms-test').click(function() {
+    togglePopup('#raf-terms-popup');
+  });
+
+  $rootScope.termsupdate = false;
+  $rootScope.redirecttohome = function() {
+    //location.href=$rootScope.homeUrl+".html";
+    //jQuery("#raf-terms-popup").removeClass("show-popup");
+    togglePopup('#raf-terms-popup');
+    jQuery("#login-inactive-popup").addClass("show-popup");
+  }
+
+  $rootScope.closeDeclinePopup = function() {
+
+    jQuery("#login-inactive-popup").removeClass("show-popup");
+  }
+  $scope.setLdcInfo = function(ldc, description) {
+    $scope.ldc = ldc;
+    $scope.ldcdesc = description;
+    $scope.an1 = null;
+    $scope.an2 = null;
+    $scope.an3 = null;
+    $scope.an4 = null;
+
+    $scope.an1r = false;
+    $scope.an3r = false;
+    $scope.an4r = false;
+
+    $scope.an1required = true;
+    $scope.an2required = true;
+    $scope.an3required = true;
+    $scope.an4required = true;
+
+
+    if (ldc == "COH") {
+      $scope.an1minl = "8";
+      $scope.an2minl = "3";
+      $scope.an3minl = "3";
+      $scope.an4minl = "1";
+      $scope.an3 = "000";
+      $scope.an3r = true;
+
+
+    } else if (ldc == "DUK") {
+      $scope.an1minl = "4";
+      $scope.an2minl = "4";
+      $scope.an3minl = "2";
+      $scope.an4minl = "1";
+
+    } else if (ldc == "DEO") {
+      $scope.an1minl = "1";
+      $scope.an2minl = "4";
+      $scope.an3minl = "4";
+      $scope.an4minl = "4";
+
+    } else if (ldc == "VED") {
+      $scope.an1minl = "2";
+      $scope.an2minl = "9";
+      $scope.an3minl = "7";
+      $scope.an4minl = "1";
+      $scope.an1 = "03";
+      $scope.an4 = "0";
+      $scope.an1r = true;
+      $scope.an4r = true;
+
+    } else if (ldc == "MCG") {
+      $scope.an1minl = "4";
+      $scope.an2minl = "3";
+      $scope.an3minl = "4";
+      $scope.an4minl = "1";
+
+    } else if (ldc == "MIC") {
+      $scope.an1minl = "0";
+      $scope.an2minl = "0";
+      $scope.an3minl = "0";
+      $scope.an4minl = "13";
+
+      $scope.an1required = false;
+      $scope.an2required = false;
+      $scope.an3required = false;
     }
 
+    $scope.raf.submited = false;
+    $scope.raf.lastname.$visited = false;
+    $scope.lastname = null;
+    // $scope.raf.$setUntouched();
+    $scope.raf.$setPristine();
+    $scope.$apply();
+  }
 
-$rootScope.termsupdate=false;
-     $rootScope.redirecttohome =function(){
-			//location.href=$rootScope.homeUrl+".html";
-          jQuery("#raf-terms-popup").removeClass("show-popup");
-          jQuery("#login-inactive-popup").addClass("show-popup");
-
-
-
-
+  PrimeService.getLdcInfo().success(function(data, status, headers, config) {
+    if (data && data.responseStatus == "0") {
+      $scope.ldcinfo = data.LDCList;
+      setTimeout(function() {
+        bindClickEvent();
+      }, 10);
     }
 
-     $rootScope.closeDeclinePopup =function(){
-
-				jQuery("#login-inactive-popup").removeClass("show-popup");
-     }
-    $scope.setLdcInfo =function(ldc,description){
-		$scope.ldc=ldc;
-        $scope.ldcdesc=description;
-         $scope.an1=null;
-        $scope.an2=null;
-        $scope.an3=null;
-        $scope.an4=null;
-
-         $scope.an1r=false;
-        $scope.an3r=false;
-         $scope.an4r=false;
-
-        $scope.an1required=true;
-        $scope.an2required=true;
-        $scope.an3required=true;
-        $scope.an4required=true;
+  }).error(function(data, status, headers, config) {
 
 
-        if(ldc == "COH"){
-			$scope.an1minl="8";
-		    $scope.an2minl="3";
-            $scope.an3minl="3";
-            $scope.an4minl="1";
-            $scope.an3="000";
-            $scope.an3r=true;
+  });
 
-
-        }else if(ldc == "DUK"){
-			$scope.an1minl="4";
-		    $scope.an2minl="4";
-            $scope.an3minl="2";
-            $scope.an4minl="1";
-
-        }else if(ldc == "DEO"){
-			$scope.an1minl="1";
-		    $scope.an2minl="4";
-            $scope.an3minl="4";
-            $scope.an4minl="4";
-
-        }else if(ldc == "VED"){
-			$scope.an1minl="2";
-		    $scope.an2minl="9";
-            $scope.an3minl="7";
-            $scope.an4minl="1";
-            $scope.an1="03";
-            $scope.an4="0";
-            $scope.an1r=true;
-            $scope.an4r=true;
-
-        }else if(ldc == "MCG"){
-			$scope.an1minl="4";
-		    $scope.an2minl="3";
-            $scope.an3minl="4";
-            $scope.an4minl="1";
-
-        }else if(ldc == "MIC"){
-            $scope.an1minl="0";
-            $scope.an2minl="0";
-            $scope.an3minl="0";
-            $scope.an4minl="13";
-
-            $scope.an1required=false;
-            $scope.an2required=false;
-            $scope.an3required=false;
-        }
-
-         $scope.raf.submited = false;
-         $scope.raf.lastname.$visited=false; 
-        $scope.lastname=null;
-       // $scope.raf.$setUntouched();
-        $scope.raf.$setPristine();
-         $scope.$apply();
+  $scope.referafriendsubmit = function() {
+    var ldc = jQuery('#fixed-plans-button').val();
+    if (ldc) {
+      $scope.step2 = true;
     }
+  }
 
-    PrimeService.getLdcInfo().success(function(data, status, headers, config){
-         if(data && data.responseStatus =="0"){
-             $scope.ldcinfo=data.LDCList;
-             setTimeout(function(){ bindClickEvent(); }, 10);
-         }
+  $scope.referafriendcancel = function() {
+    $scope.errorInfo = null;
+    $scope.step2 = false;
 
-         }).error(function (data,status, headers, config){
+  }
+  var req = {};
 
+  $scope.referafriendstep2submit = function() {
 
-         });
+    $scope.raf.submited = true;
+    $scope.errorInfo = null;
 
-    $scope.referafriendsubmit =function(){
-        var ldc=jQuery('#fixed-plans-button').val();
-        if(ldc){
-			$scope.step2=true;
-        }
-    }
+    if ($scope.raf.$valid) {
 
-    $scope.referafriendcancel =function(){
-         $scope.errorInfo=null;
-			$scope.step2=false;
-
-    }
-      var req={};
-
-    $scope.referafriendstep2submit =function(){
-
-        $scope.raf.submited = true;
-         $scope.errorInfo=null;
-
-        if($scope.raf.$valid){
-
-            /*if($scope.ldc == "MIC"){
+      /*if($scope.ldc == "MIC"){
                 req.AccountNumber=$scope.an4;
             }else{
 				req.AccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
@@ -153,151 +166,153 @@ $rootScope.termsupdate=false;
 
 
 
-             if($scope.ldc == "DUK"){
-            req.AccountNumber=$scope.an1+$scope.an2+$scope.an3;
-           }else if($scope.ldc == "VED"){
-			 req.AccountNumber=$scope.an2+$scope.an3;
-           }else if($scope.ldc == "MIC"){
- 			req.AccountNumber=$scope.an4;
-           }else{
-			 req.AccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
-           }
-                req.LDC=$scope.ldc;
+      if ($scope.ldc == "DUK") {
+        req.AccountNumber = $scope.an1 + $scope.an2 + $scope.an3;
+      } else if ($scope.ldc == "VED") {
+        req.AccountNumber = $scope.an2 + $scope.an3;
+      } else if ($scope.ldc == "MIC") {
+        req.AccountNumber = $scope.an4;
+      } else {
+        req.AccountNumber = $scope.an1 + $scope.an2 + $scope.an3 + $scope.an4;
+      }
+      req.LDC = $scope.ldc;
 
-                    PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
-                        if(data && data.CustomerInfoResult){
-                        var customerInfo=JSON.parse(data.CustomerInfoResult);
-                            if(customerInfo.responseStatus ==1){
-								$scope.step2=false;
-                                $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
+      PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
+        if (data && data.CustomerInfoResult) {
+          var customerInfo = JSON.parse(data.CustomerInfoResult);
+          if (customerInfo.responseStatus == 1) {
+            $scope.step2 = false;
+            $scope.errorInfo = "We were unable to find your account. Please try again or call " + $scope.mobilenumber + " for assistance";
 
-                            }else if(customerInfo.responseStatus ==0){
-                                var regex = /[^a-zA-Z]/g;
-                                var businessName=customerInfo.businessName;
-                                businessName = businessName.replace(regex,"");
-                                var lastName=$scope.lastname.replace(regex,"");
-                                businessName=businessName.substring(0,5);
-                                lastName=lastName.substring(0,5);
+          } else if (customerInfo.responseStatus == 0) {
+            var regex = /[^a-zA-Z]/g;
+            var businessName = customerInfo.businessName;
+            businessName = businessName.replace(regex, "");
+            var lastName = $scope.lastname.replace(regex, "");
+            businessName = businessName.substring(0, 5);
+            lastName = lastName.substring(0, 5);
 
-                                if((customerInfo.rateClass=="01" && $scope.lastname.toUpperCase() == customerInfo.lastName.toUpperCase())||(customerInfo.rateClass=="04" && lastName.toUpperCase() == businessName.toUpperCase())){
+            if ((customerInfo.rateClass == "01" && $scope.lastname.toUpperCase() == customerInfo.lastName.toUpperCase()) || (customerInfo.rateClass == "04" && lastName.toUpperCase() == businessName.toUpperCase())) {
 
-                                    if(customerInfo.raftermsCondAcknowledgedInd !="Y"){
+              if (customerInfo.raftermsCondAcknowledgedInd != "Y") {
 
-                                        if(customerInfo.raftermsCondAcknowledgedInd =="N"){
-                                            $rootScope.termsupdate=false;
-                                        }else if (customerInfo.raftermsCondAcknowledgedInd =="R"){
-											$rootScope.termsupdate=true;
+                if (customerInfo.raftermsCondAcknowledgedInd == "N") {
+                  $rootScope.termsupdate = false;
+                } else if (customerInfo.raftermsCondAcknowledgedInd == "R") {
+                  $rootScope.termsupdate = true;
 
-                                        }
-                                    jQuery('#raf-terms-popup').addClass('show-popup');
-                                    updateCustomerInfoReq.custID=customerInfo.custID;
-                                    updateCustomerInfoReq.account=customerInfo.account;
-                                    updateCustomerInfoReq.ldc=customerInfo.ldc;
-                                    } else if(customerInfo.raftermsCondAcknowledgedInd =="Y"){
-                                    setProductData();
-                                   }
-                                }else{
-									$scope.errorInfo="We found an account that matches the account number but not the last name. For further inquiries, please call "+$scope.mobilenumber+".";
+                }
+                //jQuery('#raf-terms-popup').addClass('show-popup');
+                togglePopup('#raf-terms-popup');
+                updateCustomerInfoReq.custID = customerInfo.custID;
+                updateCustomerInfoReq.account = customerInfo.account;
+                updateCustomerInfoReq.ldc = customerInfo.ldc;
+              } else if (customerInfo.raftermsCondAcknowledgedInd == "Y") {
+                setProductData();
+              }
+            } else {
+              $scope.errorInfo = "We found an account that matches the account number but not the last name. For further inquiries, please call " + $scope.mobilenumber + ".";
 
-                                }
-                        	}
-                        }
-
-                    }).error(function (data,status, headers, config){
-
-
-                    });
-
-        }
-    }
-
-    var setProductData =function(){
-        PrimeService.setProductData(req).success(function(data, status, headers, config){            
-
-            location.href=$rootScope.homeUrl+'/raf-authenticated.html';
-
-        }).error(function (data,status, headers, config){
-
-
-        });
-
-    }
-
-    $rootScope.acceptrafterms =function(){
-        updateCustomerInfoReq.RAFTermsCondAcknowledgedInd="Y";
-        jQuery('#popup-spinner-wrap').show();
-        PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config){
-
-            jQuery('#popup-spinner-wrap').hide();
-            if(data.ResponseStatus ==0){ 
-            	setProductData();
             }
-        }).error(function (data,status, headers, config){
-			jQuery('#popup-spinner-wrap').hide();
+          }
+        }
 
-        });
-    }
-    $rootScope.closeacceptrafterms =function(){
-		jQuery('#raf-terms-popup').removeClass('show-popup');
+      }).error(function(data, status, headers, config) {
+
+
+      });
 
     }
-    jQuery('#close-window').click(function(){
-        jQuery('#raf-terms-popup').removeClass('show-popup');
+  }
+
+  var setProductData = function() {
+    PrimeService.setProductData(req).success(function(data, status, headers, config) {
+
+      location.href = $rootScope.homeUrl + '/raf-authenticated.html';
+
+    }).error(function(data, status, headers, config) {
+
+
     });
 
+  }
 
-    if($rootScope.hashParams && $rootScope.hashParams.refferalcode){
-		jQuery('#popup-spinner-wrap').show();
+  $rootScope.acceptrafterms = function() {
+    updateCustomerInfoReq.RAFTermsCondAcknowledgedInd = "Y";
+    jQuery('#popup-spinner-wrap').show();
+    PrimeService.rafUpdateCustomerInfo(updateCustomerInfoReq).success(function(data, status, headers, config) {
 
-        var req ={};
-        req.custId=$rootScope.hashParams.refferalcode;
+      jQuery('#popup-spinner-wrap').hide();
+      if (data.ResponseStatus == 0) {
+        setProductData();
+      }
+    }).error(function(data, status, headers, config) {
+      jQuery('#popup-spinner-wrap').hide();
 
-        PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
-            if(data && data.CustomerInfoResult){
-                        var customerInfo=JSON.parse(data.CustomerInfoResult);
+    });
+  }
+  $rootScope.closeacceptrafterms = function() {
+    //jQuery('#raf-terms-popup').removeClass('show-popup');
+    togglePopup('#raf-terms-popup');
+  }
+  jQuery('#close-window').click(function() {
+    // jQuery('#raf-terms-popup').removeClass('show-popup');
+    togglePopup('#raf-terms-popup');
+  });
 
-                            if(customerInfo.responseStatus ==1){
-                                $scope.errorInfo="We were unable to find your account. Please try again or call "+$scope.mobilenumber+" for assistance";
-                                jQuery('#popup-spinner-wrap').hide();
-                            }else if(customerInfo.responseStatus ==0){
-                                //var req={};
 
-                                req.LDC=customerInfo.ldc;
-                                req.LdcDesc=customerInfo.ldcdesc;
-                                req.AccountNumber=customerInfo.account;
-                                req.referralcode=customerInfo.custID;
-                                req.ProductDescription=customerInfo.productDesc;
-                                req.ProductCode=customerInfo.productCode;
+  if ($rootScope.hashParams && $rootScope.hashParams.refferalcode) {
+    jQuery('#popup-spinner-wrap').show();
 
-                                 if(customerInfo.raftermsCondAcknowledgedInd !='Y'){
-									jQuery('#popup-spinner-wrap').hide();
-                                    updateCustomerInfoReq.custID=customerInfo.custID;
-                                    updateCustomerInfoReq.account=customerInfo.account;
-                                    updateCustomerInfoReq.ldc=customerInfo.ldc;
+    var req = {};
+    req.custId = $rootScope.hashParams.refferalcode;
 
-                                    jQuery('#raf-terms-popup').addClass('show-popup');
-                                 }else{
-                                     
-                                     PrimeService.setProductData(req).success(function(data, status, headers, config){            
+    PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
+      if (data && data.CustomerInfoResult) {
+        var customerInfo = JSON.parse(data.CustomerInfoResult);
 
-                                         location.href=$rootScope.homeUrl+'/raf-authenticated.html';
-                                         
-                                     }).error(function (data,status, headers, config){
-                                         
+        if (customerInfo.responseStatus == 1) {
+          $scope.errorInfo = "We were unable to find your account. Please try again or call " + $scope.mobilenumber + " for assistance";
+          jQuery('#popup-spinner-wrap').hide();
+        } else if (customerInfo.responseStatus == 0) {
+          //var req={};
 
-                                     });
-                                 }
-                            }
-            }else{
-				jQuery('#popup-spinner-wrap').show();
-            }
+          req.LDC = customerInfo.ldc;
+          req.LdcDesc = customerInfo.ldcdesc;
+          req.AccountNumber = customerInfo.account;
+          req.referralcode = customerInfo.custID;
+          req.ProductDescription = customerInfo.productDesc;
+          req.ProductCode = customerInfo.productCode;
 
-        }).error(function (data,status, headers, config){
-			jQuery('#popup-spinner-wrap').hide();
+          if (customerInfo.raftermsCondAcknowledgedInd != 'Y') {
+            jQuery('#popup-spinner-wrap').hide();
+            updateCustomerInfoReq.custID = customerInfo.custID;
+            updateCustomerInfoReq.account = customerInfo.account;
+            updateCustomerInfoReq.ldc = customerInfo.ldc;
 
-        });
+            //jQuery('#raf-terms-popup').addClass('show-popup');
+            togglePopup('#raf-terms-popup');
+          } else {
 
-    }
+            PrimeService.setProductData(req).success(function(data, status, headers, config) {
+
+              location.href = $rootScope.homeUrl + '/raf-authenticated.html';
+
+            }).error(function(data, status, headers, config) {
+
+
+            });
+          }
+        }
+      } else {
+        jQuery('#popup-spinner-wrap').show();
+      }
+
+    }).error(function(data, status, headers, config) {
+      jQuery('#popup-spinner-wrap').hide();
+
+    });
+
+  }
 
 }]);
-
