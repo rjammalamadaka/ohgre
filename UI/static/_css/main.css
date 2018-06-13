@@ -5942,6 +5942,11 @@ body.fixed-body #main-wrapper {
   height: 100vh;
   position: relative;
 }
+@media (min-width: 992px) {
+  body.fixed-body {
+    position: inherit;
+  }
+}
 #primary-header,
 #promo-header {
   position: fixed;
@@ -8494,9 +8499,19 @@ div[class^="cq-colctrl-lt1-"] .card p {
 }
 #raf-terms-popup .scroll-container {
   font-family: 'Roboto', sans-serif;
-  height: 30rem;
+  height: 45rem;
   overflow: auto;
   padding-right: 2rem;
+}
+@media (min-width: 568px) {
+  #raf-terms-popup .scroll-container {
+    height: 20rem;
+  }
+}
+@media (min-width: 992px) {
+  #raf-terms-popup .scroll-container {
+    height: 30rem;
+  }
 }
 #raf-terms-popup .scroll-container h5 {
   color: #000;

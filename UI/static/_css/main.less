@@ -9,6 +9,9 @@ body {
       height: 100vh;
       position: relative;
     }
+    @media (@screen-md-min) {
+      position: inherit;
+    }
   }
 }
 
@@ -2903,10 +2906,15 @@ div[class^="cq-colctrl-lt1-"] {
 
 	.scroll-container {
 		font-family: @secondary_font;
-		height: 30rem;
+    height: 45rem;
 		overflow: auto;
 		padding-right: 2rem;
-
+    @media (@screen-xs-portrait-min) {
+      height: 20rem;
+    }
+    @media (@screen-md-min) {
+      height: 30rem;
+    }
 		h5 {
 			color: #000;
 			font-size: 1.5rem;
@@ -6338,7 +6346,6 @@ input {
 			}
 		}
 	}
-
   .terms-wrapper {
     h3 {
       font-family: 'Roboto', sans-serif;
