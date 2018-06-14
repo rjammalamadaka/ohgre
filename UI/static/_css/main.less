@@ -4647,7 +4647,6 @@ div.alt-col2 {
 		.slide-content {
 			width: 60%;
 		}
-
 		.slide {
 			.inner-slide-content {
 				padding: 0 2rem 2rem;
@@ -7279,6 +7278,24 @@ ul.info-links {
 }
 @media print footer {
 	display: none;
+}
+
+
+@media all and (-ms-high-contrast:none) {
+   *::-ms-backdrop, #order-confirmation .information-block {
+       float: left;
+       width: 40%;
+     }
+    *::-ms-backdrop, #order-confirmation .confirmation-block {
+       float: left;
+       width: 57%;
+   }/* IE11 */
+   *::-ms-backdrop, #enroll-customer-container {
+     max-width: 1100px;
+   }
+   *::-ms-backdrop, #primary-header > .container {
+     max-width: 1100px;
+   }
 }
 
 .cq-placeholder,
