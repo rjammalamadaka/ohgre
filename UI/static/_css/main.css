@@ -10240,9 +10240,6 @@ div.alt-col2 {
 .confirmation-wrapper#order-confirmation .information-block {
   overflow: hidden;
 }
-.confirmation-wrapper#order-confirmation .confirmation-info .confirmation-block {
-  max-width: 610px;
-}
 .confirmation-wrapper .confirmation-header {
   margin-bottom: 2rem;
   padding: 2.5rem 2.5rem 2rem;
