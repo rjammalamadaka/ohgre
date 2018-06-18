@@ -25,7 +25,7 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 		Connection connection = null;
 		try {
 
-			logger.info("111111111111111111111111111111111");
+			logger.info("insert Enrollment");
 			//Calendar currentCalendar = Calendar.getInstance();
 			// java.sql.Date todayDate = new java.sql.Date(currentCalendar.getTime().getTime());
 			System.setProperty("javax.net.ssl.keyStore","/home/aem/keystore");
@@ -34,7 +34,6 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 			System.setProperty("javax.net.ssl.trustStorePassword","bhaO6PlkkjHc2cfT");
 
 
-			logger.info("22222222222222222222222222222222222");
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(commonConfigService.getMySqlConnectionUrl(),commonConfigService.getDataBaseUsername(), commonConfigService.getDataBasePassword());
 
@@ -47,7 +46,7 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 						"rafCode,enrolledByUserId,authorizationCode,authorizationLevel,channelID,promotionCode,campaignID,webSiteURL,custLeadSourceCode,actionIfContractExists,preventCancelFeeifContractExists," +
 						"bypassCreditCheckInd,soldDate,bypassCIRInd,expectedQuoteAmt,tpvRequiredInd,emailTypeCode,alternateEmailAddress,editOnlyInd,b2BCustomerInd,expressConsentInd,brokerID," +
 						"delaySendToUtilDate,renewalProductCode,renewalFixPricePerThermCd,renewalFixPricePerTherm,renewalVarPriceAddOnPerTherm,renewalCtrctDurationMonths,renewalCtrctTermDate," +
-						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag,transactionType,customerType,price,tcVersion,originalPromoCode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+						"sourceSystemReferenceID,serviceTransferAuthFlag,authorityToSwitchFlag,agreeToTermsFlag,transactionType,customerType,price,tcVersion,originalPromoCode,ccvalue) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 				PreparedStatement ps = connection.prepareStatement(query,new String[]{"id"});
 
@@ -151,6 +150,8 @@ public class EnrollmentDaoServiceImpl implements EnrollmentDaoService {
 				ps.setString(77,enrollment.getPrice());
 				ps.setString(78,enrollment.getTCVersion());
 				ps.setString(79,enrollment.getOriginalPromoCode());
+				ps.setString(80,enrollment.getCcValue());
+
 				ps.execute();
 				ResultSet rs=ps.getGeneratedKeys();
 				logger.info("Got the resultset after data insertion");

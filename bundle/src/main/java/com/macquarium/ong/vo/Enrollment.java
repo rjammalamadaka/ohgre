@@ -85,6 +85,7 @@ public class Enrollment {
     private String serviceTransferAuthFlag;
     private String authorityToSwitchFlag;
     private String agreeToTermsFlag;
+    private String ccValue;
 
     public String getId() {
         return id;
@@ -724,5 +725,13 @@ public class Enrollment {
 
     public void setTcVersion(String customerType) {
         this.tcVersion = customerType;
+    }
+
+    public String getCcValue() {
+        return ccValue;
+    }
+
+    public void setCcValue(String ccValue) {
+        this.ccValue = ccValue;
     }
 }

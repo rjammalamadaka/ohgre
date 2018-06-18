@@ -96,6 +96,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 				enrollment.setCustomerType("Commercial");
 			}
 			String tcversion=getParameterInfo(jObj,"tcversion");
+			String ccValue=getParameterInfo(jObj,"ccvalue");
 			enrollment.setTcVersion(tcversion);
 			enrollRequest.setLDC(LDC);
 			enrollment.setLdc(LDC);
@@ -237,6 +238,7 @@ public class EnrollCustomerServlets extends org.apache.sling.api.servlets.SlingA
 			enrollment.setAuthorityToSwitchFlag("Y");
 			enrollment.setAgreeToTermsFlag("Y");
 			enrollment.setServiceTransferAuthFlag("Y");
+			enrollment.setCcValue(ccValue);
 			enrollRequest.setRAFCode(RAFCode);
 			logger.info("Inserting enrollment info to data base");
 			int generatedKey=enrollmentDaoService.insertEnrollment(enrollment);
