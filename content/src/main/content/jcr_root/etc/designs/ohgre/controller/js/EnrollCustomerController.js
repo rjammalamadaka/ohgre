@@ -3,6 +3,20 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     //     var onlinePromoCodes=["SCORE1C","COMPARE1C","SWITCH", "SCORE1V", "COMPARE1V", "SCORE1DT", "LOWEST1DT", "SCORE1CO", "LOWEST1CO", "10MONTHFIX2018", "10FIX2018", "SCORE3C", "MOVER3C", "SCORE3V", "COMPARE3V", "MOVER3V", "MOVER3V", "DELTA15K"];
 
 
+    $scope.ccvalues={
+        "COH":0,
+        "DEO":2,
+        "DUK":1,
+        "VEDO":1,
+        "MIC":2,
+        "MCG":1
+    };
+
+   $scope.showcccontent=true;
+    $scope.showcc1content=false;
+    $scope.showcc2content=false;
+   // $scope.cc1show=false;
+    //$scope.cc1show=false;
     $scope.iframeurl="";
     $scope.displaystepscontainer=false;
     $scope.businessName=false;
@@ -160,6 +174,18 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
         }else{
             jQuery('#popup-spinner-wrap').hide();
+        }
+
+      $scope.ccvalue=  $scope.ccvalues[data.LDC];
+
+        if($scope.ccvalue ==0){
+        $scope.showcccontent=false;
+        }
+        if($scope.ccvalue ==1){
+			$scope.showcc1content=true;
+        }
+        if($scope.ccvalue ==2){
+			$scope.showcc2content=true;
         }
 
     }).error(function (data,status, headers, config){
@@ -617,6 +643,16 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             data.alternateEmailAddress=data.emailAddress;
         }
 
+        if($scope.ccvalue ==1){
+			//console.log($scope.cc1show);
+            if($scope.cc1show)data.ccvalue=true
+            else data.ccvalue=false;
+        }
+        if($scope.ccvalue ==2){
+			console.log($scope.cc2show);
+             if($scope.cc2show)data.ccvalue=true
+            else data.ccvalue=false;
+        }
         updateenrollrequestobj(data);
 
 
@@ -1128,6 +1164,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             $scope.enrollReq.tcversion=data.tcversion;
         if(data.OriginalPromoCode)
             $scope.enrollReq.originalPromoCode=data.OriginalPromoCode;
+        if($scope.ccvalue ==1){
+			$scope.enrollReq.ccvalue=$scope.cc1show.toString();
+        }
+        if($scope.ccvalue ==2){
+			$scope.enrollReq.ccvalue=$scope.cc2show.toString();
+        }
     }
 
     var setPromotionInfoByLDC =function(ldc){

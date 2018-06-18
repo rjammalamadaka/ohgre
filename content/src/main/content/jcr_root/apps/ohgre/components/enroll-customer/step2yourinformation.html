@@ -62,7 +62,7 @@
             </div>
             <div class="input-group-wrapper">
               <label for="phone-number">Phone Number<sup class="required" >*</sup></label>
-              <input type="tel" name="phonenumber" id="phonenumber" ng-blur="phoneformatchange(phoneNumber)" ng-model="phoneNumber" placeholder="(_ _ _) - _ _ _ - _ _ _ _" maxlength="14" data-ng-pattern="/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/" ng-required="true" ng-focus ng-visited>
+              <input type="tel" name="phonenumber" id="phonenumber" ng-blur="phoneformatchange(phoneNumber)" ng-model="phoneNumber" placeholder="(_ _ _) - _ _ _ - _ _ _ _" data-ng-pattern="/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/" ng-required="true" maxlength="14" ng-focus ng-visited>
 
               <span class="input-error-message" ng-show="formtwo.submited">
                          <span class="input-error-message" ng-show="formtwo.phonenumber.$error.required">Phone number is required.</span>
@@ -237,15 +237,6 @@
       <div class="form-element-nbd">
         <div class="new-customer-container">
           <div class="form-area no-border">
-            <!--<div class="input-group-wrapper box-with-border gray-box">
-              <h5>Special Offer Sign Up</h5>
-              <div class="row no-margin">
-                <label class="checkbox">
-                        <input type="checkbox" name="special-offer" id="special-offer" ng-model="specialoffer" >
-                        </label>
-                <span class="special-offer"><label for="special-offer">${properties.specialoffercontent}</label></span>
-              </div>
-            </div>-->
             <div class="input-group-wrapper box-with-border gray-box" ng-show="displayReferalForm">
               <div class="row no-margin">
                 <h5>Friend's Referral Code</h5>
@@ -259,6 +250,34 @@
 
               </div>
             </div>
+            <!--
+			<div class="input-group-wrapper box-with-border gray-box">
+              <h5>Special Offer Sign up</h5>
+              <div class="row no-margin">
+                <label class="checkbox">
+                        <input type="checkbox" name="special-offer" id="special-offer" ng-model="specialoffer" >
+                        </label>
+                <span class="special-offer"><label for="special-offer">${properties.specialoffercontent}</label></span>
+              </div>
+            </div>
+            -->         
+			<div class="input-group-wrapper box-with-border gray-box" ng-show="showcccontent">
+              <h5>Customer Consent </h5>
+              <div class="row no-margin">
+                    <label class="checkbox" ng-show="showcc1content">
+                        <input type="checkbox" name="cc1show" id="cc1show" ng-model="cc1show" ng-init="cc1show=${properties.showchecked1?'true':'false'}">                    
+                     </label>                    
+                    <span class="special-offer" ng-show="showcc1content"><label for="special-offer" >${properties.descriptioncc1}</label></span>
+
+                    <label class="checkbox"  ng-show="showcc2content">                    
+                    <input type="checkbox" name="cc2show" id="cc2show" ng-show="showcc2content" ng-model="cc2show" ng-init="cc2show=${properties.showchecked2?'true':false}">
+                    </label>
+                    
+                    <span class="special-offer" ng-show="showcc2content"><label for="special-offer">${properties.descriptioncc2}</label></span>
+              </div>
+            </div>
+
+
             <div class="input-group-wrapper mb-padding-25 mt-2 desktop-only">
               <label class="checkbox">
                      <input type="checkbox" id="authorization-checkbox" name="authorization" ng-model="authorization" ng-required="true" ng-focus ng-visited>
