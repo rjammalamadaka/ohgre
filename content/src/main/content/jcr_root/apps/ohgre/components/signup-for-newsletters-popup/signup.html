@@ -97,7 +97,7 @@
               <div class="input-group-wrapper">
                 <label for="address-zip">Zip Code</label>
                 <span class="error-message">Error message copy goes here</span>
-                <input type="text" name="addresszip" ng-model="addresszip" id="addresszip" minlength="5" maxlength="5" pattern="[0-9]*" ng-minlength="5" ng-maxlength="5" ng-required="!email" ng-focus ng-visited numbers-only>
+                <input type="text" name="addresszip" ng-model="addresszip" id="addresszip" maxlength="5" pattern="[0-9]*"  ng-maxlength="5" ng-required="!email" ng-focus ng-visited numbers-only>
                 <span class="input-error-message" ng-show="(movingform.addresszip.$visited && !movingform.addresszip.$focused) || movingform.submited">
                         <span class="input-error-message" ng-show="movingform.addresszip.$error.required">Zip is required.</span>
                 </span>
