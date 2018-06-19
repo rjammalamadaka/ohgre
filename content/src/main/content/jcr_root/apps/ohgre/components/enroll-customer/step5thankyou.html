@@ -193,7 +193,7 @@
                      <div>
                      ${properties.donthaveskymilesnumdesc @ context = 'html'}
                          </div>
-                     <a href="#" class="primary-button" ng-click="continuedeltaskymiles('fromdelta')">I WILL PROVIDE MY SKYMILES NUMBER LATER</a>
+                     <a href="#" class="primary-button" ng-click="continueLastPromotions()">I WILL PROVIDE MY SKYMILES NUMBER LATER</a>
                   </div>
                </div>
             </div>
@@ -222,7 +222,7 @@ ${properties.deltaofferterms @ context = 'html'}
             </div>
 
             <div class="link-wrapper visible-md visible-lg visible-xl">
-               <a href="#" class="primary-button block mb-2" ng-click="continuedeltaskymiles()">Continue</a>
+               <a href="#" class="primary-button block mb-2" ng-click="displaythankyousection()">Continue</a>
 
             </div>
          </div>
@@ -230,7 +230,7 @@ ${properties.deltaofferterms @ context = 'html'}
    </div>
    <div class="footnote" ng-show="reviewdisplayvisa">
       <div class="link-wrapper visible-xs visible-sm">
-              <a href="#" class="primary-button inactive block" ng-click="continuedeltaskymiles()">Continue</a>
+              <a href="#" class="primary-button inactive block" ng-click="displaythankyousection()">Continue</a>
       </div>
       ${properties.offerterms @ context = 'html'}
    </div>
@@ -252,7 +252,7 @@ ${properties.deltaofferterms @ context = 'html'}
            </div>
             <div class="link-wrapper visible-md visible-lg visible-xl">
                <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
-               <a href="#" class="primary-button inactive block">NO THANKS, I’M NOT INTERESTED</a>
+               <a href="#" class="primary-button inactive block" ng-click="continueTwoPromotions()">NO THANKS, I’M NOT INTERESTED</a>
             </div>
          </div>
       </div>
@@ -260,7 +260,7 @@ ${properties.deltaofferterms @ context = 'html'}
    <div class="footnote" ng-show="reviewdisplayraf">
       <div class="link-wrapper visible-xs visible-sm">
          <a href="#" class="primary-button block mb-2" ng-click="sendemailwithmoreinfo()">Send me an email with more information about the program</a>
-         <a href="#" class="primary-button inactive block" >NO THANKS, I’M NOT INTERESTED</a>
+         <a href="#" class="primary-button inactive block" ng-click="continueTwoPromotions()">NO THANKS, I’M NOT INTERESTED</a>
       </div>
      ${properties.rafofferterms @ context = 'html'}
    </div>
@@ -268,7 +268,15 @@ ${properties.deltaofferterms @ context = 'html'}
                          <!-- end step4visa -->
 
 
+<div ng-show="displaythankyousectionpage">
 
+${properties.conclusioninfo @ context = 'html'}
+<!--
+<h2>Congratulations! </h2>
+<h4>Your enrollment is complete, Thank you for chosing Ohio Natural Gas.</h4>
+<p>We look forward to serving you.</p>
+-->
+</div>
 
 
 </div>

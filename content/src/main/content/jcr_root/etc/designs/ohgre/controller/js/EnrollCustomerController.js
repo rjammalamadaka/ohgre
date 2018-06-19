@@ -743,14 +743,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         	$scope.sendRafEmailReq.emailAddress=$scope.enrollReq.emailAddress;
             PrimeService.sendRafEmail($scope.sendRafEmailReq).success(function(data, status, headers, config){
 
-                if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
-                    $scope.reviewdisplay=false;
-                    $scope.reviewdisplayraf =false;
-                    $scope.reviewdisplaydeltaskymiles =true;
-                }
+                 $scope.continueTwoPromotions();
 
             }).error(function(data, status, headers, config){
-
+ 				$scope.continueTwoPromotions();
             });
 
     }
@@ -1064,17 +1060,19 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
                 PrimeService.dsmEnroll($scope.dsmEnrollReq).success(function(data, status, headers, config){
                     $scope.flag=false;
-                    if(data.message =="Success"){
+                   // if(data.message =="Success"){
                         //$scope.reviewauthorizesubmit();
-                        if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+                        /*if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
                             $scope.reviewdisplay=false;
                             $scope.reviewdisplaydeltaskymiles =false;
                             $scope.reviewdisplayvisa =true;
-                        }
-                    }
+                        }*/
+                        $scope.continueLastPromotions();
+                   // }
 
                 }).error(function(data, status, headers, config){
                     $scope.flag=false;
+                     $scope.continueLastPromotions();
                 });
 
             }
@@ -1221,8 +1219,40 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         }else if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
             $scope.reviewdisplay=false;
             $scope.reviewdisplayvisa =true;
+        }else{
+			$scope.displaythankyousection();
         }
     }
+
+   $scope.continueTwoPromotions=function(){
+		$scope.reviewdisplayraf =false;
+         if($scope.promotionInfo && $scope.promotionInfo.DSMEligible =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplaydeltaskymiles =true;
+        }else if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplayvisa =true;
+        }else{
+			$scope.displaythankyousection();
+        }
+    }
+
+      $scope.continueLastPromotions=function(){
+		$scope.reviewdisplayraf =false;
+         $scope.reviewdisplaydeltaskymiles=false;
+       if($scope.promotionInfo && $scope.promotionInfo.GiftCardEligible =="Y"){
+            $scope.reviewdisplay=false;
+            $scope.reviewdisplayvisa =true;
+        }else{
+			$scope.displaythankyousection();
+        }
+    }
+   $scope.displaythankyousection=function(){
+       $("#thank-you").removeClass("active-step").addClass("step-complete");
+       $scope.displaythankyou=false;
+        $scope.reviewdisplayvisa =false;
+       $scope.displaythankyousectionpage=true;
+   }
     $scope.gotoHomePage = function(){
         //location.href=$rootScope.homeUrl+".html";
         if($scope.continuePromotions){
