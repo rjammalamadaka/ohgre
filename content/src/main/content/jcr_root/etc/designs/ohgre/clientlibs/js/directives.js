@@ -262,7 +262,7 @@ ohgrePortal.directive('numbersOnly', function() {
             userInputVal = element[0].value;
 
             if (/android/i.test(userAgent) && userInputLength > 5) {
-              userInputVal = userInputVal.substr(0, 4);
+              userInputVal = userInputVal.substr(0, 5);
               //$('#addresszip').val(userInputVal);
               element[0].value = userInputVal;
             }
