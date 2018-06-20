@@ -73,45 +73,45 @@
               <label for="source">How Did You Hear About Us?</label>
               <div class="dropdown-container">
                 <button type="button" class="dropdown-trigger"><span class="value">&nbsp;</span> <span class="fa fa-angle-down carret"></span></button>                <div class="expanded-dropdown">
-                  <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu" role="menu">
 
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">Google</span>
-                                 </a>
-                    </li>
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">Newspaper</span>
-                                 </a>
-                    </li>
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">Online</span>
-                                 </a>
-                    </li>
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">Other</span>
-                                 </a>
-                    </li>
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">White Fence</span>
-                                 </a>
-                    </li>
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">Word of Mouth</span>
-                                 </a>
-                    </li>
-                    <li role="menuitem">
-                      <a href="#" class="select-option">
-                                 <span class="">Radio</span>
-                                 </a>
-                    </li>
-                  </ul>
-                </div>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">Google</span>
+                    </a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">Newspaper</span>
+                    </a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">Online</span>
+                    </a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">Other</span>
+                    </a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">White Fence</span>
+                    </a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">Word of Mouth</span>
+                    </a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#" class="select-option">
+                      <span class="">Radio</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
               </div>
             </div>
           </div>
@@ -179,8 +179,8 @@
               <h4>Billing Address</h4>
               <div class="input-group-wrapper">
                 <label class="checkbox">
-                        <input type="checkbox" name="same-billing" id="same-billing" ng-model="samebilling" ng-init="samebilling=true" />
-                        </label>
+                  <input type="checkbox" name="same-billing" id="same-billing" ng-model="samebilling" ng-init="samebilling=true" />
+                </label>
                 <span class="after-checkbox"><label for="same-billing">Same as Service Address</label></span>
               </div>
             </div>
@@ -260,28 +260,28 @@
                 <span class="special-offer"><label for="special-offer">${properties.specialoffercontent}</label></span>
               </div>
             </div>
-            -->         
-			<div class="input-group-wrapper box-with-border gray-box" ng-show="showcccontent">
-              <h5>Customer Consent </h5>
+            -->
+            <div class="input-group-wrapper box-with-border gray-box" ng-show="showcccontent">
+              <h5>${properties.ccheading}</h5>
               <div class="row no-margin">
-                    <label class="checkbox" ng-show="showcc1content">
-                        <input type="checkbox" name="cc1show" id="cc1show" ng-model="cc1show" ng-init="cc1show=${properties.showchecked1?'true':'false'}">                    
-                     </label>                    
-                    <span class="special-offer" ng-show="showcc1content"><label for="special-offer" >${properties.descriptioncc1}</label></span>
+                <label class="checkbox" ng-show="showcc1content">
+                  <input type="checkbox" name="cc1show" id="cc1show" ng-model="cc1show" ng-init="cc1show=${properties.showchecked1?'true':'false'}">
+                </label>
+                <span class="special-offer" ng-show="showcc1content"><label for="special-offer" >${properties.descriptioncc1}</label></span>
 
-                    <label class="checkbox"  ng-show="showcc2content">                    
-                    <input type="checkbox" name="cc2show" id="cc2show" ng-show="showcc2content" ng-model="cc2show" ng-init="cc2show=${properties.showchecked2?'true':false}">
-                    </label>
-                    
-                    <span class="special-offer" ng-show="showcc2content"><label for="special-offer">${properties.descriptioncc2}</label></span>
+                <label class="checkbox"  ng-show="showcc2content">
+                  <input type="checkbox" name="cc2show" id="cc2show" ng-show="showcc2content" ng-model="cc2show" ng-init="cc2show=${properties.showchecked2?'true':false}">
+                </label>
+
+                <span class="special-offer" ng-show="showcc2content"><label for="special-offer">${properties.descriptioncc2}</label></span>
               </div>
             </div>
 
 
             <div class="input-group-wrapper mb-padding-25 mt-2 desktop-only">
               <label class="checkbox">
-                     <input type="checkbox" id="authorization-checkbox" name="authorization" ng-model="authorization" ng-required="true" ng-focus ng-visited>
-                     </label>
+                <input type="checkbox" id="authorization-checkbox" name="authorization" ng-model="authorization" ng-required="true" ng-focus ng-visited>
+              </label>
               <span class="special-offer"><label for="authorization-checkbox">${properties.authorizationcontent}</label></span>
 
               <span class="input-error-message" ng-show="(formtwo.authorization.$visited && !formtwo.authorization.$focused) || formtwo.submited">
