@@ -178,24 +178,24 @@ ohgrePortal.directive('lettersOnly', function() {
 });
 ohgrePortal.directive('noSpecials', function() {
   return {
-      restrict: 'A',
-      require: 'ngModel',
-      link: function(scope, elem, attrs, ngModel) {
+    restrict: 'A',
+    require: 'ngModel',
+    link: function(scope, elem, attrs, ngModel) {
 
-          ngModel.$parsers.push(function(viewValue) {
-            console.log('viewValue', viewValue);
-            var reg = /^[^`~!@#$%\^&*()_+={}|[\]\\:;"<>?,/1-9]*$/;
-            // if view values matches regexp, update model value
-            if (viewValue != null && viewValue.match(reg)) {
-              return viewValue;
-            }
-            // keep the model value as it is
-            var transformedValue = ngModel.$modelValue;
-            ngModel.$setViewValue(transformedValue);
-            ngModel.$render();
-            return transformedValue;
-          });
-      }
+      ngModel.$parsers.push(function(viewValue) {
+        console.log('viewValue', viewValue);
+        var reg = /^[^`~!@#$%\^&*()_+={}|[\]\\:;"<>?,/1-9]*$/;
+        // if view values matches regexp, update model value
+        if (viewValue != null && viewValue.match(reg)) {
+          return viewValue;
+        }
+        // keep the model value as it is
+        var transformedValue = ngModel.$modelValue;
+        ngModel.$setViewValue(transformedValue);
+        ngModel.$render();
+        return transformedValue;
+      });
+    }
   };
 });
 
@@ -218,6 +218,69 @@ ohgrePortal.directive('numbersOnly', function() {
         }
         return transformedInput;
       });
+
+      // element[0].addEventListener('input', function(event) {
+      //   var reg = /^\d+$/;
+      //
+      //   var userInput;
+      //
+      //   if (event.data) {
+      //     userInput = event.data.length;
+      //     console.log('data length', userInput);
+      //     if (!reg.test(event.data)) {
+      //
+      //       var isnum = /^\d+$/.test(event.data);
+      //
+      //       if (!isnum) {
+      //         console.log('not a number');
+      //       }
+      //
+      //       $(element[0]).val(
+      //         function(index, value) {
+      //           //return value.substr(0, value.length - 1);
+      //         })
+      //     }
+      //   }
+      //
+      //
+      // });
+
+      element[0].addEventListener('input', function(event) {
+        var reg = /^\d+$/;
+
+        var userInputLength;
+        var userInputVal = '';
+
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (event.data) {
+          userInputLength = element[0].value.length;
+
+          if (userInputLength > 4) {
+            console.log('maxlength reached');
+            //userInputVal = $('#addresszip').val();
+            userInputVal = element[0].value;
+
+            if (/android/i.test(userAgent) && userInputLength > 5) {
+              userInputVal = userInputVal.substr(0, 5);
+              //$('#addresszip').val(userInputVal);
+              element[0].value = userInputVal;
+            }
+          }
+        }
+
+
+      });
+
+      // $('#addresszip').keydown(function (e) {
+      //
+      //     var inputLength = jQuery(this).val().length;
+      //
+      //     if(inputLength >= 5) {
+      //         e.preventDefault();
+      //         return false;
+      //     }
+      // });
 
     }
   };
@@ -323,31 +386,32 @@ ohgrePortal.directive('moveFocus', function() {
 });
 
 ohgrePortal.directive('autoNext', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attr, form) {
-            var tabindex = parseInt(attr.tabindex);
-            var maxLength = parseInt(attr.maxlength);
-            //keypress
-            element.on('keyup', function(e) {
-                //if (element.val().length > maxLength-1) {
-                if (element.val().length == element.attr('maxlength')) {
-                    console.log('equal');
-                    var next = angular.element(document.body).find('[tabindex=' + (tabindex+1) + ']');
+  return {
+    restrict: 'A',
+    link: function(scope, element, attr, form) {
+      var tabindex = parseInt(attr.tabindex);
+      var maxLength = parseInt(attr.maxlength);
+      //keypress
+      element.on('keyup', function(e) {
+        //if (element.val().length > maxLength-1) {
+        if (element.val().length == element.attr('maxlength')) {
+          console.log('equal');
+          var next = angular.element(document.body).find('[tabindex=' + (tabindex + 1) + ']');
 
-                    console.log('next.disabled', next);
+          console.log('next.disabled', next);
 
-                    if (next.length > 0) {
-                        next.focus();
-                        return next.triggerHandler('keyup', { which: e.which});
-                    }
-                    else  {
-                        return false;
-                    }
-                }
-                return true;
+          if (next.length > 0) {
+            next.focus();
+            return next.triggerHandler('keyup', {
+              which: e.which
             });
-
+          } else {
+            return false;
+          }
         }
+        return true;
+      });
+
     }
+  }
 });
