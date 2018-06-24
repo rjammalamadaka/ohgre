@@ -510,3 +510,71 @@ ohgrePortal.run(['$rootScope', '$compile', '$http', 'PrimeService', "OhGreServic
 
 
 }]);
+
+
+
+var getAccountNumber = function(ldc){
+
+        if(ldc =="COH"){
+          return $("#coh-accno").val();
+        }
+        if(ldc =="DEO"){
+            return $("#deo-accno").val();
+        }
+        if(ldc =="DUK"){
+           return $("#duk-accno").val();
+        }
+        if(ldc =="VED"){
+          return $("#ved-accno").val();
+        }
+        if(ldc =="MCG"){
+          return $("#mcg-accno").val();
+        }
+        if(ldc =="MIC"){
+          return $("#mic-accno").val();
+        }
+
+    }
+
+
+
+ var isAccountNumberValid = function(ldc){
+
+        if(ldc =="COH"){
+            if(!cohMask.masked.isComplete){
+                $("#accountnumberinvalid").show();
+                return false;
+            }
+        }
+        if(ldc =="DEO"){
+            if(!deoMask.masked.isComplete){
+                $("#accountnumberinvalid").show();
+                return false;
+            }
+        }
+        if(ldc =="DUK"){
+            if(!dukMask.masked.isComplete){
+                $("#accountnumberinvalid").show();
+                return false;
+            }
+        }
+        if(ldc =="VED"){
+            if(!vedMask.masked.isComplete){
+                $("#accountnumberinvalid").show();
+                return false;
+            }
+        }
+        if(ldc =="MCG"){
+            if(!mcgMask.masked.isComplete){
+                $("#accountnumberinvalid").show();
+                return false;
+            }
+        }
+        if(ldc =="MIC"){
+            if(!micMask.masked.isComplete){
+                $("#accountnumberinvalid").show();
+                return false;
+            }
+        }
+        return true;
+    }
