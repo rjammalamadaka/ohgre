@@ -1,3 +1,5 @@
+
+
 <section ng-controller="ReferAFriendController">
   <div class="container">
     <div class="col-md-10 col-md-offset-1">
@@ -34,29 +36,18 @@
               <h4>You selected {{ldcdesc}}</h4>
               <div class="form-area-wrapper">
 
-                <label for="account-number" ng-if="ldc !='MIC'">My Gas Utility Account Number is:</label>
-                <label for="account-number" ng-if="ldc =='MIC'">Gas Service Pod ID</label>
+				<div class="form-area">
+                  <input placeholder="XXXXXXXXX-XXX-000-X" class="col-xs-11 accountnumber" type="text"  id="coh-accno"/>                
+					<input placeholder="X-XXXX-XXXX-XXXX" class="col-xs-12 accountnumber" type="text" id="deo-accno"/>                 
+					<input placeholder="XXXX-XXXX-XX-X" class="col-xs-12 accountnumber" type="text" id="duk-accno"/>                 
+				<input placeholder="03-XXXXXXXXX-XXXXXXX-0" class="col-xs-12 accountnumber" type="text" id="ved-accno"/>
+  				 <input placeholder="XXXX-XXX-XXXX-X" class="col-xs-12 accountnumber" type="text" id="mcg-accno"/>
+         		 <input placeholder="XXXXXXXXXXXXX" class="col-xs-12 accountnumber" type="text" id="mic-accno"/>
 
+				</div>
 
-                <div class="form-area multiple-input">
-                  <div class="input-container" data-size={{an1minl}} ng-hide="ldc=='MIC'">
-                    <input type="text" pattern="[0-9]*" tabindex="1" name="an1" ng-model="an1" ng-minlength="an1minl" ng-maxlength="an1minl" maxlength={{an1minl}} ng-readonly="an1r" ng-required=an1required numbers-only auto-next>
-                  </div>
-                  <div class="input-container" data-size={{an2minl}} ng-hide="ldc =='MIC'">
-                    <input type="text" pattern="[0-9]*" tabindex="2" name="an2" ng-model="an2" ng-minlength="an2minl" ng-maxlength="an2minl" maxlength={{an2minl}} ng-readonly=false ng-required=an2required numbers-only auto-next>                  </div>
-                  <div class="input-container" data-size={{an3minl}} ng-hide="ldc =='MIC'">
-                    <input type="text" pattern="[0-9]*" tabindex="3" name="an3" ng-model="an3" ng-minlength="an3minl" ng-maxlength="an3minl" maxlength={{an3minl}} ng-readonly="an3r" ng-required=an3required numbers-only auto-next>                  </div>
-                  <div class="input-container" data-size={{an4minl}}>
-                    <input type="text" pattern="[0-9]*" tabindex="4" name="an4" ng-model="an4" ng-minlength="an4minl" ng-maxlength="an4minl" maxlength={{an4minl}} ng-readonly="an4r" ng-required=an4required numbers-only auto-next>                  </div>
-                </div>
-
-                <span class="input-error-message" ng-show="(raf.an1.$dirty && ldc !='MIC' && (raf.an1.$invalid || raf.an2.$invalid || raf.an3.$invalid || raf.an4.$invalid)) || (raf.submited)">
-                        <span ng-show="ldc !='MIC' && (raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required)">Account Number is required.</span>
-                <span ng-show="(!(raf.an1.$error.required || raf.an2.$error.required || raf.an3.$error.required || raf.an4.$error.required) && (raf.an1.$error.maxlength || raf.an1.$error.minlength || raf.an2.$error.maxlength || raf.an2.$error.minlength || raf.an3.$error.maxlength || raf.an3.$error.minlength || raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
-                </span>
-                <span class="input-error-message" ng-show="(raf.an1.$dirty && ldc =='MIC' && raf.an4.$invalid || (raf.submited))">
-                        <span ng-show="ldc =='MIC' && ( raf.an4.$error.required)">Account Number is required.</span>
-                <span ng-show="(!(raf.an4.$error.required) && (raf.an4.$error.maxlength || raf.an4.$error.minlength))">Account Number should be valid .</span>
+                <span class="input-error-message" ng-show="raf.submited">
+                	<span id="accountnumberinvalid">Account Number should be valid .</span>
                 </span>
 
               </div>
@@ -64,7 +55,7 @@
                 <div class="form-area">
                   <label for="lastname">My Last Name is:</label>
                   <input type="text" name="lastname" tabindex="5" ng-model="lastname" ng-required="true" ng-focus ng-visited>
-                 
+
                   <span class="input-error-message" ng-show="(raf.lastname.$visited && !raf.lastname.$focused) || raf.submited">
                             <span class="input-error-message" ng-show="raf.lastname.$error.required">Last Name is required.</span>
                   </span>

@@ -20,8 +20,66 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
       $scope.$apply();
 
     });
+      /*
+	$('#COH').focus(function(e) {
+        if($scope.ldc == 'COH') {
+			var cgoMask = new IMask(document.getElementById('COH'), {
+                mask: '000000000-000-{\\0\\0\\0}-0',
+           lazy: false,
+           //placeholderChar: 'X'
+           }).on('accept', function() {
+           document.getElementById('COH').classList.remove('complete');
+           }).on('complete', function() {
+                document.getElementById('COH').classList.add('complete');
+           });
 
+        }
+    });
+      $('#DEO').focus(function(e) {
+        if($scope.ldc == 'DEO') {
+			   var deoMask = new IMask(document.getElementById('DEO'), {
+               mask: '0-0000-0000-0000',
+               lazy: false,
+               //placeholderChar: 'X'
+               }).on('accept', function() {
+               document.getElementById('DEO').classList.remove('complete');
+               }).on('complete', function() {
+               document.getElementById('DEO').classList.add('complete');
+          });
+            //$('#abcd').inputmask("999999999-999-{000}-0");
+        }
+    });
+      $('#VED').focus(function(e) {
+        if($scope.ldc == 'COH') {
+			var cgoMask = new IMask(document.getElementById('VED'), {
+                mask: '{\\0\\3}-000000000-0000000-\\0',
+           lazy: false,
+           //placeholderChar: 'X'
+           }).on('accept', function() {
+           document.getElementById('VED').classList.remove('complete');
+           }).on('complete', function() {
+                document.getElementById('VED').classList.add('complete');
+           });
+
+        }
+    });
+      $('#DUK').focus(function(e) {
+        if($scope.ldc == 'DUK') {
+			var cgoMask = new IMask(document.getElementById('DUK'), {
+                mask: '0-0000-0000-0000',
+           lazy: false,
+           //placeholderChar: 'X'
+           }).on('accept', function() {
+           document.getElementById('DUK').classList.remove('complete');
+           }).on('complete', function() {
+                document.getElementById('DUK').classList.add('complete');
+           });
+
+        }
+    });
+    */
   }
+
 
   var togglePopup = function(p) {
     var popupObj = $(p);
@@ -138,35 +196,60 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
   });
 
   $scope.referafriendsubmit = function() {
-    var ldc = jQuery('#fixed-plans-button').val();
+//$(".accountnumber").val("");
+  var ldc = jQuery('#fixed-plans-button').val();
+       $('.accountnumber').hide();
     if (ldc) {
-      $scope.step2 = true;
+
+        if(ldc=="COH"){
+			$('#coh-accno').show();
+        }
+
+        if(ldc=="DEO"){
+			$('#deo-accno').show();
+        }
+
+        if(ldc=="DUK"){
+			$('#duk-accno').show();
+        }
+
+        if(ldc=="VED"){
+			$('#ved-accno').show();
+        }
+        if(ldc=="MCG"){
+			$('#mcg-accno').show();
+        }
+
+        if(ldc=="MIC"){
+			$('#mic-accno').show();
+        }
     }
+
+      $scope.step2 = true;
+
   }
 
   $scope.referafriendcancel = function() {
+
+      $("#raf-account-number").val("");
+       $("#accountnumberinvalid").hide();
     $scope.errorInfo = null;
     $scope.step2 = false;
 
   }
-  var req = {};
+     var req = {};
+
+
+
 
   $scope.referafriendstep2submit = function() {
-
+ $("#accountnumberinvalid").hide();
     $scope.raf.submited = true;
     $scope.errorInfo = null;
+    if (isAccountNumberValid($scope.ldc) && $scope.raf.$valid) {
+	var accno=getAccountNumber($scope.ldc);;
 
-    if ($scope.raf.$valid) {
-
-      /*if($scope.ldc == "MIC"){
-                req.AccountNumber=$scope.an4;
-            }else{
-				req.AccountNumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
-            }*/
-
-
-
-      if ($scope.ldc == "DUK") {
+      /*if ($scope.ldc == "DUK") {
         req.AccountNumber = $scope.an1 + $scope.an2 + $scope.an3;
       } else if ($scope.ldc == "VED") {
         req.AccountNumber = $scope.an2 + $scope.an3;
@@ -174,7 +257,8 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
         req.AccountNumber = $scope.an4;
       } else {
         req.AccountNumber = $scope.an1 + $scope.an2 + $scope.an3 + $scope.an4;
-      }
+      }*/
+      req.AccountNumber= req.AccountNumber=accno.replace(/\-/g, "");; ;
       req.LDC = $scope.ldc;
 
       PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
@@ -315,4 +399,82 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
   }
 
+
+
+
+
 }]);
+
+
+
+if(document.getElementById('coh-accno')){
+//setTimeout(function(){
+var cohMask = new IMask(document.getElementById('coh-accno'), {
+      mask: '000000000-000-{\\0\\0\\0}-0',
+      lazy: false,
+      placeholderChar: 'X'
+}).on('accept', function() {
+    document.getElementById('coh-accno').classList.remove('complete');
+}).on('complete', function() {
+    document.getElementById('coh-accno').classList.add('complete');
+     $("#accountnumberinvalid").hide();
+});
+
+var deoMask = new IMask(document.getElementById('deo-accno'), {
+      mask: '0-0000-0000-0000',
+      lazy: false,
+      placeholderChar: 'X'
+}).on('accept', function() {
+    document.getElementById('deo-accno').classList.remove('complete');
+}).on('complete', function() {
+     $("#accountnumberinvalid").hide();
+    document.getElementById('deo-accno').classList.add('complete');
+});
+
+var dueoMask = new IMask(document.getElementById('duk-accno'), {
+      mask: '0-0000-0000-0000',
+      lazy: false,
+      placeholderChar: 'X'
+}).on('accept', function() {
+    document.getElementById('duk-accno').classList.remove('complete');
+}).on('complete', function() {
+     $("#accountnumberinvalid").hide();
+    document.getElementById('duk-accno').classList.add('complete');
+});
+
+var vedMask = new IMask(document.getElementById('ved-accno'), {
+      mask: '{\\0\\3}-000000000-0000000-\\0',
+      lazy: false,
+      placeholderChar: 'X'
+}).on('accept', function() {
+    document.getElementById('ved-accno').classList.remove('complete');
+}).on('complete', function() {
+     $("#accountnumberinvalid").hide();
+    document.getElementById('ved-accno').classList.add('complete');
+});
+
+var mcgMask = new IMask(document.getElementById('mcg-accno'), {
+      mask: '0000-000-0000-0',
+      lazy: false,
+      placeholderChar: 'X'
+}).on('accept', function() {
+    document.getElementById('mcg-accno').classList.remove('complete');
+}).on('complete', function() {
+     $("#accountnumberinvalid").hide();
+    document.getElementById('mcg-accno').classList.add('complete');
+});
+
+var micMask = new IMask(document.getElementById('mic-accno'), {
+      mask: '0000000000000',
+      lazy: false,
+      placeholderChar: 'X'
+}).on('accept', function() {
+    document.getElementById('mic-accno').classList.remove('complete');
+}).on('complete', function() {
+     $("#accountnumberinvalid").hide();
+    document.getElementById('mic-accno').classList.add('complete');
+});
+
+}
+
+//}, 3000);
