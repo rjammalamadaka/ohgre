@@ -11308,6 +11308,7 @@ input {
 #signup-form {
   max-width: 45rem;
   padding: 1rem 3rem 6rem;
+  height: 101%;
 }
 #signup-form label {
   margin-top: 3rem;
