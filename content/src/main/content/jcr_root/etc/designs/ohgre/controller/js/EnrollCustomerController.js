@@ -159,6 +159,31 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
         }
 
+        	$('.accountnumber').hide();
+
+
+            if( data.LDC=="COH"){
+                $('#coh-accno').show();
+            }
+
+            if( data.LDC=="DEO"){
+                $('#deo-accno').show();
+            }
+
+            if( data.LDC=="DUK"){
+                $('#duk-accno').show();
+            }
+
+            if( data.LDC=="VED"){
+                $('#ved-accno').show();
+            }
+            if( data.LDC=="MCG"){
+				 $('#mcg-accno').show();
+            }
+
+            if( data.LDC=="MIC"){
+				 $('#mic-accno').show();
+            }
 
         updateenrollrequestobj(data);
 
@@ -262,22 +287,12 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     }
     var getFormatedAccountNumber= function(){
 
-        var accountNumber=null;
+      
         var ldc = $rootScope.product.LDC;
-        if(ldc =="MIC"){
-            accountNumber=$scope.an4;
-        }else if(ldc =="MCG"){
-            accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="VED"){
-            accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="DEO"){
-            accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="DUK"){
-            accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="COH"){
-            accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }
-        $rootScope.formatedacno=accountNumber;
+
+        $rootScope.formatedacno=getAccountNumber(ldc);
+
+        return $rootScope.formatedacno ;
 
     }
 
@@ -327,8 +342,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         getFormatedAccountNumber();
 
         $scope.formone.submited = true;
-        if($scope.formone.$valid || (($rootScope.product.LDC=="MIC") && $scope.formone.lastName.$valid && $scope.formone.zipcode.$valid && $scope.formone.an4.$valid)){
+        if(isAccountNumberValid($rootScope.product.LDC) && $scope.formone.$valid && $scope.formone.lastName.$valid && $scope.formone.zipcode.$valid){
             var accountnumber=null;
+
+             var accno=getAccountNumber($rootScope.product.LDC);;
             if($rootScope.product.LDC == "DUK"){
                 accountnumber=$scope.an1+$scope.an2+$scope.an3;
             }else if($rootScope.product.LDC == "VED"){
@@ -338,9 +355,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             }else{
                 accountnumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
             }
-            $scope.unformatedaccountnumber=accountnumber;
+            accountnumber=accno;
+            $scope.unformatedaccountnumber=accno;
             var req={};
-            req.AccountNumber=accountnumber;
+            req.AccountNumber=accno.replace(/\-/g, "");
             req.LDC=$rootScope.product.LDC;
             jQuery('#popup-spinner-wrap').show();
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
