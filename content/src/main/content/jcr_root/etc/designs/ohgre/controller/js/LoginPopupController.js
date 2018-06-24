@@ -84,27 +84,41 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
         }
          $scope.$apply();
 
+
+        	$('.accountnumber').hide();
+
+
+            if( ldc=="COH"){
+                $('#coh-accno').show();
+            }
+
+            if( ldc=="DEO"){
+                $('#deo-accno').show();
+            }
+
+            if( ldc=="DUK"){
+                $('#duk-accno').show();
+            }
+
+            if( ldc=="VED"){
+                $('#ved-accno').show();
+            }
+            if( ldc=="MCG"){
+				 $('#mcg-accno').show();
+            }
+
+            if( ldc=="MIC"){
+				 $('#mic-accno').show();
+            }
+
+
+
     }
 
 
     var getFormatedAccountNumber= function(){
 
-        var accountNumber=null;
-		var ldc = $scope.ldc;
-        if(ldc =="MIC"){
-            accountNumber=$scope.an4;
-        }else if(ldc =="MCG"){
-             accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="VED"){
-             accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="DEO"){
-             accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="DUK"){
-			 accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }else if(ldc =="COH"){
- 			accountNumber=$scope.an1+"-"+$scope.an2+"-"+$scope.an3+"-"+$scope.an4;
-        }
-		$rootScope.formatedacno=accountNumber;
+       return getAccountNumber($scope.ldc);
 
     }
 
@@ -192,29 +206,23 @@ $scope.errorMessage=null;
 
         $('#lastnamezipcodeerror').hide(); 
 
+
 	    $scope.loginform.submited = true;
-        if($scope.loginform.$valid || (($scope.ldc=="MIC") && $scope.loginform.lastName.$valid && $scope.loginform.zipcode.$valid && $scope.loginform.an4.$valid)){
+        if(isAccountNumberValid($scope.ldc) &&$scope.loginform.$valid){
             //$scope.lctype
 			//$scope.ldc
             //$scope.lastName
             //$scope.zipcode
+            var accno=getAccountNumber($scope.ldc);;
 
             //$scope.formatedacno
-            getFormatedAccountNumber();
+            $scope.formatedacno=getFormatedAccountNumber();
 		  $scope.accountnumber=null;
-           if($scope.ldc == "DUK"){
-            $scope.accountnumber=$scope.an1+$scope.an2+$scope.an3;
-           }else if($scope.ldc == "VED"){
-			 $scope.accountnumber=$scope.an2+$scope.an3;
-           }else if($scope.ldc == "MIC"){
- 			$scope.accountnumber=$scope.an4;
-           }else{
-			 $scope.accountnumber=$scope.an1+$scope.an2+$scope.an3+$scope.an4;
-           }
-            var req={};
-            req.AccountNumber=$scope.accountnumber; 
-            req.LDC=$scope.ldc;
 
+            var req={};
+            req.AccountNumber=accno.replace(/\-/g, "");; 
+            req.LDC=$scope.ldc;
+ $scope.accountnumber=accno.replace(/\-/g, "");
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
 
                 if(data){
