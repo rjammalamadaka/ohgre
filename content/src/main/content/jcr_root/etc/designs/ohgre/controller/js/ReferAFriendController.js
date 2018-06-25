@@ -432,7 +432,7 @@ var deoMask = new IMask(document.getElementById('deo-accno'), {
 });
 
 var dueoMask = new IMask(document.getElementById('duk-accno'), {
-      mask: '0-0000-0000-0000',
+      mask: '0000-0000-00-0',
       lazy: false,
       placeholderChar: 'X'
 }).on('accept', function() {
