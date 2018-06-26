@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-06-24T10:02:43.995-05:00"
+        cq:lastModified="{Date}2018-06-25T21:59:56.816-05:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-03-06T15:43:53.185-06:00"
         cq:lastReplicatedBy="penny"
@@ -21,7 +21,7 @@
             <enroll_customer
                 jcr:created="{Date}2017-08-17T08:23:33.475+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-06-24T10:02:43.983-05:00"
+                jcr:lastModified="{Date}2018-06-25T21:59:56.805-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/enroll-customer"
@@ -30,6 +30,7 @@
                 authorizationcontent="I am the utility account holder."
                 ccheading="Customer Consent"
                 checkboxmsg="&lt;p>I hereby agree to Grand Rapids Energy’s &lt;a href=&quot;/content/dam/ohgre/termsandconditions/grandrapidsenergy/Terms-and-Conditions-of-Service.pdf&quot; target=&quot;_blank&quot;>Terms and Conditions&lt;/a> of Service version MI-CO-RS-01.2 and any applicable early termination charges.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                conclusioninfo="&lt;h2>Congratulations!&lt;/h2>&#xd;&#xa;&lt;h4>Your enrollment is complete, Thank you for&amp;nbsp;choosing Grand Rapids Energy.&lt;/h4>&#xd;&#xa;&lt;p>We look forward to serving you.&lt;/p>&#xd;&#xa;"
                 confirmationcontent="[&lt;p> &lt;/p>&#xd;&#xa;&lt;p> &lt;/p>&#xd;&#xa;]"
                 deltaconfirmationcontent="&lt;p>You have selected to provide us with your Delta Skymiles account number later. When you are ready, please go to &lt;a href=&quot;/content/gre/skymiles.html&quot; target=&quot;_blank&quot;>grandrapidsenergy.com/skymiles.html&lt;/a> to enter your number to get your bonus miles.&lt;br />&#xd;&#xa;&lt;/p>&#xd;&#xa;"
                 deltaimagepath="/content/dam/ohgre/about/delta-image.jpg"
