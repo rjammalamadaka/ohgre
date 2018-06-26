@@ -4,10 +4,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
 
     $scope.ccvalues={
-        "COH":0,
+        "COH":1,
         "DEO":2,
         "DUK":1,
-        "VEDO":1,
+        "VED":2,
         "MIC":2,
         "MCG":1
     };
@@ -338,7 +338,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $('#lastnamezipcodeerror').hide();
         $('#b2BCustomerIndError').hide();
         $('#b2BCustomerIndError').hide();
-        clearEnrollReqObject();
+        clearEnrollReqObject(); 
         getFormatedAccountNumber();
 
         $scope.formone.submited = true;
@@ -358,7 +358,16 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             accountnumber=accno;
             $scope.unformatedaccountnumber=accno;
             var req={};
-            req.AccountNumber=accno.replace(/\-/g, "");
+
+            var accountNumberForBE=accno.replace(/\-/g, "");
+
+            if($rootScope.product.LDC=="DUK"){
+               accountNumberForBE= accountNumberForBE.substring(0,accountNumberForBE.length-1);
+            }
+            if($rootScope.product.LDC=="VED"){
+                accountNumberForBE=accountNumberForBE.substring(2,accountNumberForBE.length-1);
+            }
+            req.AccountNumber=accountNumberForBE;
             req.LDC=$rootScope.product.LDC;
             jQuery('#popup-spinner-wrap').show();
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
@@ -463,7 +472,16 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                         $rootScope.showexistingcustomer=false;
                         var accountNumberInfo={};
                         if($scope.unformatedaccountnumber){
-                            accountNumberInfo.account=$scope.unformatedaccountnumber;
+
+                            var accno=getAccountNumber($rootScope.product.LDC);
+                            var accountNumberForBE=accno.replace(/\-/g, "");
+                            if($rootScope.product.LDC=="DUK"){
+                                accountNumberForBE= accountNumberForBE.substring(0,accountNumberForBE.length-1);
+                            }
+                            if($rootScope.product.LDC=="VED"){
+                                accountNumberForBE=accountNumberForBE.substring(2,accountNumberForBE.length-1);
+                            }
+                            accountNumberInfo.account=accountNumberForBE;
                             updateenrollrequestobj(accountNumberInfo);
                         }
 

@@ -251,14 +251,23 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
       /*if ($scope.ldc == "DUK") {
         req.AccountNumber = $scope.an1 + $scope.an2 + $scope.an3;
-      } else if ($scope.ldc == "VED") {
+      } else if ($scope.ldc == "VED") { 
         req.AccountNumber = $scope.an2 + $scope.an3;
       } else if ($scope.ldc == "MIC") {
         req.AccountNumber = $scope.an4;
       } else {
         req.AccountNumber = $scope.an1 + $scope.an2 + $scope.an3 + $scope.an4;
       }*/
-      req.AccountNumber= req.AccountNumber=accno.replace(/\-/g, "");; ;
+      var accountNumberForBE= accno.replace(/\-/g, "");
+
+        if($scope.ldc=="DUK"){
+        	accountNumberForBE=accountNumberForBE.substring(0,accountNumberForBE.length-1);
+        }
+        if($scope.ldc=="VED"){
+        	accountNumberForBE=accountNumberForBE.substring(2,accountNumberForBE.length-1);
+        }
+
+      req.AccountNumber= accountNumberForBE;
       req.LDC = $scope.ldc;
 
       PrimeService.getCustomerInfo(req).success(function(data, status, headers, config) {
@@ -410,7 +419,7 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 if(document.getElementById('coh-accno')){
 //setTimeout(function(){
 var cohMask = new IMask(document.getElementById('coh-accno'), {
-      mask: '000000000-000-{\\0\\0\\0}-0',
+      mask: '00000000-000-{\\0\\0\\0}-0',
       lazy: false,
       placeholderChar: 'X'
 }).on('accept', function() {

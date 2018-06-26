@@ -180,7 +180,7 @@ ohgrePortal.controller('LoginPopupController', ['$scope', '$rootScope', '$http' 
         PrimeService.getLdcInfo().success(function(data, status, headers, config){
             if(data && data.responseStatus =="0"){
                 $rootScope.ldcinfo=data.LDCList;
-                setTimeout(function(){ $scope.loginPopupBindClickEvent(); }, 10);
+                setTimeout(function(){ $scope.loginPopupBindClickEvent(); }, 10); 
             }
 
 
@@ -220,7 +220,16 @@ $scope.errorMessage=null;
 		  $scope.accountnumber=null;
 
             var req={};
-            req.AccountNumber=accno.replace(/\-/g, "");; 
+
+            var accountNumberForBE= accno.replace(/\-/g, "");
+
+            if($scope.ldc=="DUK"){
+                accountNumberForBE=accountNumberForBE.substring(0,accountNumberForBE.length-1);
+            }
+            if($scope.ldc=="VED"){
+               accountNumberForBE= accountNumberForBE.substring(2,accountNumberForBE.length-1);
+            }
+            req.AccountNumber=accountNumberForBE;; 
             req.LDC=$scope.ldc;
  $scope.accountnumber=accno.replace(/\-/g, "");
             PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){

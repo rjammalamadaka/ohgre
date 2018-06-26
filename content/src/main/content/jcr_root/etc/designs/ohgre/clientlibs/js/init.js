@@ -553,7 +553,7 @@ var getAccountNumber = function(ldc){
             }
         }
         if(ldc =="DUK"){
-            if(!dukMask.masked.isComplete){
+            if(!dueoMask.masked.isComplete){
                 $("#accountnumberinvalid").show();
                 return false;
             }
