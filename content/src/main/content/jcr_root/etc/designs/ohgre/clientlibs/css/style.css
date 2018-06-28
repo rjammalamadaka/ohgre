@@ -103,7 +103,13 @@
 }
 
 .form-area-wrapper.mic-account-container {
-	width: 50%;
+    width: 50%;
+}
+
+@media (min-width:320px) and (max-width:414px) {
+    .form-area-wrapper.mic-account-container {
+        width:auto;
+    }
 }
 
 

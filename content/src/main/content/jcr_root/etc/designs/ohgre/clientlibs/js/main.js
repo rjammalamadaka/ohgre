@@ -67,6 +67,7 @@ var ohio_ng = {
       //html2canvas(document.getElementById('portalbody'), {
       //html2canvas($('#enroll-customer-container'), {
       html2canvas($('#portalbody'), {
+          scale:2,
           onrendered: function(canvasObj) {
             startPrintProcess(canvasObj, 'printedPDF',function (){
               //document.getElementById('portalbody').style.overflow = 'hidden';
