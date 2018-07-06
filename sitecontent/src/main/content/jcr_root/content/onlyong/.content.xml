@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
+    <WIN25/>
+    <EMAIL25/>
+    <_x0031_0FIX2018/>
+    <RAF50/>
+    <_x0031_0MONTHFIX2018/>
+    <NEWHOME18/>
+    <LOWEST2D/>
+    <SCORE2D/>
     <saveme2017/>
     <save2017/>
     <test/>
@@ -18,18 +26,16 @@
     <visa_offer/>
     <promo-general/>
     <errors/>
-    <_x0031_0FIX2018/>
     <applemagic/>
     <DSEA/>
     <SCORE1V/>
     <special_offer/>
     <SCORE1C/>
-    <_x0031_0MONTHFIX2018/>
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/ohgre"
-        cq:lastModified="{Date}2018-06-10T23:47:52.487-04:00"
+        cq:lastModified="{Date}2018-06-10T22:58:21.270-05:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2018-04-03T08:45:33.944-05:00"
         cq:lastReplicatedBy="penny"
@@ -52,7 +58,7 @@
         metaprimarykeywords="Ohio Natural Gas, Natural Gas, Gas Company Ohio, Natural Gas Company"
         metatitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         mobilenumber="1-888-466-4427"
-        onlinepromocodes="[SCORE3C,ENROLL3C,NEWHOME18,EMAILTEN,WINTEN,SCORE3V,LOWEST3V,SWITCH,WINBACK,CHOICE4C,CHOICE3V,EMAIL25,WIN25]"
+        onlinepromocodes="[SCORE3C,ENROLL3C,NEWHOME18,EMAILTEN,WINTEN,SCORE3V,LOWEST3V,SWITCH,WINBACK,CHOICE4C,CHOICE3V,EMAIL25,WIN25,]"
         pageTitle="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         portalname="oh"
         tagmanagerid="GTM-56C9WRS"
@@ -191,7 +197,7 @@
             <RAF
                 jcr:primaryType="nt:unstructured"
                 RAF25="/content/onlyong/promo-raf"
-                RAF50="/content/onlyong/RAF50"/>
+                RAF50="/content/onlyong/promo-raf"/>
             <BACKUP
                 jcr:primaryType="nt:unstructured"
                 BACKCOH="/content/onlyong/backuppromo"
@@ -329,5 +335,5 @@
     <NEWHOME2018/>
     <EMAIL25/>
     <WIN25/>
-    <RAF50/>
+    <modals/>
 </jcr:root>
