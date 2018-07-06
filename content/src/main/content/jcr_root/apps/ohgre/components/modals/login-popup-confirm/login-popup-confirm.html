@@ -1,0 +1,42 @@
+<div class="window-wrapper with-border">
+    <a href="#" class="close-window">X</a>
+    <span class="window-title">${properties.title}</span>
+    <table class="table-wrapper">
+      <tr>
+        <td>${properties.nameongasaccountnumber}</td>
+        <td>{{customerInfo.customerName}}</td>
+      </tr>
+      <tr>
+        <td>${properties.gasutilitylabel}</td>
+        <td>{{customerInfo.ldcdesc}} </td>
+      </tr>
+      <tr>
+        <td>${properties.accounttype}</td>
+        <td>{{customerInfo.rateClassDesc}}</td>
+      </tr>
+      <tr ng-if="customerInfo.ldc !='MIC'">
+			<td>${properties.gasutilityaccountnumber}</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+        <tr ng-if="customerInfo.ldc =='MIC'">
+			<td>${properties.gasservicepodid}</td>
+			<td>{{formatedacno}}</td>
+		</tr>
+      <tr>
+        <td>${properties.serviceaddress}</td>
+        <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+      </tr>
+      <tr ng-show="(customerInfo.ldc !=='MIC' && customerInfo.ldc !=='MCG')">
+            <td>${properties.ohaccountstatus}</td>
+            <td>{{getCustomerStatus(customerInfo.accountStatus)}}</td>
+      </tr>
+      <tr ng-show="(customerInfo.ldc =='MIC' || customerInfo.ldc =='MCG')">
+          <td>${properties.greaccountstatus}</td>
+          <td>{{getCustomerStatus(customerInfo.accountStatus)}}</td>
+      </tr>
+    </table>
+    <div class="button-container">
+      <a href="#" class="primary-button plain" ng-click="closeConfirm()">${properties.tryagain}</a>
+      <a href="#" class="primary-button" ng-click="confirmLogin()">${properties.confirmlabel}</a>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="window-wrapper with-border">
+	 <a href="#" id="close-window">X</a>
+	 <span class="window-title" ng-show="!termsupdate">${properties.title}</span>
+      <span class="window-title" ng-show="termsupdate">${properties.titletermsupdate}</span>
+		<span class="window-title" ng-show="termsupdate" >${properties.titletermsupdatedesc}</span>
+
+	 <div class="scroll-container" data-sly-test="${inheritedPageProperties.portalname == 'oh'}">
+		${properties.termsandconditions @ context ='html'}
+	 </div>
+
+	 <div class="scroll-container" data-sly-test="${inheritedPageProperties.portalname == 'gre'}">
+		${properties.gretermsandconditions @ context ='html'}
+	 </div>
+
+	 <div class="button-container">
+		 <a href="#" class="primary-button inactive" ng-click="redirecttohome()">${properties.declinebuttonlabel}</a>
+		 <a href="#" class="primary-button" ng-click="acceptrafterms()">${properties.acceptbuttonlabel}</a>
+	 </div>
+ </div>

@@ -1,0 +1,85 @@
+<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+			${properties.renewaleading  @ context='html'}
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">${properties.yourinformation}</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>${properties.nameongasaccountnumber}</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+							<tr ng-if="product.LDC !='MIC'">
+				            <td>${properties.gasutilityaccountnumber}</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>${properties.gasservicepodid}</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+				         <tr>
+				            <td>${properties.serviceaddress}</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray" ng-show="!gbplandisplay">
+                            <div class="price" ng-show="customerInfo.renewalContractExistsInd=='N'">
+                                {{customerInfo.pricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+                             <div class="price" ng-show="customerInfo.renewalContractExistsInd=='Y'">
+                                {{customerInfo.renewalPricePerUnit | currency:"$":3}} <span>per {{customerInfo.uom}}</span>
+                             </div>
+							</div>
+                            <div class="plan-price gray" ng-show="gbplandisplay">
+                                {{gbplandescription | currency:"$":2}}<span>per Month</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>${properties.renewalcontract}</h4>
+										<span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='N'">{{customerInfo.productDescFriendly}}</span>
+                                        <span class="plan-selected" ng-show="customerInfo.renewalContractExistsInd=='Y'">{{customerInfo.renewalProductDescFriendly}}</span>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='N' && customerInfo.contractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.contractStartDate)}} - {{getOnlyDate(customerInfo.contractTermDate)}}</small>
+										<small ng-show="(customerInfo.renewalContractExistsInd=='Y' && customerInfo.renewalContractTermDate !== '12/31/2999 12:00:00 AM')">{{customerInfo.ldcdesc}}<br /> {{getOnlyDate(customerInfo.renewalContractStartDate)}} - {{getOnlyDate(customerInfo.renewalContractTermDate)}}</small>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex-container">
+							<div class="plan-price">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info">
+									<div class="inner-content">
+										<h4>${properties.selectedcontract}</h4>
+										<span class="plan-selected">{{product.productDescFriendly}}</span>
+										<small>{{product.ldcDesc}}</small>
+                                        <small ng-show="showVariablePlan">Price shown for {{currentMonth}} {{currentYear}}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">${properties.earlyterminationcharges}</small>
+                                        <small ng-hide="showVariablePlan" class="error-text">${properties.tcapplicablecharges}</small>
+									</div>
+									</div>
+									<div class="plan-button">
+										<a href="#" class="primary-button" ng-click="popuprenewalcontinue()"> ${properties.selectandcontinue}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="button-container">
+					<a href="#" class="primary-button" ng-click="redirecttohome()">${properties.cancelbuttonlabel}</a>
+				</div>
+				<!-- end inner content -->
+			</div>
+	   </div>

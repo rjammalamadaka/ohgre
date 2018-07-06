@@ -1,0 +1,33 @@
+<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+			 ${properties.heading @ context='html'}
+			<div class="inner-window-content">
+
+				<ul class="plan-detail plan-detail-alt1">
+					<li>
+						<div class="flex-container">
+							<div class="plan-price gray gray-text">
+								{{product.fixedPricePerTherm | currency:"$":3}}<span>per {{getNumber(product.quoteDes)}}</span>
+							</div>
+							<div class="plan-info-wrapper">
+								<div class="plan-info gray-text">
+									<div class="inner-content">
+										<h4>${properties.selectedcontract}</h4>
+										<b class="plan-selected gray-text">{{product.productDescFriendly}}</b>
+										<small>{{product.ldcDesc}}</small>
+                                        <small class="error-text">${properties.earlyterminationcharges}</small>
+                                        <small class="error-text">${properties.tcapplicablecharges}</small>
+									</div>
+									</div>
+									<div class="plan-button">
+										<span class="bold error-text">${properties.noteligibleforthisplan}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="primary-button" ng-click="redirectToStandardPricingPlan()">${properties.shopforplansbuttonlabel}</a>
+					</li>
+				</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>

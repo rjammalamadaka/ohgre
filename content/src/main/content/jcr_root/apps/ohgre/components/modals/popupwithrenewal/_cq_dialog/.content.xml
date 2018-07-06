@@ -10,9 +10,9 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <noteligibleforoffers
+            <popupwithrenewal
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Not Eligible For Offers"
+                jcr:title="Popup Early termination charge"
                 sling:resourceType="granite/ui/components/foundation/section">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -22,11 +22,11 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <text
+                            <renewaleading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                fieldLabel="Message/Notification"
-                                name="./text"
+                                fieldLabel="Renewal header"
+                                name="./renewaleading"
                                 useFixedInlineToolbar="{Boolean}true">
                                 <rtePlugins jcr:primaryType="nt:unstructured">
                                     <format
@@ -138,7 +138,7 @@
                                             toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
                                     </cui>
                                 </uiSettings>
-                            </text>
+                            </renewaleading>
                             <yourinformation
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -149,26 +149,31 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="Name on Gas Account label"
                                 name="./nameongasaccountnumber"/>
-                            <utilityaccountnumber
+                            <gasutilityaccountnumber
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Utility Account Number label"
-                                name="./utilityaccountnumber"/>
-                            <servicepodid
+                                fieldLabel="Gas Utility Account Number label"
+                                name="./gasutilityaccountnumber"/>
+                            <gasservicepodid
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Consumer energy A/C label"
-                                name="./servicepodid"/>
+                                fieldLabel="Gas Service Pod ID Label"
+                                name="./gasservicepodid"/>
                             <serviceaddress
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Service Address label"
+                                fieldLabel="Service Address Label"
                                 name="./serviceaddress"/>
-                            <selectedplan
+                            <renewalcontract
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Selected Plan"
-                                name="./selectedplan"/>
+                                fieldLabel="Renewal Contract"
+                                name="./renewalcontract"/>
+                            <selectedcontract
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Selected Label"
+                                name="./selectedcontract"/>
                             <earlyterminationcharges
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -179,20 +184,20 @@
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
                                 fieldLabel="T&amp;C Applicable Charges Label"
                                 name="./tcapplicablecharges"/>
-                            <noteligibleoffer
+                            <selectandcontinue
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Not Eligible Offer Label"
-                                name="./noteligibleoffer"/>
-                            <shopforplans
+                                fieldLabel="Select and continue Button Label"
+                                name="./selectandcontinue"/>
+                            <cancelbuttonlabel
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                fieldLabel="Shop for plans Button Label"
-                                name="./shopforplans"/>
+                                fieldLabel="Cancel Button Label"
+                                name="./cancelbuttonlabel"/>
                         </items>
                     </column>
                 </items>
-            </noteligibleforoffers>
+            </popupwithrenewal>
         </items>
     </content>
 </jcr:root>

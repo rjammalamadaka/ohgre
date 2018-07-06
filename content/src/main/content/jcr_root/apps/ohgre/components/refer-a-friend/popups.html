@@ -1,30 +1,8 @@
 <section>
 <div class="popup-wrapper" id="raf-terms-popup">
-<div class="window-wrapper">
-	 <a href="#" id="close-window">X</a>
-	 <span class="window-title" ng-show="!termsupdate">Refer-a-Friend Program Terms and Conditions</span>
-      <span class="window-title" ng-show="termsupdate">Terms and Conditions Update</span>
-		<span class="window-title" ng-show="termsupdate" >The Terms & Conditions of the Refer-a-Friend Program have changed since your last visit.</span>
-		<!--<p><b ng-show="termsupdate" style="color:black;">Program Terms and Conditions</b></p>-->
+      <sly data-sly-resource="/content/onlyong/modals/raf-terms-popup/jcr:content/content/raf-terms-popup.html"  data-sly-unwrap></sly>
 
-       <!--<h5 class="window-title" ng-show="!termsupdate">Terms & Conditions for Refer a Friend Program </h5>
-      <h5 class="window-title" ng-show="termsupdate">Terms & Conditions Update for Refer a Friend Program </h5>-->
-
-
-
-
-	 <div class="scroll-container">
-		${properties.termsandconditions @ context ='html'}
-
-	 </div>
-	 <div class="button-container">
-		 <a href="#" class="primary-button inactive" ng-click="redirecttohome()">Decline</a>
-		 <a href="#" class="primary-button" ng-click="acceptrafterms()">Accept</a>
-	 </div>
  </div>
- </div>
-
-
 
 
 <div class="popup-wrapper" id="login-inactive-popup">

@@ -1,0 +1,35 @@
+<div class="window-wrapper with-border">
+	      <a href="#" class="close-window">X</a>
+			${properties.alternatenoteligibleheading @ context='html'}
+			<div class="inner-window-content">
+				<div class="row">
+					<div class="col-md-9">
+						<span class="window-title align-left">Your Information</span>
+						<table class="table-wrapper">
+				         <tr>
+				            <td>Name on Gas Utility Account:</td>
+				            <td>{{customerInfo.customerName}}</td>
+				         </tr>
+						 <tr ng-if="product.LDC !='MIC'">
+				            <td>Gas Utility Account Number:</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+                         <tr ng-if="product.LDC =='MIC'">
+				            <td>Gas Service Pod ID</td>
+				            <td>{{formatedacno}}</td>
+				         </tr>
+				         <tr>
+				            <td>Service Address:</td>
+				            <td>{{customerInfo.serviceAddress1}} {{customerInfo.serviceAddress2}} <br> {{customerInfo.serviceCity}}, {{customerInfo.serviceStateCode}} {{customerInfo.serviceZipCode}}</td>
+				         </tr>
+				      </table>
+					</div>
+				</div>
+				<ul class="plan-detail">
+					<li>
+						<a href="#" class="primary-button" ng-click="enrollselectalternateplans()">${properties.shopforplansbuttonlabel}</a>
+					</li>
+				</ul>
+				<!-- end inner content -->
+			</div>
+	   </div>
