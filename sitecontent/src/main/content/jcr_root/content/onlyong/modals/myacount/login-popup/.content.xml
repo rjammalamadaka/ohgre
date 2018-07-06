@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-07-03T20:49:52.715-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Login popup"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <login-popup
+                jcr:created="{Date}2018-06-09T22:06:18.804-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-07-03T20:49:52.708-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/modals/login-popup"
+                accountnumberrequiredmessage="Account Number is required."
+                accountnumbervalidmessage="Account Number should be valid."
+                cancelbuttonlabel="Cancel"
+                commerciallabel="Commercial"
+                gretooltip="&lt;p>Please be sure to enter your account number from your natural gas utility bill. If your account number doesn&amp;#39;t match what we&amp;#39;re asking you to provide, please call &lt;a href=&quot;tel:1-800-841-1541&quot;>1.800.841.1541&lt;/a> so we may help.&lt;/p>&#xd;&#xa;"
+                lastnamerequiredmessage="Last Name is required."
+                ohtooltip="&lt;p>&amp;gt;Please be sure to enter your account number from your natural gas utility bill. If your account number doesn&amp;#39;t match what we’re asking you to provide, please call &lt;a href=&quot;tel:1-888-466-4427&quot;>1-888-466-4427&lt;/a> so we may help.&lt;/p>&#xd;&#xa;"
+                residentiallabel="Residential"
+                selectyourgasutilitylabel="Select Your Gas Utility"
+                servicepodid="Gas Service Pod ID"
+                submitbuttonlabel="Submit"
+                textIsRich="[true,true]"
+                title="Enter Your Information Below to Renew or Change Your Plan"
+                utilityaccountnumber="Gas Utility Account Number"
+                zipcoderequiredmessage="Zip Code is required."
+                zipcodevalidmessage="Please enter valid Zip code."/>
+        </content>
+    </jcr:content>
+</jcr:root>
