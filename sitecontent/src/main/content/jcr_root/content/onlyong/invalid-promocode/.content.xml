@@ -2,9 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2018-03-02T14:53:04.247-06:00"
+        cq:lastModified="{Date}2018-07-03T08:44:04.702-05:00"
         cq:lastModifiedBy="penny"
-        cq:lastReplicated="{Date}2018-03-02T14:53:08.350-06:00"
+        cq:lastReplicated="{Date}2018-07-03T08:44:14.265-05:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
         cq:template="/apps/ohgre/templates/promolandingwithoutnav"
@@ -21,13 +21,13 @@
             <promoherobanner
                 jcr:created="{Date}2017-08-13T22:54:07.994+05:30"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-03-02T14:53:04.244-06:00"
+                jcr:lastModified="{Date}2018-07-03T08:44:04.698-05:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/promoherobanner"
                 displaylogo="true"
-                imagepath="/content/dam/ohgre/promotions/ONG_COH_ENROLL3C_1568x348base.png"
-                mobileimagepath="/content/dam/ohgre/promotions/ONG_COH_ENROLL3C_768x300.png"
+                imagepath="/content/dam/ohgre/home/hero-image.jpg"
+                mobileimagepath="/content/dam/ohgre/home/hero-image1.jpg"
                 textIsRich="true"
                 title="We are unable to find this promotion code."/>
             <promotionerrorpage
