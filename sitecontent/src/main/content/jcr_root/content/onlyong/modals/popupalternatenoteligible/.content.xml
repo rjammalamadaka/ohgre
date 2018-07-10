@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-07-01T22:45:59.975-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Aternate Not Eligible"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <popupalternatenoteligible
+                jcr:created="{Date}2018-06-09T22:06:18.804-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-07-01T22:45:59.971-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/modals/popupalternatenoteligible"
+                alternatenoteligibleheading="&lt;h6>&lt;span class=&quot;error-text block fs-15&quot;>You are not eligible for the plan and promotion you have selected. &lt;/span>Please choose from one of our many other plans for the best deal!&lt;/h6>&#xd;&#xa;"
+                cancelbuttonlabel="Cancel"
+                currentcontract="Current Contract"
+                earlyterminationcharges="Early Termination Charges Apply."
+                gasservicepodid="Gas Service Pod ID"
+                gasutilityaccountnumber="Gas Utility Account Number:"
+                nameongasaccountnumber="Name on Gas Utility Account:"
+                renewalcontract="Renewal Contract"
+                renewaleading="&lt;h6>Your current contract is about to expire. The plan you selected can begin after your current contract ends. If you want to start your selected plan earlier, please call {{mobilenumber}} to discuss your options.&lt;/h6>&#xd;&#xa;"
+                selectandcontinue="select &amp; continue"
+                selectedcontract="Selected New Contract"
+                selectedplan="Selected New Contract"
+                serviceaddress="Service Address:"
+                shopforplansbuttonlabel="Shop for plans"
+                tcapplicablecharges="Please see T&amp;Cs for applicable charges."
+                textIsRich="true"
+                yourinformation="Your Information"/>
+        </content>
+    </jcr:content>
+</jcr:root>

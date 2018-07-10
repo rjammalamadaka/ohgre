@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-07-01T21:03:22.762-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Popup Confirm"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <popupconfirm
+                jcr:created="{Date}2018-06-09T22:06:18.804-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-07-01T21:03:22.759-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/modals/popupconfirm"
+                accounttype="Account Type:"
+                confirmlabel="Confirm"
+                confirmyouraccountlabel="Please Confirm Your Account"
+                gasservicepodid="Gas Service Pod ID"
+                gasutilityaccountnumber="Gas Utility Account Number:"
+                gasutilitylabel="Gas Utility:"
+                greaccountstatuslabel="Grand Rapids Energy Account Status:"
+                nameongasaccountnumber="Name on Gas Utility Account:"
+                ohaccountstatuslabel="Ohio Natural Gas Account Status:"
+                serviceaddress="Service Address:"
+                textIsRich="true"
+                tryagainlabel="Try Again"/>
+        </content>
+    </jcr:content>
+</jcr:root>

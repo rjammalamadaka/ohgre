@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-07-03T20:09:20.914-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/promolandingwithoutnav"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Popup not eligible for new"
+        sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage">
+        <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <popupnoteligiblefornew
+                jcr:created="{Date}2018-06-09T22:06:18.804-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2018-07-01T22:45:59.971-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ohgre/components/modals/popupnoteligiblefornew"
+                earlyterminationcharges="Early Termination Charges Apply."
+                heading="&lt;h6>&lt;span class=&quot;error-text block fs-15&quot;>You are not eligible for the plan and promotion you have selected. &lt;/span>Please choose from one of our many other plans for the best deal!&lt;/h6>"
+                noteligibleforthisplan="Not eligible for this plan."
+                selectedcontract="Selected Plan"
+                shopforplansbuttonlabel="Shop for plans"
+                tcapplicablecharges="Please see T&amp;Cs for applicable charges."
+                textIsRich="true"/>
+        </content>
+    </jcr:content>
+</jcr:root>

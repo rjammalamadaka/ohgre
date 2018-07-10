@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2018-06-09T21:40:12.782-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ohgre/templates/referafriend"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Models"
+        sling:resourceType="/apps/ohgre/components/structure/referafriend"/>
+    <noteligibleforoffers/>
+    <popupconfirm/>
+    <popupetc/>
+    <popupwithrenewal/>
+    <popupalternatenoteligible/>
+    <popupnoteligiblefornew/>
+    <myacount/>
+    <raf-terms-popup/>
+</jcr:root>
