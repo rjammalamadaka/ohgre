@@ -340,7 +340,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $('#b2BCustomerIndError').hide();
         clearEnrollReqObject(); 
         getFormatedAccountNumber();
-
+        $rootScope.customerInfo=null;
+        $scope.formatedacno=null;
+        $scope.phoneNumber=null;
+        $scope.existingEmail=null;
         $scope.formone.submited = true;
         if(isAccountNumberValid($rootScope.product.LDC) && $scope.formone.$valid && $scope.formone.lastName.$valid && $scope.formone.zipcode.$valid){
             var accountnumber=null;
@@ -1198,10 +1201,10 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
             $scope.enrollReq.tcversion=data.tcversion;
         if(data.OriginalPromoCode)
             $scope.enrollReq.originalPromoCode=data.OriginalPromoCode;
-        if($scope.ccvalue ==1){
+        if($scope.ccvalue ==1 && $scope.cc1show){
 			$scope.enrollReq.ccvalue=$scope.cc1show.toString();
         }
-        if($scope.ccvalue ==2){
+        if($scope.ccvalue ==2 && $scope.cc2show){
 			$scope.enrollReq.ccvalue=$scope.cc2show.toString();
         }
     }
