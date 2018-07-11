@@ -56,9 +56,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     if($rootScope.portalname=='oh'){
         $scope.enrollReq.portalname="oh";
         $scope.addressstate="OH";
+        $scope.billingaddressstate="OH";
     }else if($rootScope.portalname=='gre'){
         $scope.enrollReq.portalname="gre";
         $scope.addressstate="MI";
+        $scope.billingaddressstate="MI";
     }
 
 
@@ -344,7 +346,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $scope.billingaddressone=null;
 $scope.billingaddresstwo=null;
         $scope.billingaddresscity=null;
-        $scope.billingaddressstate=null;
+        //$scope.billingaddressstate=null;
         $scope.billingaddresszip=null;
         $scope.phoneNumber=null;
         $scope.existingEmail=null;
