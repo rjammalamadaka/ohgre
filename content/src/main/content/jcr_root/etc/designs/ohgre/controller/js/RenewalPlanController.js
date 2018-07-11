@@ -310,6 +310,7 @@ ohgrePortal.controller('RenewalPlanController', ['$scope', '$rootScope', '$http'
                         if(ldcinfo.promotion[0].RateClassCode.length>0 && $scope.productData.rateClassCode.length>0 && (ldcinfo.promotion[0].RateClassCode != $scope.productData.rateClassCode)){
 
                             $scope.serverError="Sorry, we are unable to find that promotion code. Please call us at "+$scope.mobilenumber+" so we may further assist you";
+                            jQuery('#popup-spinner-wrap').hide();
                             return false;
 
                          }
