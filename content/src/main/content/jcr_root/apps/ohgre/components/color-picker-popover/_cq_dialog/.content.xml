@@ -34,10 +34,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 name="Blue"
                                 value="#0000FF"/>
-                            <black
-                                jcr:primaryType="nt:unstructured"
-                                name="Black"
-                                value="#000000"/>
                             <brown
                                 jcr:primaryType="nt:unstructured"
                                 name="Brown"
