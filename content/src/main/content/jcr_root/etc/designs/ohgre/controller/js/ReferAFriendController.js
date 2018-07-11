@@ -197,35 +197,41 @@ ohgrePortal.controller('ReferAFriendController', ['$scope', '$rootScope', '$http
 
   $scope.referafriendsubmit = function() {
 //$(".accountnumber").val("");
+      $scope.errorInfo=null;
   var ldc = jQuery('#fixed-plans-button').val();
-       $('.accountnumber').hide();
-    if (ldc) {
+      if(ldc && ldc.length>0){
+          $('.accountnumber').hide();
+          if (ldc) {
+              
+              if(ldc=="COH"){
+                  $('#coh-accno').show();
+              }
+              
+              if(ldc=="DEO"){
+                  $('#deo-accno').show();
+              }
+              
+              if(ldc=="DUK"){
+                  $('#duk-accno').show();
+              }
+              
+              if(ldc=="VED"){
+                  $('#ved-accno').show();
+              }
+              if(ldc=="MCG"){
+                  $('#mcg-accno').show();
+              }
+              
+              if(ldc=="MIC"){
+                  $('#mic-accno').show();
+              }
+          }
+          
+          $scope.step2 = true;
+      }else{
 
-        if(ldc=="COH"){
-			$('#coh-accno').show();
-        }
-
-        if(ldc=="DEO"){
-			$('#deo-accno').show();
-        }
-
-        if(ldc=="DUK"){
-			$('#duk-accno').show();
-        }
-
-        if(ldc=="VED"){
-			$('#ved-accno').show();
-        }
-        if(ldc=="MCG"){
-			$('#mcg-accno').show();
-        }
-
-        if(ldc=="MIC"){
-			$('#mic-accno').show();
-        }
-    }
-
-      $scope.step2 = true;
+		$scope.errorInfo="Please select your gas utility";
+      }
 
   }
 
