@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Generic Non LDC Promotion"
-        jcr:uuid="237b10fb-9d72-4169-9cb5-10de3926b5b2"
+        jcr:uuid="2a3c2159-a71d-4da9-87cd-598531956f50"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

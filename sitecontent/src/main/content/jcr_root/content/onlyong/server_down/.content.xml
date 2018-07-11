@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Server Down"
-        jcr:uuid="48c8a8cc-b888-4d74-93ba-2e40d4985799"
+        jcr:uuid="a13e55b9-c0fb-4a5f-b3f5-713daa8a425e"
         sling:resourceType="/apps/ohgre/components/structure/promolandingwithoutnavpage"
         hideInNav="true">
         <content

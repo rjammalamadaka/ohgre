@@ -48,7 +48,6 @@
         jcr:title="Ohio Natural Gas® | Region's Leading Natural Gas Company in Ohio"
         jcr:uuid="12cc571e-0cf5-47b7-8f6b-4d2a90a1d1c2"
         sling:resourceType="/apps/ohgre/components/structure/page"
-        commstdpromocode="STDCOMONG"
         companyinfolinks="[/content/onlyong,/content/onlyong]"
         days="Monday - Friday"
         description="Visit the Official Site of Ohio Natural Gas® for Prices, Plans, and Promotions. Ohio Natural Gas is the Region's Leading Natural Gas Company in Ohio."
@@ -197,7 +196,7 @@
             <RAF
                 jcr:primaryType="nt:unstructured"
                 RAF25="/content/onlyong/promo-raf"
-                RAF50="/content/onlyong/promo-raf"/>
+                RAF50="/content/onlyong/RAF50"/>
             <BACKUP
                 jcr:primaryType="nt:unstructured"
                 BACKCOH="/content/onlyong/backuppromo"
@@ -260,8 +259,6 @@
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KONLINE="/content/onlyong/DELTA15K"
                 DSEA="/content/onlyong/DSEA"
-                EMAIL25="/content/onlyong/EMAIL25"
-                EMAIL25ONLINE="/content/onlyong/EMAIL25"
                 EMAILTEN="/content/onlyong/EMAILTEN"
                 EMAILTENONLINE="/content/onlyong/EMAILTEN"
                 ENROLL3C="/content/onlyong/ENROLL3C"
@@ -286,8 +283,6 @@
                 SCORE3VONLINE="/content/onlyong/SCORE3V"
                 SWITCH="/content/onlyong/SWITCH"
                 SWITCHONLINE="/content/onlyong/SWITCH"
-                WIN25="/content/onlyong/WIN25"
-                WIN25ONLINE="/content/onlyong/WIN25"
                 WINTEN="/content/onlyong/WINTEN"
                 WINTENONLINE="/content/onlyong/WINTEN">
                 <Score1C/>
@@ -333,7 +328,5 @@
     <CHOICE4C/>
     <CHOICE3V/>
     <NEWHOME2018/>
-    <EMAIL25/>
-    <WIN25/>
     <modals/>
 </jcr:root>
