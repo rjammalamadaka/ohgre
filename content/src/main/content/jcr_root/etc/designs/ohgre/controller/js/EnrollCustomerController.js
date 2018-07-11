@@ -341,7 +341,11 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         clearEnrollReqObject(); 
         $rootScope.customerInfo=null;
         $rootScope.formatedacno=null;
-        
+        $scope.billingaddressone=null;
+$scope.billingaddresstwo=null;
+        $scope.billingaddresscity=null;
+        $scope.billingaddressstate=null;
+        $scope.billingaddresszip=null;
         $scope.phoneNumber=null;
         $scope.existingEmail=null;
         $scope.formone.submited = true;
