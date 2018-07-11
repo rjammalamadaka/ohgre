@@ -14,7 +14,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="View Rate Plans"
-        jcr:uuid="b417e320-7354-4b44-8bec-68722620ed82"
+        jcr:uuid="dfab8613-af51-48f9-970f-206073711376"
         sling:resourceType="/apps/ohgre/components/structure/mainpage"
         navTitle="View Rate Plans"
         portalname="gre">

@@ -12,7 +12,7 @@
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Grand Rapids Energy FAQs"
-        jcr:uuid="e297b48e-bfbc-4a94-86d9-3fba38011209"
+        jcr:uuid="3ad9e8c8-a766-49f8-93f4-a3cd50009dc5"
         sling:resourceType="/apps/ohgre/components/structure/helppage"
         hideInNav="true">
         <image

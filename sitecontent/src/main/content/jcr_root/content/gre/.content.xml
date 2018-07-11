@@ -9,8 +9,8 @@
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:designPath="/etc/designs/gre"
-        cq:lastModified="{Date}2018-06-01T21:36:51.336-05:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2018-06-29T09:23:03.478-05:00"
+        cq:lastModifiedBy="penny"
         cq:lastReplicated="{Date}2018-05-25T11:09:34.698-05:00"
         cq:lastReplicatedBy="penny"
         cq:lastReplicationAction="Activate"
@@ -37,7 +37,7 @@
             <herocarousel
                 jcr:created="{Date}2017-08-21T00:30:49.455-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-05-25T11:08:16.680-05:00"
+                jcr:lastModified="{Date}2018-06-29T09:23:03.471-05:00"
                 jcr:lastModifiedBy="penny"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ohgre/components/herocarousel"
@@ -183,11 +183,14 @@
                 jcr:primaryType="nt:unstructured"
                 DELTA15K="/content/onlyong/DELTA15K"
                 DELTA15KE="/content/onlyong/DELTA15KE"
-                DELTA25="/content/gre/promo_landing"/>
+                DELTA25="/content/gre/promo_landing"
+                TESTRD="/content/gre/SCORECO"
+                TESTVD="/content/gre/SCORECO"
+                TESTVRD="/content/gre/SCORECO"/>
             <RAF
                 jcr:primaryType="nt:unstructured"
                 RAF25="/content/gre/promo-raf"
-                RAF50="/content/gre/RAF50"/>
+                RAF50="/content/gre/promo-raf"/>
             <MISEA
                 jcr:primaryType="nt:unstructured"
                 MISEA="/content/gre/misea"/>
