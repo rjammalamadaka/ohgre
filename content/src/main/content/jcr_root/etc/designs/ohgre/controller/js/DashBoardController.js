@@ -14,6 +14,15 @@ jQuery('#popup-spinner-wrap').show();
     var getCustomerInfo=function(req){
 
 
+         if(req.LDC=="DUK"){
+                req.AccountNumber=req.AccountNumber.substring(0,req.AccountNumber.length-1);
+            }
+            if(req.LDC=="VED"){
+               req.AccountNumber= req.AccountNumber.substring(2,req.AccountNumber.length-1);
+            }
+
+
+
         PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
 
 
