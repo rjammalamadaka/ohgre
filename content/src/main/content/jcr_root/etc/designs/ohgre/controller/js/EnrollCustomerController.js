@@ -56,6 +56,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
     if($rootScope.portalname=='oh'){
         $scope.enrollReq.portalname="oh";
         $scope.addressstate="OH";
+        $scope.billingaddressstate="OH";
     }else if($rootScope.portalname=='gre'){
         $scope.enrollReq.portalname="gre";
         $scope.addressstate="MI";
@@ -227,6 +228,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         }
         return true;
     }
+    var updateBillingAddressInfo=function(){
+
+        $scope.billingaddressone=$rootScope.customerInfo.mailAddress1;
+        $scope.billingaddresstwo=$rootScope.customerInfo.mailAddress2;
+        $scope.billingaddresscity=$rootScope.customerInfo.mailCity;
+        $scope.billingaddressstate=$rootScope.customerInfo.mailStateCode;
+        $scope.billingaddresszip=$rootScope.customerInfo.mailZipCode;
+    }
 
     var getCustomerInfo=function(req,fromRenewal){
 
@@ -239,7 +248,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                     $scope.formatedacno=getFormatedAccountnumberFromAccount($rootScope.customerInfo.account);
                     $scope.phoneNumber= $rootScope.customerInfo.phoneNumber;
                     $scope.existingEmail= $rootScope.customerInfo.emailAddress;
-
+ 					updateBillingAddressInfo();
                     $rootScope.showexistingcustomer=true;
                     if(fromRenewal){
                         if(!($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y")){
@@ -326,14 +335,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
 
     }
 
-    var updateBillingAddressInfo=function(){
 
-        $scope.billingaddressone=$rootScope.customerInfo.mailAddress1;
-        $scope.billingaddresstwo=$rootScope.customerInfo.mailAddress2;
-        $scope.billingaddresscity=$rootScope.customerInfo.mailCity;
-        $scope.billingaddressstate=$rootScope.customerInfo.mailStateCode;
-        $scope.billingaddresszip=$rootScope.customerInfo.mailZipCode;
-    }
     $scope.enrollCustomer =function(step){
         $('#lastnamezipcodeerror').hide();
         $('#b2BCustomerIndError').hide();
@@ -344,7 +346,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         $scope.billingaddressone=null;
 $scope.billingaddresstwo=null;
         $scope.billingaddresscity=null;
-        $scope.billingaddressstate=null;
+        //$scope.billingaddressstate=null;
         $scope.billingaddresszip=null;
         $scope.phoneNumber=null;
         $scope.existingEmail=null;
