@@ -17,15 +17,11 @@
                 <items jcr:primaryType="nt:unstructured">
                     <picker
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/colorpicker"
+                        sling:resourceType="/apps/ohgre/components/colorpicker"
                         editType="{Boolean}true"
                         freestylePaletteType="{Boolean}true"
                         name="./color">
                         <colors jcr:primaryType="nt:unstructured">
-                            <red
-                                jcr:primaryType="nt:unstructured"
-                                name="Red"
-                                value="#FF0000"/>
                             <green
                                 jcr:primaryType="nt:unstructured"
                                 name="Green"
@@ -50,10 +46,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 name="Yellow"
                                 value="#FFFF00"/>
-                            <error
-                                jcr:primaryType="nt:unstructured"
-                                name="Error"
-                                value="#D0011B"/>
                         </colors>
                     </picker>
                     <add
