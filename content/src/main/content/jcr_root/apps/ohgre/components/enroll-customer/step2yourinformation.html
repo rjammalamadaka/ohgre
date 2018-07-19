@@ -16,7 +16,7 @@
             <label ng-if="product.LDC =='MIC'">Gas Service Pod ID</label>
 
             <strong class="account-number">{{formatedacno}}</strong>
-                                  
+
             <!-- start existing Customer -->
             <div class="input-group-wrapper" ng-show="showexistingcustomer && customerInfo.firstName">
 
@@ -66,7 +66,7 @@
 
               <span class="input-error-message" ng-show="formtwo.submited">
                          <span class="input-error-message" ng-show="formtwo.phonenumber.$error.required">Phone number is required.</span>
-              <span class="input-error-message" ng-show="formtwo.phonenumber.$invalid">Please enter valid phone number.</span>
+              <span class="input-error-message" ng-show="formtwo.phonenumber.$invalid && !formtwo.phonenumber.$error.required">Please enter valid phone number.</span>
               </span>
             </div>
             <div class="input-group-wrapper">
@@ -215,9 +215,11 @@
                 <div class="col-md-2 col-sm-2">
                   <div class="input-group-wrapper">
                     <label for="billing-address-state">State<sup class="required">*</sup></label>
-                    <input type="text" name="billingaddressstate" ng-model="billingaddressstate" id="billingaddressstate" ng-required="!samebilling" ng-focus ng-visited/>
+                    <input type="text" name="billingaddressstate" ng-minlength="2" ng-maxlength="2" ng-model="billingaddressstate" id="billingaddressstate" ng-required="!samebilling" ng-focus ng-visited/>
                     <span class="input-error-message" ng-show="formtwo.submited">
                                     <span class="input-error-message" ng-show="formtwo.billingaddressstate.$error.required">State is required.</span>
+                                    <span class="input-error-message" ng-show="formtwo.billingaddressstate.$error.minlength">State must be a minimum of 2 characters.</span>
+                                    <span class="input-error-message" ng-show="formtwo.billingaddressstate.$error.maxlength">State should not be more than 2 characters.</span>
                     </span>
                   </div>
                 </div>
