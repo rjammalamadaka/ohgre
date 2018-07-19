@@ -34,12 +34,12 @@
 
           </span>
                 <div class="form-area multiple-input">
-                  <input placeholder="XXXXXXXX-XXX-000-X" class="col-xs-11 accountnumber" type="text"  id="coh-accno"/>                
-				  <input placeholder="X-XXXX-XXXX-XXXX" class="col-xs-12 accountnumber" type="text" id="deo-accno"/>                 
-				  <input placeholder="XXXX-XXXX-XX-X" class="col-xs-12 accountnumber" type="text" id="duk-accno"/>                 
-				  <input placeholder="03-XXXXXXXXX-XXXXXXX-0" class="col-xs-12 accountnumber" type="text" id="ved-accno"/>
-  				  <input placeholder="XXXX-XXX-XXXX-X" class="col-xs-12 accountnumber" type="text" id="mcg-accno"/>
-         		  <input placeholder="XXXXXXXXXXXXX" class="col-xs-12 accountnumber" type="text" id="mic-accno"/>
+                  <input placeholder="XXXXXXXX-XXX-000-X" class="col-xs-11 accountnumber" type="text"  id="coh-accno" tabindex="1"/>                
+				  <input placeholder="X-XXXX-XXXX-XXXX" class="col-xs-12 accountnumber" type="text" id="deo-accno" tabindex="1"/>                 
+				  <input placeholder="XXXX-XXXX-XX-X" class="col-xs-12 accountnumber" type="text" id="duk-accno" tabindex="1"/>                 
+				  <input placeholder="03-XXXXXXXXX-XXXXXXX-0" class="col-xs-12 accountnumber" type="text" id="ved-accno" tabindex="1"/>
+  				  <input placeholder="XXXX-XXX-XXXX-X" class="col-xs-12 accountnumber" type="text" id="mcg-accno" tabindex="1"/>
+         		  <input placeholder="XXXXXXXXXXXXX" class="col-xs-12 accountnumber" type="text" id="mic-accno" tabindex="1"/>
 
                 </div>
 
@@ -69,7 +69,7 @@
                 <div class="form-area">
                     <label for="lastname" ng-show="!businessName">Last Name on Gas Utility Account</label>
                     <label for="lastname" ng-show="businessName">Business Name on Gas Utility Account</label>
-                    <input type="text" name="lastName" tabindex="5" ng-model="lastName" required/>
+                    <input type="text" name="lastName" tabindex="2" ng-model="lastName" required/>
                     <span class="error-message" ng-show="(formone.lastName.$dirty && (formone.lastName.$invalid)) || (formone.submited)">
                <span ng-show="formone.lastName.$error.required">Last Name is required.</span>
           </span>
@@ -78,7 +78,7 @@
             <div class="zipcode-container form-area-wrapper">
                 <div class="form-area">
                     <label for="zipcode">Your Zip Code</label>
-                    <input tabindex="6" type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only/>
+                    <input tabindex="3" type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only/>
                     <span class="error-message" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)">
                <span ng-show="formone.zipcode.$error.required">Zip Code is required.</span>
                <span ng-show="formone.zipcode.$error.pattern">Please enter valid Zip code.</span>
