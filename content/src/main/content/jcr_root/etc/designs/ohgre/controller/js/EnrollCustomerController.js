@@ -189,6 +189,14 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
         updateenrollrequestobj(data);
 
         if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){
+
+             if(data.LDC=="DUK"){
+                data.AccountNumber=data.AccountNumber.substring(0,data.AccountNumber.length-1);
+            }
+            if(data.LDC=="VED"){
+               data.AccountNumber= data.AccountNumber.substring(2,data.AccountNumber.length-1);
+            }
+
             getCustomerInfo(data,true);
             $rootScope.showcurrentplan=true;
             var promoCodeInfo=ohgre.store("promoCodeInfo");
@@ -862,6 +870,15 @@ $scope.billingaddresstwo=null;
             }
         }else{
             $scope.showpromocodeconfirmation=false;
+        }
+
+        if(back){
+            if(step ==2 || step ==3){
+                if($scope.promotionInfo && $scope.promotionInfo.PromotionCode){
+                   // if($rootScope.product.isDefaultPromoCode=="false")
+                        $scope.showpromocodeconfirmation=true;
+                }
+            }
         }
 
     }
