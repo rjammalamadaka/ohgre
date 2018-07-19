@@ -6,7 +6,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     $scope.showVariablePlan=false;
 
-      function isEmpty(obj) {
+    function isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
                 return false;
@@ -19,28 +19,28 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     var getDefaultPromoCodeByRateClassCode =function(rateClassCode){
 
-         var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+        var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
         var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
         if(rateClassCode =="01"){
-			return ResPromoCode;
+            return ResPromoCode;
         }else if(rateClassCode =="04"){
-			return ComPromoCode;
+            return ComPromoCode;
         }
     }
 
     var getQuotes=function(req){
-		var PromoCode=null;
-       /* var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
-        var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
-        if(req.rateClassCode =="01"){
-			PromoCode=ResPromoCode;
-        }else if(req.rateClassCode =="04"){
-			PromoCode=ComPromoCode;
-        }
-        */
-       /* if(req.PromoCode){            
-            PromoCode=req.PromoCode;
-        }*/
+        var PromoCode=null;
+        /* var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+         var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
+         if(req.rateClassCode =="01"){
+             PromoCode=ResPromoCode;
+         }else if(req.rateClassCode =="04"){
+             PromoCode=ComPromoCode;
+         }
+         */
+        /* if(req.PromoCode){
+             PromoCode=req.PromoCode;
+         }*/
 
         PromoCode =getDefaultPromoCodeByRateClassCode(req.rateClassCode);
 
@@ -51,7 +51,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
                 $scope.products={};
                 if(data.Customer && data.Customer.length>0){
                     if(!flag){
-						flag=true;
+                        flag=true;
                         $scope.defaultProducts=data.Customer[0].Product;
 
                     }
@@ -63,12 +63,12 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
                     for(var i=0;i<productInfo.length;i++){
 
                         if($rootScope.prmoProduct.indexOf(productInfo[i].ProductCode) !=-1){
-								productsList.push(productInfo[i]);
+                            productsList.push(productInfo[i]);
                         }
                     }
 
-                  $scope.products=productsList;
-                  updateProductFinePrint();
+                    $scope.products=productsList;
+                    updateProductFinePrint();
                 }
             }
 
@@ -81,8 +81,14 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
     }
 
 
-       var getCustomerInfo=function(req){
+    var getCustomerInfo=function(req){
 
+        if(req.LDC=="DUK"){
+            req.AccountNumber=req.AccountNumber.substring(0,req.AccountNumber.length-1);
+        }
+        if(req.LDC=="VED"){
+            req.AccountNumber= req.AccountNumber.substring(2,req.AccountNumber.length-1);
+        }
 
         PrimeService.getCustomerInfo(req).success(function(data, status, headers, config){
 
@@ -96,7 +102,7 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     }
 
-           var updateProductFinePrint = function(){
+    var updateProductFinePrint = function(){
 
         angular.forEach($scope.products, function(value, key){
 
@@ -112,8 +118,8 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
             var ProductFinePrintText = value.ProductFinePrintText.split(".");
             var lastword=ProductFinePrintText[ProductFinePrintText.length-1];
             if(!(lastword.length>1))
-            ProductFinePrintText.pop();
-			$scope.products[key].ProductFinePrintText = ProductFinePrintText;
+                ProductFinePrintText.pop();
+            $scope.products[key].ProductFinePrintText = ProductFinePrintText;
 
         });
 
@@ -129,20 +135,20 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
             var enrollmentResult=JSON.parse(data.GetPromoCodesForEnrollmentResult);
             if(enrollmentResult && enrollmentResult.responseStatus =="0"){
-			      for(var i =0;i<enrollmentResult.promotion.length;i++){
-					var promotion=enrollmentResult.promotion[i];
+                for(var i =0;i<enrollmentResult.promotion.length;i++){
+                    var promotion=enrollmentResult.promotion[i];
                     if(promotion && promotion.promotionCode && promotion.promotionCode==defaultPromoCode.toUpperCase()){
-            			promotionProduct=promotion.product;
+                        promotionProduct=promotion.product;
                         break;
                     }
                 }
                 if(promotionProduct && promotionProduct.length>0)
-                for(var j=0;j<promotionProduct.length;j++){
-                   var product= promotionProduct[j];
-					products.push(product.productCode);
-                }
-                 $rootScope.prmoProduct=products;
-               // getQuotes($scope.productData);
+                    for(var j=0;j<promotionProduct.length;j++){
+                        var product= promotionProduct[j];
+                        products.push(product.productCode);
+                    }
+                $rootScope.prmoProduct=products;
+                // getQuotes($scope.productData);
 
             }
         }).error(function (data,status, headers, config){ });
@@ -154,37 +160,35 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     }
     var getPromocodeInfo=function(){
-         var defaultPromoCode=getDefaultPromoCodeByRateClassCode($scope.productData.rateClassCode);
+        var defaultPromoCode=getDefaultPromoCodeByRateClassCode($scope.productData.rateClassCode);
 
-         PrimeService.getPromoCodeInfo(defaultPromoCode).success(function(data, status, headers, config){
+        PrimeService.getPromoCodeInfo(defaultPromoCode).success(function(data, status, headers, config){
 
-              ohgre.store("promoCodeInfo",data);
-               if(data.LDCList.length>0){
-						var ldcinfo=null;
+            ohgre.store("promoCodeInfo",data);
+            if(data.LDCList.length>0){
+                var ldcinfo=null;
 
-                        for(var i=0;i<data.LDCList.length;i++){
-							var temp=data.LDCList[i];
-                            if(temp.LDCCode ==  $scope.productData.LDC){
-                                ldcinfo=temp;
-								break;
-                            }
-                        }
-						ProcessPromotionInformation(ldcinfo);
-
+                for(var i=0;i<data.LDCList.length;i++){
+                    var temp=data.LDCList[i];
+                    if(temp.LDCCode ==  $scope.productData.LDC){
+                        ldcinfo=temp;
+                        break;
                     }
+                }
+                ProcessPromotionInformation(ldcinfo);
 
+            }
 
-          }).error(function(data, status, headers, config){
+        }).error(function(data, status, headers, config){
 
-          });
-
+        });
 
     }
 
-     $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
+    $rootScope.$watch('prmoProduct', function (newValue, oldValue, scope) {
 
         if(newValue && newValue.length>0){
-           // getQuotesForViewPlans();
+            // getQuotesForViewPlans();
             getPromocodeInfo();
 
             //var promoInfo=ohgre.store("promoCodeInfo");
@@ -193,114 +197,112 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
         }
     });
 
+    PrimeService.getProductData().success(function(data, status, headers, config){
 
-     PrimeService.getProductData().success(function(data, status, headers, config){
 
-
-         if(!isEmpty(data)){
+        if(!isEmpty(data)){
             /* if(data.LDC == "COH"){
  				$scope.guaranteeProductDisplay=true;
              }*/
-             $scope.productData=data;
-             var req={};
-             req.AccountNumber=data.AccountNumber; 
-             req.LDC=data.LDC;
-             getCustomerInfo(req);
-             //getQuotes(data);
+            $scope.productData=data;
+            var req={};
+            req.AccountNumber=data.AccountNumber;
+            req.LDC=data.LDC;
+            getCustomerInfo(req);
+            //getQuotes(data);
             // getDefaultPromoctionInfo();
-             getPromoCodeInfoForEnroll(data.LDC);
+            getPromoCodeInfoForEnroll(data.LDC);
 
-         }else{
-			location.href=$rootScope.homeUrl+".html";
+        }else{
+            location.href=$rootScope.homeUrl+".html";
 
-         }
-     }).error(function(data, status, headers, config){
+        }
+    }).error(function(data, status, headers, config){
 
-     });
+    });
 
-  $scope.logout=function(){
-      jQuery('#logout-popup').show();
+    $scope.logout=function(){
+        jQuery('#logout-popup').show();
     }
 
-   $scope.confirmlogout =function(){
-		$rootScope.commonLogout();
+    $scope.confirmlogout =function(){
+        $rootScope.commonLogout();
     }
 
     $scope.cancellogout=function(){
-		jQuery('#logout-popup').hide();
+        jQuery('#logout-popup').hide();
     }
 
 
-        $scope.planSelectRenewal =function(product){
+    $scope.planSelectRenewal =function(product){
 
-            $scope.showVariablePlan=false;
-           if(product.PriceChangeFrequency=="D"){
-			$scope.showVariablePlan=true;
-      		}
-              $scope.selectedProduct=product;
+        $scope.showVariablePlan=false;
+        if(product.PriceChangeFrequency=="D"){
+            $scope.showVariablePlan=true;
+        }
+        $scope.selectedProduct=product;
 
         if($scope.customerInfo.existingCustomerInd=="Y" && $scope.customerInfo.renewalContractExistsInd=="Y"){
-             $('#popupwithrenewal').addClass('show-popup');
+            $('#popupwithrenewal').addClass('show-popup');
         }else{
             var earlyTermChargeAmt= Number($scope.customerInfo.earlyTermChargeAmt);
             if(earlyTermChargeAmt>0){
                 $rootScope.showearlyterminationfee=true;
-                $('#popupetc').addClass('show-popup');                
+                $('#popupetc').addClass('show-popup');
             }else{
-                 $scope.continueenroll();
-				//location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
+                $scope.continueenroll();
+                //location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true";
             }
         }
 
     }
 
-     $scope.displayAddlInfo = function(product){
+    $scope.displayAddlInfo = function(product){
         if(product != undefined){
 
-        	if(product.displayAccordian == undefined)
-        	{
-				product.displayAccordian = true;
-        	}
-       		else if(product.displayAccordian){
-				product.displayAccordian = false;
-        	}
-        	else if(!product.displayAccordian){
-				product.displayAccordian = true;
-        	}
-      }
-
+            if(product.displayAccordian == undefined)
+            {
+                product.displayAccordian = true;
+            }
+            else if(product.displayAccordian){
+                product.displayAccordian = false;
+            }
+            else if(!product.displayAccordian){
+                product.displayAccordian = true;
+            }
+        }
 
     }
 
     $scope.showMobileAccord = function(product){
 
-		if(product != undefined){
+        if(product != undefined){
 
-        if(product.displayMobAccord == undefined)
-        {
-			product.displayMobAccord = true;
+            if(product.displayMobAccord == undefined)
+            {
+                product.displayMobAccord = true;
+            }
+            else if(product.displayMobAccord){
+                product.displayMobAccord = false;
+            }
+            else if(!product.displayMobAccord){
+                product.displayMobAccord = true;
+            }
         }
-        else if(product.displayMobAccord){
-			product.displayMobAccord = false;
-        }
-        else if(!product.displayMobAccord){
-			product.displayMobAccord = true;
-        }
-      }
 
     }
 
 
     $scope.continueenroll =function(){
-         var req={};
+        var req={};
 
         req.QuoteDescription=$scope.selectedProduct.QuoteDescription;
-		req.ProductDescription=$scope.selectedProduct.ProductDescription;
-        req.ProductDescriptionFriendly=$scope.selectedProduct.ProductDescFriendly;                                      
+        req.ProductDescription=$scope.selectedProduct.ProductDescription;
+        req.ProductDescriptionFriendly=$scope.selectedProduct.ProductDescFriendly;
         req.ProductCode=$scope.selectedProduct.ProductCode;
         req.LdcDesc= $scope.productData.ldcDesc;
         req.LDC= $scope.productData.LDC;
-		req.FixedPricePerTherm=$scope.selectedProduct.FixedPricePerTherm;
+        req.FixedPricePerTherm=$scope.selectedProduct.FixedPricePerTherm;
         req.AccountNumber=$scope.productData.AccountNumber;
         req.RateClassCode=$scope.productData.rateClassCode;
         req.dukNumber= $scope.productData.dukNumber;
@@ -308,23 +310,23 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
         req.isDefaultPromoCode=true;
 
 
-         PrimeService.setProductData(req).success(function(data, status, headers, config){  
+        PrimeService.setProductData(req).success(function(data, status, headers, config){
 
-             if($rootScope.IsIE()){
+            if($rootScope.IsIE()){
 
-				setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html?fromRenewal=true"; });
-             }else{
-				setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html?fromRenewal=true"; });
-                                }
+                setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html?fromRenewal=true"; });
+            }else{
+                setTimeout(function(){ window.location.href=$rootScope.homeUrl+"/customer_lookup.html?fromRenewal=true"; });
+            }
 
-               //setTimeout(function(){ location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
+            //setTimeout(function(){ location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; });
 
             // location.href=$rootScope.homeUrl+"/customer_lookup.html#fromRenewal=true"; 
-             return false;
+            return false;
 
-         }).error(function (data,status, headers, config){ 
+        }).error(function (data,status, headers, config){
 
-         });
+        });
 
 
     }
@@ -334,65 +336,62 @@ ohgrePortal.controller('CancelContractController', ['$scope', '$rootScope', '$ht
 
     }
 
-      $scope.getFormatedAccountnumber =function(accountNumber){
+    $scope.getFormatedAccountnumber =function(accountNumber){
         var formattedNumber="";
         if(accountNumber){
             var ldc="";
             if($scope.productData && $scope.productData.LDC){
-		    ldc=$scope.productData.LDC;
+                ldc=$scope.productData.LDC;
             }
-			if(ldc == "COH"){       
-			formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
-			}else if(ldc == "DUK"){
-			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$scope.productData.dukNumber;
-			}else if(ldc == "DEO"){
-			formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
-			}else if(ldc == "VED"){
-			formattedNumber="03-"+accountNumber.substring(2,11)+"-"+accountNumber.substring(11,18)+"-0";
-			}else if(ldc == "MCG"){
-			formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
-			}else if(ldc == "MIC"){
-			formattedNumber=accountNumber;
-			}
-			return formattedNumber;
+            if(ldc == "COH"){
+                formattedNumber=accountNumber.substring(0,8)+'-'+accountNumber.substring(8,11)+'-000-'+accountNumber.substring(14,15);
+            }else if(ldc == "DUK"){
+                formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,8)+'-'+accountNumber.substring(8,10)+'-'+$scope.productData.dukNumber;
+            }else if(ldc == "DEO"){
+                formattedNumber=accountNumber.substring(0,1)+'-'+accountNumber.substring(1,5)+'-'+accountNumber.substring(5,9)+'-'+accountNumber.substring(9,13);
+            }else if(ldc == "VED"){
+                formattedNumber="03-"+accountNumber.substring(2,11)+"-"+accountNumber.substring(11,18)+"-0";
+            }else if(ldc == "MCG"){
+                formattedNumber=accountNumber.substring(0,4)+'-'+accountNumber.substring(4,7)+'-'+accountNumber.substring(7,11)+'-'+accountNumber.substring(11,12);
+            }else if(ldc == "MIC"){
+                formattedNumber=accountNumber;
+            }
+            return formattedNumber;
         }else{return "";}
-      }
+    }
 
 
-       $scope.showDeskAccordGuarantee =function(){
+    $scope.showDeskAccordGuarantee =function(){
 
 
         if($scope.displayGuranteedAccord){
             $scope.displayGuranteedAccord=false;
         }else{
-			$scope.displayGuranteedAccord=true;
+            $scope.displayGuranteedAccord=true;
         }
 
     }
 
+    var getDefaultPromoctionInfo =function(){
+
+        var promocode;
+        var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
+        var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
+
+        if($scope.productData && $scope.productData.rateClassCode =="01"){
+            promocode=ResPromoCode;
+        }else if($scope.productData && $scope.productData.rateClassCode =="04"){
+            promocode=ComPromoCode;
+        }
 
 
-       var getDefaultPromoctionInfo =function(){
+        PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
+            ohgre.store("promoCodeInfo",data);
 
-			var promocode;
-           var ResPromoCode=$("#cancel-plan-wrapper").data("respromocode");
-           var ComPromoCode=$("#cancel-plan-wrapper").data("compromocode");
+        }).error(function(data, status, headers, config){
 
-           if($scope.productData && $scope.productData.rateClassCode =="01"){
-              promocode=ResPromoCode;
-           }else if($scope.productData && $scope.productData.rateClassCode =="04"){
-               promocode=ComPromoCode;
-           }
-
-
-           PrimeService.getPromoCodeInfo(promocode).success(function(data, status, headers, config){
-               ohgre.store("promoCodeInfo",data);
-
-           }).error(function(data, status, headers, config){
-
-           });
-       }
-
+        });
+    }
 
 }]);
 
