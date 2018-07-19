@@ -300,12 +300,11 @@ $scope.errorMessage=null;
 			req.RateClassCode='04';
         }
 		req.LDC=$scope.ldc;
-
-        req.AccountNumber=$scope.accountnumber;
 		req.LdcDesc=$scope.ldcdesc;
 
-        if($scope.ldc && $scope.ldc=="DUK"){
-            req.dukNumber=$scope.an4
+         req.AccountNumber=$scope.accountnumber;
+        if($scope.ldc =="DUK"){
+			req.dukNumber=$scope.accountnumber.substring(10);
         }
 
          PrimeService.setProductData(req).success(function(data, status, headers, config){            
