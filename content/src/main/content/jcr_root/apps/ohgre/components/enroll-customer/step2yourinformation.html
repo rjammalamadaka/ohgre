@@ -166,7 +166,7 @@
               <div class="col-md-4 col-sm-4">
                 <div class="input-group-wrapper">
                   <label for="address-zip">Zip<sup class="required">*</sup></label>
-                  <input type="text"  pattern="[0-9]*" ng-pattern="/^\d+$/" name="address-zip" id="address-zip" ng-minlength="5" ng-maxlength="5" ng-model="zipcode" ng-required="!showexistingcustomer"  numbers-only>
+                  <input type="text"  pattern="[0-9]*" ng-pattern="/^\d+$/" name="address-zip" id="address-zip" ng-minlength="5" ng-maxlength="5" maxlength="5" ng-model="zipcode" ng-required="!showexistingcustomer"  numbers-only>
                   <span class="input-error-message" ng-show="formtwo.submited">
     							         <span class="input-error-message" ng-show="this['formtwo']['address-zip'].$error.required">Zip required.</span>
                                          <span class="input-error-message" ng-show="this['formtwo']['address-zip'].$error.pattern">Please enter valid Zip code.</span>
@@ -215,7 +215,7 @@
                 <div class="col-md-2 col-sm-2">
                   <div class="input-group-wrapper">
                     <label for="billing-address-state">State<sup class="required">*</sup></label>
-                    <input type="text" name="billingaddressstate" ng-minlength="2" ng-maxlength="2" ng-model="billingaddressstate" id="billingaddressstate" ng-required="!samebilling" ng-focus ng-visited/>
+                    <input type="text" name="billingaddressstate" ng-minlength="2" ng-maxlength="2" maxlength="2" ng-model="billingaddressstate" id="billingaddressstate" ng-required="!samebilling" ng-focus ng-visited/>
                     <span class="input-error-message" ng-show="formtwo.submited">
                                     <span class="input-error-message" ng-show="formtwo.billingaddressstate.$error.required">State is required.</span>
                                     <span class="input-error-message" ng-show="formtwo.billingaddressstate.$error.minlength">State must be a minimum of 2 characters.</span>
@@ -226,7 +226,7 @@
                 <div class="col-md-4 col-sm-4">
                   <div class="input-group-wrapper">
                     <label for="billing-address-zip">Zip<sup class="required">*</sup></label>
-                    <input type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" name="billingaddresszip" ng-model="billingaddresszip" id="billingaddresszip" ng-minlength="5" ng-maxlength="5" ng-required="!samebilling" required numbers-only ng-focus ng-visited>
+                    <input type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" name="billingaddresszip" ng-model="billingaddresszip" id="billingaddresszip" ng-minlength="5" ng-maxlength="5" maxlength="5"  ng-required="!samebilling" required numbers-only ng-focus ng-visited>
                     <span class="input-error-message" ng-show="formtwo.submited">
                                     <span class="input-error-message" ng-show="formtwo.billingaddresszip.$error.required">Zip is required.</span>
                                     <span class="input-error-message" ng-show="formtwo.billingaddresszip.$error.pattern">Please enter valid Zip code.</span>
