@@ -204,7 +204,7 @@ ohgrePortal.controller('EnrollCustomerController', ['$scope', '$window', '$rootS
                 if($rootScope.product.isDefaultPromoCode=="false")
                     $scope.showpromocodeconfirmation=true;
             }
-            $scope.confirmationButton="Back to My Account";
+            $scope.confirmationButton="Back to Home";
 
         }else{
             jQuery('#popup-spinner-wrap').hide();
@@ -1325,7 +1325,8 @@ $scope.billingaddresstwo=null;
 
         }else{
             if($rootScope.hashParams && $rootScope.hashParams.fromRenewal){    
-                location.href=$rootScope.homeUrl+"/myaccount.html";    
+                //location.href=$rootScope.homeUrl+".html"; 
+                $rootScope.commonLogout();
             }else{    
                 location.href=$rootScope.homeUrl+".html";
             }
