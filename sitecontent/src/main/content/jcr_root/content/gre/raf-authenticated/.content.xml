@@ -16,11 +16,11 @@
         sling:resourceType="/apps/ohgre/components/structure/referafriend"
         appid="388067291608116"
         hideInNav="true"
-        ogdescription="Enroll with Grand Rapids Energy and we could each earn a $25 Visa Reward Card. It’s that easy! Program terms and conditions apply. #ad "
+        ogdescription="Enroll with Grand Rapids Energy and we could each earn a $50 Visa Reward Card. It’s that easy! Program terms and conditions apply. #ad "
         ogimage="/content/dam/ohgre/raf/gre_social_image.png"
         oglocale="en_us"
         ogsitename="GRE RAF"
-        ogtitle="$25 for you and $25 for me!"
+        ogtitle="$50 for you and $50 for me!"
         ogtype="website"
         ogurl="/content/gre/promo-raf.html">
         <content
