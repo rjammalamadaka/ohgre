@@ -260,7 +260,7 @@ ohgrePortal.controller('RafAuthenticatedController', ['$scope', '$rootScope', '$
 
   $scope.fbIconClick = function() {
 
-    var code = "RAF25";
+    var code = $("#raf-code").data("rafpromocode"); //"RAF25";
     //var base_url = window.location.protocol + "/" + window.location.host + "/RAF25/";
     var base_url = window.location.origin + $rootScope.homeUrl + "/promo-raf.html";
     var o = base_url + "?promocode=" + code + "&referralcode=" + $scope.customerInfo.custID;
