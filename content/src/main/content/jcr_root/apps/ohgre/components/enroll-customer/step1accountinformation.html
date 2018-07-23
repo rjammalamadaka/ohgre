@@ -78,8 +78,8 @@
             <div class="zipcode-container form-area-wrapper">
                 <div class="form-area">
                     <label for="zipcode">Your Zip Code</label>
-                    <input tabindex="3" type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only/>
-                    <span class="error-message" ng-show="(formone.zipcode.$dirty && (formone.zipcode.$invalid)) || (formone.submited)">
+                    <input tabindex="3" type="text" pattern="[0-9]*" ng-pattern="/^\d+$/" ng-model="zipcode" name="zipcode" maxlength="5" ng-minlength="5" ng-maxlength="5" required numbers-only />
+                    <span class="error-message" ng-show="formone.submited">
                <span ng-show="formone.zipcode.$error.required">Zip Code is required.</span>
                <span ng-show="formone.zipcode.$error.pattern">Please enter valid Zip code.</span>
                <span ng-show="formone.zipcode.$invalid && !formone.zipcode.$error.pattern && !formone.zipcode.$error.required">Zip code is not valid.</span>
